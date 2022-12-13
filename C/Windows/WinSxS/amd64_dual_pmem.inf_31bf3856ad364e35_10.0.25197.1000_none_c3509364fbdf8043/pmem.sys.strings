@@ -1,0 +1,842 @@
+                   %n
+                   %nLook at the events logged by the physical NVDIMM driver for more details.
+                   %nNTSTATUS code: %8
+                   %nReason: %7
+                   %nUse the Get-PhysicalDisk command to get more information about the disk's health status.
+            %n
+            %n %2
+            %n1. Open the registry editor (regedit) and navigate to 'Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\ACPI\ACPI0012\<instance ID>\Device Parameters'. There will only be one instance ID key.
+            %n2. Create a registry key named 'ScmBus'. Inside it, create a new DWORD value named 'IgnoreLabels' and set it to 1.
+            %n3. Restart your computer.
+            %n4. When Windows starts again, your persistent memory disks will be accessible. Back up **all the data** on **all of them** to a different disk. NOTE: these recovery steps will clear all persistent memory disks, even the ones that aren't affected by this problem, so it's important to back up all your data.
+            %n5. Open the registry editor, navigate to the 'IgnoreLabels' value you created and set it to 0.
+            %n6. Restart your computer.
+            %n7. The persistent memory disk will be inaccessible again. To use it, you will have to reinitialize all physical persistent memory devices on the system. Open an elevated PowerShell window and run 'Get-PmemPhysicalDevice | Initialize-PmemPhysicalDevice'.
+            %n8. The last step is to recreate the persistent memory disks. You can do that in the elevated PowerShell window by running 'Get-PmemUnusedRegion | New-PmemDisk'. Look at the help content for 'New-PmemDisk' to learn how to specify the disks' atomicity modes.
+            %nThis type of problem can happen when you update your computer's firmware, or when you upgrade from a version of Windows that doesn't look at atomicity settings to one that does.
+            %nTo recover the disk, follow these steps:
+ A_A^_
+ A_A^A\
+ A_A^A\_^
+ FZ6{M
+ http://www.microsoft.com/windows0
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!K0!K4
+!This program cannot be run in DOS mode.
+"Microsoft Window
+#0X$*
+(D$ H
+,$A!4$3
+,SV6Lszwrjakdd1N/DIAzdMGHl5mH+71BaJP6xytTG/0=0Z
+.00cfg
+.data
+.data$brc
+.edata
+.fffffff
+.gfids
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.text
+.text$mn
+.text$mn$00
+.text$mn$21
+.xdata
+;^P}=Lc
+;^Pss
+;~P}%Hc
+;~PsB
+;sPs`
+@;VDr
+@8|$Pt
+@8}Pt
+@A^_^
+@Disk Number %d, Irp %p, Ioctl = %08x
+@INIT
+@SUVWATAUAVAWH
+@SUVWATAVAW
+@USVWATAUAVAWH
+@USVWAVAWH
+@USVWH
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\Device\Harddisk%d
+\Device\Harddisk%d\DR%d
+\Device\Harddisk%d\Partition0
+\Device\PhysicalMemory
+\DosDevices\PhysicalDrive%d
+\Global??\Disk%s
+\SystemRoot\System32\Drivers\pmem.sys
+^0\0Z
+^H^p^
+^p`Q*
+__chkstk
+_vsnprintf
+_vsnwprintf
+`.edata
+`A_A^_^]
+`A_A^A]A\_^]
+`fothk
+{ AVH
+|$ AVH
+|$HE3
+|z#p{
+}MO,BP
+<A;qPr
+'>c+fnTB
+040904B0
+0A^_^
+0A^A]A\_^
+0A_A^_
+0A_A^_^]
+0A_A^A]A\_
+0A_A^A]A\_^]
+0XYZAXAY
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+140528173333Z
+220630175940Z
+230915175940Z0p1
+231093+4715690
+290528174333Z0}1
+3http://www.microsoft.com/pkiops/Docs/Repository.htm0
+3L$ H
+5Microsoft Development Root Certificate Authority 20140
+8A^_^[
+9\$`u
+9\$Dv$L;
+9_DvXH
+9_ptnH
+9iPvoH
+9sPvp
+9uP~8
+A^_^[]
+A_A\_^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^][
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^]
+A_A^A]A\_^][
+A9qPv
+AddReadOnlyReason: a read only reason was ignored: %d. Previous read only state: %d; current read only state: %d; ReadOnlyReasons: %d
+AddReadOnlyReason: adding a new read only reason: %d. Previous read only state: %d; current read only state: %d; ReadOnlyReasons: %d
+AQAPRQPH
+atomicityMode
+B.reloc
+B.rsrc
+Bad memory range at 0x%I64x for 0x%I64x bytes
+Bad range length overflows: 0x%llx for 0x%llx bytes
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+bGFIDS
+BringUpMode
+BTT A
+BTT D
+BTT H
+BTT: btt_init: rawsize smaller than BTT_MIN_SIZE %u
+BTT: btt_read: EIO due to map entry error flag
+BTT: btt_write: EIO due to btt_info error flags 0x%x
+BTT: btt_write_inplace: EIO due to btt_info error flags 0x%x
+BTT: check_arena map[%d] duplicate entry: %u
+BTT: check_arena: flog[%d] duplicate entry: %u
+BTT: check_arena: map[%d] entry out of bounds: %u
+BTT: check_arena: unreferenced lba: %d
+BTT: failed to get premapped flog address (0x%x)
+BTT: flog pair[0] specifies an invalid LBA (0x%x)
+BTT: flog pair[1] specifies an invalid LBA (0x%x)
+BTT: invalid_arena_lba: arena lba out of range (nlba %ju)
+BTT: invalid_lba: lba out of range (nlba %ju)
+BTT: nis_memory_range_good: offset + count (%lld) is in a bad memory region
+BTT: nsis_memory_range_good: offset + count (%lld) past end of data area (%zu)
+BTT: nsmap: offset + count (%lld) past end of data area (%zu)
+BTT: nsread: offset + count (%lld) past end of data area (%zu)
+BTT: nswrite() failed when recovering a transaction by updating the map entry at 0x%llx
+BTT: nswrite: offset + count (%lld) past end of data area (%zu)
+BTT: nszero: offset + count (%lld) past end of data area (%zu)
+BTT: pmemblk_load_mapped_pool: maxarenasize too large (%llu)
+BTT: pmemblk_load_mapped_pool: maxarenasize too small (%llu)
+BTT: read_flog_pair() failed (%d) when reading the map entry for pre-map LBA 0x%x at 0x%llx
+BTT: read_flog_pair: failed to read flog pair (%d)
+BTT: read_flog_pair: flog layout error: bad seq numbers %d %d
+BTT: read_flog_pair: invalid flog offset %lu
+BTT: read_flog_pair: invalid lane %d among nfree %d
+BTT: read_layout: external_nlba can't be 0
+BTT: read_layout: inconsistent lbasize. info.external_lbasize = %d; bttp->lbasize = %d
+BTT: read_layout: next arena offset > rawsize (%llu, %llu)
+BTT: read_layout: nfree can't be 0
+BTT: ScmBttWrite: pool is read-only
+BTT: write_layout: Invalid lba size after alignment: %u 
+BTT: write_layout: number of internal blocks: %lu expected at least %u
+BTT_ARENA_INFO
+btt_refresh_flogs: failed to refresh flog for arena %d (%d)
+C(H+D$(H
+C8t3H
+cde<'
+CheckBttAtStart
+cng.sys
+CompanyName
+Completing a non-read/write request.
+Completing a PnP request.
+Completing an IO (read/write) request.
+CRIMD:
+Critical
+D!G03
+D$ BTThL
+D$ H+
+D$ Pmmh3
+D$(E3
+D$(H!D$(H
+D$(M+
+D$@E3
+D$@I+
+D$`A;
+D$<L;d$P
+D$0`y
+D$0D;
+D$0PmmsH
+D$5A"
+D$88C
+D$8M+
+D$hE3
+D$PE3
+D$PL!
+D$XH+D$@H
+D$XtLH
+D$XtoH
+D;CPr
+D8C L
+D92s-L
+D9cPv'H
+DefaultAtomicityMode
+Device I/O control request
+deviceGuid
+DeviceHealth
+DeviceHealthStatusChange
+DeviceLostData
+DeviceNumber
+DeviceObject
+DeviceRemoved
+DeviceStarted
+deviceState
+Disk Number %d, Irp %p, Ioctl = %08x, ret = %08x
+Disk Number %d, Irp %p, Pnp Minor %x, ret = %08x
+Disk Number %d, Irp %p, Pnp, Minor %x
+diskSize_bytes
+Dispatching a PnP request.
+Dispatching a read request.
+Dispatching a write request.
+Dispatching an IOCTL.
+DumpPreInitialize
+DumpUninitialize
+DurabilityMode
+During a previous boot session, one of the NVDIMMs that make up persistent memory disk %1 encountered an error while transferring your data to or from persistent media. Some of your data may have been lost then. If this is a data disk, it is now in read-only mode as a precaution. If you want to keep using it, run the Reset-PhysicalDisk command to make it writeable again. If this is the system disk, it will remain writeable but will appear as Unhealthy until you run the Reset-PhysicalDisk command in PowerShell.
+E;~Pr
+en-US
+ErrInj_DataLoss
+ErrInj_FailFirstNHealthChecks_Retriable
+ErrInj_FailHealthChecks_NonRetriableDelay
+ErrInj_FailNHealthChecks_NonRetriable
+ErrInj_NoMemoryResources
+Error
+Error reading flog pair 0x%x on arena starting at offset 0x%llx
+EtwRegister
+EtwSetInformation
+EtwUnregister
+EtwWrite
+EtwWriteTransfer
+EventData
+ExAcquireRundownProtectionCacheAware
+ExAcquireSpinLockExclusive
+ExAcquireSpinLockShared
+ExAllocateCacheAwareRundownProtection
+ExAllocateFromLookasideListEx
+ExAllocatePool2
+ExDeleteLookasideListEx
+ExFreeCacheAwareRundownProtection
+ExFreePoolWithTag
+ExFreeToLookasideListEx
+ExInitializeLookasideListEx
+ExReInitializeRundownProtectionCacheAware
+ExReleaseRundownProtectionCacheAware
+ExReleaseSpinLockExclusive
+ExReleaseSpinLockShared
+ExUuidCreate
+ExWaitForRundownProtectionReleaseCacheAware
+F@H9~8u!L
+FailCrashDumpInitialization
+Failed to read arena starting at offset 0x%llx
+failureReason
+fD9"t
+fffff
+ffffff
+fffffff
+-fffffff
+FileDescription
+FileVersion
+fogrp
+ForceForwardProgressMode
+G,H+D$(H
+ghttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crl0
+H UATAUAVAWH
+H!|$HH
+H!D$ L
+H!D$(H!D$ H
+H!E@E3
+H!l$ E3
+H!t$ L
+H.data
+H.idata
+h.rdata
+H9L$PrOH
+HadditionalReasons
+HAL.dll
+Hardware events
+Hardware_Events
+HcS8H
+HcyP3
+healthStatus
+healthStatusChanged
+HealthStatusMap
+healthy
+HPAGE
+HreadOnlyReasons
+I\$DH
+IcAPH
+ignoreDataLoss
+IgnorePhysicalNvdimms
+ihttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crt0
+Information
+InPlaceBtt
+Interleave set on %d devices
+interleaveDimmGuids
+InterleaveSet
+InterleaveSetSize
+interleaveSetSize
+InterleaveSetSize
+InternalName
+IO Performance measurement
+IO_Performance
+IoAcquireRemoveLockEx
+IoAllocateIrp
+IoAllocateWorkItem
+IoAttachDeviceToDeviceStack
+IoBuildDeviceIoControlRequest
+IoBuildSynchronousFsdRequest
+IoCreateDevice
+IoCreateSymbolicLink
+IOCTL
+IoDeleteDevice
+IoDeleteSymbolicLink
+IoDetachDevice
+IoDeviceControl: Unknown device IOCTL %x for %p
+IofCallDriver
+IofCompleteRequest
+IoFreeIrp
+IoFreeWorkItem
+IoGetActivityIdIrp
+IoGetAttachedDeviceReference
+IoGetConfigurationInformation
+IoGetDeviceObjectPointer
+IoGetDeviceProperty
+IoInitializeRemoveLockEx
+IoInvalidateDeviceState
+IoOpenDeviceRegistryKey
+IoQueueWorkItem
+IoRegisterPlugPlayNotification
+IoReleaseRemoveLockAndWaitEx
+IoReleaseRemoveLockEx
+IoReportTargetDeviceChangeAsynchronous
+IoUnregisterPlugPlayNotificationEx
+IRP MJ
+IsWrite
+K H+O$u
+k VWATAVAWH
+k VWAVH
+K VWAVH
+K(H+O,H
+k`A;~DsWL
+k0HcUPH
+k2mUU&
+KeAcquireInStackQueuedSpinLock
+KeAcquireSpinLockRaiseToDpc
+KeCancelTimer
+KeDelayExecutionThread
+KeFlushQueuedDpcs
+KeGetCurrentIrql
+KeGetCurrentProcessorNumberEx
+KeInitializeDpc
+KeInitializeEvent
+KeInitializeMutex
+KeInitializeSpinLock
+KeInitializeTimer
+KeLowerIrql
+KeQueryActiveProcessorCountEx
+KeQueryPerformanceCounter
+KeQueryUnbiasedInterruptTime
+KeReleaseInStackQueuedSpinLock
+KeReleaseMutex
+KeReleaseSpinLock
+KeSetCoalescableTimer
+KeSetEvent
+KeWaitForSingleObject
+KEYWx
+KfRaiseIrql
+KillSwitch
+L!t$xD
+L$ @"
+L$ SVWAVH
+L$ SVWH
+l$ VWATAVAWH
+l$ VWAVH
+L$(@"
+L$(E3
+L$@E3
+L$@H3
+L$`H3
+L$0!t$0I
+L$0E3
+L$0H3
+L$4!D$4L
+l$8D;l$@
+L$hD;
+L$hH3
+L$HH3
+L$PE3
+L$PH3
+L$pH3
+L$PH3
+L$PH9
+L$pL+
+L$xH3
+L+{(H
+LegalCopyright
+LengthOfTransfer
+Lhttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20PCA%202014.crl0j
+lostDataPreviousBoot
+lostDataThisBoot
+lostPersistenceGuarantee
+M+P(H
+M0A9q
+MajorFunction
+MAPSL
+MaxArenaSizeIn4kMultiples
+Memory operation duration, in hundreds of nanoseconds.
+MemoryEventCount
+MemoryMapMode
+Message
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1>0<
+Microsoft Corporation1'0%
+Microsoft Development PCA 2014
+Microsoft Development PCA 20140
+Microsoft Windows0
+Microsoft.Windows.Storage.Pmem0101
+Microsoft-Windows-PersistentMemory-PmemDisk
+Microsoft-Windows-PersistentMemory-PmemDisk/Analytic
+Microsoft-Windows-PersistentMemory-PmemDisk/Diagnostic
+Microsoft-Windows-PersistentMemory-PmemDisk/Operational
+MinorFunction
+MmAllocateMappingAddress
+MmFreeMappingAddress
+MmGetPhysicalAddress
+MmMapIoSpaceEx
+MmMapLockedPagesWithReservedMapping
+MmMapMdl
+MmMapMemoryDumpMdlEx
+MmUnmapIoSpace
+MmUnmapReservedMapping
+NamespaceGuidOverride
+NeverReadOnly
+NewBadMemoryRangesCount
+newLostPersistenceGuarantee
+newReadOnlyMode
+newReadOnlyReasons
+NextAtomicityMode
+NfitHandle
+Nhttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20PCA%202014.crt0
+noMemoryResources
+Non-Read/Write request
+NonReadWrite
+ntoskrnl.exe
+NTStatus
+NtStatus
+NTStatus
+NtStatus
+NVDIMM %5 notified persistent memory disk %1 of a change in its health state. The NVDIMM now has the following health status: %7.
+NvdimmGuid
+NvdimmHealthStatus
+O5a8V2
+ObadRangesCount
+ObfDereferenceObject
+ObjectLength
+OldBadMemoryRangesCount
+oldLostPersistenceGuarantee
+oldReadOnlyMode
+oldReadOnlyReasons
+One of the NVDIMMs that make up persistent memory disk %1 encountered an error while transferring your data to or from persistent media (see the Details tab for more information). Some of your data may have been lost. If this is a data disk, it is now in read-only mode as a precaution. If you want to keep using it, run the Reset-PhysicalDisk command to make it writeable again. If this is the system disk, it will remain writeable but will appear as Unhealthy until you run the Reset-PhysicalDisk command in PowerShell.
+One of the NVDIMMs that make up the persistent memory disk %1 encountered a serious problem and the disk is now in read-only mode. Data that was saved to this disk may be lost when the computer shuts down or restarts. Consider backing up your data to another disk.
+One of the NVDIMMs that make up the persistent memory disk %1 is in a degraded health state and may soon encounter serious problems. Consider backing up your data to another disk.
+OPCO0
+operationalStatus
+oRich'
+OriginalFilename
+p WAVAWH
+PA^_^
+pA_A^_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PageAlignBadRanges
+Paging Read request
+Paging Write request
+PagingRead
+PagingWrite
+Parameter
+PartA_PrivTags
+Persistent memory disk %1 failed to start.
+Persistent memory disk %1 is no longer in read-only mode.
+Persistent memory disk %1 is now in read-only mode.  Use the Get-PhysicalDisk command to get the device
+Persistent memory disk %1 logged:
+Persistent memory disk %1 started successfully.
+Persistent memory driver
+PersistentMemoryDiskGuid
+PhysicalNvdimmGuid
+physicalNvdimmsRemoved
+pmem.pdb
+pmem.sys
+Pmem.sys is running in IgnorePhysicalNvdimms mode. No health events from the NVDIMM will affect the logical disk.
+PmemAccessAlignmentProperty: Output buffer too small.
+PmemAddDevice: Could not create directory - %lx
+PmemAddDevice: Failed to attach buffer for device name
+PmemAddDevice: Failed to attach device to device stack
+PmemAddDevice: Format FDO name failed with error: 0x%X
+PmemAddDevice: Format symbolic link failed with error: 0x%X
+PmemAddDevice: IoCreateDevice failed with error: 0x%X
+PmemAreAnyNvdimmsLocked: GetSecurityState() for NVDIMM 0x%x failed with NTSTATUS 0x%x
+PmemAttributeManagementIoctl: Input buffer too small.
+PmemCheckBttConsistency: BTT check could not be performed: %d
+PmemCheckBttConsistency: BTT is NOT CONSISTENT
+PmemCheckBttConsistency: BTT is OK
+PmemConfigureAtomicityMode failed to create BTT pool - BTT pool is NULL
+PmemConfigureAtomicityMode:  created a BTT pool
+PmemConfigureAtomicityMode: BTT mode is only supported on disks with a sector size of 4KB (current sector size: %d bytes)
+PmemConfigureAtomicityMode: Could not stop current atomicity mode (0x%x)
+PmemConfigureAtomicityMode: Failed to inspect BTT metadata (0x%X)
+PmemCopyDevicePropertyString: Failed to get string length.
+PmemCreateDiskIoctl: switching to atomicity mode %d
+PmemCreateSharedDataWithDumpStack(): Couldn't pre-allocate MDL
+PmemCreateSharedDataWithDumpStack(): failed to allocated shared data structure
+PmemCreateSharedDataWithDumpStack(): MmAllocateMappingAddress() returned NULL
+PmemCreateSymbolicLinks: Could not create GUID symlink, status %x
+PmemCreateSymbolicLinks: device GUID is 0; will not create link
+PmemCreateSymbolicLinks: Linking %wZ to %wZ
+PmemDataSetManagement: Input buffer too small.
+PmemDataSetManagement: Invalid Size value %d.
+PmemDataSetManagement: Unsupported DSM action %d.
+PmemDeviceLocationProperty(): PmemNvdGetFruIdString() failed with 0x%x
+PmemDeviceLocationProperty(): PmemNvdGetLocationString() failed with 0x%x
+PmemDeviceSeekPenaltyProperty: Output buffer too small.
+PmemDeviceTrimProperty: Output buffer too small.
+PmemDeviceUnsafeShutdownCountIoctl: Output buffer too small.
+PmemDoBttRead failed - BTT AtomicityExtension is NULL
+PmemDoBttRead failed - BTT read failed with retCode 0x%x
+PmemDoBttRead failed because of a bad memory location
+PmemDoBttWrite failed - BTT AtomicityExtension is NULL
+PmemDoBttWrite failed - BTT write failed with retCode 0x%x
+PmemDoBttWrite failed because of a bad memory location
+PmemDurabilityModeChangeCallback: failed to retrieve the durability mode with status 0x%x
+PmemFillInDumpInfo: Wrong version size
+PmemFreeResources: Could not unmap virtual memory view, holder process: 0x%x
+PmemGetBadMemoryRanges: first call to GetBadMemoryRangesForLogicalDevice() failed with 0x%x
+PmemGetBadMemoryRanges: second call to GetBadMemoryRangesForLogicalDevice() failed with 0x%x
+PmemGetBadMemoryRanges: second call to GetBadMemoryRangesForLogicalDevice() returned a different number of ranges (expected %d, receieved %d)
+PmemGetCurrentAtomicityMode(): BusInterface.GetAtomicityMode failed: 0x%x
+PmemGetCurrentAtomicityMode(): the bus driver did not recognize the atomicity mode
+PmemGetCurrentAtomicityMode: Failed to inspect BTT metadata (0x%X)
+PmemGetCurrentAtomicityMode: native atomicity mode is BTT, but the first disk sector has non-BTT data, which would be overwritten.
+PmemGetCurrentAtomicityMode: native atomicity mode is NoBTT, and BTT metadata is present, with mismatched GUIDs. The metadata is stale and will be ignored
+PmemGetCurrentAtomicityMode: native atomicity mode is NoBTT, but BTT metadata is present, and the parent GUID is 0
+PmemGetCurrentAtomicityMode: native atomicity mode is NoBTT, but BTT metadata is present, and the parent GUID matches the namespace GUID
+PmemGetDataSetRangeMapping(): invalid range parameters (0x%x, 0x%x)
+PmemGetDeviceDescriptor: 1st STORAGE_QUERY_PROPERTY IRP failed
+PmemGetDeviceDescriptor: 2nd STORAGE_QUERY_PROPERTY IRP failed
+PmemGetDeviceNumber: Output buffer too small.
+PmemGetDeviceNumberEx: Output buffer too small.
+PmemGetDiskAtomicityDescriptor: Output buffer too small.
+PmemGetDiskInfo: ScmBttGetBttInfo() failed with: %d
+PmemGetDriveGeometry: Output buffer too small for IOCTL_DISK_GET_DRIVE_GEOMETRY.
+PmemGetDriveGeometry: Output buffer too small for IOCTL_DISK_GET_DRIVE_GEOMETRY_EX.
+PmemGetDumpInfoIoctl: Wrong version size
+PmemGetEntireDataSetRange: Output buffer too small.
+PmemGetErrorInfoForRangesInDataSet(): invalid range parameters (0x%x, 0x%x)
+PmemGetErrorInfoForRangesInDataSet(): range parameters too large (0x%x, 0x%x)
+PmemGetHotPlugInfo: Output buffer too small.
+PmemGetIdentifyingInfo: couldn't copy serial number
+PmemGetInterleaveInfo: could not get NVDIMM GUID (0x%x)
+PmemGetInterleaveInfo: could not get NVDIMM interface (0x%x)
+PmemGetInterleaveInfo: could not get register TargetDeviceChange notification (0x%x)
+PmemGetLengthInfo: Output buffer too small.
+PmemGetMediaTypes: Output buffer too small.
+PmemGetPhysicalAddressesIoctl: Invalid DSM dataset ranges or lengths.
+PmemGetPhysicalAddressesIoctl: invalid parameters for data set ranges.
+PmemGetPhysicalAddressesIoctl: output buffer length is too small (expected %d, actual %d).
+PmemGetRangesErrorInfoIoctl: invalid parameters for data set ranges.
+PmemGetRangesErrorInfoIoctl: output buffer length is too small (expected %d, actual %d).
+PmemHandleDataLossFailures: Could not write data loss registry value; status %x
+PmemHandleDataLossFailures: informed NVDIMM of unsafe shutdown ack
+PmemHandleDataLossFailures: PmemNvdGetUnsafeShutdownCount() failed with 0x%x
+PmemHandleDataLossFailures: PmemNvdUnsafeShutdownAcknowledged failed with 0x%x
+PmemHandleDeviceHealthErrors: lost persistence
+PmemHandleDeviceHealthErrors: regained persistence
+PmemHandleDeviceHealthErrors: ScmPhysicalDeviceOpStatus_PredictingFailure
+PmemInitializeDefaultAtomicityMode: PmemGetEffectiveDiskSize() failed (0x%X)
+PmemInitializeDefaultAtomicityMode: PmemGetIoRoutines() failed (0x%X)
+PmemInitializeDurability: PmemDurabilityModeChangeCallback failed with status, 0x%x
+PmemInitializeDurability: register PmemDurabilityModeChangeCallback failed with status, 0x%x
+PmemInitializeDurability: register PmemTimeAllPersistChangeCallback failed with status, 0x%x
+PmemNewBadRangeCallback: PmemGetBadMemoryRanges() failed with 0x%x
+PmemNewBadRangeCallback: updated bad ranges list. New count: %d; previous count: %d
+PmemNvdimmNotificationCallback: failed to call PmemNvdGetDeviceManagementStatus with status 0x%x
+PmemPageAlignBadRanges(): One of the bad memory ranges overflows and will be ignored: 0x%llx for 0x%llx bytes
+PmemQueryPrivateProperty: Called at invalid IRQL.
+PmemQueryPrivateProperty: Input buffer too small.
+PmemQueryProperty: Called at invalid IRQL.
+PmemQueryProperty: Input buffer too small.
+PmemQueryPropertyVirtualMemoryAddressRangeIoctl: ZwMapViewOfSection expected size: 0x%x, mapped size: 0x%x
+PmemQueryPropertyVirtualMemoryAddressRangeIoctl: ZwMapViewOfSection failed with status: 0x%x
+PmemQueryPropertyVirtualMemoryAddressRangeIoctl: ZwOpenSection failed with status: 0x%x
+PmemReadCapacity: Output buffer too small.
+PmemResetManagementState: PmemGetLogicalDeviceHealthInfo() failed with status 0x%x
+PmemResetManagementState: PmemRefreshLogicalDeviceHealth() failed with status 0x%x
+PmemSetPrivateProperty: Called at invalid IRQL.
+PmemSetPrivateProperty: Input buffer too small.
+PmemStartAtomicityComponent: PmemGetCurrentAtomicityMode() failed (0x%X)
+PmemStartBtt failed - BTT pool is NULL
+PmemStartBtt:  running in BTT mode
+PmemStartDevice failed - can't duplicate allocated resources
+PmemStartDevice failed - can't duplicate translated resources
+PmemStartDevice failed - found %d memory resources
+PmemStartDevice(): memory map mode: %d
+PmemStartDevice: aborting because of the KillSwitch registry setting
+PmemStartDevice: call to PmemGetBadMemoryRanges() failed with 0x%x. Assuming no bad ranges.
+PmemStartDevice: call to PmemGetInterleaveSetString() failed with 0x%x.
+PmemStartDevice: GetSectorSize() failed with 0x%x
+PmemStartDevice: mem resource start = 0x%I64x, size = 0x%I64x
+PmemStartDevice: MmMapIoSpaceEx() returned NULL (RawStartPhysicalAddress=%08p, sizeToClear=%d)
+PmemStartDevice: RegisterNotification for LdNotificationType_BadRange failed with status 0x%x
+PmemStartDevice: The disk is configured for sector size of %d bytes. Some features will be disabled.
+PmemStartDevice: ZeroFirstSectors is set. The driver will clear the first %d sectors of the media
+PmemTimeAllPersistChangeCallback: failed to retrieve the time-all-persist timestamp with status 0x%x
+PmemUnmapVirtualMemoryAddressRange: ZwUnmapViewOfSection failed with statue 0x%x
+PmemUsageNotification: File type %u not supported
+PmemUsageNotification: hibernation and crash dump are not supported with a sector size of 0x%x bytes.
+PmemUsageNotification: lower driver returned NTSTATUS 0x%x
+PmemUsageNotification: Removing read-only flag because this disk is either the boot disk (%d) or holds a special file (%d)
+PmemUsageNotification: Special file notification, type = %u, inPath = %u, new count = %u
+PmemWaitForAllFlushIrpsToFinish timed out after 10 seconds
+PmgtH
+PmmbH
+PmmcA
+PmmcH
+PmmcI
+PmmdH
+PmmfA
+PmmfH
+PmmgA;
+PmmgH
+PmmiH
+PmmlH
+PmmpE
+PmmpH
+Pmmtf
+PmmtH
+PnP request
+PoCallDriver
+PoRequestPowerIrp
+PoSetHiberRange
+PoSetPowerState
+PoStartNextPowerIrp
+productId
+ProductId
+ProductName
+ProductVersion
+PRVAl
+PsGetCurrentProcess
+q0o0m
+QCQ=RqT
+QQ,RiR
+R$fA;Z*
+Read request
+Reading %d arenas on lane %d
+readOnlyMode
+ReadOnlyOnDataLoss
+ReadOnlyOnHealthCheckFailure
+ReadOnlyOnPersistenceLoss
+readOnlyReasons
+reason
+Reason
+reason
+Redmond1
+RemoveReadOnlyReason: removing a read only reason: %d. New ReadOnlyReasons: %d
+Reported memory resource.
+Request servicing time taken by lower driver stack(s).
+RequestDuration
+RSDS!
+RtlAnsiStringToUnicodeString
+RtlCmDecodeMemIoResource
+RtlCompareMemory
+RtlCopyUnicodeString
+RtlFlushNonVolatileMemory
+RtlFreeAnsiString
+RtlFreeNonVolatileToken
+RtlFreeUnicodeString
+RtlGetNonVolatileToken
+RtlInitAnsiString
+RtlInitUnicodeString
+RtlQueryFeatureConfiguration
+RtlQueryFeatureConfigurationChangeStamp
+RtlQueryRegistryValuesEx
+RtlRegisterFeatureConfigurationChangeNotification
+RtlStringFromGUID
+RtlUnregisterFeatureConfigurationChangeNotification
+RtlWriteNonVolatileMemory
+s health status.  The Microsoft-Windows-PersistentMemory-PmemDisk/Operational event log may also contain more information.
+ScmBttGetDataOffsetForBlockPerLaneNoLaneLock() failed because of a bad memory range
+ScmBttGetDataOffsetForBlockPerLaneNoLaneLock() failed with 0x%x
+SerialNumber
+serialNumber
+SerialNumber
+SetReadOnlyMode: Not putting the disk in read-only mode because it is either the boot disk (%d) or holds a special file (%d)
+SetReadOnlyMode: The device is supposed to be read only, but the NeverReadOnly flag is set
+sH;{Ds
+SN^S_
+Some physical memory locations on persistent memory disk %1 are corrupt. In order to protect your computer, Windows will not access those locations and you may see failures trying to read or write to your data. Contact your hardware vendor to learn what recovery steps are available.
+StartAddress
+StartDeviceFailure
+Status
+status
+StringFileInfo
+surpriseRemoval
+System
+t$ UWATAVAWH
+t$ UWAVH
+t$ WAVAW
+t$ WAVAWH
+t$ WH
+T$@E3
+T$`H+Q
+T;UaU
+t69~Dv
+TEMP 
+TEMP,
+TEMP@
+TEMP0
+TEMP4
+TEMP8
+TEMPd
+TEMPD
+TEMPh
+TEMPt
+The computer didn't assign any memory resources to persistent memory disk %1. You won't be able to access the data on the device, but you can still query its health status by using the Get-PhysicalDisk command.
+The driver can't initialize the dump stack because it is in the wrong memory map mode (%d)
+The driver could not determine the health status of the persistent memory disk.
+The driver could not discover the device's interleaving settings.
+The driver could not discover whether boot-time operations, like save and restore, succeeded.
+The driver could not interpret the device's memory resources.
+The driver could not read the device's serial number.
+The driver could not register to be notified of health-related events on the NVDIMM.
+The driver couldn't configure the dump stack on persistent memory disk %1, which may cause hibernation or memory dump generation to fail.
+The driver encountered an internal error.
+The driver failed to initialize the dump stack because the FailCrashDumpInitialization value is set in the driver registry
+The driver for persistent memory disk %1 encountered an internal error. The information in the Details tab might help Microsoft or your platform vendor to diagnose the problem.
+The persistent memory disk %1 changed its powerfail persistence mode to %2. (0 is PerformanceMode, 1 is DurabilityMode)
+The persistent memory disk %1 is inaccessible because at least one of its NVDIMMs are locked. Contact your hardware vendor for instructions on how to unlock the NVDIMMs.
+The physical devices that make up persistent memory disk %1 have an atomicity setting that is incompatible with the data on the disk. Windows didn't start the disk to prevent data loss.
+The problem with the persistent memory disk %1 was resolved and it is now back in read-write mode.
+There is an uncorrectable memory error in a critical region of the persistent memory disk.
+timeSinceLastHealthStatusChange_ms
+tLH9G
+Translation
+u;HcG
+UATAUAVAWH
+UL-`5P
+unhealthy
+unknown
+uP@8}Xt
+UseRegularWritesAndFlushes
+USVWAVH
+UVWATAUAVAWH
+UVWATAWH
+UVWAVAWH
+UWATAVAWH
+UWAVH
+V"WJW=\
+V.qNDR
+V0T0R
+VarFileInfo
+VendorId
+vendorId
+VendorId
+VMAP4
+VS_VERSION_INFO
+VWATAUAVH
+VWATAVAWH
+VWAVH
+Warning
+warning
+Washington1
+WATAUAVAWH
+WAVAWH
+WEVT :
+WEVT_TEMPLATE
+win:Critical
+win:Error
+win:Info
+win:Informational
+win:Warning
+Windows does not support this configuration: two or more NVDIMMs on this system are part of an interleaved set. Back up the data on the interleaved set to a different drive and then break up the interleaved set. Consider using Storage Spaces if NVDIMM capacity needs to be aggregated.
+Write
+Write request
+x ATAVAWH
+x AVH
+x UATAUAVAWH
+x"D9d$Xt
+X_^[]
+xA_A^A]A\_^[]
+y0w0u
+ZeroFirstSectors
+ZwClose
+ZwCreateDirectoryObject
+ZwDeleteValueKey
+ZwMakeTemporaryObject
+ZwMapViewOfSection
+ZwOpenKey
+ZwOpenSection
+ZwSetValueKey
+ZwUnmapViewOfSection
+ZwUpdateWnfStateData

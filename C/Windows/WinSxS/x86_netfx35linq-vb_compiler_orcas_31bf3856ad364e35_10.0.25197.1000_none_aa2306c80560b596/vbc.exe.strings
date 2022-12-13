@@ -1,0 +1,5122 @@
+                  
+                                                    a.Remove() 
+                                                    'prefix and namespace match.  Remove the unneeded ns attribute 
+                                                a = Nothing 
+                                                End If 
+                                                Exit For 
+                                                If ns = currentInScopeNs Then 
+                                                'prefix is in scope but refers to something else.  Leave the ns attribute. 
+                                            a.Remove() 
+                                            End If 
+                                            If prefix.Equals(currentInScopePrefix) Then 
+                                            'prefix and namespace match.  Remove the unneeded ns attribute 
+                                        a = Nothing 
+                                        Dim currentA As Global.System.Xml.Linq.XAttribute = attributes(i) 
+                                        Dim currentInScopeNs As Global.System.Xml.Linq.XNamespace = currentA.Annotation(Of Global.System.Xml.Linq.XNamespace)() 
+                                        Dim currentInScopePrefix As String = currentA.Name.LocalName 
+                                        End If 
+                                        Exit For 
+                                        If currentInScopeNs IsNot Nothing Then 
+                                        If ns = currentInScopeNs Then 
+                                        'prefix is in scope but refers to something else.  Leave the ns attribute. 
+                                    a.Remove() 
+                                    attributes.Add(a) 
+                                    Dim currentInScopeNs As Global.System.Xml.Linq.XNamespace = inScopeNs(i) 
+                                    Dim currentInScopePrefix As String = inScopePrefixes(i) 
+                                    Dim lastIndex As Integer = attributes.Count - 1 
+                                    End If 
+                                    For i As Integer = 0 To lastIndex 
+                                    If prefix.Equals(currentInScopePrefix) Then 
+                                    'namespace is not defined either.  Add this attributes list 
+                                    Next 
+                                    'Prefix is definitely not in scope  
+                                Dim lastIndex As Integer = inScopePrefixes.Length - 1 
+                                End If 
+                                For i As Integer = 0 To lastIndex 
+                                If a IsNot Nothing Then 
+                                If attributes IsNot Nothing Then 
+                                Next 
+                                'Now check whether it's going to be in scope because it is in the attributes list 
+                                'Prefix is not in scope 
+                            End If 
+                            If a IsNot Nothing Then 
+                            If inScopePrefixes IsNot Nothing AndAlso inScopeNs IsNot Nothing Then 
+                        Dim ns As Global.System.Xml.Linq.XNamespace = a.Annotation(Of Global.System.Xml.Linq.XNamespace)() 
+                        Dim prefix As String = a.Name.LocalName 
+                        End If 
+                        If ns IsNot Nothing Then 
+                        Return RemoveNamespaceAttributes(inScopePrefixes, inScopeNs, attributes, elems) 
+                    a = nextA 
+                    Dim elems As Global.System.Collections.IEnumerable = TryCast(obj, Global.System.Collections.IEnumerable) 
+                    Dim nextA As Global.System.Xml.Linq.XAttribute = a.NextAttribute 
+                    End If 
+                    Exit For 
+                    If a.IsNamespaceDeclaration() Then 
+                    If elems IsNot Nothing Then 
+                    item.SetAttributeValue(name, value) 
+                    item.Value = value 
+                    Return CType(item.Attribute(name), String) 
+                    Return Global.System.Linq.Enumerable.Select(elems, AddressOf New RemoveNamespaceAttributesClosure(inScopePrefixes, inScopeNs, attributes).ProcessXElement) 
+                    Return Global.System.Linq.Enumerable.Select(Global.System.Linq.Enumerable.Cast(Of Object)(obj), AddressOf New RemoveNamespaceAttributesClosure(inScopePrefixes, inScopeNs, attributes).ProcessObject) 
+                    Return InternalXmlHelper.RemoveNamespaceAttributes(m_inScopePrefixes, m_inScopeNs, m_attributes, elem) 
+                    Return item.Value 
+                    Return obj 
+                    Return RemoveNamespaceAttributes(inScopePrefixes, inScopeNs, attributes, elem) 
+                Dim a As Global.System.Xml.Linq.XAttribute = e.FirstAttribute 
+                Dim elem As Global.System.Xml.Linq.XElement = TryCast(obj, Global.System.Xml.Linq.XElement) 
+                Dim elems As Global.System.Collections.Generic.IEnumerable(Of Global.System.Xml.Linq.XElement) = TryCast(obj, Global.System.Collections.Generic.IEnumerable(Of Global.System.Xml.Linq.XElement)) 
+                Else 
+                End If 
+                End While 
+                For Each item As Global.System.Xml.Linq.XElement In source 
+                If elem IsNot Nothing Then 
+                If elems IsNot Nothing Then 
+                If Not elem Is Nothing Then 
+                m_attributes = attributes 
+                m_inScopeNs = inScopeNs 
+                m_inScopePrefixes = inScopePrefixes 
+                Next 
+                Return CType(source.Attribute(name), String) 
+                Return InternalXmlHelper.RemoveNamespaceAttributes(m_inScopePrefixes, m_inScopeNs, m_attributes, elem) 
+                Return Nothing 
+                source.SetAttributeValue(name, value) 
+                While a IsNot Nothing 
+              Throw New Global.System.ArgumentException("Property can only be set to Nothing")
+             Return
+            <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)> _ 
+            a.AddAnnotation(ns) 
+            Dim a As New Global.System.Xml.Linq.XAttribute(name, ns.NamespaceName) 
+            End Function 
+            End Get 
+            End If 
+            End Set 
+            End Sub 
+            Friend Function ProcessObject(ByVal obj As Object) As Object 
+            Friend Function ProcessXElement(ByVal elem As Global.System.Xml.Linq.XElement) As Global.System.Xml.Linq.XElement 
+            Friend Sub New(ByVal inScopePrefixes() As String, ByVal inScopeNs() As Global.System.Xml.Linq.XNamespace, ByVal attributes As Global.System.Collections.Generic.List(Of Global.System.Xml.Linq.XAttribute)) 
+            Get 
+            If e IsNot Nothing Then 
+            If obj IsNot Nothing Then 
+            If value Is Nothing Then 
+            Private ReadOnly m_attributes As Global.System.Collections.Generic.List(Of Global.System.Xml.Linq.XAttribute) 
+            Private ReadOnly m_inScopeNs As Global.System.Xml.Linq.XNamespace() 
+            Private ReadOnly m_inScopePrefixes As String() 
+            Return a 
+            Return e 
+            Return New Global.System.Xml.Linq.XAttribute(name, value) 
+            Return obj 
+            Set(ByVal value As String) 
+           |2(Of |4)(|3)
+           End If
+           If |1 ISNOT Nothing Then
+           return |1
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)> _
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)> _ 
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _ 
+        <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()> _ 
+        <Global.System.Runtime.CompilerServices.ExtensionAttribute()> _ 
+        End Class 
+        End Function 
+        End Property 
+        End Sub
+        Private NotInheritable Class RemoveNamespaceAttributesClosure 
+        Private Sub New()
+        Public Shared Function CreateAttribute(ByVal name As Global.System.Xml.Linq.XName, ByVal value As Object) As Global.System.Xml.Linq.XAttribute 
+        Public Shared Function CreateNamespaceAttribute(ByVal name As Global.System.Xml.Linq.XName, ByVal ns As Global.System.Xml.Linq.XNamespace) As Global.System.Xml.Linq.XAttribute 
+        Public Shared Function RemoveNamespaceAttributes(ByVal inScopePrefixes() As String, ByVal inScopeNs() As Global.System.Xml.Linq.XNamespace, ByVal attributes As Global.System.Collections.Generic.List(Of Global.System.Xml.Linq.XAttribute), ByVal e As Global.System.Xml.Linq.XElement) As Global.System.Xml.Linq.XElement 
+        Public Shared Function RemoveNamespaceAttributes(ByVal inScopePrefixes() As String, ByVal inScopeNs() As Global.System.Xml.Linq.XNamespace, ByVal attributes As Global.System.Collections.Generic.List(Of Global.System.Xml.Linq.XAttribute), ByVal obj As Global.System.Collections.IEnumerable) As Global.System.Collections.IEnumerable 
+        Public Shared Function RemoveNamespaceAttributes(ByVal inScopePrefixes() As String, ByVal inScopeNs() As Global.System.Xml.Linq.XNamespace, ByVal attributes As Global.System.Collections.Generic.List(Of Global.System.Xml.Linq.XAttribute), ByVal obj As Object) As Object 
+        Public Shared Property AttributeValue(ByVal source As Global.System.Collections.Generic.IEnumerable(Of Global.System.Xml.Linq.XElement), ByVal name As Global.System.Xml.Linq.XName) As String 
+        Public Shared Property AttributeValue(ByVal source As Global.System.Xml.Linq.XElement, ByVal name As Global.System.Xml.Linq.XName) As String 
+        Public Shared Property Value(ByVal source As Global.System.Collections.Generic.IEnumerable(Of Global.System.Xml.Linq.XElement)) As String 
+        Return "<generated type>"
+      Continue For
+     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Never)> _ 
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _ 
+    |1
+    '|1' calls '|2'.$Constructor '|1' cannot call itself:K'|1' cannot inherit from |3 '|2' because '|2' is declared 'NotInheritable'.Y'|1' and '|2' cannot overload each other because they differ only by optional parameters.R'|1' and '|2' cannot overload each other because they differ only by return types.JType character '|1' cannot be used in a declaration with an explicit type.\Type character cannot be used in a 'Sub' declaration because a 'Sub' doesn't return a value.
+    '|1' contains '|2' (variable '|3').7Structure '|1' cannot contain an instance of itself: |2
+    '|1' inherits from '|2'.)Class '|1' cannot inherit from itself: |2,Classes can inherit only from other classes.
+    '|1' is constrained to '|2'.7Type parameter '|1' cannot be constrained to itself: |2LType parameter with a 'Structure' constraint cannot be used as a constraint.
+    '|1': |2
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _ 
+    End Class 
+    End if
+    Extension method '|1' defined in '|2'.0Anonymous type must contain at least one member.8Anonymous type member name must be preceded by a period.,Identifier expected, preceded with a period.;Anonymous type initializers are not valid in debug windows.
+    Extension method '|1' defined in '|2': |3>Method does not have a signature compatible with the delegate.7Type arguments could not be inferred from the delegate.
+    Friend NotInheritable Class InternalXmlHelper 
+    If .|1 Is Nothing Then Return False
+    If .|1 IsNot Nothing Then Return False
+    If i = "[" OrElse i ="]" Then
+    If Not Global.System.Char.IsLetterOrDigit(i) AndAlso i <> "_"c Then
+    Return """" & DirectCast(p, Global.System.String) & """"
+    Return "<enumerable type>"
+    Return "Nothing"
+    Return p.ToString()
+   '|1'
+   |1KType arguments inferred for method '|1' result in the following errors :|2.
+   Assembly '|1' references assembly '|2')
+   Assembly '|1' references project '|2')
+   Project '|1' references assembly '|2'(
+   Project '|1' references project '|2'
+ !""#
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ !+"#$%&'()*
+ %s="
+ .NET Framework
+ _^[]
+ '|1' is not a parameter of '|2'.7'|1' is not valid on an interface property declaration.7Parameter '|1' of '|2' already has a matching argument.4'|1' is not valid on an interface event declaration.
+ +!++"
+ = Value
+ >Ph"v
+ >Rh"v
+ 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+ 0F0\0
+ 0L2W2a2l2v2
+ 6l7p7t7x75:
+- ADVANCED -
+ Alias "
+ As <bad array type>
+ As Integer
+ BC%04d : 
+- CODE GENERATION -
+- DEBUG VERSION ONLY -
+- ERRORS AND WARNINGS -
+'-' expected.KInterface members must be methods, properties, events, or type definitions.1Statement cannot appear within an interface body.KStatement cannot appear within an interface body. End of interface assumed.
+ 'Inherits' not valid in Modules."'Implements' not valid in Modules.&Implemented type must be an interface.,'|1' is not valid on a constant declaration..'|1' is not valid on a WithEvents declaration.3'|1' is not valid on a member variable declaration.
+- INPUT FILES -
+ jjjjj
+ jjjjjjj
+- LANGUAGE -
+ Lib "
+ Microsoft Corporation.  All rights reserved.
+ Microsoft Operations Puerto Rico1
+- MISCELLANEOUS -
+- OUTPUT FILE -
+ PhRv
+ QhCy
+- RESOURCES -
+ tOWVQ
+ Wh'}
+!!!DECIMAL!!!
+![CDATA[
+!'|1' and '|2' cannot be combined.a|1 '|2' must be declared 'Overloads' because another '|2' is declared 'Overloads' or 'Overrides'.FOverloading methods declared in multiple base interfaces is not valid.X'|1' must be declared 'MustInherit' because it contains methods declared 'MustOverride'.z'Handles' in classes must specify a 'WithEvents' variable, 'MyBase', 'MyClass' or 'Me' qualified with a single identifier.a'|1', implicitly declared for |2 '|3', cannot shadow a 'MustOverride' method in the base |4 '|5'.
+!'|1' cannot be converted to '|2'.'Value '|1' cannot be converted to '|2'.
+!'|1' statement requires an array.&ParamArray parameter must be an array.5ParamArray parameter must be a one-dimensional array.)Array exceeds the limit of 32 dimensions.%Arrays cannot be declared with 'New'.
+!1<1f1
+!9w(t$
+!Invalid object initializer value.
+!'Sub Main' was not found in '|1'.
+!This program cannot be run in DOS mode.
+!unrecognized option '%s'; ignored
+"                                  
+"%s" -x -s %u
+"'|1' accessor of '|2' is obsolete.
+"0^1a2
+"Adding resource file '%s' as '%s'
+"exe"
+"'Group' or an identifier expected.9'Group' not allowed in this context; identifier expected.
+"library"
+"module"
+"thItMIt@I
+"winexe"
+### .NET Framework version: %s
+### Compiler command line
+### Compiler output
+### Compiler version: %s
+### Issue type: %s
+'### Operating System: %s %d.%d.%d   %s
+### Source file: '%s'
+### User description
+### User Name: %s
+#\'G7
+#Class '|1' could not be created: |0
+#Compilation successful: %u warning
+#contents of all source code files.
+#CreateALink
+#text
+#U,RP
+#Unable to open module file '|1': |0
+$### User suggested correct behavior
+$$$$$$$$$$$$$$$$$$$$$$$$$
+$$;] sW
+$$9:t
+$$98u
+$$99t
+$$delete
+$$f9E
+$`2X`F
+$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+$0(082=2O2k2
+$0>0k0
+$9(9,9094989\9
+$CLS%u
+$Compilation successful: %u warnings
+$Exception
+$Init
+$MAX$
+$MAXVALID$
+$STATIC$
+$UNDEF$
+$VB$Closure_%s
+$VB$ClosureStub_%s_%s
+$VB$Group
+$VB$Group2
+$VB$It
+$VB$It1
+$VB$It2
+$VB$Key
+$VB$Local_%s
+$VB$Me
+$VB$NonLocal_%s
+$Visual Basic internal compiler error
+%_BA]
+%000@0K0
+%d.%d.%04d
+%d.%d.%04d.%d
+%d.%d.%d.%d
+%hu.%hu.%hu.%hu
+%li/%li/%04li
+%li/%li/%04li %li:%02li:%02li 
+%li:%02li:%02li 
+%'New' cannot be used on an interface.l'New' cannot be used on class '|1' because it contains a 'MustOverride' member that has not been overridden.
+%No accessible non-generic '|1' found.9No accessible '|1' accepts this number of type arguments.]Constraint '|1' conflicts with the constraint '|2' already specified for type parameter '|3'.fCannot inherit interface '|1' because it could be identical to interface '|2' for some type arguments.
+%s = {%u}
+%s BC%05d: %s
+%s%s%u
+%s%s\%s
+%s%u\%s
+%s(%s)
+%s*.*
+%s_%X_%X
+%ws, Version=%hu.%hu.%hu.%hu, Culture=%ws, PublicKeyToken=%ws%ws
+&amp;
+&apos;
+&quot;
+&Statement is not valid in a namespace.
+'(' expected.#'New' is not valid in this context.
+(%d,%d)
+('|1' is ambiguous in the namespace '|2'.>'|1' is ambiguous, imported from the namespaces or types '|2'.@'|1' is ambiguous between declarations in Modules '|2' and '|3'.2'|1' is ambiguous in the application objects '|2'.
+(++)+
+(0,0,0,0)
+(Security attribute '|1' is not valid: |0(Assembly attribute '|1' is not valid: |0&Module attribute '|1' is not valid: |06Security attribute '|1' cannot be applied to a module.
+(Short form: /%s)
+(SVWj
+(Types are not available in this context.
+(Using alternate mscorlib.dll version %s
+')' expected.
+)0A0g0
+)0K0n0
+)Array initializer has too few dimensions.*Array initializer has too many dimensions.)Array initializer is missing |1 elements.+Array initializer has |1 too many elements.?'New' cannot be used on a class that is declared 'MustInherit'.
+)Cannot create an instance of Module '|1'.
+)Compilation failed: %u error, %u warning
+)Generic methods cannot be exposed to COM.
+)Microsoft Root Certificate Authority 20100
+)Microsoft Root Certificate Authority 20110
+)Root namespace '|1' is not CLS-compliant.:Name '|1' in the root namespace '|2' is not CLS-compliant.<Generic parameter constraint type '|1' is not CLS-compliant.
+)Shared 'Sub New' cannot be declared '|1'.7'Class' statement must end with a matching 'End Class'.
+)the value '%s' is invalid for option '%s' the file '%s' is not a text file*code page '%s' is invalid or not installed
+)XML namespace prefix '|1' is not defined.!Duplicate XML attribute '|1|2|3'.
+*?*kXIc
+*Branching out of a 'Finally' is not valid.
+*Compilation failed: %u error, %u warnings
+*Compilation failed: %u errors, %u warning
+*Parameter already declared with name '|1'.8'Loop' cannot have a condition if matching 'Do' has one.
+*Unable to load referenced library '|1': |0
+, Retargetable=Yes
+,'|1' is already declared as '|2' in this |3.
+,Generic methods cannot use 'Handles' clause.P'New' constraint cannot be specified multiple times for the same type parameter.oType argument '|1' is declared 'MustInherit' and does not satisfy the 'New' constraint for type parameter '|2'.
+,Illegal call expression or index expression.WConflict between the default property and the 'DefaultMemberAttribute' defined on '|1'.
+,Methods in a Module cannot be declared '|1'.+Events in a Module cannot be declared '|1'./Members in a Structure cannot be declared '|1'.,Members in a Module cannot be declared '|1'.D'|1' cannot override '|2' because they differ by their return types.
+,Shared 'Sub New' cannot have any parameters.
+,SVW3
+'.' expected.=Local variable '|1' is already declared in the current block.DStatement cannot appear within a method body. End of method assumed.GLocal variable cannot have the same name as the function containing it.
+.#cctor
+.#ctor
+.?AVSafeIntException@@
+.?AVtype_info@@
+.?AVVBRuntimeException@@
+.31/20
+.cctor
+.ctor
+.Inappropriate use of '|1' keyword in a module.='Catch' block never reached, because '|1' inherits from '|2'.}Variable '|1' is passed by reference before it has been assigned a value. A null reference exception could result at runtime.J'Catch' block never reached; '|1' handled above in the same Try statement.aOperands of type Object used for operator '|1'; use the 'IsNot' operator to test object identity.?Bad checksum value, non hex digits or odd number of hex digits.DFile name already declared with a different GUID and checksum value.
+.netmodule
+.option '%s' can be followed only by '+' or '-'"unable to load international DLL: .the maximum number of errors has been exceeded
+.rsrc
+.sdata
+.text
+/%s:%s
+/%s[+|-]
+/Constant cannot be the target of an assignment.2Named arguments are not valid as array subscripts.
+/delaysign
+/'End Sub' must be preceded by a matching 'Sub'.9'End Function' must be preceded by a matching 'Function'.9'End Property' must be preceded by a matching 'Property'.
+/keycontainer
+/keyfile
+/Microsoft (R) Visual Basic Compiler version %s
+/Reference metadata from the specified assembly.
+/reproduce your compiler problem, including the
+/t]f;E
+/The base address for a library or module (hex).
+/XML elements cannot be selected from type '|1'.1XML attributes cannot be selected from type '|1'.:XML descendant elements cannot be selected from type '|1'.tErrors occurred while compiling the Xml schemas in the project.  Because of this, Xml intellisense is not available.
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:S;
+: :$:(:,:0:4:h<l<p<
+: :,:1:C:
+: ;(;@;D<L<h=p=
+: ;';
+: <$<(<,<0<4<8<<<@<D<H<L<
+:!:2:@:Q:o:
+:":::f:
+:":@:Z:o:
+:#:H:
+:#;(;y;
+:$:=:
+:$:3:>:
+:$;X;
+:%;3;
+:&:_:j:
+:(;!<
+:(;0;L<T<p=x=
+:*:L:W:^:}:
+:,:7:G:R:
+:.:e:o:
+:.:p:
+:/:2;9;@;J;U;a;m;
+:/;4;h;l;p;t;x;|;
+:::O:Z:k:r:}:
+::;J;T;d;r;
+:':A:u:
+:':k:
+:';8;s;X>
+:-;Z;n;[<{<
+:?;w;
+:[:f:
+:[;g;l;t;z;
+:\;`;d;h;l;p;t;x;X<\<`<
+:_^[]
+:`<d<h<l<p<t<x<|<
+:`<g<l=p=t=x=|=
+:'|1' is not accessible in this context because it is '|2'.='|1.|2' is not accessible in this context because it is '|3'.
+:+;2;]?
+:<;@;L;Q;c;D<H<
+:=:N:S:f:l:
+:->8>C?N?
+:0;4;
+:0;8;<;G;^;e;
+:0;8;P;T<\<x=
+:0;d;
+:0>;>K>V>o>z>
+:1><>F>
+:3:J:a:x:
+:3;m?
+:3?3Q334T4X4K5
+:4;T;w;
+:5:@:P:T:X:\:|:
+:5:J:U:d:j:u:}:
+:6:T:
+:6;~;
+:7:B:M:]:q:v:
+:8:l:
+:A;c;q;
+:d;h;
+:d<o<
+:E;_;8<
+:Expression recursively calls the containing Operator '|1'.
+:g;p<
+:H:|:
+:h;l;p;t;x;|;
+:h?s?
+:K;p;{;
+:K;r<]=
+:L;W;
+:L>Q>c>
+:m:s:
+:O:o:
+:Ot?S
+:P;c;o;
+:R;\;f;
+:'ReadOnly' variable cannot be the target of an assignment.2'Exit Sub' is not valid in a Function or Property.2'Exit Property' is not valid in a Function or Sub.2'Exit Function' is not valid in a Sub or Property.JExpression is a value and therefore cannot be the target of an assignment.GFor loop control variable '|1' already in use by an enclosing For loop.DNext control variable does not match For loop control variable '|1'.='Case Else' can only appear inside a 'Select Case' statement.8'Case' can only appear inside a 'Select Case' statement.
+:t:|:
+:T:X:\:`:d:
+:t;x;
+:u:";
+:X;\;
+:X;g;~;
+:X=\=`=d=h=l=p=t=x=|=
+; ;$;(;,;0;4;8;<;@;D;H;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;<<D<\<t<
+; ;1;<;M;X;
+; ;H?`?d?h?l?p?t?x?|?
+; <5<H<h<
+;!;3;b;
+;";:;D;U;`;s;~;
+;"<'<
+;"<q<
+;$;,;4;<;D;L;T;\;d;l;t;|;
+;$;.;9;G;S;_;k;
+;$<)<O<T<v<{<
+;%<3<[<i<
+;&;};
+;&;1;
+;&<1<V=a=s=~=
+;(<\<
+;(<J<
+;(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+;)<4<M<X<}<
+;,;C;N;
+;,<~<
+;,>1>
+;.;=;L;
+;.===
+;/;;;Z;f;r;
+;/;Y;
+;:t @
+;:t/@
+;';1;<;F;Q;[;f;
+;';2;;;u;
+;';q;
+;@<P<
+;\;g;
+;^;i;
+;|1 '|2' and |3 '|4', declared in '|5', conflict in |6 '|7'._Only one of 'Public', 'Private', 'Protected', 'Friend', or 'Protected Friend' can be specified.POnly one of 'NotOverridable', 'MustOverride', or 'Overridable' can be specified.
+;+;@;x;
+;'<,<y<
+;<;k;+<0<B<
+;<;p;
+;<<V<]<w<
+;=;D;
+;><l<L=P=T=X=\=`=d=h=
+;0@0R0
+;0<4<8<<<@<D<
+;1;>;X;{;
+;3<><
+;4;W;
+;4<?<i<
+;4=P?U?g?
+;5;;;H;P;
+;7;x<
+;9;F;
+;9<><U<`<
+;a;~;
+;Anonymous type member or property '|1' is already declared.zCannot convert anonymous type to an expression tree because a property of the type is used to initialize another property.yAnonymous type property '|1' cannot be used in the definition of a lambda expression within the same initialization list.Y'Extension' attribute can be applied only to 'Module', 'Sub', or 'Function' declarations.1Extension methods can be defined only in modules.jExtension methods must declare at least one parameter. The first parameter specifies which type to extend.
+;B;[;
+;B;W;j;q;v;
+;c;n;s;
+;Copyright (c) Microsoft Corporation.  All rights reserved.
+;d<h<t<y<
+;'Default' can be applied to only one property name in a |1.
+;Division by zero occurred while evaluating this expression.
+;E uZ
+;F<n<
+;F=u=
+;G<`<
+;H\u-
+;I;i;
+;I;P<
+;I<P<c<
+;Implementing class '|1' for interface '|2' cannot be found.UReference to object under construction is not valid when calling another constructor.^Implicit reference to object under construction is not valid when calling another constructor.|Member '|1' cannot be found in class '|2'. This condition is usually the result of a mismatched 'Microsoft.VisualBasic.dll'.mClass '|1' cannot be found. This condition is usually the result of a mismatched 'Microsoft.VisualBasic.dll'.+Property accessors cannot be declared '|1'.
+;k<w<
+;'MustOverride' method '|1' cannot be called with 'MyClass'.9'End' statement cannot be used in class library projects.5Variable '|1' hides a variable in an enclosing block.>'Module' statements can occur only at file or namespace level.A'Namespace' statements can occur only at file or namespace level.AStatement cannot appear within an Enum body. End of Enum assumed.6'Option Strict' can be followed only by 'On' or 'Off'.;'End Structure' must be preceded by a matching 'Structure'.5'End Module' must be preceded by a matching 'Module'.;'End Namespace' must be preceded by a matching 'Namespace'.
+;'NotInheritable' classes cannot have members declared '|1'.
+;O<z<
+;o=v=@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+;Q;j;w;
+;'Return' statement in a Sub or a Set cannot return a value..String constants must end with a double quote.
+;rHt<WV
+;T<X<
+;Type character '|1' does not match declared data type '|2'..'Sub' or 'Function' expected after 'Delegate'.
+;U;f;m;
+;u0uS
+;V;r;
+;W?c?
+;X>c>
+;XDt';XHt"
+;XHt13
+;xHtDVW
+;xHu\
+;ZPt!
+? ?$?(?,?0?4?8?<?@?D?H?L?
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+? ?$?(?<?G?W?b?
+? ?%?I?N?r?w?
+? ?(?0?8?@?H?P?
+? ?^?e?l?v?
+?"?9?H?S?
+?#?-?8?
+?$?)?J?^?s?
+?$?7?D?
+?%?,?9?X?~?
+?(?8?\?y?
+?(?I?T?r?}?
+?)?3?=?G?Q?[?e?o?y?
+?*?s?
+?*u#j
+?.?=?
+?;?B?k?
+?;?H?g?
+?;?H?O?g?m?t?
+?'?,?K?Y?^?
+??_U@YAPAXI@Z
+??_V@YAXPAX@Z
+??2@YAPAXI@Z
+??3@YAXPAX@Z
+?@?t?
+?^?d?y?
+?_type_info_dtor_internal_method@type_info@@QAEXXZ
+?{u;W
+?{uIW
+?+u j
+?<?`?
+?0?]?
+?0?5?;?U?[?k?q?
+?0F01181T1
+?2>5E5
+?3?>?i?x?
+?4?h?
+?5?<?L?}?
+?5J5[5f5
+?8?O?V?y?
+?9x$u
+?C?N?
+?'Catch' cannot appear after 'Finally' within a 'Try' statement.0'Catch' cannot appear outside a 'Try' statement.4'Finally' can only appear once in a 'Try' statement.2'Finally' cannot appear outside a 'Try' statement./'End Try' must be preceded by a matching 'Try'.)'Try' must end with a matching 'End Try'.,'|1' is not valid on a Delegate declaration.
+?'Exit Operator' is not valid. Use 'Return' to exit an operator.0'|1' parameters cannot be declared 'ParamArray'..'|1' parameters cannot be declared 'Optional'.$Operators must be declared 'Public'.$Operators must be declared 'Shared'."Operators cannot be declared '|1'.&Operator '|1' must have one parameter.'Operator '|1' must have two parameters.5Operator '|1' must have either one or two parameters.GConversion operators must be declared either 'Widening' or 'Narrowing'.(Operators cannot be declared in modules./Only conversion operators can be declared '|1'.EParameter of this unary operator must be of the containing type '|1'.SAt least one parameter of this binary operator must be of the containing type '|1'.mEither the parameter type or the return type of this conversion operator must be of the containing type '|1'.1Operator '|1' must have a return type of Boolean.
+?G?r?
+?JtLjJj
+?Specifies binary-style string comparisons. This is the default.(Specifies text-style string comparisons.*Require explicit declaration of variables."Enforce strict language semantics."Allow type inference of variables..Insert command-line settings from a text file.)Do not display compiler copyright banner.
+?Statement recursively calls the containing '|1' for event '|2'.sImplicit conversion from '|2' to '|3' in copying the value of 'ByRef' parameter '|1' back to the matching argument.{|1 '|2' conflicts with other members of the same name across the inheritance hierarchy and so should be declared 'Shadows'.U'Class_Initialize' event is no longer supported. Use 'Sub New' to initialize a class.U'Class_Terminate' event is no longer supported. Use 'Sub Finalize' to free resources.
+?'Structure' statement must end with a matching 'End Structure'.9'Module' statement must end with a matching 'End Module'.?'Namespace' statement must end with a matching 'End Namespace'.J'Option' statements must precede any declarations or 'Imports' statements.-Structures cannot have 'Inherits' statements.DStructures cannot declare a non-shared 'Sub New' with no parameters./'End Get' must be preceded by a matching 'Get'.3'Get' statement must end with a matching 'End Get'./'End Set' must be preceded by a matching 'Set'.3'Set' statement must end with a matching 'End Set'.HStatement cannot appear within a property body. End of property assumed..'ReadOnly' and 'WriteOnly' cannot be combined.
+?terminate@@YAXXZ
+?'WriteOnly' properties cannot have an access modifier on 'Set'.>'ReadOnly' properties cannot have an access modifier on 'Get'.JProperty accessors cannot be declared '|1' in a 'NotOverridable' property.CProperty accessors cannot be declared '|1' in a 'Default' property.JProperty cannot be declared '|1' because it contains a 'Private' accessor.`Implementing class '|1' for interface '|2' is not accessible in this context because it is '|3'.^Arrays used as attribute arguments are required to explicitly specify values for all elements.u'Exit AddHandler', 'Exit RemoveHandler' and 'Exit RaiseEvent' are not valid. Use 'Return' to exit from event members.CStatement cannot appear within an event body. End of event assumed.SStatement does not declare an 'AddHandler', 'RemoveHandler' or 'RaiseEvent' method.4'Custom Event' must end with a matching 'End Event'.C'AddHandler' declaration must end with a matching 'End AddHandler'.I'RemoveHandler' declaration must end with a matching 'End RemoveHandler'.C'RaiseEvent' declaration must end with a matching 'End RaiseEvent'.7'End AddHandler' must be the first statement on a line.:'End RemoveHandler' must be the first statement on a line.
+@ QRP
+@$SVW
+@$SVW3
+@$WPS
+@(RPQ
+@.reloc
+@;FXr
+@\@uE
+@\_^[
+@\WPjO
+@_^[]
+@'|1' is ambiguous across the inherited interfaces '|2' and '|3'.
+@8;xt
+@8;xtu
+@8;Xtu
+@8;xtu
+@8;Xtu
+@cref
+@file
+@G t(
+@h9E0
+@Local variable '|1' cannot be referred to before it is declared."'|1' is not valid within a Module."'|1' is valid only within a class.
+@name
+@path
+@PSVW
+@t)<,s
+@t,<,s
+@y u"
+[|1Event] = CType( [|1Event].Combine([|1Event], |2), |3 )
+[|1Event] = CType( [|1Event].Remove([|1Event], |2), |3 )
+[0`0r001X1
+[0f0F1P1a1l1
+[LG;~(r
+\StringFileInfo\%04x%04x\%s
+\VarFileInfo\Translation
+\wer.dll
+] VWSPj
+]$WSP
+](PSVQ
+]XML namespace prefix '|1' is reserved for use by XML and the namespace URI cannot be changed.:Required attribute 'version' missing from XML declaration.2XML declaration does not allow attribute '|1|2|3'.XEmbedded expression cannot appear inside a quoted attribute value.  Try removing quotes.GXML attribute 'version' must be the first attribute in XML declaration.9XML attribute '|1' must appear before XML attribute '|2'.
+^ ^[]
+^ tN3
+^$j0j
+^(_^[]
+^,WjDP
+^0SPQ
+^0SWQ
+^2-3>4o4\5
+^HWj8P
+^Requested operation is not available because the runtime library function '|1' is not defined.RThe targeted version of the Visual Basic runtime library does not support modules.cThe targeted version of the Visual Basic runtime library does not support the OptionText attribute.
+^T9^X
+_(_^[
+_:_[]
+_[tCjIh
+__dllonexit
+__iob_func
+__p__commode
+__p__fmode
+__set_app_type
+__setusermatherr
+__wgetmainargs
+__winitenv
+_|_^[
+_|1 '|2' must be declared 'Shadows' because another member with this name is declared 'Shadows'.f'|1' and '|2' cannot overload each other because they differ only by the types of optional parameters.R'|1' cannot override '|2' because they differ by the types of optional parameters.GUnable to write temporary file because temporary path is not available.X'|1' is not declared or the module containing it is not loaded in the debugging session.`Because this evaluation could cause side effects, it will not be executed until enabled by user.
+_'|1' and '|2' cannot overload each other because they differ only by 'ReadOnly' or 'WriteOnly'.@Class '|1' cannot be indexed because it has no default property.f'|1' and '|2' cannot overload each other because they differ only by parameters declared 'ParamArray'.
+_0SVP
+_4jdj
+_8j`j
+_access_s
+_adjust_fdiv
+_amsg_exit
+_cexit
+_CIfmod
+_CIpow
+_Closure$_
+_Closure$__%u
+_Collection
+_configthreadlocale
+_controlfp_s
+_crt_debugger_hook
+_CxxThrowException
+_decode_pointer
+_ecvt_s
+_encode_pointer
+_errno
+_Error
+_except_handler4_common
+_exit
+_fdopen
+_Handler$_%X
+_Hj,j
+_i64tow_s
+_initterm
+_initterm_e
+_invoke_watson
+_isnan
+_'IsNot' operand of type '|1' can be compared only to 'Nothing' because '|1' is a nullable type.
+_itow_s
+_Lambda$__%u
+_local_unwind4
+_localtime64
+_lock
+_mbsinc
+_mbspbrk
+_mktime64
+_onexit
+_open_osfhandle
+_purecall
+_recalloc
+_resetstkoflw
+_snwprintf_s
+_stricmp
+_strnicmp
+_swab
+_time64
+_tkCharCon
+_tkDateCon
+_tkDecCon
+_tkEOF
+_tkEOL
+_tkFltCon
+_tkIntCon
+_tkStrCon
+_ui64tow_s
+_ultow_s
+_unlock
+_vscwprintf
+_vsnwprintf
+_vsnwprintf_s
+_waccess
+_waccess_s
+_wcsicmp
+_wcslwr_s
+_wcsnicmp
+_wcstoi64
+_wmakepath_s
+_wsplitpath_s
+_wtoi
+_wtol
+_XcptFilter
+_XmlAbort
+_XmlAttributeData
+_XmlCData
+_XmlCharData
+_XmlComment
+_XmlNCName
+_XmlPI
+_XmlReference
+_XmlWhitespace
+`.data
+`2d2h2l2p2t2x2|2
+`t`h(
+'{' expected.
+{$j,j
+{$j0j
+{$j4j
+{$j8j
+{0WPV
+{'GoTo |1' is not valid because '|1' is inside a scope that defines a variable that is used in a lambda or query expression.FInstance of restricted type '|1' cannot be used in a query expression.[Range variable name can be inferred only from a simple or qualified name with no arguments.(Range variable '|1' is already declared.>Type characters cannot be used in range variable declarations.f'ReadOnly' variable cannot be the target of an assignment in a lambda expression inside a constructor.BMulti-dimensional array cannot be converted to an expression tree.BLate binding operations cannot be converted to an expression tree.
+| _^[]
+|0SVW
+|1 '|2' and partial |3 '|4' declared in '|5' conflict in |6 '|7', but are being merged because one of them is declared partial.
+|1 '|2' implicitly declares '|3', which conflicts with a member implicitly declared for |4 '|5' in the base |6 '|7'. |1 should be declared 'Shadows'.('|1' accessor of '|2' is obsolete: '|3'."'|1' accessor of '|2' is obsolete.]|1 '|2' conflicts with |3 '|2' in the base |4 '|5' and so should not be declared 'Overloads'.
+|1 '|2' implicitly declares '|3', which conflicts with a member implicitly declared for |4 '|5' in the base |6 '|7'. So the |1 should not be declared 'Overloads'.)Type of member '|1' is not CLS-compliant.S'|1' is not CLS-compliant because it derives from '|2', which is not CLS-compliant.2Return type of function '|1' is not CLS-compliant.,Type of parameter '|1' is not CLS-compliant.['|1' is not CLS-compliant because the interface '|2' it inherits from is not CLS-compliant.]|1 '|2' cannot be marked CLS-compliant because its containing type '|3' is not CLS-compliant.
+|1 '|2' implicitly declares '|3', which conflicts with a member in the base |4 '|5', and so the |1 should be declared 'Shadows'.
+|1 '|2' implicitly declares '|3', which conflicts with a member in the base |4 '|5', and so the |1 should not be declared 'Overloads'.~|1 '|2' conflicts with a member implicitly declared for |3 '|4' in the base |5 '|6' and so should not be declared 'Overloads'.
+|1 '|2' shadows an overloadable member declared in the base |3 '|4'.  If you want to overload the base method, this method must be declared 'Overloads'.T|1 '|2' conflicts with |3 '|2' in the base |4 '|5' and should be declared 'Shadows'.
+|1 '|2' shadows an overridable method in the base |3 '|4'. To override the base method, this method must be declared 'Overrides'.
+|1 = |2(Of |3)(|1)
+'|1' cannot be exposed to COM as a property 'Let'. You will not be able to assign non-object values (such as numbers or strings) to this property from Visual Basic 6.0 using a 'Let' statement.
+'|1' cannot be made nullable, and cannot be used as the data type of an array element, field, anonymous type member, type argument, 'ByRef' parameter, or return statement.
+'|1' cannot expose type '|2' used in the underlying delegate type '|3' of the event it is implementing outside the project through |4 '|5'.jSpecified access '|1' for '|2' does not match the access '|3' specified on one of its other partial types.
+'|1' cannot expose type '|2' used in the underlying delegate type '|3' of the event it is implementing to |4 '|5' through |6 '|7'.
+'|1' exists in multiple base interfaces. Use the name of the interface that declares '|1' in the 'Implements' clause instead of the name of the derived interface.'Statement is not valid in an interface.-'Sub New' cannot implement interface members.MArrays declared as structure members cannot be declared with an initial size.>Events declared with an 'As' clause must have a delegate type.
+'|1' in class '|2' cannot override '|3' in class '|4' because an intermediate class '|5' overrides '|3' in class '|4' but is not accessible.lType of '|1' cannot be inferred because the loop bounds and the step clause do not convert to the same type.fType of '|1' is ambiguous because the loop bounds and the step clause do not convert to the same type."'=' expected (object initializer).YName of field or property being initialized in an object initializer must start with '.'.
+'|1' is ambiguous.&Default member '|1' is not a property.
+'|1' is an unsupported type.+Enums must be declared as an integral type.)|1 parameters cannot be declared 'ByRef'.VReference required to assembly '|1' containing the type '|2'. Add one to your project.TReference required to module '|1' containing the type '|2'. Add one to your project.G'Return' statement in a Function, Get, or Operator must return a value."Unable to find required file '|1'.%Field '|1' is of an unsupported type.W'|1' has a return type that is not supported or parameter types that are not supported.1Property '|1' with no parameters cannot be found.<Property or field '|1' does not have a valid attribute type.0Attributes cannot be applied to local variables.$Field or property '|1' is not found.eAttribute '|1' cannot be applied to '|2' because the attribute is not valid on this declaration type.0Attribute '|1' cannot be applied multiple times.
+'|1' is not a member of '|2'.
+'|1' is not a method parameter.*Argument not specified for parameter '|1'.
+'|1' is not an event of '|2'.l'AddHandler' or 'RemoveHandler' statement event operand must be a dot-qualified expression or a simple name.
+'|1' is not CLS-compliant because it overloads '|2' which differs from it only by array of array parameter types or by the rank of the array parameter types.
+'|1' is not declared. File I/O functionality is normally available in the 'Microsoft.VisualBasic' namespace, but the targeted version of the .NET Compact Framework does not support it.
+'|1' is not valid on a Declare.
+-'|1' is not valid on a Structure declaration.)'|1' is not valid on an Enum declaration..'|1' is not valid on an Interface declaration.f'|1' cannot override '|2' because they differ by a parameter that is marked as 'ByRef' versus 'ByVal'.O'MyBase' cannot be used with method '|1' because it is declared 'MustOverride'.
+'|1' is obsolete.5Possible problem detected while building assembly: |0:Possible problem detected while building assembly '|1': |0
+'|1' is obsolete.9'|1' is a module and cannot be referenced as an assembly.9'|1' is an assembly and cannot be referenced as a module.
+'|1' is obsolete: '|2'.
+-'|1' is valid only within an instance method.%'|1' is not valid within a structure.
+|1 This error could also be due to mixing a file reference to '|2' in project '|3' with a file reference to '|4' in project '|5'.  If both assemblies are identical, try replacing these references so both references are from the same location.
+|1 This error could also be due to mixing a file reference with a project reference to assembly '|2.  In this case, try replacing the file reference to '|3' in project '|4' with a project reference to '|5'.=Attribute 'StructLayout' cannot be applied to a generic type.FA class used in the expression is not loaded during debugging session.'Comment statements cannot be evaluated.F'For' loop control variable already in use by an enclosing 'For' loop.C'Next' control variable does not match 'For' loop control variable.
+'|1' values cannot be converted to 'Char'. Use 'Microsoft.VisualBasic.ChrW' to interpret a numeric value as a Unicode character or first convert it to 'String' to produce a digit.nDelegate '|1' requires an 'AddressOf' expression or lambda expression as the only argument to its constructor.LMethod declaration statements must be the first statement on a logical line.d'|1' cannot be named as a parameter in an attribute specifier because it is not a field or property.
+|1-dimensional array of |2LAll parameters must be explicitly typed if any of them are explicitly typed.=Parameter cannot have the same name as its defining function.
+|hK,_
+|MhH:N
+|Pj{Xf;
+'}' expected.%Module '|1' cannot be used as a type.
+} Whku
+}(WSR
+}=j.=z
+}78V!u'
+}Fj.=z
+}Project '|1' makes an indirect reference to assembly '|2', which contains '|3'. Add a file reference to '|4' to your project.MType '|1' cannot be used in an attribute because it is not declared 'Public'.]Type '|1' cannot be used in an attribute because its container '|2' is not declared 'Public'.OAssembly '|1' cannot be created because its path is longer than 259 characters.8'|1' cannot be referenced because it is not an assembly.
+~$_^]
+~(_^]
+~|1 '|2' must implement '|3' for interface '|4'. Implementing property must have matching 'ReadOnly' or 'WriteOnly' specifiers.
+~0_^[
+~0_^]
+~d_^]
+~P_^]
++++++
++++++++++*+++
+++++++++++
+++++++++++++++++
+++++++++++++++++++++++++++++++++&++'++++++++++++++++++++
++020>0d0
++060@0K0l1
++'Catch' must end with a matching 'End Try'.-'Finally' must end with a matching 'End Try'.
++Compilation failed: %u errors, %u warnings
++Enum '|1' must contain at least one member.WStructure '|1' must contain at least one instance member variable or Event declaration.QConstructor call is valid only as the first statement in an instance constructor.)'Sub New' cannot be declared 'Overrides'.V|1 '|2' cannot be declared 'Overrides' because it does not override a |1 in a base |3.
++'GoSub' statements are no longer supported.c'|1' is not declared. File I/O functionality is available in the 'Microsoft.VisualBasic' namespace.u'|1' is not declared. Debug object functionality is available in 'System.Diagnostics.Debug' in the 'System' assembly.<'On GoTo' and 'On GoSub' statements are no longer supported.R'|1' is not declared. Function has moved to the 'Microsoft.VisualBasic' namespace.V'|1' is not declared. Function has moved to the 'System.Math' class and is named '|2'.j'|1' is not declared. 'LSet' statements are no longer supported; use 'Microsoft.VisualBasic.LSet' instead.j'|1' is not declared. 'RSet' statements are no longer supported; use 'Microsoft.VisualBasic.RSet' instead.Z'|1' is not declared. 'Null' constant is no longer supported; use 'System.DBNull' instead.U'|1' is not declared. 'Empty' constant is no longer supported; use 'Nothing' instead.
++'Me' cannot be the target of an assignment.
++Operator '|1' is not defined for type '|2'.
+< <$<(<,<0<4<8<<<@<D<H<L<
+< <$<(<,<0<4<8<<<@<D<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+< <+<;<F<V<a<E=P=
+< =K=
+< =T=
+<!=O=
+<"<f<u<
+<"t)<'t%<-t
+<#<(<-<2<8<@<N<Z<f<r<~<
+<#<><L<X<
+<#<5<@<
+<$<)<;<
+<$=6=;=`=
+<%</<6<A<P<T<X<\<`<d<
+<%=0=@=K=
+<&<0<:<D<N<X<b<l<v<
+<&<0<;<G<S<
+<(<9<D<
+<(=,=0=4=8=_=q=
+<)<3<
+<)=z=
+<,<7<Y<d<
+<,=`=
+</%s>
+</<R<
+</=|=
+</Argument>
+</ArrayElementAccess>
+</ArrayType>
+</Assignment>
+</Attribute>
+</AttributeProperty>
+</Attributes>
+</AttributeSection>
+</Base>
+</BinaryOperation>
+</Block>
+</Bound>
+</Cast>
+</Catch>
+</Char>
+</Class>
+</Comment>
+</Constant>
+</Constructor>
+</ConstructorCall>
+</Continue>
+</Declarations>
+</Delegate>
+</Do>
+</End>
+</Enumeration>
+</Error>
+</Event>
+</Expression>
+</ExpressionStatement>
+</Field>
+</For>
+</ForEach>
+</Goto>
+</Handles>
+</If>
+</ImplementedMethod>
+</Implements>
+</ImportedNameSpace>
+</Interface>
+</Label>
+</Literal>
+</Local>
+</member>
+</Method>
+</MethodCall>
+</MethodName>
+</NameRef>
+</NameSpace>
+</NewArray>
+</NewClass>
+</NewDelegate>
+</Number>
+</OnError>
+</Parameter>
+</Parentheses>
+</Property>
+</PropertyAccess>
+</Quote>
+</RaiseEvent>
+</Ranks>
+</Resume>
+</ResumeNext>
+</Return>
+</Signature>
+</Special>
+</Stop>
+</Switch>
+</t'<?u+F
+</Try>
+</Type>
+</UnaryOperation>
+</Using>
+</Variable>
+</While>
+</With>
+</WithAccess>
+<:=E=K=j=x=
+<'?3?g?s?
+<?xml version="1.0"?>
+<@<t<
+<[>z>
+<\<a<
+<^=i=
+<`=h=
+<`>d>h>l>p>t>x>|>
+<+=<=T=b=t=
+<<=@=o?t?
+<'=A=V=
+<><C<r<w<
+<->D>H>L>P>T>X>\>`>
+<0<Q<t<o=
+<0=7=Y=^=
+<000000
+<1<y<]?
+<3<V<
+<3>Q>
+<4<h<
+<4=9=^=
+<5=6>
+<7<B<
+<7=P=
+<8===
+<9<D<
+<9=E=m=t=t>
+<A<d=
+<anonymous method>
+<anonymous method> (line |1)
+<anonymous type>
+<anonymous type> (line |1)
+<Argument>
+<Argument> DEBUG_NEW_LINE
+<ArrayElementAccess>
+<ArrayType
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"><assemblyIdentity version="1.0.0.0" processorArchitecture="X86" name="vbc" type="win32"></assemblyIdentity><dependency><dependentAssembly><assemblyIdentity type="win32" name="Microsoft.VC90.CRT" version="9.0.21022.8" processorArchitecture="x86" publicKeyToken="1fc8b3b9a1e18e3b"></assemblyIdentity></dependentAssembly></dependency><trustInfo xmlns="urn:schemas-microsoft-com:asm.v3"><security><requestedPrivileges><requestedExecutionLevel level="asInvoker" uiAccess="false"></requestedExecutionLevel></requestedPrivileges></security></trustInfo></assembly>PAD
+<assembly_name>
+<Assignment
+<Attribute
+<AttributeProperty
+<Attributes>
+<AttributeSection
+<B<M<T<s<~<
+<B=I=
+<b=z=
+<bad name>
+<BadNamespace>
+<Base
+<BaseReference />
+<BinaryOperation
+<BinaryOperation binaryoperator="equals">
+<BinaryOperation binaryoperator="greaterthan">
+<BinaryOperation binaryoperator="greaterthanorequals">
+<BinaryOperation binaryoperator="lessthan">
+<BinaryOperation binaryoperator="lessthanorequals">
+<BinaryOperation binaryoperator="notequals">
+<BinaryOperation binaryoperator="to">
+<Block>
+<Bound>
+<Break
+<C=J=t=
+<Case>
+<Cast
+<Catch>
+<Char>
+<Class
+<class>
+<Comment
+<Constant
+<Constructor
+<ConstructorCall>
+<'Continue' statements are not valid in the Immediate window.6'Continue' must be followed by 'Do', 'For' or 'While'.6'Continue Do' can only appear inside a 'Do' statement.8'Continue For' can only appear inside a 'For' statement.<'Continue While' can only appear inside a 'While' statement."Parameter specifier is duplicated.9'Declare' statements in a Module cannot be declared '|1'.
+<Continue>
+<D<t<
+<Declarations>
+<'Declare' statements in a structure cannot be declared '|1'.C'TryCast' operand must be reference type, but '|1' is a value type.^'TryCast' operands must be class-constrained type parameter, but '|1' has no class constraint.'No accessible '|1' is most specific: |2;Non-shared members in a Structure cannot be declared 'New'.
+<Default>
+<Delegate
+<E*JC
+<End>
+<Enumeration
+<Error>
+<Event
+<expression>
+<Expression>
+<ExpressionStatement
+<f=p=
+<Field
+<file_list>
+<file>
+<For>
+<ForEach>
+<Function
+<G>R>c>n>
+<Goto>
+<h<l<2=9=
+<H=S=
+<Handles
+<I<b<o<
+<ImplementedMethod>
+<Implements
+<import_list>
+<ImportedNameSpace
+<Interface
+<K=W=r=
+<L<k<
+<l=p=
+<L=P=T=X=\=`=d=h=l=p=t=x=|=
+<Label>
+<Literal>
+<Local
+<M<X<o<z<
+<member name="">
+<Method
+<MethodCall>
+<MethodName>
+<NameRef
+<NameSpace
+<NewArray>
+<NewClass>
+<NewDelegate
+<Number
+<number_list>
+<number>
+<Number>
+<OnError
+<Parameter
+<Parentheses>
+<path_list>
+<path>
+<PBA;U
+<Property
+<PropertyAccess
+<Quote
+<R=q=
+<RaiseEvent>
+<RankEntry
+<Ranks>
+<resinfo>
+<Resume
+<ResumeNext
+<Return>
+<s=x=
+<Signature>
+<Special>
+<Stop>
+<str>
+<string too long>
+<string>
+<SVW3
+<Switch>
+<symbol_list>
+<ThisReference />
+<Try>
+<Type
+<U<}<
+<UnaryOperation
+<unknown>
+<unrecognized type>#Microsoft (R) Visual Basic Compiler^No information has been lost. Check the compiler output for possible ways to avoid this error.
+<Using
+<Variable
+<While>
+<wildcard>
+<With>
+<WithAccess>
+<x>|>(?,?
+<xmlns:xml="http://www.w3.org/XML/1998/namespace">
+<xmlns:xmlns="http://www.w3.org/2000/xmlns/">
+<xmlns="">
+<zPtf
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =*=4=>=H=R=\=f=p=z=
+'=' expected.
+'=' expected.?Parameter '|1' in '|2' already has a matching omitted argument.`'|1' is an event, and cannot be called directly. Use a 'RaiseEvent' statement to raise an event.;Expression is of type '|1', which is not a collection type.RDefault values cannot be supplied for parameters that are not declared 'Optional'.J'#Region' and '#End Region' statements are not valid within method bodies.BSpecifiers and attributes are not valid on 'Namespace' statements.3'MyBase' must be followed by '.' and an identifier.4'MyClass' must be followed by '.' and an identifier.
+=!=(=]=j=X>c>
+=">v>
+=#=.=
+=#=2=
+=#>*>1>;>F>R>^>
+=$===V=
+=$=B=g=r=
+=$>)>;>c>}>
+=$>9>V>a>v>C?b?
+=$>X>
+=$>x>
+=%=M=
+=%>5>
+=&=*>5>E>O>i>t>
+=&>+>=>^>
+=(?,?
+=,?7?
+=,=b=
+=,>K>h>{>
+=;>@>e>
+=@=M=
+=@>K>e>
+=`>d>h>l>p>t>x>|>
+='|1' has no parameters and its return type cannot be indexed.8Comma, ')', or a valid expression continuation expected.
+=<>k?v?
+===b=
+===Q=
+=-=2=}=
+='=G=T=o=
+=>=I=e=p=
+=->7>
+=0=+>6>*?
+=0=5===J=Q=\=k=
+=0>;>o>
+=0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>
+=0>d>
+=3=A=x=
+=3=r=
+=5>|>
+=8===
+=8=B=
+=8=l=
+=A=J=_?d?v?
+=A>i>}>
+=A>R>`>q>
+=c> ?$?(?,?0?4?8?Q?
+=C>a>f>{>S?
+=C>b>
+=D=x=
+=E=L=
+=E=P=q=|=
+=E>J?
+=h>l>p>t>x>|>
+=K>n>s>
+=L9o<
+=Leading '.' or '!' can only appear inside a 'With' statement.
+=Methods declared in structures cannot have 'Handles' clauses.
+=O>T>
+=S>X>j>
+=V?|?
+=VOID
+=W=p=
+=w>|>
+=Z?e?w?
+> ?&?Q?
+> >$>(>,>0>4>8><>
+> >$>(>,>0>4>8><>@>
+> >$>(>,>0>4>8><>@>D>`>d>
+> >$>(>,>0>4>8><>@>D>H>L>
+> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >I>
+'>' expected.PAssembly or Module attribute statements must precede any declarations in a file..Array bounds cannot appear in type specifiers.#Properties cannot be declared '|1'.8'Option Explicit' can be followed only by 'On' or 'Off'.''ByVal' and 'ByRef' cannot be combined./'Optional' and 'ParamArray' cannot be combined.(Property '|1' is of an unsupported type.
+>!>,>6>A>K>c>
+>!><>C>O>
+>">{>
+>">->
+>#>U>e>q>4?J?k?o?s?w?{?
+>$>.>
+>$>.>8>B>L>V>`>j>t>~>
+>$>L>Y?
+>%?0?
+>&>2>>>x>|>
+>(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?
+>(?\?
+>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>'?
+>(>@>X>p>
+>(>5>Q>Y?
+>(>9>L>b>h>
+>*?5?P?[?
+>,>:?|?
+>,>\>
+>.>:>\>g>n>
+>.>\>m>x>
+>:>W>
+>;SPj
+>@?N?T?
+>'|1 |2' cannot implement '|3' because '|3' is a reserved name._'|1' cannot shadow a 'MustOverride' method implicitly declared for |2 '|3' in the base |4 '|5'.G'|1' cannot override '|2' because it is not accessible in this context.]'Handles' in modules must specify a 'WithEvents' variable qualified with a single identifier.^'IsNot' requires operands that have reference types, but this operand has the value type '|1'.^'|1' conflicts with the reserved member by this name that is implicitly declared in all enums.$'|1' is already declared in this |2.7'System.Void' can only be used in a GetType expression.qEvent '|1' cannot implement event '|2' on interface '|3' because their delegate types '|4' and '|5' do not match.
+>+>6>F>Q>a>l>
+><>p>
+>->=>
+>'>4>A>N>[>h>z>
+>0?4?8?<?@?|?
+>1>\>z>
+>4>C>
+>5?@?u?
+>5>@>
+>5>B>e>p>
+>5>x>
+>9?P?d?x?
+>a?l?v?
+>A?P?T?X?\?`?d?h?l?p?t?x?|?
+>a>q>
+>B>G>W>\>x>}>
+>C?^?c?
+>d?h?
+>D?R?z?
+>d>j>
+>h?o?{?
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+>'Inherits' statement must precede all declarations in a class.
+>Ju4W
+>JugS
+>K>U>f>q>J?T?
+>'Let' and 'Set' assignment statements are no longer supported.VProperty Get/Let/Set are no longer supported; use the new Property declaration syntax.N'Wend' statements are no longer supported; use 'End While' statements instead.$Methods cannot be declared 'Static'.D'ReDim' statements can no longer be used to declare array variables.1Optional parameters must specify a default value.
+>M?f?
+>Method '|1' does not have the same signature as delegate '|3'.
+>O?k?
+>q?x?
+>q>~>
+>r>c?
+>T?X?
+>w>R?
+>Y?k?
+>y>V?
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0+0T0_0
+0 020D0i0
+0 1$1(1,1014181<1@1D1|1
+0!0'0-03090?0E0K0Q0W0]0c0i0}0
+0!171H1[1q1
+0"1)1
+0#0.080C0M0X0
+0#0-070A0K0U0_0i0s0}0
+0#1z1
+0$0,040<0D0L0T0\0d0l0t0|0
+0$0S0^0
+0$1(1,1014181<1
+0$1X1
+0%0.070@0I0R0[0d0m0v0
+0%1q1|1
+0&0w0
+0(020C0M0^0 1'1
+0(0G0
+0)040;0Z0h0
+0,1=1m1~1
+0;1@1a1X2
+0;1F1
+0@@f;
+0@1R1d1v1
+0^[_]
+0^_[]
+0_[^]
+0+030>0I1P1j1
+0+131]1
+0=0D0
+0>1I1Y1d1
+0>1V1
+0-0:0V0
+0-0;0I0W0b0m0x0
+00000
+000000
+0000000
+00000000
+000000000
+0000000000
+00000000000
+000000000000
+0000000000000
+00000000000000
+000000000000000
+0000000000000000
+00000000000000000
+000000000000000000
+0000000000000000000000000
+00000000000000000000000000
+000000000000000000000000000000000000
+000000000000000000000000000000000000000
+0000000000000000000000000000000000000000
+00000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000                                                                                                                                                                                                                                                                00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0004080<0@0
+001d1
+004080<0@0D0H0L0
+010C0y0
+0123456789abcdef
+014181<1@1D1H1
+0'1H1
+02292
+03689116d3a4ae33
+04080\0x0
+040904B0
+040A0
+070F0
+080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+080l0
+080X0z0
+082D4O415
+091D1@?
+0d0t0z0
+0D0x0
+0D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+0d3o3
+0Event name length cannot exceed 1011 characters.>WithEvents variable name length cannot exceed 1019 characters.
+0F\_^]
+0G1b1
+0h0}0
+0H0S0
+0I0p0u0
+0Interface '|1' is not implemented by this class.
+0j1~1
+0K0b0
+0K0Y0j0u0
+0k1q1w1}1
+0l1w1
+0M3j3
+0O1c1w1
+0o1t1
+0q102W2\2
+-0R0z0
+0The condition should not be false!
+0U1~1
+0V2`2
+0W6^6
+0'WithEvents' variables must have an 'As' clause.j'WithEvents' variables can only be typed as classes, interfaces or type parameters with class constraints.lValue of type '|1' cannot be converted to '|2' because the array types have different numbers of dimensions.;'ReDim' cannot change the number of dimensions of an array.
+0x%08X
+0x00000004
+0XML axis properties do not support late binding.CCharacter '|1' (|2) is not allowed at the beginning of an XML name.2Character '|1' (|2) is not allowed in an XML name.9Character sequence '--' is not allowed in an XML comment.+An embedded expression cannot be used here.
+0Z1m1
+1 1$1
+1 1$1(1,1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1+1?1J1
+1 1+1O1
+1 2+2s2~2
+1!1C1l2q2
+1!2,3}3
+1"1-171B1P1\1h1t1
+1"1u1
+1#1(1-1
+1#1.1=1H1t1
+1$1,141<1D1L1T1\1d1l1t1|1
+1$2?2\2q2
+1$3;3N3a3t3
+1%1@1N1v1|1
+1%1F1
+1(0&0
+1(121<1F1P1Z1d1n1x1
+1(2\2
+1)2.2@2s3x3}3
+1*353H3S3 4
+1*5$7(7,707
+1,1G2O2^2~2
+1,2`2d2h2l2
+1,474
+1/0-0
+1/1R1m3~3
+1/2L2P2T2
+1:1T1o1
+1;1@1i1n1
+1@1[1p1t1x1|1
+1@2u4
+1[2e2q2
+1]2h2
+1_1j1p1
+1`1/2
+1<1@1D1H1L1P1T1X1\1`1d1h1t1x1|1
+1<1p1
+1<2c2{2
+1<4G4j4
+1>2>4
+1000000000000
+100701213655Z
+102<2d2h2l2p2
+110708205909Z
+1'171B1
+1-181
+1-1E1i1q1z1
+1-1T2\2
+1-282R2]2|2
+1-2C2
+1-2W2x2
+141X1t1|1
+142?2o2z2
+171<1\1
+17d14f5c-a337-4978-8281-53493378c107
+182<3
+182q2x2
+192H2L2P2T2X2\2`2
+1A1K1]1h1}1
+1A2L2
+1A3\3i3
+1B1]1~1
+1b1m1
+1B2M2~2
+1C1H1q1
+1cannot specify both /win32icon and /win32resourceQthe default assembly reference '%s' has already been automatically added; ignoredEignoring /noconfig option because it was specified in a response file
+1f;2u
+1f1q1
+1H,^[
+1H1|1
+1h2l2p2
+1H2L2P2T2X2\2`2~2:3T4_5
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1I2T2e2p2
+1J1u2S9
+1J1W1
+1K1V1
+1Method arguments must be enclosed in parentheses.3Labels that are numbers must be followed by colons.N'Type' statements are no longer supported; use 'Structure' statements instead.I'Currency' is no longer a supported type; use the 'Decimal' type instead.G'Variant' is no longer a supported type; use the 'Object' type instead./Array declarations cannot specify lower bounds.
+1Namespace or type '|1' has already been imported. Modules cannot be declared '|1'.e'Implements' statements must follow any 'Inherits' statement and precede all declarations in a class.
+1o2d5p5
+1O6Z6d6o6
+1P3[3
+1q2|2
+1q5n6
+1r2}2
+1R2}2
+1'Set' method cannot have more than one parameter.C'Set' parameter must have the same type as the containing property.('Set' parameter cannot be declared '|1'.
+1T2o2
+1Unable to apply security attribute(s) to '|1': |05'|1' cannot be applied more than once to an assembly.|'System.Runtime.InteropServices.DllImportAttribute' cannot be applied to a Sub, Function, or Operator with a non-empty body.S'System.Runtime.InteropServices.DllImportAttribute' cannot be applied to a Declare.V'System.Runtime.InteropServices.DllImportAttribute' cannot be applied to a Get or Set.
+1Unable to include XML fragment '|1' of file '|2'./Badly formed XML. File '|1' cannot be included.8Runtime errors might occur when converting '|1' to '|2'.
+1V2j2
+1V3w3
+1'WithEvents' variables cannot be typed as arrays.
+1X2\2`2d2h2l2
+2 2$2(2,20242
+2 2$2(2,2024282<2@2D2=4C4
+2 2$2(2,2024282<2@2D2H2L2P2T273
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2$3,3H4P4l5t5
+2 2*252?2J2m2{2
+2 2,212C2
+2 3*3i3s3
+2!2*232<2E2N2W2`2i2r2{2
+2!383
+2"2,262@2J2T2^2h2r2|2
+2"2,2Q2p2
+2"2E2J2q2
+2"3B3e3
+2#2.2=2g2l2~2M3R3f3p3z3
+2#202
+2$2I2
+2$4/5i5
+2&242]2
+2&24292M2Y2g2q2
+2&3/3X3_3
+2&313]3
+2(2,343P4X4p4t5|5
+2(232D3O3c3n3+454J4U4f4q4
+2(3y3
+2)2F2Q2[2f2z2
+2)2Q2V2[2z2
+2)343(43494
+2*272
+2*3k3
+2,3`3
+2,373=3Q3\3z3
+2.2P2p2l3
+2.3]3
+2.383o3z3
+2.3g3)4V4c4j4q4x4
+2;3E3V3a3
+2@2t2
+2[3b3 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+2[3l3
+2[3r3
+2\5g5x5
+2_3i3
+2`6p6t6x6|6
+2'|1' is not valid on a local constant declaration.2'|1' is not valid on a local variable declaration.@'If', 'ElseIf', 'Else', 'End If', 'Const', or 'Region' expected.
+201112182555Z
+201215213145Z
+20210504043724Z
+20210504073633.047Z0
+20210505043724Z0w0=
+202H2`243<3X4`4|5
+202q2}2
+202T2x2
+211202213145Z0t1
+21V1[1m1
+220211182555Z0
+2'3?3`6
+230012+4630090
+242h2
+24383<3@3[3
+25<M<e<
+250701214655Z0|1
+260708210909Z0~1
+262D2P2o2
+284=506
+292K2u2|2$3<7@7D7H7L7P7T7X7
+2A3L3e3
+2C2H2w2|2
+2F2T2
+2F3Q3W3`3g3l3r3x3
+2F4Q4_4n4<5
+2FT_$
+2g3r3
+2H3L3P3T3X3m3r3{3
+2I2S2
+2Implicit variable '|1' is invalid because of '|2'.
+2Interface can inherit only from another interface.
+2k3r3
+2L2]2
+2L2Q2
+2l4p4t4x4|4
+2M2h2
+2Q2\2
+2Referenced array element has a value of 'Nothing'.
+2S3X3j3
+2T3X3d3i3{3
+2U3`4d4h4l4p4
+2Underlying type '|1' of Enum is not CLS-compliant.CNon CLS-compliant '|1' is not allowed in a CLS-compliant interface.ONon CLS-compliant 'Mustoverride' member is not allowed in a CLS-compliant '|1'.
+2v2}2V3]3
+2Z4,8
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3
+3 3+353@3J3U3q3|3?4J4b4m4~4
+3 4$4(4,4044484<4@4D4H4L4P4T4X4
+3 4(4P4T4X4\4`4
+3 4*4
+3 4h4l4p4t4
+3 4T4
+3!3+363
+3"3,373^3r3}3
+3#<*<
+3#3J3]3
+3$3/3G3W3j3
+3$3;3F3
+3$3@4H4`4d5l5
+3%3e3M4T4
+3%4q4f5
+3&3N3
+3&5S5i8p9t9x9|9
+3(3:3A3
+3(323<3F3P3Z3_3o3y3
+3(3M3
+3,3L3P3t3
+3.02/1jj
+3.333
+3.5746
+3/3:3
+3/3:3M3X3
+3/464@4D4p7t7x7|7
+3;w\tU
+3\4f4
+3+3=3O3a3s3
+3+404U435
+3<3X3`3
+3=3O4
+304;4E4P4g5}5
+304d4
+31bf3856ad364e35
+32373M3p5
+3'3.3
+3'3<3Y4_4x4}4
+3-3=3B3V3f3k3
+3'313;3E3O3Y3c3m3w3
+333>3
+33393S3`3
+3'343
+33aea4d316916803
+3-474
+3-4B4
+354:4
+364N4t4
+364P4[4r4y4
+373<3c3h3
+383l3
+385<5@5D5H5L5P5T5X5\5`5d5v528
+3A file is being created with information needed to
+3A6H6
+3b6i6
+3C5M5
+3D3x3
+3d4h4
+3D4O4j4x4
+3d4t4m5v?
+3E3P3k3y3
+3E4`4
+3e4l4
+3'End Class' must be preceded by a matching 'Class'. Classes cannot be declared '|1'.
+3F3L3u3
+3F3S3
+3f4k4{4
+3F8_%
+3G3f3
+3'Global' must be followed by '.' and an identifier.:'Global' not allowed in this context; identifier expected.5'Global' not allowed in handles; local name expected.
+3h4l4p4t4x4|4
+3h4s4
+3http://www.microsoft.com/pkiops/docs/primarycps.htm0@
+3I4k4
+3'Imports' statements must precede any declarations.
+3K4V4
+3M5T5
+3Named argument cannot match a ParamArray parameter.5Omitted argument cannot match a ParamArray parameter.
+3P4[4y4
+3Statement does not declare a 'Get' or 'Set' method.G'AddressOf' operand must be the name of a method (without parentheses).G'#End ExternalSource' must be preceded by a matching '#ExternalSource'.K'#ExternalSource' statement must end with a matching '#End ExternalSource'..'#ExternalSource' directives cannot be nested.W'AddressOf' expression cannot be converted to '|1' because '|1' is not a delegate type.O'SyncLock' operand cannot be of type '|1' because '|1' is not a reference type.-'|1.|2' cannot be implemented more than once.('|1' cannot be inherited more than once.
+3Type characters are not allowed on Imports aliases.?Class '|1' has no accessible 'Sub New' and cannot be inherited.ILocal variables within methods of structures cannot be declared 'Static'./Static local variable '|1' is already declared.
+3U6]7
+3V4a4r4}4
+3V4s4z4
+3Z4T5
+4 4$4(4,4044484<4@4D4H4L4
+4 4$4(4,4044484<4@4D4H4L4P4T4{4
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4
+4 4$4(4,40444P4r4
+4 4'5
+4 5*5
+4 5'5.585C5O5[5
+4!4+454<4C4k9r9
+4!5*5?5l5
+4"4)4\4a4s4
+4"4-4J4U4
+4"4e4
+4"4P4g4
+4"5-5>5I5
+4### Visual Basic Compiler Defect Report, created %s
+4#43484L4\4a4u4
+4#4-474A4K4U4_4i4s4}4
+4#4B4O4z4
+4$4(4,4044484<4@4D4H4L4P4T4X4\4
+4$4F4M4T4^4i4u4
+4$5(5+9P9T9X9\9`9d9h9p9t9x9|9
+4$5X5
+4%4R4t4
+4&616
+4(4,4044484<4P4T4X4\4`4d4h4l4p4t4
+4(4,40444u4
+4(474B4e4
+4(4L4p4
+4(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5r6
+4(5-5\5a5
+4)4.4J4s4x4
+4*5W5
+4,4@4f4
+4,4H4^4
+4,6:6I6T6j6/8>8d8o8
+4.494+606B6[6l6
+4/454l4y4
+4:4K4i5
+4[7l7
+4\4d4h4l4p4t4x4|4
+4\4d5
+4]4h4y4
+4^6N7h7
+4`4n4
+4`5e5w5
+4+565
+4<4@4D4H4L4P4T4X4\4`4d4h4
+4<4m4
+4<4p4
+4<5@5D5H5L5P5T5s5
+41585?5F5
+4'4.434
+44484\4
+455G5Y5k5
+455M5
+475<5k5p5
+485<5@5D5H5L5P5T5X5\5`5d5h5L;P;T;X;\;
+485T5w5
+4B5+;
+4B6M6
+4C5N5x7
+4'Exit For' can only appear inside a 'For' statement.8'Exit While' can only appear inside a 'While' statement.?'ReadOnly' property '|1' cannot be the target of an assignment.:'Exit Select' can only appear inside a 'Select' statement.
+4g4x4
+4H4|4
+4h5*6H8
+4H5M5n5
+4I4v4
+4I5T5
+4'If' operator requires either two or three operands.('If' operands cannot be named arguments.
+4L6P6T6X6\6`6d6h6l6p6t6
+4M4X4c4h4
+4N5^5
+4O5V5h7A9
+4q4{4
+4R4|4`5
+4R5^5j5x5
+4s:z:$<(<,<0<4<8<<<@<D<H<L<P<T<
+4T5^5t5
+4T8[8
+4'Throw' operand must derive from 'System.Exception'.b'Throw' statement cannot omit operand outside a 'Catch' statement or inside a 'Finally' statement./ParamArray parameters must be declared 'ByVal'.
+4u;@<l<p<t<x<|<
+4X4r4
+4x6|6
+4Y6c6
+4z5J6
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5$5(5,50545B5x5
+5 5<5J5f5
+5 5K5
+5 6$6(6,60646
+5 6D6h6
+5!5,5
+5!5<5E5a5j5
+5!5'5F5T5s5~506A6
+5!606L6Y6r6
+5!686W6^6
+5"6)6
+5"6-6i6t6h7s7
+5"686
+5#525>547
+5#7{7
+5$5.5>5J5i5t5
+5$5H5h5l5
+5$6(6
+5%:m;
+5%5>6
+5%5u5
+5&636@6
+5&647R7
+5(5\5a5s5
+5(6\6
+5,50545
+5,606@6F6L6R6X6^6d6j6p6v6|6
+5,70787<7
+5.5<5]5h5q5
+5.5K5Z5
+5;6B6I6S6^6j6v6
+5;6C6N6
+5?5i5
+5@5t5
+5]6h6
+5]8b8t809m9r9
+5+5r5|5
+5+6t6
+5+767
+5<5F5
+5<6G6r6z6
+5=7Z7
+505K5(616;6H6Q6X6\6b6f6l6p6v6z6
+50657
+5071B1
+51526Z6
+545h5
+5'515;5E5O5Y5c5m5w5
+5'5-5g5m5u5|5
+557E7e8
+5'6/686A6L6k6
+565C5
+585C5
+585u5
+595d5
+595H5L5P5T5X5\5t556v9}:P=
+595Q5`5
+5A5W5
+5a6Z9h9
+5C5P5_6(737=7H7
+5D5O5Y5e5
+5D5T5g5
+5D6K6R6Y6c6n6x6
+5d7}7
+5E5P5a5l5
+5E6J6
+5E6Y<
+5F7Q7w7
+5g5r5
+5h5s5
+5K5T5
+5k6p6
+5l5w5
+5M5j5
+5O6q6
+5Q5[5
+5R5b5g5
+5R6j7V8
+5s6x6
+5Using alternate Microsoft.VisualBasic.dll version %s
+5V5u5
+5W6~6
+6 6$6(6,6064686<6@6D6H6L6
+6 6$6(6,6064686<6@6D6H6L6P6T6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6X8;9J9
+6 6$6(6,6G6t6
+6 7K7v7
+6 7K8b8y8
+6 7T7
+6 8>8
+6!6*757E7P7r7
+6!7.7e7r7
+6!7+7@7J7t7
+6"7C9N9X9c9
+6#696C6
+6#6T6Y6k6y6
+6$636
+6$71708=8]8
+6$787=7
+6$7N7r7w7
+6&8o8
+6(626<6L6V6`6j6t6~6
+6(636
+6(7,7074787<7@7D7b7
+6(727u7
+6)6.6
+6)6Q6_6
+6)7h7/:
+6*7`7m7
+6,6;607S7*8
+6,676
+6,6G6a6
+6,7`7
+6,767
+6/6:6p6
+6/7W7k7p7
+6/7W7n7z7
+6;6U6`6
+6^7o7>=
+6`7|7
+6+6D6O6
+6+767@7K7U7`7
+6>8[8~8
+60:4:8:<:@:D:P:T:X:\:`:d:h:l:p:t:x:|:
+60656`6k6
+6074787<7@7D7H7L7P7T7X7\7`7d7h7l7p8t8x8|8
+6074787<7@7D7H7L7P7T7X7P8T8X8\8`8d8h8l8p8t8x8|8
+60A0V2a2Z3
+616P6i6
+6380<D<]<D=~=
+647?7k7
+656~6
+6'6>6I6S6Z6i6}6
+6'626T6^6R9]9
+666B6X6]6e6n6v6
+6'6O7T7f7
+6-6P6l6v6
+676Z6a6k677H7
+6-7G7
+686l6
+687<7@7D7H7L7x7|7
+688p8
+69>H>m>t>
+6D6x6
+6d7h7t7y7
+6E7c7
+6H;D=
+6J6U6
+6k6v6
+6M6o7
+6M7X7
+6p7{7
+6Q6\6r6
+6q7|7
+6R7]7
+6U6c6
+6U7d7:8
+6W7\7
+6W798V8
+6X7j7w7Z8T9
+6Y6d6u6
+6Z6z6
+7 7$7
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7h7l7p7
+7 7$7(7,7074787<7@7D7H7L7P7T7X7x7
+7 7$7(7W7!=
+7 7&7,72777<7B7H7N7T7Y7_7e7v7
+7 8C8H8Z8
+7 8l;
+7!898
+7"7,7<7F7P7Z7d7n7x7
+7"7'7V7[7
+7#8Q8r8
+7#8x8|8
+7$7.797[7z7
+7$8X8
+7&818
+7&848]8
+7*7/7K7z7F8V8
+7*8,;
+7*8@8Q8_8p8
+7,767f7p7
+7,8t8z8
+7/8>8[8
+7/8P8
+7?8c8
+7?9J9
+7]8g8
+7'|1' is already declared as a parameter of this method.)Type in a Module cannot be declared '|1'.,Expression cannot be evaluated at this time.LNo accessible 'Main' method with an appropriate signature was found in '|1'.1'Sub Main' is declared more than once in '|1': |2>'RaiseEvent' statements are not valid in the Immediate window.
+7+:2:
+7+787`7u7
+7<7p7
+7=7B7
+7=8T8
+7=8v8
+7>7084888d8h8l8p8t8x8|8
+7>7h8
+70;4;8;<;@;D;
+70878K8T8y8
+708d8
+717<7
+71e9bce111e9429c
+72787@7H7P7X7`7h7p7x7
+737A7r7~7
+768<8e9p9
+7'7.74787>7D7J7P7V7\7b7
+77?g?
+78;=;K;
+7'8A9P9s9
+797R7e7~7
+799D9N9s9~9x:
+7B8L8i8
+7C7o8
+7cec85d7bea7798e
+7D7K7R7{7
+7'End RaiseEvent' must be the first statement on a line.@'Custom' modifier is not valid on events declared in interfaces.R'Custom' modifier is not valid on events declared without explicit delegate types.:'End Event' must be preceded by a matching 'Custom Event'.I'End AddHandler' must be preceded by a matching 'AddHandler' declaration.O'End RemoveHandler' must be preceded by a matching 'RemoveHandler' declaration.I'End RaiseEvent' must be preceded by a matching 'RaiseEvent' declaration.!'AddHandler' is already declared.$'RemoveHandler' is already declared.!'RaiseEvent' is already declared./'AddHandler' definition missing for event '|1'.2'RemoveHandler' definition missing for event '|1'./'RaiseEvent' definition missing for event '|1'.I'AddHandler' and 'RemoveHandler' methods must have exactly one parameter.N'AddHandler' and 'RemoveHandler' method parameters cannot be declared 'ByRef'.SSpecifiers are not valid on 'AddHandler', 'RemoveHandler' and 'RaiseEvent' methods.l'AddHandler' and 'RemoveHandler' method parameters must have the same delegate type as the containing event.^'RaiseEvent' method must have the same signature as the containing event's delegate type '|1'.Y'AddHandler', 'RemoveHandler' and 'RaiseEvent' method parameters cannot be declared '|1'.K'|1' cannot refer to itself through its default instance; use 'Me' instead.M'Custom' modifier can only be used immediately before an 'Event' declaration.ZOption Strict Custom can only be used as an option to the command-line compiler (vbc.exe).
+7H7_7
+7H7|7
+7I8j8
+7i8p8z8
+7j8g;
+7k8v8
+7L9S9
+7m8r8
+7O8Z8h8q8y8
+7Object initializers require a field name to initialize.
+7P;W;
+7Protected types can only be declared inside of a class.DProperties with no required parameters cannot be declared 'Default'.TInitializers on structure members are valid only for 'Shared' members and constants.
+7R7{7
+7R7c7r7
+7R8Y8
+7S7r7
+7Specifies the root Namespace for all type declarations.]Declare global Imports for namespaces in referenced metadata files. import_list:namespace,...LDeclare global conditional compilation symbol(s). symbol_list:name=value,...#Remove integer checks. Default off.
+7T7[7
+7X9]9o9
+7Z7i7a8
+8 8$8(8
+8 8$8(8,80848
+8 8(8,8084888<8@8D8H8
+8 8*848>8H8R8\8f8p8z8
+8 8H8
+8 9@9E9
+8!:0:
+8!8,8q<
+8!8.8<8A8F8Z8c8h8u8
+8!9Q9o9
+8"8R8]8
+8"t'j
+8#828<8v8
+8#8Z8_8
+8#9*949;9
+8$8*8Q8P9
+8$9/9k9v9
+8%818=8I8
+8%uef
+8(:3:
+8(8(939C9N9
+8(9\9
+8(9a9
+8)?0?H?L?
+8)8@8K8J:U:
+8)848D8O8
+8)9~9
+8*9>9Q9
+8,8P8U8
+8.8:8@8D8J8b8
+8/;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;I<P<
+8/8;8]8h8o8
+8?:8=
+8@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+8@8t8
+8@9D9H9L9P9T9
+8[SVW
+8[Vu&
+8\;l<
+8^:h:
+8^:j:
+8_^[]
+8_9i9
+8_9j9
+8_u)V
+8`=d=h=l=p=t=x=|=
+8{8^<
+8'|1' cannot expose type '|2' in |3 '|4' through |5 '|6'.Y'|1' cannot inherit from |2 '|3' because it expands the access of the base |2 to |4 '|5'.
+8'|1' has multiple definitions with identical signatures.5'|1' is not valid on an interface method declaration.
+8'|1' is a namespace and cannot be used as an expression.G'|1' is not a valid name and cannot be used as the root namespace name.z'|1' is an XML prefix and cannot be used as an expression.  Use the GetXmlNamespace operator to create a namespace object.
+8+8?8y8~8
+8<;@;D;H;L;P;T;t;x;|;
+8<8G8M8l8z8
+8<9G9T9h9l9p9t9x9|9
+8=9=:
+8>>\>`>d>
+8>8l8
+80:4:8:<:@:D:H:L:P:
+828a8f8
+84989D9I9[9
+8'828=8H8M8n8
+888C8
+889`:e:w:
+889<9
+89845dcd8080cc91
+8-9G9
+8A:h:t:|:
+8B!t1
+8b:N;w;
+8C9H9Z9
+8C9N9h9s9l=
+8D8l8
+8D8O8
+8D9_<f<
+8D9a9|9
+8e9p9
+8F tT
+8F9`<d<h<l<
+8FLtr
+8HPun
+8i8p8T<a<m<
+8I8z8
+8I9^9
+8Import of type '|2' from assembly or module '|1' failed..ParamArray parameters must have an array type.
+8iu8P
+8K8p8
+8K9a:
+8N%u`
+8N8p8
+8P9W9
+8PhGy
+8Q9\9t:
+8Qhqy
+8R9|9
+8S8]8
+8t:x:|:
+8t9x9|9
+8Type arguments cannot be applied to the expression '|1'.#Array lower bounds can be only '0'.3Type constraint cannot be a 'NotInheritable' class.)'|1' cannot be used as a type constraint.
+8Type parameters cannot be specified on this declaration.BType arguments are not valid because attributes cannot be generic.`Type parameters, generic types or types contained in generic types cannot be used as attributes.CLocal variables within generic methods cannot be declared 'Static'.
+8U:=;y;
+8U;l;
+8X:j;
+8X1t$
+8y>~>
+9 :T:
+9 9$9(9,9
+9 9$9(9,9S<?>
+9 u j
+9!:H:f:
+9!9;9C9N9U:d:h:l:
+9"919<9
+9"9'90999B9K9T9]9p9t9x9|9
+9#9(9A9F9\9d9x9|9
+9#9-989W9
+9$:S:Y:b:p:v:
+9$969v9
+9%:b;
+9%9*9A9U9Z9q9
+9%9A9p9
+9%9G9\9f9
+9&u j
+9(9,909L9P9T9X9\9`9d9h9l9p9
+9(939\9g9
+9(9G:R:`:k:
+9)979z9
+9*919=9D9W9g9
+9,:`:
+9,9=9f9
+9.:f:
+9.0.30729.9151
+9::L:^:p:
+9::l:p:|:
+9;:R;
+9;9i9
+9?:M:
+9]:1;;;
+9^;i;
+9^0u 
+9^9g9m9~9
+9^Du5
+9^Dv7
+9^HuW
+9_(t@9]
+9_^[]
+9_Xt?
+9`9e9w9
+9}$u4
+9}0uR
+9~(v3
+9<9J9q9|9
+9=u_A;
+9>:V:
+90:z:
+93:X:`:m:x:
+93989J9
+93989Y9}9
+94989<9
+949h9
+969;9L9W9]9j9
+97:M:W:s:
+989<9@9%:
+999y9
+9'9B9P9x9~9
+9-9W9y9
+9A tV
+9A:Z;p?
+9A<vvSVW
+9A9D:N:m:
+9C$t&
+9Constructor must be declared as a Sub, not as a Function.
+9d:h:
+9D9x9
+9E,t+
+9e:8<<<@<D<H<L<P<T<X<\<
+9e<o<1=;=
+9e9q9|9
+9'ElseIf' must be preceded by a matching 'If' or 'ElseIf'.
+9'End SyncLock' must be preceded by a matching 'SyncLock'.='SyncLock' statement must end with a matching 'End SyncLock'.
+9G(u,
+9G<v7
+9HTuD
+9Interface '|1' can be implemented only once by this type.
+9J9X9|9
+9K:{:
+9l:4;;;c;j;
+9L:P:
+9l:p:|:
+9m:x:
+9N:v:
+9n;u;
+9N9r9
+9o:z:
+9o={=
+9p:}:
+9P:U:
+9p;w;
+9p|uI
+9Q(ug
+9Q:~:
+9S9q9
+9sTvx
+9t:x:|:
+9w(t&
+9w(t+
+9w<v=
+9x0te
+9Z9e9o9z9
+9Z9x9|9
+A call to Current() was made after a call to Remove() without an intervening call to MoveNext()
+A named root was expected!
+A$9P8}
+A(_^[
+A;N,r
+A@@@@@@
+A\^[]
+A<H$H
+A8;B8u
+A8;xtu
+A8@u#f
+AABBG;
+AACCN
+abstract
+access
+Access modifier '|1' is not valid. The access modifier of 'Get' and 'Set' should be more restrictive than the property access level.KAccess modifier can only be applied to either 'Get' or 'Set', but not both.2'Set' accessor of property '|1' is not accessible.2'Get' accessor of property '|1' is not accessible.
+Access of shared member, constant member, enum member or nested type through an instance; qualifying expression will not be evaluated.:Expression recursively calls the containing property '|1'.
+accessor
+AConversion operators cannot convert from a type to the same type.9Conversion operators cannot convert to an interface type.AConversion operators cannot convert from a type to its base type.DConversion operators cannot convert from a type to its derived type..Conversion operators cannot convert to Object.;Conversion operators cannot convert from an interface type.5Conversion operators cannot convert from a base type.8Conversion operators cannot convert from a derived type.0Conversion operators cannot convert from Object.,Matching '|1' operator is required for '|2'.PReturn and parameter types of '|1' must be '|2' to be used in a '|3' expression.DType '|1' must define operator '|2' to be used in a '|3' expression.
+AddChecked
+AddHandler
+Adding assembly reference '%s'
+Adding file '%s'
+Adding import '%s'
+Adding module reference '%s'
+addmodule
+AddObj
+AddObject
+Address
+AddressOf
+advapi32
+Advapi32.dll
+ADVAPI32.dll
+A'EndIf' statements are no longer supported; use 'End If' instead.C'D' can no longer be used to indicate an exponent, use 'E' instead.2'As Any' is not supported in 'Declare' statements.w'Get' statements are no longer supported. File I/O functionality is available in the 'Microsoft.VisualBasic' namespace.
+Aggregate
+Alias
+alias
+Alias '|1' is already declared..XML namespace prefix '|1' is already declared.(Option Strict On disallows late binding.
+alink.dll
+All Assemblies In
+All extension methods must have at least one parameter with a valid type
+Allocation failed in DynamicHashTable<K,V,A,H>::Init.
+Allocation failed in DynamicHashTable<K,V,A,H>::SetValue
+Allocation failed in HashTableIterator<K,V,A,H>::GetNextBucket()
+Allocation failed in List<T,A>::AddLast
+Allocation failed in List<T,A>::List(Compiler *)
+AllowMultiple
+An allocation failure occured in ArrayList<T,A>::Reserve
+An attempt was made to call current on an interator in an invalid state. Perhaps a call is missing to MoveNext() or the sequence has been exausted.
+An attempt was made to construct a ListNodIterator<T,A> with a null list pointer
+An attempt was made to construct an iterator with a null hash table.
+An attempt was made to create a NorlsAllocWrapper with a null norls allocator
+An attempt was made to extract a value from an interator that is in an invalid state. Perhaps a call to MoveNext() is missing or the iterator has been exausted.
+An attempt was made to initialize a DynamicHashtable<K,V,A,H> with capacity zero.
+'And' expected.G'Equals' cannot compare a value of type '|1' with a value of type '|2'.
+AndAlso
+AndObject
+Anonymous type member property '|1' cannot be used to infer the type of another member property because the type of '|1' is not yet established.>Type characters cannot be used in anonymous type declarations.GExtension method '|1' has type constraints that can never be satisfied..
+Ansi 
+anycpu
+apos;
+APPCRASH
+APPID
+AppID
+ApplAttr
+ApplyExplicitArgumentsToPartialBinding cannot be called on non-partial bindings
+AQPRS
+AQRPj
+AQRPV
+AQRPW
+AQWRPS
+a'ReDim' statements require a parenthesized list of the new bounds of each dimension of the array.gExplicit initialization is not permitted with multiple variables declared with a single type specifier.RExplicit initialization is not permitted for arrays declared with explicit bounds.
+AreFileApisANSI
+ArgIterator
+Array
+ArrayIndex
+ArrayLength
+ArrayList
+ArrayType
+'As' expected.
+'As', comma or ')' expected.R'Class' constraint cannot be specified multiple times for the same type parameter.V'Structure' constraint cannot be specified multiple times for the same type parameter.?'New' constraint and 'Structure' constraint cannot be combined.A'Class' constraint and 'Structure' constraint cannot be combined.WType argument '|1' does not satisfy the 'Structure' constraint for type parameter '|2'.SType argument '|1' does not satisfy the 'Class' constraint for type parameter '|2'.K'Class' constraint and a specific class type constraint cannot be combined.O'Structure' constraint and a specific class type constraint cannot be combined.
+Ascending
+AsEnumerable
+AsQueryable
+assembly
+Assembly
+Assembly '|1' references assembly '|2', which is ambiguous between '|3' (referenced by project '|4') and '|5' (referenced by project '|6'). '|3' will be used. If both assemblies are identical, change the references to the same location.dAssembly '|1' references assembly '|2', which is ambiguous between '|3' and '|4'. '|3' will be used.-Maximum number of warnings has been exceeded.:Assembly reference '|1' is invalid and cannot be resolved.
+AssemblyDelaySignAttribute
+AssemblyKeyFileAttribute
+AssemblyKeyNameAttribute
+AssemblyVersionAttribute
+AsyncCallback
+ASystem.Reflection.AssemblyKeyFileAttribute
+AT;F(sH
+AtDebuggerDisplay
+AtDebuggerDisplayFormatOutput
+Attempt to access invalid array list node. Did you call MoveNext, or is the iterator exhausted?
+Attribute
+Attribute '|1' is not valid: |0
+Attribute constructor has a 'ByRef' parameter of type '|1'; cannot use constructors with byref parameters to apply the attribute.3'End Using' must be preceded by a matching 'Using'.-'Using' must end with a matching 'End Using'.g'GoTo |1' is not valid because '|1' is inside a 'Using' statement that does not contain this statement.A'Using' operand of type '|1' must implement 'System.IDisposable'.?'Using' resource variable must have an explicit initialization.5'Using' resource variable type can not be array type.>'On Error' statements are not valid within 'Using' statements.
+Attribute constructor has a parameter of type '|1', which is not an integral, floating-point or Enum type or one of Object, Char, String, Boolean, System.Type or 1-dimensional array of these types.=Method cannot have both a ParamArray and Optional parameters.
+AttributeUsageAttribute
+AttributeValue
+Auto 
+B PSW
+B\_^[
+B\_^[]
+B\PSh
+B\QPSh
+B|QPW
+b03f5f7f11d50a3a
+B0PWhju
+B0WQPShsu
+b9'v%
+BackingFields
+Bad GUID format.hOperands of type Object used in expressions for 'Select', 'Case' statements; runtime errors could occur.
+bAdds the specified file as an embedded assembly resource. resinfo:<file>[,<name>[,public|private]]
+baseaddress
+BaseReference
+B'Case' cannot follow a 'Case Else' in the same 'Select' statement.
+BCLIB.LIB
+BDo not reference standard libraries (system.dll and VBC.RSP file).&Disable a list of individual warnings.#Treat a list of warnings as errors.6Warn when strict language semantics are not respected.9Name of the assembly which this module will be a part of.GThe provided file is embedded in the manifest section of the output PE.UThe default manifest should not be embedded in the manifest section of the output PE.6Compile with/without the default Visual Basic runtime.:Compile with the alternate Visual Basic runtime in <file>.
+BeginInvoke
+bf&!D
+Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0
+Binary
+binary
+binary|text
+binaryoperator
+bitand
+BitAndObj
+bitor
+BitOrObj
+bitxor
+BitXorObj
+BLWWQjO
+Boolean
+BOption Strict On disallows implicit conversions from '|1' to '|2'.
+Both pLeftProc and pRight must be non null!
+BPQPW
+bracketed
+Break
+breakkind
+BRQPW
+bsearch
+buf.Append("{ ")
+buf.Append("}")
+buf.AppendFormat("{0} = {1}|3", "|1", |2)
+bugreport
+Building |1.
+'By' expected.LRange variable name cannot match the name of a member of the 'Object' class.
+By u"
+byref
+ByRef
+ByRef 
+ByVal
+C QRP
+C$RPW
+C(_^[]
+C(PQj
+C(PRQh[y
+C(VWj
+C.36475
+C;^Dr
+C<,s2
+C8Ph!w
+C8PhBy
+C8PhP}
+C8PhZx
+CallByName
+Cannot convert to '|1'.
+Cannot copy the value of 'ByRef' parameter '|1' back to the matching argument because type '|2' cannot be converted to type '|3'.DType '|1' must define operator '|2' to be used in a 'For' statement.PReturn and parameter types of '|1' must be '|2' to be used in a 'For' statement.EParameter types of '|1' must be '|2' to be used in a 'For' statement.KOperator '|1' must have a second parameter of type 'Integer' or 'Integer?'.
+Cannot implement '|1.|2' because its implementation could conflict with the implementation for '|3.|2' for some type arguments.ZMethods of 'System.Nullable(Of T)' cannot be used as operands of the 'AddressOf' operator.\'Is' operand of type '|1' can be compared only to 'Nothing' because '|1' is a nullable type.
+Cannot implement interface '|1' because its implementation could conflict with the implementation of another implemented interface '|2' for some type arguments.
+Cannot infer a common type for the first and second operands of the binary 'If' operator. One must have a widening conversion to the other.FNullable types are not allowed in conditional compilation expressions.QNullable modifier cannot be used with a variable whose implicit type is 'Object'.
+Cannot infer a common type for the second and third operands of the 'If' operator. One must have a widening conversion to the other.OFirst operand in a binary 'If' expression must be nullable or a reference type.3'If' operator cannot be used in a 'Call' statement.MNullable modifier cannot be specified in variable declarations with 'As New'.
+Cannot inherit interface '|1' because it could be identical to interface '|2' from which the interface '|3' inherits for some type arguments.NGeneric parameters used as optional parameter types must be class constrained.
+Cannot inherit interface '|1' because the interface '|2' from which it inherits could be identical to interface '|3' for some type arguments.
+Cannot inherit interface '|1' because the interface '|2' from which it inherits could be identical to interface '|3' from which the interface '|4' inherits for some type arguments.
+Cannot push a closure frame when no block is currently pushed
+Cannot refer to '|1' because it is a member of the value-typed field '|2' of class '|3' which has 'System.MarshalByRefObject' as a base class./Value of type '|1' cannot be converted to '|2'.
+Cannot refer to an instance member of a class from within a shared method or shared member initializer without an explicit instance of the class.
+Cannot skip non existant argument!
+Cannot skip non-existant parameter
+can't open '%s' for writing
+Catch
+CBool
+CByte
+CCConstant
+CCContainer
+CChar
+CDate
+cDelegate constructor for type '|1', necessary for the implementation of delegates, cannot be found.
+CF_^[]
+ChangeType
+'Char' values cannot be converted to '|1'. Use 'Microsoft.VisualBasic.AscW' to interpret a character as a Unicode value or 'Microsoft.VisualBasic.Val' to interpret it as a digit.
+Character is not valid.EOption Strict On prohibits operands of type Object for operator '|1'.ILoop control variable cannot be a property or a late-bound indexed array.VFirst statement of a method body cannot be on the same line as the method declaration.+Maximum number of errors has been exceeded.
+CharNextW
+Chars
+charset
+CheckForSyncLockOnValueType
+ChrW(%u)
+Chttp://www.microsoft.com/pkiops/crl/MicCodSigPCA2011_2011-07-08.crl0a
+CL_[]
+Class
+class
+Class 
+Class '|1' must declare a 'Sub New' because its base class '|2' does not have an accessible 'Sub New' that can be called with no arguments.
+Class '|1' must declare a 'Sub New' because its base class '|2' has more than one accessible 'Sub New' that can be called with no arguments.O'Next' statement names more variables than there are matching 'For' statements.
+Class must be created by this point
+Class_Initialize
+Class_Terminate
+Classes
+ClassInterfaceAttribute
+Clearing a HashTable did not reset the count to 0
+ClearProjectError
+cLinks the specified file as an external assembly resource. resinfo:<file>[,<name>[,public|private]]CSpecifies a Win32 icon file (.ico) for the default Win32 resources.'Specifies a Win32 resource file (.res).
+Close
+CloseHandle
+ClosureVariable
+CLSCompliantAttribute
+CLSID
+CLSID_CorSymWriter
+Coalesce
+CoalesceLHS
+CoCreateGuid
+CoCreateInstance
+Code should not have reached this point of GetPWellKnownAttrVals returns NULL!
+codepage
+CoGetClassObject
+CoInitializeEx
+Collection
+ComClassAttribute
+Comma expected.
+Comma or ')' expected.
+Command line error
+Command line warning/compiler initialization failed unexpectedly: %s
+CompanyName
+Compare
+'Compare' expected.KOption Strict On requires all variable declarations to have an 'As' clause.cOption Strict On requires all Function, Property, and Operator declarations to have an 'As' clause.IOption Strict On requires that all method parameters have an 'As' clause.
+CompareAssemblyIdentity
+CompareFileTime
+CompareObject
+CompareObjectEqual
+CompareObjectGreater
+CompareObjectGreaterEqual
+CompareObjectLess
+CompareObjectLessEqual
+CompareObjectNotEqual
+CompareString
+CompareStringW
+compilation failed : '%s'
+Compilation failed: %u error
+Compilation failed: %u errors
+Compilation successful
+CompilationRelaxationsAttribute
+Compiler
+CompilerGeneratedAttribute
+CompilerServices
+Compiling...
+Component Categories
+ComSourceInterfacesAttribute
+ComVisibleAttribute(False)
+Concat
+concatenate
+ConcatenateObject
+Condition
+ConditionalCompareObjectEqual
+ConditionalCompareObjectGreater
+ConditionalCompareObjectGreaterEqual
+ConditionalCompareObjectLess
+ConditionalCompareObjectLessEqual
+ConditionalCompareObjectNotEqual
+Const
+Const 
+constant
+Constant
+-Constant '|1' cannot depend on its own value.>'Shared' cannot be combined with '|1' on a method declaration.@'Shared' cannot be combined with '|1' on a property declaration./Properties in a Module cannot be declared '|1'.
+Constants must have a value.3Constant expression not representable in type '|1'.
+Constraints for this type parameter do not match the constraints on the corresponding type parameter defined on one of the other partial types of '|1'.lLatebound overload resolution cannot be applied to '|1' because the accessing instance is an interface type.gConversion from '|1' to '|2' cannot occur in a constant expression used as an argument to an attribute.
+ConstructorInfo
+Content
+content
+Content-Type
+Continue
+ControlTraceW
+Conversions
+Convert
+ConvertChecked
+ConvertDefaultLocale
+CopyArray
+CorBindToCurrentRuntime
+CoTaskMemAlloc
+CoTaskMemFree
+CoTaskMemRealloc
+could not find library '%s'
+Could not find the owner of the variable
+CoUninitialize
+count
+Count mismatch detected when resizing a dynamic hash table
+Create a library assembly.1Create a module that can be added to an assembly.
+Create a Windows application.
+Create bug report file.!Display elapsed compilation time.
+CreateALink
+CreateAssemblyNameObject
+CreateAttribute
+CreateDelegate
+CreateEventW
+CreateFileA
+CreateFileMappingA
+CreateFileMappingW
+CreateFileW
+CreateICeeFileGen
+CreateInstance
+CreateMutexW
+CreateNamespaceAttribute
+CreateProcessW
+CreateProjectError
+CreateToolhelp32Snapshot
+CryptAcquireContextA
+CryptCreateHash
+CryptDestroyHash
+CryptGetHashParam
+CryptHashData
+CryptReleaseContext
+CSByte
+CShort
+CTPhjy
+CTSPj
+CType
+CUInt
+CULng
+Currency
+Current
+Current called in an invalid state
+CUShort
+custom
+Custom
+Custom 
+Cz0u-
+D'|1' cannot override '|2' because they have different access levels.B'|1' cannot override '|2' because it is declared 'NotOverridable'.
+D=xz#
+D0 |i@
+D0h<4E
+D0H<4E
+D0h<4E
+D0H<4E
+D0T|i@
+D1 |i@
+D1$|i@
+D1(|i@
+D1@|i@
+D1\|i@
+D1<|i@
+D18|i@
+D1T|i@
+D2_2l2
+d5h5l5p5t5x54:
+Data type(s) of the type parameter(s) cannot be inferred from these arguments because more than one type is possible. Specifying the data type(s) explicitly might correct this error.
+Data type(s) of the type parameter(s) cannot be inferred from these arguments because they do not convert to the same type. Specifying the data type(s) explicitly might correct this error.
+Data type(s) of the type parameter(s) cannot be inferred from these arguments. Specifying the data type(s) explicitly might correct this error.
+Data type(s) of the type parameter(s) in extension method '|2' defined in '|3' cannot be inferred from these arguments because more than one type is possible.
+Data type(s) of the type parameter(s) in extension method '|2' defined in '|3' cannot be inferred from these arguments because more than one type is possible. Specifying the data type(s) explicitly might correct this error.uData type(s) of the type parameter(s) cannot be inferred from these arguments because more than one type is possible.
+Data type(s) of the type parameter(s) in extension method '|2' defined in '|3' cannot be inferred from these arguments because they do not convert to the same type. Specifying the data type(s) explicitly might correct this error.{Data type(s) of the type parameter(s) cannot be inferred from these arguments because they do not convert to the same type.
+Data type(s) of the type parameter(s) in extension method '|2' defined in '|3' cannot be inferred from these arguments because they do not convert to the same type.wOption Strict On does not allow narrowing in implicit type conversions between the lambda expression and delegate '|1'.mOption Strict On does not allow narrowing in implicit type conversions between method '|1' and delegate '|2'.]Nesting of parentheses in lambda expression's parameter list exceeds maximum allowable depth.Q'|1' is not accessible in this context because the return type is not accessible.T'|1.|2' is not accessible in this context because the return type is not accessible.
+Data type(s) of the type parameter(s) in extension method '|2' defined in '|3' cannot be inferred from these arguments. Specifying the data type(s) explicitly might correct this error.NData type(s) of the type parameter(s) cannot be inferred from these arguments.]Data type(s) of the type parameter(s) in method '|2' cannot be inferred from these arguments.wData type(s) of the type parameter(s) in extension method '|2' defined in '|3' cannot be inferred from these arguments.
+Data type(s) of the type parameter(s) in method '|2' cannot be inferred from these arguments because more than one type is possible.
+Data type(s) of the type parameter(s) in method '|2' cannot be inferred from these arguments because more than one type is possible. Specifying the data type(s) explicitly might correct this error.
+Data type(s) of the type parameter(s) in method '|2' cannot be inferred from these arguments because they do not convert to the same type.
+Data type(s) of the type parameter(s) in method '|2' cannot be inferred from these arguments because they do not convert to the same type. Specifying the data type(s) explicitly might correct this error.
+Data type(s) of the type parameter(s) in method '|2' cannot be inferred from these arguments. Specifying the data type(s) explicitly might correct this error.
+Date constant is not valid.C'|1' cannot override '|2' because it is not declared 'Overridable'.DArray modifiers cannot be specified on both a variable and its type.U'NotOverridable' cannot be specified for methods that do not override another method.5Types declared 'Private' must be inside another type.
+DateTime
+DBNull
+Debug
+debug
+debug:full
+debug:pdbonly
+DebuggerDisplay
+DebuggerDisplayAttribute
+DebuggerNonUserCodeAttribute
+DebuggerStepThroughAttribute
+Decimal
+Declaration expected.
+Declare
+Declare 
+default
+Default
+Default 
+''Default' cannot be combined with '|1'.$Expression does not produce a value.
+Default property access is ambiguous between the inherited interface members '|1' of interface '|2' and '|3' of interface '|4'.
+default.win32manifest
+DefaultCharSetAttribute
+define
+delaysign
+Delegate
+delegate
+Delegate 
+Delegate Class
+delegate sub
+DelegateAsyncResult
+DelegateAsyncState
+DelegateCallback
+Delegates cannot handle events.b'Is' operator does not accept operands of type '|1'. Operands must be reference or nullable types.m'TypeOf ... Is' requires its left operand to have a reference type, but this operand has the value type '|1'.3Properties declared 'ReadOnly' cannot have a 'Set'.4Properties declared 'WriteOnly' cannot have a 'Get'.'Statement is not valid inside a method. Property missing 'End Property'.
+-Delegates cannot implement interface methods.
+Delete
+DeleteCriticalSection
+DeleteFileA
+DeleteFileW
+Descendants
+Descending
+Description
+DestroyICeeFileGen
+Diagnostics
+DictionaryEntry
+Dim buf As New System.Text.StringBuilder
+Dim enumType As Global.System.Type = GetType(Global.System.Collections.Generic.IEnumerable(Of ))
+Dim t As Global.System.Type = p.GetType()
+dimensions
+D'Inherits' statements must precede all declarations in an interface.
+DInterface '|1' cannot be indexed because it has no default property.0Attribute '|1' cannot be applied to an assembly.-Attribute '|1' cannot be applied to a module.
+DirectCast
+directcast
+Disable all warnings.
+DispatchWrapper
+Display this usage message.
+Display verbose messages.
+Dispose
+disposedValue
+Distinct
+Divide
+divide
+DivideObject
+DivObj
+DllDeclare
+DLYwh
+doc:<file>
+doc[+|-]
+DOCTYPE
+Double
+DPlease describe the compiler problem (press Enter twice to finish):
+DPSSSQQS
+dump.compilerfx
+DuplicateHandle
+DVisual Basic Command Line Compile
+DW0200
+E ;E(s8
+E ^_[
+E _^[
+E h`&A
+E PQj
+E PSV
+E PWVQ
+E QPS
+E QRPS
+E RPh
+E SVW
+E WPj
+E$Ph,
+E$RPhZw
+E$SSSS
+E(_^[
+E(QRP
+E,_^[
+E,RWP
+E,WSQ
+E/:E'
+E?_^[
+e_.,>
+E+P8E
+E<Euj
+E0_^[
+E0C1)0'
+E0RPW
+E0VWQ
+E8_^[
+EDVRPQ
+EH;x|u
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicCodSigPCA2011_2011-07-08.crt0
+ej"Xf
+EK_ADD
+EK_ANDALSO
+EK_ARG
+EK_ARRINDEX
+EK_ARRINIT
+EK_ASSG
+EK_BITAND
+EK_BITOR
+EK_BITXOR
+EK_BLOCK
+EK_CALL
+EK_CASELIST
+EK_CONC
+EK_CONSTANT
+EK_CTYPEOP
+EK_DECL
+EK_DIV
+EK_END
+EK_EQ
+EK_EXIT
+EK_FIELD
+EK_GOTO
+EK_GT
+EK_HANDLER
+EK_IDIV
+EK_IIF
+EK_IS
+EK_ISNOT
+EK_ISTYPE
+EK_LABEL
+EK_LE
+EK_LIKE
+EK_LIST
+EK_LOCAL
+EK_LOGNOT
+EK_LSHIFT
+EK_LT
+EK_MUL
+EK_NE
+EK_NEG
+EK_NEWARRAY
+EK_ONERROR
+EK_ORELSE
+EK_POW
+EK_QMARK
+EK_REDIM
+EK_RESUME
+EK_RETURN
+EK_RSHIFT
+EK_SELECT
+EK_SEQ
+EK_STMTAS
+EK_STOP
+EK_SUB
+EK_TRY
+EK_TYPEOF
+Element
+Element is missing an end tag.
+ElementAtOrDefault
+Elements
+ELRPQ
+ElseIf
+ElseIf enumType IsNot Nothing AndAlso enumType.IsAssignableFrom(t) Then
+ElseIf t Is GetType(Global.System.String) Then
+Emit debugging information.
+Emit PDB file only.
+Empty
+Enable optimizations.
+encoding
+'End Function' expected.:'#Else' must be preceded by a matching '#If' or '#ElseIf'./Derived classes cannot raise base class events.2Try must have at least one 'Catch' or a 'Finally'.RFully qualified names for types in namespaces cannot be longer than |1 characters.!Events cannot have a return type.
+End If
+End Namespace 
+End of expression expected.ZCannot set the value of a local variable for a method that is not at the top of the stack.*Unable to load information for class '|1'.8'Exit' statements are not valid in the Immediate window.:'Resume' statements are not valid in the Immediate window.9'Catch' statements are not valid in the Immediate window.;'Finally' statements are not valid in the Immediate window.7'Try' statements are not valid in the Immediate window.:'Select' statements are not valid in the Immediate window.8'Case' statements are not valid in the Immediate window.<'On Error' statements are not valid in the Immediate window..Evaluation of expression or statement stopped.0Evaluation of expression or statement timed out.#Method call did not return a value.9'Error' statements are not valid in the Immediate window.9'Throw' statements are not valid in the Immediate window.>'With' contexts and statements are not valid in debug windows.
+End of statement expected.I'Option' must be followed by 'Compare', 'Explicit', 'Infer', or 'Strict'.8'Option Compare' must be followed by 'Text' or 'Binary'.
+'End Operator' expected.5'End Operator' must be the first statement on a line.9'End Operator' must be preceded by a matching 'Operator'.
+'End' statement not valid.KArray initializers are valid only for arrays, but the type of '|1' is '|2'.7'#End Region' must be preceded by a matching '#Region'.;'#Region' statement must end with a matching '#End Region'.
+'End Sub' expected.
+End tag </|1|2|3> expected.
+End With
+EndApp
+EndIf
+EndInvoke
+Enter
+EnterCriticalSection
+Enum 
+Enum types cannot be nullable.yNullable types are not supported because the current version of 'mscorlib.dll' does not define the type 'Nullable(of T)'.
+Enumerable
+Equal
+equals
+Equals
+Equals = True
+'Equals' expected.
+Erase
+Error
+error
+errorindex
+errorreport
+Event
+Event 
+Event '|1' cannot be found.0'WithEvents' variable does not raise any events.
+Event '|1' cannot implement event '|3.|2' because its delegate type does not match the delegate type of another event implemented by '|1'.
+EventArgs
+EventDecl
+EventHandler
+eventname
+-Events in interfaces cannot be declared '|1'.1Statement cannot appear outside of a method body.DStructure '|1' cannot be indexed because it has no default property.;'|1' is a type in '|2' and cannot be used as an expression.
+EX_ATTR
+example
+exception
+Exception
+ExclusiveOr
+exe|winexe|library|module
+exitkind
+ExpandEnvironmentStringsW
+Expected '/' for XML end tag.
+Explicit
+Exponent is not valid.
+ExponentObject
+expr_kind
+Expression
+Expression expected.
+Expression has the type '|1' which is a restricted type and cannot be used to access members inherited from 'Object' or 'ValueType'.GExpression of type '|1' cannot be converted to 'Object' or 'ValueType'.5Type characters are not allowed in label identifiers.
+Expression is not a method.2Argument not specified for parameter '|1' of '|2'.
+Expression of type '|1' is not queryable. Make sure you are not missing an assembly reference and/or namespace import for the LINQ provider.<Definition of method '|1' is not accessible in this context.YMethod cannot contain both an 'On Error GoTo' statement and a lambda or query expression.
+Expression`1
+ExpressionListHelper is in an invalid state. Did you call Init?
+Expressions
+Extension
+ExtensionCallLookupResult
+Extensions
+extern
+ExternalChecksum
+ExternalSource
+F ;A 
+F ^[]
+F _^]
+F 2G 
+F hU}
+F PjL
+F PWS
+F QRP
+F QSRP
+F SRP
+F SRPQ
+F WRP
+F WSRP
+F$9F 
+F$9V,t
+F$PQRS
+F$QRPVW
+F(^[]
+F(h@@
+F,_^[]
+F,pi@
+f:\binaries.x86ret\bin\i386\Optimization\opt\bin\i386\vbc.pdb
+f;9_t
+F;sTr
+F;w<r
+F;wTr
+F\@u!
+F\@u"
+F\@u6
+F\@ub
+F\@uE
+F|^_[
+F<;ug;
+F<=u%;
+F0;F(t8
+F0;F(t9
+F0_^[
+F0_H^]
+F0pi@
+F0PQh*w
+F0PSQ
+F4SSSRP
+F8_^[
+F8PQS
+false
+False
+Fatal error
+FAttribute '|1' cannot be applied to a method with optional parameters.
+fclose
+FConflicts with '|1', which is implicitly declared for '|2' in |3 '|4'.j|1 '|2' implicitly defines '|3', which conflicts with a member implicitly declared for |4 '|5' in |6 '|7'.[|1 '|2' implicitly defines '|3', which conflicts with a member of the same name in |4 '|5'.K|1 '|2' conflicts with a member implicitly declared for |3 '|4' in |5 '|6'.
+Fd^[]
+FD^[]
+Fd^[]
+FDpi@
+FDRPQ
+FFGGf
+FFGHIJKLLqNOqI
+FG u[
+FG@uG
+fgetws
+FH^_[
+FH_[^
+Fh04E
+FH04E
+Fh04E
+FH04E
+FH9CHt
+FH9FDuZ
+FHpi@
+Field
+field
+FieldInfo
+file '%s' could not be found
+file://
+filealign
+FileDescription
+FileType
+FileVersion
+Filo is empty
+FImports alias '|1' conflicts with '|2' declared in the root namespace.4'|1' cannot shadow a method declared 'MustOverride'.0Optional parameters cannot have structure types.
+Finalize
+Finally
+FindClose
+FindFirstFileA
+FindFirstFileW
+FindNextFileA
+FindNextFileW
+FindResourceW
+First
+First statement of this 'Sub New' must be a call to 'MyBase.New' or 'MyClass.New' because base class '|1' of '|2' does not have an accessible 'Sub New' that can be called with no arguments./|1 '|2' must implement '|3' for interface '|4'.
+First statement of this 'Sub New' must be a call to 'MyBase.New' or 'MyClass.New' because base class '|1' of '|2' has more than one accessible 'Sub New' that can be called with no arguments.TArray declared as for loop control variable cannot be declared with an initial size.oThe '|1' keyword is used to overload inherited members; do not use the '|1' keyword when overloading 'Sub New'.>Type character cannot be used in a type parameter declaration.
+First statement of this 'Sub New' must be an explicit call to 'MyBase.New' or 'MyClass.New' because the '|1' in the base class '|2' of '|3' is marked obsolete.
+First statement of this 'Sub New' must be an explicit call to 'MyBase.New' or 'MyClass.New' because the '|1' in the base class '|2' of '|3' is marked obsolete: '|4'.W'|1' cannot inherit from |2 '|3' because it expands the access of type '|4' to |5 '|6'.a'|1' cannot inherit from |2 '|3' because it expands the access of type '|4' outside the assembly.
+First statement of this 'Sub New' should be an explicit call to 'MyBase.New' or 'MyClass.New' because the '|1' in the base class '|2' of '|3' is marked obsolete.
+First statement of this 'Sub New' should be an explicit call to 'MyBase.New' or 'MyClass.New' because the '|1' in the base class '|2' of '|3' is marked obsolete: '|4'8Operator without an 'As' clause; type of Object assumed.LType arguments inferred for method '|1' result in the following warnings :|2<Attribute 'Conditional' is only valid on 'Sub' declarations.
+FL_[^
+Flags
+flags
+floor
+FLSQj
+fMethods declared 'Overrides' cannot be declared 'Overridable' because they are implicitly overridable.7'AddressOf' expressions are not valid in debug windows.1Web methods cannot be evaluated in debug windows.
+FNullable modifier cannot be specified on both a variable and its type.
+For Each i As Global.System.Char in t.Name
+'For Each' on type '|1' is ambiguous because the type implements multiple instantiations of 'System.Collections.Generic.IEnumerable(Of T)'.y'IsNot' operand of type '|1' can be compared only to 'Nothing' because '|1' is a type parameter with no class constraint.-Type parameters cannot be used as qualifiers.
+ForceRemove
+ForEachInArr
+ForEachInObj
+ForEachNextObj
+ForLoopInitObj
+FormatMessageW
+ForNextCheckDec
+ForNextCheckObj
+ForNextCheckR4
+ForNextCheckR8
+Fp^_[
+FPpi@
+fputws
+FreeFile
+FreeLibrary
+Friend
+Friend access was denied to '|1'. If you want the compiler to consider friend types in '|1', add the public key information in the project settings or through a command-line switch to the compiler for the project '|2'.:Friend declaration '|1' is invalid and cannot be resolved.
+Friend assembly reference '|1' is invalid. InternalsVisibleTo declarations cannot have a version, culture, public key token, or processor architecture specified.
+Friend assembly reference '|1' is invalid. Strong-name signed assemblies must specify a public key in their InternalsVisibleTo declarations.
+'From' expected.BNested function does not have the same signature as delegate '|1'.<'ByRef' parameter '|1' cannot be used in a query expression.7Expression cannot be converted into an expression tree.PInstance members and 'Me' cannot be used within query expressions in structures.8Variable cannot be initialized with non-array type '|1'.
+FromBoolean
+FromByte
+FromChar
+FromCharAndCount
+FromCharArray
+FromCharArraySubset
+FromDate
+FromDecimal
+FromDouble
+FromInteger
+FromLong
+FromObject
+FromSingle
+FromString
+FT;AT
+FT;E s
+Ft^_[
+FT8] 
+fullname
+Func`1
+Func`2
+Func`3
+Func`4
+Func`5
+Function
+function
+Function 
+Function '|1' doesn't return a value on all code paths. A null reference exception could occur at run time when the result is used.
+Function evaluation is disabled because a previous function evaluation timed out. To re-enable function evaluation, step again or restart debugging.HObject created by Edit and Continue is not yet available for evaluation.
+function return type
+fusion.dll
+fwprintf
+fwrite
+FX^[]
+G f@j
+G jGP
+G Phd
+G QRP
+G QSRP
+G$_^]
+G$PQhd
+G$PSQ
+G$VQRP
+G'(' unexpected. Arrays of uninstantiated generic types are not allowed.
+G(_^[
+G(_^[]
+G(QRP
+G(SVP
+G, t/
+G,@t:
+G;{ r
+G\@u 
+G\@uC
+G\@uK
+G`_^[]
+G|_^[
+G'|1' cannot be declared 'Partial' because partial methods must be Subs.RMethod '|1' does not have the same generic constraints as the partial method '|2'.8Partial method '|1' cannot use the 'Implements' keyword.G'AddressOf' cannot be applied to '|1' because '|1' is a partial method.QMethod '|1' must be declared 'Private' in order to implement partial method '|2'.
+G|Pj-
+G<QRPW
+G0_^[
+G0PSSj
+G0PWS
+g1q1{1
+G4_^]
+G82F8
+g89uF
+gb2312
+Gb77a5c561934e089
+GBAF;
+GDPRj
+Generic method binding context expected!!!
+GenericBadNamedRoot
+GenericBinding
+GenericConstraint
+GenericNonTypeConstraint
+GenericParam
+GenericTypeBinding
+GenericTypeConstraint
+'Get' is already declared.
+'Get' statements are no longer supported. File I/O functionality is normally available in the 'Microsoft.VisualBasic' namespace, but the targeted version of the .NET Compact Framework does not support it.
+GetACP
+GetCommandLineA
+GetCommandLineW
+GetConsoleOutputCP
+GetConsoleScreenBufferInfo
+GetCORSystemDirectory
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetEnumerator
+GetEnvironmentVariableW
+GetFieldFromHandle
+GetFileAttributesW
+GetFileSize
+GetFileTime
+GetFileType
+GetFileVersionInfoSizeW
+GetFileVersionInfoW
+GetFullPathNameA
+GetFullPathNameW
+GetHashCode
+GetHashCode *= &HA5555529
+GetHashCode = |1
+GetLastError
+GetLocaleInfoW
+GetMethodFromHandle
+GetModuleFileNameA
+GetModuleFileNameExW
+GetModuleFileNameW
+GetModuleHandleW
+GetName
+GetNamespace
+GetObjectValue
+GetProcAddress
+GetProcessHeap
+GetRealProcAddress
+GetShortPathNameA
+GetShortPathNameW
+GetStdHandle
+GetSystemDefaultLangID
+GetSystemDefaultLCID
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemTimeAsFileTime
+GetTempFileNameW
+GetTempPathW
+GetTickCount
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetType
+GetTypeFromHandle
+GetUserDefaultLCID
+GetUserDefaultUILanguage
+GetUserNameW
+GetValue was called on a DynamicHashTable<K,V,A,H> that is in an invalid state. The underlying array should never be null.
+GetValueOrDefault
+GetVersion
+GetVersionExA
+GetVersionExW
+GetXmlNamespace
+GGAAHu
+GGCCHu
+Ghh0TO
+GHQRSP
+gInclude all files in the current directory and subdirectories according to the wildcard specifications.zSpecifies the Class or Module that contains Sub Main. It can also be a Class that inherits from System.Windows.Forms.Form.
+Global
+global
+Global.System.Diagnostics.DebuggerDisplay("\{{|1,nq}\}", Type := "|2")
+Global.System.Diagnostics.DebuggerDisplay("<generated method>",Type := "<generated method>")
+Global.System.Windows.Forms.Application.Run(
+Global.System.Windows.Forms.Application.Run(New 
+GlobalLogger
+gOperator '|1' is not defined for types '|2' and '|3'. Use 'Is' operator to compare two reference types.
+Gosub
+Gp9_ptL
+GreaterThan
+greaterthan
+GreaterThanOrEqual
+greaterthanorequals
+Group
+GroupBy
+GroupJoin
+G'Shared' attribute property '|1' cannot be the target of an assignment.I'ReadOnly' attribute property '|1' cannot be the target of an assignment.1Resource name '|1' cannot be used more than once.>'|1' cannot be used as an attribute because it is not a class.
+GT;CTu
+GT;FTuT3
+GTHDH
+GTPhHy
+GuidAttribute
+GX^[H_]
+GXH_]
+H&2O&
+H(3N$
+H(RQV
+H(WSR
+H@WQS
+H0_^[
+h0l0p0t0x0|0
+H0Rj 
+H0RQWhQv
+H0WRQShqu
+H4Rj0
+H4RjH
+H4WRj(
+Handles
+HandlesList
+Hardware
+HasValue
+hAttribute '|1' cannot be specified more than once in this project, even with identical parameter values.aClass '|1' should declare a 'Sub New' because the '|2' in its base class '|3' is marked obsolete.gClass '|1' should declare a 'Sub New' because the '|2' in its base class '|3' is marked obsolete: '|4'.
+HE2NE
+HeapAlloc
+HeapCreate
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSetInformation
+HH;NHu
+HH;OHtv
+HhBRQW
+HhRQV
+HKEY_CLASSES_ROOT
+HKEY_CURRENT_CONFIG
+HKEY_CURRENT_USER
+HKEY_DYN_DATA
+HKEY_LOCAL_MACHINE
+HKEY_PERFORMANCE_DATA
+HKEY_USERS
+HKLM\Software\Microsoft\Internet Explorer\Registration\DigitalProductID
+How can an implicit variable not be a named root?
+How can m_pCurrent not be a procedure?
+HpHdH
+HPRQS
+HPRQV
+HPRQW
+HPublic
+http://go.microsoft.com/fwlink/?LinkId=79513
+http://www.microsoft.com0
+http://www.w3.org/2000/xmlns/
+http://www.w3.org/XML/1998/namespace
+http-equiv
+I PQR
+I$RWR
+I<j\Q
+I0RPSSj
+I8;J8
+I8Rh-
+I8Rh/
+IAsyncResult
+ICollection
+ICollection`1
+Identifier expected.
+Identifier is too long.,Bracketed identifier is missing closing ']'.
+IDictionary
+IDictionary`2
+IDisposable
+IDivObj
+IdReference
+IEnumerable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+IEquatable
+IEquatable`1
+If |1 IS |3
+If |1 Is Nothing Then
+If |1 IsNot Nothing AndAlso .|1 IsNot Nothing AndAlso Not CObj(|1).Equals(CObj(.|1)) Then Return False
+''If' must end with a matching 'End If'.-'While' must end with a matching 'End While'.%'Do' must end with a matching 'Loop'.&'For' must end with a matching 'Next'.+'With' must end with a matching 'End With'.7'Else' must be preceded by a matching 'If' or 'ElseIf'.-'End If' must be preceded by a matching 'If'.:'End Select' must be preceded by a matching 'Select Case'.2'Exit Do' can only appear inside a 'Do' statement.3'End While' must be preceded by a matching 'While'.+'Loop' must be preceded by a matching 'Do'.,'Next' must be preceded by a matching 'For'.1'End With' must be preceded by a matching 'With'.4Label '|1' is already defined in the current method.4'Select Case' must end with a matching 'End Select'.
+If neither type is a subtype of the other, and the types are not interfaces, then they must be equivalent!
+If Not |1 Is Nothing Then GetHashCode += |1.GetHashCode()
+If p Is Nothing Then
+If result is not an extension call lookup result it should be a named root!
+If Result is not an extension call lookup result then it should be a named root!
+If t.IsPrimitive 
+If val Is Nothing Then Return False
+ignoreFirstParameterOfProc1 => Proc1->GetFirstParam()
+ignoreFirstParameterOfProc2 => Proc2->GetFirstParam()
+Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^
+IIDFromString
+IIt"It
+IList
+IList`1
+Implements
+Implements 
+ImplementsList
+implicit
+implicitvalue
+import
+imports
+Imports
+'In' expected.LThe first 'From' in a query cannot be followed immediately by an assignment.1Query expressions are not valid in debug windows.=Name '|1' is either not declared or not in the current scope.
+'In' or '=' expected.
+include
+IncompleteInitialization
+indexer
+Indirect constraint '|1' obtained from the type parameter constraint '|2' conflicts with the indirect constraint '|3' obtained from the type parameter constraint '|4'.mConstraint '|1' conflicts with the indirect constraint '|2' obtained from the type parameter constraint '|3'.mIndirect constraint '|1' obtained from the type parameter constraint '|2' conflicts with the constraint '|3'.!
+Infer
+Inherited
+Inherits
+InitializeComponent
+InitializeCriticalSection
+Initializer expected.
+Input
+InstallDir
+instance
+Int16
+Int32
+Int64
+IntDivideObject
+Integer
+Integer constant expected.
+Interaction
+Interface
+Interface 
+-Interface '|1' cannot inherit from itself: |2
+InterfaceShadows
+InterlockedCompareExchange
+InterlockedDecrement
+InterlockedExchange
+InterlockedIncrement
+internal
+Internal compiler error
+Internal compiler error.
+InternalExtensionFile.vb
+InternalMyTemplate.vb
+InternalName
+InternalsVisibleToAttribute
+InternalXmlHelper
+InternalXmlHelper.vb
+'Into' expected.0'Aggregate' cannot be followed by an assignment.=Aggregate function name cannot be used with a type character.
+IntPtr
+Invalid cast!
+Invoke
+IQueryable
+IQueryable`1
+'Is' expected.4'Option |1' statement can only appear once per file.
+IsDebuggerPresent
+IsFalse
+IsGenericMethodDefinition
+IsNot
+IsNumeric
+IsTrue
+istype
+IsValidCodePage
+iswalpha
+iswspace
+It should only be possible to refer to a named root or an extension call lookup result!
+Itanium
+j PVQW
+j Yf;H
+j"Zf;
+J(QPj-
+j:Xf;
+j?Yf;H
+j?Zf;
+J'|1' cannot be applied because the format of the GUID '|2' is not correct.\'Microsoft.VisualBasic.ComClassAttribute' and '|1' cannot both be applied to the same class.
+j<Yf;
+j=Yf;
+j>Zf;
+jAYf;
+jaYf;
+jdjcj
+jjjh@
+jjjjj
+jjjjjj
+jjjjjjj
+jjjjjjjj
+jjjjjjjjj
+jjjjjjjjjj
+jjjjjjjjjjj
+jjjjjjjjjjjj
+jlZf;
+jLZf;
+jmZf;
+jMZf;
+'Join' expected.(Nullable parameters must specify a type.
+JuoPj
+j-Xf;
+jxZf;
+jXZf;
+j'Yf;
+j'Zf;
+K RPQ
+K$j0j
+K$RPQ
+K(QPV
+k'|1' has the same name as another type exposed in a 'My' group. Rename the type or its enclosing namespace.
+K0QPR
+K0QVW
+K0QWV
+K4\7f7
+K8QhZx
+Kernel32.dll
+KERNEL32.dll
+Key not present in the DynamicHashTable<K,V,A,H>
+Key%u
+keycontainer
+keyfile
+KeyValuePair`2
+Keyword does not name a type.8Specifiers valid only at the beginning of a declaration.
+KhQfB
+KMethod in a structure cannot be declared 'Protected' or 'Protected Friend'.1Delegate in an interface cannot be declared '|1'.-Enum in an interface cannot be declared '|1'..Class in an interface cannot be declared '|1'.2Structure in an interface cannot be declared '|1'.
+KReferences to 'ByRef' parameters cannot be converted to an expression tree.
+ks_c_5601
+ks_c_5601-1987
+KT;HTt
+Kt<,s
+l'|1' and '|2' cannot overload each other because they differ only by parameters declared 'ByRef' or 'ByVal'.
+l'|1.|2' from 'implements |3' is already implemented by the base class '|4'. Re-implementation of |5 assumed.W'|1.|2' is already implemented by the base class '|3'. Re-implementation of |4 assumed.&Implicit conversion from '|1' to '|2'.2Late bound resolution; runtime errors could occur.^Operands of type Object used for operator '|1'; use the 'Is' operator to test object identity.KOperands of type Object used for operator '|1'; runtime errors could occur.DVariable declaration without an 'As' clause; type of Object assumed.?Function without an 'As' clause; return type of Object assumed.8Property without an 'As' clause; type of Object assumed.
+l0p0|0
+L0P0T0X0\0
+l1p1t1x1|1
+L2P2T2X2\2
+Label '|1' is not defined.8'GoTo' statements are not valid in the Immediate window.-Labels are not valid in the Immediate window.<'SyncLock' statements are not valid in the Immediate window."Error creating Win32 resources: |03Error saving temporary Win32 resource file '|1': |0+Unable to create temp file in path '|1': |0*Error setting assembly manifest option: |0$Error creating assembly manifest: |0+Unable to create Assembly Linker object: |0ZUnable to generate a reference to file '|1' (use TLBIMP utility to reference COM DLLs): |0&Unable to embed resource file '|1': |0(Unable to link to resource file '|1': |0
+labelname
+Lambda
+Lambda expression will not be removed from this event handler. Assign the lambda expression to a variable and use the variable to add and remove the event.
+Lambda parameter '|1' hides a variable in an enclosing block, a previously defined range variable, or an implicitly declared variable in a query expression.}Option Strict On requires each lambda expression parameter to be declared with an 'As' clause if its type cannot be inferred.lArray modifiers cannot be specified on lambda expression parameter name. They must be specified on its type.
+LambdaExpression
+LateCall
+LateCanEvaluate
+LateGet
+LateIndexGet
+LateIndexSet
+LateIndexSetComplex
+LateSet
+LateSetComplex
+lConstants must be of an intrinsic or enumerated type, not a class, structure, type parameter, or array type.
+LDescribe what you think should have happened (press Enter twice to finish):
+LeaveCriticalSection
+LeftShift
+LeftShiftObject
+Legal_Policy_Statement
+Legal_policy_statement
+LegalCopyright
+Length
+lessthan
+LessThan
+LessThanOrEqual
+lessthanorequals
+Level
+l'For' loop control variable cannot be of type '|1' because the type does not support the required operators.
+'Lib' expected.
+libpath
+library
+LifetimeNone temporaries should not be lifted
+LiftedOperatorMethod
+LikeObj
+LikeObject
+LikeString
+Line is too long.
+'Line' statements are no longer supported. File I/O functionality is available as 'Microsoft.VisualBasic.FileSystem.LineInput' and the graphics functionality is available as 'System.Drawing.Graphics.DrawLine'.
+'Line' statements are no longer supported. File I/O functionality is normally available as 'Microsoft.VisualBasic.FileSystem.LineInput', but the targeted version of the .NET Compact Framework does not support it. The graphics functionality is available as 'System.Drawing.Graphics.DrawLine'.XThe targeted version of the .NET Compact Framework does not support the 'End' statement.gEvent '|1' specified by the 'DefaultEvent' attribute is not a publicly accessible event for this class.
+linkres
+linkresource
+List`1
+List<T,A>::Remove was called with a null node
+Lmodule
+Ln>+0f
+Loading |1.
+LoadLibraryExW
+LoadLibraryShim
+LoadLibraryW
+LoadResource
+LoadStringW
+local
+LocalAlloc
+LocalFree
+location
+LockResource
+logicaland
+logicalor
+LongLength
+lstrcmpiW
+lstrcmpW
+lstrlenW
+LType arguments for method '|1' could not be inferred from the delegate '|2'.
+M RPQ
+M RPQS
+M RSSP
+M SSR
+M$QRP
+M$RPQ
+M$RSPQj
+M$RWVPQ
+M$SRPQj
+M$VPQh`w
+M(RPj
+M(RPQ
+M(RPQj
+M(RPWVQ
+M(RSPQW
+M(WSR
+M'|1' cannot implement '|2' because there is no matching |3 on interface '|4'.
+M0K0I
+M0PWj
+M4RPQ
+malloc
+MAllocation failed in List<T,A>::AddFirst
+MapViewOfFile
+MarshalAsAttribute
+MarshalByRefObject
+Me.|1 = |2
+Member '|1' cannot override member '|2' defined in another assembly/project because the access modifier 'Protected Friend' expands accessibility. Use 'Protected' instead.
+Member '|1.|2' that matches this signature cannot be implemented because the interface '|1' contains multiple members with this same name and signature: |3
+Member '|1.|2' that matches this signature cannot be overridden because the class '|1' contains multiple members with this same name and signature: |3
+MemberBinding
+MemberInit
+membername
+members
+memcpy
+memcpy_s
+memmove
+memset
+method
+Method '|1' cannot implement partial method '|2' because '|3' already implements it. Only one method can implement a partial method..Partial methods must have empty method bodies.
+Method '|1' has a link demand, but overrides or implements the following methods which do not have a link demand. A security vulnerability may exist: |2
+MethodDecl
+MethodImpl
+MethodInfo
+MhMuM
+Microsoft
+Microsoft (R) Visual Basic Compiler
+Microsoft America Operations1&0$
+Microsoft Code Signing PCA 2011
+Microsoft Code Signing PCA 20110
+Microsoft Corporation
+Microsoft Corporation0
+Microsoft Corporation1
+Microsoft Corporation1%0#
+Microsoft Corporation1&0$
+Microsoft Corporation1(0&
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft Visual Basic
+Microsoft.VisualBasic
+Microsoft.VisualBasic.ComClassAttribute
+'Microsoft.VisualBasic.ComClassAttribute' is specified for class '|1' but '|1' has no public members that can be exposed to COM; therefore, no COM interfaces are generated.
+'Microsoft.VisualBasic.ComClassAttribute' on class '|1' implicitly declares |2 '|3', which conflicts with a member of the same name in |4 '|5'. Use 'Microsoft.VisualBasic.ComClassAttribute(InterfaceShadows:=True)' if you want to hide the name on the base |5.
+Microsoft.VisualBasic.CompareMethod.
+Microsoft.VisualBasic.CompilerServices
+Microsoft.VisualBasic.CompilerServices.BooleanType
+Microsoft.VisualBasic.CompilerServices.ByteType
+Microsoft.VisualBasic.CompilerServices.CharArrayType
+Microsoft.VisualBasic.CompilerServices.CharType
+Microsoft.VisualBasic.CompilerServices.Conversions
+Microsoft.VisualBasic.CompilerServices.DateType
+Microsoft.VisualBasic.CompilerServices.DecimalType
+Microsoft.VisualBasic.CompilerServices.DesignerGeneratedAttribute
+Microsoft.VisualBasic.CompilerServices.DoubleType
+Microsoft.VisualBasic.CompilerServices.FlowControl
+Microsoft.VisualBasic.CompilerServices.IntegerType
+Microsoft.VisualBasic.CompilerServices.LateBinding
+Microsoft.VisualBasic.CompilerServices.LikeOperator
+Microsoft.VisualBasic.CompilerServices.LongType
+Microsoft.VisualBasic.CompilerServices.NewLateBinding
+Microsoft.VisualBasic.CompilerServices.ObjectFlowControl
+Microsoft.VisualBasic.CompilerServices.ObjectFlowControl.ForLoopControl
+Microsoft.VisualBasic.CompilerServices.ObjectType
+Microsoft.VisualBasic.CompilerServices.Operators
+Microsoft.VisualBasic.CompilerServices.OptionCompareAttribute
+Microsoft.VisualBasic.CompilerServices.OptionTextAttribute
+Microsoft.VisualBasic.CompilerServices.ProjectData
+Microsoft.VisualBasic.CompilerServices.ShortType
+Microsoft.VisualBasic.CompilerServices.SingleType
+Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute
+Microsoft.VisualBasic.CompilerServices.StringType
+Microsoft.VisualBasic.CompilerServices.Utils
+Microsoft.VisualBasic.CompilerServices.Versioned
+Microsoft.VisualBasic.dll
+microsoft.visualbasic.dll
+Microsoft.VisualBasic.HideModuleNameAttribute
+Microsoft.VisualBasic.Information
+Microsoft.VisualBasic.Interaction
+Microsoft.VisualBasic.MyGroupCollectionAttribute
+MidStmtStr
+minus
+MinusOne
+minusone
+MinValue
+Missing
+Missing required white space.2XML processing instruction name '|1' is not valid.
+MNumber of indices is less than the number of dimensions of the indexed array.HNumber of indices exceeds the number of dimensions of the indexed array.9'|1' is an Enum type and cannot be used as an expression.3'|1' is a type and cannot be used as an expression.9'|1' is a class type and cannot be used as an expression.='|1' is a structure type and cannot be used as an expression.>'|1' is an interface type and cannot be used as an expression.
+ModObj
+ModObject
+Module
+Module 
+Module_Raw
+Module32FirstW
+Module32NextW
+moduleassemblyname
+Modules cannot be generic._Classes that are generic or contained in a generic type cannot inherit from an attribute class.['Declare'  statements are not allowed in generic types or types contained in generic types.3'|1' is a generic type and requires type arguments.L'|1' cannot override '|2' because they differ by type parameter constraints.P'|1' cannot implement '|2.|3' because they differ by type parameter constraints.aType parameters or types constructed with type parameters are not allowed in attribute arguments.
+Modulo
+Monitor
+MoveNext
+mscoree.dll
+mscorlib
+mscorlib.dll
+mscorpe.dll
+MSVCR90.dll
+MSyntax error in cast operator; two arguments separated by comma are required.Y|1 '|2' cannot implement interface '|4' because it declares '|3' which has a return type.
+MThere should always be a referencing procedure
+mu+f9P
+MulObj
+MultiByteToWideChar
+MulticastDelegate
+Multiply
+MultiplyChecked
+MultiplyObject
+MUse command-line option '|1' or appropriate project settings instead of '|2'.
+Must be 4 byte thing.
+MustInherit
+'MustInherit' cannot be specified for partial type '|1' because it cannot be combined with 'NotInheritable' specified for one of its other partial types.
+MustOverride
+MustOverride 
+'MustOverride' cannot be specified on '|1' because it is in a partial type that is declared 'NotInheritable' in another partial definition.
+My.InternalXmlHelper
+MyBase
+MyClass
+N RPQ
+N RQS
+N RWP
+N WSP
+N$;WLu
+N$QRj
+N$QRPS
+N$RPQ
+N$SRQV
+N(PQj
+N(QRPh
+N(QRPS
+N(WPj
+N*:O*t
+N,QRPS
+N,RPSQ
+N@RWPQ
+N@WPQ
+n|1 '|2' and partial |3 '|4' conflict in |5 '|6', but are being merged because one of them is declared partial.
+N'|1' cannot be declared 'Shadows' outside of a class, structure, or interface.1Property parameters cannot have the name 'Value'.
+N<;HX
+N<QWj
+N0.:5:T<[<8=<=@=D=H=L=
+N0;N(
+N0@PQW
+N0^_[
+N0L0J
+N0QPR
+N0QSP
+N0QSR
+N0QWP
+N0QWR
+N0x%lx
+N4;N<
+N4SPQ
+N4SSS
+N6^_[
+N8RQS
+Name '|1' is not CLS-compliant.
+Name '|1' is not declared.5Operator '|1' is not defined for types '|2' and '|3'.
+Name of type parameter '|1' does not match '|2', the corresponding type parameter defined on the partial method declaration '|3'.
+Named argument expected.*'|1' is not valid on a method declaration.*'|1' is not valid on an event declaration.
+NamedType
+Namespace
+Namespace 
+Namespace My 
+Namespace or type specified in the Imports '|1' doesn't contain any public member or cannot be found. Make sure the namespace or the type is defined and contains at least one public member. Make sure the imported element name doesn't use any aliases.
+Namespace or type specified in the project-level Imports '|1' doesn't contain any public member or cannot be found. Make sure the namespace or the type is defined and contains at least one public member. Make sure the imported element name doesn't use any aliases.
+NamespaceRing
+Narrowing
+Narrowing 
+nDelegate class '|1' has no Invoke method, so an expression of this type cannot be the target of a method call.
+NDRPQ
+Negate
+NegateChecked
+NegateObject
+NegObj
+netcf
+neutral
+NewArrayBounds
+NewArrayInit
+nExpected one of 'Dim', 'Const', 'Public', 'Private', 'Protected', 'Friend', 'Shadows', 'ReadOnly' or 'Shared'.
+'Next' expected.6Character constant must contain exactly one character.fReference required to assembly '|1' containing the definition for event '|2'. Add one to your project.dReference required to module '|1' containing the definition for event '|2'. Add one to your project.\Reference required to assembly '|1' containing the base class '|2'. Add one to your project.ZReference required to module '|1' containing the base class '|2'. Add one to your project.gReference required to assembly '|1' containing the implemented interface '|2'. Add one to your project.eReference required to module '|1' containing the implemented interface '|2'. Add one to your project.AInternal compiler error: code generator received malformed input./'#If' block must end with a matching '#End If'.F'#ElseIf', '#Else', or '#End If' must be preceded by a matching '#If'.<'#ElseIf' must be preceded by a matching '#If' or '#ElseIf'.)Inheriting from 'System.|1' is not valid.%Labels are not valid outside methods.
+NG@_^
+NK_ADD
+NK_ANDALSO
+nk_arrayinit
+NK_AS
+nk_attr
+nk_attrarg
+nk_attrdecl
+nk_binop
+NK_BITAND
+NK_BITOR
+NK_BITXOR
+nk_block
+nk_call
+nk_case
+nk_caselist
+nk_caselist_high
+nk_caselist_low
+NK_CAST
+nk_catch
+nk_class
+NK_CONC
+nk_conditional
+nk_constval
+nk_continue
+nk_declstmt
+nk_deref
+NK_DIV
+nk_do
+nk_end
+nk_exit
+nk_exprstmt
+nk_field
+nk_for
+nk_foreach
+nk_goto
+NK_IDIV
+nk_if
+nk_iif
+nk_label
+NK_LIKE
+nk_list
+NK_LSHIFT
+nk_method
+NK_MUL
+nk_name
+nk_namedtype
+nk_namespace
+NK_NEG
+nk_new
+nk_onerror
+nk_op
+NK_ORELSE
+NK_POW
+nk_predefinedtype
+nk_property
+NK_QUESTION
+nk_redim
+nk_resume
+NK_RSHIFT
+nk_select
+NK_SEQ
+nk_stop
+NK_SUB
+nk_sxCtypeOp
+nk_try
+nk_unop
+nk_using
+nk_usingdirective
+nk_vardecl
+nk_while
+nk_with
+NL^_[
+NL_^]
+NList of directories to search for metadata references. (Semi-colon delimited.)!Specifies a strong name key file.&Specifies a strong name key container.*Emit full debugging information (default).
+No information has been lost. Check the compiler output for possible ways to avoid this error.
+no input sources specified
+noconfig
+nologo
+None of the accessible 'Main' methods with the appropriate signatures found in '|1' can be the startup method since they are all either generic or nested in generic types./Error in project-level import '|1' at '|2' : |3n'|2' for the Imports alias to '|1' does not refer to a Namespace, Class, Structure, Interface, Enum or Module.
+'NonSerialized' attribute will not have any effect on this member because its containing class is not exposed as 'Serializable'.
+NoRemove
+nostdlib
+Not most specific.
+NotEqual
+notequals
+Nothing
+'Nothing' cannot be evaluated..Index '|1' for dimension '|2' is out of range.#Run-time exception thrown : |1 - |2
+NotInheritable
+NotObj
+NotObject
+notoverridable
+NotOverridable
+NotOverridable 
+novbruntimeref
+nowarn
+nowin32manifest
+NP:OP
+NTSWj
+Nullable
+Nullable`1
+nVariable '|1' is used before it has been assigned a value. A null reference exception could result at runtime.
+NXQSj
+NXRPQ
+O fAj
+O QPh~w
+O RPQ
+O$j0j
+O$RPQ
+O&gt;
+O,RPQ
+O@SSW
+o'|1' and '|2' cannot overload each other because they differ only by the default values of optional parameters.#Array subscript expression missing.['|1' cannot override '|2' because they differ by the default values of optional parameters.E'|1' cannot override '|2' because they differ by optional parameters.
+O<RQP
+O0M0K
+O4_^]
+OAn attempt was made to construct an iterator with a null array list.
+Object
+ObjTst
+OConversion from 'Date' to 'Double' requires calling the 'Date.ToOADate' method.QConversion from 'Double' to 'Date' requires calling the 'Date.FromOADate' method.
+OD@PQV
+OEK_GE
+OG2M,
+oK0D$"<
+ole32.dll
+OLEAUT32.dll
+OMethods or events that implement interface members cannot be declared 'Shared'.fHandles clause requires a WithEvents variable defined in the containing type or one of its base types.
+'On' expected.
+Onk_return
+op_Addition
+op_BitwiseAnd
+op_BitwiseOr
+op_Concatenate
+op_Division
+op_Equality
+op_ExclusiveOr
+op_Explicit
+op_Exponent
+op_False
+op_GreaterThan
+op_GreaterThanOrEqual
+op_Implicit
+op_Inequality
+op_IntegerDivision
+op_LeftShift
+op_LessThan
+op_LessThanOrEqual
+op_Like
+op_LogicalAnd
+op_LogicalNot
+op_LogicalOr
+op_Modulus
+op_Multiply
+op_OnesComplement
+op_RightShift
+op_Subtraction
+op_True
+op_UnaryNegation
+op_UnaryPlus
+op_UnsignedLeftShift
+op_UnsignedRightShift
+OpenThread
+Operator
+Operator 
+Operator '|1' doesn't return a value on all code paths. A null reference exception could occur at run time when the result is used.
+Operator '|1' is not defined for types '|2' and '|3'. You can use the 'Value' property to get the string value of the first element of '|4'.
+Operator declaration must be one of:  +, -, *, \, /, ^, &, Like, Mod, And, Or, Xor, Not, <<, >>, =, <>, <, <=, >, >=, CType, IsTrue, IsFalse..'Widening' and 'Narrowing' cannot be combined.
+Operator is not overloadable. Operator declaration must be one of:  +, -, *, \, /, ^, &, Like, Mod, And, Or, Xor, Not, <<, >>, =, <>, <, <=, >, >=, CType, IsTrue, IsFalse.0'Handles' is not valid on operator declarations.3'Implements' is not valid on operator declarations.
+optimize
+Option
+option '%s' requires ':%s'*response file '%s' included multiple times)source file '%s' specified multiple times
+Option Strict On disallows implicit conversions from '|1' to '|2'; the Visual Basic 6.0 collection type is not compatible with the .NET Framework collection type.{'GoTo |1' is not valid because '|1' is inside a 'Try', 'Catch' or 'Finally' statement that does not contain this statement.j'GoTo |1' is not valid because '|1' is inside a 'SyncLock' statement that does not contain this statement.f'GoTo |1' is not valid because '|1' is inside a 'With' statement that does not contain this statement.s'GoTo |1' is not valid because '|1' is inside a 'For' or 'For Each' statement that does not contain this statement.GAttribute cannot be used because it does not have a Public constructor.)Referenced '|1' has a value of 'Nothing'.+Referenced object has a value of 'Nothing'.
+Option Strict On disallows narrowing from type '|2' to type '|3' in copying the value of 'ByRef' parameter '|1' back to the matching argument.9'#ElseIf' cannot follow '#Else' as part of a '#If' block.0'End Sub' must be the first statement on a line.5'End Function' must be the first statement on a line.0'End Get' must be the first statement on a line.0'End Set' must be the first statement on a line.{Attribute specifier is not a complete statement. Use a line continuation to apply the attribute to the following statement.
+Option Strict On does not allow narrowing in implicit type conversions between extension method '|1' defined in '|3' and delegate '|2'.^Extension Method '|1' defined in '|3' does not have a signature compatible with delegate '|2'.1Argument matching parameter '|1' narrows to '|2'.
+optional
+Optional
+'Optional' cannot be applied to the first parameter of an extension method. The first parameter specifies which type to extend.
+'Optional' expected.
+optioncompare
+optioncompare:binary
+optioncompare:text
+optionexplicit
+optioninfer
+optionstrict
+optionstrict:custom
+Order
+OrderBy
+OrderByDescending
+OrElse
+OriginalFilename
+OrObject
+other
+OUNKNOWN
+Out of memory
+out of memory!unable to open response file '%s'
+Overflow.
+Overloads
+overloads
+Overloads 
+Overridable
+Overridable 
+Overrides
+overrides
+Overrides 
+Owarning number '%s' for the option '%s' is either not configurable or not validbcannot send error report automatically. Please visit '%s' to configure send error report settings.5option '%s' cannot be followed by '+' or '-'; ignoredZcannot infer an output file name from resource only input files; provide the '/out' option\the /moduleassemblyname option may only be specified when building a target of type 'module'1'%s' is not a valid value for /moduleassemblynameVError embedding Win32 manifest: Option /win32manifest conflicts with /nowin32manifest.WOption /win32manifest ignored. It can be specified only when the target is an assembly.IError embedding Win32 manifest: Default manifest file cannot be accessed.
+P$SAQR
+P(_^[
+P@QRS
+P@QRW
+P'|1' and '|2' cannot overload each other because only one is declared 'Default'.K'|1' cannot override '|2' because they differ by 'ReadOnly' or 'WriteOnly'.-'Sub New' cannot be declared in an interface."'Sub New' cannot be declared '|1'.
+p'|1' cannot expose the underlying delegate type '|2' of the event it is implementing to |3 '|4' through |5 '|6'.y'|1' cannot expose the underlying delegate type '|2' of the event it is implementing outside the project through |3 '|4'.YType '|1' is not supported because it either directly or indirectly inherits from itself._Class '|1' must declare a 'Sub New' because the '|2' in its base class '|3' is marked obsolete.eClass '|1' must declare a 'Sub New' because the '|2' in its base class '|3' is marked obsolete: '|4'.
+P<_^[
+P<QRP
+P0T0X0\0`0d0h0l0x4|4
+P8A(tZj
+param
+Param
+paramarray
+ParamArray
+ParamArray 
+'ParamArray' cannot be applied to the first parameter of an extension method. The first parameter specifies which type to extend.7Anonymous type initializer is not valid or is circular.bAnonymous type member name can be inferred only from a simple or qualified name with no arguments.G'|1' is not a member of '|2'; it does not exist in the current context.
+Parameter
+Parameter name '|1' does not match the name of the corresponding parameter, '|2', defined on the partial method declaration '|3'.
+ParameterExpression
+paramid
+paramref
+ParamWithValue
+parent_id
+pArgs
+partial
+Partial
+Passed an invalid array list
+PathAppendW
+PathIsUNCW
+PathIsURLW
+PathRemoveFileSpecW
+pAttr
+pBlock
+pBody
+pCaseLists
+pCases
+pCatch
+pdbonly
+pdbonly|full
+pDecls
+pElements
+pElse
+permission
+pExpr
+Ph$_O
+Ph\[O
+PhD}I
+PhdNM
+Phl>B
+pHQSWPR
+Pj?VVVVVj
+pL9VTt
+PL9ZPt!
+platform
+PlusObj
+PlusObject
+pMembers
+pName
+pNameSourceFile
+PointerType
+Power
+power
+PowObj
+PPh[x
+PPh\x
+PPh]}
+PPh_}
+PPh3u
+PPhc}
+PPhFv
+PPhOv
+PPhSu
+PPhUx
+PPhXu
+PPhXx
+PPPh\
+PPPhD
+PPPPPj
+PPPPPPP
+PPPPPPPPP
+PPPPPPPPPWR
+PPPPSh
+PPPPShh
+PPPVV
+PPQSj3
+PPRSP
+PQh!{
+PQh;w
+PQh9y
+PQhbw
+PQheu
+PQhKx
+PQhpy
+PQhTx
+PQPRhpy
+PQPWSSSS
+PQQSjM
+PQRh,w
+PQRhaw
+PQRhH}
+PQRj\
+PQRj2
+PQRjG
+PQRjJ
+PQRSjA
+PQRSW
+PQRVS
+PQRVV
+PQRVW
+PQRWh
+PQSjL
+PQSRh
+PQSRh-w
+PQSRj
+PQSSh
+PQSSW
+PQSWh
+PQSWR
+PQVRW
+PQVW3
+PQWhv
+PQWj#
+PQWRjb
+PQWRV
+PQWRW
+PQWSj
+PQWSR
+Preserve
+preserve
+PRhD}
+PRhKv
+Print
+printf
+private
+Private
+ProductName
+ProductVersion
+Project '|1' makes an indirect reference to project '|2', which contains '|3'. Add a project reference to '|2' to your project.|Construct makes an indirect reference to project '|1', which contains '|2'. Add a project reference to '|1' to your project.
+Project '|1' requires a reference to version '|2' of assembly '|3', but references version '|4' of assembly '|3'. Reference to version '|2' emitted.
+prompt
+prompt|send|none|queue
+property
+Property
+Property 
+Property '|1' doesn't return a value on all code paths. A null reference exception could occur at run time when the result is used.
+Property '|1' is 'ReadOnly'.
+Property '|1' is 'WriteOnly'.
+Property Get 
+Property Set 
+propertytype
+Protected
+protected
+Protected Friend
+PRSSSSS
+PRVWh
+PRWj^
+PSAPI.DLL
+PShPu
+PShSy
+PShTy
+PShUy
+PSQRj
+PSQRW
+PSRWh@u
+PSRWhju
+PSSh|eI
+pStatements
+pStmt
+PSVQR
+PSWh/}
+PSWh;y
+PSWh}}
+PSWh<}
+PSWh=}
+PSWhww
+PSWQhPTT
+PSWQhPUT
+Pt)hc
+PThe targeted version of the .NET Compact Framework does not support latebinding.mThe targeted version of the .NET Compact Framework does not support using the Ansi, Auto or Unicode modifier.bThe targeted version of the .NET Compact Framework does not support latebound overload resolution.
+pType
+Pu&hSu
+public
+pUsing
+PUUUUUU
+pVars
+PVhj}
+PVRhJ
+PVSj2
+PVSWQ
+PVWjL
+PWh,^A
+PWh`x
+PWh+v
+PWh0}
+PWhbx
+PWhcx
+PWhG}
+PWhi}
+PWhQx
+PWhs}
+PWQhJ
+PWQSR
+PWRhr
+PWSj*
+PWSjG
+PWSQR
+PWSRj
+PWVhLv
+PWVQR
+PWVWV
+Q 2P 
+Q(%d,%d,%d,%d)
+Q(@PRV
+q(9>u
+Q|VRS
+Q0`0*1<1X1
+Q0PRShru
+QEX82q'
+QFVjx
+Qh@PRS
+Qh\5Q
+Qhh5Q
+Qhl>B
+QHPRV
+QhRj+
+Ql@PRS
+QlRj+
+QLSSPjO
+QPhr}
+QpPRS
+QPRh7}
+QPRSj[
+QPRSW
+QPRVWS
+QPRWhfv
+QPRWj
+QPRWW
+QPSjl
+QPVWP
+QPWSR
+QQPjO
+QQQh;u
+QQQQQ
+QQQQQQQ
+QQSVW
+QReturn type of nested function matching parameter '|1' narrows from '|2' to '|3'.qAnonymous type member name cannot be inferred from an XML identifier that is not a valid Visual Basic identifier.jRange variable name cannot be inferred from an XML identifier that is not a valid Visual Basic identifier.
+QRPj\
+QRPSV
+QRPSW
+QRPVW
+QRPWV
+QRQSPV
+QRSj<
+QRSPW
+QRSVP
+QRVh8
+QRVPj
+QRVPS
+QRVSP
+QRVWj
+QRVWPS
+QRWPj
+QRWPj^
+QRWPjN
+QRWPV
+QRWPW
+QRWSP
+QRWVSP
+QShSu
+qsort
+QSPj/
+QSRPjN
+QSVWRSS
+QSWPjN
+QSWRP
+QThe requested cast is invalid!
+QType parameter '|1' for extension method '|2' defined in '|3' cannot be inferred.@Too few type arguments to extension method '|1' defined in '|2'.AToo many type arguments to extension method '|1' defined in '|2'.
+qu$_^3
+QueryPerformanceCounter
+queue
+Queue is empty
+quiet
+Quiet output mode.<Location of the .NET Framework SDK directory (mscorlib.dll)."Target the .NET Compact Framework.!Generates XML documentation file.!Do not auto-include VBC.RSP file.8Specifies the codepage to use when opening source files.4Specify the alignment used for output file sections.+Generates XML documentation file to <file>.
+quot;
+Quote
+QVB$AnonymousDelegate
+QVRPj^
+QVRPS
+QVWPR
+QVWRP
+QVWRS
+QWh>u
+QWhcx
+QWhdx
+QWhgx
+QWhLu
+QWhQv
+QWPj*
+QWPRj^
+QWPRV
+QWRPSV
+QWSj,
+QWSjZ
+QWWRPj#
+qXML comment block must immediately precede the language element to which it applies. XML comment will be ignored.;Only one XML comment block is allowed per language element.OXML comment must be the first statement on a line. XML comment will be ignored.UXML comment cannot appear within a method or a property. XML comment will be ignored.>XML documentation parse error: |1 XML comment will be ignored.
+r(^_[
+R(QRQPh
+R'|1' cannot override '|2' because they differ by parameters declared 'ParamArray'.UThis inheritance causes circular dependencies between |1 '|2' and its nested |3 '|4'.4|1 '|2' cannot inherit from a type nested within it.A'|1' cannot expose type '|2' outside the project through |3 '|4'.c'|1' cannot inherit from |2 '|3' because it expands the access of the base |2 outside the assembly.('|1' accessor of '|2' is obsolete: '|3'.
+R|VWQ
+r~akow
+R0P0N
+R0WSP
+raise_
+RaiseEvent
+RaiseException
+Randomize
+Range variable '|1' hides a variable in an enclosing block, a previously defined range variable, or an implicitly declared variable in a query expression.AAttributes cannot be applied to parameters of lambda expressions.VLambda expressions are not valid in the first expression of a 'Select Case' statement.\'AddressOf' expressions are not valid in the first expression of a 'Select Case' statement. &The '?' character cannot be used here.RInstance members and 'Me' cannot be used within a lambda expression in structures.='ByRef' parameter '|1' cannot be used in a lambda expression.GInstance of restricted type '|1' cannot be used in a lambda expression.
+rClass '|1' must either be declared 'MustInherit' or override the following inherited 'MustOverride' member(s): |2.-Array dimensions cannot have a negative size.
+ReadFile
+readonly
+ReadOnly
+ReadOnly 
+ReadProcessMemory
+readwrite
+recurse
+ReDim
+Redim
+Redmond1
+refequals
+reference
+Reference required to assembly '|1' containing type '|2', but a suitable reference could not be found due to ambiguity between '|3', which is referenced by project '|4', and '|5', which is referenced by project '|6'. If both assemblies are identical, try replacing these references so both references are from the same location.
+Reference required to assembly '|1' containing type '|2', but a suitable reference could not be found due to ambiguity between assemblies '|3' and '|4'.
+Reference required to assembly '|1' containing type '|2', but a suitable reference could not be found due to ambiguity between projects '|3' and '|4'.
+Reference required to assembly '|1' containing type '|2', but a suitable reference could not be found due to possible circular references: |3.*
+ReferenceInstallPath
+refid
+refnotequals
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyW
+RegDeleteValueW
+RegEnumKeyExW
+Region
+RegisterTraceGuidsW
+REGISTRY
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetValueExW
+Relational operator expected.c'Exit' must be followed by 'Sub', 'Function', 'Property', 'Do', 'For', 'While', 'Select', or 'Try'.
+ReleaseMutex
+remainder
+Remainder
+remarks
+Remove called in an invalid state
+Remove called twice
+Remove was called more than once without an intervening call to MoveNext()!
+Remove was called on a DynamicHashTable<K,V,A,H> that is in an invalid state. The underlying array should never be null.
+Remove was called on an iterator located at an invalid position. Perhaps a call to MoveNext() is missing or the iterator has been exausted.
+remove_
+RemoveHandler
+removeintchecks
+RemoveNamespaceAttributes
+resource
+Resume
+'Resume' or 'GoTo' expected.
+resumeindex
+resumenext
+Return
+Return 
+Return "{" & t.Name & "}"
+return _
+Return buf.ToString()
+Return Global.System.String.Format("
+return MyBase.
+returns
+RFVjx
+RhD4C
+RhL(C
+Rhl>B
+Rhl6Q
+RhlMO
+RhpfH
+RichNe
+RightShift
+RightShiftObject
+RLambda expression cannot be converted to '|1' because '|1' is not a delegate type.pLambda expression cannot be converted to '|1' because type '|1' is declared 'MustInherit' and cannot be created.>Evaluation of lambda expressions is not valid in the debugger.5A nullable type cannot be inferred for variable '|1'.9Nullable type inference is not supported in this context.
+rootnamespace
+Round
+RPh$w
+RPh,^A
+RPh?u
+RPh+x
+RPh1}
+RPhjx
+RPhvw
+RPhYx
+RPQhaw
+RPQjl
+RPQSjB
+RPQSW
+RPQVW
+RPQWV
+RPSj,
+RPSjB
+RPSQjI
+RPSQW
+RPSVQ
+RPSWjY
+RPVQj2
+RPVQS
+RPVWSQ
+RPWhvy
+RPWQhG
+RQh0~
+RQPh@y
+RQPh\y
+RQPh]y
+RQPh^y
+RQPh_y
+RQPh{y
+RQPh>v
+RQPhAv
+RQPhLy
+RQPh'v
+RQPh'w
+RQPj^
+RQPjN
+RQPjQ
+RQPPP
+RQQPSV
+RQQQPPQ
+RQSPhF}
+RQSVP
+RQVPS
+RQVWP
+RQWPV
+RRRSSTTUU
+RSh^u
+RShPx
+RSPj)
+RSPj*
+RSQjQ
+RSQPW
+RSSSSSS
+RSWh|y
+RSWPQ
+RSWWh@u
+Runtime
+Run-time exception thrown.0Referenced object '|1' has a value of 'Nothing'.6Expression or statement is not valid in debug windows.
+RuntimeArgumentHandle
+RuntimeCompatibilityAttribute
+RVhRy
+RVPWQ
+RWh+v
+RWh=u
+RWhcx
+RWhex
+RWhfx
+RWhLu
+RWhQv
+RWhtw
+RWPhcw
+RWPQSV
+RWQSPhm}
+RWSj)
+RWSPjN
+RWSPQ
+RWSPQj
+S PQR
+S QRP
+S$PQR
+s(^[_
+S(QRQ
+S(QRQPh%w
+S(QRQPh)w
+S,_^[
+S</Break>
+S<_^[
+S0Q0O
+Save your work and restart Visual Studio.
+SByte
+scientificnotation
+sdkpath
+sealed
+SECURITY
+SecurityAction
+SecurityAttribute
+seealso
+Select
+select
+SelectMany
+Sequence
+'Set' is already declared.3Const declaration cannot have an array initializer.
+SetEvent
+SetFilePointer
+SetLastError
+SetProjectError
+SetUnhandledExceptionFilter
+SetValue was called on a DynamicHashTable<K,V,A,H> that is in an invalid state. The underlying array should never be null.
+Shadows
+shadows
+Shadows 
+shared
+Shared
+Shared 
+shift_jis
+shiftleft
+ShiftLeftObj
+shiftright
+ShiftRightObj
+SHLWAPI.dll
+Short
+Should be one or the other
+Single
+SizeofResource
+Sj Y2
+SK_AGGSYM
+SK_ARRAYSYM
+SK_EVENTSYM
+SK_LOCVARSYM
+SK_MEMBVARSYM
+SK_METHSYM
+SK_NSSYM
+SK_PROPSYM
+SK_VOIDSYM
+SkipWhile
+Sleep
+Slike
+Software
+Software\Microsoft\.NETFramework\AssemblyFolders\v3.5
+Software\Microsoft\ALink
+Software\Microsoft\NET Framework Setup\NDP\v3.0\Setup\Windows Communication Foundation
+Software\Microsoft\NET Framework Setup\NDP\v3.0\Setup\Windows Presentation Foundation
+Software\Microsoft\NET Framework Setup\NDP\v3.0\Setup\Windows Workflow Foundation
+Software\Microsoft\PCHealth\ErrorReporting\DW\Installed
+Software\Microsoft\vbc
+Software\Microsoft\VisualStudio\9.0\General
+sourcename
+Sourcename
+space
+specialname
+Specifier is duplicated.(|1 '|2' and |3 '|4' conflict in |5 '|6'.
+Specifies the output file name.'Create a console application (default).
+SPh6}
+SPhK}
+SPPPV
+SPQhN}
+SPRhVv
+sprintf_s
+Sprotectedfriend
+SPWVQR
+SQRPj\
+SQRPj^
+SQRPjN
+SQRVh
+SQRVh^
+SQRVPh
+SQVWRP
+SQWhvy
+SQWPjN
+SRhxw
+SRhY}
+SRPj\
+SRPjG
+SRPQV
+SRPQW
+SRPWV
+SRQhx}
+SRRRQQR
+SRWPh
+SRWQP
+SShju
+SShWx
+SSPSRQ
+SSQjO
+SSSPRS
+SSSQP
+SSSSQ
+SSSSSR
+SSSSSSj
+SSSSSSSS
+SSVSSW
+standalone
+Start
+STARTUP_MY_FORM_FACTORY
+State
+static
+Static
+Static 
+StaticLocalBackingField
+StaticLocalInitFlag
+stdout
+Stop request is pending.
+strcat_s
+StrCatObj
+StrCmp
+Strict
+String
+String constant expected.
+StringFileInfo
+StringFromGUID2
+StringType
+StrLike
+strncat_s
+StrongNameErrorInfo
+StrongNameFreeBuffer
+StrongNameTokenFromPublicKey
+Structure
+Structure 
+Structure '|1' must contain at least one instance member variable or at least one instance event declaration not marked 'Custom'.
+'Sub New' cannot handle events.
+'Sub' or 'Function' expected.
+SubObj
+Subtract
+SubtractChecked
+SubtractObject
+summary
+Suspend request is pending.
+SVPQRh|v
+SVPRQ
+SVQRj
+SVQWPh
+SVRPQ
+SVRPWj
+SVWh$
+SVWhp
+SVWjd3
+SVWjP
+SVWuk
+swprintf_s
+SWPRQ
+SWRPj^
+SWRQP
+SWVPjN
+symbol
+symboltable
+SyncLock
+Syntax error.
+SyntheticMethod
+SYSTEM
+System
+System Error &H|1&
+System.__ComObject
+System.Activator
+System.Array
+System.AttributeUsageAttribute
+System.Boolean
+System.Byte
+System.Char
+System.CLSCompliantAttribute
+System.Collections
+System.Collections.Generic
+System.Collections.IEnumerator
+System.ComponentModel.CategoryAttribute
+System.ComponentModel.DefaultEventAttribute
+System.ComponentModel.DefaultValueAttribute
+System.ComponentModel.Design.HelpKeywordAttribute
+System.ComponentModel.DesignerCategoryAttribute
+System.ComponentModel.DesignerSerializationVisibilityAttribute
+System.ComponentModel.EditorBrowsableAttribute
+System.ContextStaticAttribute
+System.Convert
+System.Core
+System.Core.dll
+System.DateTime
+System.Decimal
+System.Delegate
+System.Diagnostics
+System.Diagnostics.ConditionalAttribute
+System.Diagnostics.DebuggableAttribute
+System.Diagnostics.Debugger
+System.Diagnostics.DebuggerDisplayAttribute
+System.Diagnostics.DebuggerHiddenAttribute
+System.Diagnostics.DebuggerHiddenAttribute does not affect 'Get' or 'Set' when applied to the Property definition.  Apply the attribute directly to the 'Get' and 'Set' procedures as appropriate.{Range specified for 'Case' statement is not valid. Make sure that the lower bound is less than or equal to the upper bound.p'|1' method for event '|2' cannot be marked CLS compliant because its containing type '|3' is not CLS compliant.L'|1' in designer-generated type '|2' should call InitializeComponent method.XCasing of namespace name '|1' does not match casing of namespace name '|2' in file '|3'.
+System.Diagnostics.DebuggerNonUserCodeAttribute
+System.Diagnostics.DebuggerStepThroughAttribute
+System.dll
+System.Double
+System.Drawing
+System.IDisposable.Dispose
+System.Int16
+System.Int32
+System.Int64
+System.Linq
+System.Linq.Expressions
+System.Linq.Query
+System.Math
+System.MTAThreadAttribute
+System.NonSerializedAttribute
+'System.Nullable' does not satisfy the 'Structure' constraint for type parameter '|1'. Only non-nullable 'Structure' types are allowed.
+System.Object
+System.ObsoleteAttribute
+'System.ObsoleteAttribute' cannot be applied to the 'AddHandler', 'RemoveHandler', or 'RaiseEvent' definitions. If required, apply the attribute directly to the event.DMethod '|1' does not have a signature compatible with delegate '|2'.
+System.ParamArrayAttribute
+System.Reflection
+System.Reflection.Assembly
+System.Reflection.AssemblyDelaySignAttribute
+System.Reflection.AssemblyKeyNameAttribute
+System.Reflection.AssemblyVersionAttribute
+System.Reflection.DefaultMemberAttribute
+System.Reflection.FieldInfo
+System.Reflection.MethodBase
+System.Reflection.MethodInfo
+System.Reflection.Missing.Value
+System.Runtime.CompilerServices
+System.Runtime.CompilerServices.AccessedThroughPropertyAttribute
+System.Runtime.CompilerServices.CompilationRelaxationsAttribute
+System.Runtime.CompilerServices.CompilerGeneratedAttribute
+System.Runtime.CompilerServices.DateTimeConstantAttribute
+System.Runtime.CompilerServices.DecimalConstantAttribute
+System.Runtime.CompilerServices.ExtensionAttribute
+System.Runtime.CompilerServices.IDispatchConstantAttribute
+System.Runtime.CompilerServices.InternalsVisibleToAttribute
+System.Runtime.CompilerServices.IUnknownConstantAttribute
+System.Runtime.CompilerServices.RuntimeCompatibilityAttribute
+System.Runtime.CompilerServices.RuntimeHelpers
+System.Runtime.InteropServices
+System.Runtime.InteropServices.ClassInterfaceAttribute
+System.Runtime.InteropServices.CoClassAttribute
+System.Runtime.InteropServices.ComImportAttribute
+System.Runtime.InteropServices.ComSourceInterfacesAttribute
+System.Runtime.InteropServices.ComVisibleAttribute
+System.Runtime.InteropServices.DispIdAttribute
+'System.Runtime.InteropServices.DispIdAttribute' cannot be applied to '|1' because 'Microsoft.VisualBasic.ComClassAttribute' reserves values less than zero.y'InterfaceId' and 'EventsId' parameters for 'Microsoft.VisualBasic.ComClassAttribute' on '|1' cannot have the same value.f'Microsoft.VisualBasic.ComClassAttribute' cannot be applied to a class that is declared 'MustInherit'.h'Microsoft.VisualBasic.ComClassAttribute' cannot be applied to '|1' because it is not declared 'Public'.dAttribute 'System.Runtime.InteropServices.DefaultCharSetAttribute' is not supported in this version.
+'System.Runtime.InteropServices.DispIdAttribute' cannot be applied to '|1' because 'Microsoft.VisualBasic.ComClassAttribute' reserves zero for the default property.
+System.Runtime.InteropServices.DllImportAttribute
+'System.Runtime.InteropServices.DllImportAttribute' cannot be applied to a method that is generic or contained in a generic type.z'Microsoft.VisualBasic.ComClassAttribute' cannot be applied to a class that is generic or contained inside a generic type.uIndirect reference is being made to assembly '|1', which contains '|2'. Add a file reference to '|3' to your project.Y'System.Runtime.InteropServices.DllImportAttribute' cannot be applied to instance method.['System.Runtime.InteropServices.DllImportAttribute' cannot be applied to interface methods.~'System.Runtime.InteropServices.DllImportAttribute' cannot be applied to 'AddHandler', 'RemoveHandler' or 'RaiseEvent' method.
+System.Runtime.InteropServices.GuidAttribute
+System.Runtime.InteropServices.ImportedFromTypeLibAttribute
+System.Runtime.InteropServices.InterfaceTypeAttribute
+System.Runtime.InteropServices.MarshalAsAttribute
+System.Runtime.InteropServices.StructLayoutAttribute
+System.Runtime.InteropServices.TypeLibFuncAttribute
+System.Runtime.InteropServices.TypeLibTypeAttribute
+System.SByte
+System.Security.Permissions
+System.SerializableAttribute
+System.Single
+System.STAThreadAttribute
+System.String
+System.Threading
+System.Threading.Monitor
+System.Type
+System.UInt16
+System.UInt32
+System.UInt64
+System.Void
+System.Web.Services.WebMethodAttribute
+System.Web.Services.WebServiceAttribute
+System.Windows.Forms
+System.Xml
+System.Xml.Linq
+SYSTEM\CurrentControlSet\Control\Wmi\GlobalLogger
+SystemTypeName
+t f98t
+t!Wh'{
+t"<,s
+t"9H u
+T#.d.A
+t#j`j
+t%SSj
+t&Vj\P
+t(8^Lt#
+t)SVWj
+t*h,^A
+t.8NLt
+t/FPF
+t:<,s
+t;SSW
+t@VWj`
+t^jPj
+t_array
+t_bad
+t_bool
+t_char
+t_date
+t_decimal
+t_double
+t_generic
+t_max
+t_ptr
+t_ref
+t_single
+t_string
+t_struct
+t_ui1
+t_ui2
+t_ui4
+t_ui8
+t_UNDEF
+t_void
+t`jIh
+t~;XH
+T</Case>
+t>9HXu9
+t>j_h
+T0_0{0
+t0x0F2K2]2y2
+t19XTt,
+t1f9E
+t1j.W
+t390u%
+t3SVW
+t4<,sd
+t4It#I
+t6V8B)u
+tAh(PH
+tAjIh
+TakeWhile
+TArg%d
+target
+TARGET = 
+target:exe
+target:library
+target:module
+target:winexe
+TargetMethod
+TargetObject
+tb9_\u
+'tbIt
+TerminateProcess
+text/html
+text-html
+tFjIh
+tgjIh
+Thales TSS ESN:E5A6-E27C-592E1%0#
+The 'AddressOf' expression has no effect in this context because the method argument to 'AddressOf' requires a relaxed conversion to the delegate type of the event. Assign the 'AddressOf' expression to a variable, and use the variable to add or remove the method as the handler.
+The ClassSym parameter should not be NULL!
+The condition should not be null!
+The condition should not be true!
+The custom-designed version of 'System.Runtime.CompilerServices.ExtensionAttribute' found by the compiler is not valid. Its attribute usage flags must be set to allow assemblies, classes, and methods.
+The ErrorTable parameter should not be NULL!
+The index is out of range. A dummy value will be returned.
+The Microsoft (R) Visual Basic 2005 Compiler has encountered an internal error. We are sorry for the inconvenience.
+The parameter count was non-zero but the first parameter was null. This should never happen!
+The project currently contains references to more than one version of |1, a direct reference to version |4 and an indirect reference (through '|3') to version |2. Change the direct reference to use version |2 (or higher) of |1.[Project already has a reference to assembly |1. A second reference to '|2' cannot be added.qProject '|1' requires a reference to version '|2' of assembly '|3', but references version '|4' of assembly '|3'.
+The provided ring does not have a namespace pointer!
+The requested cast is invalid
+The ring's first namespace has an invalid ring pointer!
+The type for variable '|1' will not be inferred because it is bound to a field in an enclosing scope. Either change the name of '|1', of use the fully qualified name (for example, 'Me.|1' or 'MyBase.|1').MStatic variable '|1' declared without an 'As' clause; type of Object assumed.
+ThenBy
+ThenByDescending
+thhl>B
+This code should not be reachable!
+This method is not valid when the call contains no procedures!
+This method isn't actually implemented
+This should not be called before class created
+ThisReference
+Throw
+tHVj<j
+times
+t'j.V
+tJVjpj
+tk8GTtf9
+tKjIh
+tL8^PuG
+tljIh
+tLSV3
+tmjIh
+ToArray
+ToBoolean
+ToByte
+ToChar
+ToCharArrayRankOne
+ToDate
+ToDecimal
+ToDouble
+ToGenericParameter
+ToInt16
+ToInt32
+ToInt64
+ToInteger
+tojIh
+ToList
+ToLong
+Too few type arguments to '|1'. Too many type arguments to '|1'.OType argument '|1' does not inherit from or implement the constraint type '|2'.>'|1' has no type parameters and so cannot have type arguments.O'New' cannot be used on a type parameter that does not have a 'New' constraint.AType parameter '|1' can only have one constraint that is a class.IType constraint '|1' must be either a class, interface or type parameter./Type parameter already declared with name '|1'.0Type parameter '|1' for '|2' cannot be inferred.
+Too few type arguments.
+Too many arguments to '|1'.KStatements and labels are not valid between 'Select Case' and first 'Case'. Constant expression is required.CConversion from '|1' to '|2' cannot occur in a constant expression.
+Too many arguments.7Parameter '|1' already has a matching omitted argument./Parameter '|1' already has a matching argument.
+Too many type arguments supplied to ApplyExplicitArgumentsToPartialBinding
+Too many type arguments.XExtension method '|1' defined in '|2' does not have the same signature as delegate '|3'.fType arguments for extension method '|1' defined in '|3' could not be inferred from the delegate '|2'.<Too many arguments to extension method '|1' defined in '|2'.`Parameter '|1' in extension method '|2' defined in '|3' already has a matching omitted argument.XParameter '|1' of extension method '|2' defined in '|3' already has a matching argument.A'|1' is not a parameter of extension method '|2' defined in '|3'.SArgument not specified for parameter '|1' of extension method '|2' defined in '|3'.
+ToSByte
+ToShort
+ToSingle
+ToString
+ToUInt16
+ToUInt32
+ToUInt64
+ToUInteger
+ToULong
+ToUShort
+TPhGy
+TPhHv
+TPhqy
+tPjIh
+TQhqy
+TraceEvent
+TraceMessage
+TraceMessageVa
+Translation
+Treat all warnings as errors.MDelay-sign the assembly using only the public portion of the strong name key..Reference metadata from the specified modules.0Emit compiler output in UTF8 character encoding.
+TResult
+TryCast
+trycast
+tTFWV
+tuBf9X
+turf9X
+TUUUUU*
+t'VSP
+tWj/V
+tYjIh
+Type '|1' has no constructors.;'End Interface' must be preceded by a matching 'Interface'.5'Interface' must end with a matching 'End Interface'.
+Type '|1' in assembly '|2' has been forwarded to assembly '|3'. Either a reference to '|3' is missing from your project or the type '|1' is missing from assembly '|3'.Q'|1' in assembly '|2' has been forwarded to itself and so is an unsupported type.PNon-intrinsic type names are not allowed in conditional compilation expressions.3Syntax error in conditional compilation expression.@Arrays of type 'System.Void' are not allowed in this expression.T'|1' is ambiguous because multiple kinds of members with this name exist in |2 '|3'.2Expression of type '|1' can never be of type '|2'.;Partial methods must be declared 'Private' instead of '|1'.+Partial methods must be declared 'Private'.^Method '|1' cannot be declared 'Partial' because only one method '|2' can be marked 'Partial'.
+Type '|1' is not CLS-compliant.HType of optional value for optional parameter '|1' is not CLS-compliant.JSystem.CLSCompliantAttribute cannot be applied to property 'Get' or 'Set'.
+Type '|1' is not defined.
+Type '|1' must be a value type or a type argument constrained to 'Structure' in order to be used with 'Nullable' or nullable modifier '?'. jNullable modifier '?' and array modifiers '(' and ')' cannot be specified on both a variable and its type.HExpressions used with an 'If' expression cannot contain type characters.
+Type '|2' is imported from different versions of assembly |1.  Different versions of the same strong-named assembly cannot be used in the same project.
+Type argument '|1' must have a public parameterless instance constructor to satisfy the 'New' constraint for type parameter '|2'.
+Type arguments unexpected.<'|1' is already declared as a type parameter of this method.BType parameter cannot have the same name as its defining function.o'|1' and '|2' cannot overload each other because they could be identical for some type parameter substitutions.
+Type expected.&Keyword is not valid as an identifier.1'End Enum' must be preceded by a matching 'Enum'.+'Enum' must end with a matching 'End Enum'.9'Using' statements are not valid in the Immediate window.
+Type or 'New' expected.J'Of' required when specifying type arguments for a generic type or method.
+Type or 'With' expected.zMultiple initializations of '|1'.  Fields and properties can be initialized only once in an object initializer expression.lMember '|1' cannot be initialized in an object initializer expression because it is not a field or property.[Member '|1' cannot be initialized in an object initializer expression because it is shared.fProperty '|1' cannot be initialized in an object initializer expression because it requires arguments.{Property '|1' cannot be initialized in an object initializer expression because all accessible overloads require arguments.VObject initializer syntax cannot be used to initialize an instance of 'System.Object'.:Leading '.' or '!' cannot appear in a constant expression.
+'Type parameter '|1' cannot be inferred.+
+Type parameter '|1' has the same name as a type parameter of an enclosing type. Enclosing type's type parameter will be shadowed.%Could not find standard library '|1'.6Delegate type '|1' of event '|2' is not CLS-compliant.
+Type parameter '|1' must have either a 'New' constraint or a 'Structure' constraint to satisfy the 'New' constraint for type parameter '|2'.?Arguments cannot be passed to a 'New' used on a type parameter.4Generic type '|1' cannot be imported more than once.\Overload resolution failed because no accessible '|1' accepts this number of type arguments.
+Type parameter name '|1' does not match the name '|2' of the corresponding type parameter defined on one of the other partial types of '|3'.
+TypeAs
+TypedReference
+TypeForwarder
+TypeIs
+TypeLib
+TypeName
+TypeOf
+typeparam
+U ;U(
+U 9U,
+U PRQPP
+U QRW
+U QVRP
+U SV3
+U VVVVQRVP
+u WPVQ
+u'!' requires its left operand to have a type parameter, class or interface type, but this operand has the type '|1''.
+u!jAj
+U#RHP
+u$_^2
+u$8PPt
+U$Ph 
+U$PPR
+U$PQR
+U$RPQ
+U$RQP
+u%f9X
+U(PPPPPP
+U(PPPPQ
+U(PRS
+U(QRP
+U(RPQ
+u)G;~Tr
+u,QPj
+U,QVRP
+U,WSP
+U@Rj4
+u@SVj
+u-_^[
+u_<,s
+u|1 '|2' conflicts with a member implicitly declared for |3 '|4' in the base |5 '|6' and should be declared 'Shadows'.
+U|1 '|2' implicitly defines a member '|3' which has the same name as a type parameter.?Constraint type '|1' already specified for this type parameter.
+u+h`eI
+U<QRW
+U<SVW
+U0S0Q
+U4QVRP
+u68E/t
+u79^,t
+uA9QHt
+u'AddressOf' expression cannot be converted to '|1' because type '|1' is declared 'MustInherit' and cannot be created.e'Return' statement in an 'AddHandler', 'RemoveHandler', or 'RaiseEvent' method cannot return a value.
+u'Catch' cannot catch type '|1' because it is not 'System.Exception' or a class that inherits from 'System.Exception'.4'Exit Try' can only appear inside a 'Try' statement.
+uDefault property '|1' conflicts with the default property '|2' in the base |3 '|4'. '|1' will be the default property
+UDPWR
+uE_^]
+ue8^Lt`
+uhG;}
+u'hTBV
+UILanguage
+UInt16
+UInt32
+UInt64
+UInteger
+UIntPtr
+uL8G1t>
+ULong
+uM<,s
+Umacintosh
+UMethod '|1' cannot handle event '|2' because they do not have a compatible signature.DProject-level conditional compilation constant '|2' is not valid: |0?Project-level conditional compilation constant is not valid: |0
+UMethod cannot contain both a 'Try' statement and an 'On Error' or 'Resume' statement.=Property access must assign to the property or use its value.
+Unable to access member.FInformation for the type of '|1' has not been loaded into the runtime.(Unable to get type information for '|1'.A'On Error' statements are not valid within 'SyncLock' statements.
+Unable to emit assembly: |0
+Unable to evaluate expression.6Loop statements are not valid in the Immediate window.FVariable declaration statements are not valid in the Immediate window.
+Unable to load DLL '|1': |0/Unable to find entry point '|1' in DLL '|2': |0
+Unable to open file '|1': |0
+Unable to parse XML: |0-Unable to create a .NET Runtime interface: |0
+Unable to sign assembly: |0:'Return' statements are not valid in the Immediate window.
+'Unable to write to output file '|1': |0!Unable to write output to memory.qVisual Basic compiler is unable to recover from the following error: |0
+unaryoperator
+UnaryPlus
+Unexpected extension call lookup result!
+Unexpected temporary type
+UnhandledExceptionFilter
+unhh)
+Unicode
+Unicode 
+unicode-1-1-utf-8
+unicode-2-0-utf-8
+Uninitialized symbol
+unknown
+Unknown
+UnknownWrapper
+Unlock
+UnmapViewOfFile
+UnregisterTraceGuids
+unresolved
+Unscheduled Fiber.cArray initializer cannot be specified for a non constant dimension; use the empty initializer '{}'.JNo accessible method '|1' has a signature compatible with delegate '|2':|3
+Until
+Unused local constant: '|1'.
+Unused local variable: '|1'.
+USER32.dll
+UserCanAutoSendErrorReport
+UserDefinedOperator
+UsesThis
+UShort
+Using
+Using the iteration variable in a lambda expression may have unexpected results.  Instead, create a local variable within the loop and assign it the value of the iteration variable.
+Using the iteration variable in a query expression may have unexpected results.  Instead, create a local variable within the loop and assign it the value of the iteration variable.
+utf-8
+utf8output
+uTVWj
+UUUUUUT
+uV8E0tG
+UValue of type '|1' cannot be converted to '|2' because '|3' is not derived from '|4'.TValue of type '|1' cannot be converted to '|2' because '|3' is not a reference type.
+uX_^3
+V fBj
+V PQh
+V PQRS
+V PSQR
+V PWQR
+V RQPW
+V SQR
+V WQR
+V WSP
+V$;Q$
+V$;Q$|
+V$_^]
+V$PQR
+V$QSR
+v$VQRQPS
+V(PRWh
+V(QPRW
+V(QRPQh
+V,RPS
+V,WPQ
+V'|1' refers to type '|2' in project '|3', but type '|2' was not found in project '|3'.
+V<_^[]
+V<_^]
+V<QPR
+V0RPQ
+V1SRS
+value
+Value
+Value of type '|1' cannot be converted to '|2'. Type mismatch could be due to mixing a file reference to '|3' in project '|4' with a file reference to '|5' in project '|6'. If both assemblies are identical, try replacing these references so both references are from the same location.
+Value of type '|1' cannot be converted to '|2'. Type mismatch could be due to the mixing of a file reference with a project reference to assembly '|3'. Try replacing the file reference to '|4' in project '|5' with a project reference to '|6'.
+Value of type '|1' cannot be converted to '|2'. You can use the 'Value' property to get the string value of the first element of '|3'.
+value__
+ValueType
+VarFileInfo
+Variable
+variable
+Variable '|1' is passed by reference before it has been assigned a value. A null reference exception could result at runtime. Make sure the structure or all the reference members are initialized before use
+Variable '|1' is used before it has been assigned a value. A null reference exception could result at runtime. Make sure the structure or all the reference members are initialized before use
+Variable should not be null
+variablekind
+-Variables in Modules cannot be declared '|1'.NEvents of shared WithEvents variables cannot be handled by non-shared methods.
+VariableWithArraySizes
+VariableWithValue
+Variant
+VB$ActiveHandler
+VB$AnonymousType
+VB$CurrentLine
+VB$CurrentStatement
+VB$ResumeTarget
+vbBack
+vbc : 
+vbc.exe
+vbc.rsp
+VBC_VER = 9.0,
+VBC7ui.dll
+vbCrLf
+vbFormFeed
+VBGroup2
+VBIt1
+VBIt2
+vbNullChar
+vbruntime
+vbruntime:<file>
+vbruntime[+|-]
+vbTab
+VbTypeName
+vbVerticalTab
+Vd;FHuA
+VEnd of parameter list expected. Cannot define parameters after a paramarray parameter.:Specifiers and attributes are not valid on this statement.
+verbose
+VerQueryValueW
+version
+Version
+VERSION.dll
+VersionStartDate
+VhD!F
+Vhx&H
+virtual
+VirtualAlloc
+VirtualFree
+v'Is' operand of type '|1' can be compared only to 'Nothing' because '|1' is a type parameter with no class constraint.nCopying the value of 'ByRef' parameter '|1' back to the matching argument narrows from type '|2' to type '|3'.+'|1' has the same name as a type parameter.-|1 '|2' cannot inherit from a type parameter.2Type parameter not allowed in 'Implements' clause.
+Visual Basic
+Visual Basic Command Line Compiler
+Visual Basic Compiler Options
+VisualBasic
+VisualBasicCommandLineCompiler
+VjPQRP
+VLQRP
+VoidType
+VP@Pj
+VPhXy
+VPPPPPPPPP
+VPQhEv
+VPQRh}v
+VPQSj
+VPQSj^
+VPRjX
+VQRPj\
+VQRPjJ
+VQVSP
+VQWPjN
+VRh]u
+VRQj)
+VRSPj[
+VS_VERSION_INFO
+VSPQR
+VSPQRj
+VSQPjJ
+VSQRP
+VSRPj#
+VSSSP
+VT_^]
+VVh\}
+VVPSW
+VVQVVVVPV
+VVRWj!
+VVVh;u
+VVVQPW
+VVVVV
+VW<,sS
+VWjOY
+VWPhh7O
+VWPhq}
+VWPj8
+VWShc
+VWSPh
+VXPQR
+W PQh
+w$_^[]
+W$PQR
+W$RSP
+w&=5u
+W(Rj 
+W;1s#
+w|_^[
+W'|1' is not a local variable or parameter, and so cannot be used as a 'Catch' variable.7Members in a Module cannot implement interface members.FEvents cannot be declared with a delegate type that has a return type.
+W<,sC
+W<_^[]
+W<_^]
+W0^0K<
+W0RSV
+W0RVP
+w0VQS
+W1b1l1{1
+W4_^]
+WaitForSingleObject
+warnaserror
+warning
+Warning treated as error : |1
+Washington1
+WBR@PQ
+WBRPV
+wcscat_s
+wcschr
+wcscpy_s
+wcsftime
+wcsncmp
+wcsncpy_s
+wcspbrk
+wcsrchr
+wcsstr
+wcstok_s
+wcstoul
+WdPRj
+WDQRQPh
+WDQRQPh&w
+WDQRQPh)w
+We should have a block context here. Assert outside if since not always compiled iwth Infer On
+We should not have a partial generic binidng context here!
+WeakReference
+WebMethod
+WerReportAddDump
+WerReportAddFile
+WerReportCloseHandle
+WerReportCreate
+WerReportSetParameter
+WerReportSetUIOption
+WerReportSubmit
+Wh4oS
+When CandidateIsExtensionMethod is false, PrecedenceLevel should always be 0
+Where
+While
+White space cannot appear here.$Expected closing ';' for XML entity.1Expected '%=' at start of an embedded expression.(XML entity references are not supported.-Attribute value is not valid; expecting '|1'.5Attribute value is not valid; expecting '|1' or '|2'.@Prefix '|1' cannot be bound to namespace name reserved for '|2'.SNamespace declaration with prefix cannot have an empty value inside an XML literal.-Aggregate initializer is not yet implemented.G':' is not allowed. XML qualified names cannot be used in this context..Namespace declaration must start with 'xmlns'.6Namespace declaration with no prefix is not supported.,Element names cannot use the 'xmlns' prefix.wXML literals and XML axis properties are not available. Add references to System.Xml, System.Xml.Linq, and System.Core.%Error embedding Win32 manifest: '|0'.CError embedding Win32 manifest: Manifest File '|1' cannot be found.sCannot convert '|1' to '|2'. You can use the 'Value' property to get the string value of the first element of '|3'.
+WhL(C
+Whl>B
+WHPRV
+WhRj+
+WhT!F
+Why are candidates out of order?
+Why is a procedure being added with a lower precedence level than it's predecessors?
+Why was the procedure's container NULL?
+WideCharToMultiByte
+Widening
+Widening 
+Width
+win32icon
+win32manifest
+win32resource
+windows-
+Windows 9x
+Windows NT
+winexe
+With val
+withevents
+WithEvents
+WithEvents 
+WithEventsValue
+WjeWWW
+WL;PL
+Wl_^[
+WlRj,
+wOPSj?
+WOverload resolution failed because no accessible '|1' accepts this number of arguments.9Overload resolution failed because no '|1' is accessible.[Overload resolution failed because no accessible '|1' can be called with these arguments:|2eOverload resolution failed because no accessible '|1' can be called without a narrowing conversion:|2;Argument matching parameter '|1' narrows from '|2' to '|3'.]Overload resolution failed because no accessible '|1' is most specific for these arguments:|2
+WPf;U
+WPFReferenceAssembliesPathx86
+WPh {
+WPh v
+WPhL}
+WPhqv
+WPhSu
+WPQRj^
+WPQRSV
+WPQRVS
+WPQSR
+WPSjl
+WPVh,}
+WPVQj2
+WQh1{
+WQhSu
+WQPj#
+WQPjQ
+WQRPV
+WQRSP
+WQSPho}
+WqVNHE
+WQVPh
+WRh/{
+WRhY}
+Write
+WriteFile
+writeonly
+WriteOnly
+WriteOnly 
+WRPQjn
+WRPSV
+WRPVQ
+WRVh,}
+WRVhZ
+WSPQRV
+WSQj#
+WSQPhn}
+WSQRP
+WSRPjN
+WSRPQ
+WSVh]
+WSVRP
+WSWSj
+WT_^[
+WTSQRPWV
+WVh2x
+WVhIv
+WVSRPQ
+WWhSu
+WWVPh
+WWWSjO
+Wy2Vy
+x$j0j
+x(_^[
+X(_^[]
+X'|1' cannot be used as an attribute because it does not inherit from 'System.Attribute'.j'|1' cannot be used as an attribute because it does not have a 'System.AttributeUsageAttribute' attribute.I'|1' cannot be used as an attribute because it is declared 'MustInherit'.h'|1' cannot be used as an attribute because it has 'MustOverride' methods that have not been overridden.(Cannot find .NET Framework directory: |0%Unable to open resource file '|1': |0>Attribute constant '|1' cannot be the target of an assignment.`Attribute member '|1' cannot be the target of an assignment because it is not declared 'Public'.f'System.STAThreadAttribute' and 'System.MTAThreadAttribute' cannot both be applied to the same method.['System.STAThreadAttribute' and 'System.MTAThreadAttribute' cannot both be applied to '|1'.
+x'|1' is declared in project '|2', which is not referenced by project '|3'. Add a reference to '|2' to your project '|3'.>Statement cannot end a block outside of a line 'If' statement.
+x0;~,
+x1C2"3=3v3:4n4
+X4j8j
+X4WQj 
+x86|x64|Itanium|anycpu
+XAttribute
+xBase class '|1' specified for class '|2' cannot be different from the base class '|3' of one of its other partial types.
+XCData
+XComment
+XContainer
+XDeclaration
+XDocument
+XElement
+XElementSequence
+xExtension method '|1' defined in '|2' is not generic (or has no free type parameters) and so cannot have type arguments./Late-bound extension methods are not supported.LCannot infer a data type for '|1' because the array dimensions do not match.
+xhhxxh0(00(40,00<00((((,080((((((((((((((((((((((((((((((((((((((((  ((,(8(4,(80((((,(,, 008@@08((
+xhhxxh0(00(40,00<00((((,080((((((((((((((((((((@@((((((((((((((((((  ((,(8(4,(80((((,(,, 008@@08((
+xLine continuation character '_' must be preceded by at least one white space and must be the last character on the line.
+x'Microsoft.VisualBasic.ComClassAttribute' cannot be applied to '|1' because its container '|2' is not declared 'Public'.
+XML comment tag '|1' appears with identical attributes more than once in the same XML comment block. XML comment will be ignored.^XML comment tag '|1' is not permitted on a '|2' language element. XML comment will be ignored.wXML comment parameter '|1' does not match a parameter on the corresponding '|2' statement. XML comment will be ignored.PXML comment parameter must have a 'name' attribute. XML comment will be ignored.kXML comment has a tag with a 'cref' attribute '|1' that could not be resolved. XML comment will be ignored.RXML comment tag 'include' must have a '|1' attribute. XML comment will be ignored.0Unable to create XML documentation file '|1': |0DXML documentation comments must precede member or type declarations.bXML comment tag 'returns' is not permitted on a 'WriteOnly' Property. XML comment will be ignored.gXML comment cannot be applied more than once on a partial |1. XML comments for this |1 will be ignored.lXML comment tag 'returns' is not permitted on a 'declare sub' language element. XML comment will be ignored.kXML documentation parse error: Start tag '|1' doesn't have a matching end tag. XML comment will be ignored.
+XML comment type parameter '|1' does not match a type parameter on the corresponding '|2' statement. XML comment will be ignored.UXML comment type parameter must have a 'name' attribute. XML comment will be ignored.PXML comment exception must have a 'cref' attribute. XML comment will be ignored.
+XML DTDs are not supported.5Character '|1' (|2) is not allowed in an XML literal.
+XML literals and XML axis properties are not available during this debugging session because they are not used in this assembly.6Full width characters are not valid as XML delimiters.DXML literal cannot appear here unless it is enclosed in parentheses.L.NET Framework 2.0 update not found. The win32manifest will not be embedded.
+XML literals and XML properties are not supported in embedded-code within ASP.NET. To use XML features, move the code to code-behind.
+XML name cannot appear here..Expected closing '%>' for embedded expression.4Expected closing '?>' for XML processor instruction.'Expected closing '-->' for XML comment.-Expected closing ']]>' for XML CDATA section.?Expected matching closing single quote for XML attribute value.?Expected matching closing double quote for XML attribute value.&Expected beginning '<' for an XML tag.;Expected quoted XML attribute value or embedded expression.
+XML name expected.
+XmlName
+XmlNamespace
+XmlNamespaceDeclaration
+xmlns
+xmlparsetree
+XName
+XNamespace
+XObject
+xOption Strict On disallows operands of type Object for operator '|1'. Use the 'Is' operator to test for object identity.ZBounds can be specified only for the top-level array when initializing an array of arrays. 'Assembly' or 'Module' expected.
+XorObject
+XProcessingInstruction
+XText
+Xum_^
+y _^]
+y$u,;
+y(_^]
+Y__^[
+You must reference at least one range variable on both sides of the 'Equals' operator. Range variable(s) |1 must appear on one side of the 'Equals' operator, and range variable(s) |2 must appear on the other.
+z,_^[
+z,_^f
+z.9Wv
+Z\PVjc
+Z'|2' for the Imports '|1' does not refer to a Namespace, Class, Structure, Enum or Module.:Type declaration characters are not valid in this context.>Reference to a non-shared member requires an object reference.,'MyClass' cannot be used outside of a class.IExpression is not an array or a method, and cannot have an argument list.
+Z'Inherits' can appear only once within a 'Class' statement and can only specify one class.8'Stop' statements are not valid in the Immediate window.7'End' statements are not valid in the Immediate window.]Property without a 'ReadOnly' or 'WriteOnly' specifier must provide both a 'Get' and a 'Set'.*'WriteOnly' property must provide a 'Set'.)'ReadOnly' property must provide a 'Get'.
+ZLimit which platforms this code can run on; must be x86, x64, Itanium or anycpu (default).aSpecifies how to handle internal compiler errors; must be prompt, send, none, or queue (default).
+zRange variable '|1' hides a variable in an enclosing block or a range variable previously defined in the query expression.5'Option Infer' can be followed only by 'On' or 'Off'.CType of '|1' cannot be inferred from an expression containing '|2'.

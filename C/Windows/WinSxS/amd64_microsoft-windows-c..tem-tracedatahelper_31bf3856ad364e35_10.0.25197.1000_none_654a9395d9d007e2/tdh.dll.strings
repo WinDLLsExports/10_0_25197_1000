@@ -1,0 +1,2979 @@
+              Applications which log extensive information should define an application-specific channel.</channel>
+              may appear as audits if supported by the underlying application.</channel>
+              system service accounts or user applications running under local adminstrator privileges.</channel>
+             "%hs Flag"
+             "%hs"
+             "0x%.8X"
+             "0x00000001"
+            "0x1",
+            "0x2",
+            "0x3",
+            "0x4",
+            "0x5" },
+            "Abnormal exit or termination",
+            "Detailed traces from intermediate steps" } : amended,
+            "Error",
+            "Fatal",
+            "Includes non-error cases",
+            "Information",
+            "Severe errors that need logging",
+            "TRACE_LEVEL_ERROR",
+            "TRACE_LEVEL_FATAL",
+            "TRACE_LEVEL_INFORMATION",
+            "TRACE_LEVEL_VERBOSE" },
+            "TRACE_LEVEL_WARNING"
+            "Verbose" },
+            "Warning",
+            "Warnings such as allocation failure",
+          "$(string.MyString1)" then the id would be "MyString1".</xs:documentation>
+          "en-US". Locale name syntax is documented in MSDN topics such as
+          "guid" attribute to the decode GUID and set the "controlGuid" attribute to the
+          "locale names" and "LocaleNameToLCID".</xs:documentation>
+          a hand-maintained manifest, since a single event might be emitted from multiple
+          a meaningful level (win:Critical, win:Error, win:Warning, win:Informational,
+          and a control GUID (used to enable the provider or filter events). Normally,
+          at least one meaningful keyword to support effective filtering during event
+          attribute is used, the provider name must end with the decode guid, e.g.
+          attributes='FILE=source.cpp;LINE=123;MJ="Value; ""Quoted"""'
+          by this version of the provider. The description of the event should be retained
+          code changes.</xs:documentation>
+          collection.</xs:documentation>
+          control GUID. Note that to avoid provider name conflicts, if the controlGuid
+          controlGuid="{74d557d9-4a8e-4a3f-9a32-3f1a0eab71ba}"
+          Creators Update (2017) or later, this value can be retrieved from the
+          custom level (defined in the &lt;levels&gt; section). If not specified, the
+          decoded on this machine.</xs:documentation>
+          Defined attributes include:
+          double-quotes; double-quotes within the value should be doubled. Example:
+          Event keyword is a primary filtering attribute. All events should be assigned
+          Event level is a primary filtering attribute. All events should be assigned
+          event producer and consumer coordinate to define the semantics of the tags
+          event's level will default to "LogAlways".
+          example, the FILE ane LINE attributes are not generally appropriate for use in
+          Fall Creators Update (2017).
+          FILE and LINE attributes are intended for use in cases where the manifest is
+          FILE=Filename of source code associated with event;
+          for WinRT projection APIs.</xs:documentation>
+          from the events section of the manifest.</xs:documentation>
+          from the TRACE_EVENT_INFO EventAttributesOffset field.
+          FUNC=Function name associated with event;
+          group. By default, the provider is not a member of any provider group.</xs:documentation>
+          guid="{54bab802-bb0b-4b4a-9ce9-7360a0120b3e}"
+          Hexadecimal requires '0x' prefix.</xs:documentation>
+          identified by the {Provider-Guid,Event-Id,Event-Version} tuple.</xs:documentation>
+          If a provider uses distinct decode and control GUIDs, the resulting traces may
+          If distinct values are needed for the decode and control GUIDs, set the
+          If not specified, the event will have no keywords set and will bypass most
+          in the provider traits. If false, the provider's name will be left blank
+          in this manifest so that if an etl file collected from an older version of the
+          install time, the value of this attribute is usually overridden by using
+          keyword-based event filtering.
+          later, this value can be retrieved from the EVENT_PROPERTY_INFO Tags field.</xs:documentation>
+          LINE=Line number of source code associated with event;
+          manifests and may not be appropriate for use with hand-maintained manifests. For
+          manifests.</xs:documentation>
+          MESSAGETABLE string. For example, if a string is referenced as
+          MJ=Major component associated with event (component name);
+          MN=Minor component associated with event (subcomponent name).
+          name="MyProvider.54bab802bb0b4b4a9ce97360a0120b3e"
+          name=value attributes associated with the event. During event processing on
+          not decode properly when decoded on Windows versions prior to Windows 10
+          Note that distinct decode and control GUIDs are typically used to support
+          Note that most of these attributes are intended for use with tool-generated
+          of projected WinRT methods. This attribute will be used if generating code
+          or win:Verbose) to support effective filtering during event collection.</xs:documentation>
+          possible to filter an event by provider name.</xs:documentation>
+          provider on a different machine is brought to this machine, it can be correctly
+          regenerated (with a new GUID) by a code generation tool each time the source
+          resource is linked, usually the same as the provider's binary.
+          semantics of the tags value. During event processing on Windows 10 Fall
+          Since the full install path of the provider binary is usually determined at
+          source code locations and the source code locations will change over time. The
+          the channel access attribute.</xs:documentation>
+          The high 16 bits of the mask are reserved for definition by winmeta.xml.</xs:documentation>
+          the same GUID (the provider guid) is used for both decode and control.
+          the usage of the string to aid in tracking and localization.</xs:documentation>
+          this template. The event producer and consumer coordinate to define the
+          to reduce the size of the trace file. Including the provider name makes it
+          tool-generated manifests and are generally unnecessary for hand-maintained
+          TRACE_EVENT_INFO EventNameOffset field.</xs:documentation>
+          TRACE_EVENT_INFO Tags field.</xs:documentation>
+          valid WinRT types i.e. the event payload fields can come from arguments
+          value. During event processing on Windows 10 Fall Creators Update (2017) or
+          Values containing semicolons or double-quotes should be quoted using
+          wevtutil.exe's /mf:FullMessageFilePath parameter.</xs:documentation>
+          wevtutil.exe's /rf:FullResourceFilePath parameter.</xs:documentation>
+          Windows 10 Fall Creators Update (2017) or later, this value can be retrieved
+         DefineValues{
+        "$(mc.mcSymbolId)", where mcSymbolId is the symbol of a message string
+        (flag) that specifies a category that an event may belong to. Keywords
+        a Windows Performance Counter V2 provider.</xs:documentation>
+        allowed. Typically, the file is of type .exe, .dll, or .sys.</xs:documentation>
+        and the Stop opcode is used on events that trace the end.
+        are used to filter events.
+        be reinstalled.</xs:documentation>
+        blob contains information about a provider's name, decode GUID, and group
+        blob, will generate code to automatically register the blob as part of
+        by this manifest.
+        bytes) of the property value.
+        can share a template.</xs:documentation>
+        channels from winmeta.xml or to reference channels owned by other
+        character, and "counted" values start with a 16-bit size).
+        components that this manifest will depend upon.
+        consist of a small binary blob that is registered with the ETW runtime via
+        content of this element is not used by mc.exe.</xs:documentation>
+        Custom levels must use values 16-255.</xs:documentation>
+        Custom tasks must use values 1-65535.</xs:documentation>
+        decoders will treat Count="1" as non-array.
+        define here will show up in the Windows Event Viewer.</xs:documentation>
+        defined in an .mc file compiled along with this manifest.</xs:documentation>
+        defined in the &lt;stringTable&gt; section, or of the form
+        DefineValues{
+        definitions needed to decode it.</xs:documentation>
+        e.g. {12345678-4321-ABCD-1234-9ABCDEF012345678}.
+        E.g. Namespace1._Namespace2.Namespace2</xs:documentation>
+        Each inType has a set of outTypes that are supported for use with it.
+        Each inType specifies one outType as "default", indicating the behavior
+        ETW tools to decode ETL traces.
+        event definitions. At runtime, the provider GUID is used when opening
+        EventRegister, and will include the blob in each call to EventWrite.</xs:documentation>
+        EventSetInformation and included with each call to EventWrite. The traits
+        example, the inType "UInt16" can be used with outType "Port" to
+        extends the inType with additional semantics and presentation details
+        filter events.
+        filtering, all events should have at least one keyword assigned.</xs:documentation>
+        for a property of an ETW event. For example, a property could have
+        for a single locale.</xs:documentation>
+        For a variable-Length property, specify the name of the property that
+        for its control GUID and its decode GUID or when the traits element is
+        For variable-Count array, specify the name of the property that will
+        GUID is used to match an event to the manifest that contains the event
+        GUID.
+        have the count of this property.
+        immediately precede the corresponding variable-Count property.</xs:documentation>
+        immediately precede the corresponding variable-Length property.</xs:documentation>
+        In the case of an array (i.e. when the property has a Count), the same
+        indicate that an event property is a big-endian 16-bit Internet
+        installed or uninstalled with wevtutil.exe, and used with TDH APIs or
+        integer.
+        into the Windows operating system or are commonly used by ETW decoding
+        inType "AnsiString" (indicating nul-terminated CHAR8 string) and
+        keywords should not be used directly (mc.exe adds the reserved keywords
+        keywords should only be used for their described purpose. The reserved
+        leading 0s. Hexadecimal requires '0x' prefix.</xs:documentation>
+        Length is not used for other inTypes. Other inTypes either use a
+        Length is optional for "UnicodeString" and "AnsiString" properties. If
+        Length is required for "Binary" properties. It indicates the size (in
+        Length value applies to all elements of the array. As a result, it is
+        levels, opcodes, and channels.</xs:documentation>
+        Manifests containing a Performance Counter V2 provider can be compiled
+        Manifests containing ETW providers can be compiled with mc.exe,
+        Manifests containing MESSAGETABLE strings can be compiled with mc.exe.
+        message table in this manifest.
+        must use the low 48 bits of the keyword mask.</xs:documentation>
+        not generally useful to create an array of variable-Length properties.
+        Note that instrumentation manifests must be uninstalled before they can
+        Note that only the attributes of this element are significant. The text
+        Note that some decoders only recognize Count properties that
+        Note that some decoders only recognize Length properties that
+        Note that some decoders will treat Count="0" as an error, and some
+        Note that winmeta.xml provides predefined levels win:LogAlways,
+        Note that winmeta.xml provides predefined opcodes win:Info, win:Start,
+        Note that winmeta.xml provides predefined task win:None.
+        Note that winmeta.xml provides several predefined keywords. These
+        nul-terminated.
+        of this attribute should be of the form "$(string.stringTableId)",
+        outType "Utf8" (indicating UTF-8 character encoding).</xs:documentation>
+        owned by this manifest. This may be used to reference well-known
+        Performance Counter V2 provider.
+        present), the MC tool's -um or -km codegen will generate a provider traits
+        present, Length indicates the size (in characters) of the property
+        property and also gives a general idea of how the property's value
+        property of an ETW event. Every ETW event property declares an inType.
+        protocol port number.
+        providers, and/or a Windows Performance Counter V2 provider.
+        providers.</xs:documentation>
+        semantic category for certain special types of event. For example, the
+        should be interpreted. For example, an inType "Int16" indicates the
+        size is 2 and the property should be interpreted as a signed 16-bit
+        source of the event. When the trace data is processed, the provider
+        specify an outType.</xs:documentation>
+        Start opcode is used on events that trace the beginning of an activity,
+        storing instrumentation data within other XML documents.</xs:documentation>
+        string label that can be applied to an event.
+        TDH APIs as well as Microsoft-defined constants for well-known event
+        that should be used when an ETW property uses the inType but does not
+        The counters element (defined in the counterman.xsd schema) is used for
+        the ETW handle. When collecting a trace, the provider's control GUID is
+        The events element is used for MESSAGETABLE strings and ETW providers.
+        The inType fully defines the mechanism for determining the size of a
+        The outType adds semantics or presentation details to the inType. For
+        this inType.
+        to events as appropriate based on the event's channel). Custom keywords
+        tools. This includes the definitions of the property types supported by
+        unlodctr.exe.
+        Use GUIDGen.exe or UUIDGen.exe to create a GUID.</xs:documentation>
+        used to enable or disable the collection of the provider's events.
+        value. If Length is not present, the property is assumed to be
+        ValueDescriptions{
+        ValueMap{
+        values 10-239.</xs:documentation>
+        Values{
+        ValueType("index")
+        well-known constant size (e.g. Int32 length is 4) or encode the size
+        When provider traits are needed (i.e. when the provider has different values
+        where stringTableId is the "id" attribute of a &lt;string&gt; element
+        will have the length of this property.
+        win:Critical, win:Error, win:Warning, win:Informational, win:Verbose.
+        win:Resume, win:Suspend, win:Send, win:Receive. Custom opcodes must use
+        win:Stop, win:DC_Start, win:DC_Stop, win:Extension, win:Reply,
+        WinMeta.xml uses this element to document ETW facilities that are built
+        with ctrpp.exe, installed using lodctr.exe, and uninstalled using
+        Within the trace data, the provider GUID identifies the provider as the
+        within the value (e.g. nul-terminated strings end at the first 0
+    !Concatenated line too long! Required = %d, Maximum = %d 
+    !Concatenated Line too long! Required = %d, Maximum = %d 
+    !Failed to concatenate line!  Required = %d 
+    !Failed to Realloc Line!  Required = %d 
+    [Description ("Enable Flags") : amended
+    [Description ("Levels") : amended,
+    ]
+    uint32 Flags;
+    uint32 Level;
+  giving %s
+ - Success
+  Value
+ %02X
+ (Init called in Function %hs)
+ (Status = 0x%08X)
+ | %.*s
+ A;.wtH
+ A^_^
+ A^_^][
+ A^A\_
+ A_A]A\_^][
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A\H
+ A_A^A]
+ A_A^A]A\_
+ AddMofInfo adding entry
+ AdMofInfo added entry
+ AdMofInfo failed to add entry
+ Description("%ls_%hs"),
+ exceeded max (%d) amount of open Handles
+ Failed to enumerate first subkey for %s, GLE = %x
+ Failed to open registry path %s, GLE = %x
+ Failed to query default value for registry path %s, GLE = %x
+ GetMofInfohead a match
+ GetMofInfohead creating an entry %s
+ GetMofInfohead found a match
+ guid("{%hs}"),
+ H3E H3E
+ locale("MS\\0x409")]
+ Microsoft Corporation. All rights reserved.
+ Name="
+ Operating System
+ Success
+ Unknown GUID_TYPE: %x
+ Windows
+! Error %u No Module Name!
+!! Old style #type statement -- failed
+!! Unknown # statement %s 
+!0x%X!
+!fD;i
+!ItemMerror %u : LoadLibrary of %s failed %d!
+!Module Error %u unrecognised!
+!NT Error %u unrecognised!
+!This program cannot be run in DOS mode.
+!uw!u
+"tcfA
+#enumv
+#enumv %hs
+#level
+#pragma autorecover
+#pragma classflags("forceupdate")
+#pragma namespace("\\\\.\\root\\WMI")
+#type
+#typev
+#typev %hs%d
+#version
+$(mc.
+$(string.
+$fA9B
+%!COMPNAME!
+%!FLAGS!
+%!FUNC!
+%!LEVEL!
+%!SUBCOMP!
+%016I64X
+%02u/%02u/%04u-%02u:%02u:%02u.%0*u%ls
+%02X 
+%02X-%02X-%02X-%02X-%02X-%02X
+%03d.%03d.%03d.%03d
+%04u-%02u-%02uT%02u:%02u:%02u.%0*u%ls
+%04X 
+%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x
+%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x.tmf
+%20I64u
+%30s 
+%30s: %s
+%30s: 0x%02X
+%30s: 0x%02x,0x%02x,0x%02x
+%30s: 0x%08X
+%30s: 0x%p
+%30s: Length 0x%02X
+%30s: Length 0x%08X Buffer 0x%p
+%30s: Length 0x%08XBuffer 0x%p
+%-32s
+%33s: (%02X/%02X) %s
+%33s: (%02X/%02X) no mapping
+%33s: 0x%02X
+%33s: 0x%04X
+%33s: 0x%08X
+%33s: 0x%X
+%33s: 0x%X %s
+%33s: 0x%X 0x%X 0x%X
+%33s: 0x%X current errors
+%33s: 0x%X deferred errors
+%33s: 0x%X unexpected response code
+%33s: 0x%X vendor specific sense data format
+%8x`%08x
+%c%c%c%c
+%d(%S)
+%d.%03ds
+%d.%d.%d.%d
+%d:%d.%03ds
+%d:%d:%d.%03ds
+%d~%d:%d:%d.%03ds
+%hs %ls
+%hs FUNC=%hs
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%u)\%hs!%p: 
+%hs//
+%I32d
+%I32u
+%I64d
+%I64u
+%lc%02u:%02u
+%ls : error : WPPFMT Failed to make path %ls
+%ls : error : WPPFMT Failed to make path %ws
+%ls : error : WPPFMT File + Path
+%ls : error : WPPFMT GUID buffer too small 
+%ls : error : WPPFMT Insufficient Buffer
+%ls : error : WPPFMT Invalid TMC annotation
+%ls : info : WPPFMT generating %ls for %ls
+%ls : info : WPPFMT No Trace entries found in %ls
+%ls : warning : WPPFMT Event too complex. This event's decoding information will be omitted from the TMF file: %.80hs %.80hs
+%ls : warning : WPPFMT Failed Create %ls (0x%0X)
+%ls : warning : WPPFMT Failed to open %ls (0x%0X)
+%ls,0x%I64X
+%ls\%hs%hs
+%ls\%hs.tmf
+%ls\%ls.mof
+%ProgramFiles%\
+%ProgramFiles(x86)%\
+%s(%d)
+%s(0x%X)
+%s\{%s}
+%systemroot%\System32\
+%systemroot%\SysWow64\
+%u:%u
+%u:%u:%u:%u:%u:%u:%u:%u
+%u<I;
+&amp;
+&f9M0
+&L9D$(
+&quot;
+&tMfA
+(_^][
+(0x%X)
+(A^_^[
+(A_A]A\]
+(A_A^A]A\_^][
+(caller: %p) 
+(Concatenated Line)
+(D$ f
+(D$ H
+(D$@f
+(D$`f
+(D$0f
+(D$0L
+(D$Pf
+(L$@f
+(null)
+(t$pH
+(t$PI
+)t$pL
+****************
+*****FormatMessage %ls(%ls) of %ls, parameter %d raised an exception*****
+*D8>t-H
+, <^w
+.%03uZ
+.%09I64uZ
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVexception@std@@
+.?AVExceptionBase@@
+.?AVParseException@@
+.?AVResultException@wil@@
+.?AVSystemException@@
+.?AVtype_info@@
+.?AVValidationException@@
+.?AVWinmetaException@@
+.00cfg
+.bss$00
+.bss$dk00
+.bss$pr00
+.bss$zz
+.Count
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIC
+.CRT$XIZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.D8uPu
+.data
+.data$00
+.data$00$brc
+.data$dk00
+.data$dk00$brc
+.data$r$brc
+.data$rs$brc
+.data$zz
+.data$zz$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gehcont
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.Length
+.pdata
+.rdata
+.rdata$00
+.rdata$00$brc
+.rdata$brc
+.rdata$r
+.rdata$voltmd
+.rdata$zz
+.rdata$zz$brc
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$lp00tdh.dll!20_pri7
+.text$lp01tdh.dll!20_pri7
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.text$zs
+.text$zy
+.text$zz
+.xdata
+.xdata$x
+// PDB:  %ls
+// PDB:  Last Updated :%04d-%02d-%02d:%02d:%02d:%02d:%03d (UTC) [%ls]
+// WPP Generated File
+//ModuleName = %ls%hs
+/cmi:assembly/cmi:instrumentation
+/cmi:assembly/cmi:instrumentation/evt:events/evt:messageTable/evt:message
+/cmi:assembly/cmi:instrumentation/evt:events/evt:provider
+/cmi:assembly/cmi:localization/cmi:resources
+/cmi:assembly/cmi:localization/cmi:resources[1]/cmi:stringTable/cmi:string
+/evt:events
+/evt:instrumentationManifest/evt:instrumentation
+/evt:instrumentationManifest/evt:instrumentation/evt:events
+/evt:instrumentationManifest/evt:instrumentation/evt:events/evt:messageTable/evt:message
+/evt:instrumentationManifest/evt:instrumentation/evt:events/evt:provider
+/evt:instrumentationManifest/evt:localization/evt:resources
+/evt:instrumentationManifest/evt:localization/evt:resources[1]/evt:stringTable/evt:string
+/fD;w
+/H9p t]
+/win:instrumentationManifest/win:localization/win:resources[@culture='en-US']/win:stringTable/win:string
+/win:instrumentationManifest/win:metadata[@name='evt:meta/winTypes']/win:channels/win:channel
+/win:instrumentationManifest/win:metadata[@name='evt:meta/winTypes']/win:keywords/win:keyword
+/win:instrumentationManifest/win:metadata[@name='evt:meta/winTypes']/win:levels/win:level
+/win:instrumentationManifest/win:metadata[@name='evt:meta/winTypes']/win:opcodes/win:opcode
+/win:instrumentationManifest/win:metadata[@name='evt:meta/winTypes']/win:tasks/win:task
+/win:instrumentationManifest/win:metadata[@name='evt:meta/winTypes']/win:types/win:inTypes/win:inType
+/win:instrumentationManifest/win:metadata[@name='evt:meta/winTypes']/win:types/win:xmlTypes/win:xmlType
+:\t,f
+:B"tUfD;Z u
+:BMAP
+:CHANu*E
+:CTRTu%E
+:EVNTu,A
+:EVTAu%E
+:EVTFu'A
+:FLTRu$E
+:KEYWu*E
+:L9D$(
+:LEVLu*A
+:MAPSu*E
+:OPCOu*A
+:PRVAu*E
+:QTABu%E
+:QUERI
+:t6E3
+:TASKu(A
+:TEMP
+:TEMPI
+:TTBLu,A
+:VMAPuhD
+:WEVTu7D
+;\$0|
+;C ufH
+;D$pwKA
+;pt|H
+?%uhf
+?_Xlength_error@std@@YAXPEBD@Z
+?_Xout_of_range@std@@YAXPEBD@Z
+@.data
+@.didat
+@.reloc
+@@8lS
+@0A8B0t
+@8.|@A
+@8l$xH
+@A^_]
+@A^_^
+@A^_^][
+@A__^
+@A_A^]
+@A_A^_
+@A_A^A\
+@A_A^A]
+@A_A^A]A\_^]
+@B8tC
+@SUVWATAUAVAWH
+@SUVWAUAVAW
+@SUVWAVH
+@SUVWAWH
+@SUVWH
+@SUWAVAWH
+@SVWATAUAVAWH
+@SVWAWH
+@SVWH
+@UATAUAWH
+@UATAVH
+@USVWATAUAVAWH
+@USVWATAUAVH
+@USVWATAUAWH
+@USVWATAVAWH
+@USVWAVH
+[%9!d!]%8!04X!.%3!04X!::%4!s! %7!08x! [%1!s!]
+[%9!d!]%8!04X!.%3!04X!::%4!s! [%1!s!]
+[%9!d!]%8!04X!.%3!04X!::%4!s! [%2!s!]
+[%hs(%hs)]
+[%hs]
+[@culture='
+[@name='
+[Dynamic,
+[Error message cannot be retrieved.]
+\$ A8@$tQA
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$ UVWH
+\$ WH
+\$(A;
+\$(E3
+\$@A;
+\$@E;V
+\$`H;
+\$`H+
+\$0E3
+\$0fD
+\$8H;
+\$hfD
+\$p952b
+\$PE3
+\$pHk
+\$pI;
+\$PI;
+\$pI;
+\\%s\%s
+\\%ws\%ws
+\0H;o
+\Device\
+\fD93u
+\h1B`
+']/cmi:stringTable/cmi:string
+']/evt:stringTable/evt:string
+']/win:outType
+]W8G,t
+^PL9+
+__binLength
+__C_specific_handler
+__CLASS
+__current_exception
+__current_exception_context
+__CxxFrameHandler3
+__CxxFrameHandler4
+__std_terminate
+_CxxThrowException
+_initterm
+_initterm_e
+_NT_SYMBOL_PATH
+_o___acrt_iob_func
+_o___std_exception_copy
+_o___std_exception_destroy
+_o___std_type_info_destroy_list
+_o___stdio_common_vfprintf
+_o___stdio_common_vsnprintf_s
+_o___stdio_common_vsnwprintf_s
+_o___stdio_common_vsprintf
+_o___stdio_common_vsprintf_s
+_o___stdio_common_vswprintf
+_o___stdio_common_vswprintf_s
+_o___stdio_common_vswscanf
+_o__callnewh
+_o__cexit
+_o__configure_narrow_argv
+_o__crt_atexit
+_o__errno
+_o__execute_onexit_table
+_o__initialize_narrow_environment
+_o__initialize_onexit_table
+_o__invalid_parameter_noinfo
+_o__invalid_parameter_noinfo_noreturn
+_o__purecall
+_o__register_onexit_function
+_o__resetstkoflw
+_o__seh_filter_dll
+_o__wcsicmp
+_o__wcsnicmp
+_o__wcstoi64
+_o__wcstoui64
+_o__wfopen
+_o__wfsopen
+_o__wsplitpath_s
+_o__wtoi
+_o_ceilf
+_o_fclose
+_o_fgets
+_o_fgetws
+_o_fputs
+_o_free
+_o_isdigit
+_o_iswspace
+_o_iswxdigit
+_o_malloc
+_o_memcpy_s
+_o_strcpy_s
+_o_strncpy_s
+_o_terminate
+_o_wcscpy_s
+_o_wcstok_s
+_o_wcstol
+_o_wcstoul
+_o_wcstoull
+` AUAVAWH
+` UAVAWH
+`.rdata
+`A^A]A\_^[]
+`A_A^_^]
+`A_A^A\_^
+`A_A^A]A\_^]
+{ ATAVAWH
+{ UATAUAVAWH
+{%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x}
+{%dx}
+{%ws}
+|$ AVH
+|$ E3
+|$ UATAUAVAWH
+|$ UAVAWH
+|$ UH
+|$(A^
+|$(H;
+|$@:W
+|$@E;
+|$@E3
+|$`fD
+|$`H9
+|$0fA
+|$pf;
+|$pfA
+|$PI9]
+|$pue
+|GD;e
+}: amended
+}0H+}(H
+}hA97r
++D$ D
++D$0D
+</channels>
+</EventData>
+</instrumentationManifest>
+</inType>
+</inTypes>
+</keywords>
+</levels>
+</localization>
+</messageTable>
+</metadata>
+</opcodes>
+</resources>
+</stringTable>
+</tasks>
+</types>
+</xmlTypes>
+</xs:annotation>
+</xs:attribute>
+</xs:choice>
+</xs:complexContent>
+</xs:complexType>
+</xs:element>
+</xs:extension>
+</xs:restriction>
+</xs:schema>
+</xs:sequence>
+</xs:simpleType>
+<0wdH
+<8(t0f
+<channel name="Application" type="Admin" symbol="WINEVENT_CHANNEL_GLOBAL_APPLICATION" isolation="Application" value="9" message="$(string.channel.Application)">Events for all user-level applications.  This channel is not secured and open to any applications.
+<channel name="ProviderMetadata" type="Debug" symbol="WINEVENT_CHANNEL_PROVIDERMETADATA" value="12" message="$(string.channel.ProviderMetadata)">Event contains provider traits.</channel>
+<channel name="Security" type="Admin" symbol="WINEVENT_CHANNEL_GLOBAL_SECURITY" isolation="System" value="10" message="$(string.channel.Security)">The Windows Audit Log.  For exclusive use of the Windows Local Security Authority.  User events
+<channel name="System" type="Admin" symbol="WINEVENT_CHANNEL_GLOBAL_SYSTEM" isolation="System" value="8" message="$(string.channel.System)">Events for all installed system services.  This channel is secured to applications running under
+<channel name="TraceClassic" type="Debug" symbol="WINEVENT_CHANNEL_CLASSIC_TRACE" value="0" message="$(string.channel.TraceClassic)">Events for Classic ETW tracing.</channel>
+<channel name="TraceLogging" type="Debug" symbol="WINEVENT_CHANNEL_TRACELOGGING" value="11" message="$(string.channel.TraceLogging)">Event contains provider traits and TraceLogging event metadata.</channel>
+<channels>
+<description>A 16-bit bytecount followed by a string of 16-bit characters.  Supported in Windows 2018 Fall Update or later.</description>
+<description>A 16-bit bytecount followed by a string of 8-bit characters.  Supported in Windows 2018 Fall Update or later.</description>
+<description>A 16-bit bytecount followed by binary data. Supported in Windows 2018 Fall Update or later.</description>
+<description>A 32-bit value where zero is false, nonzero is true.</description>
+<description>A DCE-compliant 128-bit UUID. XML spec: {12345678-1234-4667-1234-123456789abc}</description>
+<description>A hexidecimal representation of an unsigned 32-bit integer.</description>
+<description>A hexidecimal representation of an unsigned 64-bit integer.</description>
+<description>A pointer; sized to the current platform (32-bit or 64-bit). XML spec: hex representation of a pointer</description>
+<description>A self-relative Windows SID structure. XML spec: S-1-0-0.</description>
+<description>A signed 16-bit integer.</description>
+<description>A signed 32-bit integer.</description>
+<description>A signed 64-bit integer.</description>
+<description>A signed 8-bit integer.</description>
+<description>A string of 16-bit characters.</description>
+<description>A string of 8-bit characters.</description>
+<description>A Windows FILETIME struct.</description>
+<description>A Windows SYSTEMTIME struct.</description>
+<description>An IEEE 4-byte floating-point value</description>
+<description>An IEEE 8-byte floating-point value</description>
+<description>An unsigned 16-bit integer</description>
+<description>An unsigned 32-bit integer.</description>
+<description>An unsigned 64-bit integer.</description>
+<description>An unsigned 8-bit integer.</description>
+<description>Variable size binary data.</description>
+<EventData
+<f9]0
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/win/2004/08/events eventman.xsd">
+<inType name="win:AnsiString" value="2" symbol="WINEVENT_TYPE_NULL_TERMINATED_ANSI_STRING">
+<inType name="win:Binary" value="14" symbol="WINEVENT_TYPE_BINARY">
+<inType name="win:Boolean" value="13" symbol="WINEVENT_TYPE_BOOL">
+<inType name="win:CountedAnsiString" value="23" symbol="WINEVENT_TYPE_COUNTED_ANSI_STRING">
+<inType name="win:CountedBinary" value="25" symbol="WINEVENT_TYPE_COUNTED_BINARY">
+<inType name="win:CountedUnicodeString" value="22" symbol="WINEVENT_TYPE_COUNTED_STRING">
+<inType name="win:Double" value="12" symbol="WINEVENT_TYPE_DOUBLE">
+<inType name="win:FILETIME" value="17" symbol="WINEVENT_TYPE_FILETIME">
+<inType name="win:Float" value="11" symbol="WINEVENT_TYPE_FLOAT">
+<inType name="win:GUID" value="15" symbol="WINEVENT_TYPE_GUID">
+<inType name="win:HexInt32" value="20" symbol="WINEVENT_TYPE_HEXINT32">
+<inType name="win:HexInt64" value="21" symbol="WINEVENT_TYPE_HEXINT64">
+<inType name="win:Int16" value="5" symbol="WINEVENT_TYPE_INT16">
+<inType name="win:Int32" value="7" symbol="WINEVENT_TYPE_INT32">
+<inType name="win:Int64" value="9" symbol="WINEVENT_TYPE_INT64">
+<inType name="win:Int8" value="3" symbol="WINEVENT_TYPE_INT8">
+<inType name="win:Pointer" value="16" symbol="WINEVENT_TYPE_POINTER">
+<inType name="win:SID" value="19" symbol="WINEVENT_TYPE_SID">
+<inType name="win:SYSTEMTIME" value="18" symbol="WINEVENT_TYPE_SYSTEMTIME">
+<inType name="win:UInt16" value="6" symbol="WINEVENT_TYPE_UINT16">
+<inType name="win:UInt32" value="8" symbol="WINEVENT_TYPE_UINT32">
+<inType name="win:UInt64" value="10" symbol="WINEVENT_TYPE_UINT64">
+<inType name="win:UInt8" value="4" symbol="WINEVENT_TYPE_UINT8">
+<inType name="win:UnicodeString" value="1" symbol="WINEVENT_TYPE_NULL_TERMINATED_STRING">
+<inTypes>
+<keyword name="win:AnyKeyword" mask="0x0" symbol="WINEVT_KEYWORD_ANY" message="$(string.keyword.AnyKeyword)">Wild card value</keyword>
+<keyword name="win:AuditFailure" mask="0x10000000000000" symbol="WINEVENT_KEYWORD_AUDIT_FAILURE" message="$(string.keyword.AuditFailure)">Attached to all failed security audits</keyword>
+<keyword name="win:AuditSuccess" mask="0x20000000000000" symbol="WINEVENT_KEYWORD_AUDIT_SUCCESS" message="$(string.keyword.AuditSuccess)">Attached to all successful security audits</keyword>
+<keyword name="win:CorrelationHint" mask="0x40000000000000" symbol="WINEVENT_KEYWORD_CORRELATION_HINT" message="$(string.keyword.CorrelationHint)">Attached to transfer events where the related Activity ID is a computed value and not a GUID</keyword>
+<keyword name="win:EventlogClassic" mask="0x80000000000000" symbol="WINEVENT_KEYWORD_EVENTLOG_CLASSIC" message="$(string.keyword.Classic)">Attached to events raised using classic eventlog API</keyword>
+<keyword name="win:ReservedKeyword49" mask="0x2000000000000" symbol="WINEVENT_KEYWORD_RESERVED_49"/>
+<keyword name="win:ReservedKeyword56" mask="0x100000000000000" symbol="WINEVENT_KEYWORD_RESERVED_56"/>
+<keyword name="win:ReservedKeyword57" mask="0x200000000000000" symbol="WINEVENT_KEYWORD_RESERVED_57"/>
+<keyword name="win:ReservedKeyword58" mask="0x400000000000000" symbol="WINEVENT_KEYWORD_RESERVED_58"/>
+<keyword name="win:ReservedKeyword59" mask="0x800000000000000" symbol="WINEVENT_KEYWORD_RESERVED_59"/>
+<keyword name="win:ReservedKeyword60" mask="0x1000000000000000" symbol="WINEVENT_KEYWORD_RESERVED_60"/>
+<keyword name="win:ReservedKeyword61" mask="0x2000000000000000" symbol="WINEVENT_KEYWORD_RESERVED_61"/>
+<keyword name="win:ReservedKeyword62" mask="0x4000000000000000" symbol="WINEVENT_KEYWORD_RESERVED_62"/>
+<keyword name="win:ReservedKeyword63" mask="0x8000000000000000" symbol="WINEVENT_KEYWORD_RESERVED_63"/>
+<keyword name="win:ResponseTime" mask="0x1000000000000" symbol="WINEVENT_KEYWORD_RESPONSE_TIME" message="$(string.keyword.ResponseTime)">Attached to all events providing response time information</keyword>
+<keyword name="win:SQM" mask="0x8000000000000" symbol="WINEVENT_KEYWORD_SQM" message="$(string.keyword.SQM)">Attached to all SQM events</keyword>
+<keyword name="win:WDIDiag" mask="0x4000000000000" symbol="WINEVENT_KEYWORD_WDI_DIAG" message="$(string.keyword.WDIDiag)">Attached to all WDI diag events</keyword>
+<keywords>
+<level name="win:Critical" symbol="WINEVENT_LEVEL_CRITICAL" value="1" message="$(string.level.Critical)">Only critical errors</level>
+<level name="win:Error" symbol="WINEVENT_LEVEL_ERROR" value="2" message="$(string.level.Error)">All errors, includes win:Critical</level>
+<level name="win:Informational" symbol="WINEVENT_LEVEL_INFO" value="4" message="$(string.level.Informational)">All informational content, including win:Warning</level>
+<level name="win:LogAlways" symbol="WINEVENT_LEVEL_LOG_ALWAYS" value="0" message="$(string.level.LogAlways)">Log Always</level>
+<level name="win:ReservedLevel10" symbol="WINEVENT_LEVEL_RESERVED_10" value="10"/>
+<level name="win:ReservedLevel11" symbol="WINEVENT_LEVEL_RESERVED_11" value="11"/>
+<level name="win:ReservedLevel12" symbol="WINEVENT_LEVEL_RESERVED_12" value="12"/>
+<level name="win:ReservedLevel13" symbol="WINEVENT_LEVEL_RESERVED_13" value="13"/>
+<level name="win:ReservedLevel14" symbol="WINEVENT_LEVEL_RESERVED_14" value="14"/>
+<level name="win:ReservedLevel15" symbol="WINEVENT_LEVEL_RESERVED_15" value="15"/>
+<level name="win:ReservedLevel6" symbol="WINEVENT_LEVEL_RESERVED_6" value="6"/>
+<level name="win:ReservedLevel7" symbol="WINEVENT_LEVEL_RESERVED_7" value="7"/>
+<level name="win:ReservedLevel8" symbol="WINEVENT_LEVEL_RESERVED_8" value="8"/>
+<level name="win:ReservedLevel9" symbol="WINEVENT_LEVEL_RESERVED_9" value="9"/>
+<level name="win:Verbose" symbol="WINEVENT_LEVEL_VERBOSE" value="5" message="$(string.level.Verbose)">All tracing, including previous levels</level>
+<level name="win:Warning" symbol="WINEVENT_LEVEL_WARNING" value="3" message="$(string.level.Warning)">All warnings, includes win:Error</level>
+<levels>
+<localization>
+<message value="1" message="$(string.category.Devices)"/>
+<message value="2" message="$(string.category.Disk)"/>
+<message value="256" message="$(string.channel.Application)"/>
+<message value="257" message="$(string.channel.Security)"/>
+<message value="258" message="$(string.channel.System)"/>
+<message value="3" message="$(string.category.Printers)"/>
+<message value="4" message="$(string.category.Services)"/>
+<message value="5" message="$(string.category.Shell)"/>
+<message value="6" message="$(string.category.SystemEvent)"/>
+<message value="7" message="$(string.category.Network)"/>
+<messageTable>
+<metadata name="evt:meta/winTypes">
+<NULL>
+<opco
+<opcode name="win:DC_Start" value="3" symbol="WINEVENT_OPCODE_DC_START" message="$(string.opcode.DCStart)">A trace collection start event</opcode>
+<opcode name="win:DC_Stop" value="4" symbol="WINEVENT_OPCODE_DC_STOP" message="$(string.opcode.DCStop)">A trace collection end event</opcode>
+<opcode name="win:Info" value="0" symbol="WINEVENT_OPCODE_INFO" message="$(string.opcode.Info)">An informational event</opcode>
+<opcode name="win:Receive" value="240" symbol="WINEVENT_OPCODE_RECEIVE" message="$(string.opcode.Receive)">An event representing receiving an activity transfer from another component</opcode>
+<opcode name="win:Reply" value="6" symbol="WINEVENT_OPCODE_REPLY" message="$(string.opcode.Reply)">A reply event</opcode>
+<opcode name="win:ReservedOpcode241" symbol="WINEVENT_OPCODE_RESERVED_241" value="241"/>
+<opcode name="win:ReservedOpcode242" symbol="WINEVENT_OPCODE_RESERVED_242" value="242"/>
+<opcode name="win:ReservedOpcode243" symbol="WINEVENT_OPCODE_RESERVED_243" value="243"/>
+<opcode name="win:ReservedOpcode244" symbol="WINEVENT_OPCODE_RESERVED_244" value="244"/>
+<opcode name="win:ReservedOpcode245" symbol="WINEVENT_OPCODE_RESERVED_245" value="245"/>
+<opcode name="win:ReservedOpcode246" symbol="WINEVENT_OPCODE_RESERVED_246" value="246"/>
+<opcode name="win:ReservedOpcode247" symbol="WINEVENT_OPCODE_RESERVED_247" value="247"/>
+<opcode name="win:ReservedOpcode248" symbol="WINEVENT_OPCODE_RESERVED_248" value="248"/>
+<opcode name="win:ReservedOpcode249" symbol="WINEVENT_OPCODE_RESERVED_249" value="249"/>
+<opcode name="win:ReservedOpcode250" symbol="WINEVENT_OPCODE_RESERVED_250" value="250"/>
+<opcode name="win:ReservedOpcode251" symbol="WINEVENT_OPCODE_RESERVED_251" value="251"/>
+<opcode name="win:ReservedOpcode252" symbol="WINEVENT_OPCODE_RESERVED_252" value="252"/>
+<opcode name="win:ReservedOpcode253" symbol="WINEVENT_OPCODE_RESERVED_253" value="253"/>
+<opcode name="win:ReservedOpcode254" symbol="WINEVENT_OPCODE_RESERVED_254" value="254"/>
+<opcode name="win:ReservedOpcode255" symbol="WINEVENT_OPCODE_RESERVED_255" value="255"/>
+<opcode name="win:Resume" value="7" symbol="WINEVENT_OPCODE_RESUME" message="$(string.opcode.Resume)">An event representing the activity resuming from the suspension</opcode>
+<opcode name="win:Send" value="9" symbol="WINEVENT_OPCODE_SEND" message="$(string.opcode.Send)">An event representing the activity is transferred to another component, and can continue to work</opcode>
+<opcode name="win:Start" value="1" symbol="WINEVENT_OPCODE_START" message="$(string.opcode.Start)">An activity start event</opcode>
+<opcode name="win:Stop" value="2" symbol="WINEVENT_OPCODE_STOP" message="$(string.opcode.Stop)">An activity end event</opcode>
+<opcode name="win:Suspend" value="8" symbol="WINEVENT_OPCODE_SUSPEND" message="$(string.opcode.Suspend)">An event representing the activity is suspended, pending another activity's completion</opcode>
+<opcodes>
+<outType default="true" xmlType="win:HexInt32"/>
+<outType default="true" xmlType="win:HexInt64"/>
+<outType default="true" xmlType="xs:boolean"/>
+<outType default="true" xmlType="xs:byte"/>
+<outType default="true" xmlType="xs:dateTime"/>
+<outType default="true" xmlType="xs:double"/>
+<outType default="true" xmlType="xs:float"/>
+<outType default="true" xmlType="xs:GUID"/>
+<outType default="true" xmlType="xs:hexBinary"/>
+<outType default="true" xmlType="xs:int"/>
+<outType default="true" xmlType="xs:long"/>
+<outType default="true" xmlType="xs:short"/>
+<outType default="true" xmlType="xs:string"/>
+<outType default="true" xmlType="xs:string">ANSI string</outType>
+<outType default="true" xmlType="xs:string">UTF-16LE string</outType>
+<outType default="true" xmlType="xs:unsignedByte"/>
+<outType default="true" xmlType="xs:unsignedInt"/>
+<outType default="true" xmlType="xs:unsignedLong"/>
+<outType default="true" xmlType="xs:unsignedShort"/>
+<outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
+<outType xmlType="win:DateTimeCultureInsensitive">DateTime string without any marker related with culture (no Left-To-Right markers)</outType>
+<outType xmlType="win:DateTimeUtc">DateTime string formatted assuming the FILETIME is UTC.</outType>
+<outType xmlType="win:DateTimeUtc">DateTime string formatted assuming the SYSTEMTIME is UTC.</outType>
+<outType xmlType="win:ErrorCode">Deprecated, same as win:HexInt32.</outType>
+<outType xmlType="win:ETWTIME">An ETW timestamp value from an EVENT_RECORD</outType>
+<outType xmlType="win:ETWTIME">Deprecated; ETWTIME values should use win:UInt64.</outType>
+<outType xmlType="win:HexInt16">An integer in hex format</outType>
+<outType xmlType="win:HexInt32">An integer in hex format</outType>
+<outType xmlType="win:HexInt64">An integer in hex format</outType>
+<outType xmlType="win:HexInt8">An integer in hex format</outType>
+<outType xmlType="win:HResult">A message string corresponding to system HResult error code.</outType>
+<outType xmlType="win:IPv4"/>
+<outType xmlType="win:IPv6">Always 16 bytes.</outType>
+<outType xmlType="win:Json">UTF-16LE JSON string</outType>
+<outType xmlType="win:Json">UTF-8 JSON string</outType>
+<outType xmlType="win:NTSTATUS">A message string corresponding to system NTSTATUS error code.</outType>
+<outType xmlType="win:PID"/>
+<outType xmlType="win:Pkcs7WithTypeInfo">A PKCS#7 message with TraceLogging type information optionally appended immediately after the PKCS#7 data.</outType>
+<outType xmlType="win:Port">A big-endian Internet Protocol port number</outType>
+<outType xmlType="win:SocketAddress"/>
+<outType xmlType="win:TID"/>
+<outType xmlType="win:Utf8">UTF-8 string</outType>
+<outType xmlType="win:Win32Error">A message string corresponding to system win32 error code.</outType>
+<outType xmlType="win:Xml">UTF-16LE XML string</outType>
+<outType xmlType="win:Xml">XML string; encoding defaults to UTF-8 but may be overridden by an XML encoding attribute</outType>
+<outType xmlType="xs:boolean">8-bit Boolean</outType>
+<outType xmlType="xs:long">Pointer-sized signed integer, e.g. intptr_t.</outType>
+<outType xmlType="xs:string">ANSI character</outType>
+<outType xmlType="xs:string">UTF-16LE character</outType>
+<outType xmlType="xs:unsignedLong">Pointer-sized unsigned integer, e.g. uintptr_t.</outType>
+<resources culture="en-US">
+<sa_family=%d sa_addr=%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X>
+<string id="category.Devices" value="Devices"/>
+<string id="category.Disk" value="Disk"/>
+<string id="category.Network" value="Network"/>
+<string id="category.Printers" value="Printers"/>
+<string id="category.Reserved" value="Reserved"/>
+<string id="category.Services" value="Services"/>
+<string id="category.Shell" value="Shell"/>
+<string id="category.SystemEvent" value="System Event"/>
+<string id="channel.Application" value="Application"/>
+<string id="channel.ProviderMetadata" value="ProviderMetadata"/>
+<string id="channel.Security" value="Security"/>
+<string id="channel.System" value="System"/>
+<string id="channel.TraceClassic" value="TraceClassic"/>
+<string id="channel.TraceLogging" value="TraceLogging"/>
+<string id="keyword.AnyKeyword" value="AnyKeyword"/>
+<string id="keyword.AuditFailure" value="Audit Failure"/>
+<string id="keyword.AuditSuccess" value="Audit Success"/>
+<string id="keyword.Classic" value="Classic"/>
+<string id="keyword.CorrelationHint" value="Correlation Hint"/>
+<string id="keyword.ResponseTime" value="Response Time"/>
+<string id="keyword.SQM" value="SQM"/>
+<string id="keyword.WDIDiag" value="WDI Diag"/>
+<string id="level.Critical" value="Critical"/>
+<string id="level.Error" value="Error"/>
+<string id="level.Informational" value="Information"/>
+<string id="level.LogAlways" value="Log Always"/>
+<string id="level.Verbose" value="Verbose"/>
+<string id="level.Warning" value="Warning"/>
+<string id="opcode.DCStart" value="DCStart"/>
+<string id="opcode.DCStop" value="DCStop"/>
+<string id="opcode.Extension" value="Extension"/>
+<string id="opcode.Info" value="Info"/>
+<string id="opcode.Receive" value="Receive"/>
+<string id="opcode.Reply" value="Reply"/>
+<string id="opcode.Resume" value="Resume"/>
+<string id="opcode.Send" value="Send"/>
+<string id="opcode.Start" value="Start"/>
+<string id="opcode.Stop" value="Stop"/>
+<string id="opcode.Suspend" value="Suspend"/>
+<string id="task.None" value="None"/>
+<stringTable>
+<task name="win:None" value="0" symbol="WINEVENT_TASK_NONE" message="$(string.task.None)">undefined task</task>
+<tasks>
+<types xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xmlType name="win:CIMDateTime" value="26" symbol="WINEVENT_OUT_TYPE_CIMDATETIME"/>
+<xmlType name="win:CodePointer" value="37" symbol="WINEVENT_OUT_TYPE_CODE_POINTER"/>
+<xmlType name="win:DateTimeCultureInsensitive" value="33" symbol="WINEVENT_OUT_TYPE_DATE_TIME_CULTURE_INSENSITIVE"/>
+<xmlType name="win:DateTimeUtc" value="38" symbol="WINEVENT_OUT_TYPE_DATE_TIME_UTC"/>
+<xmlType name="win:ErrorCode" value="29" symbol="WINEVENT_OUT_TYPE_ERROR_CODE"/>
+<xmlType name="win:ETWTIME" value="27" symbol="WINEVENT_OUT_TYPE_ETWTIME"/>
+<xmlType name="win:HexInt16" value="17" symbol="WINEVENT_OUT_TYPE_HEX_INT16"/>
+<xmlType name="win:HexInt32" value="18" symbol="WINEVENT_OUT_TYPE_HEX_INT32"/>
+<xmlType name="win:HexInt64" value="19" symbol="WINEVENT_OUT_TYPE_HEX_INT64"/>
+<xmlType name="win:HexInt8" value="16" symbol="WINEVENT_OUT_TYPE_HEX_INT8"/>
+<xmlType name="win:HResult" value="32" symbol="WINEVENT_OUT_TYPE_HRESULT_ERROR"/>
+<xmlType name="win:IPv4" value="23" symbol="WINEVENT_OUT_TYPE_IPV4"/>
+<xmlType name="win:IPv6" value="24" symbol="WINEVENT_OUT_TYPE_IPV6"/>
+<xmlType name="win:Json" value="34" symbol="WINEVENT_OUT_TYPE_JSON"/>
+<xmlType name="win:NTSTATUS" value="31" symbol="WINEVENT_OUT_TYPE_NTSTATUS_ERROR"/>
+<xmlType name="win:PID" value="20" symbol="WINEVENT_OUT_TYPE_PID"/>
+<xmlType name="win:Pkcs7WithTypeInfo" value="36" symbol="WINEVENT_OUT_TYPE_PKCS7_WITH_TYPE_INFO"/>
+<xmlType name="win:Port" value="22" symbol="WINEVENT_OUT_TYPE_PORT"/>
+<xmlType name="win:SocketAddress" value="25" symbol="WINEVENT_OUT_TYPE_SOCKET_ADDRESS"/>
+<xmlType name="win:TID" value="21" symbol="WINEVENT_OUT_TYPE_TID"/>
+<xmlType name="win:Utf8" value="35" symbol="WINEVENT_OUT_TYPE_UTF8"/>
+<xmlType name="win:Win32Error" value="30" symbol="WINEVENT_OUT_TYPE_WIN32_ERROR"/>
+<xmlType name="win:Xml" value="28" symbol="WINEVENT_OUT_TYPE_XML"/>
+<xmlType name="xs:boolean" value="13" symbol="WINEVENT_OUT_TYPE_BOOLEAN"/>
+<xmlType name="xs:byte" value="3" symbol="WINEVENT_OUT_TYPE_BYTE"/>
+<xmlType name="xs:dateTime" value="2" symbol="WINEVENT_OUT_TYPE_DATE_TIME"/>
+<xmlType name="xs:double" value="12" symbol="WINEVENT_OUT_TYPE_DOUBLE"/>
+<xmlType name="xs:float" value="11" symbol="WINEVENT_OUT_TYPE_FLOAT"/>
+<xmlType name="xs:GUID" value="14" symbol="WINEVENT_OUT_TYPE_GUID"/>
+<xmlType name="xs:hexBinary" value="15" symbol="WINEVENT_OUT_TYPE_HEXBINARY"/>
+<xmlType name="xs:int" value="7" symbol="WINEVENT_OUT_TYPE_INT"/>
+<xmlType name="xs:long" value="9" symbol="WINEVENT_OUT_TYPE_LONG"/>
+<xmlType name="xs:short" value="5" symbol="WINEVENT_OUT_TYPE_SHORT"/>
+<xmlType name="xs:string" value="1" symbol="WINEVENT_OUT_TYPE_STRING"/>
+<xmlType name="xs:unsignedByte" value="4" symbol="WINEVENT_OUT_TYPE_UNSIGNED_BYTE"/>
+<xmlType name="xs:unsignedInt" value="8" symbol="WINEVENT_OUT_TYPE_UNSIGNED_INT"/>
+<xmlType name="xs:unsignedLong" value="10" symbol="WINEVENT_OUT_TYPE_UNSIGNED_LONG"/>
+<xmlType name="xs:unsignedShort" value="6" symbol="WINEVENT_OUT_TYPE_UNSIGNED_SHORT"/>
+<xmlTypes>
+<xs:annotation>
+<xs:any namespace="##other" processContents="lax" maxOccurs="unbounded"/>
+<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+<xs:any namespace="##other" processContents="lax"/>
+<xs:anyAttribute namespace="##other" processContents="lax"/>
+<xs:attribute name="access" type="xs:string" use="optional"/>
+<xs:attribute name="attributes" type="xs:string" use="optional">
+<xs:attribute name="channel" type="xs:token" use="optional"/>
+<xs:attribute name="chid" type="xs:token" use="optional"/>
+<xs:attribute name="controlGuid" type="man:GUIDType" use="optional">
+<xs:attribute name="count" type="man:CountType" use="optional"/>
+<xs:attribute name="culture" type="xs:string" use="required">
+<xs:attribute name="default" type="xs:boolean" use="optional"/>
+<xs:attribute name="enabled" type="xs:boolean" use="optional" default="false"/>
+<xs:attribute name="eventGUID" type="man:GUIDType" use="optional"/>
+<xs:attribute name="fallbackCulture" type="xs:string" use="optional" default="en-us">
+<xs:attribute name="format" type="xs:anyURI" use="required"/>
+<xs:attribute name="groupGuid" type="man:GUIDType" use="optional">
+<xs:attribute name="guid" type="man:GUIDType" use="required"/>
+<xs:attribute name="helpLink" type="xs:anyURI" use="optional"/>
+<xs:attribute name="id" type="xs:string" use="required">
+<xs:attribute name="includeName" type="xs:boolean" use="optional">
+<xs:attribute name="inType" type="xs:QName" use="required"/>
+<xs:attribute name="isolation" use="optional">
+<xs:attribute name="keywords" type="man:QNameList" use="optional">
+<xs:attribute name="length" type="man:LengthType" use="optional"/>
+<xs:attribute name="level" type="xs:QName" use="optional">
+<xs:attribute name="map" type="xs:string" use="optional"/>
+<xs:attribute name="mask" type="man:HexInt64Type" use="required">
+<xs:attribute name="message" type="man:strTableRef" use="optional"/>
+<xs:attribute name="message" type="man:strTableRef" use="required"/>
+<xs:attribute name="messageFileName" type="man:filePath" use="optional">
+<xs:attribute name="mid" type="xs:string" use="optional">
+<xs:attribute name="mofValue" type="man:UInt8Type" use="optional"/>
+<xs:attribute name="name" type="xs:anyURI" use="required"/>
+<xs:attribute name="name" type="xs:QName" use="required"/>
+<xs:attribute name="name" type="xs:QName" use="required">
+<xs:attribute name="name" type="xs:string" use="optional"/>
+<xs:attribute name="name" type="xs:string" use="optional">
+<xs:attribute name="name" type="xs:string" use="required"/>
+<xs:attribute name="namespace" type="man:NamespaceType" use="optional"/>
+<xs:attribute name="notLogged" type="xs:boolean" use="optional" default="false">
+<xs:attribute name="opcode" type="xs:QName" use="optional"/>
+<xs:attribute name="outType" type="xs:QName" use="optional"/>
+<xs:attribute name="parameterFileName" type="man:filePath" use="optional">
+<xs:attribute name="resourceFileName" type="man:filePath" use="optional">
+<xs:attribute name="source" use="optional" default="Xml">
+<xs:attribute name="stringType" type="xs:string" use="optional">
+<xs:attribute name="suppressProjection" type="xs:boolean" use="optional" default="false">
+<xs:attribute name="symbol" type="man:CSymbolType" use="optional"/>
+<xs:attribute name="symbol" type="man:CSymbolType" use="required"/>
+<xs:attribute name="tags" type="man:UInt32Type" use="optional">
+<xs:attribute name="task" type="xs:QName" use="optional"/>
+<xs:attribute name="template" type="xs:token" use="optional"/>
+<xs:attribute name="tid" type="xs:token" use="optional"/>
+<xs:attribute name="tid" type="xs:token" use="required"/>
+<xs:attribute name="type" use="required">
+<xs:attribute name="value" type="man:HexInt32Type" use="required"/>
+<xs:attribute name="value" type="man:UInt16Type" use="required"/>
+<xs:attribute name="value" type="man:UInt32Type" use="required"/>
+<xs:attribute name="value" type="man:UInt32Type" use="required">
+<xs:attribute name="value" type="man:UInt8Type" use="optional"/>
+<xs:attribute name="value" type="man:UInt8Type" use="required"/>
+<xs:attribute name="value" type="xs:string" use="required"/>
+<xs:attribute name="value" type="xs:string" use="required">
+<xs:attribute name="version" type="man:UInt8Type" use="optional"/>
+<xs:attribute name="version" type="man:UInt8Type" use="optional">
+<xs:attribute name="warnOnApplicationCompatibilityError" type="xs:boolean" use="optional" default="false"/>
+<xs:attribute name="xmlType" type="xs:QName" use="required"/>
+<xs:choice maxOccurs="3">
+<xs:choice maxOccurs="unbounded">
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:complexContent>
+<xs:complexType name="BitMapType">
+<xs:complexType name="BitMapValueType" mixed="true">
+<xs:complexType name="ChannelListType">
+<xs:complexType name="ChannelLoggingType">
+<xs:complexType name="ChannelPublishingType">
+<xs:complexType name="ChannelType" mixed="true">
+<xs:complexType name="DataDefinitionType" mixed="true">
+<xs:complexType name="DefinitionType">
+<xs:complexType name="EventDefinitionType" mixed="true">
+<xs:complexType name="EventsMessageTableMessageType">
+<xs:complexType name="EventsMessageTableType">
+<xs:complexType name="EventsType">
+<xs:complexType name="FilterListType" mixed="true">
+<xs:complexType name="FilterType" mixed="true">
+<xs:complexType name="ImportChannelType" mixed="true">
+<xs:complexType name="InputType">
+<xs:complexType name="InputTypeListType">
+<xs:complexType name="InstrumentationManifestType">
+<xs:complexType name="InstrumentationType">
+<xs:complexType name="KeywordListType">
+<xs:complexType name="KeywordType" mixed="true">
+<xs:complexType name="LevelListType">
+<xs:complexType name="LevelType" mixed="true">
+<xs:complexType name="LocalizationResourcesType">
+<xs:complexType name="LocalizationType">
+<xs:complexType name="MapType">
+<xs:complexType name="MetadataMessageTableMessageType">
+<xs:complexType name="MetadataMessageTableType">
+<xs:complexType name="MetadataType">
+<xs:complexType name="NamedQueryType">
+<xs:complexType name="OpcodeListType">
+<xs:complexType name="OpcodeType" mixed="true">
+<xs:complexType name="OutputType" mixed="true">
+<xs:complexType name="PatternMapListType">
+<xs:complexType name="PatternMapType">
+<xs:complexType name="PatternMapValueType" mixed="true">
+<xs:complexType name="ProviderType">
+<xs:complexType name="StringTableStringType" mixed="true">
+<xs:complexType name="StringTableType">
+<xs:complexType name="StructDefinitionType" mixed="true">
+<xs:complexType name="TaskListType">
+<xs:complexType name="TaskType" mixed="true">
+<xs:complexType name="TemplateItemBinaryType">
+<xs:complexType name="TemplateItemType">
+<xs:complexType name="TemplateListType">
+<xs:complexType name="TraitsType">
+<xs:complexType name="TypeListType">
+<xs:complexType name="ValueMapType">
+<xs:complexType name="ValueMapValueType" mixed="true">
+<xs:complexType name="XmlType">
+<xs:complexType name="XmlTypeListItemType">
+<xs:complexType name="XmlTypeListType">
+<xs:documentation>1-16 hexadecimal digits with '0x' prefix.</xs:documentation>
+<xs:documentation>1-2 hexadecimal digits with '0x' prefix.</xs:documentation>
+<xs:documentation>1-4 hexadecimal digits with '0x' prefix.</xs:documentation>
+<xs:documentation>16-bit unsigned decimal or hexadecimal integer. Decimal should have no
+<xs:documentation>1-8 hexadecimal digits with '0x' prefix.</xs:documentation>
+<xs:documentation>32-bit unsigned decimal or hexadecimal integer. Decimal should have no
+<xs:documentation>64-bit unsigned decimal or hexadecimal integer. Decimal should have no
+<xs:documentation>8-bit unsigned decimal or hexadecimal integer. Decimal should have no
+<xs:documentation>A fully-qualified path to a file. Standard Windows environment variables are
+<xs:documentation>A globally unique identifier in Registry format,
+<xs:documentation>A manifest-based ETW provider has a decode GUID (used to locate the manifest)
+<xs:documentation>A reference to a localized string value provided elsewhere. The value
+<xs:documentation>Also referred to as the Event-Id. A manifest-based ETW event is uniquely
+<xs:documentation>Amount of memory allocated for the session buffers (KB)</xs:documentation>
+<xs:documentation>An instrumentation manifest may contain MESSAGETABLE strings, ETW
+<xs:documentation>Buffer flush interval (sec)</xs:documentation>
+<xs:documentation>Channel logging config</xs:documentation>
+<xs:documentation>Channel publishing config</xs:documentation>
+<xs:documentation>Clock resolution</xs:documentation>
+<xs:documentation>Contains MESSAGETABLE strings and ETW providers.</xs:documentation>
+<xs:documentation>Contains one or more resource tables, each of which contains resources
+<xs:documentation>Contains resources for a single locale.</xs:documentation>
+<xs:documentation>Decimal or hexadecimal message ID. Decimal should have no leading 0s.
+<xs:documentation>Declares a channel that is used by events in this manifest but is not
+<xs:documentation>Declares an inType supported by Windows. An inType is the type of a
+<xs:documentation>Declares an outType supported by Windows. An outType is a sub-type that
+<xs:documentation>Declares that Windows supports the use of the specified outType with
+<xs:documentation>Default publishing session/security if not specified explicitly by
+<xs:documentation>Defines a channel that is used by events in this manifest and is owned
+<xs:documentation>Defines a custom filter for use in this provider.
+<xs:documentation>Defines a custom keyword for use by this provider.
+<xs:documentation>Defines a custom level for use by this provider.
+<xs:documentation>Defines a custom opcode for use by this provider.
+<xs:documentation>Defines a custom task for use by this provider.
+<xs:documentation>Defines a flag value for use in this bit map.
+<xs:documentation>Defines a set of custom filters for use in this provider.
+<xs:documentation>Defines a value for use in this pattern map.
+<xs:documentation>Defines an enumeration value for use in this value map.
+<xs:documentation>Defines an ETW provider. A provider is a unit of organization for ETW
+<xs:documentation>Defines custom enumerated types (maps) for use by this provider.</xs:documentation>
+<xs:documentation>Defines custom keywords for use by this provider. A keyword is a bit
+<xs:documentation>Defines custom levels for use by this provider. Levels are used to
+<xs:documentation>Defines custom opcodes for use by this provider. An opcode is a
+<xs:documentation>Defines custom tasks for use by this provider. A task is a localizable
+<xs:documentation>Defines the events logged by this provider.</xs:documentation>
+<xs:documentation>Defines the event's value (ID), name, level, keywords, fields, etc.
+<xs:documentation>Defines the localized value of a string referenced by an event or a
+<xs:documentation>Defines the name and type of an event property (field).
+<xs:documentation>Defines the properties (fields) of an event structure.
+<xs:documentation>Deprecated. Specifies an alias for this string table entry.</xs:documentation>
+<xs:documentation>Deprecated.</xs:documentation>
+<xs:documentation>Each keyword must have a unique name, which is used to reference the keyword
+<xs:documentation>For a constant-Length property, specify the value (decimal).
+<xs:documentation>For constant-Count array, specify the value (decimal).
+<xs:documentation>Increment the version of an event if its template is modified.</xs:documentation>
+<xs:documentation>Is used for code-generation on namespaces which should be valid C++ symbols.
+<xs:documentation>Localized values of strings referenced in MESSAGETABLE strings and ETW
+<xs:documentation>Mask is a 64-bit value in which only one bit is set. Mask value cannot be zero.
+<xs:documentation>Maximum number of session buffers</xs:documentation>
+<xs:documentation>May contain MESSAGETABLE strings, ETW providers, and/or a Windows
+<xs:documentation>Minimum number of session buffers</xs:documentation>
+<xs:documentation>Name of the executable file into which the provider's localizable message
+<xs:documentation>Name of the executable file into which the provider's non-localized template
+<xs:documentation>Non-localized event attributes. This should be a semicolon-delimited list of
+<xs:documentation>Non-localized event name. During event processing on Windows 10 Fall
+<xs:documentation>Not a valid root element for an instrumentation manifest. Used when
+<xs:documentation>Not used by Windows or mc.exe. This attribute can be used to describe
+<xs:documentation>Number of etl files to create across enablement</xs:documentation>
+<xs:documentation>Optional. Default is false. If true, the provider's name will be included
+<xs:documentation>Optional. Specifies that this provider is a member of the specified provider
+<xs:documentation>Reference to the name of a custom level defined in the &lt;keywords&gt; section.
+<xs:documentation>Reference to the name of a predefined level (from winmeta.xml) or the name of a
+<xs:documentation>Represents binary data in classic eventlog API</xs:documentation>
+<xs:documentation>Root element of an instrumentation manifest.</xs:documentation>
+<xs:documentation>Space-separated list of keywords. To support consistent event
+<xs:documentation>Specifies values for this provider's provider traits. The provider traits
+<xs:documentation>Specify the locale of the resources using a Windows locale name, e.g.
+<xs:documentation>Symbol is used for code-generation. It should be a valid C Symbol or an empty string.</xs:documentation>
+<xs:documentation>Tags is a 28-bit user-defined metadata value applied to each event that uses
+<xs:documentation>Tags is a 28-bit user-defined metadata value applied to this property. The
+<xs:documentation>The localized string.</xs:documentation>
+<xs:documentation>The stringTableId of the string reference in the ETW provider or the
+<xs:documentation>This attribute is not used.</xs:documentation>
+<xs:documentation>Use channels to describe the destinations for your events. Each channel you
+<xs:documentation>Use templates to describe the payload logged by an event. Many events
+<xs:documentation>Use this to indicate that the template associated with this event contains
+<xs:documentation>Use this to indicate that this event has been removed and will not be logged
+<xs:documentation>Used only by the Microsoft-provided WinMeta.xml file.
+<xs:element name="autoBackup" type="xs:boolean" minOccurs="0"/>
+<xs:element name="binary" type="man:TemplateItemBinaryType"/>
+<xs:element name="bitMap" type="man:BitMapType"/>
+<xs:element name="bufferSize" type="man:UInt32Type" minOccurs="0">
+<xs:element name="channel" type="man:ChannelType"/>
+<xs:element name="channels" type="man:ChannelListType"/>
+<xs:element name="clockType" default="SystemTime" minOccurs="0">
+<xs:element name="controlGuid" type="man:GUIDType" minOccurs="0"/>
+<xs:element name="data" type="man:DataDefinitionType" maxOccurs="unbounded"/>
+<xs:element name="data" type="man:DataDefinitionType"/>
+<xs:element name="description" type="xs:string"/>
+<xs:element name="event" type="man:EventDefinitionType"/>
+<xs:element name="events" type="man:DefinitionType"/>
+<xs:element name="events" type="man:EventsType"/>
+<xs:element name="events" type="man:EventsType">
+<xs:element name="fileMax" type="man:UInt32Type" minOccurs="0">
+<xs:element name="filter" type="man:FilterType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="filters" type="man:FilterListType"/>
+<xs:element name="importChannel" type="man:ImportChannelType"/>
+<xs:element name="instrumentation" type="man:InstrumentationType"/>
+<xs:element name="instrumentationManifest" type="man:InstrumentationManifestType">
+<xs:element name="inType" type="man:InputType" maxOccurs="unbounded"/>
+<xs:element name="inTypes" type="man:InputTypeListType"/>
+<xs:element name="keyword" type="man:KeywordType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="keywords" type="man:KeywordListType" minOccurs="0"/>
+<xs:element name="keywords" type="man:KeywordListType"/>
+<xs:element name="keywords" type="man:UInt64Type" default="0" minOccurs="0"/>
+<xs:element name="latency" type="man:UInt32Type" minOccurs="0">
+<xs:element name="level" type="man:LevelType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="level" type="man:UInt8Type" default="0" minOccurs="0"/>
+<xs:element name="levels" type="man:LevelListType"/>
+<xs:element name="localization" type="man:LocalizationType"/>
+<xs:element name="logging" type="man:ChannelLoggingType" minOccurs="0"/>
+<xs:element name="map" type="man:BitMapValueType" maxOccurs="unbounded"/>
+<xs:element name="map" type="man:PatternMapValueType" maxOccurs="unbounded"/>
+<xs:element name="map" type="man:ValueMapValueType" maxOccurs="unbounded"/>
+<xs:element name="maps" type="man:MapType"/>
+<xs:element name="maxBuffers" type="man:UInt32Type" minOccurs="0">
+<xs:element name="maxSize" type="man:UInt64Type" default="1048576" minOccurs="0"/>
+<xs:element name="message" type="man:EventsMessageTableMessageType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="message" type="man:MetadataMessageTableMessageType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="messageTable" type="man:EventsMessageTableType"/>
+<xs:element name="messageTable" type="man:MetadataMessageTableType" minOccurs="0"/>
+<xs:element name="metadata" type="man:MetadataType"/>
+<xs:element name="minBuffers" type="man:UInt32Type" minOccurs="0">
+<xs:element name="namedQueries" type="man:NamedQueryType" minOccurs="0"/>
+<xs:element name="namedQueries" type="man:NamedQueryType"/>
+<xs:element name="opcode" type="man:OpcodeType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="opcodes" type="man:OpcodeListType" minOccurs="0"/>
+<xs:element name="opcodes" type="man:OpcodeListType"/>
+<xs:element name="outType" type="man:OutputType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="patternMap" type="man:PatternMapType" maxOccurs="unbounded"/>
+<xs:element name="patternMaps" type="man:PatternMapListType" minOccurs="0"/>
+<xs:element name="provider" type="man:ProviderType"/>
+<xs:element name="publishing" type="man:ChannelPublishingType" minOccurs="0"/>
+<xs:element name="resources" type="man:LocalizationResourcesType"/>
+<xs:element name="retention" type="xs:boolean" default="false" minOccurs="0"/>
+<xs:element name="sidType" minOccurs="0">
+<xs:element name="string" type="man:StringTableStringType"/>
+<xs:element name="stringTable" type="man:StringTableType"/>
+<xs:element name="struct" type="man:StructDefinitionType"/>
+<xs:element name="task" type="man:TaskType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="tasks" type="man:TaskListType"/>
+<xs:element name="template" type="man:TemplateItemType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="templates" type="man:TemplateListType"/>
+<xs:element name="traits" type="man:TraitsType"/>
+<xs:element name="types" type="man:TypeListType" minOccurs="0"/>
+<xs:element name="UserData" type="man:XmlType"/>
+<xs:element name="valueMap" type="man:ValueMapType"/>
+<xs:element name="xmlType" type="man:XmlTypeListItemType" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="xmlTypes" type="man:XmlTypeListType"/>
+<xs:enumeration value="Admin"/>
+<xs:enumeration value="Analytic"/>
+<xs:enumeration value="Application"/>
+<xs:enumeration value="Custom"/>
+<xs:enumeration value="Debug"/>
+<xs:enumeration value="None"/>
+<xs:enumeration value="Operational"/>
+<xs:enumeration value="Publishing"/>
+<xs:enumeration value="QPC"/>
+<xs:enumeration value="System"/>
+<xs:enumeration value="SystemTime"/>
+<xs:enumeration value="Wbem"/>
+<xs:enumeration value="Xml"/>
+<xs:extension base="man:XmlType">
+<xs:list itemType="xs:QName"/>
+<xs:pattern value="()|([_a-zA-Z][_0-9a-zA-Z]*)"/>
+<xs:pattern value="([_a-zA-Z][_0-9a-zA-Z]*\.)*[_a-zA-Z][_0-9a-zA-Z]*"/>
+<xs:pattern value="(\$\([Ss]tring\..*\))|(\$\([Mm][Cc]\..*\))"/>
+<xs:pattern value="\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}"/>
+<xs:pattern value="0[xX][0-9A-Fa-f]{1,16}"/>
+<xs:pattern value="0[xX][0-9A-Fa-f]{1,2}"/>
+<xs:pattern value="0[xX][0-9A-Fa-f]{1,4}"/>
+<xs:pattern value="0[xX][0-9A-Fa-f]{1,8}"/>
+<xs:restriction base="xs:string"/>
+<xs:restriction base="xs:string">
+<xs:schema targetNamespace="http://schemas.microsoft.com/win/2004/08/events" elementFormDefault="qualified" xmlns:man="http://schemas.microsoft.com/win/2004/08/events" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:sequence>
+<xs:simpleType name="CountType">
+<xs:simpleType name="CSymbolType">
+<xs:simpleType name="filePath">
+<xs:simpleType name="GUIDType">
+<xs:simpleType name="HexInt16Type">
+<xs:simpleType name="HexInt32Type">
+<xs:simpleType name="HexInt64Type">
+<xs:simpleType name="HexInt8Type">
+<xs:simpleType name="LengthType">
+<xs:simpleType name="NamespaceType">
+<xs:simpleType name="QNameList">
+<xs:simpleType name="strTableRef">
+<xs:simpleType name="UInt16Type">
+<xs:simpleType name="UInt32Type">
+<xs:simpleType name="UInt64Type">
+<xs:simpleType name="UInt8Type">
+<xs:simpleType>
+<xs:union memberTypes="xs:unsignedByte man:HexInt8Type"/>
+<xs:union memberTypes="xs:unsignedInt man:HexInt32Type"/>
+<xs:union memberTypes="xs:unsignedLong man:HexInt64Type"/>
+<xs:union memberTypes="xs:unsignedShort man:HexInt16Type"/>
+<xs:union memberTypes="xs:unsignedShort xs:string"/>
+= 0x%08X
+-> 2 %s 
+0123456789ABCDEF
+0123456789abcdef
+0123456789abcdefghijklmnopqrstuvwxyz
+040904B0
+08Y0t4
+0A^_^
+0A^A\_
+0A_A^_
+0A_A^_][
+0A_A^_^[
+0A_A^A\
+0A_A^A]
+0A_A^A]A\]
+0A_A^A]A\_
+0A_A^A]A\_^[
+0L9D$(
+0x%08x
+0x%08x(%.*s)
+0x%08x(%S)
+0x%hX
+0x%I32X
+0x%I64X
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+3333333
+3fD93u
+4vH9D
+59~sA
+8"t*H
+8/t-f
+8\t'I;
+8_^][
+8A^_^[
+9\$0~VH
+9CRIMuL
+9T$|s
+9YLsDD
+A L;(tRI
+A;,$w!A
+A^_^[]
+A^_^][
+A^A\]
+A__^[
+A__^][
+A_A\_^[]
+A_A]A\
+A_A]A\_^[]
+A_A^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A]
+A_A^A]_^][
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A82tVA
+A9^Ht5E
+A9^Lt+E
+A91v(D;
+ABORTED COMMAND
+access
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+ActivityID
+Actual retry count
+ADD LOGICAL UNIT FAILED
+Additional sense length
+ADDRESS MARK NOT FOUND FOR DATA FIELD
+ADDRESS MARK NOT FOUND FOR ID FIELD
+Admin
+aggregate
+api-ms-win-core-apiquery-l1-1-0.dll
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-datetime-l1-1-0.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-interlocked-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-core-timezone-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+api-ms-win-eventing-classicprovider-l1-1-0.dll
+api-ms-win-eventing-consumer-l1-1-0.dll
+api-ms-win-eventing-controller-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-l1-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+ApiSetQueryApiSetPresence
+APPLICATION
+applicationIdentity
+ASC/ASQ
+ASSOCIATED WRITE PROTECT
+ATAUAWH
+ATAVAWH
+ATTACHMENT OF LOGICAL UNIT FAILED
+attributes
+AUAVAWH
+AUDIO PLAY OPERATION IN PROGRESS
+AUDIO PLAY OPERATION PAUSED
+AUDIO PLAY OPERATION STOPPED DUE TO ERROR
+AUDIO PLAY OPERATION SUCCESSFULLY COMPLETED
+AUTOMATIC DOCUMENT FEEDER COVER UP
+AUTOMATIC DOCUMENT FEEDER LIFT UP
+bad allocation
+bad array new length
+baseID
+BEGINNING-OF-PARTITION/MEDIUM DETECTED
+Binary
+binary
+Bit pointer
+BitMap
+BitValues
+BLANK CHECK
+BLOCK NOT COMPRESSIBLE
+BLOCK SEQUENCE ERROR
+BMAPt
+builtin\EventMan.xsd
+builtin\WinMeta.xml
+BUS DEVICE RESET FUNCTION OCCURRED
+bWiBP
+C(H+G
+C9fD97u,
+callback
+CallContext:[%hs] 
+CANNOT DECOMPRESS USING DECLARED ALGORITHM
+CANNOT FORMAT MEDIUM - INCOMPATIBLE MEDIUM
+CANNOT READ MEDIUM - INCOMPATIBLE FORMAT
+CANNOT READ MEDIUM - UNKNOWN FORMAT
+CANNOT WRITE - APPLICATION CODE MISMATCH
+CANNOT WRITE MEDIUM - INCOMPATIBLE FORMAT
+CANNOT WRITE MEDIUM - UNKNOWN FORMAT
+CARTRIDGE FAULT
+CD CONTROL ERROR
+CD8?tCH
+CHANGED OPERATING DEFINITION
+channel
+CIRC UNRECOVERED ERROR
+class %ls%hs : EventTrace
+CLEANING CARTRIDGE INSTALLED
+CLEANING FAILURE
+CLEANING REQUESTED
+CloseHandle
+CloseThreadpoolTimer
+CloseTrace
+CLSID
+CoCreateGuid
+CoCreateInstance
+CoInitializeEx
+CoinitializeEx failed.
+COMMAND PHASE ERROR
+COMMAND SEQUENCE ERROR
+COMMAND TO LOGICAL UNIT FAILED
+COMMANDS CLEARED BY ANOTHER INITIATOR
+Command-specific information
+CompanyName
+CompareStringOrdinal
+ComplexData
+COMPNAME=
+ComponentName
+COMPRESSION CHECK MISCOMPARE ERROR
+CONFIGURATION FAILURE
+CONFIGURATION OF INCAPABLE LOGICAL UNITS FAILED
+controlGuid
+ConvertSidToStringSidW
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+COPY ABORTED
+COPY CANNOT EXECUTE SINCE HOST CANNOT DISCONNECT
+Corrupted payload. Type = %d
+CoSetProxyBlanket
+Could Not get current dir
+CoUninitialize
+count
+Counted
+CpuNumber
+CreateDirectoryW
+CreateFileMappingW
+CreateFileW
+CreateMutexExW
+CreateSemaphoreExW
+CreateThreadpoolTimer
+CREATION OF LOGICAL UNIT FAILED
+Crimson event. MofInfo = NULL
+CT$0L
+culture
+CURRENT PROGRAM AREA IS EMPTY
+CURRENT PROGRAM AREA IS NOT EMPTY
+CURRENT SESSION NOT FIXATED FOR APPEND
+D$ @8
+D$ D;
+D$ E3
+D$ Hi
+D$ Ik
+D$ M;
+D$(E3
+d$(E3
+D$(E3
+D$(H;C
+D$(H+
+D$(H9C
+D$(L+
+D$,D8-
+D$@D8H s
+D$@E3
+D$@H;
+D$`E3
+d$`E3
+D$`M9
+D$0D9r
+D$0E+
+D$0E3
+d$0E3
+D$0E3
+D$0fA
+D$0fD9 t
+D$0H;
+D$0H+
+D$0L;
+D$8E3
+D$8H+
+D$8L+
+d$BfA
+D$DA;
+d$dD;e
+D$H!D$@
+D$hD;
+D$hE3
+D$hf90tTH
+D$HfA
+D$hfA
+D$HH;
+D$hL;
+D$PE3
+D$pE3
+D$pfD
+D$PH;
+D$PH+
+D$PI;
+d$xD;
+D$xfD
+D$xH;
+D$xI;
+D$ZL;
+D$ZM+
+D;d$<r
+D;d$D}
+D;P s
+D;t$`
+D\$8H
+D853i
+D8Jpt
+D8-lI
+D8R"t
+D8R"u
+D8t$P
+D8t$Qu
+D8t$X
+D9"u&L
+D9|$(|
+D9|$@
+D9A s
+D9cPt
+D9l$(|
+D9n@u
+D9n<u
+D9n8t!
+D9nDu
+DATA EXPANSION OCCURRED DURING COMPRESSION
+DATA LOSS ON LOGICAL UNIT
+Data path
+DATA PATH FAILURE (SHOULD USE 40 NN)
+DATA PHASE ERROR
+DATA PROTECT
+DATA RE-SYNCHRONIZATION ERROR
+DATA SYNC ERROR - DATA AUTO-REALLOCATED
+DATA SYNC ERROR - DATA REWRITTEN
+DATA SYNC ERROR - RECOMMEND REASSIGNMENT
+DATA SYNC ERROR - RECOMMEND REWRITE
+DATA SYNCHRONIZATION MARK ERROR
+dbg: initializing...
+DebugBreak
+Decoding Buffer to small
+DE-COMPRESSION CRC ERROR
+DECOMPRESSION EXCEPTION LONG ALGORITHM ID
+DECOMPRESSON EXCEPTION SHORT ALGORITHM ID OF NN
+default
+defaultScale
+DEFECT LIST ERROR
+DEFECT LIST ERROR IN GROWN LIST
+DEFECT LIST ERROR IN PRIMARY LIST
+DEFECT LIST NOT AVAILABLE
+DEFECT LIST NOT FOUND
+DEFECT LIST UPDATE FAILURE
+DelayLoadFailureHook
+DeleteCriticalSection
+Description
+description
+descriptionID
+detailLevel
+Detected #level statement -- ignored
+Device address
+DEVICE INTERNAL RESET
+DIAGNOSTIC FAILURE ON COMPONENT NN (80H - FFH)
+DisplayName
+DllCanUnloadNow
+DllGetClassObject
+DOCUMENT JAM IN AUTOMATIC DOCUMENT FEEDER
+DOCUMENT MISS FEED AUTOMATIC IN DOCUMENT FEEDER
+E;}ds
+E`A;GPu,A
+E08F0tvL
+E8$>u
+E9`0t
+E9x0t
+EdA9^
+EdfA;GVu I
+EhH9u
+EMPTY OR PARTIALLY WRITTEN RESERVED TRACK
+enabled
+ENCLOSURE FAILURE
+ENCLOSURE SERVICES FAILURE
+ENCLOSURE SERVICES TRANSFER FAILURE
+ENCLOSURE SERVICES TRANSFER REFUSED
+ENCLOSURE SERVICES UNAVAILABLE
+END OF MEDIUM REACHED
+END OF USER AREA ENCOUNTERED ON THIS TRACK
+END-OF-DATA DETECTED
+END-OF-DATA NOT FOUND
+END-OF-PARTITION/MEDIUM DETECTED
+EnterCriticalSection
+en-US
+EPA9ELuBH
+EPD;@Pt)
+EPfD9
+ERASE FAILURE
+ERROR LOG OVERFLOW
+ERROR READING ISRC NUMBER
+ERROR READING UPC/EAN NUMBER
+ERROR TOO LONG TO CORRECT
+Event Trace Helper Library
+eventGUID
+EventTrace
+EventType
+EventTypeName
+EventVersion
+evt:binary
+evt:channels/evt:channel
+evt:channels/evt:importChannel
+evt:data
+evt:events/evt:event
+evt:filters/evt:filter
+evt:keywords/evt:keyword
+evt:levels/evt:level
+evt:map
+evt:maps/evt:bitMap
+evt:maps/evt:valueMap
+evt:namedQueries/evt:patternMaps/evt:patternMap
+evt:opcodes/evt:opcode
+evt:struct
+evt:tasks/evt:task
+evt:templates/evt:template
+evt:traits
+evt:UserData
+EvtIntCreateBinXMLFromCustomXML
+Exception
+Exception!
+EXCESSIVE WRITE ERRORS
+EXCHANGE OF LOGICAL UNIT FAILED
+ExpandEnvironmentStringsW
+extension
+ext-ms-win-core-symbolicnames-l1-1-0
+f;WVs
+F8@88t
+f9,Au
+f9,Cu
+f9,Gu
+f9,Hu
+f9,Nu
+f9,ru
+f9{fv
+f9<Au
+f9<Bu
+f91tH
+f94Ju
+f94zu
+f9B t
+f9B u
+f9D$\u
+f9F&u
+f9o0u
+f9t$Pt
+fA;B"
+fA;qT
+fA9\R
+fA9<@u
+fA9<\u
+fA9<Du
+fA9>u
+fA92u
+fA94\u
+fA9W8t
+Failed Create Trace Handle
+Failed to format error message
+Failed to free library (%s) handle, err = %d
+Failed to get Memory (%d)
+FAILED TO SENSE BOTTOM-OF-FORM
+FAILED TO SENSE TOP-OF-FORM
+FailFast
+FAILURE PREDICTION THRESHOLD EXCEEDED
+FAILURE PREDICTION THRESHOLD EXCEEDED (FALSE)
+false
+fB9<zu
+fB94Bu
+fB9tDPu
+fD;%yY
+fD;@ u
+fD;J u
+fD9 t
+fD9!t
+fD9(t
+fD9)u
+fD9,Au
+fD9,Ju
+fD9;t
+fD9?t
+fD9|M
+fD9<Bu
+fD9<Gu
+fD9<Hu
+fD9<xu
+fD90E
+fD91v
+fD94^u
+fD94~u
+fD94Au
+fD94Bu
+fD94Gu
+fD94Hu
+fD97u
+fD99t
+fD9d]
+fD9l<0
+fE94Au
+fE9M&
+Fext-ms-win-core-symbolicnames-l1-1-0.dll
+fF9$@u
+fF9,xu
+fF94Bu
+fffffff
+field
+Field pointer
+Field replaceable unit code
+File "%ls" not found
+File %s name was too Long? Max = %d(MAX_PATH), required = %d.
+FILE:
+File>>
+FileDescription
+FileMark
+FILEMARK DETECTED
+FILEMARK OR SETMARK NOT FOUND
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FindFirstVolumeW
+FindNextVolumeW
+FindResourceExW
+FindVolumeClose
+FlagName
+Flags
+FLAGS
+FLAGS=
+FlagsName
+FOCUS SERVO FAILURE
+format
+Format %s
+FORMAT COMMAND FAILED
+FormatMessage (#Typev) Failed 0x%X (%ls/%ls) (
+FormatMessageW
+FormattedString
+Formatting EventRecord, 
+FreeLibrary
+FreeResource
+FUNC=
+Function
+FunctionName
+G`f)SfH
+GEN_TMC
+GENERATION DOES NOT EXIST
+GetCurrentDirectoryW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetDateFormatW
+GetEnvironmentVariableW
+GetFileAttributesW
+GetFileSize
+GetFileTime
+GetLastError
+GetLengthSid
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetNdisOidSymbolicName
+GetNdisSymbolicName
+GetNetEventSymbolicName
+GetNTStatusSymbolicName
+GetParameter %d
+GetProcAddress
+GetProcessHeap
+GetSystemTimeAsFileTime
+GetTimeFormatW
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetWinErrorSymbolicName
+gfffffffL+
+GQ8EQ
+groupGuid
+GROWN DEFECT LIST NOT FOUND
+GuidName
+GuidTypeName
+H SUVWATAUAVAWH
+H SUVWAVH
+H SUVWH
+H SVWH
+H SWH
+H UATAUAVAWH
+h UAVAWH
+H!\$ E3
+H!\$ H
+H!\$(L
+H!|$ H
+H!|$@H
+H!|$`H
+H!l$XL
+H!t$ H
+H!t$XA
+H!x H
+H;D$ th
+H;E`t0H
+H;G8v
+H;T$(}
+H+.Hc
+H+1H+
+H+Axu
+H+GxH
+H+jxL
+H+L$@H
+H+L$0H
+H+L$HH
+H+pxH
+H0I+H
+H9/sDH
+H9;s!
+H9\$`t/;
+H9](t
+H9|$@t"H
+H90u>H
+H90u1H
+H9ohtCD
+H9T$(~
+H9y0uVH
+HA_A^A]A\_^[]
+hA_A^A]A\_^][
+HARDWARE ERROR
+HARDWARE WRITE PROTECTED
+Hc] H
+HcD$$H
+HcL$ A
+HcT$0L
+HEAD SELECT FAULT
+Header
+HeapAlloc
+HeapFree
+helpLink
+HEXDUMP Invalid payload data
+HEXDUMP Invalid payload length
+HH':'mm':'ss
+HkUpXH
+HRESULT=%8X
+http://manifests.microsoft.com/win/2004/08/windows/events
+http://schemas.microsoft.com/win/2004/08/events
+http://schemas.microsoft.com/win/2004/08/events/trace
+http://www.w3.org/2001/XMLSchema
+I/O PROCESS TERMINATED
+I+>Hc
+I64%c
+ID CRC ECC ERROR
+ID: %u: eventType: %u: Component: 
+IDLE CONDITION ACTIVATED BY COMMAND
+IDLE CONDITION ACTIVATED BY TIMER
+IIDFromString
+ILLEGAL FUNCTION (USE 20 00, 24 00, OR 26 00
+ILLEGAL MODE FOR THIS TRACK
+ILLEGAL REQUEST
+iMofPtr buffer overflow
+iMofPtr buffer underflow
+IMPORT OR EXPORT ELEMENT ACCESSED
+includeName
+INCOMPATIBLE MEDIUM INSTALLED
+INCOMPLETE BLOCK READ
+Indent
+index
+ineID
+Information
+INFORMATIONAL, REFER TO LOG
+InitializeCriticalSection
+InitializeCriticalSectionEx
+InitializeSListHead
+INITIATOR DETECTED ERROR MESSAGE RECEIVED
+InitOnceExecuteOnce
+INQUIRY DATA HAS CHANGED
+Insert Fmt with Index = %d
+instances
+Interface
+InterlockedFlushSList
+InterlockedPopEntrySList
+InterlockedPushEntrySList
+Internal status/Sort key
+INTERNAL TARGET FAILURE
+InternalName
+inType
+invalid
+INVALID BITS IN IDENTIFY MESSAGE
+invalid bitset position
+INVALID COMBINATION OF WINDOWS SPECIFIED
+INVALID COMMAND OPERATION CODE
+INVALID ELEMENT ADDRESS
+INVALID FIELD IN CDB
+INVALID FIELD IN PARAMETER LIST
+invalid hash bucket count
+INVALID MESSAGE ERROR
+INVALID PACKET SIZE
+Invalid payload length
+Invalid pointer size
+INVALID RELEASE OF ACTIVE PERSISTENT RESERVATION
+invalid string_view position
+INVALID_SRB_FUNCTION(0x09)
+INVALID_SRB_FUNCTION(0x0A)
+INVALID_SRB_FUNCTION(0x0B)
+INVALID_SRB_FUNCTION(0x0C)
+INVALID_SRB_FUNCTION(0x0D)
+INVALID_SRB_FUNCTION(0x0E)
+INVALID_SRB_FUNCTION(0x0F)
+INVALID_SRB_FUNCTION(0x1A)
+INVALID_SRB_FUNCTION(0x1B)
+INVALID_SRB_FUNCTION(0x1C)
+INVALID_SRB_FUNCTION(0x1D)
+INVALID_SRB_FUNCTION(0x1E)
+INVALID_SRB_FUNCTION(0x1F)
+IPAddr
+IPAddrV4
+IPAddrV6
+IsDebuggerPresent
+isolation
+IsProcessorFeaturePresent
+itemChar
+itemChar4
+ItemChar4 Invalid payload length
+itemCharHidden
+itemCharShort
+itemCharSign
+itemCLSID
+itemCWString
+itemDouble
+itemDSString
+itemDSWString
+ItemEnum
+itemEnum
+itemEventLog
+ItemFlagsEnum
+itemFlagsEnum
+itemGuid
+itemHexBytes
+itemHexDump
+itemHRESULT
+itemIID
+itemIPAddr
+itemIPV6Addr
+itemKSid
+itemLIBID
+itemListByte
+itemListLong
+itemListShort
+itemLong
+itemLongLong
+itemLongLongO
+itemLongLongX
+itemLongLongXX
+itemMACAddr
+itemMerror
+itemMLString
+itemNDIS_OID
+itemNDIS_STATUS
+itemNETEVENT
+itemNStrings
+itemNTerror
+itemNTSTATUS
+itemNWString
+itemPort
+itemPString
+itemPtr
+itemPWString
+itemResource
+itemRString
+itemRWString
+itemSenseData
+itemSetByte
+itemSetLong
+itemSetShort
+itemShort
+itemSid
+itemSockAddr
+itemSRB
+itemString
+itemTimeDelta
+itemTimestamp
+itemUChar
+itemULong
+itemULongLong
+itemULongX
+itemUnknown
+itemUShort
+itemWaitTime
+itemWChar
+itemWINERROR
+itemWString
+k UAVAWH
+k VWAVH
+K.$dbghelp.dll
+K8D95
+kernelbase.dll
+KernelTime
+keywords
+L!t$@H
+L#F0M
+L#G0M
+l$ E3
+L$ I;
+L$ L9
+L$ SUVWH
+L$ SVWAVH
+L$ SVWH
+L$ tpL
+L$ UVWAVAWH
+L$ VWATAVAWH
+l$ VWAVH
+L$ WH
+L$(E3
+l$(E3
+l$,E3
+L$@;L$@
+L$@E3
+L$@H;
+L$@H+
+L$@H3
+L$@H9
+L$@I+
+L$`H;
+L$`H3
+L$0:Q s
+L$0E3
+L$0fD
+L$0H+
+L$0H3
+l$8H;
+L$8H3
+l$hE3
+L$HfD
+L$hH+
+L$hH+L$`H
+L$HH3
+L$LE:
+L$LfA
+l$PE3
+L$pE3
+L$PH;
+L$pH;
+L$PH;L$P
+L$pH+
+L$pH3
+L$PH3
+L$xE3
+l$XE3
+L$xH3
+L+t$@A
+L9(ufD
+L9(uzH
+L9@ t
+L9{Hu
+L9~ht}H
+L9D$(
+L9D$(|
+L9J u
+L9oPt8L
+L9s t
+L9s uaM
+L9t$h
+L9t$hudH
+LAMP FAILURE
+LeaveCriticalSection
+L-EC UNCORRECTABLE ERROR
+LegalCopyright
+length
+Level
+LEVEL
+level
+LEVEL=
+LevelName
+LoadLibraryExW
+LoadResource
+LoadStringW
+Local\SM0:%lu:%lu:%hs
+LocalAlloc
+LocalFree
+LOCICAL UNIT COMMUNICATION TIME-OUT
+LockResource
+LOG CONTER AT MAXIMUM
+LOG EXCEPTION
+LOG LIST CODES EXHAUSTED
+LOG PARAMETERS CHANGED
+LogHr
+LOGICAL BLOCK ADDRESS OUT OF RANGE
+LOGICAL UNIT COMMUNICATION CRC ERROR (ULTRA-DMA/32)
+LOGICAL UNIT COMMUNICATION FAILURE
+LOGICAL UNIT COMMUNICATION PARITY ERROR
+LOGICAL UNIT DOES NOT RESPOND TO SELECTION
+LOGICAL UNIT FAILED SELF-CONFIGURATION
+LOGICAL UNIT FAILURE
+LOGICAL UNIT HAS NOT SELF-CONFIGURED YET
+LOGICAL UNIT IS IN PROCESS OF BECOMING READY
+LOGICAL UNIT NOT CONFIGUR
+LOGICAL UNIT NOT READY, CAUSE NOT REPORTABLE
+LOGICAL UNIT NOT READY, FORMAT IN PROGRESS
+LOGICAL UNIT NOT READY, INITIALIZING CMD. REQUIRED
+LOGICAL UNIT NOT READY, LONG WRITE IN PROGRESS
+LOGICAL UNIT NOT READY, MANUAL INTERVENTION REQUIRED
+LOGICAL UNIT NOT READY, OPERATION IN PROGRESS
+LOGICAL UNIT NOT READY, REBUILD IN PROGRESS
+LOGICAL UNIT NOT READY, RECALCULATION IN PROGRESS
+LOGICAL UNIT NOT SUPPORTED
+LOGICAL UNIT SOFTWARE WRITE PROTECTED
+LogNt
+LookupAccountSidLocalW
+LOW POWER CONDITION ON
+M H1E
+M#u0M
+M#w0M
+m`A9md
+M08O0u
+M8H!\$ H
+map/set too long
+MapViewOfFile
+Maximum number of enum values exceeded : %s
+MECHANICAL POSITIONING ERROR
+MEDIA LOAD OR EJECT FAILED
+MEDIUM DESTINATION ELEMENT FULL
+MEDIUM ERROR
+MEDIUM FORMAT CORRUPTED
+MEDIUM MAGAZINE INSERTED
+MEDIUM MAGAZINE LOCKED
+MEDIUM MAGAZINE NOT ACCESSIBLE
+MEDIUM MAGAZINE REMOVED
+MEDIUM MAGAZINE UNLOCKED
+MEDIUM NOT PRESENT
+MEDIUM NOT PRESENT - TRAY CLOSED
+MEDIUM NOT PRESENT - TRAY OPEN
+MEDIUM REMOVAL PREVENTED
+MEDIUM SOURCE ELEMENT EMPTY
+memcmp
+memcpy
+memmove
+MEMORY
+memset
+message
+MESSAGE ERROR
+MessageFileName
+messageFileName
+MICROCODE HAS BEEN CHANGED
+Microsoft
+Microsoft Corporation
+MISCOMPARE
+MISCOMPARE DURING VERIFY OPERATION
+MISCORRECTED ERROR
+ML;D$(
+MODE PARAMETERS CHANGED
+MODIFICATION OF LOGICAL UNIT FAILED
+ModuleName = %hs
+mofValue
+Msg:[%ws] 
+msvcp_win.dll
+MultiByteToWideChar
+multiCounterID
+MULTIPLE LOGICAL UNIT FAILURES
+MULTIPLE PERIPHERAL DEVICES SELECTED
+MULTIPLE READ ERRORS
+Name %s, 
+nameID
+namespace
+namespace::
+NETEVENT=%8X
+NO ADDITIONAL SENSE INFORMATION
+NO CURRENT AUDIO STATUS TO RETURN
+NO DEFECT SPARE LOCATION AVAILABLE
+NO GAP FOUND
+NO INDEX/SECTOR SIGNAL
+NO REFERENCE POSITION FOUND
+NO SEEK COMPLETE
+NO SENSE
+No space!
+NO WRITE CURRENT
+NoPrint
+Not enough memory
+Not enough memory for MOF_TYPE
+Not enough memory to read ahead
+Not enough memory to scan line
+NOT READY
+NOT READY TO READY CHANGE, MEDIUM MAY HAVE CHANGED
+NotCounted
+notLogged
+ntdll.dll
+ntelA
+NtQueryWnfStateData
+NTSTATUS=%08X
+NtUpdateWnfStateData
+NullTerminated
+O?fD;
+o\$PH
+Obsolete
+oD$ f
+ode name="win:Extension" value="5" symbol="WINEVENT_OPCODE_EXTENSION" message="$(string.opcode.Extension)">An extensional event</opcode>
+oL$0f
+OLEAUT32.dll
+onecore\internal\sdk\inc\wil\opensource\wil\resource.h
+onecore\internal\sdk\inc\wil\Staging.h
+opcode
+Opening file %s
+OpenSemaphoreW
+OpenTraceW
+OPERATION IN PROGRESS
+OPERATOR MEDIUM REMOVAL REQUEST
+OPERATOR REQUEST OR STATE CANGE INPUT
+OPERATOR SELECTED WRITE PERMIT
+OPERATOR SELECTED WRITE PROTECT
+Original request
+OriginalFilename
+oT$@f
+OUT OF FOCUS
+OutputDebugStringW
+outType
+OVERLAPPED COMMANDS ATTEMPTED
+OVERWRITE ERROR ON UPDATE IN PLACE
+p AWH
+p WATAUAVAWH
+p WAVAWH
+p![XT?
+p!UvT
+p(Y6C'
+p:_0#
+pA^_^[]
+PA^A\_^[
+PA^A]A\_^][
+PA__^
+PA_A^_^]
+PA_A^A\^]
+pA_A^A]A\_^[
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+PACKET DOES NOT FIT IN AVAILABLE SPACE
+PAPER JAM
+Param %%03 (Thread ID) 0x%X
+Param %%04 (System Time) %s
+Param %%08 (Process ID) 0x%X
+Param %%09 (CPU Number) 0x%X
+Param %03d (%s) itemType %3d(%s) data Ptr %p, left %d
+PARAMETER LIST LENGTH ERROR
+PARAMETER NOT SUPPORTED
+PARAMETER VALUE INVALID
+ParameterFileName
+parameterFileName
+PARAMETERS CHANGED
+PARITY/DATA MISMATCH
+ParseTMForBuffer invalid handle
+ParseTMForBuffer more than one input provided
+ParseTMForBuffer zero inputs provided
+PARTIAL DEFECT LIST TRANSFER
+perfFreqID
+perfTimeID
+PERIPHERAL DEVICE WRITE FAULT
+PERMANENT WRITE PROTECT
+PERSISTENT WRITE PROTECT
+pointer
+PointerType
+POSITION ERROR RELATED TO TIMING
+POSITION PAST BEGINNING OF MEDIUM
+POSITION PAST END OF MEDIUM
+POSITIONING ERROR DETECTED BY READ OF MEDIUM
+POWER CALIBRATION AREA ALMOST FULL
+POWER CALIBRATION AREA ERROR
+POWER CALIBRATION AREA IS FULL
+POWER ON OCCURRED
+POWER ON, RESET, OR BUS DEVICE RESET OCCURRED
+POWER-ON OR SELF-TEST FAILURE (SHOULD USE 40 NN)
+PRIMARY DEFECT LIST NOT FOUND
+ProcessId
+Processing Item Type %s (%d)
+ProcessTrace
+ProductName
+ProductVersion
+PROGRAM MEMORY AREA IS FULL
+PROGRAM MEMORY AREA UPDATE FAILURE
+Progress indication
+providerGuid
+ProviderGuid
+providerName
+providerType
+PUBLIC_TMF:
+pyV~+'
+q!UvT
+q:_0#
+q;Tv(
+q0R^G'
+qh_<f
+qTf9jVvGH9j`tAH
+QueryDosDeviceW
+QueryPerformanceCounter
+Queue Action
+Queue tag
+qyV~+'
+RaiseException
+RaiseFailFastException
+RAM FAILURE (SHOULD USE 40 NN)
+RANDOM POSITIONING ERROR
+RawSystemTime
+READ ERROR - LOSS OF STREAMING
+READ PAST BEGINNING OF MEDIUM
+READ PAST END OF MEDIUM
+READ RETRIES EXHAUSTED
+REBUILD FAILURE OCCURRED
+RECALCULATE FAILURE OCCURRED
+RECORD NOT FOUND
+RECORD NOT FOUND - DATA AUTO-REALLOCATED
+RECORD NOT FOUND - RECOMMEND REASSIGNMENT
+RECORDED ENTITY NOT FOUND
+RECOVERED DATA - DATA AUTO-REALLOCATED
+RECOVERED DATA - RECOMMEND REASSIGNMENT
+RECOVERED DATA - RECOMMEND REWRITE
+RECOVERED DATA USING PREVIOUS SECTOR ID
+RECOVERED DATA WITH CIRC
+RECOVERED DATA WITH ECC - DATA REWRITTEN
+RECOVERED DATA WITH ERROR CORR. & RETRIES APPLIED
+RECOVERED DATA WITH ERROR CORRECTION APPLIED
+RECOVERED DATA WITH L-EC
+RECOVERED DATA WITH NEGATIVE HEAD OFFSET
+RECOVERED DATA WITH NO ERROR CORRECTION APPLIED
+RECOVERED DATA WITH POSITIVE HEAD OFFSET
+RECOVERED DATA WITH RETRIES
+RECOVERED DATA WITH RETRIES AND/OR CIRC APPLIED
+RECOVERED DATA WITHOUT ECC - DATA AUTO-REALLOCATED
+RECOVERED DATA WITHOUT ECC - DATA REWRITTED
+RECOVERED DATA WITHOUT ECC - RECOMMEND REASSIGNMENT
+RECOVERED DATA WITHOUT ECC - RECOMMEND REWRITE
+RECOVERED ERROR
+RECOVERED ID WITH ECC CORRECTION
+REDUNDANCY LEVEL GOT BETTER
+REDUNDANCY LEVEL GOT WORSE
+RegCloseKey
+RegEnumKeyExW
+RegisterTraceGuidsW
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RelatedActivityID
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+ReloggedFile.ETL
+REMOVE OF LOGICAL UNIT FAILED
+Replacing %s with %s
+REPOSITION ERROR
+REQUEST SENSE DATA...
+RESERVATIONS PREEMPTED
+RESERVED
+ResolveDelayLoadedAPI
+resourceBase
+ResourceFileName
+resourceFileName
+Response code
+ReturnHr
+ReturnNt
+ReverseCounted
+rHfD97w
+RIBBON, INK, OR TONER FAILURE
+root\wmi
+ROUNDED PARAMETER
+RPL STATUS CHANGE
+RSDSc
+RString
+RtlAcquireSRWLockExclusive
+RtlAcquireSRWLockShared
+RtlCaptureContext
+RtlDisownModuleHeapAllocation
+RtlDllShutdownInProgress
+RtlEthernetAddressToStringW
+RtlGUIDFromString
+RtlInitializeSRWLock
+RtlIpv4AddressToStringExW
+RtlIpv6AddressToStringExW
+RtlIpv6AddressToStringExW failed to convert IPv6 address
+RtlIpv6AddressToStringW
+RtlLengthRequiredSid
+RtlLookupFunctionEntry
+RtlNotifyFeatureUsage
+RtlNtStatusToDosErrorNoTeb
+RtlRegisterFeatureConfigurationChangeNotification
+RtlReleaseSRWLockExclusive
+RtlReleaseSRWLockShared
+RtlSubAuthorityCountSid
+RtlUnregisterFeatureConfigurationChangeNotification
+RtlVirtualUnwind
+RWString
+s WAVAWH
+s(fE9
+s@fD9
+S_FALSE
+s0D8'u!M
+s2fD9?u!M
+s5fD;
+s8D8{@u;L9>u$E3
+SAVING PARAMETERS NOT SUPPORTED
+SCAN HEAD POSITION ERROR
+SCSI BUS RESET OCCURRED
+SCSI PARITY ERROR
+SCSI status
+SCSI TO HOST SYSTEM INTERFACE FAILURE
+SearchPathW
+SECHOST.dll
+SECURITY
+Segment number
+SELECT OR RESELECT FAILURE
+SelectionLanguage
+SelectionNamespaces
+Sense info
+Sense key
+Sense-key specific
+SequenceNum
+SEQUENTIAL POSITIONING ERROR
+SESSION FIXATION ERROR
+SESSION FIXATION ERROR - INCOMPLETE TRACK IN SESSION
+SESSION FIXATION ERROR WRITING LEAD-IN
+SESSION FIXATION ERROR WRITING LEAD-OUT
+SetLastError
+SETMARK DETECTED
+SetParameter %d
+SetThreadpoolTimer
+SetUnhandledExceptionFilter
+SizeofResource
+SizeT
+SLEW FAILURE
+sMD8?tHH
+SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers
+source
+SPINDLE SERVO FAILURE
+SPINDLES NOT SYNCHRONIZED
+SPINDLES SYNCHRONIZED
+SRB extension
+SRB flags
+SRB status
+SRB_FUNCTION_ABORT_COMMAND
+SRB_FUNCTION_ATTACH_DEVICE
+SRB_FUNCTION_CLAIM_DEVICE
+SRB_FUNCTION_EXECUTE_SCSI
+SRB_FUNCTION_FLUSH
+SRB_FUNCTION_FLUSH_QUEUE
+SRB_FUNCTION_IO_CONTROL
+SRB_FUNCTION_LOCK_QUEUE
+SRB_FUNCTION_RECEIVE_EVENT
+SRB_FUNCTION_RELEASE_DEVICE
+SRB_FUNCTION_RELEASE_QUEUE
+SRB_FUNCTION_RELEASE_RECOVERY
+SRB_FUNCTION_REMOVE_DEVICE
+SRB_FUNCTION_RESET_BUS
+SRB_FUNCTION_RESET_DEVICE
+SRB_FUNCTION_RESET_LOGICAL_UNIT
+SRB_FUNCTION_SHUTDOWN
+SRB_FUNCTION_TERMINATE_IO
+SRB_FUNCTION_UNLOCK_QUEUE
+SRB_FUNCTION_WMI
+STANDBY CONDITION ACTIVATED BY COMMAND
+STANDBY CONDITION ACTIVATED BY TIMER
+StartTraceW
+STATE CHANGE HAS OCCURRED
+STATUS_SUCCESS
+StopTraceW
+strchr
+strcmp
+string too long
+StringFileInfo
+StringFromGUID2
+StringTermination
+strncmp
+strnlen
+strrchr
+strstr
+struct
+Sub function
+SUBCOMP=
+SubComponentName
+suppressProjection
+SUVWATAUAVAWH
+SUVWATAUAVH
+SUVWATAUAWH
+SVWATAUAVAWH
+SVWATAVH
+SVWAVAWH
+SVWAVH
+symbol
+Symbol Path = [%ws]
+SymCleanup
+SymEnumTypesByName
+SymFromAddr
+SymGetLineFromAddr64
+SymGetOptions
+SymGetTypeInfo
+SymInitializeW
+SymLoadModuleExW
+SymOpts = 0x%x
+SymRegisterCallback64
+SymSearch
+SymSetOptions
+SymUnloadModule64
+SYNCHRONOUS DATA TRANSFER ERROR
+SYSTEM
+System
+SYSTEM BUFFER FULL
+SYSTEM RESOURCE FAILURE
+SystemTime
+t D9%
+t!fD;N
+t"@8=
+t#D95y
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+t$ UWATAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+t$$fD
+t$(E3
+T$@E3
+t$@E3
+T$@Hc
+T$`f;
+T$`fD
+t$`I+
+t$<E3
+T$<fA
+T$0E3
+T$0H+
+T$0L+
+t$8A+
+T$8H+
+T$DE;
+t$fD;
+T$h@8l$puzH
+T$hE3
+t$hf+q`
+T$HH+
+T$hH+T$`H
+t$PD88
+T$PE3
+t$PI;
+T$PL;
+t$PL;
+T$PL+
+t$PL9q
+t$TE3
+t$xD95
+T$xE3
+t$xI+
+t%f98t H
+t&D9-
+t(D8=_F
+t(D8-2I
+t,D8=
+t.D9%
+t.D95
+t;D95
+t;fA;
+t@D95
+t@L;P
+t`L90t
+t=9=F
+t>D95'
+t195n
+t1D9=v
+t1D95{
+t1x4H
+t1x4L
+t2D9%u%
+t2H;>t-I
+t39-(
+t395P]
+t39-f
+t49=7
+t4D9%
+t4D95a
+t4D95w
+t5fA9(t/I
+t7D9[
+t89-Z
+t8D9=
+TAGGED OVERLAPPED COMMANDS (NN = QUEUE TAG)
+TAPE LENGTH ERROR
+TAPE OR ELECTRONIC VERTICAL FORMS UNIT NOT READY
+TAPE POSITION ERROR AT BEGINNING-OF-MEDIUM
+TAPE POSITION ERROR AT END-OF-MEDIUM
+TARGET OPERATING CONDITIONS HAVE CHANGED
+tbH9k
+tCD95
+tdh.dll
+tdh.pdb
+TdhAggregatePayloadFilters
+TdhApplyPayloadFilter
+TdhCleanupPayloadEventFilterDescriptor
+TdhCloseDecodingHandle
+TdhCreatePayloadFilter
+TdhDeletePayloadFilter
+TdhEnumerateManifestProviderEvents
+TdhEnumerateProviderFieldInformation
+TdhEnumerateProviderFilters
+TdhEnumerateProviders
+TdhEnumerateProvidersForDecodingSource
+TdhEnumerateRemoteWBEMProviderFieldInformation
+TdhEnumerateRemoteWBEMProviders
+TdhFormatProperty
+TdhGetAllEventsInformation
+TdhGetDecodingParameter
+TdhGetEventInformation
+TdhGetEventMapInformation
+TdhGetManifestEventInformation
+TdhGetProperty
+TdhGetPropertyOffsetAndSize
+TdhGetPropertySize
+TdhGetWppMessage
+TdhGetWppProperty
+TdhLoadManifest
+TdhLoadManifestFromBinary
+TdhLoadManifestFromMemory
+TdhOpenDecodingHandle
+TdhQueryProviderFieldInformation
+TdhQueryRemoteWBEMProviderFieldInformation
+TdhSetDecodingParameter
+TdhUnloadManifest
+TdhUnloadManifestFromMemory
+TdhValidatePayloadFilter
+teD"e
+template
+TerminateProcess
+t-fD;
+tgD9g0uaH
+There was not enough memory for the Items buffer
+ThreadId
+THRESHOLD CONDITION MET
+THRESHOLD PARAMETERS NOT SUPPORTED
+tI9=n
+TIMEOUT ON LOGICAL UNIT
+Timeout value
+tMD;e
+tmD9%=
+tMD95I
+tnI;7tiH
+toI;4$tiH
+TOO MANY WINDOWS SPECIFIED
+tq950
+TRACE MESSAGE, 
+trace:AnsiChar
+trace:CountedAnsiString
+trace:CountedString
+trace:HexDump
+trace:NonNullTerminatedAnsiString
+trace:NonNullTerminatedString
+trace:NoPrint
+trace:ReducedString
+trace:ReverseCountedAnsiString
+trace:ReverseCountedString
+trace:SizeT
+trace:structType
+trace:UnicodeChar
+trace:WBEMSid
+TRACE_FORMAT_PREFIX
+TRACE_FORMAT_SEARCH_PATH
+TraceEvent
+TraceGuid
+TraceMessage
+TRACEPRT:Decoding Buffer too small
+TRACK FOLLOWING ERROR
+TRACKING SERVO FAILURE
+Translation
+Trying SearchPath for file %s.
+tt<E3
+tTL9s
+ty@8=
+Type %s, TypeOf %d,
+TypeLib
+u$H!|$ H
+u(D9|$Pt!H
+u(f9Y
+u*@8k-u$H
+u.D94$u(9t$
+u\D95h|
+u^L9H`t1L9
+u<9D$@u6H
+u<D8L$p
+u38G-u.H
+UATAUAVAWH
+UAVAWH
+ubfD;
+uF9D$Tu@H
+uF9D$Xu@H
+uGD9t$Hu@H
+uhA9Z,tbA
+ui8EptdH
+uMD9{ 
+UNABLE TO ACQUIRE VIDEO
+UNABLE TO RECOVER TABLE-OF-CONTENTS
+UnhandledExceptionFilter
+UNIT ATTENTION
+Unknown
+Unknown exception
+Unknown HResult Error code: 0x%x
+Unknown NTSTATUS Error code: 0x%x
+Unknown Win32 Error code: 0x%x
+Unknown( %d): GUID=%s (No Format Information found).
+UNLOAD TAPE FAILURE
+UnmapViewOfFile
+unordered_map/set too long
+UNRECOVERED READ ERROR
+UNRECOVERED READ ERROR - AUTO REALLOCATE FAILED
+UNRECOVERED READ ERROR - RECOMMEND REASSIGNMENT
+UNRECOVERED READ ERROR - RECOMMEND REWRITE THE DATA
+UnregisterTraceGuids
+UNSUCCESSFUL SOFT RESET
+UNSUPPORTED ENCLUSURE FUNCTION
+UPDATED BLOCK READ
+uPH9i
+uQ@8|$HuJI
+uSD95
+UserTime
+USVWATAUAVAWH
+USVWATAVAWH
+USVWATAWH
+USVWAVAWH
+uT9|$@u
+uT9D$@u;H
+UUUUUUU
+UVATAVAWH
+UVWATAUAVAWH
+UVWAVAWH
+UWATAVAWH
+UWAVH
+V@I;VHt
+V0H9W0
+Valid
+value
+ValueDescriptions
+ValueMap
+Values
+ValueType
+ValuMap
+VarFileInfo
+Variant
+vector too long
+VENDOR-SPECIFIC
+Version
+version
+Version is %d
+Versioned Index is %d(0x%08X)
+VIDEO ACQUISITION ERROR
+VMAPu9A
+VOLTAGE FAULT
+VOLUME OVERFLOW
+VS_VERSION_INFO
+VWATAVAWH
+VWAVH
+VWAWH
+W@H;WHt
+w`H9G
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+WARNING
+WARNING - ENCLOSURE DEGRADED
+WARNING - SPECIFIED TEMPERATURE EXCEEDED
+warnOnApplicationCompatibilityError
+was NULL!
+WATAUAVAWH
+WATAVH
+wAtlA
+WAVAWH
+wcschr
+wcscspn
+wcsncmp
+wcsnlen
+wcsrchr
+wcsspn
+wcsstr
+WEVT_TEMPLATE
+wevtapi.dll
+WideCharToMultiByte
+WilError_03
+WilFailureNotifyWatchers
+WilStaging_02
+win:AnsiString
+win:Binary
+win:EventlogClassic
+win:HexInt64
+win:UInt32
+win:UnicodeString
+WINERROR=%8X
+wItC+
+WMI flags
+WmiDataId
+WmiSizeIs
+WmiTime
+WPPFMT : error : 0x%X calling SymSearch(%hs)
+WPPFMT : error : 0x%X calling SymSearch()
+WPPFMT : error : 0x%x from GetModuleFileNameW()
+WPPFMT : error : 0x%x from SymInitialize()
+WPPFMT : error : 0x%x from SymRegisterCallback64()
+WPPFMT : error : 0x%x loading %ls.
+WPPFMT : error : Failed to add Enumeration entry : Memory allocation failed for Enumeration entries.
+WPPFMT : error : Failed to add Enumeration entry : Memory allocation failed for Enumeration name.
+WPPFMT : error : Failed to add Enumeration entry : Memory allocation failed for Guid Enumeration Link.
+WPPFMT : error : Failed to add EnumGuid entry : Memory allocation failed for Guid entries.
+WPPFMT : error : Failed to add EnumGuid entry : Memory allocation failed for Guid Enumeration Link.
+WPPFMT : error : Failed to create directory %ws
+WPPFMT : error : failed unloading %ls at %hs
+WPPFMT : error : File + Path
+WPPFMT : error : File already exists and is not a directory: %ws
+WPPFMT : error : Insufficient Buffer
+WPPFMT : error : load <modname> - you must specify a module to load
+WPPFMT : error : out of memory
+WPPFMT : error : out of memory calling WideToMbcs
+WPPFMT : error : out of memory from splitpath
+WPPFMT : error : out of memory loading %ls
+WPPFMT : warning : enums will not be proccessed (failed allocation of structures)
+WRITE APPEND ERROR
+WRITE APPEND POSITION ERROR
+WRITE ERROR
+WRITE ERROR - AUTO REALLOCATION FAILED
+WRITE ERROR - LOSS OF STREAMING
+WRITE ERROR - PADDING BLOCKS ADDED
+WRITE ERROR - RECOMMEND REASSIGNMENT
+WRITE ERROR - RECOVERED WITH AUTO REALLOCATION
+WRITE ERROR - RECOVERY FAILED
+WRITE ERROR - RECOVERY NEEDED
+WRITE PROTECTED
+WS2_32.dll
+WSAAddressToStringW
+x ATAVAWH
+x AUAVAWH
+x AVA
+x AVH
+x AVL
+x AWH
+x UATAUAVAWH
+x?fD9mgt8H
+X_^][
+XA_A^A]A\_^][
+x'fD9u0t H
+XMLFragment
+xmlns:evt='http://schemas.microsoft.com/win/2004/08/events' xmlns:cmi='urn:schemas-microsoft-com:asm.v3'
+xmlns:win='http://schemas.microsoft.com/win/2004/08/events'
+xmlType
+XPath
+xs:hexBinary
+xs:string
+y(@u]
+yyyy'-'MM'-'dd

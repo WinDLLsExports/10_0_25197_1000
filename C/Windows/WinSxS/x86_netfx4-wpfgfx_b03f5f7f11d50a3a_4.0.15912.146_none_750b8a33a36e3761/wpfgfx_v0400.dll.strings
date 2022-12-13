@@ -1,0 +1,4705 @@
+        
+            
+                    
+                                + Data.AttenAndRange.y * DistToLight
+                                + Data.AttenAndRange.z * DistToLight * DistToLight,
+                                1.0);
+                              * atten
+                              * pow(max(dot(TransformedNormal, HalfVector), 0), SpecularPower)
+                              * spot
+                              * step(DistToLight, Data.AttenAndRange.w);
+                            + Data.AttenAndRange.y * DistToLight
+                            + Data.AttenAndRange.z * DistToLight * DistToLight,
+                            1.0);
+                          * atten
+                          * max(dot(TransformedNormal, VecToLight), 0)
+                          * spot
+                          * step(DistToLight, Data.AttenAndRange.w);
+                    - sampleToOriginCrossOriginNorm * sampleToOriginCrossOriginNorm);
+                    // ellipse defining the end of the gradient. When rendering this region
+                    // Ensure that the gradient space does not wrap around,
+                    // Given an infinite precicision machine, we'd never get to this case since
+                    // interpolating with the last stop at the center point.
+                    // This negative region appears when the gradient origin is outside the
+                    // This value for u picks the first texel in the texture.
+                    // we choose the last texel color.
+                    // we do not have an infinite precision machine, so we may still get here.
+                    // we should have skipped the quadratic equation up top. Nevertheless,
+                    u = 1.0f - GradInfoParams.flHalfTexelSizeNormalized;
+                    u = 1.0f;
+                    u = GradInfoParams.flHalfTexelSizeNormalized;
+                //
+                // against integer overflow, so we need to do the check manually.
+                // Refrast & probably hw implement wrapping/clamping logic by first casting
+                // the float to an integer and then doing integer math.  They are not robust
+                {
+                }
+                else                                                         
+                if (u < 0.0)
+                if (u > MAX_RELIABLE_WRAP_VALUE)
+            // ellipse defining the end of the gradient. When rendering this region
+            // This complex region appears when the gradient origin is outside the
+            // we choose the last texel color.
+            {
+            }
+            }   
+            4.0f * (  GradInfoParams.gradientSpanNormalized * GradInfoParams.gradientSpanNormalized * A
+            else
+            if (u < GradInfoParams.flHalfTexelSizeNormalized)
+            u = (2 * A * GradInfoParams.gradientSpanNormalized) / (sqrt(determinant) - B);
+            u = 1.0f - GradInfoParams.flHalfTexelSizeNormalized;
+        );
+        // AttenAndRange.w is the light's range
+        // CosHalfPhiAndCosDiff.x = cos(Phi/2)
+        // CosHalfPhiAndCosDiff.y = cos(Theta/2) - cos(Phi/2)
+        // Get distance (in unit circle) from sample point to the gradient origin:
+        // in WorldView space, the camera is at <0> so just invert the position
+        // normalize L
+        // see brushspan.cpp for an explanation of why the determinant is calculated this way.
+        // the max is to ensure that the attenuation only diminishes the light
+        {
+        }
+        else
+        firstTexelRegionRadiusSquared)
+        float A = dot(sampleToOrigin, sampleToOrigin);
+        float atten = 1.0 / max(Data.AttenAndRange.x
+        float B = 2.0f * dot(GradInfoParams.ptGradOrigin, sampleToOrigin);
+        float determinant = 
+        float DistToLight = length(VecToLight);
+        float rho = max(dot(Data.Direction, VecToLight), 0);
+        float sampleToOriginCrossOriginNorm = dot(sampleToOrigin, ptGradOriginPerp);
+        float spot = saturate((rho - Data.CosHalfPhiAndCosDiff.x) / Data.CosHalfPhiAndCosDiff.y);
+        float2 ptGradOriginPerp = {GradInfoParams.ptGradOrigin.y, -GradInfoParams.ptGradOrigin.x};
+        float2 sampleToOrigin = samplePos - GradInfoParams.ptGradOrigin;
+        float3 HalfVector = normalize(normalize(-TransformedPosition.xyz) + Data.Direction);
+        float3 HalfVector = normalize(normalize(-TransformedPosition.xyz) + VecToLight);
+        if (0.0f > determinant)
+        Output.Diffuse.rgb += Data.Color.rgb
+        Output.Diffuse.rgb += Data.Color.rgb * pow(max(dot(HalfVector, TransformedNormal), 0), SpecularPower);
+        PixelShader  = compile ps_2_0 PixelShaderImpl();
+        sampleGradientTexCoord = GradInfoParams.flHalfTexelSizeNormalized;
+        u = GradInfoParams.flHalfTexelSizeNormalized;
+        VecToLight /= DistToLight;
+        VertexShader = compile vs_2_0 VertexShaderImpl();
+    #define MAX_RELIABLE_WRAP_VALUE 32768
+    )
+    ) : COLOR
+    //
+    //       an instruction (slt) that returns 0 or 1 and multiplies that times the output color
+    //       textures. The card needs to interpolate different 1/w values.
+    // AttenAndRange.w is the light's range
+    // CosHalfPhiAndCosDiff.x = cos(Phi/2)
+    // CosHalfPhiAndCosDiff.y = cos(Theta/2) - cos(Phi/2)
+    // Ensure that the gradient space does not wrap around,
+    // Get distance (in unit circle) from sample point to the gradient origin:
+    // high risk of overflowing.
+    // Initialize the output alpha because the specular
+    // interpolating with the last stop at the center point.
+    // lighting functions ignore it.
+    // normalize L
+    // NOTE: Dividing the output position by w here will completely break
+    // Note: This does not actually generate a branch. The compiler translates this into
+    // optimizes away what's not used.
+    // Right now, only COLOR0 or NORMAL is used in a pass. The compiler
+    // Simple radial gradient
+    // supported since that's what refrast has.
+    // the max is to ensure that the attenuation only diminishes the light
+    // There are overflow issues in refrast and hw implementation of clamping.
+    // Therefore we need to clamp ourselves in areas of the shader that have a
+    // These will be optimized away when not in use
+    // We will go with 32768 as the maximum number of wraps that's support in 
+    {
+    }
+    }    
+    BlendColor = Diffuse;
+    CalcAmbientLighting_VS_ConstData Data,
+    color *= sampleGradientColor;
+    color *= tex1D(TextureSampler, u);
+    curPixelColor *= BlendColor;
+    curPixelColor *= data.alpha.a;
+    curPixelColor *= data.diffuse;
+    curPixelColor *= sampledColor.a;
+    curPixelColor *= sampledColor;
+    curPixelColor.a *= data.alpha.a;
+    curPixelColor.a *= Diffuse.a;
+    else
+    float    SpecularPower;
+    float atten = 1.0 / max(Data.AttenAndRange.x
+    float DistToLight = length(VecToLight);
+    float distToOriginSqr = uc_dx*uc_dx + uc_dy*uc_dy;
+    float firstTexelRegionRadiusSquared = GradInfoParams.flHalfTexelSizeNormalized * GradInfoParams.flHalfTexelSizeNormalized;
+    float rho = max(dot(Data.Direction, VecToLight), 0);
+    float sampleGradientTexCoord = sqrt(distToOriginSqr);
+    float spot = saturate((rho - Data.CosHalfPhiAndCosDiff.x) / Data.CosHalfPhiAndCosDiff.y);
+    float u;
+    float uc_dx = samplePos.x;
+    float uc_dy = samplePos.y;
+    float2 inputUV,
+    float2 samplePos,
+    float2 sampleToFirstTexelRegionCenter = samplePos - GradInfoParams.ptFirstTexelRegionCenter;
+    float2 UV_0     : TEXCOORD0,
+    float2 UV_1     : TEXCOORD1
+    float3 Normal   : NORMAL,
+    float3 VecToLight = Data.Position - TransformedPosition;
+    float4 BlendColor,
+    float4 curColor = Diffuse;
+    float4 Diffuse  : COLOR0
+    float4 Diffuse  : COLOR0,
+    float4 Diffuse  : COLOR0;
+    float4 Diffuse,
+    float4 Position : POSITION,
+    float4 Position : POSITION;
+    float4 sampledColor = tex2D(TextureSampler, uv);
+    float4 sampleGradientColor;
+    float4 WorldPos2D,
+    float4x4 View, WorldView, WorldViewProj, WorldViewAdjTrans;
+    for (int i = 0; i < 
+    if (dot(Data.Direction, TransformedNormal) > 0)
+    if (dot(sampleToFirstTexelRegionCenter, sampleToFirstTexelRegionCenter) <
+    if (dot(VecToLight, TransformedNormal) > 0)
+    if (sampleGradientTexCoord < GradInfoParams.flHalfTexelSizeNormalized)
+    in    CalcDiffuseDirectionalLighting_VS_ConstData Data,
+    in    CalcDiffusePointLighting_VS_ConstData Data,
+    in    CalcDiffuseSpotLighting_VS_ConstData Data,
+    in    CalcSpecularDirectionalLighting_VS_ConstData Data,
+    in    CalcSpecularPointLighting_VS_ConstData Data,
+    in    CalcSpecularSpotLighting_VS_ConstData Data,
+    in    float    SpecularPower,
+    in    float2  uv,
+    in    float3   TransformedNormal,
+    in    float4   TransformedPosition,
+    in    float4x4 mat4x4WorldViewAdjTransTransform,
+    in    float4x4 mat4x4WorldViewProjTransform,
+    in    float4x4 mat4x4WorldViewTransform,
+    in    GetSpecularPower_VS_ConstData Data,
+    in    sampler TextureSampler,
+    in  Get3DTransforms_VS_ConstData Data,
+    inout float2 outputUV
+    inout float3   Normal,
+    inout float3 TransformedNormal
+    inout float4   Position,
+    inout float4  curPixelColor
+    inout float4 BlendColor
+    inout float4 color
+    inout float4 curPixelColor
+    inout VertexShaderOutput Output
+    mat4x4WorldViewAdjTransTransform = Data.mat4x4WorldViewAdjTransTransform;
+    mat4x4WorldViewProjTransform     = Data.mat4x4WorldViewProjTransform;
+    mat4x4WorldViewTransform         = Data.mat4x4WorldViewTransform;
+    MultiplyAlpha_NonPremultiplied_PS_ConstData data,
+    MultiplyAlpha_PS_ConstData data,
+    MultiplyAlphaMask_Transform_InputUV_VS_ConstData data,
+    MultiplyConstant_PS_ConstData data,
+    MultiplyRadialGradientCentered_PS_ConstData GradInfoParams,
+    MultiplyRadialGradientNonCentered_PS_ConstData GradInfoParams,
+    MultiplyTexture_Transform_InputUV_VS_ConstData data,
+    Normal          = normalize(mul(Normal, (float3x3)mat4x4WorldViewAdjTransTransform));
+    out   float SpecularPower,
+    out float4x4 mat4x4WorldViewAdjTransTransform
+    out float4x4 mat4x4WorldViewProjTransform,
+    out float4x4 mat4x4WorldViewTransform,
+    Output.Diffuse = Data.Color;
+    Output.Diffuse = float4(1.0, 1.0, 1.0, 1.0);
+    Output.Diffuse.a = 0.0;
+    Output.Diffuse.rgb += Data.Color.rgb
+    Output.Diffuse.rgb += Data.Color.rgb * max(dot(TransformedNormal, Data.Direction), 0);
+    Output.Diffuse.rgb = min(Output.Diffuse.rgb, 1.0);
+    Output.Position = mul(Position, mat4x4WorldViewProjTransform);
+    Output.Position = mul(WorldPos2D, Data.mat4x4WorldToProjection);
+    outputUV = inputUV;
+    outputUV.x = inputUV.x*data.mat3x2TextureTransform[0][0] + inputUV.y*data.mat3x2TextureTransform[1][0] + data.mat3x2TextureTransform[2][0];
+    outputUV.y = inputUV.x*data.mat3x2TextureTransform[0][1] + inputUV.y*data.mat3x2TextureTransform[1][1] + data.mat3x2TextureTransform[2][1];
+    pass P0
+    Position        /= Position.w;
+    Position        = mul(Position, mat4x4WorldViewTransform);
+    return curColor;
+    return Output;
+    sampleGradientColor = tex1D(TextureSampler, sampleGradientTexCoord);
+    sampler TextureSampler,
+    SpecularPower = Data.SpecularPower.x;
+    Transform2D_VS_ConstData Data,
+    TransformedNormal *= -1.0;
+    VecToLight /= DistToLight;
+    VertexShaderOutput Output = (VertexShaderOutput)0;
+   float2 uv,
+   inout float4 curPixelColor
+   sampler TextureSampler,
+  !!!"""##$$$%%%&&&'''((())))***+++,,,,---....////000011122223333344445555666677777888899999:::::;;;;;<<<<<=====>>>>>?????@@@@@AAAAABBBBBBCCCCCCDDDDDEEEEEEFFFFFFGGGGGGHHHHHHIIIIIIJJJJJJKKKKKKKLLLLLLMMMMMMMNNNNNNOOOOOOOPPPPPPPQQQQQQQRRRRRRRSSSSSSSTTTTTTTTUUUUUUUVVVVVVVWWWWWWWWXXXXXXXXYYYYYYYZZZZZZZZ[[[[[[[[\\\\\\\\\]]]]]]]]^^^^^^^^_________````````aaaaaaaaabbbbbbbbbccccccccdddddddddeeeeeeeeeefffffffffggggggggghhhhhhhhhhiiiiiiiiijjjjjjjjjjkkkkkkkkkklllllllllmmmmmmmmmmnnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqqrrrrrrrrrrssssssssssstttttttttttuuuuuuuuuuuvvvvvvvvvvvwwwwwwwwwwwxxxxxxxxxxxyyyyyyyyyyyyzzzzzzzzzzz{{{{{{{{{{{{|||||||||||}}}}}}}}}}}}~~~~~~~~~~~~
+  eb 0x%p 'p';g  -- terminate Process
+  eb 0x%p 't';g  -- terminate Thread
+  g                    -- Go (continue)
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefg
+ !"#777777777777777777$$%&&''()*)7))77+7',),)-./0123456j
+ .NET Framework
+ ;_,s
+ ;~,r
+ {BU)
+ 1M2s2A6c6
+ cp,od
+ Microsoft Corporation.  All rights reserved.
+ Microsoft Operations Puerto Rico1
+ or regular debugging.
+!]_0t
+!_d!_`!_\!_X
+!0;_xrf
+!7!0;
+!This program cannot be run in DOS mode.
+!TkjE
+!TTA!
+!X !X
+"0+0O0f0
+#2B9r5B
+$;%L0r
+$030J0
+$050L0S0Z0d0
+$1<1L1P1T1\1t1
+$1I1n1
+$Microsoft Ireland Operations Limited1&0$
+$PPSPj
+$PVSR
+$SSPSj
+$SVWP
+$VWj@j
+%2,2l2M3
+&S|9a
+'( tNULL
+(;{PsH
+(<,<0<4<8<<<@<P<T<X<\<`<d<h<l<|<
+(0;0G0L0\0z0
+(0T1q1
+(m_pvReferencedSystemBits == 0)
+(No kernel debugger is present.) Respond with:
+(prcSource->Width() == prcDest->Width()) && (prcSource->Height() == prcDest->Height())
+(qi|_o
+(SVWQQ
+)~4_^]
+)060K0U0v0
+)0P0y0
+)D$PP
+)Microsoft Root Certificate Authority 20100
+)Microsoft Root Certificate Authority 20110
+***  
+***   %s%ls%sSource: `%ls:%ld`
+***   Investigate the stack capture to determine the source of the HRESULT.
+*** Assertion failed: %ls%ls%ls
+*?*kXIc
+*=GXc=
+*0O0\0q0x0
+*VVVj
+*WGVn
+,0:0s0
+,0C0Z0x0
+,A]p2A
+.?AU?$ListNodeT@VCStateThreadItem@@@@
+.?AU_LIST_ENTRY@@
+.?AU_WMPOCXEvents@@
+.?AUHANDLE_TABLE@@
+.?AUIAVSurfaceRenderer@@
+.?AUID2D1SimplifiedGeometrySink@@
+.?AUID3D10Blob@@
+.?AUIDelegatingIUnknown@@
+.?AUIDirect3DDeviceManager9@@
+.?AUIDispatch@@
+.?AUIDpiProvider@@
+.?AUIDrawingContext@@
+.?AUIGeometryGenerator@@
+.?AUIGeometrySink@@
+.?AUIHwPrimaryColorSource@@
+.?AUIManagedStream@@
+.?AUIMediaDeviceConsumer@@
+.?AUIMediaSeeking@@
+.?AUIMFActivate@@
+.?AUIMFAsyncCallback@@
+.?AUIMFAttributes@@
+.?AUIMFClockStateSink@@
+.?AUIMFGetService@@
+.?AUIMFMediaBuffer@@
+.?AUIMFRateSupport@@
+.?AUIMFTopologyServiceLookupClient@@
+.?AUIMFVideoDeviceID@@
+.?AUIMFVideoDisplayControl@@
+.?AUIMFVideoPresenter@@
+.?AUIMilBatchDevice@@
+.?AUIMILCacheableResource@@
+.?AUIMILCoreFactory@@
+.?AUIMILDynamicResource@@
+.?AUIMILEffectList@@
+.?AUIMILEventProxy@@
+.?AUIMILMedia@@
+.?AUIMILMesh3D@@
+.?AUIMILRefCount@@
+.?AUIMILRenderTarget@@
+.?AUIMILRenderTargetBitmap@@
+.?AUIMILRenderTargetHWND@@
+.?AUIMILResourceCache@@
+.?AUIMILShader@@
+.?AUIMILShaderDiffuse@@
+.?AUIMILShaderEmissive@@
+.?AUIMILShaderSpecular@@
+.?AUIMILSurfaceRendererProvider@@
+.?AUIOleClientSite@@
+.?AUIRenderTargetHWNDInternal@@
+.?AUISequentialStream@@
+.?AUIServiceProvider@@
+.?AUIStream@@
+.?AUIUnknown@@
+.?AUIWGXBitmap@@
+.?AUIWGXBitmapLock@@
+.?AUIWGXBitmapSource@@
+.?AUIWICBitmap@@
+.?AUIWICBitmapLock@@
+.?AUIWICBitmapSource@@
+.?AUIWMPEvents@@
+.?AUIWMPGraphCreation@@
+.?AUIWMPRemoteMediaServices@@
+.?AUListNode@@
+.?AUOpSpecificData@@
+.?AUquaternion_base_t@?$basetypes@$00@dxlayer@@
+.?AURenderClock@@
+.?AV?$_Func_base@_NABQAUHDC__@@@std@@
+.?AV?$_Func_base@PAUHDC__@@$$V@std@@
+.?AV?$_Func_base@XAAPAUHDC__@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_317729ee56608c52b463d7baebe779e9>@@PAUHDC__@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_ce244d47696fea9c6911d4242b02f577>@@_NABQAUHDC__@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_f3b7e2b2a25dd0707eeb609d8b06a7be>@@XAAPAUHDC__@@@std@@
+.?AV?$_Ref_count@Vbuffer_xm@dxlayer@@@std@@
+.?AV?$_Ref_count_obj2@V?$vector@W4DpiAwarenessContextValue@util@wpf@@V?$allocator@W4DpiAwarenessContextValue@util@wpf@@@std@@@std@@@std@@
+.?AV?$_Ref_count_obj2@VDpiAwarenessContext@util@wpf@@@std@@
+.?AV?$_Ref_count_obj2@VModuleHandle@DynamicCall@util@wpf@@@std@@
+.?AV?$CBaseSurfaceRenderTarget@UCHwRenderTargetLayerData@@@@
+.?AV?$CBaseSurfaceRenderTarget@UCSwRenderTargetLayerData@@@@
+.?AV?$CClipStack@UPageInPixels@CoordinateSpace@@@@
+.?AV?$CHw3DGeometryRenderer@K@@
+.?AV?$CHw3DGeometryRenderer@V?$vector3_t@$00@dxlayer@@@@
+.?AV?$CHwTVertexBuffer@UCD3DVertexXYZDUV8@@@@
+.?AV?$CHwTVertexBuffer@VCD3DVertexXYZDUV2@@@@
+.?AV?$CMFAttributesImpl@UIMFActivate@@VMFLockWrapper@@@@
+.?AV?$CResampleSpan@TGpCC@@@@
+.?AV?$DpiAwarenessScope@PAUHWND__@@@util@wpf@@
+.?AV?$DpiAwarenessScope@VDpiAwarenessContext@util@wpf@@@util@wpf@@
+.?AV?$DynArray@PAUIMILCacheableResource@@$0A@@@
+.?AV?$DynArrayIA@PAUIMILCacheableResource@@$01$0A@@@
+.?AV?$DynArrayImpl@$0A@@@
+.?AV?$ILineSink@UPointXYA@@@@
+.?AV?$ITriangleSink@UPointXYA@@@@
+.?AV?$LineWaffler@UPointXYA@@@@
+.?AV?$LocalMILObject@VCEffectList@@@@
+.?AV?$LocalMILObject@VCImmediateBrushRealizer@@@@
+.?AV?$LocalMILObject@VCMILBrushBitmap@@@@
+.?AV?$LocalMILObject@VCMILBrushLinearGradient@@@@
+.?AV?$LocalMILObject@VCMILBrushRadialGradient@@@@
+.?AV?$LocalMILObject@VCMILBrushSolid@@@@
+.?AV?$quaternion_t@$00@dxlayer@@
+.?AV?$RealComObject@VEvrPresenter@@VNoDllRefCount@@@@
+.?AV?$RealComObject@VMFActivate@@VNoDllRefCount@@@@
+.?AV?$TMemBlockBase@VCBezier@@@@
+.?AV?$TMemBlockBase@VCChain@CScanner@@@@
+.?AV?$TMemBlockBase@VCLineSegmentIntersection@RobustIntersections@@@@
+.?AV?$TMemBlockBase@VCPreFigure@COutline@@@@
+.?AV?$TMemBlockBase@VCVertex@CScanner@@@@
+.?AV?$TMemBlockBase@VCVertexRef@CTessellator@@@@
+.?AV?$TMilSlaveValue@NUMILCMD_DOUBLERESOURCE@@$0DB@@@
+.?AV?$TMilSlaveValue@U_D3DCOLORVALUE@@UMILCMD_COLORRESOURCE@@$0DC@@@
+.?AV?$TMilSlaveValue@U_MilMatrix3x2D@@UMILCMD_MATRIXRESOURCE@@$0DG@@@
+.?AV?$TMilSlaveValue@UMilPoint2D@@UMILCMD_POINTRESOURCE@@$0DD@@@
+.?AV?$TMilSlaveValue@UMilPoint3F@@UMILCMD_POINT3DRESOURCE@@$0DH@@@
+.?AV?$TMilSlaveValue@UMilPoint3F@@UMILCMD_VECTOR3DRESOURCE@@$0DI@@@
+.?AV?$TMilSlaveValue@UMilPointAndSizeD@@UMILCMD_RECTRESOURCE@@$0DE@@@
+.?AV?$TMilSlaveValue@UMilQuaternionF@@UMILCMD_QUATERNIONRESOURCE@@$0DJ@@@
+.?AV?$TMilSlaveValue@UMilSizeD@@UMILCMD_SIZERESOURCE@@$0DF@@@
+.?AV?$TriangleWaffler@UPointXYA@@@@
+.?AV?$WmpStateEngineProxyItem@VCWmpStateEngine@@H@@
+.?AV?$WmpStateEngineProxyItem@VCWmpStateEngine@@W4Enum@RenderState@@@@
+.?AV_Generic_error_category@std@@
+.?AV_Ref_count_base@std@@
+.?AV_System_error@std@@
+.?AV_System_error_category@std@@
+.?AV<lambda_317729ee56608c52b463d7baebe779e9>@@
+.?AV<lambda_ce244d47696fea9c6911d4242b02f577>@@
+.?AV<lambda_f3b7e2b2a25dd0707eeb609d8b06a7be>@@
+.?AVAVSurfaceRenderer@EvrPresenter@@
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVbad_cast@std@@
+.?AVbuffer@dxlayer@@
+.?AVbuffer_xm@dxlayer@@
+.?AVBuilder@?$CHwTVertexBuffer@UCD3DVertexXYZDUV8@@@@
+.?AVBuilder@?$CHwTVertexBuffer@VCD3DVertexXYZDUV2@@@@
+.?AVBuilder@CHwVertexBuffer@@
+.?AVCAnimationPath@@
+.?AVCAnimationSegment@@
+.?AVCArea@@
+.?AVCAssembleContext@@
+.?AVCAssemblePass1@@
+.?AVCAssemblePass2@@
+.?AVCAssertEntry@@
+.?AVCAxisAlignedStripClipper@@
+.?AVCBaseClipStack@@
+.?AVCBaseGlyphRunPainter@@
+.?AVCBaseRenderTarget@@
+.?AVCBaseWGXBitmap@@
+.?AVCBilinearSpan@@
+.?AVCBilinearSpan_MMX@@
+.?AVCBoolean@@
+.?AVCBooleanClassifier@CBoolean@@
+.?AVCBoundsTask@@
+.?AVCBrushIntermediateCache@@
+.?AVCBrushRealizer@@
+.?AVCBrushResourceRealizer@@
+.?AVCChainList@CScanner@@
+.?AVCChainPool@CScanner@@
+.?AVCClassifier@CScanner@@
+.?AVCClientMemoryBitmap@@
+.?AVCCoder86@@
+.?AVCColorSource@@
+.?AVCColorSourceCreator@@
+.?AVCColorSourceCreator_scRGB@@
+.?AVCColorSourceCreator_sRGB@@
+.?AVCCompactFigure@@
+.?AVCCompactShape@@
+.?AVCComposition@@
+.?AVCCompoundShapeNoRef@@
+.?AVCConnectionContext@@
+.?AVCConstantAlphaSpan@@
+.?AVCConstantAlphaSpan_scRGB@@
+.?AVCConstantColorBrushSpan@@
+.?AVCCrossThreadComposition@@
+.?AVCCubicSegment@@
+.?AVCCurvePool@CScanner@@
+.?AVCD3DDeviceLevel1@@
+.?AVCD3DDeviceManager@@
+.?AVCD3DGlyphBankTemporarySurface@@
+.?AVCD3DGlyphRunPainter@@
+.?AVCD3DGlyphTank@@
+.?AVCD3DLockableTexture@@
+.?AVCD3DRenderState@@
+.?AVCD3DResource@@
+.?AVCD3DResourceManager@@
+.?AVCD3DSurface@@
+.?AVCD3DSwapChain@@
+.?AVCD3DSwapChainWithSwDC@@
+.?AVCD3DTexture@@
+.?AVCD3DTextureSurface@@
+.?AVCD3DVertexBuffer@@
+.?AVCD3DVertexBufferDUV2@@
+.?AVCD3DVertexBufferDUV6@@
+.?AVCD3DVertexBufferXYZNDSUV4@@
+.?AVCD3DVidMemOnlyTexture@@
+.?AVCDasher@@
+.?AVCDelegatingUnknown@@
+.?AVCDesktopHWNDRenderTarget@@
+.?AVCDesktopRenderTarget@@
+.?AVCDeviceBitmap@@
+.?AVCDrawingContext@@
+.?AVCDummyRenderTarget@@
+.?AVCDummyRenderTargetInstance@@
+.?AVCDummySource@@
+.?AVCDXVAManagerWrapper@@
+.?AVCEffectList@@
+.?AVCEventProxy@@
+.?AVCEvrFilterWrapper@@
+.?AVCFigureBase@@
+.?AVCFigureData@@
+.?AVCFigureTask@@
+.?AVCFillTessellator@@
+.?AVCFlatteningSink@@
+.?AVCFocalGradientBrushSpan@@
+.?AVCGeneralFillTessellator@@
+.?AVCGenericClipStack@@
+.?AVCGlyphRunGeometrySink@@
+.?AVCGlyphRunRealization@@
+.?AVCGlyphRunResource@@
+.?AVCGlyphRunStorage@@
+.?AVCGradientBrushSpan@@
+.?AVCHitTest@@
+.?AVCHitTestSink@@
+.?AVCHw3DSoftwareSurface@@
+.?AVCHwBitBltDeviceBitmapColorSource@@
+.?AVCHwBitmapBrush@@
+.?AVCHwBitmapCache@@
+.?AVCHwBitmapColorSource@@
+.?AVCHwBoxColorSource@@
+.?AVCHwBrush@@
+.?AVCHwBrushPoolManager@@
+.?AVCHwCacheablePoolBrush@@
+.?AVCHwColorComponentSource@@
+.?AVCHwColorSource@@
+.?AVCHwConstantAlphaColorSource@@
+.?AVCHwConstantAlphaScalableColorSource@@
+.?AVCHwConstantColorSource@@
+.?AVCHwConstantMilColorFColorSource@@
+.?AVCHwD3DBufferSpaceLocator@@
+.?AVCHwD3DIndexBuffer@@
+.?AVCHwD3DVertexBuffer@@
+.?AVCHwDestinationTexture@@
+.?AVCHwDestinationTexturePool@@
+.?AVCHwDeviceBitmapColorSource@@
+.?AVCHwDiffuseShader@@
+.?AVCHwDisplayRenderTarget@@
+.?AVCHwEmissiveShader@@
+.?AVCHwFFPipeline@@
+.?AVCHwFFPipelineBuilder@@
+.?AVCHwFFShader@@
+.?AVCHwHWNDRenderTarget@@
+.?AVCHwLightingColorSource@@
+.?AVCHwLinearGradientBrush@@
+.?AVCHwLinearGradientBrushPoolManager@@
+.?AVCHwLinearGradientColorSource@@
+.?AVCHWMFMediaBuffer@@
+.?AVCHwPipeline@@
+.?AVCHwPipelineBuilder@@
+.?AVCHwPipelineShader@@
+.?AVCHwPixelShaderEffect@@
+.?AVCHwRadialGradientBrush@@
+.?AVCHwRadialGradientBrushPoolManager@@
+.?AVCHwRadialGradientColorSource@@
+.?AVCHwRasterizer@@
+.?AVCHwRenderStateManager@@
+.?AVCHwShader@@
+.?AVCHwShaderCache@@
+.?AVCHwShaderPipeline@@
+.?AVCHwShaderPipelineBuilder@@
+.?AVCHwSoftwareFallback@@
+.?AVCHwSolidBrush@@
+.?AVCHwSolidColorTextureSource@@
+.?AVCHwSpecularShader@@
+.?AVCHwSurfaceRenderTarget@@
+.?AVCHwSurfaceRenderTargetSharedData@@
+.?AVCHwTexturedColorSource@@
+.?AVCHwTexturedColorSourceBrush@@
+.?AVCHwTextureRenderTarget@@
+.?AVCHwVertexBuffer@@
+.?AVCIdentitySpan@@
+.?AVCImmediateBrushRealizer@@
+.?AVCIncreasingFunction@@
+.?AVCIntermediateRTCreator@@
+.?AVCInteropDeviceBitmap@@
+.?AVCIntersectionPool@CScanner@@
+.?AVCLine@@
+.?AVCLinearGradientBrushSpan@@
+.?AVCLinearGradientBrushSpan_MMX@@
+.?AVCLineFigure@@
+.?AVCLineSegment@@
+.?AVCManagedStreamWrapper@@
+.?AVCMaskAlphaSpan@@
+.?AVCMaskAlphaSpan_scRGB@@
+.?AVCMediaControl@@
+.?AVCMediaEventProxy@@
+.?AVCMetaBitmapRenderTarget@@
+.?AVCMetaRenderTarget@@
+.?AVCMFMediaBuffer@@
+.?AVCMilAffineTransform3DDuce@@
+.?AVCMilAmbientLightDuce@@
+.?AVCMilAxisAngleRotation3DDuce@@
+.?AVCMilBitmapCacheBrushDuce@@
+.?AVCMilBitmapCacheDuce@@
+.?AVCMilBlurEffectDuce@@
+.?AVCMILBrush@@
+.?AVCMILBrushBitmap@@
+.?AVCMilBrushDuce@@
+.?AVCMILBrushGradient@@
+.?AVCMILBrushLinearGradient@@
+.?AVCMILBrushRadialGradient@@
+.?AVCMILBrushShaderEffect@@
+.?AVCMILBrushSolid@@
+.?AVCMILBrushWithCache@@
+.?AVCMILCacheableResource@@
+.?AVCMILCacheableResourceDummy@@
+.?AVCMilCacheModeDuce@@
+.?AVCMilCameraDuce@@
+.?AVCMilChannel@@
+.?AVCMilClientChannelTable@@
+.?AVCMILCOMBase@@
+.?AVCMilCombinedGeometryDuce@@
+.?AVCMilConnection@@
+.?AVCMilCyclicResourceListEntry@@
+.?AVCMilD3DImageDuce@@
+.?AVCMilDashStyleDuce@@
+.?AVCMILDeviceContext@@
+.?AVCMilDiffuseMaterialDuce@@
+.?AVCMilDirectionalLightDuce@@
+.?AVCMilDrawingBrushDuce@@
+.?AVCMilDrawingDuce@@
+.?AVCMilDrawingGroupDuce@@
+.?AVCMilDrawingImageDuce@@
+.?AVCMilDropShadowEffectDuce@@
+.?AVCMilEffectDuce@@
+.?AVCMilEllipseGeometryDuce@@
+.?AVCMilEmissiveMaterialDuce@@
+.?AVCMILFactory@@
+.?AVCMilGeometry3DDuce@@
+.?AVCMilGeometryDrawingDuce@@
+.?AVCMilGeometryDuce@@
+.?AVCMilGeometryGroupDuce@@
+.?AVCMilGeometryModel3DDuce@@
+.?AVCMilGlyphRunDrawingDuce@@
+.?AVCMilGradientBrushDuce@@
+.?AVCMilGuidelineSetDuce@@
+.?AVCMILHandleTable@@
+.?AVCMilImageBrushDuce@@
+.?AVCMilImageDrawingDuce@@
+.?AVCMilImageSource@@
+.?AVCMilImplicitInputBrushDuce@@
+.?AVCMILLight@@
+.?AVCMILLightAmbient@@
+.?AVCMILLightDirectional@@
+.?AVCMilLightDuce@@
+.?AVCMILLightPoint@@
+.?AVCMILLightSpot@@
+.?AVCMilLinearGradientBrushDuce@@
+.?AVCMilLineGeometryDuce@@
+.?AVCMilMaterialDuce@@
+.?AVCMilMaterialGroupDuce@@
+.?AVCMilMatrixCameraDuce@@
+.?AVCMilMatrixTransform3DDuce@@
+.?AVCMilMatrixTransformDuce@@
+.?AVCMILMesh3D@@
+.?AVCMilMeshGeometry3DDuce@@
+.?AVCMilModel3DDuce@@
+.?AVCMilModel3DGroupDuce@@
+.?AVCMILObject@@
+.?AVCMilOrthographicCameraDuce@@
+.?AVCMilPathGeometryDuce@@
+.?AVCMilPenDuce@@
+.?AVCMilPerspectiveCameraDuce@@
+.?AVCMilPixelShaderDuce@@
+.?AVCMilPointLightDuce@@
+.?AVCMILPoolResource@@
+.?AVCMilProjectionCameraDuce@@
+.?AVCMilQuaternionRotation3DDuce@@
+.?AVCMilRadialGradientBrushDuce@@
+.?AVCMilRectangleGeometryDuce@@
+.?AVCMILRefCountBase@@
+.?AVCMILResourceCache@@
+.?AVCMILResourceIndex@@
+.?AVCMilRotateTransform3DDuce@@
+.?AVCMilRotateTransformDuce@@
+.?AVCMilRotation3DDuce@@
+.?AVCMilScaleTransform3DDuce@@
+.?AVCMilScaleTransformDuce@@
+.?AVCMilServerChannel@@
+.?AVCMilServerChannelTable@@
+.?AVCMILShader@@
+.?AVCMILShaderBrush@@
+.?AVCMILShaderDiffuse@@
+.?AVCMilShaderEffectDuce@@
+.?AVCMILShaderEmissive@@
+.?AVCMILShaderSpecular@@
+.?AVCMilSkewTransformDuce@@
+.?AVCMilSlaveBitmap@@
+.?AVCMilSlaveDoubleBufferedBitmap@@
+.?AVCMilSlaveHandleTable@@
+.?AVCMilSlaveRenderData@@
+.?AVCMilSlaveResource@@
+.?AVCMilSlaveVideo@@
+.?AVCMilSolidColorBrushDuce@@
+.?AVCMilSpecularMaterialDuce@@
+.?AVCMilSpotLightDuce@@
+.?AVCMilTileBrushDuce@@
+.?AVCMilTransform3DDuce@@
+.?AVCMilTransform3DGroupDuce@@
+.?AVCMilTransformDuce@@
+.?AVCMilTransformGroupDuce@@
+.?AVCMilTranslateTransform3DDuce@@
+.?AVCMilTranslateTransformDuce@@
+.?AVCMilVideoDrawingDuce@@
+.?AVCMilViewport3DVisual@@
+.?AVCMilVisual@@
+.?AVCMilVisual3D@@
+.?AVCMilVisualBrushDuce@@
+.?AVCMilVisualCache@@
+.?AVCMilVisualCacheSet@@
+.?AVCModelRenderWalker@@
+.?AVCNearestNeighborSpan@@
+.?AVCObjectUniqueness@@
+.?AVCOutline@@
+.?AVCOutputSpan@@
+.?AVCOwnedOSD@@
+.?AVCParallelogram@@
+.?AVCParallelogramFigure@@
+.?AVCPartitionThread@@
+.?AVCPen@@
+.?AVCPenInterface@@
+.?AVCPopulationSinkAdapter@@
+.?AVCPreComputeContext@@
+.?AVCPreFigurePool@COutline@@
+.?AVCPrerender3DContext@@
+.?AVCPrerenderWalker@@
+.?AVCPSTrans@@
+.?AVCRadialGradientBrushSpan@@
+.?AVCRail@@
+.?AVCRealFunction@@
+.?AVCRectangle@@
+.?AVCRectangleFigure@@
+.?AVCRectClipper@@
+.?AVCRectFillTessellator@@
+.?AVCRegionFillTessellator@@
+.?AVCRelation@@
+.?AVCRender3DContext@@
+.?AVCRenderTarget@@
+.?AVCRenderTargetManager@@
+.?AVCReusableBitmapLock@@
+.?AVCSameThreadComposition@@
+.?AVCScanner@@
+.?AVCScanPipeline@@
+.?AVCScanPipelineRendering@@
+.?AVCSegment@@
+.?AVCShaderEffectBrushSpan@@
+.?AVCShape@@
+.?AVCShapeBase@@
+.?AVCShapeFlattener@@
+.?AVCShapeWideningSink@@
+.?AVCSimplePen@@
+.?AVCSlaveEtwEventResource@@
+.?AVCSlaveGenericRenderTarget@@
+.?AVCSlaveHWndRenderTarget@@
+.?AVCSnappingTask@@
+.?AVCSpanClipper@@
+.?AVCSpanSink@@
+.?AVCSpecialCaseFillTessellator@@
+.?AVCSquaredSpeedDerivative@CAnimationSegment@@
+.?AVCStateThread@@
+.?AVCStateThreadItem@@
+.?AVCStripClipper@@
+.?AVCStrokeBoundsSink@@
+.?AVCSwBitmapCache@@
+.?AVCSwBitmapColorSource@@
+.?AVCSwDoubleBufferedBitmap@@
+.?AVCSWGlyphRunPainter@@
+.?AVCSwIntermediateRTCreator@@
+.?AVCSWMFMediaBuffer@@
+.?AVCSwPresenter32bppGDI@@
+.?AVCSwPresenterBase@@
+.?AVCSwRenderTargetBitmap@@
+.?AVCSwRenderTargetGetBounds@@
+.?AVCSwRenderTargetHWND@@
+.?AVCSwRenderTargetSurface@@
+.?AVCSystemMemoryBitmap@@
+.?AVCTessellator@@
+.?AVCUnoptimizedBilinearSpan@@
+.?AVCVertexPool@CScanner@@
+.?AVCVertexRefPool@CTessellator@@
+.?AVCVisualCacheManager@@
+.?AVCWGXBitmap@@
+.?AVCWGXBitmapLock@@
+.?AVCWGXBitmapLockUnaligned@@
+.?AVCWGXWrapperBitmap@@
+.?AVCWGXWrapperBitmapLock@@
+.?AVCWGXWrapperBitmapSource@@
+.?AVCWICWrapperBitmap@@
+.?AVCWICWrapperBitmapLock@@
+.?AVCWICWrapperBitmapSource@@
+.?AVCWideningSink@@
+.?AVCWmpClientSite@@
+.?AVCWmpEventHandler@@
+.?AVCWmpPlayer@@
+.?AVCWmpStateEngine@@
+.?AVCWriteProtectedBitmap@@
+.?AVDpiAwarenessScopeBase@util@wpf@@
+.?AVDpiProvider@@
+.?AVDummySurfaceRenderer@@
+.?AVdxerror@dxlayer@@
+.?AVdxlayer_exception@dxlayer@@
+.?AVerror_category@std@@
+.?AVEventItem@CMediaEventProxy@@
+.?AVEvrPresenter@@
+.?AVexception@std@@
+.?AVHeapBase@WPF@@
+.?AVhresult@dxlayer@@
+.?AVIAdapterStatusListener@@
+.?AVIFigureBuilder@@
+.?AVIFigureData@@
+.?AVIGraphIteratorSink@@
+.?AVIGraphNode@@
+.?AVIMILPoolManager@@
+.?AVIModelIteratorSink@@
+.?AVIPopulationSink@@
+.?AVIRenderTargetInternal@@
+.?AVlogic_error@std@@
+.?AVMediaDeviceConsumer@@
+.?AVMediaInstance@@
+.?AVMFActivate@@
+.?AVPartition@@
+.?AVPathFigureData@@
+.?AVPathGeometryData@@
+.?AVPresenterInvoker@TimerWrapper@@
+.?AVProcessHeapImpl@WPF@@
+.?AVRDPSTrans@@
+.?AVruntime_error@std@@
+.?AVSehException@exceptions@util@wpf@@
+.?AVsystem_error@std@@
+.?AVTimerWrapper@@
+.?AVtype_info@@
+.?AVUpdateState@@
+.?AVwinerror@dxlayer@@
+.?AVWmp11ClientSite@@
+.+D8B1Qy
+.=.{M
+.0Y0d0
+.idata
+.rsrc
+.text
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// End of Dynamic Shader Code
+// Fragment Pixel Shader fragments...
+// Fragment Vertex Shader functions...
+// Main Pixel Shader
+// Main Vertex Shader
+// Pixel Fragment Data...
+// Pixel Shader Constant Data
+// Samplers...
+// Technique
+// Vertex Fragment Data...
+// Vertex Shader Constant Data
+: :$:(:,:<:@:D:H:L:P:T:X:h:l:p:t:
+: :$:(:,:0:@:D:H:L:P:T:\:t:
+: :$:(:,:0:4:8:<:@:D:H:L:P:`:d:h:l:p:t:x:|:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:x:|:
+: :$:(:,:0:8:P:`:d:h:l:p:t:
+: :$:4:8:<:@:D:H:L:P:T:X:\:l:p:t:x:|:
+: :$:4:8:<:T:d:h:l:p:t:x:
+: :(:@:P:T:X:\:`:p:t:x:|:
+: :@:f:
+: :@:H:T:t:
+: :@:L:l:t:|:
+: :@:L:l:x:
+: :V:c:
+: ;%;.;7;H;Q;
+: ;8;U;
+: tLj V
+:!:(:
+:!:2:>:C:T:o:
+:!;.;];
+:";,;a;k;
+:";,>2>L>
+:";q;
+:#:):9:I:i:w:
+:#:/:4:D:_:|:
+:#:/:Y:j:o:
+:#:4:_:
+:#:a:
+:#:q:
+:#:t:
+:#;-;5;F;a;
+:$:(:,:0:4:8:<:@:P:T:X:\:`:d:h:l:p:
+:$:<:L:P:h:x:|:
+:$:f:l:
+:$;Q;t;
+:%:+:1:7:=:C:I:O:U:[:a:i:m:q:u:y:}:
+:%:=:a:
+:%:W:^:d:p:
+:&:9:_:
+:(:0:D:L:l:t:
+:(:D:^:
+:(:H:P:X:`:h:t:
+:(:H:T:t:
+:(;F;^;x;
+:(;Y;
+:);9;t;
+:,:?:G:V:b:n;
+:,:<:@:X:h:l:p:x:
+:,:0:4:8:<:@:D:H:L:P:T:d:h:l:p:t:x:
+:,:0:4:8:<:L:P:T:X:\:`:d:h:l:p:t:x:|:
+:,:H:l:
+:,:T:t:
+:.:B:
+:.:O:e:n:
+:/:@:_:r:
+:':5:k:y:
+:-:8:>:w:
+:':M:n:
+:;:j:
+:;:s:z:
+:';M;
+:';N;
+:?:R:^:c:t:
+:?;];h;z;
+:@:G:N:U:
+:@;q;
+:[:j:
+:[;x;
+:\:k:v:
+:\:w:
+:\:x:
+:+:B:I:P:Z:y:
+:+:K:
+:<:\:x:
+:<:H:h:t:
+:<;F;P;Z;l;t;
+:<;Z;;<
+:0:<:\:d:l:t:
+:0:<:\:h:
+:0:4:8:<:@:D:H:L:\:`:d:h:l:p:t:x:|:
+:0:4:L:P:T:X:\:`:d:h:l:p:t:x:|:
+:0;?;a;
+:1:;:r:
+:1:9:X:{:
+:1:B:G:W:u:
+:2:_:
+:2:C:]:c:|?
+:2;N;
+:2;o;
+:3:G;
+:3:w:
+:4:@:`:l:
+:4:<:D:L:T:\:d:l:t:|:
+:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:
+:4:8:P:T:X:\:`:d:l:
+:4:Y:a:u:
+:6:p;
+:6<K<u<
+:7:e:
+:8:@:L:l:t:|:
+:8:E:v:
+:8:f:s:
+:8:T:p:
+:8;A;Q;
+:8;S;
+:9:D:
+:A:f:
+:A:w:
+:B:W;
+:C;m;
+:C;W;
+:D:`:{:
+:D;a;l;
+:f;s;
+:F;S;
+:G;t;y;
+:H:U:
+:I:U:m:
+:I<X<o<
+:J:q:
+:l:|:
+:l:u:~:
+:oo.S
+:P:~:
+:P:U:f:
+:P;S=
+:Q=e=G>
+:U;d;
+:V:c:
+:W:w:
+:X;l;u;
+:xCQyzC%
+:y:x;
+; ;$;(;,;<;@;P;T;X;\;`;h;l;p;t;x;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;`;d;h;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;`;d;h;l;p;t;x;|;
+; ;$;(;,;0;4;8;<;D;\;l;p;
+; ;$;(;,;0;4;8;<;L;P;T;X;\;`;d;h;l;|;
+; ;$;(;,;0;4;8;H;L;P;h;x;
+; ;$;(;,;0;4;D;H;L;P;`;d;h;l;|;
+; ;$;(;@;P;T;X;\;`;d;l;p;t;x;|;
+; ;$;4;8;<;@;D;H;L;P;X;p;
+; ;(;0;<;\;d;l;t;|;
+; ;(;4;T;\;h;
+; ;@;H;P;X;`;h;p;|;
+; ;0;4;8;<;@;P;T;l;p;
+; ++i)
+; <9<C<M<W<`<n<
+; <o<
+;!;1;<;K;P;[;
+;!<3<t<
+;!<Y<
+;";*;0;6;A;S;b;j;p;v;
+;"<:<S<_<g<x<
+;"<E<h<
+;#;);/;5;;;A;G;M;S;Y;a;e;i;m;q;u;y;};
+;#;7;I;[;
+;#<7<I<Z<_<&>L>
+;$;(;,;0;4;8;<;@;D;H;L;\;`;d;h;l;p;x;
+;$;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+;$;,;0;4;@;L;T;X;\;h;t;|;
+;$;,;4;@;`;h;p;
+;$;,;4;@;`;h;p;|;
+;$;,;4;<;H;h;t;
+;$;;;p;};
+;$;0;P;\;d;
+;$;6;
+;$;A;H;N;m;
+;$;F;
+;$;L;p;
+;$<*<k<
+;%;+;H;e;k;
+;%;A;W;o;
+;%<R<
+;&;+;<;Z;
+;&;O;
+;&;y;
+;(;0;8;X;
+;(;2;s;
+;(;4;T;`;
+;(;8;<;@;D;L;P;T;X;\;l;p;t;x;|;
+;);=;B;\;t;
+;)<|<
+;)<T<
+;*;6;;;L;g;
+;*;X;
+;*<8<g<u<
+;*<a<
+;,;<;@;D;H;P;h;l;
+;,;0;4;<;T;X;p;
+;,;0;4;8;@;X;\;t;x;|;
+;,;0;4;8;<;D;\;l;p;t;x;
+;,;9;h;z;
+;,;P;p;
+;.;i;v;
+;/;:;h;
+;/;y;I<
+;/<6<=<T<Y<k<
+;:;A;G;S;
+;:;h;
+;;;rO
+;;<M<
+;';H;W;c;h;x;
+;?<V<u<
+;@;d;
+;@;H;P;\;|;
+;@;T;
+;[;b;h;r;
+;^<l<
+;_@t/
+;_Tt3
+;{8t/
+;~(v^3
+;+;B;
+;+<#=v=
+;+=7=F=q=x=
+;<;F;\;
+;<<F<d<o<
+;<<W<q<
+;-<F<w<
+;'<Q<~<
+;>;E;
+;0;<;\;h;
+;0;F;w;
+;0;s;x;
+;0<p<
+;0L0c0
+;1<\<
+;2;J;v;
+;2<S<
+;2<T<h<
+;3;};
+;3;G;X;u;
+;3<R<
+;4;_;
+;4=E=M=[=
+;5;;;E;P;\;d;i;o;
+;5;a;
+;5;K;
+;5;R;\;i;
+;5<X<{<
+;6;;;K;i;
+;6;w;
+;6<D<[<e<s<
+;6<Y<
+;7<F<K<\<
+;7<W<
+;8;@;H;P;\;|;
+;8;D;d;l;x;
+;8;T;t;
+;9<L=
+;A;L;
+;A;o;
+;A;W;_;p;v;
+;C(v>Qj
+;C;[;`;q;
+;C;Q;u;
+;C;v;
+;C<W<
+;C0v0Qj
+;CXv)Qj
+;CXv5Qj
+;D$ s
+;D$tu6
+;D<I<T<q<
+;F;S;
+;f<k<|<
+;FDu(3
+;FLv,Qj
+;G s3
+;G(v>Qj
+;g;l;};
+;G0tX3
+;GLv/Qj
+;H<g<l<}<
+;I;W;z;
+;K;X;
+;KXv>Qj
+;KXv5Qj
+;L$4uA
+;L$tuX
+;M;v;
+;M<S<Y<b<k<q<y<
+;O;Z;g;
+;o<}<
+;OXv>Qj
+;Plv.QQj 
+;Plv4QQjP
+;PXv2Qj
+;QXv2Qj
+;R;_;t;
+;S;q;
+;S<n<
+;S<Z<g<
+;SXv8QPj 
+;T;w;
+;u;};
+;WXv5QPjP
+;X;{;
+;Y<}<
+;yey7
+;Z;|;
+;Z<m<
+? ?$?(?,?<?@?D?H?L?P?`?d?h?l?|?
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?d?h?l?p?t?x?|?
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?h?l?p?
+? ?$?(?,?0?4?8?<?@?D?H?L?T?l?|?
+? ?$?(?,?0?4?8?<?@?D?H?X?\?`?x?
+? ?$?(?,?0?4?8?<?@?D?T?X?\?`?d?h?l?p?t?
+? ?$?(?,?0?4?D?H?L?P?T?X?\?d?|?
+? ?$?(?0?4?8?<?@?D?H?X?\?`?x?
+? ?$?(?0?H?X?\?t?
+? ?$?<?L?P?T?\?`?
+? ?$?4?8?<?@?D?T?X?\?`?d?t?x?|?
+? ?(?0?<?\?d?l?t?|?
+? ?(?0?<?\?h?
+? ?(?0?8?D?d?l?t?|?
+? ?,?4?h?x?
+? ?0?4?8?<?@?D?L?P?T?X?\?`?d?h?p?
+? ?I?|?
+?!?;?K?b?i?
+?!?2?;?H?V?^?e?t?{?
+?#?:?
+?#?8?X?e?z?
+?#?M?`?r?
+?#?q?
+?$?(?,?0?4?<?T?d?h?l?p?t?x?
+?$?(?,?0?4?8?<?@?H?`?p?t?x?|?
+?$?.?5?F?V?`?k?s?y?
+?$?;?B?I?P?W?^?j?o?
+?$?;?s?
+?$?0?P?\?|?
+?$?4?8?<?@?H?`?p?t?x?|?
+?$?L?p?
+?%?9?>?W?
+?%?X?]?r?
+?(?4?T?`?
+?)?.???{?
+?*?D?I?Z?u?
+?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+?,?4?<?P?p?|?
+?,?6?
+?/?R?u?
+?:?N?U?
+???m?
+?'?@?T?
+?'?F?^?
+?'?J?
+?_Syserror_map@std@@YAPBDH@Z
+?_Throw_C_error@std@@YAXH@Z
+?_Winerror_map@std@@YAHH@Z
+?_Xbad_function_call@std@@YAXXZ
+?_Xlength_error@std@@YAXPBD@Z
+?_Xout_of_range@std@@YAXPBD@Z
+?+?L?j?
+?<?H?h?p?|?
+?<?H?h?t?
+?<?X?
+?<?X?l?
+?0?4?L?P?h?l?
+?0?G?
+?0?P?
+?1?x?
+?2?l?q?~?
+?3?[?k?
+?3?E?
+?3?r?~?
+?333?333?
+?4?\?
+?4?D?H?`?p?t?
+?4?D?H?`?p?t?|?
+?6?[?s?
+?7?M?h?}?
+?8?@?L?l?x?
+?8?D?d?p?
+?8?M?W?^?d?k?q?|?
+?8?w?|?
+?A?O?
+?C?Q?
+?f?s?
+?F?S?
+?f?s?
+?G?U?_?
+?h?t?
+?K?P?U?z?
+?l?q?
+?M?R?W?\?
+?o?}?
+?Q?{?
+?S?l?r?
+?t-;]
+?UUUUUU
+@ ;A t
+@$;G$u
+@.data
+@.didat
+@.reloc
+@;Cls
+@_^[]
+@0RRP
+@DwmDetachMilContent
+@dx'\
+@Qm6t
+@SVWj
+@user32.dll
+[0p0E2
+\$ ;Z
+\$ 9X,
+\$$SP
+\$$VW;
+\$,+}
+\$0=t4
+\$4PWS
+\$8Vj
+\$LPP
+] QQj
+](PVS
+]y)-g
+^ }<]I
+^<[_^
+^8_^[]
+_ @_^[
+_ 9_0t
+_(9^$t 
+_@9^0tA
+_\_^[
+_^[Y]
+_^[YY]
+__current_exception
+__current_exception_context
+__CxxFrameHandler3
+__RTDynamicCast
+__std_exception_copy
+__std_exception_destroy
+__std_type_info_destroy_list
+__stdio_common_vswprintf
+_0^9_
+_8_^]
+_88_It
+_89^(t 
+_cexit
+_CIatan2
+_CIcos
+_CIexp
+_CIfmod
+_CIlog
+_CIpow
+_CIsin
+_CIsqrt
+_CItan
+_configure_narrow_argv
+_ConstantTable
+_copysign
+_crt_atexit
+_CxxThrowException
+_except_handler4_common
+_execute_onexit_table
+_finite
+_h_^[
+_H_^]
+_h9^$
+_initialize_narrow_environment
+_initialize_onexit_table
+_initterm
+_initterm_e
+_invalid_parameter_noinfo_noreturn
+_isnan
+_Mtx_destroy_in_situ
+_Mtx_init_in_situ
+_Mtx_lock
+_Mtx_unlock
+_PS_ConstData
+_purecall
+_register_onexit_function
+_Sampler
+_seh_filter_dll
+_set_se_translator
+_VS_ConstData
+_WQSS
+_wtoi
+_X9^ 
+_x9^(
+`.rdata
+`0^0\
+{097ui
+{xt,j
+|$ VRW
+|$$PR
+|$,8]
+|$\9~|
+|$|u 
+|$<PR
+|$0;|$
+|SVW3
+}Eit@
+~ _[^
+~ f;F*
+~<_^]
+~<9^8
++0p0}0 1
++C +K$
++zLPGWj
+< <$<(<,<<<@<D<H<L<P<T<X<\<`<d<t<x<|<
+< <$<(<,<0<@<D<T<X<\<`<d<l<p<t<x<|<
+< <$<(<,<0<4<8<@<X<h<l<
+< <$<(<,<0<4<8<@<X<h<l<p<t<x<|<
+< <$<(<,<0<4<8<<<@<D<H<L<P<T<\<t<x<
+< <$<(<,<0<4<8<<<@<D<H<L<P<T<X<h<l<p<
+< <$<(<,<0<4<8<<<@<D<T<X<h<l<p<t<x<
+< <$<(<0<H<X<\<t<
+< <$<(<8<<<@<D<H<L<P<T<X<h<l<p<t<x<|<
+< <$<<<L<P<X<\<`<d<h<l<p<t<x<|<
+< <$<4<8<<<@<D<H<L<P<T<d<h<l<p<t<x<|<
+< <(<0<<<\<h<
+< <(<8<\<d<l<t<|<
+< <(<8<H<l<t<|<
+< <,<D<H<P<d<l<t<|<
+< <@<H<T<t<|<
+< <7<J<y<
+< <D<x<
+<!<+<7<G<T<g<q<
+<!<6<=<D<a<
+<!=]=
+<"<*<0<6<A<Q<a<q<
+<"<{<
+<"<G<
+<"<P<Z<d<j<q<w<
+<"=?=J=
+<#<-<V<h<u<
+<#<=<J<f<
+<#=1=;=H=
+<$<(<@<D<\<`<x<
+<$<,<0<8<<<@<H<L<P<\<d<l<t<x<
+<$<,<4<@<`<h<p<
+<$<,<6<=<C<H<R<x<~<
+<$<,<8<X<`<l<
+<$<5<
+<$=1=F=
+<$=6=W=$>{>
+<%<+<H<e<k<
+<%<-<><Y<
+<%<X<x<
+<%>G>N>
+<&<.<u<
+<&<t<
+<&=7=e=s=
+<(<,<0<4<D<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+<(<8<<<T<d<h<l<p<t<|<
+<(<8<<<T<d<h<p<t<
+<(<H<P<X<d<
+<(<P<t<
+<(<V<c<
+<(<Z<h<
+<(=4=l=x=
+<(=a=
+<(=x=
+<)</<9<@<P<X<a<i<
+<)<@<[<v<
+<)<5<B<[<h<s<
+<)<D<g<z<
+<)<h<u<
+<)<R?
+<)=@=W=o=
+<)=R=~=
+<*<G<^<
+<*<u<^=
+<*=d=
+<,<0<8<P<T<l<p<
+<,<4<@<`<h<p<x<
+<,<H<
+<,=>=
+<,=F=S=
+<,=Y=e=
+<.>U>n>{>
+</<?<f<o<
+</<l<w?
+</=_=
+<;<I<
+<;>X>-?n?
+<[=_=c=g=k=o=s=w={=
+<]=j=
+<`=p=
+<+<G<k<
+<+<v<
+<+=o=
+<-<*=
+<<<d<
+<<<D<P<p<
+<-<=<F<
+<<=x=
+<-<E<K<m<
+<-<F<T<o<
+<'<M<W<
+<-<R<~<
+<'===q=
+<0@0H0P0
+<0=m=
+<1=>=r=
+<1=6=G=
+<2<<<F<L<q<w<
+<2<B<
+<3<?<G<X<
+<3<J<
+<3<P<u<
+<4<@<`<l<
+<4<f<s<
+<4=]=
+<4=C=Z=a=
+<4=X=x=
+<5=E=\=
+<6<><
+<6<I<
+<7<O<c<
+<8<\<|<
+<8<D<d<p<
+<8<X<|<
+<A<d<
+<A=c=+>
+<B<r<
+<B=O=d=k=r=y=
+<C<[<u<
+<C<W<v<
+<D<^<y<
+<d=q=
+<E=f=
+<F<Q<o<
+<f=t=
+<G<`<i<y<
+<H<w<~<
+<H<Z<q<
+<H=V=_=e=
+<I<}<
+<I<Y<p<
+<J=m=
+<J=Z=_=p=
+<k=+>
+<N=U=\=r=
+<NULL>
+<O<\<q<
+<O=|=
+<O=b=
+<P<m<{<
+<Q=Z=
+<S<`<
+<S=}=M>
+<S=v=
+<SVWj
+<T<^<
+<T>n?
+<X={=
+<Z=a=f=
+= =$=(=,=0=4=8=<=@=D=H=L=\=`=d=|=
+= =$=(=,=0=4=8=<=@=D=H=L=P=`=d=h=l=p=t=x=|=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=d=h=l=p=t=x=|=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=h=l=p=t=x=|=
+= =$=(=,=0=4=8=<=@=D=T=X=\=t=
+= =$=(=,=0=4=8=H=L=P=T=X=h=l=p=t=x=|=
+= =$=(=,=0=4=D=H=L=d=t=x=|=
+= =$=,=D=H=`=d=|=
+= =$=4=8=<=@=D=H=L=T=l=|=
+= =(=,=0=<=D=L=T=X=\=h=x=
+= =(=4=T=\=h=
+= =(=4=T=`=
+= =,=
+= =@=H=T=t=
+= =2=<=
+= =8=<=T=X=p=
+= =H=h=
+= >@>d>
+= >3>?>G>X>s>
+= >8>C>|>
+=!=F>S>
+=!=G=L=_=
+=!=R=i=
+="===x=
+=">[>
+=">->6>P>
+=#>R>~>
+=#>t>
+=$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=x=|=
+=$=(=,=D=T=X=\=`=h=l=p=t=x=|=
+=$=2=8=>=D=
+=$>@>b>
+=%=+=H=e=k=
+=&=;=G=`=
+=&=4=;=
+=&>5>L>n>
+=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+=(=;=D=U=u=
+=(=4=<=D=L=
+=(=8=<=@=D=L=d=t=x=
+=(=8=<=@=H=L=P=T=d=h=l=p=t=x=|=
+=(=8=S=
+=(=H=T=t=
+=(=L=T=\=d=l=t=|=
+=(=P=
+=(>}>
+=)=^=i=s=
+=)=<=
+=)=t=%>
+=)>1><>B>K>V>
+=*=/=@=`=e=v=
+=*=I=P=W=n=t=
+=,=<=@=X=h=l=p=t=|=
+=,=0=H=L=P=T=X=\=`=d=t=x=|=
+=,=O=k=
+=.=B=
+=.=f=k=|=
+=.>j>
+=;=R=x=
+=?=u=
+=@=h=
+=\>a>z>
+=]mE=H
+=+=[=`=v=
+=+=<=V=c=
+=+=j=
+=+=y=
+=+>8>X>r>
+=<=B=_=e=
+=<=D=L=T=\=d=l=x=
+=<=H=h=p=x=
+=<>U>f>t>
+=-=_=l=
+=-=A=_=p=~=
+='=M=d=
+=-=S=y=
+=->;>
+='>E>
+=0=@=D=H=L=P=T=\=`=d=h=l=p=t=x=|=
+=0=@=D=L=d=t=x=|=
+=0=<=\=h=
+=0=8=L=T=\=d=h=l=t=
+=0=E=M=^=
+=0f0m0t0{0
+=1>~>
+=1>A>X>r>
+=1>N>
+=2=a=
+=3=9=?=J=\=h=m=~=
+=3=G=k=
+=3=V=y=
+=3>O>~>
+=4=@=`=h=p=x=
+=4=@=d=l=t=|=
+=4=T=x=
+=5>T>s>
+=6=C=
+=7=[=r=
+=7===N=T=n=
+=7>k>
+=8=@=H=P=X=`=l=
+=8=H=l=t=|=
+=8=H=M=^=
+=8=i=y=~=
+=8>H>_>i>n>
+=9=c=
+=9=l=
+=9>G>^>
+=A>P>g>n>u>~>
+=B>b>
+=b>X?e?
+=C=i=
+=e>!?l?
+=F>!?r?
+=F>.?
+=f>r>{>
+=h>l>p>t>x>|>
+=H>u>
+=J=`=
+=J=f=
+=k=q=
+=L=j=
+=l>y>
+=N=q=
+=N=Z=
+=oB`*sBr wB
+=p=$>;>U>w>
+=P>Z>
+=r=w=
+=r>{>
+=S>\>
+=T>n>
+=V=w=
+=X=p=
+=X>_>
+> ?&?7?K?_?i?
+> ?=?
+> ?5?=?N?z?
+> >$>(>,><>@>D>H>X>\>`>d>h>x>|>
+> >$>(>,>0>4>8><>@>D>H>L>\>`>
+> >$>(>,>0>4>8><>@>D>H>P>h>l>
+> >$>(>,>0>4>8><>@>D>H>X>\>`>d>h>l>p>t>x>|>
+> >$>(>,>0>4>8><>@>P>T>X>\>`>d>h>l>t>
+> >$>(>,>0>4>8>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>(>8><>@>D>H>L>P>T>X>\>`>p>t>x>|>
+> >$>4>8><>@>D>H>L>T>l>|>
+> >$>4>8><>@>H>`>p>t>x>|>
+> >(>,>4>L>\>`>d>l>
+> >(>0>4>8>D>L>T>\>`>d>p>x>
+> >,>L>X>x>
+> >@>H>T>t>|>
+> >0>4>8><>@>D>H>L>P>X>p>t>
+> >8>H>L>d>t>x>
+> >8>H>L>P>T>X>`>d>h>l>p>t>x>|>
+> >E>W>^>o>
+>!???c?
+>!?P?Z?`?
+>!>4>y>
+>!>K>b>
+>">D>b>
+>#?K?
+>#?L?a?w?
+>#?Q?t?
+>#>=>H>b>
+>#>'>+>/>3>
+>#>6><>Q>
+>#>b>{>
+>$?1?A?Q?
+>$?T?t?
+>$>)>:>[>i>n>
+>$>)>:>m>z>'?S?Z?a?
+>$>,>4>@>`>l>
+>$>,>4><>D>L>X>x>
+>$>,>4><>H>h>p>x>
+>$>,>8>X>`>h>t>
+>$>:>M>f>
+>$>H>h>
+>%>|>
+>%>+>H>e>k>
+>%><>C>
+>%>6>D>I>O>X>_>j>p>w>
+>%>W>h>
+>&?4?
+>&?4?W?
+>&>=>t>
+>&>4>_>
+>(?0?9?I?W?e?
+>(?5?M?]?m?
+>(>,>0>4><>T>d>h>l>p>t>x>|>
+>(>,>D>T>X>\>`>d>l>
+>(>3>]>
+>(>4>T>`>
+>(>H>^>$?4?C?J?b?o?
+>(>H>P>X>d>
+>)?6?C?[?
+>)?K?
+>)>5>P>Z>
+>*?:?R?r?
+>*?[?
+>*>E>`>w>
+>,?7?Y?c?y?
+>,?P?x?}?
+>,>7>O>d>{>
+>,>A>e>
+>,>Q>w>
+>.>7>A>K>
+>/>?>H>X>f>%?3?J?
+>/>8>\>
+>/>p>
+>/>U>
+>:?]?
+>:>S>v>
+>;>D>_>l>
+>'???
+>?>_>d>{>
+>@?e?|?
+>@s5f
+>\?s?
+>]>f>
+>^?c?h?m?
+>^?tD
+>`?p?
+>+>Q>
+>=?K?b?
+>>>^>l>
+>0?G?
+>0?o?
+>0>@>D>\>l>p>x>|>
+>1?V?\?
+>1>S>
+>1>T>
+>2?H?
+>2>U>
+>3>Z>
+>4><>H>h>t>
+>4><>X>`>h>t>
+>4>D>H>`>p>t>x>|>
+>4>D>H>L>P>X>p>
+>4>q>&?2?n?z?
+>5???
+>6?C?
+>6>D>[>i>
+>7?d?
+>7?v?
+>7>e>
+>7>g>
+>7>j>
+>8?g?
+>8>D>d>l>x>
+>8>D>d>p>
+>8>F>
+>9?c?
+>A>c>n>w>
+>A>d>
+>B>[>a>
+>D?w?
+>D>I>Z>
+>F?S?
+>F>c>j>q>{>
+>F>S>
+>G>6?
+>G>d>
+>H>y>
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>I?y?
+>i>>?
+>J>U>@?
+>K?P?z?
+>K>b>k>r>
+>K>k>
+>M?a?u?
+>M?Y?e?
+>NGdx
+>P?T?X?\?l?p?t?x?|?
+>P>s>
+>Q?f?t?
+>T>^>t>
+>UUUUUU
+>V>c>
+>WVS3
+>X?e?u?
+>X>{>
+>Y?g?~?
+>Y>j>
+0 0$0(0,0<0@0D0\0l0p0t0x0|0
+0 0$0(0,0004080<0@0D0H0P0h0l0
+0 0$0(0,0004080<0@0D0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,0004080<0L0P0T0l0|0
+0 0$0(0,0004080H0L0P0h0x0|0
+0 0$0(000H0X0\0`0d0h0l0p0
+0 0$0,0D0T0X0p0
+0 0$04080<0@0D0H0L0\0`0d0h0l0p0t0
+0 0$04080<0@0D0H0L0\0`0d0h0x0|0
+0 0(0@0P0T0X0\0d0|0
+0 0,0L0T0`0
+0 0,242<2D2
+0 0@0H0P0X0`0l0
+0 0'0<0i0
+0 0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0
+0 0004080<0L0P0T0X0\0`0p0t0x0|0
+0 0004080P0`0d0h0l0p0x0|0
+0 0R0[0
+0!0%0)0-0105090=0A0V0k0
+0!0~0
+0!0'030I0]0o0t0y0
+0!020h0n0
+0!030e0k0
+0!040C0L0l0
+0!1,1w1
+0!1.1C1
+0!111H1O1V1]1g1l1}1
+0#0/0L0V0l0q0x0
+0#151=1N1p1
+0$0,040<0D0L0T0`0
+0$0,040<0D0P0p0|0
+0$0,080X0`0h0p0x0
+0$0;0
+0$0X0
+0$0z0
+0$1?1b1
+0&030
+0&0Z0h0v0
+0&1M1^1
+0(0,0004080<0@0D0T0X0\0`0d0h0l0p0
+0(0,0004080<0D0\0l0p0
+0(0,0D0T0X0\0`0d0l0p0t0x0|0
+0(000<0\0d0p0
+0(080<0@0D0H0P0h0x0|0
+0(0E0K0h0
+0(0H0P0X0`0h0p0|0
+0(0K0
+0(0L0T0\0d0l0t0|0
+0*090L0
+0*0L0Z0
+0*181O1
+0*1s1
+0,0<0@0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0,02080>0E0Y0
+0,020X0
+0,080X0d0
+0,0T0x0
+0.0I0
+0.141E1u1
+0.1H1M1`1
+0/0R0d0
+0/1?1K1[1
+0/1l1
+0:1v1
+0;1\1o1
+0;1Q1
+0?0j0
+0@0n0
+0_1l1
+0+010B0_0v0
+0<0\0
+0<1o1
+0<1V1l1
+0<1X1E2
+0>0}0
+0>0c0
+0>0v1
+0'0:0
+0-0=0c0h0z0
+00>0E0
+000<0\0d0l0x0
+000<0\0h0
+0-060>0K0
+0-0u0
+010@0d0
+011d1l2
+0123456789
+0'1N1
+0-1o1
+0'1U1
+020U0o0
+030=0V0c0}0
+030B0Y0`0y0
+030E0M0^0
+031f1 2I2[2
+040^0u0
+040904B0
+040A0Z0q0~0
+040O0d0
+041n1
+050j0
+060D0
+061C1
+070<0M0r0
+070E0\0
+080`0
+08162C2
+0A132z2
+0C192W5U6
+0D1h1
+0E0]0p0
+0F1T1
+0g1s1{1
+0H2S3u4
+0I0N0_0
+0I0S0
+0I1C2
+0J1z1
+0K0[0b0
+0M0p0
+0N2q2
+0O1m1|1/2F2T2k2y2
+0P0_0h0q0z0
+0P0`0o0
+0P0b0l0
+0R1;2
+0R1^1q1x1
+0R3f3m3
+0T0q0
+0T0w0
+0w#tA
+0Z142
+1 1$1(1,101@1D1
+1 1$1(1,10141<1@1D1H1L1P1T1X1\1`1d1h1x1|1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1
+1 1$1(1,1014181<1L1P1T1X1\1`1d1h1p1
+1 1$1(1,1014181H1L1P1T1X1\1d1|1
+1 1$1(1,10141D1H1L1P1T1X1\1`1d1t1x1|1
+1 1$1(1@1P1T1X1\1d1h1l1p1t1x1|1
+1 1$1<1@1X1\1t1x1|1
+1 1$14181<1@1D1H1L1P1`1d1h1l1|1
+1 1$14181<1@1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1&1?1k1p1
+1 1(141T1`1
+1 1;1K1
+1 1@1H1T1t1
+1 1@1l1
+1 1@1P1t1|1
+1 1014181<1D1\1l1p1t1|1
+1 181<1@1D1H1L1P1`1d1h1
+1 1H1
+1 1L1P1T1X1\1`1d1t1x1|1
+1 2X2
+1!1>1W2s2
+1"171F1K1\1
+1"2+2H2R2\2
+1"2-2U2
+1"2E2
+1"2U2
+1#1*151?1\1u1
+1#1.171G1f1
+1#21272G2
+1#222I2P2W2
+1#2P2e2
+1$1(1,1014181<1L1P1T1X1\1`1p1t1x1|1
+1$1,141<1D1L1T1\1d1l1t1|1
+1$1,141<1H1h1p1x1
+1$1,181X1`1h1p1|1
+1$1,181X1d1
+1$1;1
+1$1;1B1^1
+1$131<1I1^1l1q1
+1$14181<1@1P1T1X1\1`1d1h1l1p1t1x1
+1$1G1N1k1t1z1
+1$1I1_1
+1$1X1]1r1
+1$272<2F2i2
+1$2R2[3i3
+1$3*303
+1%1*1:1d1
+1%1.1a1u1
+1%191M1V1^1k1
+1%1I1i1y1~1
+1%2;2j2
+1%292
+1%2U2
+1&1-1;1E1O1Z1o1u1
+1&1-141M1
+1&232
+1(0&0
+1(111>1f1
+1(131G1O1l1r1
+1(181<1@1D1H1L1P1X1\1`1d1h1l1p1
+1(1D1`1
+1(1E1K103<3H3T3c3
+1(1E1K1h1
+1(1H1P1X1h1t1
+1(1H1T1t1|1
+1(1P1x1
+1)101|1
+1*1i1
+1*2d2p2
+1,0*0
+1,1014181<1@1D1H1L1P1T1X1\1d1|1
+1,10181<1@1D1H1L1\1`1d1|1
+1,2I2X2o2
+1.151=1D1K1`1l1x1
+1.1K1
+1.242
+1/1B1U1h1|1
+1/1E1
+1/1V1[1k1
+1:1A1f1s1
+1:vids
+1?1b1
+1?283~3
+1@1[1
+1@1|1
+1@2b2
+1+1?1S1b1p1u1
+1+2h2
+1<1z1
+1=1p1
+1=2h2
+1>2`2p2
+1>2q2
+101<1\1d1p1
+101<1\1h1
+110708205909Z
+111]1
+111G1O2
+1'1L1v1
+11n5'6
+1-1z1
+1'2@2G2\2h2n2w2
+122E2
+1'292P2d2v2{2
+1'2h2
+131H1
+131p1
+131s1
+141\1x1
+141=1L1b1y1
+151:1S1s1
+152X2
+161D1
+161G1
+161M1
+171_1u1
+171J1d1p1u1
+181b1x1}1
+191`1m1
+192]2u223u3
+192G2^2
+192P2n2
+1A1c1
+1A1d1
+1A1o1
+1a1q1
+1B2k2b3
+1B2L2?3
+1D2r2
+1E1`1
+1G1\3z3
+1H1W1
+1I1W1n1
+1J1i1}1
+1j2>3
+1K3N4
+1L1_1
+1m1}1
+1P1j1
+1PRRQ
+1Q1^1s1z1
+1R1b1y1
+1R2s2
+1S1p1
+1S2t2
+1V1\1
+1V1d1
+1W1|1
+1x1u2
+1Z1r1
+1Z3?6
+2 2$2(2,202@2D2H2L2P2T2X2\2`2d2h2x2|2
+2 2$2(2,2024282<2@2D2H2L2\2`2d2h2l2p2t2x2|2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2$2(2,2024282<2@2P2T2X2\2`2d2h2l2t2
+2 2$2(2,20282P2`2d2|2
+2 2$2(2,20282P2`2d2h2l2p2t2x2|2
+2 2$2(2@2P2T2X2`2x2
+2 2$2(2@2P2X2\2`2d2h2l2p2t2x2|2
+2 2$2(202H2X2\2`2d2l2
+2 2$2(282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2$2<2@2X2h2x2|2
+2 2,2L2T2`2
+2 20242<2@2P2T2X2p2
+2 2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 242:2e2
+2 282C2R2
+2 282H2L2d2t2x2|2
+2 292^2c2s2
+2 3.3M3;5h5
+2 323I3
+2!2&2-222B2R2Y2p2{2
+2!2}2
+2!3(4X4^4e4
+2!3D3g3
+2"2'2Z2
+2"242\2
+2"2B2L2b2
+2"3N3
+2"3z3'4?4d4i4z4
+2#262I2b2}2
+2#2A2T2f2o2t2
+2#2S2g2
+2#323I3P3i3
+2#383h3
+2$2)2:2
+2$2,242@2`2h2p2x2
+2$2,282X2`2p2
+2$2;2
+2$2<2@2D2H2L2P2T2d2h2l2
+2$24282<2@2D2H2L2T2X2\2`2d2h2l2p2t2x2|2
+2$24282<2@2D2L2d2t2x2
+2$2D2`2|2
+2$2L2p2
+2%2-2>2`2n2
+2&2;2B2I2m2
+2&2C2W2f2
+2&2K2
+2(2,2024282@2X2h2l2p2t2|2
+2(202D2d2l2x2
+2(2-2R2h2r2
+2(2E2K2h2
+2(2H2P2X2d2
+2)2D2_2
+2)2O2r2
+2)3:3Q3
+2)3_3f3
+2)3j3
+2*21292@2G2
+2*3E3
+2,2:2
+2,20242<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2,222
+2,242<2D2L2T2\2d2l2t2|2
+2,2F2M2f2t2
+2,3}3
+2.3M3k3
+2.3W3
+2/3J3W3k3
+2:2N2e2o2
+2:3?3P3x3
+2:3u4$5>5
+2;2@2Q2r2
+2;2F2V2b2j2y2
+2;3o3
+2@3`3
+2+2[2`2v2
+2+292q2
+2+3Y3
+2<2D2L2T2\2h2
+2<2H2e2
+2=2`2
+2=3a6[7
+202@2D2H2L2T2X2\2`2p2t2x2|2
+20220914221802Z
+20220915021256.746Z0
+20220915221802Z0t0:
+202l2
+210930182225Z
+211028192746Z
+220512204601Z
+2-2I2u2
+2'2J2p2
+230012+4705290
+230126192746Z0
+230511204601Z0t1
+23292@2T2`2
+233j4
+242@2`2l2
+242A2V2`2j2~2
+242O2
+253I3f3t3
+260708210909Z0~1
+262D2g2
+263C3
+263D3[3
+272Z2
+273<3A3c3h3m3-4G4
+282@2H2P2\2|2
+282@2H2T2t2|2
+282\2
+282D2d2p2
+282R2d2
+29^tu
+293\3b3h3n3t3
+293H3_3x3
+294Q4~5
+2A2F2]2
+2A2j2
+2a2p2
+2A3Q3h3r3w3
+2B3J3P3i3
+2d2n2
+2D3P3
+2d3U4
+2f3y3
+2f4z4
+2H2t2
+2P3|3
+2Q3Y4
+2R3W3h3
+2S2g2y2
+2S3y3
+2T2x2
+2T5`7
+2tAQ*5
+2U2u5
+2V2i2t2~2
+2W3n3
+2X3c3
+2Y2h2
+3 3$3(3,303@3D3H3`3p3t3x3
+3 3$3(3,303@3D3H3L3P3T3X3\3`3d3h3l3p3t3
+3 3$3(3,303@3D3H3L3P3T3X3`3x3
+3 3$3(3,30343<3T3d3h3
+3 3$3(3,3034383@3X3h3l3
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3t3x3|3
+3 3$3(3,3034383<3@3D3L3d3t3x3|3
+3 3$3(3,3034383<3D3\3`3d3h3l3p3t3x3|3
+3 3$3(3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3$3,3D3T3X3\3`3d3h3l3p3
+3 3$34383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3(3@3P3T3\3t3
+3 3(343T3\3d3p3
+3 3/363;3D3Z3_3h3n3
+3 3@3L3l3x3
+3 30343<3T3d3h3l3t3
+3 3034383<3L3P3T3X3\3`3d3h3x3|3
+3 353y3
+3 4P4o4
+3 7.7E7
+3!3+363A3i3
+3!3<3
+3!383t3
+3!3s3
+3!4/4F4M4
+3!4_4
+3!4n4
+3"4+4z4
+3#3[3
+3#3f3
+3$3(3,3034383<3@3D3H3X3\3`3d3h3l3p3
+3$3(3,343L3P3h3x3|3
+3$3,343@3`3l3
+3$3,343<3D3L3T3\3d3l3t3|3
+3$3,383\3d3l3t3|3
+3$30353E3c3
+3$303P3X3`3h3p3
+3$303P3X3d3
+3$303T3\3d3l3t3|3
+3$3A3s3
+3$3D3c3n3
+3$3H3l3
+3$4.4u6
+3%3+3H3`3e3v3
+3%31363I3\3
+3%313h3t3y3
+3%333
+3%4b4y4
+3&3G3_3
+3&444B4
+3(3,30343D3H3L3P3`3d3h3l3p3t3x3|3
+3(383<3T3d3h3l3p3t3x3
+3(3x4
+3(484O4V4b4g4x4
+3(4E4q4
+3)3K3
+3)3X3h3m3~3
+3*3?3f3
+3*333;354V4e4
+3*3b3p3
+3,30343L3\3`3d3h3p3
+3,343<3D3L3T3\3d3l3t3|3
+3,454s4}4
+3/3:3R3
+3/4;4a4
+3/4O4
+3:3_3
+3;3q3
+3;4K4r4
+3?3O3
+3?4t4
+3@3h3
+3[5`6
+3`4v4
+3{3U5c5
+3+3Q3V3v3~3
+3+404A4f4
+3<3Z3d3
+300930183225Z0|1
+303@3D3H3P3h3x3|3
+303L3l3
+303S3~3
+30H0b0
+314B4\4b4i4p4w4
+31w2~2
+323F3V3
+324k4w4
+3-3?3
+333?333?
+333?333?333?333?
+333?333?333?333?333?
+33383Q3V3c3
+333J3\3
+3'343v3
+334a4
+3'4+4/43474;4?4C4G4K4O4S4W4[4_4c4g4k4o4s4w4{4
+343<3H3h3p3|3
+343A5
+343D3H3`3p3t3x3|3
+343S3j3
+343X3
+3'4A4P4]4
+354V4]4d4y4
+363C3
+363D3[3
+364b4v4
+373C3c3i3
+374=4C4
+383@3L3l3t3|3
+383D3d3l3x3
+383f3
+383J3m3r3
+3A3d3
+3A3q3v3
+3B3e3
+3B3G3
+3D3g3
+3D3o3%4c4
+3f3s3
+3F4S4
+3H4Q4
+3http://www.microsoft.com/pkiops/docs/primarycps.htm0@
+3http://www.microsoft.com/pkiops/Docs/Repository.htm0
+3i3,4K4g4
+3I3[3t3
+3J4U4
+3J4v4.5
+3K3n3
+3N3g3p3
+3Pj@h
+3t3{3
+3T4m4w4
+3u3~3
+3x4B5
+3X4x4
+3Y3o3
+3Z3y3
+4 4$4(4,4<4@4D4H4L4P4`4d4h4l4p4t4
+4 4$4(4,404@4D4H4L4P4T4X4\4`4d4h4l4|4
+4 4$4(4,4044484<4D4\4`4x4
+4 4$4(4,4044484H4L4P4T4X4\4`4d4h4p4
+4 4$4(4,40444D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4$4(4,40444D4H4L4P4T4X4\4`4d4t4x4
+4 4$4(4,44484<4@4D4H4L4P4T4X4\4l4p4t4x4|4
+4 4$4(4,444L4\4`4d4h4p4t4x4|4
+4 4(4,4<4@4D4\4l4p4t4|4
+4 4(40484@4\4l4x4
+4 4(40484@4L4l4t4|4
+4 4(444T4\4h4
+4 4,4L4X4|4
+4 4@4P4t4|4
+4 4044484<4@4H4`4p4t4x4|4
+4 414O4^4c4t4
+4 484H4L4P4T4\4t4
+4 484H4L4P4X4p4
+4 4Q4e4
+4 5H5d5
+4 5s5
+4!4-424B4`4
+4!4'4T4~4
+4"4:4F4R4[4q4
+4"41484?4R4Y4b4i4
+4"42494`4~4
+4"434[4f4
+4"454a4g4z4
+4#4F4
+4#5)545;5D5J5P5Y5`5
+4#5K5
+4$4(4,4044484<4@4D4H4P4h4x4|4
+4$4(4,4044484<4@4P4T4X4\4`4d4h4x4|4
+4$4(4@4D4H4L4P4T4X4\4`4p4t4x4|4
+4$4*454<4A4I4e4m4~4
+4$4,444<4D4L4T4\4d4l4t4|4
+4$4,444<4D4L4T4`4
+4$44484<4D4\4l4p4x4
+4$4D4P4p4|4
+4$4G4
+4$4G4r4|4
+4$4v4
+4$5[5
+4$5-5
+4$5G5j5
+4%4\4
+4%434v4
+4%464D4[4i4
+4%4d5k5
+4%5c5
+4&414=4E4]4
+4&545
+4&5G5
+4(565A5P5W5
+4(5k5
+4)4M4
+4*4?4Q4^4j4o4
+4*5/5E5p5
+4*5@5g5}5
+4,4<4@4D4H4L4P4X4\4`4d4h4l4p4t4x4|4
+4,4044484<4D4H4L4P4T4X4\4`4d4h4l4p4t4
+4,4W4
+4,595>5
+4.4r4
+4.5p5
+4.8.9105.0
+4.8.9105.0 built by: NET481REL1LAST_C
+4;{tt/
+4;4S4z4x5
+4?4D4I4
+4?4p4
+4?5Q5~6
+4@4`4
+4@4c4
+4@5c5
+4[4i4
+4[6f6
+4]5t5
+4|4?7p7
+4+484=4k4
+4+494a4n4
+4+T$(+
+4<4\4|4
+4<4D4L4T4\4d4l4t4
+4<5A5R5
+4<5O5e6
+4>4`4
+40<2c2
+404@4D4\4l4p4t4|4
+40444L4\4`4h4
+40484@4H4T4t4|4
+404x4
+4080<0H0`0
+414S4]4e4v4
+415{5
+415K5w5|5
+434^4
+4'4.454?4I4e4m4
+444@4`4h4t4
+444T4t4
+4-4E4]4
+4-4S4
+454X4b4}4
+455k5
+464;4@4m4s4
+464a4
+465D5
+474S4p4
+484D4d4l4x4
+495W5x5
+4A4e4
+4a4o4
+4A4Z4t4
+4A5O5f536
+4B4J4W4
+4B4K4
+4c5w5~5
+4D:d:
+4D4i4z4
+4D4r4
+4D5[5
+4D5J5
+4E4s4x4
+4E6S6a6
+4F5S5
+4f5t8Y:
+4h4l4t4
+4H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+4h5V6
+4I4c4n4w4
+4I5~5
+4L4[4b4
+4L5o5
+4P4l4t4x4
+4Q4a4x4
+4Q5e5
+4R4Y4`4
+4R5m5
+4V4c4
+4V4d4
+4V7\7b7
+4W4g4~4
+4Z4f4
+4Z5|5
+5 5$5(5,505@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5p5t5x5|5
+5 5$5(5,545L5\5`5d5h5l5p5t5x5|5
+5 5$5(5,545L5\5`5x5|5
+5 5$5(585<5@5D5H5L5P5T5d5h5l5p5t5
+5 5$54585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5054585<5@5H5`5p5t5x5|5
+5 585<5T5d5h5p5t5x5|5
+5 585H5L5d5t5x5
+5 585H5X5\5`5h5
+5 6D6^6
+5!5;5@5Q5
+5!6@6E6\6|6
+5"5)5I5W5n5u5|5
+5#5*515F5`5v5
+5#5<5M5g5*6<6]6e6u6
+5#516V6d6
+5#5i5
+5#6B6T6
+5#6L6{6
+5#6X7i7n7
+5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5|5
+5$5(5,5D5T5X5\5`5d5h5l5p5x5|5
+5$5,545<5D5L5T5\5d5l5t5|5
+5$5,545<5D5L5X5x5
+5$5,585X5d5
+5$5>5N5}5
+5$505P5X5l5
+5$54585<5D5\5l5p5t5x5|5
+5$555j5
+5%5J5
+5%5W5d5n5
+5%6/6d6n6
+5&545@5I5O5U5v5
+5&6~6
+5&6I6Y6
+5(),k
+5(5,5054585<5@5D5T5X5\5`5d5t5x5|5
+5(505<5\5d5l5t5|5
+5(5B5[5
+5(5H5T5t5
+5(5H5T5t5|5
+5(666X6m6
+5)5C5S5}5
+5)5N5
+5)5v5
+5*5j5}5
+5*5k5r5y5
+5*5V5[5l5
+5*6E6J6
+5*6M7
+5,5<5@5D5H5P5T5X5\5`5d5t5x5|5
+5,5<5@5H5`5d5h5p5
+5,50545<5T5d5h5l5p5t5x5|5
+5,5054585<5@5D5H5L5P5T5X5h5l5p5
+5,5054585<5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5,50545D5H5L5d5t5x5
+5,53595I5Z5g5
+5,585X5d5
+5,5T5|5
+5.5:5o5|5
+5.6<6T6Z6a6h6
+5.6F6T6
+5/686]6f6
+5:6&7
+5:6f697T7\7
+5;{ t0
+5?5q5
+5@5h5
+5[6a6V7|7
+5[6q6
+5|si6
+5+515G5X5b5
+5+555C5
+5+5D5
+5<;E;P;W;j;x;~;
+5<5D5L5T5`5
+5<5D5P5p5x5
+5<5q5
+5=5V5d5{5
+5=5V5l5q5
+5=6B6U6i6
+5=6T6b6y6
+5>5q5
+5>6O6q6
+505@5
+505<5\5d5l5t5|5
+505<5\5d5p5
+50595B5Z5a5h5o5G6O7
+505L5h5
+515`5
+515e5}5
+515K5^5
+516B6
+526k6
+526U6x6
+535G5
+54595>5C5
+545W5z5
+54696v6
+5'5,5=5]5q5
+5'5[5s5
+565D5[5i5
+565Q5l5
+566N6t6
+5'6N7
+575~5
+575e5
+585X5x5
+595c5=7\7
+5a5q5
+5B5L5
+5B6`6
+5B6g6
+5C5X5
+5c5z5
+5D5R5b5
+5D7X7f7}718@8W8^8y9
+5E5J5]5{5
+5e6o6
+5F5\5-6;6
+5F5\5o5{5
+5F5s5
+5g6{6
+5Genu
+5ineI
+5J6P6
+5j6s7*8
+5L6v6
+5M5[5
+5M5~5
+5m5~5
+5N6S6d6
+5O5[5f5r5
+5O6v6
+5p6}6
+5R6}6
+5V6c6
+5V6w6
+5X5a5
+6 6$6(6,6<6@6D6\6l6p6t6|6
+6 6$6(6,606@6D6H6L6P6T6X6`6x6
+6 6$6(6,606@6D6H6L6P6T6X6`6x6|6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6 6$6(6,6064686H6L6P6T6X6\6`6d6t6x6|6
+6 6$6(6,60646D6H6L6P6X6p6
+6 6$6(686<6@6D6H6L6P6T6d6h6l6p6t6x6|6
+6 6$6,6064686<6@6D6T6X6\6`6d6t6x6
+6 6$64686<6@6D6H6L6T6l6|6
+6 6$64686<6T6d6h6l6p6t6|6
+6 6(6@6D6H6X6\6`6d6l6
+6 6*6S6l6
+6 6@6H6T6t6|6
+6 6@6p6
+6 6'6z6
+6 686H6L6P6T6\6t6
+6 7%797Z7`7
+6!6.646H6f6p6
+6!6;6|6
+6!608<8B8N8w8~8
+6!6t6
+6!7/7F7Y7q7
+6"6&6*6.62666:6>6B6F6J6N6R6V6Z6
+6"6,6C6P6e6o6
+6"6Y6^6l6
+6"7I7h7
+6"7O7
+6#6+6B6H6R6X6^6d6j6p6v6|6
+6#6F6V6y6
+6#7[7g7m7}7
+6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6t6x6|6
+6$6(6D6H6L6T6l6|6
+6$6,646@6`6l6
+6$6,646<6D6L6T6\6d6l6t6|6
+6$6,646<6D6L6T6\6d6p6
+6$6,646<6H6h6p6x6
+6$6<6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6$646
+6$6A6M6g6l6}6
+6$6D6P6X6
+6$6f6
+6$7/7:7E7&838
+6$7?7q7~7(8
+6$8`8
+6%6?6Y6
+6%6Q678
+6%7:8[8
+6&636
+6&646X6o6
+6&7G7q7
+6(696N6a6r6
+6(7V7
+6*7=7
+6,60646<6@6D6H6L6P6T6d6h6l6p6t6x6|6
+6,6064686@6D6L6d6h6l6t6
+6,6064686<6@6D6H6L6P6T6X6`6x6|6
+6,686X6`6l6
+6,797_7
+6.6a6
+6.7{7
+6/666<6y6
+6/7_7
+6:6~6
+6;6h6v6
+6@7|7
+6[7}7
+6\2l_M(C
+6\7k7
+6^6c6y6
+6_7{7
+6}7H8
+6+6K6
+6+7/73777;7?7C7G7K7O7S7W7[7_7c7g7k7o7s7w7{7
+6<6D6L6T6\6d6l6t6|6
+6<6F6
+6<7f7
+6<7T7
+6<7W7o7
+6=6r6
+6=6y6
+6=7M7d7k7
+6=7Z8
+6>6C6_6m6
+6>6l6
+606@6D6H6L6P6T6\6`6d6h6l6p6t6x6|6
+606<6\6d6p6
+606B6m6
+6074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+616T6w6
+626e6q6v6
+626W6
+636f6s6
+636T6
+637A7c7
+646@6`6l6
+646<6D6L6X6x6
+646D6H6L6T6X6\6`6d6h6x6|6
+646L6t6
+646P6
+646P6x6
+646t6
+646X6
+657M7%8|8_9
+657N7
+6'6.6B6I6c6o7}7
+666=6Q7s7
+6'676r6
+667C7
+6'6c6p6
+6'6V6c6
+6-6W6i6
+6'757J7Q7Z7
+676V6c6
+686D6d6p6
+686S6
+687F7h7
+696F6a6
+6A6X6o6
+6B6e6
+6C6r6
+6d6{6
+6D6p6
+6D7n7
+6E8J8
+6F6S6
+6f6s6a7
+6F6t63:
+6F7K7
+6f7s7
+6G7S7
+6H7;8g8s8
+6i7y7
+6J7O7_7|7D8I8Z8
+6K6_6q6
+6M7^7n7
+6M7=8
+6N7o7
+6P7(8|9
+6Q6`6e6v6
+6R6t6
+6T7m7
+6U6k6
+6V6c6
+6W6\6d6
+7 7$7 8$8,8D8T8X8\8d8|8
+7 7$7(7,7<7@7D7H7L7P7T7X7\7`7h7
+7 7$7(7,7074787<7@7D7T7X7\7t7
+7 7$7(7,7074787<7D7\7`7x7|7
+7 7$7(7,70747D7H7L7P7T7X7\7`7d7h7l7p7
+7 7$7(707H7X7\7`7d7h7l7p7t7x7|7
+7 7$74787<7@7P7T7X7`7x7
+7 7(70787X7|7
+7 7(747T7`7
+7 7@7L7l7x7
+7 7=7I7O7_7
+7 757V7d7{7
+7 7'7
+7 787H7L7P7T7X7\7d7h7l7p7t7x7|7
+7 878m8
+7 8A8
+7!8+818<8I8
+7!818
+7!838
+7"8=8H8y8
+7"8R8
+7#7(757O7
+7#7q7
+7$7(7,70747<7T7X7\7`7d7h7l7p7t7x7|7
+7$7(7,7074787<7L7P7T7X7\7`7h7
+7$7(7@7D7\7l7p7
+7$7,747<7D7L7T7\7d7l7t7|7
+7$7<7L7P7h7x7|7
+7$707P7\7|7
+7$707P7X7`7l7
+7$707P7X7l7
+7$74787P7`7d7h7p7t7x7|7
+7$7D7l7
+7$7D7L7T7`7
+7$7G7u7
+7$8|8
+7$8H8t8
+7%:*:
+7%7,7=7B7L7p7w7|7
+7%7.7
+7%7M7v7
+7&737
+7&7Q7t7
+7&848
+7&8v8
+7&8X8o:
+7(7,7074787H7L7P7T7X7\7`7d7h7l7p7t7
+7(7[7
+7(7-7>7c7}7
+7(787\7d7l7t7|7
+7(7E7K7h7
+7(7L7h7
+7(7M7f7~7
+7(7Q7
+7(898M8
+7)7>7
+7)7s7
+7*70767M7S7[7_7e7i7o7s7y7}7
+7*8/8D8t8
+7,7?7P7b7u7
+7,7<7@7D7H7L7P7T7\7`7d7h7l7p7t7x7
+7,7<7@7D7H7P7T7X7\7`7d7h7l7p7t7x7|7
+7,7H7h7
+7.;K;];m;t;|;
+7.787=7N7i7r7
+7.8O8
+7/7;7J7V8Z8^8
+7/7<7v7
+7/7Z7
+7/8<8v8
+7:7[7x7
+7:7`7u7
+7:7W7c7z7~7
+7;{<t2
+7;7X7^7
+7@+D$
+7@7~7
+7@7k7
+7^8|8
+7+7l7
+7+7L7X7_7
+7+8?8O8o8
+7+8N8q8
+7+9=9O9
+7<7\7x7
+7<7D7L7X7`7
+7>7I7
+7>8P8U8l8
+707@7D7L7P7T7X7\7`7d7t7x7|7
+717H7e7p7
+718L8w8
+727I7V7v7
+728A8p8v8|8
+737f7
+737M7g7
+747;7H7R7[7g7
+747<7D7`7
+747D7H7`7p7t7
+747D7H7L7P7T7X7\7`7h7l7p7t7x7
+747L7
+747P7x7
+767Q7t7
+767Z7
+768B8N8
+7'7_7
+7'747f7s7
+7'7g7
+7'7L7e7m7
+787@7L7l7x7
+787]7h7<8n8
+788g8
+7'8A8w8
+7B7g7l7|7
+7B7j7
+7B8H8b8r8x8
+7B8i8;9x9O;
+7C8x8
+7D7p7
+7E7O7X7`7f7l7q7{7
+7F7S7
+7F7W7j7x7
+7g7{7
+7g8x8
+7H7s7
+7i:7;M;b;
+7i8}8
+7K7Q7\7h7
+7k8^9q9v9
+7k8{8
+7K8Z8`8v8
+7l;t;
+7L9z9
+7M7x7
+7R8c8
+7S7^7
+7S7a7o7
+7Y7h7
+8 8$8(8,8<8@8D8H8L8P8T8X8h8l8p8
+8 8$8(8,8084888@8X8h8l8p8t8
+8 8$8(8,8084888@8X8h8l8p8t8x8|8
+8 8$8(8,8084888<8@8D8H8L8\8`8d8h8l8p8t8x8|8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8p8t8x8|8
+8 8$8(8,8084888<8@8D8T8X8\8t8
+8 8$8(8,8084888H8L8P8T8X8\8`8d8h8p8
+8 8$8(8,80888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 8$8(888<8@8D8H8L8\8`8d8h8l8p8t8x8|8
+8 8,8L8X8x8
+8 8@8H8T8t8|8
+8 8084888<8@8D8H8L8P8X8p8
+8 8084888<8@8H8`8p8t8x8|8
+8 8084888<8@8H8L8P8T8X8\8`8p8t8x8|8
+8 8084888P8`8d8h8l8p8x8|8
+8 9%969~9
+8 u%3
+8!8W8b8
+8!9/9
+8!949W9]9l9s9x9
+8!9h9
+8"8+8?8K8W8`8y8
+8"9/9D9v9
+8#8)8f8
+8#878V8d8
+8#8'8+8/83878;8?8C8G8K8O8S8W8[8_8c8g8k8o8s8w8{8
+8#9.939D9s9
+8#919
+8#9c:
+8$8,848<8D8L8T8\8d8l8t8|8
+8$8,888X8d8
+8$8.888V8d8{8
+8$808P8\8|8
+8$858K8b8
+8$8C:S:
+8$8N8
+8$9D9
+8%8?8g8
+8%8+8H8e8k8
+8%8j8p8
+8&8,83898@8F8L8S8Y8`8g8m8t8
+8&8L89=V=M>x?
+8(80888@8H8P8\8|8
+8(8F8S8
+8(8H8P8\8|8
+8)8G8h8
+8)8U8
+8)979Z9d9{9
+8*818P8j8
+8*8r8
+8*8U8
+8,8|8
+8,8<8@8D8H8L8P8T8X8\8`8d8t8x8|8
+8,8<8@8D8H8L8P8X8p8
+8,8<8@8D8H8P8h8x8|8
+8,8H8l8
+8,8K8
+8,91969s9}9
+8.8@8S8d8y8
+8.8e8n8u8
+8.8W8
+8.9J9P9`9
+8.9u9|9
+8/8H8n8}8
+8:8d8{8
+8:9s9
+8;8@8Z8}8
+8;8Y8s9,:
+8?8E8U8x8
+8?9K9
+8@9c9
+8^9;:f:
+8^du#
+8_^[]
+8_DtFj
+8+8@8K8b8w8
+8+8a8
+8+9;9O9
+8<8@8D8H8L8P8T8X8\8`8d8t8x8|8
+8<8D8L8T8\8d8l8t8|8
+8<8e8
+8>8U8
+8>8Y8c8
+808[8
+80888D8d8l8x8
+808P8l8
+818\8
+818T8
+819;9x9~9
+829f97:
+829O9|:
+838U8a8f8v8
+838v8
+848<8D8P8p8x8
+848T8t8
+849N9
+849t9
+858:8L8
+858;8O8c8
+868;8@8c8
+868D8
+868M8f8{8
+888\8|8
+888c8
+8'8B8j8
+8-8L8r8
+8'8Q8
+898\8
+8'9L9U9
+8A8l8
+8b8o8
+8b9A:
+8e8q8}8
+8f8u8
+8f9z9
+8G>M>
+8H8e8
+8I8w8
+8j9&:
+8J9\9s9
+8J9d9w9
+8J9Z9d9t9f:
+8L8j8
+8L8m8
+8L9Y9
+8M8W8`8h8n8t8y8
+8O9C:G;v;
+8Q9`9w9
+8Q9r9y9
+8R8W8\8
+8t8b:q:u;
+8v9Z:
+8Xtt59Xpu0
+9 :C:f:
+9 9$9(9,9<9@9D9H9L9P9T9X9\9`9h9
+9 9$9(9,90949<9T9d9h9l9t9x9|9
+9 9$9(9,9094989@9X9h9l9p9t9x9|9
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9 9$9(9,9094989<9@9D9H9L9P9T9X9h9l9p9t9x9|9
+9 9$9(9,9094989<9@9D9T9X9h9l9p9t9x9|9
+9 9$9(9,90949D9H9L9P9T9X9\9l9p9t9x9|9
+9 9$9(9,90989<9@9D9H9L9P9T9X9\9l9p9t9x9|9
+9 9$9(9,90989<9D9\9l9p9x9
+9 9$9<9@9D9L9d9h9
+9 9(909<9\9d9p9
+9 9/9Y9i9{9
+9 909b9
+9 9Z9
+9!9(9-969=9B9L9P9X9^9t9z9
+9!9]9
+9"9(9A9x9}9
+9"9{9
+9"989=9h9
+9"9S9X9o9
+9#:(:9:
+9#:8:J:]:b:u:
+9$9(9,9094989<9@9D9H9L9P9T9X9\9`9p9t9x9
+9$9,949<9D9L9T9\9h9
+9$9.9@9S9b9{9
+9$9<9@9X9h9l9p9x9
+9$94989<9@9D9H9L9T9X9\9`9d9h9l9p9t9x9|9
+9$959K9b9
+9$9D9L9h9p9x9
+9$9D9P9p9|9
+9$9X9`9h9t9
+9%:::L:o:
+9%:+:H:e:k:
+9%:5:F:^:}:
+9%:p:
+9%9>9v9
+9&:}:
+9&:o:
+9&9=9N9o9
+9(:[:`:q:
+9(:]:
+9(9,909H9X9\9`9d9h9l9t9x9|9
+9(909<9\9h9
+9(969h9
+9(979l9[:
+9(9D9`9
+9(9H9P9X9d9
+9):7:N:
+9)9<9z9)<l<
+9*939C9
+9*999>9O9j9
+9,9@9Q9j9}9
+9,9094989<9@9D9H9L9P9T9\9t9x9
+9,9L9x9
+9.9H9
+9.9i9
+9/:I:e:
+9/:K:g:
+9':2:M:
+9':6:M:~:
+9':8: ;V;7<
+9':C:`:s:
+9-:I:`:|:%;3;J;
+9-;s;C<f<
+9?:M:\:
+9?9a9
+9?9w9*:
+9@:S:r:w:
+9@<D<H<X<\<`<x<
+9@9`9
+9\$Lt$9\$Pt
+9] t2
+9]:g:u:}:
+9^ t 
+9^@tE
+9^\v,
+9^0v|
+9^X|q
+9_,v!
+9_,vM
+9_0v'
+9_0v 
+9_4u.
+9_L~\
+9_PtF9w@
+9{$t 
+9{,v4
+9{8u+
+9{pu8j
+9{Pv[
+9|$$t#
+9~$tRj<
+9+:U:
+9+;f=
+9+9:9Z9m9
+9+9H9Y9z9
+9<:A:R:
+9<:l:
+9<:T:l:
+9<9]9
+9<9_9
+9<9}9
+9=:u;
+9>:X:
+9>9L9
+9>9Z9u9
+909@9D9L9d9t9x9|9
+909[9z9
+909<9\9h9
+90989@9H9P9X9`9l9
+90B0r0}0
+91:>:S:Z:
+919E9
+919t9
+94:H:V:[:o:
+949@9`9l9
+949`9
+949<9H9h9t9
+949D9H9L9T9X9\9`9p9t9x9|9
+959@9N9\9j9~9
+959P9U9g9
+96:<:
+96:Z:
+969C9
+969C9]9u9
+969I9\9c9
+97u!W
+989D9d9l9t9
+989D9d9l9x9
+99:I:c:i:p:
+9'9~9
+999X9
+9-9b9
+9'9I9
+9A$u,
+9A9\9g9x9
+9B:z:
+9C@tF
+9C9J9Q9t9
+9ChwU9ClwP
+9Ctt(
+9D$<u
+9D$Tt
+9D$Xu8
+9D9g9
+9F$u!
+9F9l9p9t9x9|9
+9G9L9]9
+9GxtJ
+9J(tU9z(tP;
+9J9e9
+9K v'
+9K vcVW
+9K:]:
+9L9j9
+9M:\:a:r:
+9M:i:
+9N$t4
+9O|v?
+9O4t/9W4t'
+9O9Y9c9k9q9w9|9
+9p8u/
+9P9^9v9
+9ptu:
+9ptuN
+9Q:_:
+9q:w:|:
+9q4u!
+9q8sr
+9s v:W
+9s4s!
+9S9f9|9
+9t$@s(+t$@
+9T:V;V<
+9U:g:~:
+9V`t&
+9V9c9
+9w`v1
+9w|v!
+9w|v09
+9w0u5
+9w0vH
+9w8u5
+9x,vV
+9X:~:
+9X<tU
+9X4t,
+9X4tF
+9xLvI
+9y8s+j
+9z(vIV
+A ;F 
+A$;B$uI
+A$;F$u
+A$SVW
+A$u %
+A;O|r
+A@Y!A
+A< u:
+A<;C<t
+A<@9B<s
+A0;B0uA
+A0[0h0
+A33[Aff
+a8CzD:C
+Abort
+AbortingActivation
+AcquireSRWLockExclusive
+AD;CDr
+AddAnnotation
+AddAttachedHighlight
+AddAttachedMH
+AddAttachedSN
+AddDllDirectory
+AdHocProfile1End
+AdHocProfile1Start
+AdHocProfile2End
+AdHocProfile2Start
+ADVAPI32.dll
+advapi32.dll
+AESRP
+AH;CHr
+AllocateLocallyUniqueId
+AllocationSize
+alpha
+AnnotationInkChanged
+AnnotationTextChanged
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+AppDomainManagerCctor
+AppId
+ApplicationActivatorCreateInstanceEnd
+ApplicationActivatorCreateInstanceStart
+ApplicationIdle
+AppProxyCtor
+AppProxyRunEnd
+AppProxyRunStart
+AreDpiAwarenessContextsEqual
+ArrangeAbort
+ArrangeElementBegin
+ArrangeElementEnd
+as.,k{n?,
+AssemblyID
+AssemblyName
+AssertAppRequirementsEnd
+AssertAppRequirementsStart
+AttemptDownload
+AttenAndRange
+audio
+Avalon EVR
+ayl)u
+B ;A 
+B;W,r
+B13;z
+Background
+bad array new length
+batch processing error
+BatchSize
+BeginLayerEnd
+BeginLayerStart
+Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0
+BindProgress
+BitBlt
+Bitmap
+BitmapCopy
+BitmapEnd
+BitmapStart
+bottom
+Break, Go (continue), terminate Process, or terminate Thread (bgpt)? 
+BreakOnUnexpectedErrors
+BX;B\
+Bytes
+C _^[
+C(+C 9C0
+C(9C,u
+C;^0s
+C;^Dr
+C;_,r
+C;_`r
+C;_0r
+C;_Dr
+C\;F\
+C\_^[
+C`+CX9
+C|;F|ux
+C0@t#
+C0H0M0
+C0-J<
+C490u#
+C4WPj
+CalcAmbientLighting
+CalcDiffuseDirectionalLighting
+CalcDiffusePointLighting
+CalcDiffuseSpotLighting
+CalcSpecularDirectionalLighting
+CalcSpecularPointLighting
+CalcSpecularSpotLighting
+CD;C(t
+Cd+C\9
+CD3DDeviceLevel1::SetRenderTarget
+CDesktopRenderTarget::ScrollBlt
+CEVWP
+CGlyphRunRealization::EnsureValidAlphaMap
+CHAN\
+ChannelHandle
+ChannelPtr
+Chttp://www.microsoft.com/pkiops/crl/MicCodSigPCA2011_2011-07-08.crl0a
+CHwBitmapColorSource::GetSysMemUpdateSurfaceSource
+CInteropDeviceBitmap::Present D3D failure
+ClassFactoryCreateInstance
+ClassicETW
+ClearHighlight
+ClickOnceActivationEnd
+ClickOnceActivationStart
+ClientToScreen
+Clip_and_Opacity
+ClippedBitmapEnd
+ClippedBitmapStart
+CloseHandle
+CmdFlags
+CmdId
+CMilBlurEffectDuce::ApplyEffect
+CMILCOMBase::InternalAddRef
+CMilVisualCache::IsOfType
+CMilVisualCacheSet::IsOfType
+CoCreateInstance
+CoInitialize
+Color
+CombineRgn
+Comments
+CompanyName
+ContextID
+ContextIdle
+CosHalfPhiAndCosDiff
+CoTaskMemAlloc
+CoTaskMemFree
+Could not create display set.
+CoUninitialize
+Count
+CreateChannel
+CreateCompatibleBitmap
+CreateCompatibleDC
+CreateDIBSection
+CreateEventW
+CreateFileMappingW
+CreateHighlight
+CreateICW
+CreateOrAddOnChnl
+CreatePalette
+CreateRectRgn
+CreateRectRgnIndirect
+CreateStickyNote
+CreateThread
+CreateWpfGfxResource
+CSwPresenter32bppGDI::ScrollBlt
+CSwRenderTargetGetBounds::CreateRenderTargetBitmap
+CSwRenderTargetGetBounds::ReadEnabledDisplays
+CT;CXt
+curColor
+currentPosition
+D$ _^[
+D$ +S
+D$ 9D$\t
+D$ H=
+D$ Pj
+D$ PQ
+D$ QQ
+D$ RQ
+D$ SVW
+D$ VWP
+D$$;D$(}M
+D$$;D$,}Q
+D$$;D$0
+D$$;D$4~Q
+D$$_^[
+D$$jK
+D$$Pj
+D$$PP
+D$$PWS
+D$$QQ
+D$$SP
+D$$WP
+D$$Xf
+D$(!P
+D$(;D$0u
+D$(9U tI9U$uI
+D$(j@j
+D$(P3
+D$(Pj
+D$(PQ
+D$(PQR
+D$(PS
+D$(QQ
+D$(SV3
+D$,PW
+D$,QQ
+D$,SP
+D$,xi
+D$@Pj
+D$@PSQ
+D$@QQ
+D$\Pj
+D$`PS
+D$`SVW
+D$<9VH
+D$<PP
+D$<PS
+D$<PVj
+D$<QQ
+D$08]
+D$0j@j
+D$0PjtW
+D$0QQ
+D$0SV
+D$4;D$xuN
+D$4;F,
+D$4P3
+D$4PP
+D$4PS
+D$4Qj
+D$8Pj
+D$8SV
+D$D+D$<
+D$DPQ
+D$DSVW
+D$Hj@j
+D$Hj@WP
+D$HPQ
+D$hSV
+D$hSVW
+D$lPQ
+D$LPR
+D$LPV
+D$LPW
+D$PSV
+D$TPQ
+D$TQPR
+D$xj@j
+D$XPQ
+D$xSVW
+D{oVWj
+D=xz#
+d3d9.dll
+D3D9GetSWInfo
+D3DCompile
+D3DCOMPILER_47.dll
+Data_PS.
+Data_VS.
+DataBind
+DbgBreakPoint
+DbgPrintEx
+DbgPrompt
+DDBLD303D
+DebugBreak
+DeleteAnnotation
+DeleteCriticalSection
+DeleteDC
+DeleteInkNote
+DeleteObject
+DeleteTextNote
+DeserializeAnnotation
+DetermineApplicationTrustEnd
+DetermineApplicationTrustStart
+deviceTransform
+diffuse
+Direct
+Direct3DCreate9
+Direct3DCreate9Ex
+Direction
+DisableGpuThrottling
+DisableHWAcceleration
+DisableInstrumentationBreaking
+DisableThreadLibraryCalls
+DispatcherPriority
+DispatchMessageW
+DISPLAY
+DisplayDevicesAvailabilityChanged
+DllGetClassObject
+DocObjHostCreated
+DocObjHostRunApplicationEnd
+DocObjHostRunApplicationStart
+DownloadApplicationEnd
+DownloadApplicationStart
+DownloadDeplManifestEnd
+DownloadDeplManifestStart
+DownloadProgressUpdate
+DrawBitmap
+DrawEscape
+DRichW
+DWMAPI.dll
+DwmAttachMilContent
+DWMDraw_
+DWMDraw_Clear
+DwmFlush
+DwmGetCompositionTimingInfo
+DwmGetGraphicsStreamClient
+DwmIsCompositionEnabled
+dwrite.dll
+DWriteCreateFactory
+dxva2.dll
+DXVA2CreateDirect3DDeviceManager9
+DynArray<class CGlyphRunRealization *,0>::At
+E SVW
+E$SVW
+E%BRo(B
+E,!\$$
+E,VW3
+e_.,>
+e>2U0>
+E0C1)0'
+Effect
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicCodSigPCA2011_2011-07-08.crt0
+ElementName
+EnableDebugControl
+End of HSC: m_actualState
+End of HSC: m_currentInternalState
+End of HSC: m_pendingInternalState
+End of HSC: m_targetInternalState
+End of HSC: m_targetState
+EndLayerEnd
+EndLayerStart
+EnterCriticalSection
+EnteringMessageLoop
+EnumDisplayDevicesW
+EnumDisplayMonitors
+EnumDisplaySettingsW
+EqualRect
+EventData
+EventRegister
+EventUnregister
+EventWrite
+evr.dll
+Exception
+ExitCode
+ExitProcess
+F(j@SP
+F(t,:
+f:\dd\wpf\src\Graphics\common\shared\dynarray.h
+f:\dd\wpf\src\Graphics\common\shared\milcom.cpp
+f:\dd\wpf\src\Graphics\core\hw\d3ddevice.cpp
+f:\dd\wpf\src\Graphics\core\hw\HwBitmapColorSource.cpp
+f:\dd\wpf\src\Graphics\core\meta\desktoprt.cpp
+f:\dd\wpf\src\Graphics\core\resources\BlurEffect.cpp
+f:\dd\wpf\src\Graphics\core\resources\glyphrunslave.cpp
+f:\dd\wpf\src\Graphics\core\sw\boundsrt.cpp
+f:\dd\wpf\src\Graphics\core\sw\swpresentgdi.cpp
+f:\dd\wpf\src\Graphics\core\uce\VisualCache.cpp
+f:\dd\wpf\src\Graphics\core\uce\VisualCacheSet.cpp
+f:\dd\wpf\src\Graphics\shared\util\UtilLib\debugbreak.cpp
+F;r,r
+F;s(r
+F;wd|
+F@B;U
+F@I9O
+F@t\;
+F\9~l
+F<A;M
+F<j@j
+F49F8s
+F8_^]
+f9:t#
+F9qXu
+F9s(vo
+false
+Fd^[]
+ffffff
+fg:SM
+Fh9^du
+FileDescription
+FileVersion
+FindClose
+FindFirstFileW
+FindResourceW
+FireAutomationEventsBegin
+FireAutomationEventsEnd
+FireLayoutUpdatedBegin
+FireLayoutUpdatedEnd
+FireSizeChangedBegin
+FireSizeChangedEnd
+FirstTimeActivation
+FirstVisiblePage
+FL9x,
+Flavor=Retail
+flHalfTexelSizeNormalized
+FlipNormal
+floaP
+float 
+float4
+float4x2 
+float4x4 
+floor
+fmids
+FormatMessageA
+FreeLibrary
+Ft;GttU
+FT_^[
+Function: 
+FXj@WP
+G ;B 
+G ;G$
+G PQj
+G PQjV
+G(:F(
+G(;G0
+G(cT5&
+G(Sh4
+G,;G4
+G;~,r
+G;~\r
+G@^;E
+g_samAccumColor
+g_samShdColor
+g_samSrcColor
+G`PQj<Q
+G0Ph`
+G0W0a0k0
+G4QQk
+Gdi32.dll
+GDI32.dll
+GdiEntry13
+GDIProcessHandleQuota
+generic
+GeometryEnd
+GeometryStart
+Get3DTransforms
+GetAnnotationById
+GetAnnotationByLoc
+GetAnnotations
+GetClientRect
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDC
+GetDesktopWindow
+GetDeviceCaps
+GetDIBits
+GetDownloadPageEnd
+GetDownloadPageStart
+GetDpiForSystem
+GetGuiResources
+GetLastError
+GetModuleFileNameW
+GetModuleHandleW
+GetMonitorInfoW
+GetNextPerfElementId
+GetParent
+GetProcAddress
+GetProcessHeap
+GetRandomRgn
+GetRefCountOnChannel was called on a resource that is not anymore on this channel
+GetRegionData
+GetRgnBox
+GetSpecularPower
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemPaletteEntries
+GetSystemTimeAsFileTime
+GetThreadDpiAwarenessContext
+GetTickCount
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetVersionExW
+GetWindowDC
+GetWindowDpiAwarenessContext
+GetWindowLongW
+GetWindowRect
+GlobalUnlock
+GlyphRunEnd
+GlyphRunStart
+gradientSpanNormalized
+GUID_Data1
+h#j"e
+H,+H0;
+H4+H8;
+HardwareInformation.MemorySize
+HeapAlloc
+HeapFree
+HeapReAlloc
+Height
+height
+Height
+Hlj1^
+HResult
+http://www.microsoft.com0
+HVWj<
+HwndSource_SetLayoutSize
+HwndSource_WM_SIZE
+'i' is only supported with debug builds.
+I.?>*:R>
+I\@99t
+i^<io
+IBHSRunEnd
+IBHSRunStart
+IHlinkTargetNavigateEnd
+IHlinkTargetNavigateStart
+Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^
+Ik#SL
+IMAGE
+ImageEnd
+ImageStart
+Inactive
+Information
+InitAppProxyEnd
+InitAppProxyStart
+InitDocHostEnd
+InitDocHostStart
+InitializeCriticalSectionAndSpinCount
+InitializeSListHead
+Input
+InstalledDisplayDrivers
+InterlockedFlushSList
+InterlockedPushEntrySList
+intermediate rendering error
+IntermediateRenderTargetReason
+InternalName
+InteropDeviceBitmap_AddDirtyRect
+InteropDeviceBitmap_Create
+InteropDeviceBitmap_Detach
+InteropDeviceBitmap_GetAsSoftwareBitmap
+IntersectRect
+Invalid dirty region
+invalid map<K, T> key
+Invalidated
+InvalidateRect
+InvokingBrowser
+IPersistFileLoad
+IPersistMonikerLoadEnd
+IPersistMonikerLoadStart
+IsDebuggerPresent
+IsProcessorFeaturePresent
+IsRectEmpty
+IsValidDpiAwarenessContext
+IsWindow
+IsWow64Process
+IWICColorContext_GetExifColorSpace_Proxy
+IWICColorContext_GetProfileBytes_Proxy
+IWICColorContext_GetType_Proxy
+J 9H r
+J QQVV
+j Xf;
+j Xf9
+J$;H$u
+J(QQVV
+j,^jJZ
+j@^VRP
+J<;rL
+J>f;O
+j1_j'Y
+j1_t"
+J4QQVV
+jBl@1
+jJZj,^
+K)8K(u
+K0V0[0l0
+kernel32.dll
+KERNEL32.DLL
+KERNEL32.dll
+kernel32.dll
+KeywordAnimation
+KeywordAnnotation
+KeywordDispatcher
+KeywordGeneral
+KeywordGraphics
+KeywordHeapMeter
+KeywordHosting
+KeywordInput
+KeywordLayout
+KeywordPerf
+KeywordText
+KeywordXamlBaml
+KeywordXPS
+L$ QVP
+L$$_^[3
+L$$PW
+L$$Qj
+L$$QR
+L$$SQ
+L$,_^
+L$,_^[3
+L$,QW
+L$,SQ
+L$,VWP
+L$@Qh
+L$\_^[3
+L$\QR
+L$|_^[3
+L$<_^[3
+L$0QS
+L$0VWQ
+L$4_^[3
+L$8+L$0
+L$8Qj
+L$8QV
+L$DQW
+L$H_^
+L$l^[3
+L$L^3
+L$l_^[3
+L$t_^[3
+L0!:L0 u
+LastVisiblePage
+LaunchingRestrictedProcess
+LayerEvent
+LayoutManager
+LayoutSourceMap
+LeaveCriticalSection
+Legal_policy_statement
+LegalCopyright
+LEVL\
+LineNumber
+LinePosition
+LoadAnnotations
+Loaded
+LoadingResourceDLLEnd
+LoadingResourceDLLStart
+LoadLibraryA
+LoadLibraryExA
+LoadLibraryExW
+LoadLibraryW
+LoadResource
+LocalFree
+Location
+LockResource
+loopCounter
+LoopDurationMS
+LParam
+Lt]Z?d
+M QWVSPR
+M SVW3
+M@9?A
+m_eWindowLayerType == MilWindowLayerType::NotLayered
+m_pIDWriteGlyphRunAnalysis != 0
+M0K0I
+M4QRVW
+ManipulationEventRaised
+ManipulationReportFrame
+map/set too long
+MapViewOfFile
+mat3x2TextureTransform
+mat4x4WorldToProjection
+mat4x4WorldViewAdjTransTransform
+mat4x4WorldViewProjTransform
+mat4x4WorldViewTransform
+MaxMultisampleType
+MB).QBB
+-mCh]oC,
+MDLNxx
+MeasureAbort
+MeasureElementBegin
+MeasureElementEnd
+memcmp
+memcpy
+memmove
+memset
+MergingMenusEnd
+MergingMenusStart
+Message
+MeterTag
+MFCreateDXSurfaceBuffer
+MFCreateVideoSampleFromSurface
+Microsof
+Microsoft
+Microsoft (R) HLSL Shader Compiler 9.24.950.2656
+Microsoft Code Signing PCA 2011
+Microsoft Code Signing PCA 20110
+Microsoft Corporation
+Microsoft Corporation0
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1(0&
+Microsoft Corporation1-0+
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft-Windows-WPF/Default
+MIL FAILURE: Unexpected HRESULT 0x%08x in caller: %s
+MIL3DCalcProjected2DBounds
+MILAddRef
+MilChannel_AppendCommandData
+MilChannel_BeginCommand
+MilChannel_CloseBatch
+MilChannel_CommitChannel
+MilChannel_EndCommand
+MilChannel_GetMarshalType
+MilChannel_SetNotificationWindow
+MilChannel_SetReceiveBroadcastMessages
+MilComposition_PeekNextMessage
+MilComposition_SyncFlush
+MilComposition_WaitForNextMessage
+MilCompositionEngine_DeinitializePartitionManager
+MilCompositionEngine_EnterCompositionEngineLock
+MilCompositionEngine_ExitCompositionEngineLock
+MilCompositionEngine_GetComposedEventId
+MilCompositionEngine_InitializePartitionManager
+MilCompositionEngine_UpdateSchedulerSettings
+MilConnection_CreateChannel
+MilConnection_DestroyChannel
+MilContent_AttachToHwnd
+MilContent_DetachFromHwnd
+MILCreateEventProxy
+MILCreateFactory
+MILCreateStreamFromStreamDescriptor
+MILFactoryCreateBitmapRenderTarget
+MILFactoryCreateMediaPlayer
+MILFactoryCreateSWRenderTargetForBitmap
+MilGlyphRun_GetGlyphOutline
+MilGlyphRun_ReleasePathGeometryData
+MilInstrumentationBreak
+MILIStreamWrite
+MILLoadResource
+MILMediaCanPause
+MILMediaClose
+MILMediaGetBufferingProgress
+MILMediaGetDownloadProgress
+MILMediaGetMediaLength
+MILMediaGetNaturalHeight
+MILMediaGetNaturalWidth
+MILMediaGetPosition
+MILMediaHasAudio
+MILMediaHasVideo
+MILMediaIsBuffering
+MILMediaNeedUIFrameUpdate
+MILMediaOpen
+MILMediaProcessExitHandler
+MILMediaSetBalance
+MILMediaSetIsScrubbingEnabled
+MILMediaSetPosition
+MILMediaSetRate
+MILMediaSetVolume
+MILMediaShutdown
+MILMediaStop
+MilPlayer_Create
+MilPlayer_Process
+MILQueryInterface
+MILRelease
+MILRenderTargetBitmapClear
+MILRenderTargetBitmapGetBitmap
+MilResource_CreateCWICWrapperBitmap
+MilResource_CreateOrAddRefOnChannel
+MilResource_DuplicateHandle
+MilResource_GetRefCountOnChannel
+MilResource_ReleaseOnChannel
+MilResource_SendCommand
+MilResource_SendCommandBitmapSource
+MilResource_SendCommandMedia
+MILSwDoubleBufferedBitmapAddDirtyRect
+MILSwDoubleBufferedBitmapCreate
+MILSwDoubleBufferedBitmapGetBackBuffer
+MILSwDoubleBufferedBitmapProtectBackBuffer
+MilUnexpectedError
+MILUpdateSystemParametersInfo
+MilUtility_ArcToBezier
+MilUtility_CopyPixelBuffer
+MilUtility_GeometryGetArea
+MilUtility_GetPointAtLengthFraction
+MilUtility_GetTileBrushMapping
+MilUtility_PathGeometryBounds
+MilUtility_PathGeometryCombine
+MilUtility_PathGeometryFlatten
+MilUtility_PathGeometryHitTest
+MilUtility_PathGeometryHitTestPathGeometry
+MilUtility_PathGeometryOutline
+MilUtility_PathGeometryWiden
+MilUtility_PolygonBounds
+MilUtility_PolygonHitTest
+MilVersionCheck
+MilVisualTarget_AttachToHwnd
+MilVisualTarget_DetachFromHwnd
+MonitorFromWindow
+MsgWaitForMultipleObjects
+MSVCP140_CLR0400.dll
+MulDiv
+MultiplyAlpha
+MultiplyAlpha_NonPremultiplied
+MultiplyAlphaMask_NoTransformFromUV
+MultiplyAlphaMask_Transform_InputUV
+MultiplyByInputDiffuse
+MultiplyByInputDiffuse_NonPremultipliedInput
+MultiplyConstant
+MultiplyRadialGradientCentered
+MultiplyRadialGradientNonCentered
+MultiplyTexture_NoTransformFromUV
+MultiplyTexture_Transform_InputUV
+n < Count
+N QQSS
+N QQWW
+N Sht
+N$_^]
+N$j Q
+N$jPQ
+N(QQSS
+N,_^[]
+N@ubS
+N\QQPP
+N`j QSS
+N`jPQSS
+N<+N,
+N0@_^]
+N0L0J
+N4QQj
+N4QVS
+N8j QSS
+N8jPQSS
+Navigation
+NavigationAsyncWorkItem
+NavigationContentRendered
+NavigationEnd
+NavigationLaunchBrowser
+NavigationMode
+NavigationPageFunctionReturn
+NavigationStart
+NavigationWebResponseReceived
+NeedsRePresentOnWake
+nextafterf
+NhQQj
+Nhttp://www.microsoft.com/pkiops/crl/Microsoft%20Time-Stamp%20PCA%202010(1).crl0l
+NLj QSS
+NLjPQSS
+NLQQWW
+NlQVS
+NoDialogs
+NoHardwareAvailable
+Normal
+NpQQj
+NPQVS
+ntdll.dll
+NTQQj
+NtQuerySystemInformation
+NTQVS
+NtWQSS
+NullFunction
+O$_^[
+O0M0K
+O8PSV
+offset
+OffsetRect
+OffsetRgn
+Oh;_xr(
+ole32.dll
+OLEAUT32.dll
+OleCmdExecEnd
+OleCmdExecStart
+OleCmdQueryStatusEnd
+OleCmdQueryStatusStart
+OnStopBinding
+Opacity
+opacity
+OpacityMask
+OpacityMask_Brush_Realization
+OPCO$
+Operation
+OpQQj
+OriginalFilename
+OTQQRR
+OutOfVideoMemory
+OutpP
+Output
+OutputDebugStringW
+OXHt,N4
+p$PQQ
+p?O8v?
+P<h<l<
+P2T2d2h2p2
+PageNumber
+ParentResourcePtr
+ParsingMarkupVersionEnd
+ParsingMarkupVersionStart
+pause
+pD3DSurface->ID3DSurface() != 0
+Pd9p`
+PeekMessageW
+PenThreadPoolThreadAcquisition
+PerfElementID
+PerfEltId
+Performance_HighImpact
+Performance_LowImpact
+Performance_MedImpact
+Performance_NoImpact
+Phttp://www.microsoft.com/pkiops/certs/Microsoft%20Time-Stamp%20PCA%202010(1).crt0
+PixelShaderConstantData Data_PS;
+PixelShaderImpl
+PixelShaderImpl(
+Please check for proper Direct3D 9 installation.
+Pointer
+Position
+PostMessageW
+PostShutdown
+PPPhx
+PPPPS
+PPQQh
+PQh`j
+PQQSVW
+PQQVW
+PQRj+
+PQSVW
+PQVSWj+
+presentation error
+PresentationResults
+PRh i
+Priority
+PrivateBuild
+ProcessHeapPtr
+ProductName
+ProductVersion
+ProgressPageShown
+PropVariantClear
+PropVariantCopy
+ps_2_0
+ps_2_a
+ps_3_0
+ps_4_0_level_9_1
+ps_4_0_level_9_3
+PSj@Z
+PSPPP
+PSQQQQ
+PSQVh 
+PSSSj
+PSVhp
+ptFirstTexelRegionCenter
+ptGradOrigin
+pUnkOther==nullptr
+PVQQQQ
+PVWSh
+PWPPPS
+Q$_^[
+q$96t
+Q$9V0
+q\Q17
+Q>U0j
+QEX82q'
+QP92t
+QPCCurrentTime
+QPCExpectedPresentTime
+QPCFrequency
+QPCLastPresentationTime
+QPj@[
+QPQQV
+QQPPh3
+QQPVQW
+QQQQj
+QQSV3
+QQSVW
+QQSVW3
+QQSVWh
+QRPh 
+qsort
+QSVW3
+QSVWj
+QueryDepthSList
+QueryPerformanceCounter
+QueryPerformanceFrequency
+qXVVS
+r ;B$u';
+R0P0N
+r1?333?
+r9K4u!QQj
+RaiseException
+rC^PSQV
+ReadingAppManifestEnd
+ReadingAppManifestStart
+ReadingDeplManifestEnd
+ReadingDeplManifestStart
+ReadyStateChanged
+RealizePalette
+Reason
+RectangleEnd
+RectangleStart
+RectInRegion
+Redmond1
+RegCloseKey
+RegisterTraceGuidsW
+RegisterWindowMessageW
+RegOpenKeyExW
+RegQueryValueExW
+release and good functions must be supplied
+ReleaseDC
+ReleaseOnChannel
+ReleaseOnChannel was called on a resource that is not anymore on this channel
+ReleaseSRWLockExclusive
+RemoveAttachedHighlight
+RemoveAttachedMH
+RemoveAttachedSN
+Render
+RenderDelay
+RenderOptions_ForceSoftwareRenderingModeForProcess
+RenderOptions_IsSoftwareRenderingForcedForProcess
+RequiredVideoDriverDate
+ResetEvent
+ResizeFailed
+ResourceHandle
+ResourcePtr
+ResourceType
+ResponseID
+Result
+ReturnCode
+RGB9Rast.dll
+RGB9Rast_2.dll
+right
+RootBrowserWindowSetupEnd
+RootBrowserWindowSetupStart
+RPj#Z
+RtlCaptureStackBackTrace
+RtlClearBits
+RtlFindClearBitsAndSet
+RtlInitializeBitMap
+RtlInterlockedFlushSList
+RtlSetBits
+RtlVerifyVersionInfo
+S _^[
+s$+BH
+s(96u
+s]=t4
+S0Q0O
+S4;{,s
+S49{,v/
+sampler 
+sampleStart
+ScreenToClient
+SelectObject
+SelectPalette
+SerializeAnnotation
+SetClip
+SetEvent
+SetLastError
+SetLayeredWindowAttributes
+SetLayout
+SetMilPerfInstrumentationFlags
+SetRect
+SetRectRgn
+SetThreadDpiAwarenessContext
+SetThreadPriority
+SetUnhandledExceptionFilter
+ShaderEffect_Input
+shadowColor
+SizeofResource
+Sleep
+SleepConditionVariableCS
+SleepEx
+Software\Microsoft\Avalon.Graphics
+Software\Microsoft\Avalon.Graphics\IgnoreDwmFlushErrors
+Software\Microsoft\Avalon.Graphics\MultiAdapterSupport
+Software\Microsoft\Windows NT\CurrentVersion\Windows
+Software\Microsoft\Windows NT\CurrentVersion\WinSAT
+Software_Only_Effects
+source
+SpecularPower
+SSSPj
+SSSPj#
+SSSSj
+Start
+Start of HSC: m_actualState
+Start of HSC: m_currentInternalState
+Start of HSC: m_pendingInternalState
+Start of HSC: m_targetInternalState
+Start of HSC: m_targetState
+StartingCLREnd
+StartingCLRStart
+State
+Streams
+string too long
+StringFileInfo
+struct PixelShaderConstantData
+struct VertexShaderConstantData
+struct VertexShaderOutput
+struP
+StylusEventQueued
+surfaceSize.DoesContain(*prcSource) && surfaceSize.DoesContain(*prcDest)
+SVj0Z
+SVWj'
+SVWj)
+SVWj@
+SVWj@3
+SVWPPPP
+SVWPPPPQ
+SVWu#h
+SVWxR
+SWVRPQh
+system
+SystemIdle
+SystemParametersInfoW
+SystemTimeToFileTime
+t 9w4t
+t!j<Q
+t!j1Q
+t!j2Q
+t!j7Q
+t!j8Q
+T$$9{t
+T$$PRQ
+t$$PV
+T$$QQ
+T$$RP
+T$$RQ
+T$(PV
+T$,9PTu
+T$,RP
+T$,WRQ
+t$@+w
+t$@PPV
+t$@Wj
+T$<+T$(
+t$<PW
+T$D9T$@t
+T$hRQ
+t$j2Q
+t$j7Q
+t$j8Q
+T$L+QX
+t$PPV
+t$XQQ
+t&kO H
+t(9K t#9{ t
+t*SV3
+t/SSj
+T0d0q0
+t1=t4
+T2?u$F?<vZ?
+t29QDr
+t4h<I
+t9;D$
+tAPRP
+td9_xu
+technique T0
+TEMP 
+TEMP$
+TEMP(
+TEMP,
+TEMP@
+TEMP`
+TEMP|
+TEMP4
+TEMP8
+TEMPD
+TEMPd
+TEMPL
+TEMPl
+TEMPL
+TEMPP
+TEMPT
+terminate
+TerminateProcess
+TerminateThread
+TEXCOORD
+Thales TSS ESN:D082-4BFD-EEBA1%0#
+The bitmap bits moved. We cannot handle this well because we reference them
+The render thread failed unexpectedly.
+This break is due to an unexpected HRESULT in the caller, not this method.
+TickTime
+tIh0I
+TileBrush
+timeBeginPeriod
+timeEndPeriod
+Total
+TouchDownReported
+TouchMoveReported
+TouchUpReported
+tPSW3
+TraceEvent
+TraceMessage
+Transform2D
+Transform3D
+TranslateMessage
+Translation
+Tried to AddRef an object which has previously been freed (refcount went to 0).
+TryEnterCriticalSection
+tsIt<
+t-SW3
+TTBL P
+twPSj
+TypeAndName
+u Wj@j
+u$+D$
+u%QQhB
+u*kO H
+u,WPSQ
+u`95h
+u|9w\uw9w`ur
+U0S0Q
+u4h@@
+u99=,
+ucrtbase_clr0400.dll
+uHeight
+UIActivationEnd
+UIActivationStart
+ulAllocPtr
+ulNewAllocPtr
+ulOldAllocPtr
+Unexpected HRESULT in MilInstrumentation* caller
+UnexpectedPrimitiveFallback
+UnexpectedSoftwareFallback
+UnexptectedSWFallbackReason
+UnhandledExceptionFilter
+unknown error
+Unknown exception
+UnmapViewOfFile
+Unrecognized response.
+UnregisterTraceGuids
+UpdateAnnotationWithSNC
+UpdateBrowserCommandsEnd
+UpdateBrowserCommandsStart
+UpdateLayeredWindow
+UpdateLayeredWindowIndirect
+UpdateSNCWithAnnotation
+UpdateVisualState
+uPWVP
+uqf9|$
+UriOrObject
+USER32.dll
+user32.dll
+UseReferenceRasterizer
+USERProcessHandleQuota
+uu9S$t*
+UUUUUU
+uWidth
+v%WWQ
+V(j)j
+V(j2j
+V(jtj
+V,_^]
+v2j[Xf
+VarFileInfo
+VCRUNTIME140_CLR0400.dll
+vector too long
+Verbose
+VerSetConditionMask
+VersionActivateEnd
+VersionActivateStart
+VersionAttach
+VertexShaderConstantData Data_VS;
+VertexShaderImpl
+VertexShaderImpl(
+VertexShaderOutput
+VerticalOffset
+VideoMemoryBandwidth
+VideoMemorySize
+VirtualAlloc
+VirtualFree
+VirtualProtect
+VirtualQuery
+VisualCacheAlloc
+VisualCacheUpdate
+vKVW3
+vLSVW
+VMAP,
+VMAP\
+VMAP4
+VMAPl
+VPRSQ
+vQ!t$
+vQVW3
+vs_2_0
+vs_2_a
+vs_3_0
+vs_4_0_level_9_1
+vs_4_0_level_9_3
+VS_VERSION_INFO
+VTC;_
+VVPVh
+VVVPh
+VVVPj
+VVVPj|
+VWj@3
+VWj@h
+VWj@j
+VX9~h
+W PQQ
+W SQQ
+W,Rh`
+W0"2C2
+W9^Xu
+W9CdvV
+W9pXtA
+W9s(t
+W9X|v;
+WaitForMultipleObjects
+WaitForSingleObject
+WaitForSingleObjectEx
+WakeAllConditionVariable
+WARNING: MILCore: Direct3D 9 is not installed or load failed.
+WARNING: MILCore: Unable to locate Direct3DCreate9.
+Washington1
+WClientAnimRenderHandler
+WClientAppCtor
+WClientAppRun
+WClientArrange
+WClientCompileScene
+WClientCreateIRT
+WClientCreateVisual
+WClientDesktopRTCreate
+WClientDRXAlphaFlatten
+WClientDRXCommitPage
+WClientDRXConvertFont
+WClientDRXConvertImage
+WClientDRXEndDoc
+WClientDRXEndPage
+WClientDRXEnsureOM
+WClientDRXFind
+WClientDRXFlushPage
+WClientDRXGetDevMode
+WClientDRXGetPage
+WClientDRXGetPrintCap
+WClientDRXGetStream
+WClientDRXGetVisual
+WClientDRXInstantiated
+WClientDRXInvalidateView
+WClientDRXLayout
+WClientDRXLineDown
+WClientDRXLoadPrimitive
+WClientDRXOpenPackage
+WClientDRXPageDown
+WClientDRXPageJump
+WClientDRXPageLoaded
+WClientDRXPageVisible
+WClientDRXPTProvider
+WClientDRXRaster
+WClientDRXReadStream
+WClientDRXReleaseWriter
+WClientDRXSavePage
+WClientDRXSaveXps
+WClientDRXSerialization
+WClientDRXSerializeTree
+WClientDRXStartDoc
+WClientDRXStartPage
+WClientDRXStyleCreated
+WClientDRXTreeFlatten
+WClientDRXZoom
+WClientFontCache
+WClientInputMessage
+WClientInterlockedRender
+WClientLayout
+WClientMeasure
+WClientMediaRender
+WClientOnRender
+WClientParseBaml
+WClientParseFefCrInst
+WClientParseInstVisTree
+WClientParseRdrCrInFTyp
+WClientParseRdrCrInst
+WClientParseXaml
+WClientParseXamlBamlInfo
+WClientParseXml
+WClientPostRender
+WClientPotentialIRTResource
+WClientPrecomputeScene
+WClientPropParentCheck
+WClientQPCFrequency
+WClientRenderHandler
+WClientResourceBamlAssembly
+WClientResourceCacheMiss
+WClientResourceCacheNull
+WClientResourceCacheValue
+WClientResourceFind
+WClientResourceStock
+WClientScheduleRender
+WClientString
+WClientTimeManagerTick
+WClientUceCheckDeviceState
+WClientUceNotifyPresent
+WClientUcePrecompute
+WClientUcePresent
+WClientUceProcessQueue
+WClientUceRender
+WClientUceResponse
+WClientUICommitChannel
+WClientUIContextAbort
+WClientUIContextDispatch
+WClientUIContextIdle
+WClientUIContextPost
+WClientUIContextPromote
+WClientUIResponse
+wD9s t'
+weights
+WerRegisterMemoryBlock
+WEVT_TEMPLATE
+WEVTt
+WgxConnection_Create
+WgxConnection_Disconnect
+WgxConnection_SameThreadPresent
+WgxConnection_ShouldForceSoftwareForGraphicsStreamClient
+WICCreateImagingFactory_Proxy
+Width
+width
+Width
+width
+Width
+win:Info
+win:Informational
+win:Start
+win:Stop
+win:Verbose
+WindowFromDC
+WindowsCodecs.dll
+WinMainEnd
+WinMainStart
+WINMM.dll
+WorldView
+WorldViewAdjTrans
+WorldViewProj
+Wow64DisableWow64FsRedirection
+Wow64RevertWow64FsRedirection
+WParam
+WPFElementID
+wpfgfx_v0400-%d
+wpfgfx_v0400.dll
+wpfgfx_v0400.pdb
+WpfHost
+WpfHostUm
+WqVNHE
+WWWWQ
+WWWWW
+x#j h$9
+X0V0T
+X1\1`1d1h1l1p1t1x1|1
+x5F;w
+XappLauncherAppExit
+XappLauncherAppNavigated
+XappLauncherAppStartup
+Xqa{Mh2
+xSu$W
+XSVW3
+xwVt~
+y#j6Z
+y#jAZ
+y#jiZ
+y#jjZ
+y#jKZ
+y#jvZ
+y$=t4
+y%=t4
+y%jiZ
+y\=t4
+Y__^[
+y+j#Z
+y'=t4
+y-=t4
+y0jnZ
+y1jjZ
+Y2OGF
+y4jaZ
+y4jmZ
+Y9w4v/
+yCj1Z
+yCjqZ
+Yh_^[]
+y-jZZ
+yLj,Z
+yLj?Z
+yLjSZ
+ySjBZ
+yXB~-\B
+z ;B$u6;

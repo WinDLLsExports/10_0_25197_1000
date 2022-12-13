@@ -1,0 +1,111 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\mcd.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    CLASSPNP.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0006088 Import Address Table
+             1C00062A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         2F7 IoAllocateDriverObjectExtension
+                         B46 ZwDeleteKey
+                         B50 ZwEnumerateKey
+                          C1 ExAllocatePoolWithTag
+                         BB5 ZwQueryValueKey
+                          EE ExFreePoolWithTag
+                         407 IoSetHardErrorOrVerifyDevice
+                         82C RtlCharToInteger
+                         9E2 RtlUnicodeStringToAnsiString
+                         B24 ZwClose
+                         BEE ZwSetValueKey
+                         367 IoGetAttachedDeviceReference
+                         B76 ZwOpenKey
+                         307 IoBuildDeviceIoControlRequest
+                         459 IofCallDriver
+                         4D8 KeInitializeEvent
+                         590 KeWaitForSingleObject
+                          BD ExAllocatePool2
+                         303 IoAttachDeviceToDeviceStack
+                         344 IoDeleteSymbolicLink
+                         36B IoGetConfigurationInformation
+                         342 IoDeleteDevice
+                         B33 ZwCreateKey
+                         8FC RtlInitUnicodeString
+                         C57 _vsnprintf
+                         8BE RtlFreeUnicodeString
+                         6D6 ObfDereferenceObject
+                         3FE IoSetDeviceInterfaceState
+                         4C4 KeGetCurrentIrql
+                         37C IoGetDriverObjectExtension
+                         C59 _vsnwprintf
+                         8B8 RtlFreeAnsiString
+                         335 IoCreateSymbolicLink
+                         3D1 IoRegisterDeviceInterface
+                         CAA wcscmp
+
+    CLASSPNP.SYS
+             1C0006000 Import Address Table
+             1C0006218 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          3C ClassWmiCompleteRequest
+                          2A ClassReleaseRemoveLock
+                           D ClassEnableMediaChangeDetection
+                           C ClassDisableMediaChangeDetection
+                           7 ClassCompleteRequest
+                           A ClassDeleteSrbLookasideList
+                          18 ClassInitializeSrbLookasideList
+                          15 ClassInitialize
+                           8 ClassCreateDeviceObject
+                          36 ClassSetMediaChangeState
+                          3B ClassUpdateInformationInRegistry
+                          17 ClassInitializeMediaChangeDetection
+                          10 ClassGetDescriptor
+                           5 ClassClaimDevice
+                          32 ClassSendSrbSynchronous
+                           B ClassDeviceControl
+
+  Section contains the following exports for MCD.SYS
+
+    00000000 characteristics
+    C6E4D6F5 time date stamp
+        0.00 version
+           1 ordinal base
+           5 number of functions
+           5 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001050 ChangerClassAllocatePool
+          2    1 00001080 ChangerClassDebugPrint
+          3    2 000014D0 ChangerClassFreePool
+          4    3 000014F0 ChangerClassInitialize
+          5    4 00001710 ChangerClassSendSrbSynchronous
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        1000 .idata
+        1000 .pdata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        2000 .text
+        1000 GFIDS
+        1000 INIT
+        2000 PAGE
+        1000 fothk

@@ -1,0 +1,3507 @@
+                            a package.
+                            image.
+                            the image.
+        /CapabilityName:Language.Basic~~~en-US~0.0.1.0
+        /PackageName:Microsoft.Windows.Calc.Demo~6595b6144ccf1df~x86~en~1.0.0.0
+        /PackageName:Microsoft.Windows.Calc.Demo~6595b6144ccf1df~x86~en~1.0.0.0 
+        /PackageName:Microsoft.Windows.Calc.Demo~6595b6144ccf1df~x86~en~1.0.0.0 /Remove 
+        /PackagePath:C:\MyPackages\package.cab 
+        /PackagePath:C:\packages\package.cab 
+        /PackagePath:C:\test\packages /IgnoreCheck
+        /PackagePath:C:\test\packages\package.cab /PreventPending
+        /PackagePath:C:\Windows-KB000006-v1-x86-en-us.msu
+        /Source:c:\test\mount 
+        /Target:C:\test\target /CapabilityName:Language.Basic~~~en-US~0.0.1.0
+      /CapabilityName:Language.Basic~~~en-US~0.0.1.0
+      /Source:c:\test\mount 
+      Dism /Image:C:\test\offline /Export-Source /Source:C:\test\source 
+      DISM.exe /Format:List /English /Image:C:\test\offline /Get-Packages 
+      DISM.exe /Format:Table /Image:C:\test\offline /Get-Packages 
+      DISM.exe /Image:c:\offline /Cleanup-Image /RestoreHealth 
+      DISM.exe /Image:c:\offline /Disable-Feature /FeatureName:Calc 
+      DISM.exe /Image:c:\offline /Enable-Feature /FeatureName:Calc 
+      DISM.exe /Image:c:\offline /Enable-Feature /FeatureName:Feature 
+      DISM.exe /Image:C:\test\offline /Add-Package 
+      DISM.exe /Image:C:\test\offline /Cleanup-Image /AnalyzeComponentStore
+      DISM.exe /Image:C:\test\offline /Cleanup-Image /RevertPendingActions 
+      DISM.exe /Image:C:\test\offline /Cleanup-Image /spsuperseded /hidesp 
+      DISM.exe /Image:C:\test\offline /Cleanup-Image /StartComponentCleanup
+      DISM.exe /Image:C:\test\offline /Get-FeatureInfo /FeatureName:Feature 
+      DISM.exe /Image:C:\test\offline /Get-FeatureInfo /FeatureName:XPS-Viewer 
+      DISM.exe /Image:C:\test\offline /Get-Features 
+      DISM.exe /Image:C:\test\offline /Get-Features /Format:List 
+      DISM.exe /Image:C:\test\offline /Get-Features /Format:Table 
+      DISM.exe /Image:C:\test\offline /Get-PackageInfo 
+      DISM.exe /Image:C:\test\offline /Get-Packages 
+      DISM.exe /Image:C:\test\offline /Remove-Package 
+      DISM.exe /Online /Add-Capability 
+      DISM.exe /Online /Cleanup-Image /ScanHealth
+      DISM.exe /Online /Disable-Feature /FeatureName:Hearts 
+      DISM.exe /Online /Disable-ReservedStorage 
+      DISM.exe /Online /Enable-Feature /FeatureName:Hearts /All 
+      DISM.exe /Online /Enable-ReservedStorage 
+      DISM.exe /Online /Get-Capabilities 
+      DISM.exe /Online /Get-CapabilityInfo 
+      DISM.exe /Online /Get-ReservedStorageState 
+      DISM.exe /Online /Remove-Capability 
+      DISM.exe /Online /Set-ReservedStorageState /State:Disabled
+      DISM.exe /Online /Set-ReservedStorageState /State:Enabled
+    %s : %s
+    Example: 
+    Examples: 
+  .cab file should point to the original source of the package, not to where 
+  /Format option to specify a table or list format for the output. If /Format 
+  /Get-FeatureInfo and can be restored and enabled using /Enable-Feature with the 
+  /PackageName and /PackagePath can be used to find a specific feature in a 
+  /PackagePath can point to either a .cab file or a folder. The path to the 
+  /Source option. 
+  /StartComponentCleanup with /ResetBase operation is completed. 
+  /Target:<target> [/IncludeImageCapabilities] 
+  [/LimitAccess] 
+  [/PackageName:<name_in_image>] 
+  [/PackagePath:<path_to_package>] [/PackageName:<name_in_image>] 
+  [/Source:<source>] [/LimitAccess] [/All] 
+  {/PackagePath:<path_to_package> | /PackageName:<name_in_image>} 
+  a .cab file, a .msu file, or a folder. 
+  actions. If online actions are pending, the resources remain in the image and 
+  Add one or more capabilities to an image.
+  add the capability. Multiple /Source arguments can be used. 
+  add. Multiple /CapabilityName arguments can be used. 
+  Adds one or more packages to an image. /PackagePath can point to either 
+  applicability checks fail.
+  by a failed process and whether the corruption can be repaired. 
+  Current version: [%s]
+  Disables reserved storage.
+  Disables the feature specified by the FeatureName command argument. 
+  Displays information about a specific feature. Use /Get-Features to find the 
+  Displays information about a specific package. 
+  Displays information about all features found in a specific package. If you 
+  Displays information about all packages in the image.  Use the /Format option 
+  do not specify a package name or path, all features in the image will be 
+  Enables reserved storage.
+  Enables the feature specified by the FeatureName command argument. 
+  Export a set of capabilities into a new repository. 
+  export. Multiple /CapabilityName arguments can be used. 
+  For more information about the WinSxS report and how to use the information
+  Get capabilities in the image.
+  Get information of a capability in the image.
+  get the capabilities. Multiple /Source arguments can be used. 
+  Gets the current state of reserved storage.
+  https://go.microsoft.com/fwlink/?LinkId=243077. 
+  https://go.microsoft.com/fwlink/?LinkId=293367. 
+  image. The feature will be listed as 'Disabled with Payload Removed' when using 
+  image. Use the /Source argument to specify the location of the files needed to 
+  in the Installed Updates for the operating system. 
+  Initial version: [%s]
+  is not specified the option is formatted as a list. 
+  listed. /PackagePath can point to either a .cab file or a folder. Use the 
+  Multiple /FeatureName arguments can be used if the features are components in 
+  name of the feature in the image. Feature names are case-sensitive. 
+  new repository. 
+  next automatic maintenance. 
+  of a service pack. Use /HideSP to prevent the service pack from being listed 
+  operation is completed. 
+  Otherwise, use /PackageName to specify the parent package of the feature. 
+  package. 
+  process pending actions before the package can be removed. 
+  provided in the report, see
+  Remove a capability from one image.
+  Removes one or more packages unless there are online, unprocessed pending 
+  restore the feature. Multiple /Source arguments can be used. 
+  Sets the state of reserved storage.
+  specified, the output is formatted as a list. 
+  specifying a source location, see 
+  superseded components, which can further reduce the component store size.
+  system-recovery scenario to perform recovery operations on a Windows image 
+  that did not boot. 
+  the file is installed on the image. 
+  the package or Windows image has pending online actions. 
+  the package state is set to Uninstall Requested. You must boot the image to 
+  the same parent package. 
+  the size of the component store. Use /ResetBase to reset the base of 
+  then perform repair operations automatically. 
+  to specify a table or list format for the output.  If /Format is not 
+  Use /All to enable all parent features of the specified feature. 
+  Use /AnalyzeComponentStore to create a report of the WinSxS component store.
+  Use /CheckHealth to check whether the image has been flagged as corrupted 
+  Use /Defer with /ResetBase to defer long-running cleanup operations to the 
+  Use /LimitAccess to prevent DISM from contacting WU/WSUS. 
+  Use /Remove to remove a feature without removing the feature's manifest from the 
+  Use /RestoreHealth to scan the image for component store corruption, and 
+  Use /ScanHealth to scan the image for component store corruption. 
+  Use /Source with /RestoreHealth to specify the location of known good 
+  Use /SPSuperseded to remove any backup files created during the installation 
+  Use /StartComponentCleanup to clean up the superseded components and reduce
+  Use the /CapabilityName to specify the capability you would like to 
+  Use the /IgnoreCheck switch to skip installation of the package if the 
+  Use the /IncludeImageCapabilities to export image capabilities into the 
+  Use the /PreventPending switch to skip the installation of the package if 
+  Use the /Source argument to specify the location of the files needed to 
+  Use the /Source argument to specify the location of the source repository. 
+  Use the /Target to specify the location of the new repository. 
+  versions of files that can be used for the repair. For more information on 
+  WARNING!  The installed Windows Updates cannot be uninstalled after the 
+  WARNING! The service pack cannot be uninstalled after the /SPSuperseded 
+  WARNING! You should use the /RevertPendingActions option only in a 
+  You can restore and enable a feature that has previously been removed from the 
+  You cannot use this command to get package information for .msu files. 
+  You cannot use this command to remove .msu files. 
+  You do not have to specify the /PackageName if it is the Windows Foundation Package. 
+ %ld bytes
+ [/LimitAccess] 
+ A^_^
+ A^_^][
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ Error in operation: %s (CBS HRESULT=0x%x)
+ FZ6{M
+ get_CleanupSize: Invalid parameter for get_CleanupSize
+ H3E H3E
+ http://www.microsoft.com/windows0
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!6`/}D
+!fExisted
+!This program cannot be run in DOS mode.
+"Microsoft Window
+"Removed Service Pack backup files.
+"WIMSetTemporaryPath failed!"
+#0X$*
+#comment
+#document
+#text
+#The component store is repairable.
+#wGt;
+#wIt=
+#wJt>
+#wLt@
+#wNtB
+$$H9p
+$(No features found for this package)
+%%-%ds
+%%-%ds %c 
+%04d-%02d-%02d %02d:%02d:%02d
+%1: %2 Error: 0x%3!x!
+%Component Store (WinSxS) information:1Windows Explorer Reported Size of Component Store
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%u)\%hs!%p: 
+%ProgramFiles%
+%s %c 
+%s %s
+%s : %s
+'%s' attribute not specified for <%s>.
+%s must be the first provider option
+%s%ld.%02ld %s
+%s%s%s
+%s%s%s%s
+%s%s%s%s%s
+%S:%d
+%s:%s
+%s\%s
+%s\%s : %s
+%s\%s.mui
+%s\%s\%s
+%s\%s\%s.mui
+%s~%s~%s~~%s
+%u.%u.%u.%u
+&Z}$Jg
+&Z}$Jg!
+&Z}$Jgc
+(*m_State.ParseState.pfnCompareSpecialString)(&m_State.ParseState, Extent, &ss, pResult, 0)
+(_^][
+(`+F&
+(A^_^[
+(caller: %p) 
+(D$0A
+(D$0f
+(D$0H
+(D$0L
+(D$PH
+(D$PL
+(Destination->Buffer != 0) || (Destination->MaximumLength == 0)
+(DestinationMaximumLength == 0) || (DestinationBuffer != 0)
+(DynamicBuffer == 0) || (DynamicBuffer->Length == 0)
+(FixedSizeBuffer != 0) || (DynamicBuffer != 0)
+(Flags & ((0x00000002) | (0x00000004))) != ((0x00000002) | (0x00000004))
+(H;>t0H
+(LocationHeader->ulFlags & ~((0x00000001) | (0x00000002) | (0x00000003))) == 0
+(NamespaceURI == 0) || RtlIsLUtf8StringValid(NamespaceURI)
+(No capability found)
+(No component store corruption detected.
+(No custom properties found)
+(No packages found)WThe operation completed. Revert of pending actions will be attempted after the reboot.
+(Params->InputType == Windows::Microdom::Rtl::CreateMicrodomSource::Binary) || (Params->InputType == Windows::Microdom::Rtl::CreateMicrodomSource::Xml)
+(Params->SourceType == Windows::Microdom::Rtl::CreateMicrodomSource::Stream) || (Params->SourceType == Windows::Microdom::Rtl::CreateMicrodomSource::BlobProvider) || (Params->SourceType == Windows::Microdom::Rtl::CreateMicrodomSource::Blob)
+(Properties.Elements != 0) && (Results.Elements != 0)
+(SourceCount == 0) || (Sources != 0)
+(t$PH
+(t$PI
+(The component store cannot be repaired.
+(ulElementType == (0x2)) || (ulElementType == (0x3)) || (ulElementType == (0x5)) || (ulElementType == (0x1)) || (ulElementType == (0x6)) || (ulElementType == (0x7)) || (ulElementType == (0x4))
+)t$PH
+***   Source File: %s, line %ld
+*** Assertion failed: %s
+*.aggregatedmetadata.cab
+*.outer.aggregatedmetadata.cab
+*ppvAlloc = RtlAllocateHeap((((PPEB)__readgsqword(((LONG)(LONG_PTR)&(((TEB *)0)->ProcessEnvironmentBlock))))->ProcessHeap), 0, cb)
+,0ZI95oHPMpSW35NIklbSK+HW99wyX1bwfCwADN2BDhI=0Z
+.?AU?$CAtlValidateModuleConfiguration@$00VCCBSProviderModule@@@ATL@@
+.?AU_ATL_MODULE70@ATL@@
+.?AUICbsUIHandler@@
+.?AUIClassFactory@@
+.?AUIDeploymentProgress@@
+.?AUIDismCapability@@
+.?AUIDismCapabilityCollection@@
+.?AUIDismCommand@@
+.?AUIDismCommandCollection@@
+.?AUIDismComponentStoreReport@@
+.?AUIDismHelpItem@@
+.?AUIDismHelpItemCollection@@
+.?AUIDismItemManager@@
+.?AUIDismMsuPackage@@
+.?AUIDismObject@@
+.?AUIDismPackage@@
+.?AUIDismPackage2@@
+.?AUIDismPackage3@@
+.?AUIDismPackage4@@
+.?AUIDismPackageCollection@@
+.?AUIDismPackageFeature@@
+.?AUIDismPackageFeature2@@
+.?AUIDismPackageFeatureCollection@@
+.?AUIDismPackageManager@@
+.?AUIDismPackageManager2@@
+.?AUIDismPackageManager3@@
+.?AUIDismPackageManager4@@
+.?AUIDismPackageManager5@@
+.?AUIDismPackageManager6@@
+.?AUIDismPackageManager7@@
+.?AUIDismProperty@@
+.?AUIDismPropertyCollection@@
+.?AUIDismProvider@@
+.?AUIDismReserveManager@@
+.?AUIDismServicePackScavenge@@
+.?AUIDismServicingProvider@@
+.?AUIDismSupportCommands@@
+.?AUIDismSupportUnattend@@
+.?AUIDismXmlPackageManager@@
+.?AUIDispatch@@
+.?AUIEnumVARIANT@@
+.?AUISupportErrorInfo@@
+.?AUIUnknown@@
+.?AV?$CAtlDllModuleT@VCCBSProviderModule@@@ATL@@
+.?AV?$CAtlModuleT@VCCBSProviderModule@@@ATL@@
+.?AV?$CComAggObject@VCDISMPackageManager@@@ATL@@
+.?AV?$CComCoClass@VCComponentStoreReport@@$1?CLSID_DismComponentStoreReport@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCapability@@$1?CLSID_DismCapability@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCapabilityCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCommand@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCommandCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItem@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItemCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMPackage@@$1?CLSID_DismPackage@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMPackageCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMPackageFeature@@$1?CLSID_DismPackageFeature@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMPackageFeatureCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMPackageManager@@$1?CLSID_DismPackageManager@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDismProperty@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDismPropertyCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCMsuPackage@@$1?CLSID_DismMsuPackage@@3U_GUID@@B@ATL@@
+.?AV?$CComContainedObject@VCDISMPackageManager@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCapability@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackage@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackageFeature@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismProperty@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCapability@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackage@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackageFeature@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismProperty@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@VCComponentStoreReport@@@ATL@@
+.?AV?$CComObject@VCDISMCapability@@@ATL@@
+.?AV?$CComObject@VCDISMCapabilityCollection@@@ATL@@
+.?AV?$CComObject@VCDISMCommand@@@ATL@@
+.?AV?$CComObject@VCDISMCommandCollection@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItem@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItemCollection@@@ATL@@
+.?AV?$CComObject@VCDISMPackage@@@ATL@@
+.?AV?$CComObject@VCDISMPackageCollection@@@ATL@@
+.?AV?$CComObject@VCDISMPackageFeature@@@ATL@@
+.?AV?$CComObject@VCDISMPackageFeatureCollection@@@ATL@@
+.?AV?$CComObject@VCDISMPackageManager@@@ATL@@
+.?AV?$CComObject@VCDismProperty@@@ATL@@
+.?AV?$CComObject@VCDismPropertyCollection@@@ATL@@
+.?AV?$CComObject@VCMsuPackage@@@ATL@@
+.?AV?$CComObjectCached@VCComClassFactory@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComMultiThreadModelNoCS@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismCapabilityCollection@@$1?IID_IDismCapabilityCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@@std@@@std@@PEAUIDismCapability@@U?$_CopyItfFromAdaptItf@UIDismCapability@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCapability@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@PEAUIDismCommand@@U?$_CopyItfFromAdaptItf@UIDismCommand@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@PEAUIDismHelpItem@@U?$_CopyItfFromAdaptItf@UIDismHelpItem@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismPackageCollection@@$1?IID_IDismPackageCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@@std@@@std@@PEAUIDismPackage@@U?$_CopyItfFromAdaptItf@UIDismPackage@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackage@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismPackageFeatureCollection@@$1?IID_IDismPackageFeatureCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@@std@@@std@@PEAUIDismPackageFeature@@U?$_CopyItfFromAdaptItf@UIDismPackageFeature@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackageFeature@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismPropertyCollection@@$1?IID_IDismPropertyCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@@std@@@std@@PEAUIDismProperty@@U?$_CopyItfFromAdaptItf@UIDismProperty@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismProperty@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$IDispatchImpl@UIDismCapability@@$1?IID_IDismCapability@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$00VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismCapabilityCollection@@$1?IID_IDismCapabilityCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismComponentStoreReport@@$1?IID_IDismComponentStoreReport@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismItemManager@@$1?_GUID_f316031b_3c98_4f20_b9cb_a3b8702dddd8@@3U__s_GUID@@B$1?LIBID_CBSProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismMsuPackage@@$1?IID_IDismMsuPackage@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismPackage4@@$1?IID_IDismPackage4@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$00VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismPackageCollection@@$1?IID_IDismPackageCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismPackageFeature2@@$1?IID_IDismPackageFeature2@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismPackageFeatureCollection@@$1?IID_IDismPackageFeatureCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismPackageManager7@@$1?IID_IDismPackageManager7@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismPropertyCollection@@$1?IID_IDismPropertyCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismProvider@@$1?_GUID_33f93018_edb7_4092_978a_4b37d5dfb1c0@@3U__s_GUID@@B$1?LIBID_CBSProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismReserveManager@@$1?_GUID_68637347_438d_4c96_ad5b_966a5099eedf@@3U__s_GUID@@B$1?LIBID_CBSProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismServicePackScavenge@@$1?IID_IDismServicePackScavenge@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismSupportCommands@@$1?_GUID_7234ec82_c68b_4c4e_ba1d_d333f5b87b37@@3U__s_GUID@@B$1?LIBID_CBSProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismSupportUnattend@@$1?_GUID_dadad7bb_2b1d_4edb_9014_b1912e1a2e3d@@3U__s_GUID@@B$1?LIBID_CBSProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismXmlPackageManager@@$1?IID_IDismXmlPackageManager@@3U_GUID@@B$1?LIBID_CBSProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCapability@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCapability@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackage@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackage@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismPackageFeature@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismPackageFeature@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismProperty@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismProperty@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AVbad_alloc@std@@
+.?AVCAtlException@ATL@@
+.?AVCAtlModule@ATL@@
+.?AVCCbsConUIHandler@@
+.?AVCCBSProviderModule@@
+.?AVCComClassFactory@ATL@@
+.?AVCComObjectRootBase@ATL@@
+.?AVCComponentStoreReport@@
+.?AVCDISMCapability@@
+.?AVCDISMCapabilityCollection@@
+.?AVCDISMCommand@@
+.?AVCDISMCommandCollection@@
+.?AVCDISMHelpItem@@
+.?AVCDISMHelpItemCollection@@
+.?AVCDISMPackage@@
+.?AVCDISMPackageCollection@@
+.?AVCDISMPackageFeature@@
+.?AVCDISMPackageFeatureCollection@@
+.?AVCDISMPackageManager@@
+.?AVCDismProperty@@
+.?AVCDismPropertyCollection@@
+.?AVCMsuPackage@@
+.?AVCPackageManagerCLIHandler@@
+.?AVCPackageManagerUnattendHandler@@
+.?AVCUpdateagentProgress@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.\%s.mui
+.\%s\%s.mui
+.00cfg
+.CRT$XCA
+.CRT$XCC
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.data
+.data$brc
+.data$r$brc
+.data$rs$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gehcont
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$voltmd
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.The restore operation completed successfully.
+.xdata
+.xdata$x
+/7F&5h
+/Add-Capability /CapabilityName:<name_in_image> [/Source:<source>] 
+/Add-Package /PackagePath:<path_to_package> [/IgnoreCheck] [/PreventPending]
+/Cleanup-Image /AnalyzeComponentStore 
+/Cleanup-Image /RevertPendingActions 
+/Cleanup-Image /spsuperseded [/hidesp] 
+/Cleanup-Image /StartComponentCleanup [/ResetBase [/Defer]]
+/Cleanup-Image {/CheckHealth | /ScanHealth | /RestoreHealth} 
+/Disable-Feature /FeatureName:<name_in_image> [/PackageName:<name_in_image>] [/Remove] 
+/Disable-ReservedStorage 
+/Enable-Feature /FeatureName:<name_in_image> [/PackageName:<name_in_image>] 
+/Enable-ReservedStorage 
+/Export-Source /CapabilityName:<name_in_image> /Source:<source> 
+/Get-Capabilities [/Source:<source>] [/LimitAccess] 
+/Get-CapabilityInfo /CapabilityName:<name_in_image> [/LimitAccess] 
+/Get-FeatureInfo /FeatureName:<name_in_image> 
+/Get-Features [/Format:<output_format>] [/PackagePath:<path_to_package>] 
+/Get-PackageInfo
+/Get-Packages [/Format:<output_format>] 
+/Get-ReservedStorageState 
+/Remove-Capability /CapabilityName:<name_in_image> 
+/Remove-Package {/PackagePath:<path_to_package> | /PackageName:<name_in_image>}
+/Set-ReservedStorageState /State:<state>
+::BUCL::Rtl::Add<SIZE_T>( *pcElements, 10, NewCapacity)
+::BUCL::Rtl::Add<SIZE_T>( cElements, 10, NewCapacity)
+::RtlIsLBlobValid(Blob)
+::RtlIsLBlobValid(Data)
+::RtlIsLBlobValid(Destination)
+::RtlIsLBlobValid(Source)
+::RtlIsLUtf8StringValid(&Sources[i])
+::RtlIsLUtf8StringValid(Candidates[i])
+::RtlIsLUtf8StringValid(Destination)
+::RtlIsLUtf8StringValid(Source)
+::RtlIsLUtf8StringValid(String)
+::RtlIsLUtf8StringValid(StringIn)
+::RtlXmlExtentToUtf8String( 0, &m_State.ParseState.RawTokenState, &Src, TempString.GetMutablePointer(), &cRequired)
+:MdLct&H
+:MdSpt&H
+:MdSptAH
+;@8:t
+??_V@YAXPEAX@Z
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+??3@YAXPEAX@Z
+?MdDtt)H
+?terminate@@YAXXZ
+?what@exception@@UEBAPEBDXZ
+?wMtD
+?wOtF
+?wQtH
+?wStJ
+@.data
+@.didat
+@.reloc
+@5>2c
+@8|$0u
+@8t$T
+@8xoA
+@8y(t
+@A\_^
+@A^_^
+@A^_^[]
+@A^A]_
+@A_A]A\_^[]
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_^
+@A_A^A]
+@A_A^A]A\_^]
+@Foundation
+@OSProduct
+@Removing backup files created during service pack installation.
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWATAVH
+@SUVWAVAWH
+@SUVWAVH
+@SUVWH
+@SVWATAUAVAWH
+@SVWATAVAWH
+@SVWAVAWH
+@SVWH
+@USVWATAUAVAWH
+@USVWATAUAVH
+@USVWATAUAWH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVAWH
+@USVWAVH
+@USVWAWH
+@USVWH
+@USWATAUAVAWH
+@USWH
+@UVWATAUAVAWH
+@UVWH
+@UWAVH
+@VWATAVAWH
+@VWATH
+@VWAVH
+@WAVAWH
+[%hs(%hs)]
+[%hs]
+\$ A;
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWATAVH
+\$ UVWAVAWH
+\$ UVWH
+\$ VWATAVAWH
+\$ VWAVH
+\$ WH
+\$(E3
+\$@E3
+\$`+C
+\$8I!
+\$h9{
+\$hH!\$XH
+\$PI;
+\$px I+
+\$px#H+
+\\?\GLOBALROOT
+\\?\UNC
+\\?\UNC\
+\\?\Volume{
+\cbscore.dll
+\Device
+\Device\Harddisk
+\Device\HarddiskVolume
+\Implemented Categories
+\Microsoft\Windows NT\CurrentVersion\WinPE
+\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\
+\Required Categories
+\ssshim.dll
+\SysArm32
+\System32
+\System32\config\components
+\System32\NtDll.dll
+\System32\SsShim.dll
+\SysWOW64
+\Temp
+\Winsxs\backup
+\Winsxs\ManifestCache
+\winsxs\pending.xml
+]gH!]
+]H!T$ L
+]H9\$8t%eH
+]WI9]
+^0\0Z
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+__RTDynamicCast
+__rv.NewCursorValue != 0
+__rv.UcsCharacter != (0xffffffff)
+_amsg_exit
+_callnewh
+_CxxThrowException
+_errno
+_initterm
+_lock
+_onexit
+_purecall
+_T("Failed to get procedure address for UninstallWindows.")
+_ultow_s
+_unlock
+_vscwprintf
+_vsnwprintf
+_wcsicmp
+_wcslwr_s
+_wcsnicmp
+_wcstoui64
+_wtoi
+_wtoi64
+_XcptFilter
+`.rdata
+`A^_^
+`A^_^[]
+`A^_^][
+`A^A\_^]
+`A__^[]
+`A_A^_
+`A_A^_^[
+`A_A^_^]
+`A_A^A\_^[]
+`A_A^A\_^][
+`A_A^A]_^[]
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+{ AVH
+{"ModuleID":"LocalServicingOffline"}
+{"ModuleID":"LocalServicingOnline"}
+{(I!S
+{8D8{@uXL9?u$E3
+|$ 9X
+|$ AVH
+|$ E3
+|$ UATAUAVAWH
+|$ UAVAWH
+|$ UH
+|$(I;
+|$@H9y0
+|$`H;
+|$0E3
+|$0fE
+|$8H!|$@L
+|$dI;
+|$PE3
+|$PH!t$xI
+|$X#t
+|$X%tAA
+|$X\u
+|$XNu1A
+|$X'u%A
+|D.\u
+|QwzVC
+}0H+}(H
+}MO,BP
+~HL9V@t
++wAts
+<----- Ending corruption detect/repair info ----->
+<----- Starting corruption detect/repair info ----->
+<%s> is not a valid child node of <%s>.
+<servicing> node not found. Nothing to do.
+<unavailable>
+=L9o<
+>MdDlt&H
+040904B0
+0A^^[
+0A^_^
+0A_A^^
+0A_A^_
+0A_A^_^[
+0A_A^_^]
+0A_A^A\
+0A_A^A\^[
+0A_A^A\_^
+0A_A^A\_^][
+0A_A^A]A\_
+0A_A^A]A\_^]
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+140528173333Z
+220630175940Z
+230915175940Z0p1
+231093+4715690
+290528174333Z0}1
+3http://www.microsoft.com/pkiops/Docs/Repository.htm0
+5Microsoft Development Root Certificate Authority 20140
+8#u#H
+8]ADismPackageW
+8A^_^[
+8A^A\_^][
+8A_A^A]A\_^[]
+8aMDismMsuPackageWW,
+8MdHdt&H
+9\$0|
+9]ov,H
+9{ v,E3
+9|$Pu4H
+9>|\H
+9>vSH
+90t:H
+9A98uCA9x
+9EouXH
+9Hu5H
+9qPvhE3
+9s(tOD
+9u8uNH
+9yPvh
+A argument must be specified for the command(%s).
+A feature cannot be specified in this context.
+A required parent feature may not be enabled. You can use the /enable-feature /all option to automatically enable each parent feature from the following list. If the parent feature(s) are already enabled, refer to the log file for further diagnostics.
+A Windows capability name was not recognized.
+A Windows feature name was not recognized.
+A^_^[]
+A^_^][
+A^A\]
+A^A\_^[
+A^A\_^]
+A^A]A\_]
+A^A]A\_^
+A^A]A\_^[]
+A_A]A\_^
+A_A]A\_^[
+A_A^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[
+A_A^A\_^[]
+A_A^A]
+A_A^A]_]
+A_A^A]_^[
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_[
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A0D!b
+A0D!z
+A8~8t
+A8OituH
+A8OjtxH
+A8pft A8pgu
+A8phu
+A8pku
+A8ppu
+A8pqt
+A8v[u
+A8v\u
+A8wot
+A8wot#=
+A8wtt
+A9^@u
+A9Btu
+A9Bxu
+Access denied to %1!s!. The specified package is not a type that can be modified.
+Access denied to %s. The specified package is not a type that can be modified.
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+action
+Actual Size of Component Store
+Add Package
+Add this package to a running operating system using the /Online option.
+AddAccessAllowedAceEx
+add-capability
+Add-Capability)Add one or more capabilities to an image.
+Adding package %1!s!
+add-package
+Add-Package
+address family not supported
+address in use
+address not available
+address_family_not_supported
+address_in_use
+address_not_available
+Adds packages to the image.
+AdjustTokenPrivileges
+ADVAPI32.dll
+advapi32.dll
+All the packages will be processed again.
+already connected
+already_connected
+An error occured clearing the pending actions from the image.
+An error occured getting the state of reserved storage.
+An error occured while enabling reserved storage.
+An error occurred - %1 Error: 0x%2!x!
+An error occurred applying the Unattend.xml file from the .msu package.
+An error occurred creating a folder within the temporary directory.
+An error occurred finalizing changes to the image.
+An error occurred reverting the pending actions from the image.
+An error occurred trying to open - %1 Error: 0x%2!x!
+An error occurred while expanding the .msu package into the temporary folder, %1!s!. 
+An error occurred while processing %1. The install state is unknown or invalid. 
+An error occurred while processing %1. The specified path was not found. 
+An error occurred while processing the packages specified on the command-line.
+An error occurred while trying to get the name of a specified package.
+An error occurred while trying to get the state of a specified package.
+An error occurred while trying to open the Windows Foundation Package as the default package. 
+An invalid number of packages were found on the command line.
+analyzecomponentstore
+api-ms-win-core-file-l1-2-2.dll
+API-MS-Win-Core-LocalRegistry-L1-1-0.dll
+APPID
+Applicable
+argument list too long
+argument out of domain
+assemblyIdentity
+Assignment of progress callback object to deployment session failed.
+ATAVAWH
+ATL$__a
+ATL$__m
+ATL$__z
+attempt to get non-existent array element.
+Attempting install from source location [%s]. Full path [%s].
+Attempting to delete [%s] registry key.
+Attempting to route to appropriate command handler.
+ATTLIST
+AUAVAWH
+AVAWH
+Backups and Disabled Features
+bad address
+bad allocation
+bad file descriptor
+bad message
+bad_address
+bad_file_descriptor
+bCBSProviderLibWW
+Blob->Buffer = (PUCHAR)((*RtlAllocateStringRoutine)(Bytes))
+Bonecore\base\wcp\rtllib\win32lib\pathwin32_library.cpp
+BP9Cl
+broken pipe
+BUCL::Rtl::Add(cbReturnSize, cbThisSize, cbReturnSize)
+BUCL::Rtl::Add(pCachedInfo->m_ulChildCount, pCachedInfo->m_ulAttributeCount, cNecessary)
+BUCL::Rtl::Add<SIZE_T>( cbNecessary, Iter.Key.Length, sizeof(UCHAR), cbNecessary)
+BUCL::Rtl::Add<SIZE_T>( sizeof(MICRODOM_HEADER), cbStringPoolSize, cbDomLayoutSize, cbPositionDataSize, cbDoctypeDataSize, cbRequiredSize)
+BUCL::Rtl::Add<SIZE_T>(DataLength, OldLength, TempSize)
+BUCL::Rtl::AddInPlaceWithOverflowCheck(&cbRequired, (*EncodingSizer)(ucsch))
+BUCL::Rtl::AddInPlaceWithOverflowCheck(&MaximumLength, Sources[i].Length)
+BUCL::Rtl::ConvertInteger( ((ULONG_PTR)pvWriteCursor) - ((ULONG_PTR)pHeader), pHeader->TotalSize)
+BUCL::Rtl::ConvertInteger(Pairs.Length, pHeader->TotalCount)
+BUCL::Rtl::ConvertInteger(pObject->m_cChildren, pDocument->usChildNodes)
+BUCL::Rtl::ConvertInteger(WriteBlock.Length, pHeader->ulOffsetToDoctypeData)
+BUCL::Rtl::ConvertInteger(WriteBlock.Length, pHeader->ulOffsetToDomLayout)
+BUCL::Rtl::ConvertInteger(WriteBlock.Length, pHeader->ulOffsetToPositionData)
+BUCL::Rtl::ConvertInteger(WriteBlock.Length, pHeader->ulOffsetToStringPool)
+BUCL::Rtl::ConvertInteger(WriteBlock.Length, pHeader->ulTotalSize)
+BUCL::Rtl::Increment(m_NextStringId)
+BUCL::Rtl::Multiply(WorkingBufferSize, MultiplicativeGrowthFactor, WorkingBufferSize)
+BUCL::Rtl::QuickSort(Pairs, CompareStringSlot)
+bytes
+C D8U
+C E90
+C@H!CHH!CPH!CXH!C`H!ChH!CpH!CxH
+C\9BDu
+C`9BLt
+C9fD9?u,
+Cache and Temporary Data
+CallContext:[%hs] 
+Calling CoCreateInstance to Create CbsSession
+Calling into CBS through a %s interface to %s
+calloc
+Cannot remove packages using MSU files.
+Cannot specify /Add-Package value and /PackagePath value together.
+Cannot specify /Disable-Feature value and /FeatureName value together.
+Cannot specify /Enable-Feature value and /FeatureName value together.
+Cannot specify /Remove-Package value and /PackagePath value together.
+Cannot specify /revertpendingactions option and /spsuperseded option together.
+Cannot specify /source or /limitaccess without /restorehealth.
+Cannot specify a feature name in this context.
+Cannot specify a package name in this context.
+Cannot specify a package path in this context.
+Cannot specify a value for the command "%s".
+Cannot specify a value for the command %s.
+Cannot specify any two of /checkimage, /restoreimage, /scanimage options together.
+Cannot specify more than one package for this command.
+Cannot specify update package (.msu) files with this command.
+Capability Identity
+Capability information:
+Capability listing:
+capabilityname
+cbRequiredSize <= BUCL::CMaximumInteger<ULONG>::Value
+CBS AddSource failed with HRESULT=0x%x!
+CBS GetSessionId failed!
+CBS has requested a shutdown.
+CBS is being initialized for online use. More information about CBS actions can be located at: %%windir%%\logs\CBS\CBS.log
+CBS session options=0x%x!
+cbscore.dll
+CbsCoreFinalize
+CbsCoreInitialize
+CbsInstallStateAbsent
+CbsInstallStateCancel
+CbsInstallStateDefault
+CbsInstallStateInstalled
+CbsInstallStateInstallRequested
+CbsInstallStatePartiallyInstalled
+CbsInstallStatePermanent
+CbsInstallStateResolved
+CbsInstallStateResolving
+CbsInstallStateStaged
+CbsInstallStateStaging
+CbsInstallStateSuperseded
+CbsInstallStateUninstallRequested
+CbsInvalidStateInstalled
+CbsInvalidStatePermanent
+CbsInvalidStateResolved
+CbsInvalidStateStaged
+CBSProvider
+CBSProvider 1.0 Type LibraryWW
+CBSProvider is not supported when running DISM online in Windows PE
+CbsProvider.dll
+CBSProvider.dll
+CBSProvider.DLL
+CBSProvider.pdb
+CCbsConUIHandler::Error
+CCbsConUIHandler::Initialize
+CCBSFormatter::FormatFeatureForSingleOutput
+CCBSFormatter::FormatFeatureInstallState
+CCBSFormatter::FormatPackageForSingleOutput
+CCBSFormatter::FormatPackageFullyOfflineInstallableState
+CCBSFormatter::FormatPackageInstallState
+CCBSFormatter::FormatRecommended
+CCBSFormatter::GetMultiFeatureTitleString
+CCBSFormatter::Initialize
+CCBSFormatter::PrintAnalyzeComponentStoreReport
+CCBSFormatter::PrintCapabilityInfo
+CCBSFormatter::PrintCbsCapabilities_ListFormat
+CCBSFormatter::PrintCbsCapabilities_TableFormat
+CCBSFormatter::PrintCbsCapabilityList
+CCBSFormatter::PrintCbsFeatureList
+CCBSFormatter::PrintCbsFeatures_ListFormat
+CCBSFormatter::PrintCbsFeatures_TableFormat
+CCBSFormatter::PrintCbsPackageList
+CCBSFormatter::PrintCbsPackages_ListFormat
+CCBSFormatter::PrintCbsPackages_TableFormat
+CCBSFormatter::PrintDismProperties
+CCBSFormatter::SetMultiFeatureHeaderStrings
+CCBSFormatter::SetMultiPackageHeaderStrings
+CComponentStoreReport::CreateInstance
+CDATA
+CDISMCapability::Initialize
+CDISMPackage::get_IsApplicable
+CDISMPackage::get_ScavengeSequence
+CDISMPackage::get_State
+CDISMPackage::GetDismPropertyCollection
+CDISMPackage::GetPackageFeatureCollection
+CDISMPackage::GetProperty
+CDISMPackage::GetTimeProperty
+CDISMPackage::Initialize
+CDISMPackage::InstallEx
+CDISMPackage::Internal_ChangePackageState
+CDISMPackage::Internal_OpenFeature
+CDISMPackage::LogInstallStateMapping
+CDISMPackage::OpenFeature
+CDISMPackage::RefreshInstanceAndLockSession
+CDISMPackage::Remove
+CDISMPackage::Stage
+CDISMPackageFeature::DisableEx
+CDISMPackageFeature::Enable
+CDISMPackageFeature::EnableAll
+CDISMPackageFeature::get_CustomPropertyXMLBlob
+CDISMPackageFeature::get_RawParentPackage
+CDISMPackageFeature::get_State
+CDISMPackageFeature::GetDismPropertyCollection
+CDISMPackageFeature::GetParentFeatureCollection
+CDISMPackageFeature::Internal_GetCbsState
+CDISMPackageFeature::Internal_QueueChange
+CDISMPackageFeature::LogInstallStateMapping
+CDISMPackageFeature::RefreshInstanceAndLockSession
+CDISMPackageManager::AddSourcePath
+CDISMPackageManager::AnalyzeComponentStore
+CDISMPackageManager::Apply
+CDISMPackageManager::BeginScavengeRestorePoint
+CDISMPackageManager::ChangesExist
+CDISMPackageManager::ChangeStatus
+CDISMPackageManager::CheckForPendingFlag
+CDISMPackageManager::CheckForPendingXml
+CDISMPackageManager::CheckXmlPackageApplicability
+CDISMPackageManager::CopyPendingSubKeys
+CDISMPackageManager::CreateCbsSession
+CDISMPackageManager::EndScavengeRestorePoint
+CDISMPackageManager::Finalize
+CDISMPackageManager::get_CBSSessionState
+CDISMPackageManager::get_CleanupSize
+CDISMPackageManager::get_IsCompressionEnabled
+CDISMPackageManager::get_IsImageUnserviceable
+CDISMPackageManager::get_IsStoreCorrupt
+CDISMPackageManager::get_ReservedStorageState
+CDISMPackageManager::GetCapabilityCollection2
+CDISMPackageManager::GetCurrentEdition
+CDISMPackageManager::GetCurrentSP
+CDISMPackageManager::GetEditionPackageIdentities
+CDISMPackageManager::GetPackageCollection
+CDISMPackageManager::GetPrivileges
+CDISMPackageManager::GetUserSidFromToken
+CDISMPackageManager::HideSP
+CDISMPackageManager::Initialize
+CDISMPackageManager::Internal_CheckXmlPackageApplicability
+CDISMPackageManager::Internal_CreateCbsIdentity
+CDISMPackageManager::Internal_CreatePackageByName
+CDISMPackageManager::Internal_CreatePackageByPath
+CDISMPackageManager::Internal_Finalize
+CDISMPackageManager::Internal_ProcessChangesWithOptions
+CDISMPackageManager::IsSystemPending
+CDISMPackageManager::ModifyPrivilege
+CDISMPackageManager::OnConnect
+CDISMPackageManager::OpenFoundationPackage
+CDISMPackageManager::OpenMsuPackage
+CDISMPackageManager::OpenPackageByName
+CDISMPackageManager::OpenPackageByPath
+CDISMPackageManager::PerformOperation
+CDISMPackageManager::ProcessWithUpdateAgent
+CDISMPackageManager::put_ReservedStorageState
+CDISMPackageManager::put_SessionState
+CDISMPackageManager::RefreshInstanceAndLock
+CDISMPackageManager::RegDeleteKeyWithBackupRestore
+CDISMPackageManager::RegDeleteTreeWithBackupRestore
+CDISMPackageManager::RemoveExcludedFiles
+CDISMPackageManager::RemovePendingPackages
+CDISMPackageManager::RemoveWinsxsBackupSupport
+CDISMPackageManager::RestoreHealth
+CDISMPackageManager::RevertPendingActions
+CDISMPackageManager::ScanHealth
+CDISMPackageManager::Scavenge
+CDISMPackageManager::SetProperty
+CDISMPackageManager::SPScavenge
+CDISMPackageManager::SPScavengeable
+CDISMPackageManager::SrSetRestorePoint
+CDISMPackageManager::StartComponentCleanupEx
+CDISMPackageManager::UninstallWindows
+CDISMPackageManager::ValidateServiceability
+CDISMPackageManager::WindowsUpdateCleanup
+CGsch
+Change Package State
+CharLowerBuffW
+CharNextW
+checkhealth
+CheckSources failed. Not a critical error. hr = [0x%X]
+cleanup-image
+Cleanup-ImageRPerforms cleanup and recovery operations on the
+CloseHandle
+CloserElement = this->AllocateStreamObject()
+CloseThreadpoolTimer
+CLSID\
+CMicrodom
+CMicrodom_Blob
+CMicrodomBuilder::AddString
+CMicrodomBuilder::CElementNameToAttributeListTable::MaybeInsert
+CMicrodomBuilder::CFourStringIdTable<struct _MICRODOM_XML_ATTDEF const *>::Initialize
+CMicrodomBuilder::CFourStringIdTable<unsigned short>::Initialize
+CMicrodomBuilder::CNamespaceNameExistenceCheck::AddAndCheckExistence
+CMicrodomBuilder::CNamespaceNamePrefixToAttDef::Insert
+CMicrodomBuilder::ConstructAndWriteMicrodom
+CMicrodomBuilder::ConsumeAttdef
+CMicrodomBuilder::ConsumeCData
+CMicrodomBuilder::ConsumeComment
+CMicrodomBuilder::ConsumeEntityDecl
+CMicrodomBuilder::ConsumePCData
+CMicrodomBuilder::ConsumeProcessingInstruction
+CMicrodomBuilder::DetermineStringTableSize
+CMicrodomBuilder::EndAttlist
+CMicrodomBuilder::EndElement
+CMicrodomBuilder::GetXmlDomSize
+CMicrodomBuilder::Initialize
+CMicrodomBuilder::InsertDefaultAttributes
+CMicrodomBuilder::ProduceStringTable
+CMicrodomBuilder::StartAttlist
+CMicrodomBuilder::StartDocument
+CMicrodomBuilder::StartElement
+CMicrodomBuilder::WriteXmlDom
+CMicrodomXmlWalker::XmlError
+CMsuPackage::CreateInstance
+CMsuPackage::DetectInstallType
+CMsuPackage::DoInstall
+CMsuPackage::Expand
+CMsuPackage::ExtractCompDBs
+CMsuPackage::ExtractCrossPlatformDeploymentBinaries
+CMsuPackage::ExtractDeploymentBinaries
+CMsuPackage::FinalRelease
+CMsuPackage::Initialize
+CMsuPackage::Install
+CMsuPackage::IsUpdateAgentPresent
+CMsuPackage::PrepInstall
+CMsuPackage::ProcessMsu
+CoCreateGuid
+CoCreateInstance
+CoGetMalloc
+command, specifying a valid /State option.
+Company
+CompanyName
+CompareStringW
+Completely offline capable
+Component update without specifying <updateComponent> in package manifest.
+COMPONENT_BASED_SERVICING_LOGFILE
+COMPONENT_BASED_SERVICING_LOGLEVEL
+COMPONENTS
+configsetroot
+configure
+connection aborted
+connection already in progress
+connection refused
+connection reset
+connection_aborted
+connection_already_in_progress
+connection_refused
+connection_reset
+container package points to a package manifest whose identity doesn't match the identity specified.
+Copy pending subkeys failed. hr:0x%x
+CopyFileW
+Copyright
+CopySid
+Corruption repair is not supported on a Windows PE target image. The operation must be used on a full Windows operating system image only.
+CoTaskMemFree
+Could not determine if the target system is Windows PE. Your image may be corrupt.
+Could not determine whether this is a UUP package.
+Could not enumerate Service Pack on machine. 
+Could not get the dism reserve manager interface
+Could not get the IDismPackageManager2 interface
+Could not get the service pack scavenge interface
+Could not get the servicing provider interface
+Could not identify the current edittion of the Windows image.
+Could not validate serviceability of the image. Your image may be unserviceable.
+CPackageManagerCLIHandler::ExecuteCmdLine
+CPackageManagerCLIHandler::get_SessionState
+CPackageManagerCLIHandler::GetCommandCollection
+CPackageManagerCLIHandler::GetHelpItemCollection
+CPackageManagerCLIHandler::Initialize
+CPackageManagerCLIHandler::Private_CheckHealth
+CPackageManagerCLIHandler::Private_CheckPath
+CPackageManagerCLIHandler::Private_CheckTargetWinPE
+CPackageManagerCLIHandler::Private_GetCapabilitiesFromCommandLine
+CPackageManagerCLIHandler::Private_GetFeaturesFromCommandLine
+CPackageManagerCLIHandler::Private_GetOptionAndValue
+CPackageManagerCLIHandler::Private_GetPackageNameFromCommandLine
+CPackageManagerCLIHandler::Private_GetPackagePathFromCommandLine
+CPackageManagerCLIHandler::Private_GetPackagesFromCommandLine
+CPackageManagerCLIHandler::Private_ProcessFeatureChange
+CPackageManagerCLIHandler::Private_ProcessMsuPackages
+CPackageManagerCLIHandler::Private_ProcessPackageChange
+CPackageManagerCLIHandler::Private_ReportError
+CPackageManagerCLIHandler::Private_ReportHealth
+CPackageManagerCLIHandler::Private_ValidateAddCapability
+CPackageManagerCLIHandler::Private_ValidateAddPackage
+CPackageManagerCLIHandler::Private_ValidateAddRemovePackage
+CPackageManagerCLIHandler::Private_ValidateCleanupImage
+CPackageManagerCLIHandler::Private_ValidateCmdLine
+CPackageManagerCLIHandler::Private_ValidateDisableFeature
+CPackageManagerCLIHandler::Private_ValidateEnableFeature
+CPackageManagerCLIHandler::Private_ValidateExportSource
+CPackageManagerCLIHandler::Private_ValidateGetCapabilityInfo
+CPackageManagerCLIHandler::Private_ValidateGetFeatureInfo
+CPackageManagerCLIHandler::Private_ValidateGetFeatures
+CPackageManagerCLIHandler::Private_ValidateGetPackages
+CPackageManagerCLIHandler::Private_ValidateRemoveCapability
+CPackageManagerCLIHandler::Private_ValidateRemovePackage
+CPackageManagerCLIHandler::Private_ValidateState
+CPackageManagerCLIHandler::Private_WriteToConsole
+CPackageManagerCLIHandler::ProcessCmdLine_AddCapability
+CPackageManagerCLIHandler::ProcessCmdLine_AddPackage
+CPackageManagerCLIHandler::ProcessCmdLine_CleanupImage
+CPackageManagerCLIHandler::ProcessCmdLine_ExportSource
+CPackageManagerCLIHandler::ProcessCmdLine_GetCapabilities
+CPackageManagerCLIHandler::ProcessCmdLine_GetCapabilityInfo
+CPackageManagerCLIHandler::ProcessCmdLine_GetFeatureInfo
+CPackageManagerCLIHandler::ProcessCmdLine_GetFeatures
+CPackageManagerCLIHandler::ProcessCmdLine_GetPackageInfo
+CPackageManagerCLIHandler::ProcessCmdLine_GetPackages
+CPackageManagerCLIHandler::ProcessCmdLine_GetReservedStorageState
+CPackageManagerCLIHandler::ProcessCmdLine_IsServiceable
+CPackageManagerCLIHandler::ProcessCmdLine_RemoveCapability
+CPackageManagerCLIHandler::ProcessCmdLine_RemovePackage
+CPackageManagerCLIHandler::ProcessCmdLine_SetReservedStorageState
+CPackageManagerCLIHandler::ProcessPackageFolder
+CPackageManagerCLIHandler::ProcessPackagePath
+CPackageManagerCLIHandler::ReportFailedPackage
+CPackageManagerCLIHandler::ShowAnalyzeComponentStoreReport
+CPackageManagerCLIHandler::ShowDismPropertiesForFeature
+CPackageManagerCLIHandler::ShowDismPropertiesForPackage
+CPackageManagerCLIHandler::ShowFeaturesForPackage
+CPackageManagerUnattendHandler::Apply
+CPackageManagerUnattendHandler::Internal_CreateIdentityStringFromAttributes
+CPackageManagerUnattendHandler::Internal_IsEqualIdentity
+CPackageManagerUnattendHandler::Internal_ProcessChanges
+CPackageManagerUnattendHandler::Internal_ProcessPackageFromSource
+CPackageManagerUnattendHandler::Internal_UnattendChangePackageState
+CPackageManagerUnattendHandler::Internal_UnattendCheckSourcesIdentity
+CPackageManagerUnattendHandler::Internal_UnattendConfigurePackage
+CPackageManagerUnattendHandler::Internal_UnattendInstallPackage
+CPackageManagerUnattendHandler::Internal_UnattendProcessPackage
+CPackageManagerUnattendHandler::Internal_UnattendQueueSelectFeatures
+CPackageManagerUnattendHandler::Internal_UnattendRemovePackage
+CPackageManagerUnattendHandler::Internal_VerifyEnabledFeatures
+CreateDeploymentSessionEx
+CreateDirectoryW
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateMutexExW
+CreateOfflineDeploymentSession
+CreateSemaphoreExW
+CreateThreadpoolTimer
+Creation of deployment session failed.
+Creation of progress callback object failed.
+Creation Time
+cross device link
+CRtlGrowingList<struct _XMLDOC_ATTRIBUTE,50,4>::Initialize
+CSelfServicingDetector::CheckForSelfService
+CSelfServicingDetector::CompareVersions
+CSelfServicingDetector::GetAdditionalSystemFileVersions
+CSelfServicingDetector::Initialize
+CSelfServicingDetector::InitializeForSelfService
+CurrentState
+Custom Properties:
+CXmlCursor::CompareExtents
+CXmlCursor::CompareStrings
+CXmlCursor::DecodeExtent
+CXmlCursor::Next
+CXmlCursor::XmlAlloc
+CXmlLogicalState::{dtor}::<lambda_4f27c46a387653aea7862a9980f1f031>::operator ()
+CXmlLogicalState::Initialize
+CXmlNamespaceManager::Initialize
+D$ ^Z9
+D$ A;
+D$ E3
+D$ fD
+D$ H;
+D$ H+
+D$ L#
+D$ L9g u
+D$ L9s u
+D$(" 
+D$(E3
+D$(H!\$ L
+D$(H;X
+D$(H+
+D$(H+G H
+D$(I+
+D$,D8-
+D$@9x
+D$@D9p
+D$@fD
+D$@uKI
+D$`D9`
+D$`E3
+D$`H+
+D$`I;
+D$0E3
+D$0H;
+D$0H+
+D$0H9
+D$0L;
+D$2M;
+D$89D$<
+D$8E3
+D$8Hc
+D$DDtXH
+D$HE3
+D$HH!\$@H!\$HD
+D$HH;
+D$HH9
+D$HI;
+D$HL+
+D$HL9c
+D$l9C
+D$P!t$8H
+D$P9p
+D$pH9_
+D$pI!C
+D$pL9`
+D$xE3
+d$xeH
+D;@(t
+D;@(u
+D;H(u
+D;H,u
+D;l$X
+D;P$u
+D;p(u
+D;P(u
+D;P0t
+D;X$u
+D;x(t
+D;X0tkH
+D+EhH
+D8-%;
+D8}otSH
+D8=>9
+D8=R8
+D8nlt
+D8nmt
+D8t$3
+D9|$(
+D9|$@u
+D9|$`u
+D9|$0t
+D9|$p
+D9|$t
+D93uvE3
+D96tEA
+D9D$@
+D9l$(|
+D9l$@
+D9l$H
+D9l$X
+D9mwu
+D9mwu(L
+D9mXu8A
+D9t$`
+D9t$d@
+D9t$Xu
+D9uHu
+D9X,u
+D9X0t
+Date of Last Cleanup
+DbgPrintEx
+DebugBreak
+Decoder != 0
+DefaultAttribute.Allocate()
+defer
+delayexecutionifpending
+DeleteCriticalSection
+DeleteFileEx: Spoofing detected deleting [%s] -> [%s]
+DeleteFileEx: Trying to set back attributes on hardlink given: %s
+DeleteFileEx: Unable to allocate hardlink path buffer
+DeleteFileEx: Unable to clear out attributes on [%s]; GLE = 0x%x
+DeleteFileEx: Unable to delete [%s]; GLE = 0x%x
+DeleteFileEx: Unable to form long path name for [%s]; GLE = 0x%x
+DeleteFileEx: Unable to get information on [%s]; GLE = 0x%x
+DeleteFileEx: Unable to open [%s]; GLE = 0x%x
+DeleteFileEx: Unable to prepare Unicode path for [%s]; GLE = 0x%x
+DeleteFileEx: Unable to remove [%s]; GLE = 0x%x
+DeleteFileEx: Unable to restore attributes on [%s]; GLE = 0x%x
+DeleteFileEx: Unable to verify path redirection on [%s]; GLE = 0x%x
+DeleteFileEx: Will not restore attributes on hardlinks of [%s]
+DeleteFileW
+DeletePath:   Final path [%s]
+DeletePath:   Full path [%s]
+DeletePath:   Long path [%s]
+DeletePath: [%s] doesn't exist as a directory; nothing to delete.
+DeletePath: Attempting to obliterate [%s] (final path [%s]).
+DeletePath: Cannot delete <null>.
+DeletePath: Failed to get desired paths for [%s] (GLE = 0x%x)
+DeletePath: Failed to obliterate [%s] (GLE = 0x%x); retrying...
+DeletePath: Failed to obliterate [%s] after %u tries; GLE = 0x%x
+DeletePathDirectoryCallback: Spoofing detected deleting [%s] -> [%s]
+DeletePathEngine: Hit %u failure%s during recursive deletion of [%s]; 1st error = 0x%x, cd = [%s]
+Description
+desktopdeployment.cab
+desktopdeployment_x86.cab
+destination address required
+destination_address_required
+DestinationMaximumLength >= SourceLength
+device or resource busy
+DeviceIoControl
+directory not empty
+Disable Pending
+DisableComponentBackups
+Disabled
+Disabled Features
+Disabled with Payload Removed
+disable-feature
+Disable-Feature)Disables a specific feature in the image.
+Disable-ReservedStorage
+DisableReserves
+Disables reserved storage.z
+DisableThreadLibraryCalls
+Disabling feature(s)
+Discard the modified image and start again.
+Discard this Windows image and try the operation again on a new Windows image.
+DISM does not support servicing .msu packages with the /Online option.
+DISM has detected a DISM component change. Requesting a shutdown.
+DISM has detected a servicing stack change. Requesting a reload.
+DISM Package Manager
+DISM Package Manager Provider
+DISM Package Provider
+DISM Unattend Manager
+DISM_CBS_ERROR_CHECKHEALTH_WINPE
+DISM_INSTALL_STATE_INSTALLED
+DISM_INSTALL_STATE_INSTALLREQUESTED
+DISM_INSTALL_STATE_NOTPRESENT
+DISM_INSTALL_STATE_PARTIALLYINSTALLED
+DISM_INSTALL_STATE_REMOVED
+DISM_INSTALL_STATE_STAGED
+DISM_INSTALL_STATE_STAGING
+DISM_INSTALL_STATE_SUPERSEDED
+DISM_INSTALL_STATE_UNINSTALLREQUESTED
+DISM_INSTALL_STATE_UNKNOWN
+DismCapability ClassWW
+DismCapabilityCollection 
+DismCapabilityCollection Class
+DismCapabilityWW
+DismComponentStoreReport
+DismComponentStoreReport Class
+dismcore.tlbWW
+DismMsuPackage ClassWW
+DismPackage ClassW
+DismPackageCollection ClassWWW"
+DismPackageCollectionWWW
+DismPackageFeature ClassWW
+DismPackageFeatureCollection Class
+DismPackageFeatureWW
+DismPackageManager ClassWW
+DismPackageManagerWWd
+Display Name
+DllCanUnloadNow
+DllGetClassObject
+DLLGetDISMProviderCLSID
+DllRegisterServer
+DllUnregisterServer
+DOCTYPE
+downlevel
+Download Size
+dpx.dll
+DpxNewJob
+E I+F
+E(=csm
+E(H9E v
+E@D+EhH
+E`D98t
+E8=csm
+E8n1t1H
+E8n1u
+ED$`H
+ED$xL
+Edition
+Edition[*]
+E'H!E
+Eh=csm
+EH=csm
+EHt>H
+EHt6H
+EL$hH
+EL$pL
+ELEMENT
+Enable Pending
+Enable/disable feature
+Enabled
+Enabled Features
+enable-feature
+Enable-Feature(Enables a specific feature in the image.
+Enable-ReservedStorage
+EnableReserves
+Enables reserved storage.w
+Enabling feature(s)
+Encoder != 0
+encoding
+EncodingSizer != 0
+Encountered an unknown option "%s" with value "%s"
+Encountered the option "%s" with value "%s"
+Encountered the option "%s" with value "%s". Attempting add to the feature collection.
+endingRequired
+Ensure that the argument is valid and that the path exists.
+Ensure that the temporary directory exists and that you have Read/Write permissions.
+EnterCriticalSection
+ENTITIES
+ENTITY
+Entity.Length != 0
+EnumeratePathEx: Callback requested enumeration interruption or hit internal enumeration failure on [%s]; GLE = 0x%x
+EnumeratePathEx: Failed search path is >= MAX_PATH!
+EnumeratePathEx: FindFirstFile failed for [%s]; GLE = 0x%x
+EnumeratePathEx: Unable to construct path under [%s]; GLE = 0x%x
+EnumeratePathEx: Unable to enumerate [%s]; GLE = 0x%x
+EnumeratePathEx: Unable to get reparse tag for persistent reparse point; GLE = 0x%x
+EnumerateUpdates
+en-US
+EPD8p
+EPD9c@
+EPD9mX
+EPD9uHu
+EPt>H
+Error deserializing unattend file.
+Error occured saving the scratch directory.
+EX=csm
+Ex=csm
+Exception
+executable format error
+Expand
+ExpandEnvironmentStringsW
+Expanding MSU to temporary location %s
+export-source
+Export-Source3Export a set of capabilities into a new repository.
+F H;F(v
+f;)tm
+f;*t}H
+f;+u&H
+f;DLhu
+f;DLpu
+F8fA;
+f9,_u
+f9,Au
+f9,Cu
+f9,Gu
+f9,Xu
+f9,zu
+f9<Au
+f9<Bu
+f9<Fu
+f94Bu
+f94Cu
+f94Gu
+f94Yu
+f9D$P
+f9t$P
+f9YBu
+fA;TG
+fA9>u
+fA9Xxu
+Failed applying the unattend file from the MSU package.
+Failed counting <%s> nodes.
+Failed create empty identity.
+Failed doing internal initialization
+Failed enumerating capabilities
+Failed finalizing changes.
+Failed get external stack path.
+Failed get parent object for Package Manager
+Failed getting '%s' attribute.
+Failed getting feature dependencies for feature "%s"
+Failed getting the download request.
+Failed getting the file request count.
+Failed getting the file requests.
+Failed getting the Image Session object
+Failed getting the servicing stack location
+Failed getting the System path location
+Failed getting the Windows directory location
+Failed initializing the offline session.
+Failed initializing the online session.
+Failed initiating changes
+Failed looking for <%s> nodes.
+Failed opening package %s.
+Failed opening package %s. Continuing to build the collection.
+Failed opening package with the name "%s"
+Failed opening package.
+Failed opening package. Not a vaild expanded CAB.
+Failed ProcessChanges.
+Failed processing package changes
+Failed processing package changes with session option CbsSessionOptionAnalyzeStore
+Failed processing package changes with session option CbsSessionOptionDetectStoreCorruption
+Failed processing package changes with session option CbsSessionOptionRepairStoreCorruption
+Failed processing package changes with session options
+Failed querying for IDismObject interface
+Failed querying for the IDismImageSession interface.
+Failed querying for the IDismImageSessionPrivate interface.
+Failed querying ICbsSession10 interface.
+Failed querying ICbsSession9 interface.
+Failed querying IDismPackageManager for IDismObject interface
+Failed setting configsetroot to [%s].
+Failed StringCchLengthW.
+Failed to a DismProperty instance.
+Failed to add source [%s] to the package.
+Failed to add source path.
+Failed to add the argument(*%s) to the list for the option(%s).
+Failed to add the change to the queue.
+Failed to add the command to the collection.
+Failed to add the feature to the collection.
+Failed to add the msu file %s to the DPX job.
+Failed to allocate buffer for token information.
+Failed to allocate memory for ACL.
+Failed to allocate new string.
+Failed to allocate SID from user token information.
+Failed to analyze component store.
+Failed to append %s to DISM sandbox path %s.
+Failed to append %s to parent path %s.
+Failed to append %s to relative path %s.
+Failed to apply the MSU unattend file to the image.
+Failed to Apply the unattend.
+Failed to bind to offline servicing stack of %s from %s.
+Failed to build servicing stack shim path under %s.
+Failed to build servicingcommon.dll source path.
+Failed to build servicingcommon.dll target path.
+Failed to build target servicing stack shim path under %s.
+Failed to call get malloc.
+Failed to calling CbsPackage::GetProperty.
+Failed to cancel DPX job for cabinet: %s
+Failed to cast the package to the cast object
+Failed to change package state for package [%s]
+Failed to change package state.
+Failed to change the state of the feature: "%s"
+Failed to check path %s - HR=0x%x
+Failed to check the image health.
+Failed to check xml package applicability.
+Failed to child registry key: %s
+Failed to clean up temporary folders for expanded MSU (hr=0x%x)
+Failed to cleanup the temporary folder: %s
+Failed to close key. hr:0x%x
+Failed to compare DISM versions.
+Failed to compare identities.
+Failed to copy new string.
+Failed to copy outer aggregated compdb cab.
+Failed to copy servicing stack shim [%s] -> [%s].
+Failed to copy servicingcommon.dll from [%s] -> [%s].
+Failed to copy SID to new SID
+Failed to copy the Option to the out parameter.
+Failed to create a CBS package identity.
+Failed to create a CComponentStoreReport.
+Failed to create a CDISMPackage from the raw CBS parent Package.
+Failed to create a CDISMPackage.
+Failed to create a DISMPackage.
+Failed to create a new command collection.
+Failed to create a new command object.
+Failed to create a new DPX job instance.
+Failed to create a new GUID folder for servicing stack shim.
+Failed to create a temporary %s folder for MSU expansion.
+Failed to create an ComponentStoreReport instance.
+Failed to create an Id for the session.
+Failed to create an MSU Package instance.
+Failed to create and add a DISMCapability to the collection.
+Failed to create and add a DISMPackage to the collection for package %s.
+Failed to create CBS identity string.
+Failed to create CBS session
+Failed to create cross platform updateagent cab path.
+Failed to create empty identity.
+Failed to create feature map.
+Failed to create MSU package instance.
+Failed to create MSU package list.
+Failed to create offline session from external stack path %s.
+Failed to create offline session from servicing stack at %s.
+Failed to create package list.
+Failed to create path name for comp DB.
+Failed to create path name for outer aggregated comp DB.
+Failed to create path name pattern for comp DBs.
+Failed to create path name pattern for outer aggregated comp DBs.
+Failed to create path to ReserveManager.dll.
+Failed to create path to the metadata folder %s.
+Failed to create path to the updateagent DLL %s.
+Failed to create path to update.mum file
+Failed to create session classID - waiting for a second and trying again, hr:0x%x
+Failed to create session classID, hr:0x%x
+Failed to create string identity.
+Failed to create the capability list.
+Failed to create the CBS Package enumeration.
+Failed to create the DISM Capability Collection
+Failed to create the DISM Features Collection
+Failed to create the DISM Packages Collection
+Failed to create the DISM property collection object.
+Failed to create the DISMFeature
+Failed to create the feature list.
+Failed to create the metadata folder %s.
+Failed to create the path to cbstemp in the image
+Failed to create the path to DPX.DLL in the servicing stack.
+Failed To create the scratch directory
+Failed to create updateagent cab path.
+Failed to create xml package.
+Failed to delete [%s] registry key. hr:0x%x
+Failed to delete expand dir
+Failed to delete folder %s. HR=0x%x
+Failed to delete key
+Failed to delete winsxs backup folder %s. HR=0x%x
+Failed to delete winsxs backup folder%s. HR=0x%x
+Failed to destroy existing GUID folder %s.
+Failed to detect the install type in expanded MSU folder %s.
+Failed to determine if we serviced ourselves or the servicing stack.
+Failed to determine size of token information for user token.
+Failed to determine string length of the parent property path.
+Failed to disable feature [%s]
+Failed to dispose of self servicing detection object. HR=0x%x
+Failed to dispose of the self servicing detection object.
+Failed to enable feature [%s]
+Failed to enable/disable selectable features for package [%s]
+Failed to enable/disable selectable features for package [%s].
+Failed to enumerate folder %s for file names.
+Failed to enumerate package folder.
+Failed to enumerate the features
+Failed to enumerate the folder %s for versions.
+Failed to evaluate applicability.
+Failed to execute the install in expanded MSU folder %s.
+Failed to expand the MSU file into temp folder %s.
+Failed to export source repository.
+Failed to extract compdb cab.
+Failed to extract CompDBs in the target folder %s.
+Failed to extract cross platform updateagent cab.
+Failed to extract deployment DLLs in the target folder %s.
+Failed to extract updateagent cab.
+Failed to finalize the session.
+Failed to find any packages on the command line.
+Failed to find capability by name %s. HR=0x%x
+Failed to find capability by name.
+Failed to find the IUnattendManager from the unattend provider.
+Failed to find the unattend file in the expanded MSU folder %s.
+Failed to find the unattend provider in the provider store.
+Failed to flush key. hr:0x%x
+Failed to format recommended.
+Failed to format size.
+Failed to format the capability download size.
+Failed to format the capability install size.
+Failed to format the capability State.
+Failed to format the feature for output.
+Failed to format the Feature State.
+Failed to format the Package fully offline installable state.
+Failed to format the Package State.
+Failed to format time.
+Failed to get a known Feature State.
+Failed to get a known Package FullyOfflineInstallable State.
+Failed to get a known Package State.
+Failed to get a locale specific date string for the pacakge.
+Failed to get a locale specific time string for the pacakge.
+Failed to get a refreshed CBS Package.
+Failed to get ActualSize.
+Failed to get additional system DLL versions for version maps.
+Failed to get capability collection.
+Failed to get capability identity.
+Failed to get capability.
+Failed to get cast object(CDISMPackage) for initialization
+Failed to get CBS session status
+Failed to get child node of  <%s> node.
+Failed to get ComponentCleanupRecommended.
+Failed to get convert FileTime string to SYSTEMTIME struct.
+Failed to get count of  <%s> nodes.
+Failed to get CreateDeploymentSessionEx() from updateagent.dll
+Failed to get CreateOfflineDeploymentSession() from updateagent.dll
+Failed to get current OS architecture
+Failed to get current state.
+FAILED to get custom property xml blob
+Failed to get description.
+Failed to get dism object
+Failed to get display name.
+Failed to get download size.
+Failed to get feature dependencies.
+Failed to get feature dependency list for feature: "%s"
+Failed to get format type for the enumeration report.
+Failed to get full path to source location [%s].
+Failed to get identity of package at location [%s].
+Failed to get IMalloc interface.
+Failed to get install size.
+Failed to get interface IDismPackage2
+Failed to get interface IDismPackage3
+Failed to get interface IDismPackageFeature2.
+Failed to get LastScavengeDateTime.
+Failed to get offline Key Path. HRESULT=0x%x
+Failed to get offline servicing stack path.
+Failed to get package identity.
+Failed to get package iid for package %s.
+Failed to get package iid.
+Failed to get parent dism object
+Failed to get parents Event Manager interface
+Failed to get process token to set privileges into.
+Failed to get property ComponentCleanupRecommended.
+Failed to get property LastScavengeDateTime.
+Failed to get property report.
+Failed to get property SupersededPackageCount.
+Failed to get property WinSxSAccordingToExplorerSize.
+Failed to get property WinSxSNonVolatileSize.
+Failed to get property WinSxSSharedWithWindowsSize.
+Failed to get property WinSxSVolatileSize.
+Failed to get provider store
+Failed to get resource string from the provider.
+Failed to get sid for current token.
+Failed to get state of feature [%s]
+Failed to get string resource from CBSProvider.dll. (hr:0x%x)
+Failed to get SupersededPackageCount.
+Failed to get the applicability state of the package
+Failed to get the applicable flag.
+Failed to get the argument count.
+Failed to get the capability count from the capability collection.
+Failed to get the capability display name.
+Failed to get the capability download size.
+Failed to get the capability id.
+Failed to get the capability install size.
+Failed to get the capability item count.
+Failed to get the capability name.
+Failed to get the capability State.
+Failed to get the cbs capability from the collection.
+Failed to get the cbs feature count from the features collection.
+Failed to get the cbs feature from the collection.
+Failed to get the CBS feature object for feature "%s"
+Failed to get the cbs feature report header strings.
+Failed to get the cbs package count from the packages collection.
+Failed to get the cbs package from the collection.
+Failed to get the cbs package report header strings.
+Failed to get the CBS Package to manipulate.
+Failed to get the CBS State of the Feature
+Failed to get the CbsPackagePropertyOSUpgradePackage property from CBS.
+Failed to get the compression enabled property
+Failed to get the count of packages from the command line.
+Failed to get the custom property enumerator from the CBS package.
+Failed to get the custom property interface from the CBS feature.
+Failed to get the custom property interface from the CBS package.
+Failed to get the DISM property collection from the feature.
+Failed to get the DISM property collection from the package.
+Failed to get the DISM property collection item count.
+Failed to get the DISM property from the collection.
+Failed to get the DISM property name.
+Failed to get the DISM property path.
+Failed to get the DISM property value.
+Failed to get the DISM provider store path.
+Failed to get the DISM state string for the feature %s
+Failed to get the DISM state string for the package %s
+Failed to get the display type.
+Failed to get the feature collection item count.
+Failed to get the feature collection.
+Failed to get the feature item count.
+Failed to get the Feature List from the command line.
+Failed to get the feature name.
+Failed to get the Feature State.
+Failed to get the feature state.
+Failed to get the formatted output string for the package.
+Failed to get the full path to source location: %s
+Failed to get the full path to target location: %s
+Failed to get the full path to the package location
+Failed to get the ICbsSession7 session interface.
+Failed to get the ICbsSession8 session interface.
+Failed to get the ICbsSession9 interface.
+Failed to get the IDismImage object.
+Failed to get the IDismPackageManager7 interface.
+Failed to get the image flags.
+Failed to get the image StoreMarkedCorrupt property
+Failed to get the image unserviceable property
+Failed to get the internal CBS Package
+Failed to get the list of packages from the command line.
+Failed to get the loaded CBSProvider.dll directory.
+Failed to get the localized custom property value.
+Failed to get the location of the log file.
+Failed to get the log level.
+Failed to get the message.
+Failed to get the MSU path name from the package instance.
+Failed to get the name and namespace from the custom property of the CBS package.
+Failed to get the name of the feature.
+Failed to get the online/offline state of the OS being serviced
+Failed to get the option and its value.
+Failed to get the option and value for argument %d
+Failed to get the option and value.
+Failed to get the option.
+Failed to get the package collection.
+Failed to get the Package Fully Offline Installable State.
+Failed to get the package identity name.
+Failed to get the Package Install Time.
+Failed to get the package item count.
+Failed to get the Package name.
+Failed to get the package name.
+Failed to get the package state.
+Failed to get the Package State.
+Failed to get the parent configuration object.
+Failed to get the parent package.
+Failed to get the parent update for feature "%s"
+Failed to get the parent's interface from OnConnect
+Failed to get the path for the msu package.
+Failed to get the platform state string for the feature %s
+Failed to get the platform state string for the package %s
+Failed to get the proc address for DpxNewJob from dpx.dll.
+Failed to get the Provider name.
+Failed to get the raw CBS parent Package.
+Failed to get the Release Type.
+Failed to get the resource string.
+Failed to get the servicing stack directory.
+Failed to get the session flags.
+Failed to get the state of reserved storage.
+Failed to get the State of the Feature
+Failed to get the state of the feature: "%s"
+Failed to get the state of the OS to service
+Failed to get the State of the package
+Failed to get the string representation of the Identity.
+Failed to get the System directory from the OS services provider.
+Failed to get the System directory from the os services provider.
+Failed to get the token.
+Failed to get the UI formatter.
+Failed to get the unattend folder path.
+Failed to get the underlying a CDISMPackage.
+Failed to get the underlying CBS Feature
+Failed to get the underlying CBS package.
+Failed to get the underlying DISM Collection class
+Failed to get the underlying package manager class.
+Failed to get the Update through CBS.
+Failed to get token information for user token.
+Failed to get top-level command.
+Failed to get underlying collection class.
+Failed to get underlying package object from package interface for [%s].
+Failed to get update.
+Failed to get WinDir path.
+Failed to get WinSxSAccordingToExplorerSize.
+Failed to get WinSxSNonVolatileSize.
+Failed to get WinSxSSharedWithWindowsSize.
+Failed to get WinSxSVolatileSize.
+Failed to initialize ACL.
+Failed to initialize action name on UI handler.
+Failed to initialize error handler.
+Failed to initialize security descriptor.
+Failed to initialize temp folder helper instance.
+Failed to initialize the ComponentStoreReport instance.
+Failed to initialize the message wrapper
+Failed to initialize the message wrapper.
+Failed to initialize the MSU Package instance.
+Failed to initialize the self service state.
+Failed to initialize the self servicing detection object.
+Failed to initilize the event CBS event handler.
+Failed to install capability.
+Failed to install package from source [%d] - trying next source location. hr = [0x%X]
+Failed to Install the package %s.
+Failed to Install the package [%s].
+Failed to install UUP package.
+Failed to install/stage package [%s].
+Failed to install/stage package at location [%s].
+Failed to load a necessary function from ReserveManager.dll.
+Failed to load error string.
+Failed to load identity [%s].
+Failed to load identity from attributes.
+Failed to load identity from package name: %s.
+Failed to load ReserveManager.dll.
+Failed to load ServicingCommon.dll.
+Failed to load the DPX.DLL from the servicing stack path %s.
+Failed to log the internal install state of the feature.
+Failed to log the internal install state of the package.
+Failed to open <%s> node.
+Failed to open CBS packages for processing.
+Failed to open component hive at %s.
+Failed to open feature [%s]
+Failed to open feature.
+Failed to open key with WRITE_DAC access.
+Failed to open key.
+Failed to open MSU files for processing.
+Failed to open onepackage msu.
+Failed to open package [%s]
+Failed to open package [%s] 
+Failed to open package at location [%s].
+Failed to open registry key %s
+Failed to open the Foundation package.
+Failed to open the MSU package at location: "%s"
+Failed to open the package at location: "%s"
+Failed to open the unattend file from the MSU package.
+Failed to open the Windows Foundation Package as a fall back.
+Failed to output error string to console.
+Failed to output progress string to console.
+Failed to output success string to console.
+Failed to output the string to the console.
+Failed to perform export source repository operation.
+Failed to perform operation.
+Failed to prepare the install in expanded MSU folder %s.
+Failed to print capability info list.
+Failed to print the analyze store report.
+Failed to print the package collection.
+Failed to process expanded CAB.
+Failed to process package at node <%s[%u]>.
+Failed to process package changes in unattend file.
+Failed to process package changes.
+Failed to Process the Pended changes.
+Failed to put the package location in the package object.
+Failed to QI IDismOSServiceManager2 on m_pOSServiceManager.
+Failed to QI IDismOSServiceManager2 on m_pOSServices.
+Failed to query interface for IDismConfiguration3.
+Failed to query the ComponentStoreReport instance for the IDismComponentStoreReport interface.
+Failed to query the MSU Package instance for the IDismMsuPackage interface.
+Failed to read '%s' attribute of <%s>.
+Failed to read '%s' attribute of node of <%s[%u]>.
+Failed to read from node <%s> [%s] attribute
+Failed to read from node <%s>, [%s] attribute
+Failed to refresh instance and lock session.
+Failed to refresh the instance and lock.
+Failed to refresh the Package instance
+Failed to refresh the parent package's instance.
+Failed to refresh the session.
+Failed to register CbsUIHandler.
+Failed to remove DPX container for cabinet: %s
+Failed to remove package [%s] 
+Failed to Remove the Package.
+Failed to report the image health.
+Failed to restore the image health.
+Failed to retrieve the CBS package object for feature "%s"
+Failed to retrieve the feature name.
+Failed to retrieve the parent feature name.
+Failed to retrieve the parent feature.
+Failed to retrieve the parent features collection.
+Failed to return the BSTR
+Failed to return the CBS update.
+Failed to scavenge the image.
+Failed to send the error message.
+Failed to set DPX job container to extract all files.
+Failed to set enhanced option to detect corruption.
+Failed to set enhanced option to repair corruption.
+Failed to set feature install state.
+Failed to set include image capabilities property.
+Failed to set key security.
+Failed to set registry value. %s
+Failed to set reserved storage state.
+Failed to set security descriptor dacl.
+Failed to set session configurable property.
+Failed to set source repository path property.
+Failed to set target repository path property.
+Failed to set the CBS logging level.
+Failed to set the install state.
+Failed to set the location of the log file for CBS.
+Failed to set the session state to DISM_SESSION_REBOOT_IMAGE_REQUIRED.
+Failed to set the session state to DISM_SESSION_RELOAD_SESSION_REQUIRED.
+Failed to Stage the Package.
+Failed to start component cleanup.
+Failed to start the DPX job to extract MSU files.
+Failed to store the message in a BSTR.
+Failed to test for equality identities [%s] and [%s].
+Failed to to get the arguments value.
+Failed to uninstall capability.
+Failed to uninstall the OS.
+Failed to update file version info for %s.
+Failed to verify enabled features.
+Failed to verify package location %s
+Failed trying to get the child elements of the CBS custom property.
+Failed when trying to call the %S property
+Failed when trying to format the State property
+Failed when trying to get the %S property
+Failed when trying to get the Identity property
+Failed when trying to get the IsApplicable property
+Failed when trying to get the IsSSU property
+Failed when trying to get the Product Name property
+Failed when trying to get the State property
+Failed while Initializing the Command Line Handler.
+Failed while Initializing the Unattend Handler.
+Failed while processing command %s.
+FailFast
+false
+False
+fB9,Au
+fD9 t
+fD9$Au
+fD9$Cu
+fD9$Hu
+fD9$Wu
+fD9,^u
+fD9,Au
+fD9,Fu
+fD9,nu
+fD9,ru
+fD9,Yu
+fD9}@
+fD9<Bu
+fD9<Cu
+fD9<xu
+fD9<Xu
+fD9<Yu
+fD90u
+fD94Au
+fD94Bu
+fD96u)L
+fD98t
+fD9pBt
+fD9pr
+fD9zBu
+fE9$wu
+fE9LE
+fE9't
+Feature %s with CBS state %d(%s) being mapped to dism state %d(%s)
+Feature does not support custom properties. Ignoring.
+Feature Information:
+Feature Name
+Feature name %1 is unknown.
+Feature name %s is unknown.
+featurename
+Features listing for package
+fF;TA
+fF9$Au
+fF9,vu
+fF94gu
+fFound
+file exists
+file too large
+FileDescription
+filename too long
+filename_too_long
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FillInCustomProperties
+Finalizing CBS core after servicing stack update.
+Finalizing CBS core before calling UpdateAgent.
+Finalizing CBS core.
+FindClose
+FindFirstFileNameW
+FindFirstFileW
+FindNextFileNameW
+FindNextFileW
+FindResourceExW
+Finish getting CBS property for analyze store report.
+Finished initializing the CbsConUI Handler.
+FIXED
+For more information about the /PreventPending option, refer to the help.
+For more information about valid syntax, refer to the help.
+For more information, refer to the help for the %1 option.
+For more information, refer to the help.
+For more information, refer to the log file.
+For more information, review the log file.
+FormatMessageW
+Found file version change for [%s] during self-servicing detection:
+Found new DISM file [%s] during self-servicing detection
+FreeLibrary
+function not supported
+Further logs for online package and feature related operations can be found at %%WINDIR%%\logs\CBS\cbs.log
+FWIMGAPI.DLL
+G$H;A$
+G(H9G v
+G8L!w
+GA8vf
+Generate Report
+generic
+Get capabilities in the image.
+get_CleanupSize: Failed opening package %s. Continuing to build the collection.
+get_CleanupSize: Failed to create the CBS Package enumeration.
+get_CleanupSize: Failed to get package iid for package %s.
+get_CleanupSize: Failed to get package size for package %s.
+get_CleanupSize: Failed to get the string representation of the Identity.
+get_CleanupSize: Failed to refresh the session.
+get_Company
+get_Copyright
+get_CreationTime
+get_Description
+get_DisplayName
+get_InstallClient
+get_InstallPackageName
+get_InstallTime
+get_LastUpdateTime
+get_Name
+get_ProductName
+get_ProductVersion
+get_ReleaseType
+get_Restart
+get_RestartRequired
+get_SupportInformation
+get-capabilities
+Get-Capabilities
+get-capabilityinfo
+Get-CapabilityInfo-Get information of a capability in the image.
+GetCbsErrorMsg
+GetCurrentDirectoryW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetDateFormatEx
+GetDisabledFeatureDependencies
+GetDiskFreeSpaceExW
+GetEnvironmentVariableW
+GetErrorMode
+get-featureinfo
+Get-FeatureInfo.Displays information about a specific feature.
+get-features
+Get-FeaturesQDisplays information about all features in
+GetFileAttributesW
+GetFileInformationByHandle
+GetFileInformationByHandleEx
+GetFileVersionInfoExW
+GetFileVersionInfoSizeExW
+GetFinalPathNameByHandleW
+GetFullPathNameW
+GetInstallState
+GetLastError
+GetLengthSid
+GetLongPathNameW
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetPackage
+get-packageinfo
+Get-PackageInfo.Displays information about a specific package.
+get-packages
+Get-PackagesRDisplays information about all packages in 
+GetPrivileges Failed.
+GetProcAddress
+GetProcessHeap
+GetProperty
+get-reservedstoragestate
+Get-ReservedStorageState+Gets the current state of reserved storage.
+GetReserveState
+GetSystemInfo
+GetSystemTimeAsFileTime
+GetSystemWindowsDirectoryW
+GetTempPath2W
+GetTempPathW
+GetThreadLocale
+GetTickCount
+GetTimeFormatEx
+Getting Features From Command Line
+GetTokenInformation
+GetUpdates
+GetVersionExW
+ghttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crl0
+H SUVWAVAWH
+H SVWAVH
+H SVWH
+H SWH
+h UAVAWH
+H!\$@H!\$HH
+H!]wH!]
+H!^(H
+H!_8H
+H!|$@H
+H!8H!x
+H!CPH!CXH!C`H!Ch!Cp!Ct!CHH
+H!D$03
+H!M(L
+H!t$(
+H!T$@A
+H!t$0M
+H!t$HH
+H!t$xI
+H!u0L
+H!uHH!u@L
+H;\$ ssL
+H;{(u
+H;7u#
+H;K@M
+H;Q@s2H
+H;S v
+H;s(u
+H;W(s
+h_^[]
+H+^ H
+H+~ H
+H+~ I
+H+w H
+H0H!y
+H9/sRH
+H9>tsH
+H9A r
+H9A(u
+H9Cxt
+H9D$0u
+H9D$ht
+H9H u
+H9l$@t'eH
+H9l$Ht
+H9Q(u
+H9t$`L
+H9t$hH
+H9t$pL
+H9t$xH
+H9u`t0
+H9upt0
+hA^_^[
+HA_A^_^][
+hA_A^A]A\_^[]
+hA_A^A]A\_^][
+HcD$$HcL$ H
+Hcl$`M
+HcL$P
+HcQ<H
+HeapAlloc
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSize
+HHfA;Lw
+hidesp
+host unreachable
+host_unreachable
+http://www.w3.org/2000/09/xmldsig#
+http://www.w3.org/2000/xmlns/
+http://www.w3.org/XML/1998/namespace
+I!4$A
+I93tRH
+I9vpuW
+ICbsIdentity
+ICbsPackage
+ICbsUpdate
+identifier removed
+Identity
+IDREF
+IDREFS
+ignorecheck
+ihttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crt0
+illegal byte sequence
+ImageTopLevelHelp
+IMPLIED
+In a given package, only one <updateComponent> Is allowed for a component family.
+inappropriate io control operation
+includeimagecapabilities
+InitializeAcl
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionEx
+InitializeSecurityDescriptor
+Initiating Changes on Package with values: %x, %x
+install
+Install
+Install Client
+Install Location
+Install Package Name
+Install Pending
+Install Size
+install state value not acceptable.
+Install Time
+Install User Name
+Installation failed.
+Installed
+InternalName
+interrupted
+Invalid %s attribute value '%s'.
+invalid argument
+Invalid argument passed when retrieving disabled features dependencies.
+invalid attribute or element name encountered.
+invalid cardinality.
+invalid method argument.
+Invalid package location specified %s. Must be a directory, or a file with a '.mum', '.cab' or '.esd' extension
+Invalid parameter for function CheckXmlPackageApplicability
+Invalid parameter for get_IsStoreCorrupt
+Invalid parameter passed to C runtime function.
+Invalid pointer passed in.
+invalid seek
+invalid setting configuration value.
+Invalid SID returned from user token information.
+invalid string position
+invalid_argument
+io error
+iostream
+iostream stream error
+is a directory
+IsDebuggerPresent
+is-serviceable
+IsValidSid
+iswdigit
+IsWow64Process
+iswspace
+j < ValidProperties.Length
+J[fD;
+job state for DPX has been saved.
+K SUVWAVH
+K SVWH
+k VWAVH
+k2mUU&
+K9b5NP
+KERNEL32.dll
+kernel32.dll
+kernelbase.dll
+L!|$@H
+L!|$0E3
+L!l$ H
+L!L$pE
+l$ E3
+L$ E3
+L$ SUVWH
+L$ SVWAVAWH
+L$ SVWAVH
+L$ SWH
+l$ VWATAVAWH
+L$ VWATAVAWH
+l$ VWATAVAWH
+l$ VWAVH
+l$(E3
+L$(H3
+L$@E3
+L$@H!^0H!^8H!^@I
+L$@H3
+L$@I+
+L$`E3
+L$`H;
+L$`H3
+L$0A:
+L$0E3
+l$0E3
+L$0fD
+L$0H3
+L$8E3
+L$8H3
+l$HD9l$X
+L$Hf91
+L$hH+
+L$HH=
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+l$LE3
+L$PH;
+L$PH3
+L$pH3
+L$PH3
+L$X;L$\
+L$X9L$\
+L$XH3
+L$xH9X
+L$Xul
+L;d$h
+L+~ M
+L+q H
+L+u L
+L9&u*H
+L9{Hu
+L9|$@t eH
+L9|$ht03
+L9J t
+L9l$(I
+L9L$P
+L9t$Ht2H
+L9t$P
+language
+Last Update Time
+LcA<E3
+LeaveCriticalSection
+LegalCopyright
+Lhttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20PCA%202014.crl0j
+limitaccess
+list<T> too long
+Loaded servicing stack for offline use only.
+Loaded servicing stack for online use.
+LoadFromAttributes
+LoadLibraryExA
+LoadLibraryExW
+LoadResource
+LoadStringW
+Local\SM0:%lu:%lu:%hs
+LocalFree
+Locals.Allocate()
+location
+LocationHeader != 0
+LocationHeader->Signature == ('cLdM')
+LockResource
+LogHr
+LogNt
+LogStagedFeatureUsage
+LookupPrivilegeValueW
+m.Reserved < m_NamedNodeMaps.Size()
+m_AttdefListTable.FindOrInsertIfNotPresent( ulElementName, NewAttdefList, &pAttdefList)
+m_AttdefListTable.Initialize()
+m_CurrentStreamObject != 0
+m_Entries.Allocate(PoolHeader->TotalCount)
+m_MicrodomDataBlob.Length >= sizeof(MICRODOM_HEADER)
+m_PropertyCache.Allocate(m_LayoutCache.TotalObjectCount())
+m_pTargetObject->IsNamedNodeMapValid(NodeMap)
+m_StoredTable.FindOrInsertIfNotPresent(p, (USHORT)0, 0, &fExisted)
+m_StoredTable.FindOrInsertIfNotPresent(Pair, pAttDef)
+m_StoredTable.FindOrInsertIfNotPresent(Pair, Value, 0, pfExisted)
+m_StoredTable.Initialize()
+M`L!0L!p
+m8H;u@
+M9/u,H
+M9f ulM
+malloc
+MapViewOfFile
+MdDtM
+MdLcI
+MdSpI
+memcmp
+memcpy
+memcpy_s
+memmove
+memmove_s
+memset
+message size
+message_size
+metadata
+mgD9`
+MicrodomImplementation::CDomLayoutCache::AdvanceCachedPointer
+MicrodomImplementation::CDomLayoutCache::DecodeElementCounts
+MicrodomImplementation::CDomLayoutCache::FindObject
+MicrodomImplementation::CDomLayoutCache::GetNodeChildren
+MicrodomImplementation::CDomPositionCache::AttachToPositionList
+MicrodomImplementation::CDomPositionCache::GetLocation
+MicrodomImplementation::CMicrodom::CreateInterface
+MicrodomImplementation::CMicrodom::DecodeXmlString
+MicrodomImplementation::CMicrodom::FindObject
+MicrodomImplementation::CMicrodom::GetDocumentNodeSet
+MicrodomImplementation::CMicrodom::GetElementById
+MicrodomImplementation::CMicrodom::GetElementNodeSet
+MicrodomImplementation::CMicrodom::GetElementsByTagName
+MicrodomImplementation::CMicrodom::GetElementsByTagNameCommon
+MicrodomImplementation::CMicrodom::GetNamedNodeMapItem
+MicrodomImplementation::CMicrodom::GetNamedNodeMapLength
+MicrodomImplementation::CMicrodom::GetNodeMapNamedItem
+MicrodomImplementation::CMicrodom::Initialize
+MicrodomImplementation::CMicrodom::IRtlMicrodom_Cast
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::CTempOutputStream::CreateInterface
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetAttribute
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetAttributeNode
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetAttributeNS
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetAttributeNSNode
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetDocument
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetDocumentElement
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetDocumentNodeSet
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetElementById
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetElementNodeSet
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetElementsByTagName
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetElementsByTagNameNS
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetItem
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetMicrodomBinaryRepresentation
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetNamedItem
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetNamedItemNs
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetPropertiesSetup
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::GetXml
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::HasAttribute
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::HasAttributeNs
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::HasAttributes
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::HasChildNodes
+MicrodomImplementation::CMicrodom_IRtlMicrodomTearoff::Length
+MicrodomImplementation::CreateBinaryMicrodomFromXml
+MicrodomImplementation::CStringpoolCache::AttachToStringPool
+MicrodomImplementation::CStringpoolCache::FindString
+MicrodomImplementation::DecodeXmlCharacterToUcsChar
+MicrodomWriterImplementation::CMicrodomWriter::CreateInterface
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::BeginOpenElement
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::CloseElement
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::EmitAttribute
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::EndOpenElement
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::WriteCData
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::WriteComment
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::WriteEscapedString
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::WriteProcessingInstruction
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::WriteRawString
+MicrodomWriterImplementation::CMicrodomWriter_IRtlMicrodomXmlWriter::WriteText
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1>0<
+Microsoft Corporation1'0%
+Microsoft Development PCA 2014
+Microsoft Development PCA 20140
+Microsoft Windows0
+Microsoft\Windows\CurrentVersion\Component Based Servicing
+Microsoft\Windows\CurrentVersion\SideBySide\Configuration
+Missing '%s' attribute.
+Missing required '%s' attribute.
+Msg:[%ws] 
+msi.dll
+MSU install aborted. %s did not contain an unattend file.
+msvcrt.dll
+MUI\%04hx
+MultiByteToWideChar
+multiple attributes have the same name.
+Multiple cleanup arguments cannot be specified with this command. 
+multiple elements have the same name.
+Multiple feature arguments cannot be specified with this command. 
+Multiple package paths cannot be specified with this command. 
+Must specify either a package path or package name.
+mwL!}
+named update not present in package.
+NDATA
+network down
+network reset
+network unreachable
+network_down
+network_reset
+network_unreachable
+NewAttdef = this->AllocateStreamObject()
+NewAttlist = this->AllocateStreamObject()
+NewAttlistClose = this->AllocateStreamObject()
+NewAttribute = this->AllocateStreamObject()
+NewCData = this->AllocateStreamObject()
+NewComment = this->AllocateStreamObject()
+NewDocument = this->AllocateStreamObject()
+NewElement = this->AllocateStreamObject()
+NewEntityDecl = this->AllocateStreamObject()
+NewInstance.Allocate()
+NewPcData = this->AllocateStreamObject()
+NewProcessingInstruction = this->AllocateStreamObject()
+NewTearoff.Allocate()
+NewTempBytesRequired > TempBytesRequired
+Nhttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20PCA%202014.crt0
+NMTOKEN
+NMTOKENS
+no buffer space
+No capabilities were recognized on the command-line.
+no child process
+No Features were found that needed enabling.
+No features were specified on the command-line.
+no link
+no lock available
+no message
+no message available
+No more than one flag set check failed: __e
+No packages were found that require processing.
+No packages were specified on the command-line.
+no protocol option
+No selectable features found.
+no space on device
+no stream resources
+no such device
+no such device or address
+no such file or directory
+no such process
+No Windows features were specified on the command line.
+no_buffer_space
+no_protocol_option
+NodeIndex < m_pTargetObject->m_LayoutCache.TotalObjectCount()
+NodeMap != Windows::Microdom::Rtl::NamedNodeMap::InvalidValue()
+not a directory
+not a socket
+not a stream
+not connected
+not enough memory
+Not Present
+not supported
+not_a_socket
+not_connected
+NOTATION
+Nothing to download and install. Declaring success...
+Not-null check failed: Blob
+Not-null check failed: BytesRequired
+Not-null check failed: ComparisonResult
+Not-null check failed: Context
+Not-null check failed: Data
+Not-null check failed: DataBlock
+Not-null check failed: Decoder
+Not-null check failed: Destination
+Not-null check failed: Document
+Not-null check failed: DocumentNode
+Not-null check failed: fHasAttribute
+Not-null check failed: fHasAttributes
+Not-null check failed: fHasChildNodes
+Not-null check failed: Length
+Not-null check failed: Matches
+Not-null check failed: NodeList
+Not-null check failed: NodeSet
+Not-null check failed: Out
+Not-null check failed: Params
+Not-null check failed: Params->Source.pBlob
+Not-null check failed: Params->Source.pIStream
+Not-null check failed: pDocument
+Not-null check failed: phDll
+Not-null check failed: pOutputStream
+Not-null check failed: ppfn
+Not-null check failed: PseudoKeyOut
+Not-null check failed: pStream
+Not-null check failed: pWriter
+Not-null check failed: Result
+Not-null check failed: Root
+Not-null check failed: Source
+Not-null check failed: String
+Not-null check failed: String1
+Not-null check failed: String2
+Not-null check failed: Target
+Not-null check failed: Value
+Not-null check failed: Writer
+NService Pack Cleanup cannot proceed: No Service Pack backup files were found.
+NtClose
+ntdll.dll
+NtOpenFile
+NtQueryInformationFile
+NtQueryWnfStateData
+NtReadFile
+NtSetInformationFile
+NtUpdateWnfStateData
+NtWaitForSingleObject
+NtWriteFile
+NtYieldExecution
+Number of Reclaimable Packages#Component Store Cleanup Recommended
+o\$PH
+O5a8V2
+ObjectHeader->uElementType == ucObjectType
+oD$ f
+oL$0f
+ole32.dll
+OLEAUT32.dll
+One or more features could not be enabled.
+onecore\base\lstring\lblob.cpp
+onecore\base\lstring\lutf8_string.cpp
+onecore\base\lstring\ucsdecoders.cpp
+onecore\base\ntsetup\opktools\dism\providers\cbsprovider\dll\cbsformatter.cpp
+onecore\base\xml\udom_builder.cpp
+onecore\base\xml\udom_microdom.cpp
+onecore\base\xml\udom_modify.cpp
+onecore\base\xml\udom_writer.cpp
+onecore\base\xml\udom_xmlcursor.cpp
+onecore\base\xml\udom_xmlwalker.h
+onecore\internal\Base\inc\rtl_object_library.h
+onecore\internal\sdk\inc\wil\opensource\wil\resource.h
+onecore\internal\sdk\inc\wil\Staging.h
+Only one package can be specified on the command-line for %1.
+OpenProcessToken
+OpenSemaphoreW
+operation canceled
+operation in progress
+Operation is still in progress.
+operation not permitted
+operation not supported
+operation would block
+operation_in_progress
+operation_not_supported
+operation_would_block
+Option %s is not recognized in this context.
+OriginalFilename
+oT$@f
+OutputDebugStringA
+OutputDebugStringW
+owner dead
+Owners
+p ^<16m
+p AWH
+p WAVAWH
+p!PZa
+p"]r.?
+p;Tv(
+p[^V=
+p`_0#
+p0\:#7
+P0H!8H!x
+p0R^G'
+PA^_]
+PA^_^
+pA^_^
+PA^_^
+PA^_^[]
+pA^_^][
+PA^_^][
+pA^A\_
+pA^A\_^]
+PA^A\_^]
+PA^A]_^]
+PA^A]A\_^[]
+PA__^[]
+pA_A]A\_^[]
+PA_A^_^]
+pA_A^_^]
+PA_A^_^]
+pA_A^_^]
+PA_A^_^]
+pA_A^_^]
+pA_A^A\_^
+PA_A^A\_^
+pA_A^A\_^
+PA_A^A\_^[]
+PA_A^A\_^][
+pA_A^A]_^[]
+pA_A^A]A\_[]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+package
+Package %s with CBS state %d(%s) being mapped to dism state %d(%s)
+Package [%s] at location [%s] does not match specified assembly identity [%s].
+Package cannot be uninstalled.
+Package does not support custom properties. Ignoring.
+Package failed to be configured [%s].
+Package failed to be removed [%s].
+Package failed to install [%s].
+Package failed to install because another pended package failed.
+Package failed to stage [%s].
+Package Identity,Reverting pending actions from the image...
+Package information:
+Package Name
+Package needs a newer version of the servicing stack.
+PACKAGE SERVICING COMMANDS:
+Package source not in list.
+package was uninstalled and is no longer accessible.
+package[*]
+PackageCommands.Information on the available package commands.
+packagename
+packagepath
+Packages
+Packages listing:
+PackagesPending
+Pairs.Allocate(m_StringTable.GetEntryCount())
+Params->fRequireUtf8
+Parent features must be enabled before feature [%s] can be enabled
+Parent features must be enabled before this feature can be enabled. "%s"
+Parent Package
+Partially Installed
+Partition
+PathFileExistsW
+PathToProgramFiles
+pcPZt
+pcY0N
+pDoctype->ulSignature == ('tDdM')
+pDomLayout->ulSignature == ('lDdM')
+permanence
+permanent
+Permanent package cannot be uninstalled.
+permission denied
+permission_denied
+pHeader->ulOffsetToDomLayout < pHeader->ulTotalSize
+pHeader->ulOffsetToPositionData < pHeader->ulTotalSize
+pHeader->ulOffsetToStringPool < pHeader->ulTotalSize
+pHeader->ulSignature == ('dHdM')
+pHeader->ulTotalSize == m_MicrodomDataBlob.Length
+PID=%d %s - %s(hr:0x%x)
+PID=%d TID=%d %s - %s
+PID=%d TID=%d %s - %s(hr:0x%x)
+pk]T=
+PoolHeader != 0
+PoolHeader->Signature == ('pSdM')
+pQR4D
+pqU<J
+preventpending
+Process Package Change
+Processing %1!d! of %2!d! - %0
+Processing the top level command token(%s).
+processorArchitecture
+Product
+Product Name
+Product Version
+ProductName
+ProductVersion
+ProgIDFromCLSID
+ProgramFiles(x86)
+Progress cannot be Set. QueryInterface on IDeploymentSession9 failed.
+Properties.Length == Results.Length
+protocol error
+protocol not supported
+protocol_not_supported
+psT>"&
+pStringPool->Signature == ('pSdM')
+psZ~D
+pThe restore operation failed. Either the repair source was not found or the component store cannot be repaired.
+Pu{Hc
+PUBLIC
+publicKeyToken
+PuGIc
+q*_Pe
+q*Z~:
+q:_0#
+q;Tv(
+q[^V=
+q`_0#
+q+\p9
+q0o0m
+q0R^G'
+q3UZ"
+qcY0N
+qIVRK
+qkWVm
+qQR4D
+qqU<J
+qsZ~D
+QueryPerformanceCounter
+qXPRl
+r4L!b
+RaiseException
+RaiseFailFastException
+read only file system
+ReadFile
+Received an invalid Identity String pointer.
+Recipe property unsupported
+Redmond1
+Re-enter the command without the argument.
+Re-enter the command, specifying a package.
+Re-enter the command, specifying one of these options.
+Re-enter the command, specifying only one of these options.
+Re-enter the command, specifying only one package.
+Re-enter the command, specifying the /CapabilityName option.
+Re-enter the command, specifying the /FeatureName option.
+Re-enter the command, specifying the /Source option.
+Re-enter the command, specifying the /State option.
+Re-enter the command, specifying the /Target option.
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyW
+RegEnumKeyExW
+RegEnumValueW
+RegFlushKey
+RegLoadKeyW
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetKeySecurity
+RegSetValueExW
+RegUnLoadKeyW
+Release Type
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+remove
+Remove excluded files failed. hr:0x%x
+Remove pending packages failed. hr:0x%x
+Remove winsxs backup support failed. hr:0x%x
+remove-capability
+Remove-Capability#Remove a capability from one image.
+RemoveDirectoryW
+remove-package
+Remove-Package Removes packages from the image.
+Removing package %1!s!
+requested property is not supported.
+REQUIRED
+required attributes are missing.
+Reserved error (|); there is no message for this error.
+Reserved storage is disabled.
+Reserved storage is enabled.
+ReserveManager.dll
+resetbase
+resource deadlock would occur
+resource unavailable try again
+Restart Required
+Restart Required+Removing unused components from the image.
+Restart your computer, and then run Service Pack Cleanup.
+restorehealth
+result out of range
+ReturnHr
+ReturnNt
+Revert Pending Actions
+revertpendingactions
+rHfD9?w
+Root != Root.InvalidValue()
+Routing the command...
+RtlAllocateHeap
+RtlAllocateLBlob
+RtlAppendLBlobToLBlob
+RtlAppendLUtf8StringToLUtf8String
+RtlAppendUcsCharacterToLUtf8String
+RtlCalculateUtf16StringLengthFromLUtf8String
+RtlCaptureContext
+RtlCompareEncodedLBlobs
+RtlConcatenateLUtf8Strings
+RtlCopyLBlob
+RtlCopyLUtf8StringToLUnicodeString
+RtlCreateDefaultMicrodomXmlWriter
+RtlCreateMicrodom
+RtlDisownModuleHeapAllocation
+RtlDllShutdownInProgress
+RtlDosPathNameToNtPathName_U_WithStatus
+RtlDuplicateLBlob
+RtlDuplicateLUtf8String
+RtlDuplicateLUtf8StringToLUnicodeString
+RtlExpandEnvironmentStrings
+RtlFreeHeap
+RtlGetCharacterSetDecoder
+RtlGetVersion
+RtlHashEncodedLBlob
+RtlInitializeGrowingList( this, sizeof(TStoredObject), m_ulElementsPerChunk, (PVOID)m_InternalBuffer, sizeof(m_InternalBuffer), Allocator )
+RtlInitializeSmartLBlobWritingContext
+RtlInitUnicodeString
+RtlIsLBlobValid(BinaryData)
+RtlIsLBlobValid(Source)
+RtlIsLUtf8StringValid(ElementId)
+RtlIsLUtf8StringValid(LocalName)
+RtlIsLUtf8StringValid(LocalName) || (LocalName == 0)
+RtlIsLUtf8StringValid(Name)
+RtlIsLUtf8StringValid(NamespaceURI)
+RtlIsLUtf8StringValid(NamespaceURI) || (NamespaceURI == 0)
+RtlIsLUtf8StringValid(Source)
+RtlIsLUtf8StringValid(TagName) || (TagName == 0)
+RtlIsMicrodomUpdateContextValid(TheContext)
+RtlLookupFunctionEntry
+RtlMatchLUtf8StringAgainstPointerList
+RtlNotifyFeatureUsage
+RtlNsInitialize(this, Comparison, pvCompareContext, Alloc)
+RtlNtStatusToDosError
+RtlNtStatusToDosErrorNoTeb
+RtlpSmartLBlobWritingContextResizePolicy
+RtlQueryFeatureConfiguration
+RtlRaiseStatus
+RtlReAllocateHeap
+RtlReallocateLBlob
+RtlReallocateLUtf8String
+RtlRegisterFeatureConfigurationChangeNotification
+RtlTranscodeLBlobs
+RtlUnregisterFeatureConfigurationChangeNotification
+RtlVirtualUnwind
+RtlWriteDataIntoSmartLBlobWritingContext
+RtlWriteMicrodomXml
+RtlXmlDefaultCompareStrings(&m_State.ParseState, Left, Right, pResult)
+RtlXmlDestroyNextLogicalThing(this)
+RtlXmlDetermineStreamEncoding(&TokenizerState, &EncodingLength)
+RtlXmlInitializeNextLogicalThing(this, &Init)
+RtlXmlInitializeTokenization(&TokenizerState, &TokenizerInit)
+RtlXmlNextLogicalThing( &m_State, &m_Namespaces, &m_CurrentThing, &m_AttributeList )
+rv.UcsCharacter < 0x110000
+s WAVAWH
+SaveAsStringId
+scanhealth
+Scavenge Sequence value is not digit.
+SDismPackageFeatureCollectionX
+SearchPathW
+SeBackupPrivilege
+selection
+selection[*]
+Self servicing package#Applying package servicing unattend
+SeRestorePrivilege
+Service Pack Cleanup cannot proceed: An operation is waiting to be completed on this computer.
+Service Pack Cleanup*Service Pack Cleanup operation completed.
+Service Pack Cleanup: <%s> is not a valid child node of <%s>.
+Service Pack Cleanup: <TmiMatrix> node not found. Nothing to do.
+Service Pack Cleanup: BeginScavengeRestorePoint failed with invalid parameter.
+Service Pack Cleanup: bScavenge cannot be nullptr.
+Service Pack Cleanup: ChangesExist failed with invalid parameter config
+Service Pack Cleanup: ChangeStatus failed with invalid parameter config
+Service Pack Cleanup: Check for pending flag failed.
+Service Pack Cleanup: Check for pending XML failed.
+Service Pack Cleanup: Current SP level edition present on System [%s].
+Service Pack Cleanup: Error Parsing EditionMatrix.xml.
+Service Pack Cleanup: Failed adjusting token privilege
+Service Pack Cleanup: Failed enabling SE_BACKUP_NAME privilege
+Service Pack Cleanup: Failed enabling SE_RESTORE_NAME privilege
+Service Pack Cleanup: Failed enabling SE_SECURITY_NAME privilege
+Service Pack Cleanup: Failed enabling SE_TAKE_OWNERSHIP_NAME privilege
+Service Pack Cleanup: Failed looking up the privilege
+Service Pack Cleanup: Failed opening package %s. Continuing to build the collection.
+Service Pack Cleanup: Failed opening the process token
+Service Pack Cleanup: Failed setting restore point.
+Service Pack Cleanup: Failed to Build EditionMatrix Path.
+Service Pack Cleanup: Failed to change SP status.
+Service Pack Cleanup: Failed to close registry key handle. %s
+Service Pack Cleanup: Failed to close registry key. %s
+Service Pack Cleanup: Failed to count Edition nodes in EditionMatrix.
+Service Pack Cleanup: Failed to count packages in package collection.
+Service Pack Cleanup: Failed to create the CBS Package enumeration.
+Service Pack Cleanup: Failed to deserialize EditionMatrix.
+Service Pack Cleanup: Failed to find SRSetRestorePointW.
+Service Pack Cleanup: Failed to get child node of  <%s> node.
+Service Pack Cleanup: Failed to get count for PackageCollection.
+Service Pack Cleanup: Failed to get identity for Package.
+Service Pack Cleanup: Failed to get install state from Package.
+Service Pack Cleanup: Failed to get install state of package %s
+Service Pack Cleanup: Failed to get Installed Edition package id.
+Service Pack Cleanup: Failed to get interface IDismPackage2
+Service Pack Cleanup: Failed to get offline Key Path. HRESULT=0x%x
+Service Pack Cleanup: Failed to get package collection.
+Service Pack Cleanup: Failed to get Package Collection.
+Service Pack Cleanup: Failed to get package count from collection.
+Service Pack Cleanup: Failed to get package from collection.
+Service Pack Cleanup: Failed to get package from package collection.
+Service Pack Cleanup: Failed to get package from PackageCollection.
+Service Pack Cleanup: Failed to get package identity.
+Service Pack Cleanup: Failed to get package iid for package %s.
+Service Pack Cleanup: Failed to get package install state.
+Service Pack Cleanup: Failed to get package release type for package %s.
+Service Pack Cleanup: Failed to get package release type.
+Service Pack Cleanup: Failed to get package scavenge sequence.
+Service Pack Cleanup: Failed to get release type from Package.
+Service Pack Cleanup: Failed to get Service Pack package id.
+Service Pack Cleanup: Failed to get System Restore decsription string.
+Service Pack Cleanup: Failed to get the string representation of the Identity.
+Service Pack Cleanup: Failed to get WinDir path.
+Service Pack Cleanup: Failed to open <%s> node.
+Service Pack Cleanup: Failed to open Package %s.
+Service Pack Cleanup: Failed to open registry key %s
+Service Pack Cleanup: Failed to open registry key HKLM\%s.
+Service Pack Cleanup: Failed to query registry DWORD value %s from key HKLM\%s.
+Service Pack Cleanup: Failed to query registry key %s
+Service Pack Cleanup: Failed to read '%s' attribute of node of <%s[%u]>.
+Service Pack Cleanup: Failed to refresh the session.
+Service Pack Cleanup: Failed to remove Package %s.
+Service Pack Cleanup: Failed to set registry value. %s
+Service Pack Cleanup: Failure in CDISMPackageManager::CheckForPendingXml.
+Service Pack Cleanup: Failure in CDISMPackageManager::GetCurrentEdition.
+Service Pack Cleanup: GetCurrentEdition failed.
+Service Pack Cleanup: GetCurrentSP failed.
+Service Pack Cleanup: GetEditionPackageIdentities failed.
+Service Pack Cleanup: GetPackageCollection failed.
+Service Pack Cleanup: GetPrivileges Failed.
+Service Pack Cleanup: Initialized offline/ cmdline.
+Service Pack Cleanup: Initialized online/ cmdline.
+Service Pack Cleanup: Internal_ChangePackageState failed for %s.
+Service Pack Cleanup: Invalid parameter to function CDISMPackageManager::GetCurrentSP.
+Service Pack Cleanup: IsSystemPending returned TRUE.
+Service Pack Cleanup: No Service Pack to scavenge 
+Service Pack Cleanup: Not enough disk space for system restore.
+Service Pack Cleanup: OpenPackageByName failed for %s.
+Service Pack Cleanup: paEditionPackages cannot be nullptr.
+Service Pack Cleanup: pbPending cannot be nullptr.
+Service Pack Cleanup: pfPendingFlagSet cannot be nullptr.
+Service Pack Cleanup: pfPendingXmlExists cannot be nullptr.
+Service Pack Cleanup: ProcessChangesWithOptions() failed.
+Service Pack Cleanup: pszCurrentEdition and paCurrentEditions cannot be nullptr.
+Service Pack Cleanup: pszCurrentEdition cannot be nullptr.
+Service Pack Cleanup: RefreshInstanceAndLockScavenge failed.
+Service Pack Cleanup: Registry value %s at key HKLM\%s expected to be DWORD, but isn't.
+Service Pack Cleanup: Removing staged EditionId [%s].
+Service Pack Cleanup: Service Pack installed on system on System [%s].
+Service Pack Cleanup: Skipping current SP level edition package identity [%s].
+Service Pack Cleanup: SPScavengeable returned FALSE.
+Service Pack Cleanup: SrBeginNestedRestorePoint failed.
+Service Pack Cleanup: SrEndNestedRestorePoint failed.
+Service Pack Cleanup: StringCbCopy failed.
+Service Pack Cleanup: Successfully scavenged the image.
+Service Pack Cleanup: System Restore is not present.
+Service Pack Cleanup: System Restore is turned off.
+Service Pack Cleanup: Two packages found with same scavenge sequence.
+Service Pack Cleanup: Unable to determine target OS state.
+Service Pack Cleanup: Unable to determine target OS state. HRESULT=0x%x
+Service Pack Cleanup: Unable to mount offline registry. HRESULT=0x%x
+Service Pack Cleanup:Failed to execute SP scavenge.
+Service Pack Cleanup:Failed to output progress string to console.
+Service Pack Cleanup:Failed to output success string to console.
+Service Pack Cleanup:IsSystemPending failed.
+Service Pack Cleanup:SPScavengeable failed.
+Servicing stack is going down for self-update.
+Servicing stack restart. Treating it as success...
+servicing stack updated, aborting.
+Servicing stack will be reloaded at the next servicing operation.
+Servicing\Editions\EditionMatrix.xml
+servicingcommon.dll
+ServicingCommon.dll
+SeSecurityPrivilege
+session already initialized.
+Session information: Current Phase: %d, SessionState: %d, Completed: %d, Status: 0x%lx
+session not initialized.
+session object updated, must recreate session.
+SeTakeOwnershipPrivilege
+SetEnvironmentVariableW
+SetErrorMode
+SetEvent
+SetFileAttributesW
+SetFileInformationByHandle
+SetFilePointer
+SetInstallState
+SetLastError
+set-reservedstoragestate
+Set-ReservedStorageState#Sets the state of reserved storage.
+SetSecurityDescriptorDacl
+SetThreadLocale
+SetThreadpoolTimer
+SetThreadUILanguage
+SetUnhandledExceptionFilter
+Shared with Windows
+SHLWAPI.dll
+SizeofResource
+Sleep
+Software\Classes\Dism.RegTest
+SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\
+source
+source for package or file not found, ResolveSource() unsuccessful.
+Source path can't be nullptr.
+Source.Length >= 2
+Source.Length >= 3
+source[*]
+spsuperseded
+srclient.dll
+SRSetRestorePointW
+SssBindServicingStack
+SssGetServicingStackFilePath
+SssGetServicingStackFilePathLength
+SssGetServicingStackVersion
+SsShim.dll
+SssPreloadDownlevelDependencies
+SssReleaseServicingStack
+stage
+Staged
+Staging
+Staging package %1!s!ePackage %1!s! may have failed due to a pending restart. Restart the system and try the command again.qPackage %1!s! may have failed due to pending updates to servicing components in the image. Try the command again.
+standalone
+Start getting CBS property for analyze store report.
+startcomponentcleanup
+State
+state
+state not recoverable
+static_cast<DWORD>(1292L)
+stream timeout
+String operation exception!
+string too long
+StringFileInfo
+StringFromGUID2
+StringId < m_Entries.Length
+Successfully clear pending actions from the image.
+Successfully deleted [%s] registry key.
+Successfully opened MSU package "%s"
+Successfully opened package "%s"
+Successfully opened package with name "%s"
+Successfully processed package changes with session options
+Successfully scavenged the image.
+Superseded
+Superseded Service Packs %d 
+Support Information
+SUVWATAUAVAWH
+SUVWATAVAWH
+SUVWAVAWH
+SVATAVAWH
+SVAVH
+sVL!m
+SVWATAUAVAWH
+SVWATAUAWH
+SVWATAVAWH
+SVWATAVH
+SVWAUAVAWH
+SVWAVAWH
+SVWAVH
+SWATAUAVAWH
+system
+SYSTEM
+SYSTEM\CurrentControlSet\Control\MiniNT
+system32\ssshim.dll
+system32\winpeshl.exe
+syswow64\ssshim.dll
+t!9X u
+t!fD;
+t"@8=|
+t#D9>}
+t$ ;>
+T$ E3
+t$ E3
+t$ I3
+t$ UWAUAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+T$(E3
+T$(I;
+T$@E3
+t$`fD9t$`t8H
+T$0E3
+T$0H+
+T$8H!|$8
+T$HH;
+t$M9H
+T$pE3
+T$PL;
+t&L!p
+t&L9x u
+t(D8=
+t(D8-u;
+t)9h u
+t)D9l$Ht"D
+t,D8=
+t,f;1t'
+t.HcC<
+t/H9k u
+t/L9B
+t:D9@ u
+t;fE9
+t}SVWH
+t+H!X
+t+I9^
+t+L!}
+t2D9@ u
+t4A9~
+t4LcA0E
+target
+tBH9K u
+tCL!D$0
+tefD92t_H
+Temp = (*RtlReallocateStringRoutine)(Bytes, Blob->Buffer)
+Temp = (PUCHAR)((*RtlAllocateStringRoutine)(Bytes))
+TempElements.Allocate(NewCapacity)
+TempNodes.Allocate(this->m_LayoutCache.TotalObjectCount())
+TempNodes.Allocate(UpperIndex - TheElement.Reserved)
+Temporary directory is empty. The client may have not set it properly.
+TempTempElements.Allocate(NewCapacity)
+TerminateProcess
+text file busy
+t'H!x
+The %1 option does not take an argument.
+The %1 option is missing an argument.
+The %1 option is not recognized in this context.
+The %1 option is not recognized in this context. 
+The %1 option is not valid with this command.
+The %1 option must appear on the command-line before the arguments for that option.
+The .msu package contains features that cannot be installed using DISM.exe.
+The /RestoreHealth option cannot be used on a Windows PE target image.
+The /RevertPendingActions option cannot be used on a Windows PE target image.
+The /RevertPendingActions option cannot be used on a Windows PE target image. The operation must be used on a full Windows operating system image for system recovery only.
+The /ScanHealth option cannot be used on a Windows PE target image.
+The /spsuperseded option cannot be used on a Windows PE target image.
+The /spsuperseded option cannot be used on a Windows PE target image. The operation must be used on a full Windows operating system.
+The argument specified with the /Format option is not supported with this command.  
+The argument specified with the /Format option is not supported with this command. For more information about valid syntax, refer to the help.
+The change of package %s requires session reload.
+The changes due to package %1 requires the current servicing session to be reloaded.
+The command completed with errors. 
+the component referenced is not separately installable.
+the driver operations key is corrupt or invalid.
+the image location specified could not be accessed.
+The installation of MSU package %s requires session reload.
+The MSU does not have all the packages.
+The operation cannot be completed because Windows is currently performing another servicing operation. 
+The operation cannot be completed becuase Windows is currently performing another servicing operation. Try again later.
+the operation could not be complete due to locked resources.
+The operation could not be completed due to pending operations.
+The operation is complete but %1 feature was not enabled.
+The operation must be used on a full Windows operating system image for system recovery only.
+The operation must be used on a full Windows operating system image.
+The operation must be used on a full Windows operating system.
+The option(%s) is not recognized in this context.
+The package %1 is already installed.
+The package %1 is not present in the image.
+The package %1!s! will be ignored, as it is not applicable to this image.
+The package %s is already in the uninstall requested state.
+The package %s is not applicable to the image.
+The package %s is not applicable to the image. Continuing due to /%s switch.
+The package cannot be used against an offline image.
+the package is not applicable.
+The package is not installed due to some pending action.
+The package path is not valid. Specify a path to either a CAB file or a folder containing an expanded CAB file and try the command again. 
+The package was not added because the specified Windows image or package has pending online actions.
+the processor architecture specified is not supported.
+The scratch directory size might be insufficient to perform this operation. This can cause unexpected behavior. 
+The scratch directory size might be insufficient to perform this operation. This can cause unexpected behavior. Use the /ScratchDir option to point to a folder with sufficient scratch space. The recommended size is at least %d MB
+The source files could not be downloaded. 
+The source files could not be found and download failed. Their location can be specified using the /source option to restore the feature.
+The source files could not be found. 
+The source files could not be found; their location must be specified using the /source option to restore the feature.
+The specified image is no longer serviceable and may be corrupted. 
+The specified image is no longer serviceable. Unmount the image and discard your changes.  Mount the original image to try the operation again.
+The specified package cannot be added to an offline image.
+The specified package cannot be added to this Windows Image due to a version mismatch.
+The specified package cannot be added to this Windows Image due to a version mismatch. 
+The specified package is not applicable to this image.
+The specified package is not valid Windows package.
+the update could not be found or could not be opened.
+the update package was not a valid CSI update.
+TheDocument.Reserved == m_pTargetObject->m_LayoutCache.DocumentId()
+TheElement != TheElement.InvalidValue()
+TheEndElement = this->AllocateStreamObject()
+TheNode != TheNode.InvalidValue()
+This command can only be used online.
+This command can only be used with an offline image.
+This command requires a valid /State be specified. Re-enter the
+This command requires that a CapabilityName is specified.
+This command requires that a FeatureName is specified.
+This command requires that a valid State is specified.
+This command requires that CapabilityName is specified.
+This command requires that either the /PackagePath or /PackageName options be specified.
+This command requires that Source is specified once.
+This command requires that State is specified once.
+This command requires that Target is specified once.
+This command requires that the /CapabilityName option be specified.
+This command requires that the /FeatureName option be specified.
+This command requires that the /Source option be specified.
+This command requires that the /State option be specified.
+This command requires that the /Target option be specified.
+This command requires that the CapabilityName is specified.
+This feature cannot be enabled in the current image because the parent feature(s) are not installed. If you need this feature, try changing the image to a higher edition of Windows.
+This image already has a Windows edition installed. There cannot be more than one installed Windows edition in an image.
+This operation cannot be performed on this edition of Windows.
+This operation is not supported against an offline image.
+This operation is not supported when reserved storage is in use. Please
+This operation is only supported against an offline image.
+This package is not applicable to the image.
+This version of Windows requires a hotfix (KB960037) for adding packages or features offline. The hotfix can be obtained from the Windows OPK or WAIK media under the HotFix folder.
+this->m_PositionList.Allocate(LocationHeader->ulItemCount)
+timed out
+timed_out
+tm9UPth
+tMD9u
+TmiMatrix
+TmpNodes.Resize(cNecessary)
+To check the applicable Windows capabilities, internet connectivity is required.
+To service a Windows image from this host environment, you must install hotfix KB960037 on this computer. The hotfix is available on the Windows OPK and Windows AIK media in the <mediaroot>\HotFix folder.
+To show the installed Windows capabilities, specify the /LimitAccess option.
+too many files open
+too many files open in system
+too many links
+too many symbolic link levels
+too_many_files_open
+Translation
+Trying to delete expand dir
+tUA8vZu
+tUI9x
+ty@8=
+TYPELIB
+u,D9|$`u
+u,H9Z
+u4L9-
+UATAUAVAWH
+UATAVH
+UAVAWH
+UCS-2
+UCS-4
+ufM9/uaH
+ukI!S
+UL-`5P
+ulIndex < m_Header->ulTotalNodeCount
+ulLocation < m_PositionList.Length
+ulValue < MultFactor
+ulWhich < TheMap->Length
+Unable to check for sufficient scratch space. (HR=0x%x)
+Unable to check if target is WinPE or not. hr:0x%x
+Unable to clean up all temporary paths. (hr:0x%x)
+Unable to determine if WOW64 patch for Windows 2003, Vista SP1 is needed or installed. HR=0x%x
+Unable to determine OS state. HRESULT=0x%x
+Unable to determine target OS state. hr:0x%x
+Unable to determine target OS state. HRESULT=0x%x
+Unable to find the Unattend.xml file in the expanded .msu package.
+unattend
+unattend\servicing
+Undetermined
+unexpected internal XML parser error.
+UnhandledExceptionFilter
+Uninstall Pending
+UninstallWindows
+Unknown
+Unknown capabilities were specified on the command-line.
+unknown error
+Unknown Error
+Unknown features were specified on the command-line.
+Unknown top level command token %s
+UnmapViewOfFile
+Unrecognized reserved storage state
+update name is duplicated in package.
+Update the Windows image and try the operation again.
+update.mum
+updateagent.dll
+uPf9C
+uPH9i
+Use the "Source" option to specify the location of the files that are required to restore the feature. For more information on specifying a source location, see https://go.microsoft.com/fwlink/?LinkId=243077.
+Use the "source" option to specify the location of the files that are required to restore the feature. For more information on specifying a source location, see https://go.microsoft.com/fwlink/?LinkId=243077.
+Use the /Get-Features option to find the name of the feature in the image and try the command again.
+Use the /ScratchDir option to point to a folder with sufficient scratch space. The recommended size is at least %1!d! MB.
+USER32.dll
+USVWATAUAVAWH
+USVWATAUAVH
+USVWATAUAWH
+USVWATAVAWH
+USVWAUAVAWH
+UTF-16
+UTF-8
+UVWATAUAVAWH
+UVWATAVH
+UVWAUAVH
+UVWAVAWH
+UWATAUAVH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+V.qNDR
+v:L!m
+V0T0R
+Valid flags check failed: Flags
+value too large
+VarFileInfo
+VAVAWH
+Verifying source at location [%s]. Full path [%s].
+VerQueryValueW
+version
+VERSION.dll
+VH;>t&H
+VirtualProtect
+VirtualQuery
+Visibility
+VS_VERSION_INFO
+vswprintf_s
+VWATAUAVH
+VWATAUAWH
+VWATAVAWH
+VWAVH
+w L96
+w|H9{
+Wait a few minutes and try running the command again.
+wait for any servicing operations to complete and then try again later.
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+Washington1
+WATAUAVAWH
+WATAVH
+Watchlist: cycle appears when planning component intended state.
+Watchlist: not able to reach steady state after too many attempts.
+WAUAVH
+WAVAWH
+wcscat_s
+wcschr
+wcscpy_s
+wcsncmp
+wcsncpy_s
+wcsrchr
+wcsstr
+wcstoul
+wdscore.dll
+WdsRemoveDirectory: Unable to clear attributes on [%s]; GLE = 0x%x
+WdsRemoveDirectory: Unable to prepare path [%s]; GLE = 0x%x
+WdsRemoveDirectory: Unable to remove directory [%s]; GLE = 0x%x
+When using this command, do not specify both the /PackagePath and /PackageName options. 
+whichDoc.Reserved == m_pTargetObject->m_LayoutCache.DocumentId()
+whichElement != Windows::Microdom::Rtl::Element::InvalidValue()
+WilError_03
+WilFailureNotifyWatchers
+WilStaging_02
+WIMApplyImage
+WIMApplyImage failed!
+WIMCloseHandle
+WIMCreateFile
+WIMCreateFile failed for %s
+WIMLoadImage
+WIMLoadImage failed!
+WIMSetTemporaryPath
+Windows::COM::GetTemporaryPath
+Windows::COM::LoadSystemLibraryAndFunction
+Windows::Rtl::CRtlObjectTypeDescription<class MicrodomImplementation::CMicrodom>::CreateInstance
+Windows::Rtl::CRtlObjectTypeDescription<class MicrodomImplementation::CMicrodom>::CreateTearoff
+Windows::Rtl::CRtlObjectTypeDescription<class MicrodomWriterImplementation::CMicrodomWriter>::CreateInstance
+Windows::Rtl::CRtlObjectTypeDescription<class MicrodomWriterImplementation::CMicrodomWriter>::CreateTearoff
+Windows::uDom::Rtl::RtlDestroyMicrodomUpdateContext
+WINDOWS_WCP_INSKUASSEMBLY
+wrong protocol type
+wrong_protocol_type
+x ATAVAWH
+x ATH
+x AUAVAWH
+x AVE3
+x AVH
+x UATAUAVAWH
+x UAVAWH
+x"fD;
+x"fE;>
+x.!\$ L
+X_^[]
+x}E8nTtuH
+x797t
+xA_A^_^[]
+XA_A^_^][
+xA_A^A]A\_^[]
+xmlns
+xp9\$ thH
+XpL&M
+xtE9M
+Y u`H
+y0w0u

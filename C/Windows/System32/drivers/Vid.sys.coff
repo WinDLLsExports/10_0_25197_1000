@@ -1,0 +1,472 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\Vid.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    HAL.dll
+    winhvr.sys
+    WDFLDR.SYS
+    ksecdd.sys
+    ext-ms-win-ntos-ksr-l1-1-5.dll
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0050108 Import Address Table
+             1C0050E58 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         544 KeReleaseSpinLock
+                         480 KeAcquireSpinLockRaiseToDpc
+                         551 KeRemoveQueueDpcEx
+                         6C6 ObReferenceObjectByHandle
+                          E5 ExEventObjectType
+                          C4 ExBlockOnAddressPushLock
+                         173 ExUnblockOnAddressPushLockEx
+                         995 RtlRbInsertNodeEx
+                         996 RtlRbRemoveNode
+                         5DB MmFreePagesFromMdl
+                         62F MmUnmapViewOfSection
+                         BF4 ZwTerminateProcess
+                         6D7 ObfDereferenceObjectWithTag
+                         6C1 ObOpenObjectByPointer
+                         7C0 PsProcessType
+                         6D9 ObfReferenceObjectWithTag
+                         B80 ZwOpenSection
+                         B6A ZwMapViewOfSection
+                         3C4 IoQueueWorkItemEx
+                         73A ProbeForWrite
+                         2CB HvlQueryActiveHypervisorProcessorCount
+                         17B ExWaitForRundownProtectionRelease
+                         14E ExRundownCompleted
+                         129 ExReInitializeRundownProtection
+                         174 ExUnblockPushLockEx
+                         7B2 PsIsThreadTerminating
+                         498 KeClearEvent
+                         571 KeSetSystemGroupAffinityThread
+                         55A KeRevertToUserGroupAffinityThread
+                         8EA RtlGetVersion
+                         29D HalPrivateDispatchTable
+                          8D EtwEventEnabled
+                         797 PsGetThreadId
+                         77A PsGetProcessId
+                         4AD KeEnterCriticalRegion
+                          A3 ExAcquireFastMutexUnsafe
+                         4D4 KeInitializeDpc
+                         3DC IoReleaseCancelSpinLock
+                         71D PoReenableSleepStates
+                         6EF PoDisableSleepStates
+                         B6F ZwNotifyChangeKey
+                         6C7 ObReferenceObjectByHandleWithTag
+                         51B KeQueryMaximumProcessorCountEx
+                         550 KeRemoveQueueDpc
+                         105 ExInitializeRundownProtection
+                          D0 ExCreateDpcEvent
+                          AB ExAcquireRundownProtection
+                         121 ExQueueDpcEventWait
+                          B4 ExAcquireSpinLockSharedAtDpcLevel
+                         14D ExReleaseSpinLockSharedFromDpcLevel
+                         146 ExReleaseRundownProtection
+                          B1 ExAcquireSpinLockExclusive
+                         14A ExReleaseSpinLockExclusive
+                          C6 ExCancelDpcEventWait
+                          D2 ExDeleteDpcEvent
+                         5FA MmMapIoSpaceEx
+                         629 MmUnmapIoSpace
+                         58B KeUnstackDetachProcess
+                         7F9 PsTerminateSystemThread
+                         56C KeSetPriorityThread
+                         BDF ZwSetInformationThread
+                         55F KeSetActualBasePriorityThread
+                         627 MmUnlockPages
+                         BA2 ZwQueryInformationThread
+                         510 KeQueryGroupAffinity
+                         96C RtlNumberOfSetBitsUlongPtr
+                         B89 ZwPowerInformation
+                         45A IofCompleteRequest
+                          9A EtwWriteTransfer
+                          EE ExFreePoolWithTag
+                         818 RtlAnsiCharToUnicodeChar
+                         52A KeReenterRetpolinedCode
+                          70 DbgPrintEx
+                         6B5 ObDuplicateObject
+                         38F IoGetRequestorProcess
+                         869 RtlDecompressBufferEx
+                         843 RtlCompressBuffer
+                         8C8 RtlGetCompressionWorkSpaceSize
+                         2EA InitSafeBootMode
+                         44C IoWMIRegistrationControl
+                         5E6 MmGetSystemRoutineAddress
+                         8FC RtlInitUnicodeString
+                         555 KeResetEvent
+                         590 KeWaitForSingleObject
+                         188 ExpInterlockedPopEntrySList
+                         564 KeSetEvent
+                         4EB KeInsertQueueDpc
+                         4E0 KeInitializeSpinLock
+                         189 ExpInterlockedPushEntrySList
+                         4C4 KeGetCurrentIrql
+                         4D8 KeInitializeEvent
+                         2EB InitializeSListHead
+                         6D8 ObfReferenceObject
+                         47E KeAcquireSpinLockAtDpcLevel
+                         756 PsGetCurrentProcess
+                         6D6 ObfDereferenceObject
+                         B24 ZwClose
+                         361 IoFreeWorkItem
+                         857 RtlCopyUnicodeString
+                         4FA KeLeaveCriticalRegion
+                         2FE IoAllocateWorkItem
+                         631 MmUserProbeAddress
+                         124 ExRaiseDatatypeMisalignment
+                          BD ExAllocatePool2
+                         13A ExReleaseFastMutexUnsafe
+                         C04 __C_specific_handler
+                         BD9 ZwSetInformationFile
+                         B30 ZwCreateFile
+                         5BD MmAllocateMappingAddressEx
+                         615 MmQueryMemoryRanges
+                         612 MmProbeAndLockSelectedPages
+                         7A2 PsInitialSystemProcess
+                         B74 ZwOpenFile
+                         89F RtlFindClearBitsEx
+                          BE ExAllocatePool3
+                         84C RtlCopyBitMapEx
+                         5C4 MmAllocatePartitionNodePagesForMdlEx
+                         5DC MmFreePagesFromMdlEx
+                         5D9 MmFreeMemoryRanges
+                         5BF MmAllocateMemoryRanges
+                         611 MmProbeAndLockProcessPages
+                         5CD MmCopyVirtualMemory
+                         83F RtlCompareMemoryUlong
+                         969 RtlNumberOfSetBitsEx
+                         B08 ZwAllocateVirtualMemoryEx
+                         BFD ZwUnlockVirtualMemory
+                         B67 ZwLockVirtualMemory
+                         96B RtlNumberOfSetBitsInRangeEx
+                         B58 ZwFreeVirtualMemory
+                         897 RtlExtractBitMapEx
+                         B07 ZwAllocateVirtualMemory
+                         8AB RtlFindNextForwardRunClearEx
+                         5B5 MmAdjustWorkingSetSize
+                         BFE ZwUnmapViewOfSection
+                         BAC ZwQuerySection
+                         61B MmSectionObjectType
+                         824 RtlAreBitsSetEx
+                         9D0 RtlTestBitEx
+                         BA0 ZwQueryInformationProcess
+                         BB6 ZwQueryVirtualMemory
+                         834 RtlClearAllBitsEx
+                         5E9 MmHighestUserAddress
+                         838 RtlClearBitsEx
+                         822 RtlAreBitsClearEx
+                         4A4 KeDelayExecutionThread
+                         4DC KeInitializeMutex
+                          A7 ExAcquirePushLockExclusiveEx
+                         541 KeReleaseMutex
+                          A8 ExAcquirePushLockSharedEx
+                         13F ExReleasePushLockEx
+                          92 EtwSetInformation
+                          8B EtwActivityIdControl
+                          94 EtwUnregister
+                          95 EtwWrite
+                          8F EtwRegister
+                         592 KfRaiseIrql
+                         546 KeReleaseSpinLockFromDpcLevel
+                         4FE KeLowerIrql
+                         8BF RtlGUIDFromString
+                         781 PsGetProcessProtection
+                         7C8 PsReferencePrimaryToken
+                         A79 SeTokenIsAdmin
+                         74D PsDereferencePrimaryToken
+                         A5A SeQueryInformationToken
+                         A00 RtlValidSid
+                         9C9 RtlSubAuthorityCountSid
+                         9CA RtlSubAuthoritySid
+                         B7D ZwOpenProcessTokenEx
+                         831 RtlCheckTokenMembership
+                         946 RtlLengthRequiredSid
+                         907 RtlInitializeSidEx
+                          A2 ExAcquireFastMutex
+                         139 ExReleaseFastMutex
+                         749 PsCreateSystemThread
+                         7FA PsThreadType
+                         58E KeWaitForMultipleObjects
+                         11C ExQueryDepthSList
+                         57B KeStackAttachProcess
+                         187 ExpInterlockedFlushSList
+                         35E IoFreeMdl
+                         2FB IoAllocateMdl
+                         5C7 MmBuildMdlForNonPagedPool
+                         5FC MmMapLockedPagesSpecifyCache
+                         62A MmUnmapLockedPages
+                         BB2 ZwQuerySystemInformation
+                          FB ExGetSystemFirmwareTable
+                         15E ExSubscribeWnfStateChange
+                         27E HalDispatchTable
+                         518 KeQueryLogicalProcessorRelationship
+                         2D3 HvlQueryProcessorTopologyHighestId
+                         2CC HvlQueryActiveProcessors
+                         2D0 HvlQueryProcessorTopology
+                         177 ExUnsubscribeWnfStateChange
+                         2D2 HvlQueryProcessorTopologyEx
+                         B69 ZwManagePartition
+                         2CF HvlQueryNumaDistance
+                         C81 qsort
+                         475 KeAcquireGuardedMutex
+                         53A KeReleaseGuardedMutex
+                         4D9 KeInitializeGuardedMutex
+                         5BC MmAllocateMappingAddress
+                         5D8 MmFreeMappingAddress
+                         5FD MmMapLockedPagesWithReservedMapping
+                         62B MmUnmapReservedMapping
+                         B4C ZwDuplicateObject
+                         354 IoFileObjectType
+                         38E IoGetRelatedDeviceObject
+                         2F9 IoAllocateIrp
+                         35B IoFreeIrp
+                         459 IofCallDriver
+                         ACA VslRetrieveMailbox
+                         610 MmProbeAndLockPages
+                         9AF RtlSetBitEx
+                         7DF PsSetCreateProcessNotifyRoutine
+                         757 PsGetCurrentProcessId
+                         77D PsGetProcessJob
+                         179 ExUuidCreate
+                         C72 iswalnum
+                         7B7 PsJobType
+                         11B ExNotifyCallback
+                         900 RtlInitializeBitMapEx
+                          CF ExCreateCallback
+                         5C3 MmAllocatePagesForMdlEx
+                         8BA RtlFreeNonVolatileToken
+                         B3A ZwCreateSection
+                         8DA RtlGetNonVolatileToken
+                         BB7 ZwQueryVolumeInformationFile
+                         205 FsRtlKernelFsControlFile
+                         241 FsRtlQueryCachedVdl
+                         606 MmMapViewInSystemSpaceEx
+                         62E MmUnmapViewInSystemSpace
+                         8B4 RtlFlushNonVolatileMemory
+                         3C5 IoQueueWorkItemToNode
+                         7BF PsPartitionType
+                         BE9 ZwSetSystemInformation
+                         50B KeQueryActiveProcessorCountEx
+                         4DF KeInitializeSemaphore
+                         2D7 HvlRegisterWheaErrorNotification
+                         2DA HvlUnregisterWheaErrorNotification
+                         543 KeReleaseSemaphore
+                         8B0 RtlFindSetBitsEx
+                         B7A ZwOpenPartition
+                         85A RtlCreateAcl
+                         808 RtlAddAccessAllowedAce
+                         861 RtlCreateSecurityDescriptor
+                         9B4 RtlSetDaclSecurityDescriptor
+                         B35 ZwCreatePartition
+                         5E3 MmGetPhysicalMemoryRangesEx
+                         BAE ZwQuerySecurityObject
+                         8CC RtlGetDaclSecurityDescriptor
+                         8C2 RtlGetAce
+                         88C RtlEqualSid
+                         916 RtlInterlockedSetBitRunEx
+                         914 RtlInterlockedClearBitRunEx
+                         12E ExRegisterExtension
+                         176 ExUnregisterExtension
+                         9AD RtlSetAllBitsEx
+                         836 RtlClearBitEx
+                         9B1 RtlSetBitsEx
+                         12D ExRegisterCallback
+                         175 ExUnregisterCallback
+                         BB8 ZwQueryWnfStateData
+                         120 ExQueryWnfStateData
+                         C30 __chkstk
+
+    HAL.dll
+             1C0050000 Import Address Table
+             1C0050D50 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          54 KeQueryPerformanceCounter
+
+    winhvr.sys
+             1C0050950 Import Address Table
+             1C00516A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          9C WinHvSetSchedulerAssistData
+                          9D WinHvSetSchedulerNotificationRoutine
+                          52 WinHvGetSystemInformation
+                          8A WinHvRunVpDispatchLoop
+                          10 WinHvCancelVpDispatchLoop
+                          13 WinHvClearVirtualInterrupt
+                          5A WinHvInjectSyntheticMachineCheckEvent
+                          54 WinHvGetVpRegisters
+                           A WinHvAssertDeviceInterrupt
+                          A5 WinHvSignalEventDirect
+                           B WinHvAssertVirtualInterrupt
+                          4E WinHvGetPortProperty
+                          32 WinHvDisconnectPort
+                          31 WinHvDisconnectDoorbell
+                          3B WinHvFreePartitionSintIndex
+                          5F WinHvLookupPortId
+                          4A WinHvGetNextQueuedPort
+                          A0 WinHvSetSyntheticInterruptHandler
+                           7 WinHvAllocatePartitionSintIndex
+                          3C WinHvFreePortId
+                          28 WinHvDeletePort
+                          19 WinHvConnectPort
+                          9B WinHvSetPortProperty
+                          21 WinHvCreatePort
+                           8 WinHvAllocatePortId
+                           E WinHvCancelRestorePartitionState
+                          89 WinHvRestorePartitionState
+                           F WinHvCancelSavePartitionState
+                          8B WinHvSavePartitionState
+                          53 WinHvGetVpCpuidValues
+                          59 WinHvInitializePartition
+                          1F WinHvCreatePartitionEx
+                          4C WinHvGetPartitionId
+                          11 WinHvCheckForIoIntercept
+                          34 WinHvEnableVpVtl
+                          7F WinHvQueryReferenceCounter
+                          15 WinHvCompleteIntercept
+                          B5 WinHvWithdrawAllMemoryWithCount
+                          4D WinHvGetPartitionProperty
+                          46 WinHvGetMemoryBalance
+                          2C WinHvDepositMemoryFromMdlRemote
+                          2B WinHvDepositMemoryFromMdl
+                          4B WinHvGetNodeRequirement
+                          56 WinHvHandleInsufficientRootMemory
+                          99 WinHvSetPartitionProperty
+                          29 WinHvDeleteVp
+                          AF WinHvUnmapVpStatePage
+                          6E WinHvMapVpStatePage
+                          AE WinHvUnmapStatsPage
+                          6D WinHvMapStatsPage
+                          8E WinHvSetDispatchNotificationEvent
+                          18 WinHvConfigureSchedulerAssistNotifications
+                          8C WinHvScrubPartition
+                          A3 WinHvSetVpState
+                          55 WinHvGetVpState
+                          5B WinHvInstallIntercept
+                          39 WinHvForceSmallPages
+                          74 WinHvNotifyStandbyTransition
+                          86 WinHvReportPresentHypervisor
+                          7D WinHvQueryInterceptIrql
+                          26 WinHvDeletePartition
+                          36 WinHvFinalizePartition
+                          8D WinHvSetCpuGroupProperty
+                          3F WinHvGetCpuGroupProperty
+                          45 WinHvGetLogicalProcessorRunTime
+                          A1 WinHvSetSystemInformation
+                          76 WinHvPersistPartitionReservedPages
+                          72 WinHvModifyVtlProtectionMask
+                          84 WinHvReleaseSparseGpaPageHostAccess
+                          73 WinHvModifyVtlProtectionMaskRange
+                          12 WinHvCheckSparseGpaPageVtlAccess
+                          33 WinHvEnablePartitionVtl
+                          80 WinHvQueryVtlProtectionMaskRange
+                          20 WinHvCreatePartitionRemote
+                          27 WinHvDeletePartitionRemote
+                          95 WinHvSetInterceptRoutine
+                          98 WinHvSetLowMemoryPolicyRoutine
+                          AD WinHvUnmapGpaPages
+                          A9 WinHvUncommitGpaPages
+                          1E WinHvCreatePartition
+                          37 WinHvFlushCache
+                          85 WinHvReleaseSparseSpaPageHostAccess
+                          69 WinHvMapGpaPagesScanLargePages
+                          6B WinHvMapGpaPagesSpecial
+                          70 WinHvModifySparseGpaPages
+                          42 WinHvGetGpaRangesAccessState
+                          67 WinHvMapGpaPagesFromMbpArrayScanLargePages
+                          68 WinHvMapGpaPagesFromMbpArrayScanLargePagesRemote
+                          79 WinHvPrecommitGpaPages
+                          A7 WinHvTranslateVirtualAddress
+                          57 WinHvImportIsolatedPages
+                          16 WinHvCompleteIsolatedImport
+                          5D WinHvIssueSnpPspGuestRequest
+                           5 WinHvAcquireSparseSpaPageHostAccess
+                          6F WinHvModifySparseGpaPageHostVisibility
+                           4 WinHvAcquireSparseGpaPageHostAccess
+                          41 WinHvGetGpaPagesAccessState
+                          23 WinHvDeleteCpuGroup
+                          1B WinHvCreateCpuGroup
+                          B0 WinHvUnregisterInterceptResult
+                          82 WinHvRegisterInterceptResult
+                          A2 WinHvSetVpRegisters
+                          22 WinHvCreateVp
+
+    WDFLDR.SYS
+             1C0050010 Import Address Table
+             1C0050D60 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           7 WdfVersionBindClass
+                           9 WdfVersionUnbindClass
+                           6 WdfVersionBind
+                           8 WdfVersionUnbind
+                           3 WdfLdrQueryInterface
+
+    ksecdd.sys
+             1C00500B8 Import Address Table
+             1C0050E08 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           F BCryptEncrypt
+                           B BCryptDestroyKey
+                          23 BCryptSetProperty
+                           6 BCryptDecrypt
+                          16 BCryptGenRandom
+                          1A BCryptGetProperty
+                          1F BCryptOpenAlgorithmProvider
+                           4 BCryptCloseAlgorithmProvider
+                          1C BCryptImportKey
+
+    ext-ms-win-ntos-ksr-l1-1-5.dll
+             1C0050040 Import Address Table
+             1C0050D90 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           8 KsrGetMemoryBlockType
+                           6 KsrFreePersistedMemoryBlock
+                          15 KsrPersistMetadata
+                          1D KsrUnpersistMemoryPartition
+                          13 KsrPersistMemoryPartition
+                           3 KsrEnumeratePersistedMemory
+                          17 KsrQueryMetadata
+                           B KsrMdlToMemoryRuns
+                          14 KsrPersistMemoryWithMetadata
+                           0 KsrClaimPersistedMemory
+                           7 KsrGetFirmwareInformation
+                          12 KsrPersistMemory
+                           5 KsrFreePersistedMemory
+                          18 KsrQueryPersistedMemoryPartition
+
+  Summary
+
+        1000 .data
+        5000 .idata
+        6000 .pdata
+       18000 .rdata
+        3000 .reloc
+        D000 .rsrc
+       13000 .text
+        1000 GFIDS
+        1000 INIT
+       1D000 NONPAGED
+       62000 PAGE
+        1000 PAGED
+        1000 fothk

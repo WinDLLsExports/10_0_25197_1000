@@ -1,0 +1,154 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\ksecpkg.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    cng.sys
+    ksecdd.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C001B118 Import Address Table
+             1C001B4E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         631 MmUserProbeAddress
+                         82C RtlCharToInteger
+                         13A ExReleaseFastMutexUnsafe
+                         4FA KeLeaveCriticalRegion
+                         C4A _strnicmp
+                         C70 isspace
+                         C93 strncmp
+                         8F7 RtlInitString
+                         51B KeQueryMaximumProcessorCountEx
+                         7AF PsIsSystemProcess
+                          A9 ExAcquireResourceExclusiveLite
+                          AA ExAcquireResourceSharedLite
+                         145 ExReleaseResourceLite
+                         4C4 KeGetCurrentIrql
+                          F0 ExFreeToNPagedLookasideList
+                          BB ExAllocateFromPagedLookasideList
+                         94F RtlLookupElementGenericTableAvl
+                          F1 ExFreeToPagedLookasideList
+                         C3E _purecall
+                         564 KeSetEvent
+                         640 NtClose
+                         498 KeClearEvent
+                         101 ExInitializeNPagedLookasideList
+                          BA ExAllocateFromNPagedLookasideList
+                         C04 __C_specific_handler
+                         81E RtlAppendUnicodeToString
+                         C5C _wcsicmp
+                         B50 ZwEnumerateKey
+                         C5F _wcsnicmp
+                         CA9 wcschr
+                         C9E tolower
+                         8BB RtlFreeOemString
+                         9E7 RtlUnicodeStringToOemString
+                         9EA RtlUnicodeToMultiByteN
+                         4AD KeEnterCriticalRegion
+                         88D RtlEqualString
+                          A3 ExAcquireFastMutexUnsafe
+                         872 RtlDeleteElementGenericTableAvl
+                         904 RtlInitializeGenericTableAvl
+                         BAA ZwQueryObject
+                         88E RtlEqualUnicodeString
+                         BDC ZwSetInformationObject
+                          EE ExFreePoolWithTag
+                         652 NtDuplicateObject
+                          BD ExAllocatePool2
+                         B76 ZwOpenKey
+                         104 ExInitializeResourceLite
+                         B24 ZwClose
+                          F8 ExGetPreviousMode
+                         BB5 ZwQueryValueKey
+                          DE ExEnterCriticalRegionAndAcquireResourceExclusive
+                         6C6 ObReferenceObjectByHandle
+                          D7 ExDeleteResourceLite
+                         142 ExReleaseResourceAndLeaveCriticalRegion
+                         90A RtlInsertElementGenericTableAvl
+                         5F5 MmLockPagableDataSection
+                         626 MmUnlockPagableImageSection
+                         6D6 ObfDereferenceObject
+                         375 IoGetDeviceObjectPointer
+                         8FC RtlInitUnicodeString
+                         590 KeWaitForSingleObject
+                         459 IofCallDriver
+                         307 IoBuildDeviceIoControlRequest
+                         4D8 KeInitializeEvent
+                         C58 _vsnprintf_s
+                          70 DbgPrintEx
+                         756 PsGetCurrentProcess
+                         102 ExInitializePagedLookasideList
+                         45A IofCompleteRequest
+                         CAA wcscmp
+
+    cng.sys
+             1C001B000 Import Address Table
+             1C001B3D0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          38 SslIncrementProviderReferenceCount
+                           9 BCryptDestroyKey
+                           C BCryptDuplicateKey
+                          1B BCryptImportKey
+                          24 BCryptSetProperty
+                           4 BCryptDecrypt
+                          18 BCryptGetProperty
+                          30 SslDecryptPacket
+                          37 SslImportKey
+                          14 BCryptGenRandom
+                          32 SslExpandNextGenTrafficKey
+                          35 SslExportKeyingMaterial
+                          31 SslEncryptPacket
+                          2F SslDecrementProviderReferenceCount
+                          33 SslExpandWriteKey
+                          34 SslExportKey
+                           D BCryptEncrypt
+                          3A SslLookupCipherSuiteInfo
+                          36 SslFreeObject
+                          39 SslLookupCipherLengths
+                          3B SslOpenProvider
+                          16 BCryptGenerateSymmetricKey
+                           2 BCryptCreateHash
+                          1A BCryptHashData
+                           8 BCryptDestroyHash
+                           1 BCryptCloseAlgorithmProvider
+                          12 BCryptFinishHash
+                          10 BCryptExportKey
+                          1E BCryptOpenAlgorithmProvider
+
+    ksecdd.sys
+             1C001B0F0 Import Address Table
+             1C001B4C0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          33 KSecLocatePackage
+                          2C FreeContextBuffer
+                          3A QueryContextAttributesExW
+                          3E QuerySecurityPackageInfoW
+
+  Summary
+
+        3000 .data
+        2000 .idata
+        2000 .pdata
+        7000 .rdata
+        2000 .reloc
+        1000 .rsrc
+        E000 .text
+        1000 GFIDS
+        1000 INIT
+        4000 PAGE
+        E000 PAGEMSG
+        1000 fothk

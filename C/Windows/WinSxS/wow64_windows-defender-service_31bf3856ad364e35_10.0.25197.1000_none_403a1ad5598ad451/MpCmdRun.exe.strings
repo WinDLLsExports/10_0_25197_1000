@@ -1,0 +1,4642 @@
+----------
+------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+                                                               quarantined item(s)
+                                              downloaded signatures
+                                              for this tool
+                                              Scans for malicious software
+                                              signature definitions
+                                              signatures
+                                              temporary DiagTrack folder 
+                                              the original default set of
+                                              the previous version saved
+                                              to a previous backup copy or to
+                                 uiAccess="false" />
+                              (%s, %s, %s)
+                      [-DynamicSignatures]    Removes only the dynamically
+                      [-Engine]               Restore the installed engine to
+                  - Actions are not applied after detection.
+                  - Archive files are scanned.
+                  - Detections from the custom scan are not displayed in the user interface.
+                  - Event log entries are not written after detection.
+                  - File exclusions are ignored.
+                  - The console output will show the list of detections from the custom scan.
+                  - Will ensure that the scan obeys the CPU throttling as defined in the policy (Default 50%).
+                Enables boot sector scanning; only valid for custom scan.
+                If this parameter is not specified, default value is 7 days for full scan and 1 day for all other scans.
+                Indicates the file or directory  to be scanned, only valid for custom scan.
+                Instead of returning the default 0 or 2 values, return the actual HRESULT of the scan command.
+                This option is valid only for custom scan.
+                Timeout in days; maximum value is 30.
+                Try to cancel any ongoing quick or full scan.
+                When specified:
+             preconfigured UNC location
+           [-BootSectorScan]
+           [-Cancel]
+           [-CpuThrottling]
+           [-DisableRemediation]
+           [-File <path>]
+           [-ReturnHR]
+           [-Timeout <days>]
+          xmlns="urn:schemas-microsoft-com:asm.v1">
+         [-Cancel]
+         [-ReturnHR]
+         [-Timeout <days>]
+        - All %1!s! events from the System event log
+        - All relevant %1!s! registry locations
+        - Any trace files from %1!s!
+        - The log file of the signature update helper tool
+        - The log file of this tool
+        - The Windows Update history log
+        [-All]
+        [-DynamicSignatures]
+        [-Engine]
+        [-FilePath <filePath>]
+        [-Grouping]
+        [-Level]
+        [-ListAll]
+        [-MMPC]
+        [-Name <name>]
+        [-Output <fileName>]
+        [-Path <path>]
+        [-SupportLogLocation <path>]
+        [-UNC [-Path <path>]]
+        <requestedExecutionLevel level="asInvoker"
+        0  Default, according to your configuration
+        0x1    Errors
+        0x1    Service
+        0x10   Scheduled actions
+        0x10   Verbose
+        0x100  DLP external
+        0x2    Malware Protection Engine
+        0x2    Warnings
+        0x20   Performance
+        0x20   WMI
+        0x200  Browser Protection
+        0x4    Informational messages
+        0x4    User Interface
+        0x40   NIS/GAPA
+        0x8    Function calls
+        0x8    Real-Time Protection
+        0x80   Windows Security Center
+        1  Quick scan
+        2  Full system scan
+        3  File and directory custom scan
+        Adds a Dynamic Signature specified by <path>
+        as a file having the current timestamp in its name and bearing
+        Begins tracing %1!s!'s actions.
+        Checks for new definition updates
+        Checks whether <path> is excluded. It can be either a path, or a file.
+        compressed file in the support directory
+        Copies the support logs to the specified <path>. If <path> is not specified,
+        directory
+        Displays Troubleshooting mode information.
+        Enables or disables Tamper Protection feature.
+        Gathers the following log files and packages them together in a 
+        how much information is recorded.
+        If no component is specified, all the components will be logged.
+        If no level is specified, the Error, Warning and Informational levels
+        If not specified, the item will be restored to the original path, and would be removed from quarantine list.
+        If -Output is specified, will output all item name(s) to a file in utf-8 encoding.
+        If -Path is not specified, update will be performed directly from the
+        If -Path is specified, the item will be restored to the specified path, but won't be removed from quarantine list.
+        List all items that were quarantined
+        Lists SignatureSet ID's of all Dynamic Signatures added to the client
+        One Threat can map to more than one file
+        option if you have difficulties trying to update signatures.
+        Performs update directly from Microsoft Malware Protection Center
+        Performs update directly from UNC file share specified in <path>
+        Removes a Dynamic Signature specified by <SignatureSetID>
+        Removes all Dynamic Signatures. 
+        Removes any installed signature and engine files. Use this 
+        Restores all the quarantined items based on name
+        Restores quarantined item based on file path
+        Restores the last saved engine
+        Restores the last set of signature definitions
+        Restores the most recently quarantined item based on threat name
+        Same as GetFiles, but outputs the CAB file to the temp DiagTrack 
+        Specify the path where the quarantined items will be restored.
+        support logs will be copied to the location specified in the SupportLogLocation Configuration.
+        the extension BIN.
+        Use this option to restore the previous engine.
+        via MAPS and MPCMDRUN -AddDynamicSignature
+        will be logged. The data will be stored in the support directory
+        You can specify the components for which tracing is enabled and
+       Captures all the network input into the Network Protection service and 
+       ex: C:\Users\Public\Downloads 
+       Note: The specified path must be writable by LocalService
+       saves it to a file at <path>. Supply an empty path to stop tracing
+      %ws:%ws quarantined at %ws (UTC)
+      [DEFAULT]Return code is
+      </requestedPrivileges>
+      <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
+      <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitor</dpiAwareness>
+      <requestedPrivileges>
+      <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />
+      <supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />
+      <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />
+      <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+      <supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />
+      0    if no malware is found or malware is successfully remediated and no additional user action is required
+      2    if malware is found and not remediated or additional user action is required to complete remediation or there is error in scanning.  Please check History for more information.
+      CHECKPOINT         : %#lx
+      FLAGS              : %ls
+      HRESULT of the scan command if -ReturnHR was specified
+      OR
+      PID                : %ld
+      SERVICE_EXIT_CODE  : %ld  (%#lx)
+      STATE              : %-2lx %s
+      TYPE               : %-2lx %s
+      WAIT_HINT          : %#lx
+      WIN32_EXIT_CODE    : %ld  (%#lx)
+    %-20hs: %ws %ws, hr = 0x0
+    %-20hs: %ws, hr = %#lx
+    %-20hs: %ws, hr = 0x0
+    %-20ws: %ls
+    %-40s [NOT_FOUND]    : <NOT FOUND>
+    %-40s [REG_BINARY]   : 
+    %-40s [REG_DWORD]    : %lu (0X%lX)
+    %-40s [REG_DWORD]    : <NO VALUE>
+    %-40s [REG_EXPAND_SZ]: %s
+    %-40s [REG_MULTI_SZ] : 
+    %-40s [REG_SZ]       : %s
+    </application>
+    </asmv3:windowsSettings>
+    <application>
+    <asmv3:windowsSettings>
+    <security>
+    Domain:      %u
+    Private:     %u
+    Public:      %u
+    Scan:        %u
+    Settings:    %u
+    Updates:     %u
+   %s:%s quarantined at %s (UTC) was restored
+   -? / -h                                    Displays all available options
+   </security>
+   -AddDynamicSignature [-Path]               Loads a dynamic signature
+   -AddDynamicSignature -Path <path> 
+   -CaptureNetworkTrace -path <path>
+   -CheckExclusion -path <path>
+   -CheckExclusion -path <path>               Checks whether path is excluded
+   ERROR - %s:%s quarantined at %s (UTC) cannot be restored. Error code = %#lx
+   -GetFiles
+   -GetFiles [-SupportLogLocation <path>]     Collects support information
+   -GetFilesDiagTrack
+   -GetFilesDiagTrack                         Same as Getfiles but outputs to 
+   -ListAllDynamicSignatures
+   -ListAllDynamicSignatures                  List the loaded dynamic signatures
+   -RemoveDefinitions
+   -RemoveDefinitions [-All]                  Restores the installed
+   -RemoveDynamicSignature [-SignatureSetID]  Removes a dynamic signature
+   -RemoveDynamicSignature -SignatureSetID <SignatureSetID> 
+   -Restore
+   -Restore  [-ListAll | [[-Name <name>] [-All] | [-FilePath <filePath>]] [-Path <path>]] [-Output <fileName>] Restore or list
+   -Scan [-ScanType #] [-File <path> [-DisableRemediation] [-BootSectorScan] [-CpuThrottling]]
+   -Scan [-ScanType value]
+   -SignatureUpdate
+   -SignatureUpdate [-UNC | -MMPC]            Checks for new definition updates
+   -TPState [-on|-off]
+   -Trace [-Grouping #] [-Level #]            Starts diagnostic tracing
+   -Trace [-Grouping value] [-Level value]
+   -TSMode
+  </asmv3:application>
+  </compatibility>
+  </trustInfo>
+  <asmv3:application>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+  ExePath:   %ls
+  Name:      %ls
+  SigStatus: %u
+  State:     %u
+  Substatus:
+ (local)
+ 0D0O0z0
+----------------------- Antimalware status information ------------------------
+ Base Class Array'
+ Base Class Descriptor at (
+ buffering
+ but loaded type 
+ circular
+ Class Hierarchy Descriptor'
+ Complete Object Locator'
+ Current Update Index:%ld (of %ld)
+ Daily quota left: %lu minute(s)
+ Daily quota left: INFINITE
+ delete
+ delete[]
+ description: "%ls"
+ End time:         %ls
+ ERROR 
+ Expecting type 
+ Expiration left:  %lu minute(s)
+ Expiration left:  INFINITE
+ file: "%ls"
+ Microsoft Corporation. All rights reserved.
+ Microsoft Information ProtectionbMicrosoft Information Protection blocked the following actions based on your organization's rules.
+ Microsoft Operations Puerto Rico1
+ Microsoft Operations Puerto Rico1&0$
+ Mode:             %ls
+---------------------------- MpCmdRunShowNetworkInfo() ------------------------------
+ new[]
+ newfile
+ noexcept
+ Operating System
+ Percent Complete:%ld,
+ sequential
+ Start time:       %ls
+ Start Time: %s
+ SVW3
+----------------------------- Threat information ------------------------------
+ Type Descriptor'
+ Update Index:%ld of %ld - %ld%%
+ volatile
+ Windows
+!.k*"r
+!0[0}0
+!This program cannot be run in DOS mode.
+" type is not defined in MpSnapshotSeriaizeDataType
+"%ls"
+"%ls" -%ls -Reinvoke
+#\$D#D$ 
+#3DS=D
+#D$ 3
+#D$(3
+#L$,#
+$`2X`F
+$0C0y0
+$3#'i
+$SVWQ
+$u;8H
+$uf8Q
+%%%%%lu
+%.2x 
+%.4Ix: 
+%02X 
+%04hu-%02hu-%02huT%02hu:%02hu:%02huZ
+%1!s! Command Line Utility (c) 2006-2020 Microsoft Corp
+%2!s!
+%-24hs: %#lx
+%-24hs: %s
+%-24hs: Finished(%lu) Failed(%lu) CriticalFailed(%lu) Additional Actions(%lu)
+%-24hs: Threats(%u) Suspicious(%u)
+%-24ws: %lu total
+%-24ws: %ws
+%-50ls: %u.%u.%u.%u
+%-50ls: version not available.
+%62s%s
+%A %c
+%d/%d/%d %.2d:%.2d:%.2d %s
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%u)\%hs!%p: 
+%localappdata%\packages\Microsoft.6365217CE6EB4_8wekyb3d8bbwe\LocalState\Logs
+%ls - not match
+%ls %ls
+%ls [%ls] is %ls. Exit code is %ld.
+%ls = [%d]
+%ls = [%ls]
+%ls = [FALSE]
+%ls = [TRUE]
+%ls is not a directory
+%ls -Reinvoke
+%ls% *ls
+%ls%08lX-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X%ls
+%ls%ls
+%ls%ls% *ls
+%ls-%ls-%02u%02u%ls
+%ls-%ls%ls
+%ls&clcid=%04X
+%ls.bak
+%ls: [
+%ls\%02u%02u
+%ls\%ls
+%ls\%ls-%02hu%02hu%04hu-%02hu%02hu%02hu.xml
+%ls\%ls-%I64d.txt
+%ls\%ls\%ls\%ls
+%ls\CopyAcceleratorDllInjection.log
+%ls\imagepackage-%lx.exe
+%ls\latest.sha1-%I64d.txt
+%ls\StableEngineEtwLocation\%ls
+%ls_%ls
+%ls=[%ls]
+%ls=0x%lx
+%lslatest.sha1
+%lu.%lu.%lu.%lu
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%programdata%\Microsoft\Windows Defender\Snapshots
+%programdata%\Microsoft\Windows Security Health\Logs
+%ProgramFiles%\Windows Defender
+%s %s
+%S failed, code %#lx
+%s Outbound for TCP
+%s-%04hu%02hu%02hu-%02hu%02hu%02hu-%08lx-%08lx%s
+%s%s%s
+%s%s%s%s
+%s: Command Line: %s
+%s: End Time: %s
+%s\%s
+%s\%s%s
+%s\%s\%s
+%s_%d.CAB
+%SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Security-Mitigations%4KernelMode.evtx
+%SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Security-Mitigations%4UserMode.evtx
+%temp%
+%u.%u.%u.%u
+%windir%
+%windir%\debug
+%windir%\logs\cbs
+%windir%\Logs\Reagent
+%windir%\Logs\WindowsUpdate
+%windir%\Microsoft Antimalware\Support
+%windir%\Panther\UnattendGC
+%windir%\ServiceProfiles
+%windir%\ServiceProfiles\LocalService\AppData\Local\Temp
+%windir%\ServiceProfiles\NetworkService\AppData\Local\Temp
+%windir%\System32\recovery
+%windir%\system32\winevt\logs
+%windir%\SystemTemp
+%windir%\temp
+%ws %ws
+%ws getting device ticket, hr=%#lx
+%ws sending device ticket to the service, hr=%#lx
+%zu blob paths found.
+%zu signatures found.
+%zu: %ls
+&,dv~
+&0*1O1I2
+&Nyi'
+(,^os
+(_^[]
+(caller: %p) 
+(Default)
+(fPtS
+(none)
+(null)
+(Unknown)
+), hr=0x
+)Microsoft Root Certificate Authority 20100
+*********************************** %ls *************************
+*********************************** IWscProduct(WSC_SECURITY_PROVIDER_ANTIVIRUS) *************************
+*********************************** IWscProduct(WSC_SECURITY_PROVIDER_FIREWALL) *************************
+*********************************** Printer Info *************************
+*********************************** Sense Info *************************
+*********************************** WSC State Info *************************
+*****************************************************************************
+*******************************************************************************
+*.etl
+*.log
+*.xml
+*[System[Provider[@Name='Microsoft-Windows-Windows Defender']]]
+*050j0x0
+*0D0L0,1
+, Changeable: 
+, Likely that Network Protection was not enabled on this machine
+, Version: 
+,<ellipsis>
+,iostream stream error
+,SVW3
+,SVWRh
+..\..\Microsoft Security Client\Support
+.?AU?$IAsyncOperationCompletedHandler@PAVUserHostIdentity@WebAuthentication@Security@Internal@Windows@@@Foundation@Windows@@
+.?AU?$IAsyncOperationCompletedHandler@PAVUserIdentity@OnlineId@Authentication@Security@Windows@@@Foundation@Windows@@
+.?AU?$IAsyncOperationCompletedHandler_impl@U?$AggregateType@PAVUserHostIdentity@WebAuthentication@Security@Internal@Windows@@PAUIUserHostIdentity@2345@@Internal@Foundation@Windows@@@Foundation@Windows@@
+.?AU?$IAsyncOperationCompletedHandler_impl@U?$AggregateType@PAVUserIdentity@OnlineId@Authentication@Security@Windows@@PAUIUserIdentity@2345@@Internal@Foundation@Windows@@@Foundation@Windows@@
+.?AU?$IForwardIterator@$$CB_W@CommonUtil@@
+.?AU?$IIterable@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@
+.?AU?$IIterable_impl@U?$AggregateType@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@PAUIOnlineIdServiceTicketRequest@2345@@Internal@Foundation@Windows@@@Collections@Foundation@Windows@@
+.?AU?$IIterator@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@
+.?AU?$IIterator_impl@U?$AggregateType@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@PAUIOnlineIdServiceTicketRequest@2345@@Internal@Foundation@Windows@@$00@Collections@Foundation@Windows@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00$$V@Details@WRL@Microsoft@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$0A@U?$IAsyncOperationCompletedHandler@PAVUserHostIdentity@WebAuthentication@Security@Internal@Windows@@@Foundation@Windows@@@Details@WRL@Microsoft@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$0A@U?$IAsyncOperationCompletedHandler@PAVUserIdentity@OnlineId@Authentication@Security@Windows@@@Foundation@Windows@@@Details@WRL@Microsoft@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$0A@UIWeakReference@@@Details@WRL@Microsoft@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00$$V@Details@WRL@Microsoft@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00UIWeakReferenceSource@@@Details@WRL@Microsoft@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$0A@U?$IIterable@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@UIWeakReferenceSource@@@Details@WRL@Microsoft@@
+.?AU?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$0A@U?$IIterator@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@UIWeakReferenceSource@@@Details@WRL@Microsoft@@
+.?AU?$ISimpleIterator@$$CB_W@CommonUtil@@
+.?AU?$RuntimeClassFlags@$03@WRL@Microsoft@@
+.?AU_Crt_new_delete@std@@
+.?AUctype_base@std@@
+.?AUICmdOptionsLookup@CommonUtil@@
+.?AUIInspectable@@
+.?AUIMpAzSubmitCallback@MpAzSubmit@@
+.?AUIMpCommunicationLibrary@MpCommunication@@
+.?AUIMpConfigKeysIterator@MpConfigUtils@@
+.?AUIMpDownloadCallback@MpCommunication@@
+.?AUIMpIdleNotifierCallback@MpClient@@
+.?AUIMpSampleHeaderQueueCallback@MpClient@@
+.?AUIMpSignaturesUpdateCallback@MpCommunication@@
+.?AUIMpSignaturesUpdateServiceCallback@MpClient@@
+.?AUIMpSpyNetQueueCallback@MpClient@@
+.?AUIRefObject@CommonUtil@@
+.?AUIUnknown@@
+.?AUIUtilRegEnumKeyValues@CommonUtil@@
+.?AUIUtilRegEnumSubKeys@CommonUtil@@
+.?AUIWeakReference@@
+.?AUIWeakReferenceSource@@
+.?AUIWinEventMgr@CommonUtil@@
+.?AUMismatch@@
+.?AUStreamScanRequest@@
+.?AUUfsFileScan@@
+.?AV?$_Iosb@H@std@@
+.?AV?$_Ref_count_obj2@U_Dir_enum_impl@filesystem@std@@@std@@
+.?AV?$AuthenticationCompletedHandler@U?$IAsyncOperation@PAVUserHostIdentity@WebAuthentication@Security@Internal@Windows@@@Foundation@Windows@@U?$IAsyncOperationCompletedHandler@PAVUserHostIdentity@WebAuthentication@Security@Internal@Windows@@@23@@@
+.?AV?$AuthenticationCompletedHandler@U?$IAsyncOperation@PAVUserIdentity@OnlineId@Authentication@Security@Windows@@@Foundation@Windows@@U?$IAsyncOperationCompletedHandler@PAVUserIdentity@OnlineId@Authentication@Security@Windows@@@23@@@
+.?AV?$basic_filebuf@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_filebuf@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_fstream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_ios@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_ios@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_iostream@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_iostream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_istream@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_istream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_ofstream@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_ostream@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_ostream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@
+.?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@
+.?AV?$basic_stringbuf@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@
+.?AV?$basic_stringstream@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@
+.?AV?$codecvt@_WDU_Mbstatet@@@std@@
+.?AV?$codecvt@DDU_Mbstatet@@@std@@
+.?AV?$CRefObjectFor@U?$IForwardIterator@$$CB_W@CommonUtil@@@CommonUtil@@
+.?AV?$CRefObjectFor@UICmdOptionsLookup@CommonUtil@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIMpCommunicationLibrary@MpCommunication@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIMpConfigKeysIterator@MpConfigUtils@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIMpIdleNotifierCallback@MpClient@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIMpSampleHeaderQueueCallback@MpClient@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIMpSpyNetQueueCallback@MpClient@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIWinEventMgr@CommonUtil@@@CommonUtil@@
+.?AV?$CThreadPoolItemFunctorAdapter@V<lambda_3e3223243d6b6ad36229a29174400c8e>@@@CommonUtil@@
+.?AV?$CThreadPoolItemFunctorAdapter@V<lambda_4a3167e2f1d005025637a4cfff03f52f>@@@CommonUtil@@
+.?AV?$ctype@_W@std@@
+.?AV?$ctype@D@std@@
+.?AV?$num_put@_WV?$ostreambuf_iterator@_WU?$char_traits@_W@std@@@std@@@std@@
+.?AV?$numpunct@_W@std@@
+.?AV?$RuntimeClass@U?$RuntimeClassFlags@$01@WRL@Microsoft@@U?$IAsyncOperationCompletedHandler@PAVUserHostIdentity@WebAuthentication@Security@Internal@Windows@@@Foundation@Windows@@@WRL@Microsoft@@
+.?AV?$RuntimeClass@U?$RuntimeClassFlags@$01@WRL@Microsoft@@U?$IAsyncOperationCompletedHandler@PAVUserIdentity@OnlineId@Authentication@Security@Windows@@@Foundation@Windows@@@WRL@Microsoft@@
+.?AV?$RuntimeClass@U?$RuntimeClassFlags@$01@WRL@Microsoft@@UIWeakReference@@@WRL@Microsoft@@
+.?AV?$RuntimeClass@U?$RuntimeClassFlags@$02@WRL@Microsoft@@U?$IIterable@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@@WRL@Microsoft@@
+.?AV?$RuntimeClass@U?$RuntimeClassFlags@$02@WRL@Microsoft@@U?$IIterator@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@@WRL@Microsoft@@
+.?AV?$RuntimeClassBaseT@$01@Details@WRL@Microsoft@@
+.?AV?$RuntimeClassBaseT@$02@Details@WRL@Microsoft@@
+.?AV?$RuntimeClassImpl@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00$0A@$0A@U?$IAsyncOperationCompletedHandler@PAVUserHostIdentity@WebAuthentication@Security@Internal@Windows@@@Foundation@Windows@@@Details@WRL@Microsoft@@
+.?AV?$RuntimeClassImpl@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00$0A@$0A@U?$IAsyncOperationCompletedHandler@PAVUserIdentity@OnlineId@Authentication@Security@Windows@@@Foundation@Windows@@@Details@WRL@Microsoft@@
+.?AV?$RuntimeClassImpl@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00$0A@$0A@UIWeakReference@@@Details@WRL@Microsoft@@
+.?AV?$RuntimeClassImpl@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00$00$0A@U?$IIterable@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@@Details@WRL@Microsoft@@
+.?AV?$RuntimeClassImpl@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00$00$0A@U?$IIterator@PAVOnlineIdServiceTicketRequest@OnlineId@Authentication@Security@Windows@@@Collections@Foundation@Windows@@@Details@WRL@Microsoft@@
+.?AV_com_error@@
+.?AV_Facet_base@std@@
+.?AV_Generic_error_category@std@@
+.?AV_Iostream_error_category2@std@@
+.?AV_Locimp@locale@std@@
+.?AV_Ref_count_base@std@@
+.?AV_System_error@std@@
+.?AV_System_error_category@std@@
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVbad_cast@std@@
+.?AVbad_exception@std@@
+.?AVbad_optional_access@std@@
+.?AVCArgvIter@CommonUtil@@
+.?AVCAtlException@ATL@@
+.?AVCCmdOptionsLookupMap@CommonUtil@@
+.?AVCDebugMessageBase@MpService@@
+.?AVCDeviceControlSecurityObject@DeviceControlUtil@@
+.?AVCEventInfoVisitor@MetadataBasedParsing@@
+.?AVCEventParser@?1???5@YGPAU_EVENT_RECORD@@PAU1@AAU?$SliceProduct@UEvent@@UThreadIdSlice@@UStreamScanRequestCommonSlice@@@@@Z@
+.?AVCEventParser@?1???5@YGPAU_EVENT_RECORD@@PAU1@AAU?$SliceProduct@UEvent@@UThreadIdSlice@@UUfsFileScanCommonSlice@@@@@Z@
+.?AVcharNode@@
+.?AVCHResultException@CommonUtil@@
+.?AVCHResultExceptionImpl@CommonUtil@@
+.?AVCMpAsimovRegisterAggregateEx@@
+.?AVCMpAzSubmitServiceCallback@@
+.?AVCMpCommunicationLibrary@MpCommunication@@
+.?AVCMpConfigKeysIterator@MpConfigUtils@@
+.?AVCMpIdleNotifierCallback@@
+.?AVCMpSampleHeaderQueueCallback@@
+.?AVCMpSignaturesUpdateServiceCallback@@
+.?AVCMpSpyNetQueueCallback@@
+.?AVCMpThreadPoolItemBase@CommonUtil@@
+.?AVcodecvt_base@std@@
+.?AVCOfflineScannerDownload@@
+.?AVCQuaMapGuardEntry@@
+.?AVCRefObject@CommonUtil@@
+.?AVCRegHandle@@
+.?AVCRtpDescriptorId@DeviceControlUtil@@
+.?AVCRtpPolicyGroup@DeviceControlUtil@@
+.?AVCRtpPolicyPackage@DeviceControlUtil@@
+.?AVCRtpPolicyRule@DeviceControlUtil@@
+.?AVCRtpPolicyRuleEntry@DeviceControlUtil@@
+.?AVCRtpPolicyRuleEntryParameter@DeviceControlUtil@@
+.?AVCRtpPolicyRuleEntryParameterDescriptorId@DeviceControlUtil@@
+.?AVCSimpleMapItem@CCmdOptionsLookupMap@CommonUtil@@
+.?AVCSvcDeviceTicketMessage@MpService@@
+.?AVCSyncUpdateCallback@@
+.?AVCUniqueNamedObject@MpCmdUtils@@
+.?AVCUpdateNotifications@@
+.?AVCUrlDownloadCallback@@
+.?AVCUtilRegEnumKeyValues@CommonUtil@@
+.?AVCUtilRegEnumSubKeys@CommonUtil@@
+.?AVDNameNode@@
+.?AVDNameStatusNode@@
+.?AVDontUseNewUseMake@Details@WRL@Microsoft@@
+.?AVerror_category@std@@
+.?AVEventMgrHandle@CommonUtil@@
+.?AVexception@std@@
+.?AVfacet@locale@std@@
+.?AVfailure@ios_base@std@@
+.?AVfilesystem_error@filesystem@std@@
+.?AVHModule@@
+.?AVIMpAsimovRegister@@
+.?AVinvalid_argument@std@@
+.?AVios_base@std@@
+.?AVIScan@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVOnlineIdTicketIterator@@
+.?AVOnlineIdTicketVector@@
+.?AVout_of_range@std@@
+.?AVpairNode@@
+.?AVpcharNode@@
+.?AVpDNameNode@@
+.?AVResultException@wil@@
+.?AVruntime_error@std@@
+.?AVRuntimeClassBase@Details@WRL@Microsoft@@
+.?AVStrongReference@Details@WRL@Microsoft@@
+.?AVsystem_error@std@@
+.?AVtype_info@@
+.?AVWeakReferenceImpl@Details@WRL@Microsoft@@
+.?AVWinEventMgr@CommonUtil@@
+.00cfg
+.8_*t#
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCC
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIAC
+.CRT$XIC
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.data$rs$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.gfids
+.gfids$y
+.giats
+.hP(B
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.PA_W
+.rdata
+.rdata$brc
+.rdata$r$brc
+.rdata$sxdata
+.rdata$T$brc
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata$x
+//%ws
+/C %ls > "%ls"
+/M;s\
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+: :(:,:0:4:8:@:D:H:L:P:X:\:d:h:p:t:x:|:
+: :(:,:0:8:<:@:D:H:L:P:T:X:\:`:d:l:t:x:|:
+: :,:4:L:p:
+: :]:
+: :6:C:T:f:n:{:
+:!:%:5:>:N:W:r:
+:!:,:1:C:U:l:
+:!:2:g:t:y:
+:!;_;
+:!;0;
+:":2:7:[:a:f:v:{:
+:":3:8:B:S:X:b:s:x:
+:":B:H:Y:q:
+:";~;
+:#:7:M:R:c:t:
+:#:r:
+:#;);N;
+:#;6;
+:$:>:h:
+:$:4:8:<:D:H:\:`:x:|:
+:%;,;6;M;
+:%;+;<;[;j;p;
+:&:,:A:G:X:
+:&:/:G:^:c:
+:&:3:8:H:e:z:
+:&:7:J:O:_:w:
+:(:4:T:\:h:
+:(:A:S:t:z:
+:(:C:U:i:}:
+:(;/;4;8;<;@;
+:*:0:[:
+:*:0:F:w:|:
+:*:7:<:a:f:k:v:
+:*:I:o:
+:*;0;A;X;t;g<
+:,:@:E:U:u:
+:,:2:b:q:}:
+:,:2:C:T:x:
+:,:C:n:
+:,;1;A;e;
+:.:;:@:R:i:
+:.:3:I:N:_:v:
+:/:>:t:
+:':,:=:
+:':.:P:U:
+:':-:B:M:[:a:i:r:
+:-:<:[:
+:-:N:S:
+:;:N:u:
+:-;i;
+:?:K:_:d:r:{:
+:@;t;
+:\;};
+:+;1;o;{;
+:+;h;
+:<:D:L:T:`:h:
+:<:X:t:
+:=:S:l:~:
+:>;O;U;m;t;
+:0;(<<<]<
+:0H0N0l0
+:1;\;
+:2:j:
+:2:O:r:
+:4:8:P:T:l:p:
+:4:A:F:V:
+:5;i;r;|;
+:6:?:D:U:
+:7:G:N:
+:8:H:T:t:|:
+:8:r:
+:9:Q:i:
+:9;_;
+:A:u:
+:A;,<5<
+:A;Q;i;o;
+:c;t;
+:d;u;
+:F:K:[:
+:J;p;
+:L:T:\:l:x:
+:L;v;
+:L;V;`;j;t;
+:m:s:
+:O;b;g;
+:Q:a:f:
+:Z:`:q:
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;%;6;G;`;y;
+; ;(;,;4;<;T;X;p;t;
+; ;:;?;D;O;\;a;x;
+; ;2;<;B;X;n;};
+; <@<d<
+; <'<E<L<j<q<
+; <T<v<
+;!;=;f;{;
+;!<@<Q<e<j<
+;";@;K;V;`;g;v;
+;";3;8;B;S;X;b;s;x;
+;";P;r;
+;#;;;N;q;
+;#;5;=;D;M;];j;q;
+;$;(;,;0;4;H;L;P;d;h;l;p;t;|;
+;$;(;@;D;\;`;x;|;
+;$;,;4;<;L;X;
+;$;4;@;`;l;
+;$;4;D;T;d;t;
+;$;5;F;
+;$<t<
+;%;2;J;S;_;e;
+;%;3;B;N;Y;l;r;
+;%;x;
+;&;-;F;U;_;t;
+;(;;;N;a;t;
+;(;R;
+;(;U;d;};
+;)<C<O<s<
+;*;6;B;N;Z;f;r;~;
+;*;G;Z;q;
+;,;?;D;V;p;
+;,;6;B;
+;,;8;X;h;
+;,;F;k;};
+;,<9<><m<z<
+;,<E<
+;/;h;
+;:;U;Z;k;|;
+;';-;2;B;G;k;q;v;
+;;<|<
+;?;D;
+;?;D;U;l;
+;?<U<
+;\>e>
+;^=l=
+;+;I;p;
+;<;D;L;T;\;d;l;t;
+;<;O;U;f;
+;=;r;
+;=<c<
+;>;l;
+;><U<Z<j<z<
+;0;];c;t;
+;0J0O0h0
+;0v6f
+;1;N;k;
+;4;@;`;l;
+;4;9;J;l;
+;4;M;R;o;
+;4<@<F<
+;4<C<Q<
+;4<l<
+;6<H<
+;7;q;};
+;7;y;
+;9uD3
+;a;g;m;s;y;
+;b<}<
+;E;J;u;
+;E;S;g;
+;F<u<
+;G;L;\;l;
+;J<m<
+;O<T<l<q<
+;S,u#
+;s,us
+;S<z<
+;t$,v-
+;T;r;
+;T;x;
+;t04u
+;uRf9W
+;W<w<|<
+? ?$?,?4?8?<?@?H?L?P?T?\?`?h?p?t?x?|?
+? ?(?4?T?\?d?p?
+? ?+?0?A?\?}?
+? ?+?2?<?f?|?
+? ?1?P?
+? ?8?<?T?X?p?t?
+?!?*?;?A?
+?!?+?C?H?X?h?
+?!?>?R?]?b?p?x?
+?!?L?Q?b?x?~?
+?"?Y?^?
+?"_^t
+?#?)?.?@?E?q?
+?#?g?
+?$?(?@?D?\?`?x?
+?$?)?9?S?]?l?
+?$?-?9?B?g?
+?$?<?X?l?t?|?
+?$?0?P?\?d?
+?$?0?P?X?`?l?
+?$?4?@?V?
+?&?*?.?2?6?:?>?B?F?r?}?
+?&?,?R?e?
+?(?,?D?H?`?d?|?
+?)?V?\?e?q?
+?*?/?A?U?n?
+?.?4?E?V?b?
+?.?5?Q?Z?p?
+?.?B?G?X?u?
+?.?K?t?
+?.HWq
+?/?@?N?S?c?
+?;?@?O?b?p?
+????_
+????_????
+???s?
+?-?2?E?\?
+?-?2?G?\?t?y?
+?'?T?a?
+?@s-f
+?]?o?
+?+?0?h?
+?+?1?Z?
+?<?h?
+?=?m?z?
+?>?D?d?
+?>?D?U?k?v?
+?0?7?_?g?t?
+?0?A?N?x?
+?1?\?
+?1?A?T?d?
+?2?7?H?[?o?t?
+?2?M?\?n?t?
+?4?\?p?
+?7?=?N?S?d?}?
+?7MQb
+?8?=?L?
+?8?S?e?x?
+?B?S?s?
+?G?d?
+?H?M?
+?J?O?n?t?
+?M?s?
+?M?Z?_?
+?P?]?b?{?
+@.didat
+@.reloc
+@_^[]
+@cEGN
+@t"VS
+@Vj(j
+[%hs(%hs)]
+[%hs]
+[%s\%s]
+[,i33L
+[3_m^
+[-MinDuration durationIn100nsUnits]
+[thunk]:
+[-TopExtensions [count]
+[-TopExtensionsPerProcess [count]
+[-TopFiles [count]
+[-TopFilesPerExtension [count]
+[-TopFilesPerProcess [count]
+[-TopProcesses [count]
+[-TopProcessesPerExtension [count]
+[-TopProcessesPerFile [count]
+[-TopScans [count]]
+[-TopScansPerExtension [count]
+[-TopScansPerExtensionPerProcess [count]]
+[-TopScansPerFile [count]]
+[-TopScansPerFilePerExtension [count]]
+[-TopScansPerFilePerProcess [count]]
+[-TopScansPerProcess [count]]
+[-TopScansPerProcessPerExtension [count]]
+[-TopScansPerProcessPerFile [count]]
+[UTC] %s 
+[-Verbose]
+\$ PSj
+\$ SW
+\$$h\TA
+\$,PSSj
+\$D#L$D#\$
+\\.\root\SecurityCenter
+\\.\root\SecurityCenter2
+\0Pi:
+\Device\
+\drivers\
+\FI_UNKNOWN
+\MsMpLics.dll
+^h<;A
+^jYuSR
+_????
+_^[Y]
+___lc_codepage_func
+___lc_locale_name_func
+___mb_cur_max_func
+__acrt_iob_func
+__based(
+__cdecl
+__clrcall
+__doserrno
+__eabi
+__fastcall
+__int128
+__int16
+__int32
+__int64
+__int8
+__NO_STRING_EXPANSION
+__p___argc
+__p___wargv
+__p__commode
+__pascal
+__pctype_func
+__ptr64
+__restrict
+__stdcall
+__stdio_common_vfprintf
+__stdio_common_vfwprintf
+__stdio_common_vsnprintf_s
+__stdio_common_vsprintf
+__stdio_common_vsprintf_s
+__stdio_common_vswprintf
+__stdio_common_vswprintf_s
+__stdio_common_vswscanf
+__strncnt
+__swift_1
+__swift_2
+__thiscall
+__TlgCV__
+__unaligned
+__vectorcall
+__w64 
+_c_exit
+_callnewh
+_calloc_base
+_cexit
+_close
+_configthreadlocale
+_configure_wide_argv
+_controlfp_s
+_crt_atexit
+_Early-Launch
+_errno
+_exit
+_free_base
+_fseeki64
+_get_initial_wide_environment
+_get_stream_buffer_pointers
+_initialize_onexit_table
+_initialize_wide_environment
+_initterm
+_initterm_e
+_invalid_parameter_noinfo
+_invalid_parameter_noinfo_noreturn
+_itoa_s
+_localtime32
+_lock_file
+_lock_locales
+_lseek
+_malloc_base
+_read
+_register_onexit_function
+_register_thread_local_exe_atexit_callback
+_seh_filter_exe
+_set_app_type
+_set_fmode
+_set_new_mode
+_time32
+_unlock_file
+_unlock_locales
+_wcsdup
+_wcsicmp
+_wcsnicmp
+_wcsupr_s
+_wfopen
+_wfopen_s
+_wfsopen
+_wremove
+_write
+_wsopen_dispatch
+_wtempnam
+_wtoi
+`.data
+`|nj0^3
+`adjustor{
+`anonymous namespace'
+`copy constructor closure'
+`default constructor closure'
+`dynamic atexit destructor for '
+`dynamic initializer for '
+`eh vector constructor iterator'
+`eh vector copy constructor iterator'
+`eh vector destructor iterator'
+`eh vector vbase constructor iterator'
+`eh vector vbase copy constructor iterator'
+`generic-class-parameter-
+`generic-method-parameter-
+`generic-type-
+`local static destructor helper'
+`local static guard'
+`local static thread guard'
+`local vftable'
+`local vftable constructor closure'
+`managed vector constructor iterator'
+`managed vector copy constructor iterator'
+`managed vector destructor iterator'
+`non-type-template-parameter
+`omni callsig'
+`placement delete closure'
+`placement delete[] closure'
+`RTTI
+`scalar deleting destructor'
+`string'
+`template static data member constructor helper'
+`template static data member destructor helper'
+`template-parameter
+`template-parameter-
+`template-type-parameter-
+`typeof'
+`udt returning'
+`unknown ecsu'
+`vbase destructor'
+`vbtable'
+`vcall'
+`vector constructor iterator'
+`vector copy constructor iterator'
+`vector deleting destructor'
+`vector destructor iterator'
+`vector vbase constructor iterator'
+`vector vbase copy constructor iterator'
+`vftable'
+`virtual displacement map'
+`vtordisp{
+`vtordispex{
+{%ls:"%ls",Count:%llu,TotalDuration:%llu,MinDuration:%llu,AverageDuration:%llu,MaxDuration:%llu,MedianDuration:%llu
+{flat}
+{for 
+{ScanType:"StreamScan",StartTime:%lld,EndTime:%lld,Duration:%lld,Reason:"%ls",Path:"%ls",ProcessPath:"%ls",ProcessId:%ld}
+{ScanType:"UfsFileScan",StartTime:%lld,EndTime:%lld,Duration:%lld,Path:"%ls"}
+|$(YY
+|hK,_
+~,9~$t
+~m)_m
+~p_^]
+< <$<(<,<0<4<8<<<@<D<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+< <$<<<@<X<\<t<x<
+< <)<7<H<Z<t<
+< <0<5<E<_<n<y<
+< =4=L=W=b=z=
+<!-- Copyright (c) Microsoft Corporation -->
+<!<&<4<=<N<T<
+<!=3=x=
+<"<3<8<B<S<X<b<q<v<{<
+<"<d<{<
+<#<4<:<K<\<
+<#<F<K<[<
+<$<(<8<<<L<P<T<l<p<t<
+<$<,<<<H<h<t<
+<$<@<H<P<\<|<
+<$u.V
+<%=C=^=
+<&<i<
+<(<-<J<]<t<
+<(<0<<<\<h<
+<(<0<8<@<H<T<t<|<
+<(<B<Q<^<e<l<s<z<
+<(<K<U<g<y<
+<)<5<d<
+<)<G<k<
+<)=G=d=t=
+<*<=<L<[<j<
+<*<8<d<
+<*<G<L<[<m<r<
+<*=9=>=V=
+<*>a>
+<,<<<@<P<T<X<\<`<h<
+<,<><P<b<t<
+<,<D<M<R<c<
+<,<Z<
+<,=1=_=l=q=
+<,=W=\=l=
+<.<I<
+</=5=K=m=|=
+</assembly>
+<?xml version="1.0" encoding="UTF-8" ?>
+<@t A
+<+<:<e<o<
+<-<?<U<
+<<<D<K<X<]<n<
+<<<D<L<T<\<d<l<t<
+<'<-<F<
+<-<5<G<S<f<
+<-<P<^<s<
+<=<B<T<o<
+<===========================LIST OF DETECTED THREATS==========================>
+<0@0H0P0h0
+<0| <9
+<0|*<9
+<0|]<8
+<1<><C<
+<2<G<V<g<o<
+<3<M<`<x<
+<4<8<P<T<l<p<
+<4=F=Q=V=o=
+<5<c<h<y<
+<7<=<B<R<W<{<
+<7<V<
+<9<K<q<
+<A=H=S=d=r={=
+<assembly manifestVersion="1.0"
+<C<H<`<e<{<
+<C<V<[<
+<C=|=
+<D<a<n<s<
+<e=|=
+<ellipsis>
+<g<l<
+<G<V<\<r<y<
+<H<l<
+<K<P<m<
+<K=\=i=p=
+<NO VALUE>
+<P<\<g<
+<R=W=
+<R=Y=e=p=
+<SVW3
+<unknown>
+<UnknownRoot>
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =(=0=@=\=d=l=|=
+= =(=0=8=D=d=l=t=|=
+=!=4=D=p=u=
+=!>C>x>
+="=.=B=G=
+="=3=C=\=a=r=
+="=F=R=^=c=
+=">A>G>L>R>]>c>n>u>z>
+=#=D=J=O=_=d=}=
+=$=,=4=<=D=L=T=\=h=
+=$=,=4=<=D=T=\=d=t=
+=$=<=B=T=s=
+=$=4=8=<=T=X=l=|=
+=$>E>
+=$>h>q>v>
+=&=:=S=
+=&=-=6=;=A=G=N=U=[=d=s=}=
+=&=m=t=y=~=
+=(=.=C=X=y=
+=(=@=E=U=y=
+=(=8=H=X=h=x=
+=)=4=W=m=
+=)>8>]>w>
+=*=V=
+=,=:=A=Q=c=
+=,=3=J=Q=h=o=
+=,=4=<=D=L=X=x=
+=,=9=I=N=d=
+=.=;=@=Q=
+=;=Y=
+=?>P>a>f>
+=[=m=
+=\=j={=
+=`=y=
+=+=;=w=
+=+=4=H=Q=
+=+=P=v={=
+=+>K>W>d>|>
+=<=C=A>3?
+=<=f=
+='=@=S=d=
+==========
+=====================================
+==========================================
+=======================================================
+==>W>t>
+=-=2=B=Z=b=u=z=
+=>>P>
+='>B>k>
+=0?Z?
+=0=4=L=P=h=l=
+=1>=>F>
+=3>w>
+=4=E=
+=4=h=
+=4=Z=_=p=
+=5=;=L=]=
+=8=a=o=u=
+=8>h>
+=9=D=W=^=
+=9>i>
+=D=a=
+=D=W=h=
+=e=l=
+=H>0?
+=K=g=
+=K=l=q=
+=N=y=
+=V=\=f=l=}=
+=X>^>o>
+=x>l?
+> ?,?i?
+> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>,>0>4>8>@>D>H>L>P>X>\>`>d>h>p>t>x>|>
+> >%>S>`>e>
+>!>6><>B>Z>_>d>
+>#?;?E?c?
+>$?u?
+>$>(>8><>L>P>`>d>t>x>|>
+>$><>k>p>
+>$>1>;>f>s>x>
+>$>1>=>B>S>
+>$>4><>L>X>x>
+>$>D>P>p>
+>%?o?
+>%>6>F>
+>%>G>R>j>z>
+>%>J>g>m>
+>%>M>
+>&?+?0?5?:???D?I?N?S?Z?
+>&>F>i>r>w>
+>&>L>V>`>j>t>~>
+>)>.>=>B>R>w>|>
+>)>D>S>j>
+>)>N>
+>*>6>Y>k>
+>*>T>}>
+>,?V?h?{?
+>,>0>H>L>d>h>
+>,>4><>L>X>`>
+>/?;?R?X?i?
+>;>R>_>d>s>x>
+>'?,?4?<?C?H?M?U?[?m?
+>??S?X?z?
+>?>\>a>z>
+>@?m?r?
+>@s5f
+>\?{?
+>+>;>R>^>w>
+>+>Y>j>o>
+><?N?T?g?
+>=>J>O>r>w>
+>'>=>\>d>w>
+>>>I>_>j>
+>'>0>A>G>X>i>u>
+>->2>D>V>w>~>
+>'>7>=>B>V>[>l>|>
+>->D>U>i>r>}>
+>'>I>
+>2>?>D>
+>4><>L>\>d>
+>4>L>\>
+>5>b>
+>7>T>
+>8?B?L?e?s?
+>8>@>H>P>\>|>
+>A>G>X>q>
+>B>]>
+>C>c>h>x>
+>C>w>
+>D?Y?
+>D>I>Z>v>{>
+>F?c?o?
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+>l>q>
+>O>m>{>
+>Z>_>d>v>
+0 0$0,040<0D0H0L0P0X0\0`0d0h0l0p0t0x0|0
+0 0(0L0\0d0l0t0|0
+0 0,040h0p0x0
+0 010S0\0
+0 0T0X0\0`0h0p0t0x0|0
+0 1.1]1c1t1
+0!0,0N0W0b0g0x0
+0!000Q0\0f0
+0!1I1]1e1m1
+0"030]0
+0"0B0O0V0_0k0{0
+0"1E1R1a1
+0#0O0
+0$0(0,000D0H0L0P0X0\0p0t0
+0$0(0@0D0\0`0x0|0
+0$040<0L0X0x0
+0$080=0N0_0x0
+0$1)1:1U1g1n1
+0$141@1H1|1
+0%060F0c0
+0%0N0^0j0o0
+0%1e1
+0&0+0B0G0j0~0
+0&0<0_0p0u0
+0&050
+0&0T0
+0(1=1R1m1
+0)0<0O0h0}0
+0)060M0X0
+0)0I0O0{0
+0)0T0Y0j0{0
+0)0w0
+0)1n1
+0*0/0?0Y0_0p0u0
+0*060Y0e0
+0,0S0
+0,1A1
+0.0I0U0a0l0t0
+0/050=0X0
+0:0W0
+0:1W1^1p1
+0@0R0h0q0
+0`0r0
+0`0w0
+0+0R0]0b0s0
+0=0O0
+0-0?0Q0]0b0r0
+0'0-0>0
+0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+00080D0d0p0
+00151F1W1k1
+0'0N0
+011F1x1
+0'121Q1`1e1
+02080\0w0
+020G0D1N1
+020M0x0
+030?0\0o0
+03080N0`0v0{0
+04080P0T0l0p0
+040904B0
+040e0
+060;0e0y0~0
+060z0
+070A0F0i0p0w0~0
+081e1
+0a1~1
+0A1M1R1c1t1
+0B0P0a0s0
+0D1s1
+0F05C8FF-0B18-43E3-BDFB-9A0C84B0E5DA
+0f1n1
+0g0{0
+0h(!B
+0H0t0
+0hP*A
+0I0s0
+0K0Z0u0
+0K1Y1
+0l0q0
+0P0a0
+0T0k0z0
+0T0r0
+0x%lx
+1 1$1(1,10181D1L1T1\1d1l1t1|1
+1 1$1<1@1X1\1t1
+1 1(10181@1H1P1X1`1h1p1x1
+1 1<1@1P1t1
+1 181T1w1|1
+1 1L1Q1b1t1
+1!1>1K1P1
+1!111C1R1q1
+1!191B1G1X1]1
+1!1K1d1j1{1
+1!1Y1f1
+1"121e1
+1#1;1A1M1S1x1
+1#181G1\1
+1#1B1K1d1m1x1
+1$1*1<1\1y1
+1$1,141@1`1h1t1
+1$1,141<1D1L1\1l1t1
+1$1,1D1L1T1
+1$1=1p1u1
+1$141D1T1d1t1x1
+1$2(2,2024282<2@2J2\2|2
+1$2@2`2|2
+1%1v1|1
+1%2*2T2Z2k2~2
+1&151B1G1`1|1
+1(0&0
+1(1,1D1T1X1\1t1
+1(1.1}1
+1)171
+1)1M1f1
+1)2W2]2n2
+1*2;2F2s2
+1*2^2
+1*2>2_2o2u2
+1,1Q1`1z1
+1,212B2
+1,242<2D2h2|2
+1,2I2~2
+1.1?1q1w1
+1/0-0
+1/1?1|1
+1:|Rd
+1@1R1g1w1
+1^2~3
+1+1:1?1U1k1r1w1
+1+1:1o1
+1+1>1P1\1a1g1z1
+1+181=1v1}1
+1+1D1`1
+1+2l2q2
+1<2K2
+1=1D1K1R1Y1`1i1p1{1
+1=2X2w2
+100701213655Z
+10181<1@1`1|1
+101A1G1O1]1c1t1
+101E1|1
+101L1Q1a1{1
+101Z1f1p1
+10T0`0q0
+1'1,1D1[1`1p1
+1'1;1@1V1f1|1
+111019184142Z
+1-2>2U2{2
+1-232?2E2[2r2
+1-246
+1'2w2|2
+131O1
+142<2D2L2T2\2h2p2
+151:1W1y1
+151[1j1
+161=1L1S1l1s1~1
+171c1~1
+181=1N1_1x1
+181K1P1b1
+181p1
+191>1Q1a1
+191Y1
+1b2q2
+1D3N3
+1E1M1k1p1
+1g2v2|2
+1H1}1
+1H1Z1r1
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1I263K3U3
+1K1]1b1r1
+1K1_1
+1K1x1
+1L1Z1`1
+1L2_2
+1M1g1
+1P2Z2l2
+1Q2^2c2
+1U2`2t2
+2 2(20282@2H2P2X2`2h2p2x2
+2 2(20282D2d2l2t2|2
+2 2F2X2
+2 3D3t3
+2!2%2)2-2125292X2k2|2!4
+2!212A2Q2a2q2
+2!262C2H2Q2r2
+2"2&2*2.22262:2>2B2F2J2N2R2V2Z2^2b2f2j2n2r2v2z2~2
+2#2(292R2n2s2
+2#2)2:2J2P2V2[2a2k2q2u2{2
+2#242E2h2m2~2
+2#2u2
+2$2,242<2D2L2T2\2d2l2t2|2
+2$2;2W2
+2$242D2T2d2t2
+2%2B2M2n2y2
+2%3S3
+2&262@2J2e2t2
+2(2,20282@2X2\2t2
+2(2b2
+2(2q2
+2)30393
+2)3D3R3p3
+2*242J2_2n2
+2*2C2M2R2b2
+2*2H2
+2*3>3C3T3e3
+2,2<2L2\2`2d2h2l2p2x2|2
+2,242<2D2L2X2x2
+2,2A2H2a2
+2,3I3T3[3u3{3
+2.2<2P2[2h2
+2.393L3t3
+2/3<3M3Z3~3
+2:2A2Q2V2d2l2}2
+2@2L2T2|2
+2[2f2k2
+2^3d3~3
+2}4w 
+2+3X3g3y3
+2<2h2
+2=2t2z2
+2=3F3X3^3t3
+2=3S3^3q3
+2=3w3
+2>2J2y2
+2>3I3T3b3n3
+20220208212855.979Z0
+20220208234921Z
+20220209234921Z0w0=
+20272P2W2s2z2
+202Q2k2p2
+203T3t3
+205;5C5N5p5
+210114190213Z
+210429191548Z
+213e3v3
+2'2,2?2V2m2
+2'2=2F2^2c2s2
+2-2>2^2s2y2
+220411190213Z0
+220428191548Z0z1
+2-222C2T2y2
+2'222H2O2V2i2z2
+2-282J2^2d2u2z2
+2'2o2x3
+230280+4645680
+250701214655Z0|1
+261019185142Z0
+262<2Z2k2
+273@3K3P3b3t3
+282B2a2
+282I2O2`2q2
+283d3w3
+283E3J3[3
+292E2
+2B2G2W2g2
+2C3>4
+2E4a4k4]5l5
+2I2Z2_2p2
+2L2Q2b2
+2M2_2
+2N2T2p2
+2R2d2
+3 3(30383@3H3P3X3`3h3p3x3
+3 323G3Z3q3
+3 4%464F4|4
+3 4%464I4}4
+3 4i4
+3!313A3Q3a3q3
+3!343K3|3
+3!404L4Q4b4~4
+3"3(393M3b3y3
+3"3)3>3j3p3v3
+3"3>3O3`3q3
+3"333?3K3z3
+3"444T4
+3#3(3@3E3W3i3
+3#3C3O3U3f3w3
+3#3G3M3^3y3
+3#4(494
+3$3(3,30343<3@3H3L3T3X3`3d3l3p3x3|3
+3$3*3S3\3p3v3
+3$3,343<3D3L3T3\3d3l3t3|3
+3$343D3T3d3t3
+3$3G3R3
+3%383>3O3`3
+3%3C3H3Y3v3
+3%4-4O4T4Z4u4z4
+3&3B3^3g3
+3&3Q3n3y3
+3(3,3D3H3`3d3|3
+3(3.3
+3(3B3W3\3l3}3
+3(3E3J3w3|3
+3)4;4T4
+3*4/4@4Q4w4
+3,32383>3D3J3Q3X3_3f3m3t3{3
+3,343<3D3L3T3d3t3|3
+3,3v3
+3,4B4V4r4
+3,4e4
+3.333D3
+3.343E3J3[3t3
+3.444E4V4q4
+3.4b4
+3/4>4I4y4
+3;3n3
+3?3M3R3d3
+3?3N3d3z3
+3?4X4
+3]3k3q3
+3+3<3S3t3
+3+353;3@3E3L3e3o3|3
+3+4h4
+3<3@3H3\3d3l3t3
+3<3D3L3T3\3d3l3t3
+3<4E4J4y4~4
+3=3B3S3l3
+3>3{3
+30@0M0Y0
+303[3n3s3
+303D3L3T3d3l3t3
+32393U3\3x3
+3'383Z3h3n3
+3'3A3Q3
+3-3U3
+3-464;4L4~4
+363;3K3]3
+363B3L3Z3
+374r4
+383@3H3T3t3
+383I3O3g3
+394?4U4v4|4
+394Y4_4
+3D$$#
+3D$8#
+3D$D#
+3f3z3
+3J3~3
+3L3d3j3~3
+3l3z3
+3P3q3v3
+3V4{4
+4 4(40484@4H4P4X4`4h4p4x4
+4 4(40484@4H4P4X4`4h4p4x4|4
+4 4,4L4T4\4d4l4x4
+4 4044484P4T4h4x4|4
+4 434;4A4F4q4x4~4
+4 444<4P4X4l4t4|4
+4 5j5
+4 5P5t5
+4!4&464P4V4g4l4}4
+4!4,4H4h4p4
+4!4.4A4
+4!5\5b5t5
+4"4U4`4
+4"5G5N5U5t5
+4#4)4A4s4
+4#5(525C5H5R5c5h5r5
+4$4,444D4L4T4d4l4t4
+4$4+4N4f4m4
+4$414i4n4
+4$43494
+4%4*4C4
+4%4;4I4b4t4
+4%464M4f4{4
+4&424M4b4
+4&464@4K4P4^4f4
+4&4A4Q4W4t4
+4&4C4
+4&5h5
+4(4,4<4@4P4T4d4h4x4|4
+4(4-4Q4f4k4
+4(585[5
+4)464j4u4
+4*5c5
+4,424Y4e4u4{4
+4,5~5
+4,515?5
+4.18.2201.11
+4.18.2201.11 (WinBuild.160101.0800)
+4.4O4c4v4
+4.4P4[4
+4/5c6_7t7x7|7
+4;4f4
+4_5h5
+4`4p4
+4+434g4m4
+4+505A5r5x5
+4+5o5
+4>4r4
+40444L4P4h4x4
+4090O0d0
+40Q0n0
+414_4
+415:5
+415B5P5p5u6
+421CFC91-A93E-42AB-A35C-F06F127FCC44
+424:4M4U4h4
+42494
+434F4X4z4
+434P4v4
+4-4{4
+4-424G4W4_4~4
+444@4`4l4
+444^4
+444<4H4h4p4x4
+444G4r4
+4-464<4
+454R4_4
+464?4
+464[4a4r4
+474a-87ad-2f9a87615fa3-dc1-tip.cloudapp.net
+474c4
+475[5s5
+484>4O4c4y4
+485_5v5{5
+494>4O4`4
+4B:z:
+4C4V4\4y4
+4E5Q5
+4F5z5
+4ke;Bjy
+4L4]4c4t4
+4L4n4{4
+4N4S4e4w4
+4n4t4
+4O4Z4
+4Q4_4
+4R4`4f4|4
+4Z5k5t5z5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5$54585H5L5\5`5p5t5
+5 5(50585D5d5p5
+5 5(50585L5T5h5p5
+5 5*545>5H5R5\5f5p5z5
+5 505@5D5H5L5T5l5|5
+5 50585@5H5P5X5`5h5p5x5
+5 515B5s5
+5!5L5g5
+5!5W5q5y5
+5"5(555@5Y5d5
+5"51565G5
+5"60666_6m6s6
+5#5_5{5
+5#6/6C6J6X6h6o6
+5#60656d6t6y6
+5$5,545<5X5`5h5x5
+5$555F5u5z5
+5$5N5b5
+5$5Q5l5w5
+5$6K6
+5%5,5;5B5Q5Y5h5o5~5
+5%565\5a5t5
+5%5I5Y5
+5&5:5
+5&5+5;5Q5f5m5
+5(5{5
+5(505?5O5
+5(545@5L5X5d5p5|5
+5(5N5\5j5w5}5
+5(5N5a5z5
+5(6d6
+5)636x6
+5)6u6
+5)6W6_6e6
+5*5;5F5c5s5
+5*515D5b5u5
+5*585
+5*6;6x6
+5,5<5X5h5
+5,505@5D5H5L5P5X5\5`5d5l5p5t5|5
+5,545<5L5X5`5x5
+5,6<6C6N6a6l6
+5,6L6R6c6}6
+5.5?5D5U5f5
+5.646E6V6l6
+5/6T6s6
+5:5@5H5T5u5
+5;6A6R6~6
+5?6D6U6f6
+5@5H5U5p5
+5+5@5E5W5l5
+5+505H5M5c5
+5<5B5S5j5
+5>5C5S5m5s5
+5>5Q5
+505D5e5
+505h5
+506:6@6Z6
+516j6
+525K5Y5_5
+537W7
+53C9D589-6B66-4F30-9BAB-9A0193B0BAFC
+545:5K5b5n5
+545<5D5L5\5d5l5x5
+545<5D5T5`5
+545Q5_5e5
+546?6L6l6
+546A6F6\6
+5-5?5Q5a5s5|5
+5-525@5F5S5k5t5
+555>5U5q5{5
+555K5Z5k5
+556W6l6s6z6
+5'6,6<6
+565F5
+585F5L5b5
+596n6
+5E5n5{5
+5e5z5
+5F5K5[5
+5G5Q5^5
+5Genu
+5H6]6
+5I5m5
+5i5n5
+5ineI
+5L5d5u5
+5N5\5b5
+5q6v6
+5Y5^5n5~5
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6 6(6=6F6U6[6`6e6m6
+6 6(606T6\6d6
+6 6;6R6i6
+6 6@6H6P6\6|6
+6 606@6P6`6d6t6x6
+6 60686@6H6P6X6`6h6p6x6
+6 7(707@7P7X7|7
+6!61666F6V6t6y6
+6"6&6,60666:6M6`6s6x6
+6"6/6=6J6X6e6
+6"60666E6J6X6^6k6
+6"636?6
+6"7b7n7
+6#6B6g6
+6#6M6
+6$6(6,6D6T6X6\6`6d6l6p6t6|6
+6$6,646<6D6L6T6`6
+6$6,646<6D6P6p6x6
+6$6,646<6H6P6h6x6
+6$6F6P6V6l6
+6$71767G7q7
+6%60676E6P6W6x6
+6%7+7<7X7k7p7
+6%7B7t7
+6(666b6m6s6~6
+6(696{6
+6*6:6H6Z6x6
+6*6`6e6
+6*616Q6d6w6
+6*646F6Q6f6q6|6
+6,666B6a6z6
+6,6F6b6n6s6
+6,7\7a7r7
+6,757E7v7
+6/6c6n6
+6/747D7`7k7
+6:6W6
+6:7?7r7
+6;8{8w:`<
+6?6H6R6~6
+6@6p6
+6+6;6S6\6
+6+606>6F6\6p6
+6+616I6P6
+6+6D6a6n6s6
+6<6L6X6`6x6
+6<7A7W7
+6=7R7X7i7|7
+6>6C6T6e6
+6>6e6
+6>6g6
+606j6
+616{6
+616>6F6W6\6o6
+616T6
+626J6Z6_6p6
+626O6_6d6
+64686P6T6l6p6
+656E6a6q6
+656U6f6l6}6
+657B7G7z7
+6'6:6v6{6
+666\6c6o6
+666j6p6
+6'686J6[6
+677l7
+686P6h6
+6b6h6}6I7i7s7
+6B7W7g7
+6D7I7_7k7
+6f;1f
+6g7z7
+6H7S7^7
+6I6P6W6^6e6l6q6}6
+6K6|6
+6L7\7n7
+6M6V6K7
+6O6i6
+6QhSDEVhIPCA
+6Rh`cA
+6S6e6
+6t\YZA
+6U7Z7
+7 7$7
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 7$7(7,7074787<7D7H7L7P7T7X7\7`7d7l7p7t7x7|7
+7 7@7H7P7X7d7
+7 70747D7H7L7T7l7|7
+7 70747D7H7X7\7`7d7h7p7
+7 707A7N7x7
+7 7D7L7T7\7d7l7t7|7
+7!7,7>7T7n7
+7!7-737H7m7
+7"7,737B7X7i7w7
+7"7'7?7D7\7a7x7
+7"7B7y7
+7"7K7w7
+7"888F8U8
+7#7<7I7W7\7
+7#747E7
+7#7A7P7|7
+7#8A8F8W8m8y8
+7$7*70767<7B7H7N7T7Z7`7f7l7r7x7~7
+7$7,747<7D7L7X7`7x7
+7$7^7c7
+7$7T7e7k7}7
+7$8C8f8~8
+7$8W8u8
+7&7+7k7{7
+7&757B7G7L7c7
+7&757u7~7
+7(70787D7d7p7
+7(7H7l7
+7(7t7
+7)797E7r7
+7)7A7J7O7`7
+7*7=7M7j7{7
+7*767<7M7l7
+7*7T7
+7,7=7y7
+7,7B7K7W7d7
+7,7Q7w7
+7.7N7r7w7
+7/7S7^7o7
+7/8q8
+7:7J7q7
+7:8E8J8]8u8z8
+7;7@7P7`7z7
+7;7G7u7
+7@8^8d8
+7>7P7W7
+7074787L7\7`7d7h7p7t7|7
+70757F7_7
+70777B7I7T7Y7j7{7
+708V8y8
+70A0R0c0
+717C7S7h7
+717D7X7t7
+727\7o7t7
+72777I7|7
+727E7T7Z7x7
+728Y8^8n8
+737N7i7
+747?7D7I7Z7
+747^7
+748@8F8[8
+767S7
+768;8
+7'7,7:7@7O7T7b7h7u7
+7'7,7[7j7
+787N7S7c7
+798G8e8
+798V:Z;
+7A7t7
+7a8q8
+7a8u8
+7c7n7y7
+7c7r7
+7D7I7Y7
+7F7o7
+7h8@98:
+7I8`8
+7K7\7a7
+7L7\7x7
+7X8j8
+7Y8i8
+7Y8x8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 8$8,8084888<8@8D8H8L8T8X8\8`8h8l8p8t8x8|8
+8 8:8?8O8i8v8{8
+8 808<8\8h8p8
+8 888H8L8\8`8d8l8
+8 9&979Q9b9
+8 9@9E9V9g9z9
+8 909<9\9h9
+8!8+8A8Q8a8k8
+8!9R9_9u9|9
+8"8K8
+8"959M9Z9f9r9
+8#838h8u8z8
+8#888N8
+8#8F8
+8$8,848<8D8L8T8\8l8t8|8
+8$858_8m8s8
+8$8D8L8T8\8h8
+8$8H8
+8$u V
+8%8G8L8]8s8
+8%909J:Q:x:
+8%9O9y9
+8&8+8@8]8
+8&9D9I9Y9k9w9
+8(8,8<8@8D8\8l8p8t8x8
+8(8.8e8{8
+8(848T8`8h8
+8(878F8a8l8t8
+8)8G8x8
+8)9{9
+8)979C9c9j9s9
+8*8?8E8V8i8
+8*8=8N8r8
+8*808H8m8
+8*8Q8~8
+8*9;9a9n9
+8,8B8
+8.8]8b8s8
+8/8=8W8f8
+8/8R8
+8/9z9
+8;8_8m8
+8;9g9
+8?8D8
+8?9V9s9
+8?u'@
+8@8_8
+8@8|8
+8@u$@
+8@u(@
+8@u/@
+8\$pt
+8\:a:
+8]8l8r8
+8^0u1
+8^8c8x8
+8_^[]
+8<8D8L8T8\8d8l8t8|8
+8=8I8N8_8
+8=8Q8W8D9x9
+8=9C9T9k9
+8=9J9O9e9
+80858
+808i8
+809E9a9
+809l9
+818]8
+818<8W8
+81878t8
+818e8
+819c9
+828Y8
+838D8J8[8
+84888P8T8l8p8
+848x8
+858E8W8c8o8t8
+8'838`8f8l8{8
+8-848
+8'8g8v8
+898t8
+8A9F9z9
+8b8h8|8
+8B8N8V8n8v8
+8C8g8
+8f;:u
+8F8T8]8b8{8
+8F9W9
+8G8[8`8q8
+8G8Y8m8r8
+8G9P9
+8H8z8
+8hr=0x%08X
+8j8x8
+8m8q8u8y8}8
+8M9a9o9t9
+8MpCommunicationInitialize
+8N8a8z8
+8N9~9
+8P8}8
+8Q8l8
+8S8`8u8}8
+8U8q8
+8v"j@Z
+8W9p9
+9 :%:6:[:|:
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9 9$9(9,9094989<9D9H9L9P9T9X9\9`9d9h9l9t9x9|9
+9 9$9(9,90989<9@9D9H9P9T9X9\9d9h9l9t9|9
+9 9$949D9H9`9p9t9
+9 9@9Z9
+9 949f9
+9!:W:f:l:
+9!93989B9S9X9b9s9x9
+9!979O9_9d9u9
+9!9L9w9
+9"969F9X9h9p9
+9"9C9I9Z9m9~9
+9"9D9L9d9
+9"9H9s9
+9#:F:
+9#9(999h9y9
+9#9)9K9P9|9
+9#91969p9~9
+9$9,949<9D9L9T9\9d9p9
+9$9,949<9D9L9T9\9h9p9
+9$90979B9M9W9^9m9{9
+9$90989l9|9
+9$949@9`9l9
+9$u?A
+9%9*9A9F9d9
+9%9;9e9q9w9
+9%939;9L9Q9b9r9
+9%999T9
+9&969H9w9
+9(919
+9(989H9X9h9x9
+9)9G9L9Q9b9~9
+9*9O9v9
+9,:1:h:
+9,:H:M:^:<;H;V;e;k;~;
+9.9K9P9]9t9
+9/959N9
+9/9U9[9
+9/9U9f9
+9-:::?:P:z:
+9':1:::C:X:a:
+9':2:H:
+9:9@9T9
+9:9B9T9t9
+9:9C:
+9;9D9O9
+9;9J9n9y9
+9\$ t
+9^:6;
+9_(s-j
+9_LtS
+9_Pv<
+9{Pv2
+9|$Ht
+9~Pv"
+9~TtR9~PvDS
+9+9B9o9}9
+9=:E:
+9=9g9
+9>9F9S9e9s9z9
+909M9S9\9h9
+94:E:]:d:i:
+949Z9
+95:G:
+959C9
+969:9@9D9J9N9T9X9^9b9j9
+989A9h9}9
+989k9
+98uIj
+9'9.9F9d9v9
+9'9?9S9X9w9
+9'979<9f9v9{9
+9-9k:
+9-9S9`9|9
+9A0t7h
+9D<h<
+9D9o9
+9G9e9k9
+9J:O:`:q:{:
+9K0t*
+9p u"
+9Q9d9s9
+9S(vI
+9s,vn
+9X9h9s9z9
+A process other than WinDefend attempted to create a signature update service during a MOCAMP update; rejecting attempt
+A process other than WinDefend attempted to disable the service during a MOCAMP update; rejecting attempt
+A process other than WinDefend attempted to enable the service during a MOCAMP update; rejecting attempt
+A process other than WinDefend attempted to restart the service during a MOCAMP update; rejecting attempt
+A process other than WinDefend attempted to trigger a signature update during a MOCAMP update; rejecting attempt
+A(+A$
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+abort
+Aborting full system scan since system running on batteries
+ACCEPTS_SHUTDOWN
+AccessKey
+AccessMask
+AccessMask: %ld
+ACPI Data 
+ACPIHAL
+ACPIInfo.txt
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+Action
+ActiveThreadCount
+ADAPTER 
+AddDynamicSignature
+Adding Dynamic Signature: %ws...
+Additional Actions Required
+Additional Information:
+Additonal Actions Required.
+address family not supported
+address in use
+address not available
+AdjustTokenPrivileges
+aDownloadHandle.Initialize(%ls, %ls) failed. hr : %#lx
+advapi32.dll
+ADVAPI32.dll
+ahEnumFiles->Next(%ws) failed. (%#lx)
+Alias: %ls
+AllocateAndInitializeSid
+Allow
+already connected
+amcore\antimalware\source\service\tools\mpcmdtool\mpperformancereport.cpp
+AMSI-UAC
+AntiSpyware Signature Version: %ls
+AntiSpywareProduct
+AntiVirus Signature Version: %ls
+AntiVirusProduct
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-crt-convert-l1-1-0.dll
+api-ms-win-crt-filesystem-l1-1-0.dll
+api-ms-win-crt-heap-l1-1-0.dll
+api-ms-win-crt-locale-l1-1-0.dll
+api-ms-win-crt-math-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-stdio-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+api-ms-win-crt-time-l1-1-0.dll
+api-ms-win-crt-utility-l1-1-0.dll
+AppData\Local\Microsoft\Windows\Safety\Network
+Application
+Application Event Log
+application.evtx
+AppVersion
+Argument -cancel detected. Trying to cancel any quick/full scan in progress...
+argument list too long
+argument out of domain
+AS signature disabled
+AS signature enabled
+ASSignatureApplied
+ASSignatureVersion
+Attributes: %ld
+AuditAllowed
+AuditDenied
+AuGracePeriod
+AuthenticatedNetwork
+Auto scan disabled
+Auto scan enabled
+Auto sigupdate disabled
+Auto sigupdate enabled
+autoInitMpCmdRun.Initialize failed with %#lx
+AV signature disabled
+AV signature enabled
+AVSignatureApplied
+AVSignatureVersion
+bad address
+bad allocation
+bad array new length
+bad cast
+Bad Command line - %S
+Bad entry - %s
+bad exception
+bad file descriptor
+bad locale name
+bad message
+Bad optional access
+bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+Behavior monitor disabled
+Behavior monitor enabled
+BetaPlatform
+Binary data size(%zd) != package reported size(%ld)
+Binary data size(%zd) < sizeof(WDD_POLICY_PACKAGE_RELATIVE)
+Block
+BootSectorScan
+broken pipe
+bsearch
+bTg=ag
+Building local NP dir path failed (%#lx).
+Building remote NP dir path failed (%#lx).
+BuildLabEx
+BuildSFC
+Bunknown error
+BusId
+Business Justification (Required)
+BusTypeId: %ls
+BypassInternetCheck
+C(+C$
+C;XPr
+C<+C8
+C<+C8j0_
+c=rhDj
+C>x/Y_a
+C0;C(t
+C0_^[]
+C8+C4
+Cabinet.dll
+Cache_filename_dump-123455722.bin
+CachedProxy
+CachedProxyAccessType 
+CacheMaxSize
+Call to DoPrintTSModeCommand failed hr = %#lx
+Call to RunCommandMpPerformanceReport failed hr = %#lx
+Call to RunTPStateCommand failed hr = %#lx
+CallContext:[%hs] 
+Calling "%ls" command going to cancel the enabled Troubleshooting mode. Press 'Y' to continue 'N' to terminate: 
+Calling into service to check exclusion for [%ls] ...
+Calling MpUpdateStartEx with option %#lx
+calloc
+CampRing
+Cancel
+Cancel notification - cancelling update
+Cannot put service into SxS mode. Service should be stopped
+CaptureNetworkTrace
+CBS Log
+cbs.log
+CDROM
+CdRomDevices
+CertificateThumbprintId
+CertVerifyCertificateChainPolicy
+CH+CDj0_
+ChangeServiceConfig2W
+ChangeServiceConfigW
+char 
+char16_t
+char32_t
+char8_t
+CharUpperW
+CheckExclusion
+CheckForSignaturesBeforeRunningScan
+CheckTokenMembership
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+class 
+ClassGuidId: %ls
+Clean
+Cleaning failed.
+Cleaning finished.
+Cleaning started...
+ClearClipboard
+cli::array<
+cli::pin_ptr<
+CloseClipboard
+CloseEventLog
+CloseHandle
+CloseServiceHandle
+CloseThreadpoolTimer
+CloseTrace
+CLSIDFromString
+Cmd.exe
+CmdTool: Failed with hr = %#lx. Check %s for more information
+CmdTool: Invalid command line argument
+coclass 
+CoCreateInstance
+CoInitializeEx
+CoInitializeSecurity
+cointerface 
+Collecting configuration information...
+Collecting events from Operational Event Log...
+Collecting events from System Event Log...
+Collecting events from WHC Event Log...
+Collecting Windows Update logs...
+Collecting WinRE logs...
+combase.dll
+Command Description
+Command file %s not found!
+Command Line - Option already specified %s
+Command Line - Option should start with '-' or '/' %s
+CommandFile %s line %zu
+Communications DLL %ls, not found. hr : %#lx
+CompanyName
+CompareFileTime
+ComputerSid
+connection aborted
+connection already in progress
+connection refused
+connection reset
+const
+const 
+ConstructCleanInfo Failed %#lx
+CONTINUE_PENDING 
+ControlService
+ConvertDefaultLocale
+ConvertSidToStringSidW
+ConvertStringSidToSidW
+CopyFileW
+CopySid
+Corporate
+corrupted_
+CoTaskMemAlloc
+CoTaskMemFree
+Couldn't access the internal task scheduler hr = %#lx
+CoUninitialize
+Count
+CoWaitForMultipleHandles
+CpuThrottling
+CreateDirectoryW
+CreateEnvironmentBlock
+CreateEventW
+CreateFileW
+CreateFileW(%ls) Failed %#lx
+CreateMutexExW
+CreatePipe
+CreateProcessAsUserW
+CreateProcessW
+CreateRestrictedToken
+CreateSemaphoreExW
+CreateThreadpoolTimer
+CreateTimerQueueTimer
+CreateToolhelp32Snapshot
+Creating CAB file...
+Critical
+cross device link
+CRYPT32.dll
+CryptCATAdminAcquireContext
+CryptCATAdminCalcHashFromFileHandle
+CryptCATAdminEnumCatalogFromHash
+CryptCATAdminReleaseCatalogContext
+CryptCATAdminReleaseContext
+CryptCATCatalogInfoFromContext
+ct:j\Z
+Current configuration options for location "%s"
+Custom
+D$ 9t$
+D$ h8
+D$ j@P
+D$ NP
+D$ Ph
+D$ Pj
+D$ QP
+D$ SQRP
+D$ SVW
+D$ YY
+D$$3D$
+D$$3D$8#
+D$$j@P
+D$$j'QP
+D$$Pj
+D$$PVW
+D$$VWSQP
+D$(3D$,
+D$(3D$@
+D$(Ph
+D$(Ph8
+D$(SVW
+D$(YYP
+D$,,YB
+D$,<YB
+D$,3D$
+D$,3D$@
+D$,Ph
+D$,PV
+D$,SW
+D$,VP
+D$,YP
+D$@3D$
+D$@PV
+D$@SV
+D$\,YB
+D$\<YB
+D$\PW
+D$<xYB
+D$>PhHuA
+D$0PS
+D$0PW
+D$0SV
+D$43t$
+D$43t$8
+D$43t$D
+D$8`YB
+D$83D$
+D$83D$$#
+D$HSP
+D$p`YB
+D$TSP
+D$XLYB
+D1"xR
+DailyScan
+Data:
+ddd MMM dd yyyy
+DebugBreak
+DecodePointer
+DeleteCriticalSection
+DeleteFileW
+DeleteTimerQueueTimer
+Descriptor IDs list:
+Descriptor IDs:
+Descriptor size: %ld
+Descriptor type: %ls
+Descriptor#%ld
+DescriptorIdList
+destination address required
+DestroyEnvironmentBlock
+Detection State
+Device
+------------------Device control package from config------------------
+------------------Device control package from driver config------------------
+Device control security package
+device or resource busy
+DeviceControlInfo.txt
+DeviceId
+DeviceIoControl
+DiagOutputDir
+Direct HTTP
+directory not empty
+directory_entry::status
+directory_iterator::directory_iterator
+directory_iterator::operator++
+Disable
+DisableAntiSpyware
+DisableCpuThrottleOnIdleScans
+Disabled
+DisableDriverUnload
+DisableRemediation
+DisableRoutinelyTakingAction
+DisableService
+Disabling Tamper Protection...
+DISM_{53BFAE52-B167-4E2F-A258-0A37B57FF845}
+dismapi.dll
+DismCloseSession
+DismDelete
+DismGetFeatures
+DismInitialize
+Dismiss
+DismOpenSession
+DismShutdown
+Display
+displayName
+Done!
+Done.
+double
+Download Completed 
+Download Progress-
+Download Started...
+Downloaded %ls to %ls
+Downloading offline scanner image package...
+DownloadOfflineScanner
+DownloadSigBlob
+DRIVER 
+DropRemediation
+DssCounter 
+DtCSV
+Dump started 
+Dumping cache filenames to log...
+Dumping list of processes with MpDetoursCopyAccelerator injection...
+dwBusyTimeout
+dwOptions
+dwTotalWaitTicks
+Dynamic Signature added successfully
+Dynamic Signature already added.
+Dynamic signature already loaded by engine: %ls
+DynamicSignatureLocation
+DynamicSignatures
+E(SVW
+E0C1)0'
+e0u0z0
+Early-Launch
+effective policy
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+ELAM disabled
+ELAM enabled
+emoving %ws...
+empty distance tree with lengths
+EmptyClipboard
+Enable
+Enabled
+EnabledV9
+EnableFullScanOnBatteryPower
+EnableService
+EnableService(%d, %lu)
+EnableService(%d, %lu) - finished.
+EnableServiceImpl
+EnableSmartScreen
+EnableSxSMode
+Enabling boot start of kernel mode services ...
+Enabling Tamper Protection...
+EncodePointer
+End: Idle Task - %s
+End: SampleHeader Service
+End: Signatures Update Service
+End: SpyNet Service
+Engine
+Engine Version: %ls
+EngineRing
+EngineVersion
+EnterCriticalSection
+Entries list:
+Entry
+Entry#%ld
+Entry(%ls)
+enum 
+EnumDependentServicesW
+Enumerating installed dynamic signatures ...
+EnumServicesStatusExW
+ERROR
+Error
+Error running as network service. hr = %#lx
+Error running as restricted process. hr = %#lx
+error: 
+ERROR: %hs
+error: %hs
+ERROR: %ls failed (%#lx)
+ERROR: %s, hr = %#lx
+error: access denied
+ERROR: AddFileToMpCab() failed (%#lx)
+ERROR: awszProperty failed (%#lx)
+ERROR: CheckClientIdentity() failed (%#lx)
+ERROR: CloseEventLog() failed (%#lx)
+ERROR: CloseMpCab() failed (%#lx)
+ERROR: CoCreateInstance(CLSID_WscIsv, IID_IWscASStatus) Failed %#lx
+ERROR: CoCreateInstance(CLSID_WscIsv, IID_IWscAVStatus) Failed %#lx
+ERROR: CoInitializeSecurity failed (%#lx)
+ERROR: Collect the build string: UtilRegGetValueString failed (%#lx)
+ERROR: Collect the build string: UtilRegOpenKey failed (%#lx)
+ERROR: CollectFilesFromDirectory() failed (%#lx)
+ERROR: CollectServiceInfo("wscsvc") failed (%#lx)
+ERROR: CollectServiceInfo(%ls) failed (%#lx)
+ERROR: CollectServiceInfo(%ls) failed (%lx)
+ERROR: CollectWdspRegistryKeys failed (%#lx)
+ERROR: CollectWdspServiceInfo failed (%#lx)
+ERROR: ConfigDumpFromOrigin() failed for mdm policy %#lx
+ERROR: ConfigDumpFromOrigin() failed for policy %#lx
+ERROR: ConfigDumpFromOrigin() failed for policy error %#lx
+ERROR: ConfigDumpFromOrigin() failed for preferences %#lx
+Error: Copy of the Support Logs failed (%#lx)
+ERROR: CopyFileW() failed (%#lx)
+ERROR: Copying the package path to the result message failed (%#lx)
+Error: CopySupportLogs failed (%#lx)
+ERROR: Could not enumerate threats. Failed with %#lx
+ERROR: Could not open threat list. Failed with %#lx
+Error: CreateCab() failed (%#lx)
+ERROR: CreateCab() failed (%#lx)
+ERROR: CreateDirectoryW(%ls) failed (%#lx)
+ERROR: CreateEnvironmentBlock() Failed %#lx
+ERROR: CreateProcessAsUserW() Failed %#lx
+ERROR: CreateProcessFromToken() Failed %#lx
+ERROR: CreateRestrictedToken(DISABLE_MAX_PRIVILEGE) Failed %#lx
+ERROR: Creating Idle Notifier Context Failed %#lx
+ERROR: Creating IMpWppTracing Failed %#lx
+ERROR: Creating SampleHeader Queue Failed %#lx
+ERROR: Creating Signatures Service Context Failed %#lx
+ERROR: Creating Signatures Update Service Context Failed %#lx
+ERROR: Creating SpyNet Queue Failed %#lx
+ERROR: Download offline scanner failed (%#lx)
+ERROR: DumpIFEOKeys failed (%#lx)
+ERROR: Dumping Log Failed
+ERROR: EnableAndStartService(%s) failed. hr = %#lx
+ERROR: EnableService(%s) failed. hr = %#lx
+ERROR: Error deleting WMI instance %s Failed %#lx
+ERROR: EventLogToFile() failed (%#lx)
+ERROR: EvtQuery failed (%#lx)
+ERROR: Exception is handled, error (%#lx)
+ERROR: ExpandEnvironmentStrings failed (%#lx)
+ERROR: ExtractEventIdPropertyFromPayload failed (%#lx)
+ERROR: ExtractEventLevelPropertyFromPayload failed (%#lx)
+ERROR: ExtractEventMessage failed (%#lx)
+ERROR: ExtractEventPayload failed (%#lx)
+ERROR: ExtractStringPropertyFromPayload failed (%#lx)
+ERROR: ExtractTimePropertyFromPayload failed (%#lx)
+ERROR: Failed to allocate %ld bytes for event log record
+ERROR: Failed to dump reporting GUID %#lx
+ERROR: Failed to dump Windows Setup keys %#lx
+ERROR: Failed to get product install dir. (%#lx)
+ERROR: Failed to get registry value %s. hr = %#lx
+ERROR: Failed to get status information, hr = %#lx
+ERROR: Failed to open a manager handle, hr = %#lx
+ERROR: Failed to open file %ls to output item names!
+ERROR: Failed to open log file (%#lx)
+ERROR: Failed to open log file (%ls), error (%#lx)
+ERROR: Failed to open log file (%ls), error (%lx)
+ERROR: Failed to open log file, error %#lx
+ERROR: Failed to open log file, error (%#lx)
+ERROR: Failed to open log file, error hr = %#lx
+error: file "%ls" not found
+ERROR: FileTimeToLocalFileTime(...) failed (%#lx)
+ERROR: FileTimeToSystemTime() failed %#lx
+ERROR: FileTimeToSystemTime(...) failed (%#lx)
+ERROR: FindClose() failed (%#lx)
+ERROR: FindNextFile() failed (%#lx)
+ERROR: FormatMessageW (%#lx)
+ERROR: FormatMessageW failed (%#lx)
+ERROR: FormatMessageW failed for string arg %d (%#lx)
+ERROR: FormatTime(...) failed (%#lx)
+ERROR: Get config EnableFullScanOnBatteryPower failed (%#lx)
+ERROR: GetAutoResolveRules failed (%#lx)
+ERROR: GetDateFormat() failed %#lx
+ERROR: GetExitCodeProcess failed (%#lx)
+ERROR: GetFastPathSignatureBlobs failed (%#lx)
+ERROR: GetInternalSchedulerEntries failed (%#lx)
+ERROR: GetLogFile(%ls) failed (%#lx)
+ERROR: GetLogFile(WINDOWS_UPDATE_LOG_FILENAME) failed (%#lx)
+ERROR: GetMesgFileHandle() failed (%#lx)
+ERROR: GetNumberOfEventLogRecords() failed (%#lx)
+ERROR: GetOldestEventLogRecord() failed (%#lx)
+ERROR: GetOutputCABFileName() failed (%#lx)
+ERROR: GetProductServiceName failed (%#lx)
+ERROR: GetSupportDir() failed (%#lx)
+ERROR: GetSupportLogLocationPathFromConfig() failed (%#lx)
+ERROR: GetTimeFormat() failed %#lx
+ERROR: GetUserNameW() Failed %#lx
+ERROR: GetUserNameW() failed (%#lx)
+ERROR: GetWinTaskSchedulerEntries failed (%#lx)
+ERROR: HexDumpToFile failed (%#lx)
+ERROR: InitMpCab() failed (%#lx)
+error: internal error
+error: invalid data: System path changed during the trace from "%ls" to "%ls"
+error: invalid data: System Windows path changed during the trace from "%ls" to "%ls"
+ERROR: Invalid file handle in FindFirstFileW() (%#lx)
+ERROR: IWscASStatus::Unregister() Failed %#lx
+ERROR: IWscAVStatus::Unregister() Failed %#lx
+ERROR: LoadLibraryEx failed (%#lx)
+ERROR: LoadUserProfile() Failed %#lx
+ERROR: MpAddDynamicSignatureFile failed with hr=%#lx
+ERROR: MpCleanOpen() Failed %#lx
+ERROR: MpCleanStart() Failed %#lx
+ERROR: MpCleanThreats() Completion Failed %#lx
+ERROR: MpCollectServiceInfo("MsMpSvc") failed (%#lx)
+ERROR: MpCollectServiceInfo("wdsp service") failed (%#lx)
+ERROR: MpConfigGetMiscDwordValue(MpSupport_EventLogRecordNum) failed (%#lx)
+ERROR: MpConfigGetValueString(%ls\%ls) failed (%#lx)
+ERROR: MpConfigLoadScanParameters Failed %#lx
+ERROR: MpConfigOpen(%ls) failed (%#lx)
+ERROR: MpDumpCache failed (%#lx)
+ERROR: MpDynamicSignatureEnumerate failed with hr=%#lx
+ERROR: MpDynamicSignatureOpen failed with hr=%#lx
+ERROR: MpGetEventSourceName failed (%#lx)
+ERROR: MpGetInstalledProductIdentifier failed (%#lx)
+ERROR: MpGetInstalledProductIdentifier failed. hr = %#lx
+ERROR: MpGetInstalledProductIdentifier return unknown product (%#lx)
+ERROR: MpGetInstalledProductIdentifier return unknown product (%#lx).
+ERROR: MpGetProductServiceName failed. hr = %#lx
+ERROR: MpManagerOpen Failed %#lx
+ERROR: MpManagerOpen failed (%#lx)
+ERROR: MpManagerOpen failed with %#lx
+ERROR: MpManagerOpen failed with hr=%#lx
+ERROR: MpOfflineScanInstall failed (%#lx)
+ERROR: MpOpen failed with hr=%#lx
+ERROR: MpQuarantineRequest failed: name: %ls, GUID: %ls (%#lx)
+ERROR: MpReloadEngine failed (%#lx)
+ERROR: MpRemoveDynamicSignatureFile failed with hr=%#lx
+ERROR: MpRollbackPlatform failed (%#lx)
+ERROR: MpRollbackSignature failed with hr=%#lx
+ERROR: MpSampleQuery failed with %#lx
+ERROR: MpSampleSubmit failed with %#lx
+ERROR: MpScan(dwOptions=%lu) Completion Failed %#lx
+ERROR: MpScanControl Failed %#lx
+ERROR: MpScanResult() Failed %#lx
+ERROR: MpScanStart(dwOptions=%lu) Failed %#lx
+ERROR: MpSmartCoInitialize failed (%#lx)
+ERROR: MpSmartConfigInitialize() failed (%#lx)
+ERROR: MpThreatEnumerate failed (%#lx)
+ERROR: MpThreatOpen failed (%#lx)
+ERROR: MpThreatOpen() Failed %#lx
+ERROR: MpUnblockEngine failed (%#lx)
+ERROR: MpUnblockPlatform failed (%#lx)
+ERROR: MpUnblockSignatures failed (%#lx)
+ERROR: MpUpdatePlatform failed (%#lx)
+ERROR: MpUpdateStart failed (%#lx)
+ERROR: MpUpdateStart failed with hr=%#lx
+ERROR: MpUtilMicrosoftCertCheck(%ls) failed (%#lx)
+ERROR: MpWDEnable(FALSE) failed (%#lx)
+ERROR: MpWDEnable(TRUE) failed (%#lx)
+ERROR: MpWscUnregister() Failed %#lx
+ERROR: NewSprintfW failed (%#lx)
+ERROR: NewSprintfW(%ls, %ls) failed (%#lx)
+ERROR: NewSprintfW(%ls, %ls) failed (%lx)
+ERROR: NewSprintfW() failed (%#lx)
+ERROR: Notifying the service of failed (%#lx)
+ERROR: NULL output string in FormatTime
+ERROR: NULL parameter in EventLogToFile(...)
+ERROR: NULL parameter in ReadAndProcessEventLogRecord
+ERROR: Open Register key for app reputation failed (%#lx)
+ERROR: Open Register key for edge app container failed (%#lx)
+ERROR: Open Register key for smartscreen group policy failed (%#lx)
+ERROR: OpenEventLog(System) failed (%#lx)
+ERROR: OpenProcessToken() Failed %#lx
+ERROR: Out of memory (%#lx)
+error: performance recording has lost %lu events; repeat recording
+error: performance recording logging mode:%hs%hs%hs%hs; currently only supporting sequential recordings
+ERROR: Please specify the output file name.
+Error: PolicyGroupXml doesn't match known type
+Error: PolicyRuleXml doesn't match known type
+ERROR: PrintEngineVersion failed with hr=%#lx
+ERROR: Process Hand - timeout %lu
+ERROR: QuarantineRestore failed (%#lx)
+ERROR: Read Register value for EnableSmartScreen failed (%#lx)
+ERROR: Read Register value for ShellSmartScreenLevel failed (%#lx)
+ERROR: Read Register value for SmartScreenEnabled failed (%#lx)
+ERROR: ReadAndProcessEventLogRecord(%ls, %ls, %ls, %ld) failed %#lx
+ERROR: ReadEventLog() failed (%#lx)
+ERROR: ReadEventLog(dummy) failed (%#lx)
+ERROR: Registry value size doesn't match for datesn
+ERROR: RegOpenKeyEx failed (%#lx)
+ERROR: RegQueryValueEx failed (%#lx)
+ERROR: RemoveMpTask(scan) Failed %#lx
+ERROR: Resetting Trusted USN failed (%#lx)
+ERROR: RestrictTokenPrivileges() Failed %#lx
+ERROR: RunCommandCollectAcpiInfo failed (%#lx)
+ERROR: RunCommandCollectDeviceControlInfo failed (%#lx)
+ERROR: RunCommandCollectFileVersions failed (%#lx)
+ERROR: RunCommandCollectFltmcInfo failed (%#lx)
+ERROR: RunCommandCollectPrinterInfo failed (%lx)
+ERROR: RunCommandCollectSenseInfo failed (%#lx)
+ERROR: RunCommandCollectServiceInfo("MsMpSvc") failed (%#lx)
+ERROR: RunCommandCollectServiceInfo::NewSprintfW failed (%#lx)
+ERROR: RunCommandCollectStats failed (%#lx)
+ERROR: RunCommandCollectSystemInfo failed (%#lx)
+ERROR: RunCommandCollectWscInfo failed (%#lx)
+ERROR: RunCommandCollectWscInfo() failed (%#lx)
+ERROR: RunCommandCollectWscRegistryKeys failed (%#lx)
+ERROR: RunCommandConfigDump() failed %#lx
+ERROR: RunCommandQuarantineRestore failed (%#lx)
+ERROR: RunCommandUnregisterWSC() Failed %#lx
+ERROR: RunWithRestrictedPriv(%s) Failed %#lx
+ERROR: SendProgressNotification Failed %#lx
+ERROR: Signature update failed (%#lx)
+ERROR: Signature Update failed with hr=%#lx
+ERROR: Signatures Update Failed %#lx
+ERROR: Signatures Update Service hanged! - timeout %lu
+ERROR: StartIdle Failed %#lx
+ERROR: StopAndDisableService(%s) failed. hr = %#lx
+ERROR: StopIdle Failed %#lx
+ERROR: StringCchCat failed (%#lx)
+ERROR: StringCchCopy failed (%#lx)
+ERROR: StringCchCopyNW failed (%#lx)
+ERROR: StringCchCopyW failed (%#lx)
+ERROR: StringCchLength failed (%#lx)
+ERROR: StringCchPrintfW failed (%#lx)
+ERROR: StringCchPrintfW() failed (%#lx)
+ERROR: StringFromGUID2 failed (%#lx)
+Error: Support Log Location is Invalid or Not Accessible!
+Error: Support Log Location is not set!
+ERROR: swscanf_s(...) failed
+ERROR: Task name not specified
+ERROR: Unable to get scheduled scan name, %#lx
+ERROR: Unsupported event log name in EventLogToFile(%ls)
+error: unsupported scenario: Win32 Path for NT Path "%ls" changed during the trace from "%ls" to "%ls"
+ERROR: Unsupported type %lu
+ERROR: update timed out.
+ERROR: UtilCopyFile() failed (%#lx)
+ERROR: UtilCopyFileSafe() failed (%#lx)
+ERROR: UtilCreateDirectoryIfNeeded() failed (%#lx)
+ERROR: UtilCreateFile(%ls) failed (%#lx)
+ERROR: UtilCreateProcess(%ls) exits with code(%lu)
+ERROR: UtilCreateProcess(%ls) failed (%#lx)
+ERROR: UtilCreateProcess(%ls) time out (%#lx)
+ERROR: UtilDeletePathSafe(%ls) failed (%#lx)
+ERROR: UtilDeletePathSafe() failed (%#lx)
+ERROR: UtilDeletePathSafe() failed (%X)
+ERROR: UtilEnumFiles(flat) failed for folder (%ws). (%#lx)
+ERROR: UtilExpandEnvironmentStrings() failed (%#lx)
+ERROR: UtilGetACPISDEVTable failed (%#lx)
+ERROR: UtilGetACPISDEVTable failed, internal Error (%#lx)
+ERROR: UtilGetDisplayTime failed (%#lx)
+ERROR: UtilGetLocalMachineName() failed (%#lx)
+ERROR: UtilGetSystemPath(%ls) failed (%#lx)
+ERROR: UtilLogonUser(%s) Failed %#lx
+ERROR: UtilWriteFile(%ls) failed (%#lx)
+ERROR: UtilWriteFile(%ls) failed to write data (%#lx)
+ERROR: UtilWriteFile() failed for HexDumper (%#lx)
+ERROR: ValidateMapsConnection failed (%#lx)
+ERROR: WaitForCompletion Failed %#lx
+ERROR: WinEventMgr::NewWinEventMgr() failed (%#lx)
+ETWSRC
+Event log record number overflow
+EventLogSourceName
+EventMessageFile
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+EvtClose
+EvtCreateRenderContext
+EvtFormatMessage
+EvtNext
+EvtOpenPublisherMetadata
+EvtQuery
+EvtRender
+Exception
+excluded
+ExcludedIdList
+ExcludeImage
+executable format error
+exists
+ExpandEnvironmentStringsW
+Expanding %ls failed (%#lx).
+Exporting 'Exploit Mitigation Policies' failed (%#lx)
+Extension
+Extensions
+extern "C" 
+F(9^$u
+f\F/Q
+F8;GDuU
+f94Wt
+FAILED
+Failed to check Parent Process Identity %#lx 
+Failed to enumerate threats, hr=%#lx
+Failed to get list of modules for: 
+FAILED to get VID_PID
+Failed to load DOM data.
+Failed to open file %s to output item names!
+failed to print the auto scan status
+failed to print the automatic signature update status
+failed to print the behavior monitor status
+failed to print the ELAM status
+failed to print the IOAV status
+failed to print the NRI status
+failed to print the OnAccess status
+failed to print the realtime monitor status
+failed to print the SmartScreen status
+failed to print the threat history stats
+failed to print the threat stats
+Failed to remove %ws. hr = %#lx
+Failed to remove value %s\%s, error 0x%lx
+Failed to start network trace! Error %#lx
+Failed! Error %#lx
+FailFast
+Failure Audit
+FallbackOrder
+false
+False
+'FB!G
+fclose
+FeatureName
+Features
+FeatureScenario
+fflush
+fgetc
+fgetpos
+fgetwc
+fgetws
+file exists
+file too large
+File: %ls
+FILE_SYSTEM_DRIVER 
+FileDescription
+filename too long
+FilePath
+'FilePath' could not be specified with 'Name' or 'All' options.
+Files
+Files in top level directory of %ls.
+Files successfully copied into %ls
+Files successfully created in %ls\Mp%ls
+FileTimeToDosDateTime
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FileVersions.txt
+FindClose
+FindFirstFileExW
+FindFirstFileW
+FindNextFileW
+FindResourceW
+Finish: MpCleanThreats()
+Finish: MpRemoveDefinitions()
+Finish: MpScan(MP_FEATURE_SUPPORTED, dwOptions=%lu, path %ls, DisableRemediation = %u, BootSectorScan = %u, Timeout in days = %lu)
+Finish: MpScan(MP_FEATURE_SUPPORTED, dwOptions=%lu, Timeout in days = %lu)
+Finish: MpScanStart(MP_FEATURE_SUPPORTED, dwOptions=%lu)
+Finish: MpSignatureUpdate()
+Finish: RunCommandAddSignatureFile()
+Finish: RunCommandRemoveSignatureFile()
+firewallapi.dll
+FirstAuGracePeriod
+Flags
+Flags: %ld
+float
+FlsAlloc
+FlsFree
+FlsGetValue
+FlsSetValue
+fltmc.exe
+FltmcInfo.txt
+Flushing current session logs for Windows Security Service failed (%#lx)
+folder
+Force
+ForcePassiveMode
+ForceRemediation
+ForceRemediation option set, forcing cleaning detected threats ...
+ForceSignaturesUpdate
+FormatMessageA
+FormatMessageW
+forwarders\%ls
+fputc
+fputwc
+fputws
+fread
+FreeLibrary
+FreeSid
+frexp
+FriendlyNameId
+fseek
+fsetpos
+ft&9q
+function not supported
+FwAutoresolve.txt
+FWEnumDynamicKeywordAddressesByType0
+FWFreeDynamicKeywordAddressData0
+FwpmDynamicKeywordSubscribe0
+FwpmDynamicKeywordUnsubscribe0
+fwpuclnt.dll
+fwrite
+FWUpdateDynamicKeywordAddress0
+FZER&VQ-g
+G;{Pr
+G;~Pr
+G8+G4
+GD;FDu*
+generic
+GenericStream
+generic-type-
+getchar
+GetCommandLineW
+GetComputerNameExW
+GetConsoleMode
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetDateFormatW
+GetDeviceTicket
+GetExitCodeProcess
+GetFileAttributesExW
+GetFileAttributesW
+GetFileInformationByHandle
+GetFileInformationByHandleEx
+getfiles
+GetFiles -SupportLogLocation %ls
+getfilesdiagtrack
+GetFileSizeEx
+GetFileVersionInfoExW
+GetFileVersionInfoSizeW
+GetFileVersionInfoW
+GetFinalPathNameByHandleW
+GetLastError
+GetLengthSid
+GetLoadLibraryWAddress32
+GetLocaleInfoW
+GetLocalTime
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetNativeSystemInfo
+GetNumberOfEventLogRecords
+GetOfflineScannerSupportDir() failed (%#lx). Likely that WDO was never run on this machine.
+GetOldestEventLogRecord
+GetOsVersion() reports: %ls
+GetProcAddress
+GetProcessesThatHaveCopyAcceleratorDTourAttached() failed (%#lx).
+GetProcessHeap
+GetProcessMitigationPolicy
+GetStdHandle
+GetStringTypeW
+GetSystemDefaultUILanguage
+GetSystemDirectoryW
+GetSystemFirmwareTable
+GetSystemInfo
+GetSystemPowerStatus
+GetSystemTime
+GetSystemTimeAsFileTime
+GetSystemTimePreciseAsFileTime
+GetTempPath2W
+GetTempPathW
+GetTickCount
+GetTimeFormatW
+Getting %ls ...
+Getting ACPI information...
+Getting device control information...
+Getting Dynamic Signatures...
+Getting file-list and version information...
+Getting filter manager information...
+Getting Firewall Auto Resolve Rules from Powershell...
+Getting 'Image File Execution Option' state...
+Getting minifilter driver registration information...
+Getting Network Protection local data
+Getting Network Protection remote data
+Getting NIS driver registration information...
+Getting NIS service registration information...
+Getting Printer information...
+Getting product service registration information...
+Getting product service(s) registration information...
+Getting security health service registration info...
+Getting security health service related registry keys...
+Getting Sense service registration information...
+Getting snapshot information...
+Getting Spooler service registration information...
+Getting system information...
+Getting the contents of the internal task scheduler...
+Getting threat information...
+Getting WDATP information...
+Getting WDSP log location failed (%#lx).
+Getting windir\Logs\Reagent failed (%#lx).
+Getting windir\Panther\UnattendGC failed (%#lx).
+Getting windir\system32\recovery failed (%#lx).
+Getting Windows Task Scheduler registrations...
+Getting Windows Update log...
+Getting WSC information...
+Getting WSC related registry keys and service registration...
+Getting WSC service registration information...
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetUserNameExW
+GetUserNameW
+GetVersionExW
+GH+GD
+GibraltarTrace.log
+GL9_8u P
+Group Definitions:
+Group#%ld
+Group(%ls)
+GroupId
+GroupId: %ls
+Grouping
+'H7KS
+HardwareId
+HashDigestLength
+HashId: 
+HDAudio
+'hDMB
+HeapAlloc
+HeapFree
+HeapSetInformation
+HH':'mm':'ss
+HighPriority
+HKEY_CLASSES_ROOT
+HKEY_CURRENT_CONFIG
+HKEY_CURRENT_USER
+HKEY_LOCAL_MACHINE
+HKEY_USERS
+host unreachable
+HrChangeServiceConfig
+HrControlService
+Hresult
+HResult
+HrOpenSCManager
+HrOpenService
+HrQueryServiceStatus
+HrStartService
+HTREE
+http://
+http://www.microsoft.com0
+HttpDownload
+https://
+https://go.microsoft.com/fwlink/?LinkId=246444
+https://go.microsoft.com/fwlink/?LinkId=246445
+https://go.microsoft.com/fwlink/?LinkID=518968
+https://go.microsoft.com/fwlink/?LinkID=518969
+HttpStatus
+identifier removed
+Idle Task - service shutdown
+Idle Task - timeout %lu
+IdleScheduledJob
+IdleTask
+IFEO.txt
+IGNORES_SHUTDOWN
+IIDFromString
+illegal byte sequence
+Imr<c
+inappropriate io control operation
+Inbound for HTTP
+Inbound service restriction rule for %s
+IncludedIdList
+IncludedLocalDriveLetters
+incomplete distance tree
+incomplete dynamic bit lengths tree
+incomplete literal/length tree
+incorrect data check
+incorrect header check
+INFINITE
+INFO: CreateDirectoryW(%ls) failed (%#lx). Likely that WDO was never run on this machine.
+INFO: Deleted WMI instance %s 
+INFO: ForceSignaturesUpdate is set. Forcing signature update
+INFO: IWscASStatus::Unregister() Succeeded
+INFO: IWscAVStatus::Unregister() Succeeded
+INFO: List/Restore item name(s) are output to file %s.
+INFO: MpQuarantineRequest succeeded: name: %ls, GUID: %ls
+INFO: No quarantined items.
+INFO: NoSignatureUpdates is set. skipping signature update.
+INFO: RunCommandUnregisterWSC() Succeeded %#lx
+INFO: ScheduleJob is not set. Skipping signature update.
+INFO: This is a resource scan. skipping signature update.
+Information
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionEx
+InitializeSListHead
+InitializeSRWLock
+InMemory
+Input File Name: %ws
+Installation Completed 
+Installation Progress-
+Installation Started...
+InstallLocation
+InstallPath
+InstallTime
+instanceGuid
+InstancePathId
+InterlockedPushEntrySList
+InternalName
+interrupted
+Invalid
+invalid argument
+invalid bit length repeat
+invalid block type
+invalid distance code
+Invalid GUID specified
+invalid hash bucket count
+invalid literal/length code
+invalid map<K, T> key
+Invalid path to scan: %ls. hr = %#lx
+invalid seek
+Invalid SID
+invalid stol argument
+invalid stored block lengths
+invalid string position
+invalid string_view position
+Invalid TP command or already in the desired state, command=%ls, state=%ls
+invalid window size
+Invoking RollbackPlatform
+io error
+IOAV protection disabled
+IOAV protection enabled
+IOAVStream
+ios_base::badbit set
+ios_base::eofbit set
+ios_base::failbit set
+iostream
+IPC disabled
+IPC enabled
+is a directory
+is excluded
+is NOT excluded
+Is the service not running?
+IsBeta
+IsDebuggerPresent
+islower
+IsManaged
+IsPassiveMode
+isprint
+IsProcessorFeaturePresent
+IsScheduledScan
+IsScheduledUpdate
+IsSxsPassiveMode
+isupper
+IsWow64Process
+IsWow64Process2
+iswprint
+iswspace
+j$Z_^
+j.Xf9
+j.Zf9Q,u
+j/^f;
+j/Xf9Dy
+j/Zj\_
+j:Xf9A
+j:Xf9G
+j\^f;
+j\Xf;
+j\Xj:3
+j\Yj.XQQf
+j\Zf;
+j\Zj/
+J_g5+
+j0^=0
+jjjjj
+jvXje
+KERNEL_DRIVER 
+KERNEL32.dll
+kernel32.dll
+kernelbase.dll
+Kh8MB
+Killbitted
+L$ #L$
+L$$_^[3
+L$$_^3
+L$,_^[3
+L$<_^[3
+L$4_^[3
+L$L_^[3
+L$P9\$
+last known good engine
+last known good signature
+Last Successful MAPS connection: [%ls]
+LastAggressiveCheck
+LastFallbackTime
+LastFullScanBytesCount
+LastMAPSSuccessTime
+LastOfflineScan
+LastQuickScanResourceCount
+LastRebootTime
+LastRestorePoint
+LastScanRun
+LastScanType
+LastWdDisable
+LastWdEnable
+Launching %ls...
+LCMapStringEx
+LeaveCriticalSection
+Legal_Policy_Statement
+LegalCopyright
+Level
+List of processes that have copy accelerator dtour dll injected in:
+List/Restore item name(s) are output to file %s.
+ListAll
+ListAllDynamicSignatures
+Listing snapshot file information, located under: "%ls"
+LoadDataPrimitive
+LoadLibraryExA
+LoadLibraryExW
+LoadLibraryW
+LoadLibraryW address is %lu.
+LoadResource
+LoadUserProfileW
+local
+Local\SM0:%lu:%lu:%hs
+localeconv
+LocalFree
+LocalService
+LockResource
+LogAlways
+LogHr
+LogNt
+LogonUserExExW
+LogonUserW
+long 
+LookupPrivilegeValueW
+lstd::exception: %hs
+lstrlenA
+lSVW3
+M0K0I
+malloc
+MANAGED
+Managed Defender keys not found. NOT a managed Defender installation.
+Managed Defender setup keys not found. NOT a managed Defender installation.
+ManagedDefenderProductType
+ManagedUpdate
+map/set too long
+MAPSconcurrency
+MAPSconcurrencyDss
+MapViewOfFile
+MatchAll
+MatchAny
+MatchType
+MatchType: %ls
+MaxEntriesFlushed
+MaxEntriesStored
+MaxThreadCount
+MBI_SSL
+mdm policy
+message size
+MeteredConnectionUpdates
+Mh\TA
+Microsof
+Microsoft
+Microsoft Antimalware keys from "%s"
+Microsoft Antimalware Scheduled Scan
+Microsoft Antimalware Service
+Microsoft Antimalware Setup keys from "%s"
+Microsoft Corporation
+Microsoft Corporation1$0"
+Microsoft Corporation1&0$
+Microsoft Corporation1)0'
+Microsoft Corporation1.0,
+Microsoft Corporation1200
+Microsoft Information Protection
+Microsoft Information Protection blocked the following actions based on your organization's rules.
+Microsoft Information Protection blocked the following actions based on your organization's rules. However, your organization allows them to be unblocked at your discretion. Please select any actions you want to allow and provide a business justification 
+Microsoft Information Protection blocked the following actions based on your organization's rules. However, your organization allows them to be unblocked at your discretion. Please select any actions you want to allow and provide a business justification to unblock the actions the next time they are performed.bMicrosoft Information Protection blocked the following actions based on your organization's rules.
+Microsoft Malware Protection Command Line Utility
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft Windows Publisher0
+Microsoft.Windows.Defender
+Microsoft.Windows.TlgAggregateInternal
+Microsoft-Windows-Security-Mitigations%4KernelMode.evtx
+Microsoft-Windows-Security-Mitigations%4UserMode.evtx
+Microsoft-Windows-Windows Defender
+Microsoft-Windows-Windows Defender/Operational
+Microsoft-Windows-Windows Defender/WHC
+MinDuration
+MinEntriesFlushed
+MiscConfig set, forcing update timeout.
+Miscellaneous Configuration
+MitigateServices
+MitigationPolicies
+MOAC file dump
+MoCAMPUpdateStarted
+Module32FirstW
+Module32NextW
+MoveFileExW
+MpAddDynamicSignatureFile
+MpAddDynamicSignatureFile %ls failed with %#lx. Ignored.
+MpAddDynamicSignatureFile %ls finished successfully.
+MpAllocMemory
+MpAzSubmit.dll
+MpAzSubmitBlobInitialize
+MpAzSubmitBlobUninitialize
+MpAzSubmitBlobUpload
+MpBoot
+MpCampRing
+MpCleanOpen
+MpCleanStart
+MpCleanThreats() completed for action %s on threat %I64u
+MpCleanThreats() failed for action %s on threat %I64u. hr = %#lx
+MpCleanThreats() started
+MpCleanThreats() started for action %s on threat %I64u
+MpCleanThreats() was completed
+mpclient.dll
+MpClientUtilExportFunctions
+MpCmdRun
+MpCmdRun log (1/4)
+MpCmdRun log (2/4)
+MpCmdRun log (3/4)
+MpCmdRun log (4/4)
+MpCmdRun log from SysTemp
+MpCmdRun-%lx-%s.lock
+MpCmdRun.exe
+MpCmdRun.exe [command] [-options]
+MpCmdRun.exe: hr = %#lx.
+MpCmdRun.log
+MpCmdRun.pdb
+MpCmdRun.PerformanceReport_Start
+MpCmdRun.PerformanceReport_Stop
+MpCmdRun.Scan_End
+MpCmdRun.Scan_Start
+MpCmdRun.ServiceStopResult
+MpCmdRun.SignatureUpdate_Hang
+MpCmdRun.SignatureUpdate_Source
+MpCmdRun.SignatureUpdate_Start
+MpCmdRun.SignatureUpdate_Stop
+MpCmdRun_Assert
+MpCmdRun_DisableIdentityCheck
+MpCmdRun_DontRestoreMiscConfig
+MpCmdRun_IdleTaskWaitTimeout
+MpCmdRun_MaxLogSize
+MpCmdRun_ScanTerminationTimeOut
+MpCmdRun_SignatureUpdateTerminationTimeOut
+MpCmdRun-LocalService.log
+MpCmdRun-NetworkService.log
+MpCmdRun-System.log
+MpCmdRun-SystemTemp.log
+MpCmdRunWithTracing
+MpCommu.dll
+MpCommunicationCreateInstance
+MpCommunicationDownloadFile
+MpCommunicationDownloadFile(%ls, %ls) failed. hr : %#lx
+MpCommunicationUninitialize
+MpConfig_SystemRunningOnBatteries
+MpConfigClose
+MpConfigDelValue
+MpConfigGetValue
+MpConfigGetValueAlloc
+MpConfigInitialize
+MpConfigIteratorClose
+MpConfigIteratorEnum
+MpConfigIteratorOpen
+MpConfigOpen
+MpConfigSetValue
+MpConfigUninitialize
+MpConveySampleSubmissionResult
+MpCopyAccelerator log
+MpCopyAccelerator log from SysTemp
+MpCopyAccelerator.log
+MpCopyAccelerator-SystemTemp.log
+mpdetection-
+MpDetoursCopyAccelerator.dll
+MpDeviceControlDumpSecurityPackage() failed with hr. hr=(%#lx)
+MpDeviceControlSelfRelativeToAbsolutePackage() failed with hr. hr=(%#lx)
+MpDynamicSignatureEnumerate
+MpDynamicSignatureOpen
+mpengine_etw.dll
+MpEngineRing
+MpEnsureProcessMitigationPolicy (again): hr = %#lx
+MpEnsureProcessMitigationPolicy: hr = %#lx
+MpFilter
+MpFreeMemory
+MpGetDeviceControlSecurityPolicies
+MpGetDeviceControlSecurityPolicies() failed with hr. hr=(%#lx)
+MpGetSampleChunk
+MpGetTaskSchedulerStrings
+MpGetTDTFeatureStatus
+MpGetTDTFeatureStatusEx
+MpGetTPStateInfo
+MpGetTSModeInfo
+MpGetTSModeInfo() failed, hr: %#lx, returning 'False'
+MpHandleClose
+MpIdleTask
+MpIsConnectedToInternet(): hr = %#lx, fIsConnectToInternet: %ls
+MpIsPaidNetwork(): hr = %#lx (0 - S_OK, paid; 1 - S_FALSE, not paid; other - failure)
+MpKsl
+mplog-
+MpManagerEnable
+MpManagerOpen
+MpManagerOpen failed. hr = %#lx
+MpManagerOpen() failed, hr: %#lx, returning 'False'
+MpManagerStatusQuery
+MpManagerStatusQueryEx
+MpManagerVersionQuery
+MpNetworkCapture
+MpPrintFlt.dll
+MpQuarantineRequest
+MpQueryEngineConfigDword
+MpReloadEngine finished.
+MpRemoveDynamicSignatureFile
+MpRollbackPlatform
+MpRollbackPlatform returned successfully.
+MpSampleBlockUploadParallelism
+MpSampleQuery
+MpSampleSubmissionHighPriAgentLifeInMins
+MpSampleSubmissionHighPriNumThreads
+MpSampleSubmissionLowPriAgentLifeInMins
+MpSampleSubmissionLowPriNumThreads
+MpSampleSubmit
+MpScan() has detected %lu threats.
+MpScan() started
+MpScan() was completed
+MpScanControl
+MpScanResult
+MpScanStartEx
+MpService_AllowTestCert
+MpService_CacheDisable
+MpService_ForceResponseBondVsXml
+MpService_SampleHeaderServiceBusyTimout
+MpService_SampleHeaderServiceWaitTimeout
+MpService_SigUpdForceTimeOut
+MpService_SigUpdServiceBusyTimeout
+MpService_SigUpdServiceOptions
+MpService_SigUpdServiceShutTimeout
+MpService_SigUpdServiceWaitTimeout
+MpService_SimulatePaidNetwork
+MpService_SpyNetServiceBusyTimout
+MpService_SpyNetServiceDelayReport
+MpService_SpyNetServiceLifeTimout
+MpService_SpyNetServiceWaitTimout
+MpSetTPState
+MpSignatureRing
+MpSigStub log (1/2)
+MpSigStub log (2/2)
+MpSigStub log from SysTemp
+MpSigStub.log
+MpSigStub-NetworkService.log
+MpSigStub-SystemTemp.log
+MpSmartClientInitialize failed with %#lx
+MpSmartUtilsInitializeForExe failed with %#lx
+MpSupport_EventLogNumRecsToRead
+MPSupportFiles
+MPSVC_
+MpSvcData
+MpThreatEnumerate
+MpThreatOpen
+MPTrace
+MpUnblockEngine
+MpUnblockEngine returned successfully.
+MpUnblockPlatform
+MpUnblockPlatform returned successfully.
+MpUnblockSignatures
+MpUnblockSignatures returned successfully.
+MpUpdatePlatform
+MpUpdatePlatform returned successfully.
+MpUpdateStart
+MpUpdateStartEx
+MpUtilsExportFunctions
+MpWDEnable
+MpWDEnable(FALSE) finished.
+MpWDEnable(TRUE) finished.
+mpwpptracing-
+MRT log (1/2)
+MRT log (2/2)
+mrt.log
+mrteng.log
+MS Shell Dlg
+Msg:[%ws] 
+msmpeng.exe
+MsMpEng.exe
+MsMpLics.dll
+MsSecFlt
+MU/WU update
+MultiByteToWideChar
+N != calculated: 
+n!X^0
+N0L0J
+Name: 
+NameId
+need dictionary
+Network
+network down
+network reset
+network unreachable
+NetworkService
+New CUrlDownloadCallback failed. hr : %#lx
+NewLocation
+NIS disabled
+NIS enabled
+NisDrv
+NISSignatureApplied
+NisSrv
+no buffer space
+no child process
+No engine/signature is currently loaded.
+No immediate remediation is required for the found threat.
+no link
+no lock available
+no message
+no message available
+No on-going quick or full scan found.
+no protocol option
+No quarantined items.
+No remediation is required, skip cleaning phase.
+No SDEV info Found.
+no space on device
+no stream resources
+no such device
+no such device or address
+no such file or directory
+no such process
+No valid actions for threat.
+NoSignatureUpdates
+not a directory
+not a file
+not a snapshot file
+not a socket
+not a stream
+not connected
+not enough memory
+not excluded
+not supported
+NOT_PAUSABLE
+NOT_STOPPABLE
+NoToast
+NT AUTHORITY
+ntdll.dll
+NumAllocationFailures
+NumBucketLimitReached
+NumFlushes
+NumLargeEventFailures
+O,+O(
+O0M0K
+ObjectLength
+OfflineScanner_Url
+OfflineTargetOS
+Oj-Yf;
+oK0D$"<
+ole32.dll
+OLEAUT32.dll
+on removing a dynamic signature using its SignatureSet ID.
+OnAccess protection disabled
+OnAccess protection enabled
+onAccessScanningEnabled
+OnClose
+OnDetection
+onecore\internal\sdk\inc\wil\opensource\wil\resource.h
+OnFirstRead
+OnLoad
+OnMount
+OnOpen
+OnVolumeCleanup
+OnWrite
+OpenClipboard
+OpenEventLogW
+OpenProcessToken
+OpenSCManager failed. hr = %#lx
+OpenSCManagerW
+OpenSemaphoreW
+OpenService failed. hr = %#lx
+OpenServiceW
+OpenTraceW
+operation canceled
+operation in progress
+operation not permitted
+operation not supported
+operation would block
+OperationalEvents.txt
+operator
+operator "" 
+operator co_await
+operator<=>
+Option -DropRemediation specified, skipping cleaning.
+Options
+Options: %ld
+OrgId
+OriginalFilename
+OS Build/Branch info: %ls.
+Outbound for HTTP
+Outbound for HTTPSInbound for HTTPS
+Outbound service restriction rule for %s
+Output
+OutputDebugStringW
+OutputFileMappingHandle
+Overall product status
+oversubscribed distance tree
+oversubscribed dynamic bit lengths tree
+oversubscribed literal/length tree
+owner dead
+P;{Ht/
+P;~<t
+PACKEDBINARY
+Parameters
+Parameters as they had been recorded by the older build:
+PartA_PrivTags
+PartnerGuid
+PartnerGUID
+PartnerGuid
+PassiveMode
+PathId
+PathMatchSpecW
+pathToSignedProductExe
+PAUSABLE
+PAUSE_PENDING 
+PAUSED 
+PCMIA
+PerformanceReport
+permission denied
+Persisted Cache is disabled. Skipping build cache operation..
+Ph \B
+Ph HA
+Ph(UA
+Ph(y@
+Ph,{B
+Ph@|A
+Ph@GA
+Ph@OB
+Ph`%B
+Ph`OB
+Ph`WA
+Ph`zB
+Ph0&B
+Ph0zB
+Ph4JA
+Ph4PB
+Ph81B
+PhDNB
+PhdPB
+PhH=A
+Phh3A
+PhhKA
+PhHMA
+PhHOA
+PhhPA
+Phhw@
+PhP!B
+PhPFA
+PhtPA
+PhX$B
+PhXQA
+Pj VW
+Pj"QQ
+Pj\hDBB
+Platform.GenericHResult
+Platform.Maps.SendReportComplete
+Platform.Maps.SendReportStart
+Platform.Maps.ThreadCount
+Platform.SignatureUpdate
+Please record the SignatureSet ID in case you need to remove this signature.
+Please specify the output file name.
+Please specify which quarantined item(s) to restore or list.
+Please use MpCmdRun.exe -ListAllDynamicSignatures command to view
+PolicyGroupXmlSubNodeTypeDecriptorIdList
+PolicyGroupXmlSubNodeTypeMatchType
+PolicyGroupXmlSubNodeTypeMax
+PolicyGroupXmlSubNodeTypeNone
+PolicyPackage
+PolicyRuleXmlSubNodeTypeExcludedList
+PolicyRuleXmlSubNodeTypeIncludedList
+PolicyRuleXmlSubNodeTypeMax
+PolicyRuleXmlSubNodeTypeNone
+PolicyRuleXmlSubNodeTypePolicyRuleName
+PolicyRuleXmlSubNodeTypeRuleEntry
+powershell.exe
+powershell.exe Get-NetFirewallDynamicKeywordAddress -AllAutoResolve
+PPPPj
+PPPPPPPj
+PPPPPWS
+PPPPSPPj
+PPPPVW
+PPPPVWPh
+PPPWj
+PPVWj
+PPWVj
+PQh,CB
+PQQSVW
+PQQVW
+PQRj+
+PQRj0h
+PQSVW
+PQVWh
+preferences
+Press ENTER to stop tracing . . .
+PreventOverride
+PreventPlatformUpdate
+previous_
+PrimaryId
+PrimaryId: %ls
+Printer
+PrinterConnectionId
+PrinterDevices
+PrinterInfo.txt
+PrinterNameId
+PrintFileFormatId
+PrintRegistryKey on %ws failed. (%#lx)
+private: 
+Process
+Process32FirstW
+Process32NextW
+Processes
+ProcessTrace
+Product #%u of %u
+ProductAppDataPath
+ProductGuid
+ProductGUID
+ProductGuid
+ProductName
+ProductRootRegKey
+productState
+productUptoDate
+ProductVersion
+protected: 
+protocol error
+protocol not supported
+Provider
+ProxyPacUrl
+ProxyServer
+PRRRRRRh 
+PRVQh
+PSVSh
+public: 
+Purging logs for Windows Security Service failed (%#lx)
+PVWQRj+
+PWh }A
+PWRQVj
+PWRSVj
+PWVSR
+PWVSRj
+Q(;Q,t
+Qh(|@
+Qh\CB
+QhxCB
+QhxZB
+qk6"t}
+qPartA_PrivTags
+QPPPPPh
+QPSVh
+QPSVQQh
+QPVWQQ
+QPWVh
+QQQQQQ
+QQSQ3
+QQSV3
+QQSVW
+QQSVW3
+QQSVWd
+QQSWh
+QQVWj
+QQVWQ
+QRPh(
+QRPhH
+QRPhh
+QSSSSSS
+QSVW3
+QSVWh
+QSVWj
+QSVWQQ
+Quarantine
+QueryPerformanceCounter
+QueryPerformanceFrequency
+QueryServiceConfig2W
+QueryServiceConfigW
+QueryServiceStatus
+QueryServiceStatus failed. hr = %#lx
+QueryServiceStatusEx
+QVj(Q
+R!s4Z
+r~akow
+r4F97
+RaiseException
+RaiseFailFastException
+read only file system
+ReadEventLogW
+ReadFile
+Realtime monitor disabled
+Realtime monitor enabled
+Real-Time Protection
+Reason
+RecordingPath
+Recovery path for quarantined item(s) "%s" does not exist.
+Redmond1
+RegCloseKey
+RegCreateKeyExW
+RegEnumKeyExW
+RegEnumValueW
+RegisterTraceGuidsW
+Registry.txt
+RegOpenKeyExW
+RegQueryValueExW
+RegSetValueExW
+Reinvoke
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+ReloadEngine
+remote
+RemovableMediaDevices
+Remove
+RemoveDefinitions
+RemoveDynamicSignature
+Removing value %ls\%ls
+Reporting
+Reporting results of offline scanner update...
+ReportingGUID
+ReportSize
+Reset not needed. Already running inbox binaries.
+ResetEvent
+ResetPlatform
+resource deadlock would occur
+resource unavailable try again
+Resources
+RestartService
+Restore
+RestoreDefaults
+Restoring configuration options to default values for location "user preferences"
+Restoring the following quarantined items to %s:
+Restoring the following quarantined items:
+RestrictPrivileges
+RestrictPrivilegesScan
+RestrictServiceNetworkAccess done!
+RestrictServiceNetworkAccess Failed %#lx
+RestrictServiceNetworkAccess skipped network hardening due to already being configured!
+result out of range
+ReturnHr
+ReturnHR
+ReturnNt
+Revert not needed. Already running inbox binaries.
+RevertPlatform
+RevokeTrustedUsn
+rF?\D
+RhUzH
+RichG
+RoActivateInstance
+RoGetActivationFactory
+RoGetErrorReportingFlags
+RoInitialize
+Roles
+Rollback failed. Signature backup is unavailable on your device (%#lx).
+RollbackPlatform
+RoOriginateError
+RoOriginateErrorW
+RoSetErrorReportingFlags
+RoTransformError
+RoTransformErrorW
+RoUninitialize
+RPCRT4.dll
+RSPVQW
+RtlCompareMemory
+RtlLengthSid
+RtlUnwind
+Rule Definitions:
+Rule#%ld
+Rule(%ls)
+Run as Network Service
+Run as restricted process
+RunCommandCollectDeviceControlInfo(try/catch) failed with hr. hr=(%#lx)
+RunCommandCollectSnapshotsInfo() failed (%#lx).
+RunCommandScan is using default scan type: %lu.
+RUNNING 
+RUNS_IN_SYSTEM_PROCESS
+RVj(P
+s(;{,u
+S-1-1-0
+S-1-5-18
+S-1-5-18\%ws
+S-1-5-19
+S-1-5-20
+S-1-5-80-1523878533-411328482-2798077809-3098663872-2604013308
+S-1-5-80-1913148863-3492339771-4165695881-2087618961-4109116736
+S-1-5-80-242729624-280608522-2219052887-3187409060-2225943459
+S-1-5-80-259296475-4084429506-1152984619-38739575-565535606
+S-1-5-80-3232712927-1625117661-2590453128-1738570065-3637376297
+S2GetFileVersionInfoSizeExW
+SampleHeaderService
+Scan cancelled successfully.
+Scan finished.
+Scan starting...
+Scanning %ls found %lu threats.
+Scanning %ls found no threats.
+Scanning %ls was skipped.
+Scanning path as %ls: %ls.
+ScanOnlyIfIdle
+ScanParameters
+ScanProgress
+Scans
+ScanTrigger
+ScanType
+-ScanType
+ScheduleDay
+ScheduleJob
+SDEV Info 
+Search Completed 
+Search Started (%ls) (Path: %ls)...
+SeBackupPrivilege
+Secur32.dll
+SecurityHealthRegistry.txt
+securityhealthservice
+See the MPCMDRUN -RemoveDynamicSignature command for more information
+Self Terminating due to timeout
+sense
+Sense
+SenseEnabled
+SenseGuid;SenseId;
+SeRestorePrivilege
+SerialNumberId
+Service could NOT be enabled in side-by-side passive mode. hr = %#lx.
+Service hardening not needed for Defender SKU.
+Service stopped. Exiting Idle Task
+Service Version: %ls
+Service was successfully enabled in side-by-side passive mode.
+SERVICE_NAME: %s
+ServiceHardening
+ServiceHardeningFlags
+ServiceName
+ServiceReportInfraError
+ServicesActive
+ServiceState=%lu (hr=0x%lx)
+SetConsoleMode
+SetErrorMode
+SetEvent
+SetFileAttributesW
+SetFileInformationByHandle
+SetFilePointerEx
+SetHandleInformation
+SetLastError
+setlocale
+SetProcessMitigationPolicy
+SetThreadpoolTimer
+Setting %ls to boot start and early launch ...
+Setting %ls to boot start...
+Setting %ls to SERVICE_DEMAND_START and remove from early launch group...
+SetUnhandledExceptionFilter
+SETUPAPI.dll
+SetupDiGetClassRegistryPropertyW
+setvbuf
+Sh$$B
+Sh,"B
+Sh,#B
+Sh`"B
+Sh0jA
+SHA256
+Shd#B
+ShellSmartScreenLevel
+SHLWAPI.dll
+short
+short 
+ShouldHashIds
+ShX]A
+Sid: %ls
+Signature update finished.
+Signature update finished. No updates needed
+Signature update started . . .
+Signature Updates
+SignatureBlobFileSharesSources
+SignatureLocation
+SignatureRing
+SignatureRootLocation
+Signatures are up-to-date, skipping signature update
+Signatures require updating, starting update...
+SignatureSet ID: %ws
+SignatureSetID
+SignaturesLastUpdated
+SignaturesUpdateService
+SignatureUpdate
+SignatureUpdateAndQuickScan
+signed 
+SignerId
+SigVersion
+Size: %ld
+SizeofResource
+Skipping clean as this is a custom scan with no remediation.
+Sleep
+SleepConditionVariableCS
+SmartScreen AppReputation
+SmartScreen AppReputation Off
+SmartScreen UriReputation Block
+SmartScreen UriReputation Off
+SmartScreen UriReputation Warn
+SmartScreenEnabled
+SmartScreenEnabled;SmartScreenPuaEnabled;
+snapshot file
+SnapshotInfo.txt
+Software\Classes\*\ShellEx\ContextMenuHandlers\EPP
+Software\Classes\APPID\{2781761E-28E2-4109-99FE-B9D127C57AFE}
+Software\Classes\APPID\{A79DB36D-6218-48e6-9EC9-DCBA9A39BF0F}
+Software\Classes\APPID\{FDA74D11-C4A6-4577-9F73-D7CA8586E10D}
+Software\Classes\CLSID\{09A47860-11B0-4DA5-AFA5-26D86198A780}
+Software\Classes\CLSID\{13F6A0B6-57AF-4BA7-ACAA-614BC89CA9D8}
+Software\Classes\CLSID\{195B4D07-3DE2-4744-BBF2-D90121AE785B}
+Software\Classes\CLSID\{2781761E-28E0-4109-99FE-B9D127C57AFE}
+Software\Classes\CLSID\{2781761E-28E1-4109-99FE-B9D127C57AFE}
+Software\Classes\CLSID\{2781761E-28E2-4109-99FE-B9D127C57AFE}
+Software\Classes\CLSID\{361290c0-cb1b-49ae-9f3e-ba1cbe5dab35}
+Software\Classes\CLSID\{8a696d12-576b-422e-9712-01b9dd84b446}
+Software\Classes\CLSID\{94F35585-C5D7-4D95-BA71-A745AE76E2E2}
+Software\Classes\CLSID\{A2D75874-6750-4931-94C1-C99D3BC9D0C7}
+Software\Classes\CLSID\{A7C452EF-8E9F-42EB-9F2B-245613CA0DC9}
+Software\Classes\CLSID\{DACA056E-216A-4FD1-84A6-C306A017ECEC}
+Software\Classes\CLSID\{FDA74D11-C4A6-4577-9F73-D7CA8586E10D}
+Software\Classes\Directory\ShellEx\ContextMenuHandlers\EPP
+Software\Classes\Drive\ShellEx\ContextMenuHandlers\EPP
+Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\PhishingFilter
+Software\Classes\TypeLib\{8C389764-F036-48F2-9AE2-88C260DCF43B}
+Software\Microsoft\AMSI
+SOFTWARE\Microsoft\Edge\SmartScreenEnabled
+SOFTWARE\Microsoft\Edge\SmartScreenPuaEnabled
+Software\Microsoft\Internet Explorer\Extension Validation
+SOFTWARE\Microsoft\Microsoft Antimalware
+SOFTWARE\Microsoft\Microsoft Antimalware Setup
+Software\Microsoft\Microsoft Antimalware\MpEngine
+SOFTWARE\Microsoft\Security Center
+SOFTWARE\Microsoft\Windows Advanced Threat Protection
+SOFTWARE\Microsoft\Windows Advanced Threat Protection\Status
+Software\Microsoft\Windows Defender
+Software\Microsoft\Windows Defender Security Center
+Software\Microsoft\Windows Defender\Features
+Software\Microsoft\Windows Defender\MpEngine
+SOFTWARE\Microsoft\Windows NT\CurrentVersion
+Software\Microsoft\Windows NT\CurrentVersion
+Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print
+Software\Microsoft\Windows Security Health
+Software\Microsoft\Windows\CurrentVersion\Explorer\
+Software\Microsoft\Windows\CurrentVersion\Explorer\Discardable\PostSetup\Component Categories
+Software\Microsoft\Windows\CurrentVersion\Explorer\Discardable\PostSetup\Component Categories64
+Software\Microsoft\Windows\CurrentVersion\Run
+Software\Microsoft\Windows\CurrentVersion\WindowsUpdate
+SOFTWARE\Policies\Microsoft\Edge
+SOFTWARE\Policies\Microsoft\Edge\Recommended
+Software\Policies\Microsoft\Windows Defender Security Center
+SOFTWARE\Policies\Microsoft\Windows\System
+Software\Policies\Microsoft\Windows\WindowsUpdate
+Some files not found during rollback (%#lx). This might happen when backup files do not exist. Please verify current signature versions below to see whether the signatures are rolled back as expected.
+Source
+spooler
+SpyNet
+SpyNetReporting
+SpyNetReportingLocation
+SpyNetService
+SpyNetServiceDss
+sspicli.dll
+SSSPSV
+SSSSj
+Start: Idle Task - %s
+Start: MpCleanStart()
+Start: MpRemoveDefinitions(All: %d, Engine: %d, FastPath: %d)
+Start: MpScan(MP_FEATURE_SUPPORTED, dwOptions=%lu, path %ls, DisableRemediation = %u, BootSectorScan = %u, Timeout in days = %lu)
+Start: MpScan(MP_FEATURE_SUPPORTED, dwOptions=%lu, Timeout in days = %lu)
+Start: MpSignatureUpdate()
+Start: RunCommandAddSignatureFile(%ws)
+Start: RunCommandRemoveSignature(%ws)
+Start: RunDownloadFile(%ws, %ws)
+Start: SampleHeader Service
+Start: Signatures Update Service
+Start: SpyNet Service
+START_PENDING 
+Starting %ls ...
+Starting Dynamic Signature removal.
+Starting engine and signature rollback to %ls...
+Starting remove Dynamic Signature: %ws...
+Starting RunCommandScan.
+Starting user mode services ...
+StartServiceW
+state not recoverable
+State of '%s' service:
+StateInfo.txt
+static 
+Status
+std::nullptr_t
+std::nullptr_t 
+stol argument out of range
+STOP_PENDING 
+StopAndDisableServiceImpl
+StopIdle() succeeded.
+Stoping %ls ...
+Stoping %ls and setting to SERVICE_DEMAND_START ...
+STOPPABLE
+STOPPED 
+Stopping %ls ...
+Stopping %ls and setting to SERVICE_DEMAND_START ...
+Stopping kernel mode services ...
+Stopping user mode services ...
+StopService
+Storage
+strcpy_s
+strcspn
+stream timeout
+string too long
+StringFileInfo
+StringFromCLSID
+StringFromGUID2
+strncmp
+struct 
+SubmitSamples
+SUCCEEDED
+Success Audit
+Successfully started Network Capture, capturing to %ws
+Successfully stopped Network Capture
+Support
+Support information will be in the following directory:
+SupportFiles.cab
+SupportLogLocation
+SVWh$
+SVWj83
+SVWQ3
+SVWQQh
+SVWUj
+Sw@t5
+SWQQh
+SWRQVj
+SWVhhz@
+SWVRQP
+SWVRQPh
+SysListView32
+system
+System
+System Event Log
+system policy
+system.evtx
+SYSTEM\CurrentControlSet\Control\Print
+System\CurrentControlSet\Control\WMI\AutoLogger\DefenderApiLogger
+System\CurrentControlSet\Control\WMI\AutoLogger\DefenderAuditLogger
+SYSTEM\CurrentControlSet\Services
+System\CurrentControlSet\Services\%s
+SYSTEM\CurrentControlSet\Services\Eventlog
+System\CurrentControlSet\Services\WdDevflt\Parameters
+SYSTEM\CurrentControlSet\Services\Wdf01000
+SYSTEM\Setup
+SystemEvents.txt
+SystemInfo.exe
+SystemInfo.txt
+SystemTimeToTzSpecificLocalTime
+T' kA(
+t VSh@
+t"QQS
+t$ hh
+T$ PV
+T$$PV
+t$$PWj
+t$@#L$
+t$@3D$$
+t$\YY
+t$`3D$
+t$03D$
+t$0Vj
+t$89q$
+t$l3D$
+t$T#L$$
+t$X3D$$
+t,j%W
+t?j@X+
+t^VW3
+t=SVW
+t4<A|)<P
+t5SWj\_j/[
+ta9>vTS
+TamperProtection
+TaskName
+TaskSchedulerInfo-Internal.log
+TaskSchedulerInfo-Windows.xml
+tdh.dll
+TdhGetEventInformation
+TDT Mode
+TDT Status
+TDT Telemetry
+template-parameter-
+terminate
+TerminateProcess
+text file busy
+tFhDh@
+Thales TSS ESN:C4BD-E37F-5FFC1%0#
+The "
+The "%ls" command is canceled.
+The following actions are also blocked but your organization allows them to be unblocked at your discretion. Please select any actions you want to allow and provide a business justification to unblock the actions the next time they are performed.
+The following actions are also blocked but your organization allows them to be unblocked at your discretion. Please select any actions you want to allow and provide a business justification to unblock the actions the next time they are performed.!Business Justification (Required)
+The following items are quarantined:
+the list of SignatureSet ID's.
+There are no Dynamic Signatures on the machine.
+This command is for service use only.
+ThreadCount
+threadid
+Threat
+Threat Stats
+ThreatName = %s
+ThresholdOneClick
+Time Info - %s 
+timed out
+Timeout
+tLf9O
+TlgAggregateSummary
+TlP0X
+tLVWS
+tNhh6A
+too many files open
+too many files open in system
+too many length or distance symbols
+too many links
+too many symbolic link levels
+TopExtensions
+TopExtensionsPerProcess
+TopFiles
+TopFilesPerExtension
+TopFilesPerProcess
+TopProcesses
+TopProcessesPerExtension
+TopProcessesPerFile
+TopScans
+TopScansPerExtension
+TopScansPerExtensionPerProcess
+TopScansPerFile
+TopScansPerFilePerExtension
+TopScansPerFilePerProcess
+TopScansPerProcess
+TopScansPerProcessPerExtension
+TopScansPerProcessPerFile
+TotalEntriesFlushed
+towlower
+TP info State: 
+TPConfigSnapshot.snp
+TPState
+TPState command completed successfully.
+tR<0|
+Trace
+Trace ended . . .
+Trace file location: %s\%s
+Trace from %lu Milliseconds
+Trace started . . .
+Trace started successfully. Trace file location: %s\%s
+TraceMessage
+TraceTimeout
+Translation
+Troubleshooting mode information:
+Troubleshooting Mode Information:
+Troubleshooting mode is not enabled, this command is not available.
+Troubleshooting mode will be disabled upon completion of the "%ls" command.
+tRQhH
+TrustCheck
+TrustedImageId
+trVVW
+TryAcquireSRWLockExclusive
+Trying %ls ...
+TSMode
+TSPolicyConfigs.snp
+TSPreferenceConfigs.snp
+ttSSSSS
+ttVVj
+tvVVWPVh
+Type: %ls
+u 9|$
+u$WSQ
+u&9J8r
+u)f90t f
+u=k|$
+U0S0Q
+u1f9\$
+u499u
+UEFIStream
+ui_^[
+uk;_,u
+uKj.Xf9Dq
+Unable to display the usage information (error %#lx)!
+Unabled to remove %ws (UtilIsFileExists returns %#lx).
+UnblockEngine
+UnblockPlatform
+UnblockSignatures
+UNC share
+UncDownload
+Unexpected TDT Status mode was retrieved
+ungetc
+ungetwc
+UnhandledExceptionFilter
+uninstall-manifest
+UninstallServices
+union 
+UnitTestMode
+Universal
+UNKNOWN
+Unknown
+Unknown component disabled
+Unknown component enabled
+unknown compression method
+Unknown exception
+unknown path
+unknown type
+UnloadUserProfile
+UNMANAGED
+UnmanagedUpdate
+UnmapViewOfFile
+unordered_map/set too long
+uNPPV
+UnregisterTraceGuids
+UnregisterWSC
+unsigned 
+unsupported notification(%d)
+Unsupported version when retrieving TDT status, version: %d
+Update completed succesfully
+Update completed succesfully . no updates needed (hr:0x%08lx)
+Update completed succesfully.  No updates needed (hr:0x%08lx)
+Update completed succesfully. (hr:0x%08lx)
+Update completed succesfully. no updates needed
+Update completed with hr: 0x%08lx
+Update failed with hr: 0x%08lx
+Update Started
+Update started 
+UpdateOptions
+UQPXY]Y[
+URPQQh
+Usage:
+usage: MpCmdRun.exe -PerformanceReport -RecordingPath recording.etl ...
+Use this tool to automate and troubleshoot %1!s!
+User Security App Log
+USER32.dll
+USERENV.dll
+Username: %ws Error: Support Log Location is Invalid or Not Accessible!
+UserTicket
+usk|$
+UtilMapViewOfFile failed (%#lx).
+UtilRegGetValueBinary() failed with hr. hr=(%#lx)
+UtilRegOpenKey() failed with hr. hr=(%#lx)
+UtilWaitForServiceOp
+uu;_,u
+UuidCreate
+UuidFromStringW
+V<0|Z<9
+ValidateMapsConnection
+ValidateMapsConnection failed to establish a connection to MAPS (hr=%#lx httpcode=%ld)
+ValidateMapsConnection successfully established a connection to MAPS
+Validating path [%ls] ...
+ValidationContentScan
+ValidationPrescan
+value too large
+Value: [REG_BINARY] - error while processing as date
+VarFileInfo
+vector too long
+Verbose
+VerQueryValueW
+Version
+Version: %ld
+Vh YA
+Vh$o@
+Vh,|A
+Vh@+A
+Vh`2B
+Vh`wA
+Vh02A
+Vh8[A
+Vhd[A
+Vhh}@
+VhH}A
+VhP~B
+VhPhA
+VhptA
+VhT[A
+VhX*A
+VID_PID
+VidPidId: %ls
+virtual 
+VirtualProtect
+VirtualQuery
+void 
+volatile
+volatile 
+VOLUME
+VPj(R
+Vr|)5L2VJ
+VS_VERSION_INFO
+Vup|R
+VWjh+
+VWQQf
+VWQQh
+w,ccs=UTF-8
+w>,gUpB
+W0;W(t
+W9^Lt
+WaitForCompletion
+WaitForCompletion timeout after download cancel 60 seconds
+WaitForCompletion timeout after download close
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+WakeAllConditionVariable
+WARN: No samples available
+WARN: Product/Feature disabled
+WARN: Removing zombie WinScanTask
+WARNING
+Warning
+WARNING: An event failed to proccess because event metadata was not found. Full warning:
+WARNING: An event failed to proccess. Full error:
+WARNING: An event failed to proccess. Full warning:
+warning: an event was skipped because event metadata was not found.
+warning: an event was skipped.
+warning: detail: %hs
+WARNING: Drive letter inclusion [%ls] detected. The exclusion check result below is no longer accurate.
+warning: duplicate start event with same key dropped
+WARNING: GetAppLayerLogsDir() failed (%#lx)
+warning: incompatible start event with same key dropped
+WARNING: MpCollectServiceInfo("mpfilter") failed (%#lx)
+WARNING: MpCollectServiceInfo("NisDrv") failed (%#lx)
+WARNING: MpCollectServiceInfo("NisSrv") failed (%#lx)
+WARNING: MpCollectServiceInfo("WdNisSvc") failed (%#lx)
+Warning: MpScan() encounter errror. hr = %#lx
+Warning: MpScan() paused
+Warning: MpScan() resumed
+Warning: MpScan() was canceled!
+Washington1
+wchar_t
+wcsftime
+wcsnlen
+wcstol
+wcstoul
+WdatpInfo.txt
+WdBoot
+WdCacheMaintenance
+WdDevFlt
+WDDisable
+WddReport(hr=%#lx): %ls
+WDEnable
+WdFilter
+WdNisDrv
+WdNisSvc
+Wevtapi.dll
+wevtutil.exe
+Wh SA
+Wh zA
+Wh(wB
+Wh@vA
+Wh`BA
+Wh`wA
+Wh<2B
+Wh0lA
+WHCEvents.txt
+WhH|@
+WhHxA
+WhP&A
+WhP^A
+WhPRA
+WideCharToMultiByte
+WilError_03
+WIN32 
+WIN32_OWN_PROCESS 
+WIN32_SHARE_PROCESS 
+WinDefend
+Windows Defender Scheduled Scan
+Windows Setup keys from "%s"
+Windows.Internal.Security.WebAuthentication.AuthenticationManager
+Windows.Security.Authentication.OnlineId.OnlineIdAuthenticator
+Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest
+WindowsCreateString
+WindowsCreateStringReference
+WindowsDeleteString
+WindowsGetStringRawBuffer
+WindowsUpdate.log
+WinTask
+WINTRUST.dll
+WinVerifyTrust
+WpdDevices
+WPh8t@
+WPPPPQRj
+WppTracingComponents
+WppTracingLevel
+WPQhx B
+WPRQh` B
+WriteFile
+WriteLogsForSvc
+wrong protocol type
+ws2_32.dll
+WSACleanup
+WSAStartup
+WSCInfo.txt
+WSCRegistry.txt
+wscsvc
+WSUS update
+WTHelperGetProvSignerFromChain
+WTHelperProvDataFromStateData
+WWPWWW
+X[_^]
+x5hP)A
+X6c%<)W
+x7h0(A
+XOR checksum value mismatching, loaded: 
+Y__^[
+y>Vht
+y>Whx
+y2Whh
+y2WhH
+y2WhX
+Y7TJ~
+y9SVW
+yAWVh
+yAWVh@
+yEVht
+YhHDA
+You can only specify one of these options: -All, -Engine, -DynamicSignatures
+You cannot specify both on and off options when running TPState command.
+You do not have access to perform this action
+You need administrator privilege to execute this command.
+YSWVhX
+YVh$&B
+YVh4%B
+YVhL6A
+YY_^[
+YY9\$
+YY9~,t
+YYh BA
+YYh`IA
+YYh8<A
+YYhdNA
+YYhP?A
+YYhXAA
+YYSu'
+yZShX~@
+Z(VWj
+z.9Wv

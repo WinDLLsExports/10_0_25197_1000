@@ -1,0 +1,1522 @@
+                                     Callstack: %p %p %p %p %p %p %p %p %p %p %p %p
+ 0i0x0
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ UPDATE Package SET Flags=Flags|0x400 WHERE _PackageID IN (SELECT toSetFlags._PackageID FROM PACKAGE AS toSetFlags INNER JOIN (SELECT p._PackageID, p.SourceBundle, MAX(Version) AS MaxVersion FROM Package AS p WHERE p.PackageType&0x21!=0 AND p._WorkId=0 AND NOT EXISTS (SELECT 1 FROM PackageUser AS pu WHERE p._PackageID=pu.Package AND (pu.DeploymentState=6 OR pu.DeploymentState=5) AND pu._WorkId=0 AND p._WorkId=0 LIMIT 1) AND (p.PackageFamily NOT IN (SELECT PackageFamily FROM Package WHERE Flags&0x400!=0 GROUP BY PackageFamily)) GROUP BY PackageFamily) highestVersion ON CASE WHEN toSetFlags.SourceBundle=0 THEN highestVersion._PackageID=toSetFlags._PackageID ELSE toSetFlags.SourceBundle=highestVersion.SourceBundle AND toSetFlags.PackageType=8 END)
+ Windows
+!MachineDatabase_PagesCheckpointed
+!This program cannot be run in DOS mode.
+"PackageDependency.LifetimeArtifact
+#Deleted
+#Found
+#PackageDependency.PackageFamilyName
+$DeploymentDatabase_PagesCheckpointed
+$onecore\base\appmodel\staterepository\dataaccesslayer\text.cpp
+%02u%02u%02u %02u%02u%02u.%03u [%s 0x%08X] P%x T%x: %s
+%02u%02u%02u %02u%02u%02u.%03u [Profile %ums] P%x T%x: %s
+%02u%02u%02u %02u%02u%02u.%03u [Trace] P%x T%x: %s
+%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X
+%AppRepository%
+%AppRepository%\Downlevel\StateRepository-Machine.srd
+%AppRepository%\StateRepository-Deployment.srd
+%AppRepository%\StateRepository-Machine.srd
+%AppRepository%\StateRepository-User-%UserSid%.srd
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%u)\%hs!%p: 
+%s.%s
+%s.%s%s
+%USERPROFILE%
+(caller: %p) 
+,00040<0d0
+.![AM
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVexception@std@@
+.?AVtype_info@@
+.00cfg
+.0G0u0
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIC
+.CRT$XIZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.data$rs$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.rdata
+.rdata$brc
+.rdata$r$brc
+.rdata$sxdata
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$x
+.text$yd
+.xdata$x
+: :H:Z:n:
+:":C:
+:%:::N:
+:%;d;
+:(;6;<;C;I;N;T;Z;j;q;v;{;
+:);B;];j;s;z;
+:*:K:T:c:
+:,:::L:
+:-:;:
+:]N2Y
+:1:Q:q:
+:6;^;
+:8:J:]:
+:9;d;
+:A:P:X:x:
+:V:w:
+;!;&;+;0;5;:;?;D;e;n;t;};
+;!<X<r<
+;%;3;:;A;J;];d;k;
+;.<M<n<
+;:?^?{?
+;';;;E;T;m;
+;\;e;q;y;
+;`<y<
+;+;5;s;
+;3;A;G;M;S;Y;_;f;m;t;{;
+;3;E;\;|;
+;6;Z;d;s;
+?"?1?:?A?}?
+?#?b?
+?$?8?@?T?\?d?l?p?t?|?
+?&?4?U?r?y?
+?(?@?m?z?
+?)?J?m?
+?/?A?Q?[?n?
+?@?T?d?x?
+?+?1?m?
+?3?K?c?~?
+?6?O?h?
+?9???
+?F?T?
+?G?M?k?~?
+@.didat
+@.reloc
+@tQhh
+[%hs(%hs)]
+[%hs]
+[0i0p0
+[checkstatements] #%u Database %p: Statement %p: %s SQL %s
+[post-sqlite3_exec] #%u Database %p: Try %u (%llums) {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X} TID:%u : SQL %s
+[post-sqlite3_finalize] #%u Database %p: Statement %p: --
+[post-sqlite3_prepare] #%u Database %p: Statement -------- --: Try %u (%llums) : SQL %s
+[post-sqlite3_prepare] #%u Database %p: Statement %p %s: Try %u (%llums) : SQL %s
+[post-sqlite3_reset] #%u Database %p: Statement %p: %s
+[post-sqlite3_step] #%u Database %p: Statement %p %s: Tries %u
+[pre-sqlite3_exec] #%u Database %p {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X} TID:%u : SQL %s
+[pre-sqlite3_finalize] #%u Database %p: Statement %p: %s
+[pre-sqlite3_prepare] #%u Database %p : SQL %s
+[pre-sqlite3_reset] #%u Database %p: Statement %p: %s
+[pre-sqlite3_step] #%u Database %p: Statement %p %s
+[pre-StatementCache.Get] #%u StatementCache %p: Cache Size/Hits/Misses %u/%llu/%llu
+[sqlite3_close] #%u Database %p: %s
+[sqlite3_exec] #%u Database %p: Try %u (%llums) {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}%s%s TID:%u %s : SQL %s
+[sqlite3_finalize] #%u Database %p: Statement %p: --: %s
+[sqlite3_prepare] #%u Database %p: Try %u (%llums) %s : SQL %s
+[sqlite3_prepare] #%u Database %p: Try %u (%llums)%s%s %s : SQL %s
+[sqlite3_reset] #%u Database %p: Statement %p: %s: %s
+[sqlite3_step] #%u Database %p: Statement %p %s: Try %u (%llums)%s%s %s : SQL %s
+[StatementCache.Add] #%u Database %p: StatementCache %p: Statement %p: Cache Size/Hits/Misses %u/%llu/%llu: SQL %s
+[StatementCache.Get(Hit)] #%u Database %p: StatementCache %p: Statement %p: Cache Size/Hits/Misses %u/%llu/%llu: SQL %s
+[StatementCache.Get(Miss)] #%u StatementCache %p: Cache Size/Hits/Misses %u/%llu/%llu: SQL %s
+\$ PQQ
+\$,PQh
+\$,WWhp
+\$8WVRP
+_^[Y]
+__CxxFrameHandler3
+_CxxThrowException
+_except_handler4_common
+_initterm
+_initterm_e
+_o___std_exception_copy
+_o___std_exception_destroy
+_o___std_type_info_destroy_list
+_o___stdio_common_vsprintf
+_o___stdio_common_vswprintf
+_o__callnewh
+_o__cexit
+_o__configure_narrow_argv
+_o__crt_atexit
+_o__errno
+_o__execute_onexit_table
+_o__initialize_narrow_environment
+_o__initialize_onexit_table
+_o__invalid_parameter_noinfo
+_o__purecall
+_o__register_onexit_function
+_o__seh_filter_dll
+_o__stricmp
+_o_free
+_o_malloc
+_o_memcpy_s
+_o_realloc
+`.data
+|$$@hp
++080_0
+<"<4<`<'=1=
+<"<A<Q<a<q<|<
+<#<,<2<;<N<X<v<
+<#<;<`<
+<#<s=
+<#=h=
+<$<-<><E<L<U<f<o<v<}<
+<.=`=e=k=v={=
+</>@>
+<@<^<
+<@<H<
+<0@0H0P0h0
+<3<~<
+<3<U<t<
+<d=u=
+<Error 0x%X converting the user's SID to a string>
+<Error 0x%X getting the user's SID from the process' token>
+<Error 0x%X in GetApplicationUserModelIdFromToken>
+<Error 0x%X in GetPackageFullName>
+<Error 0x%X in NtQueryInformationProcess>
+<Error 0x%X in OpenProcessToken>
+<Error 0x%X in QueryFullProcessImageNameW>
+<Error 0x%X moving command line>
+<Error allocating memory>
+<I=o=
+<K<Q<c<
+<M<b<
+<No commandline present>
+<no-error-message>
+<None>
+<null>
+<onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.activation.cpp
+<Q=w=
+<Unknown>
+<Y=s?
+=">E>`>w>
+=#=1=7=C=U=e=
+=$=.=M=h=
+=%>h>n>
+=;>@>E>J>O>T>[>`>z>
+=;>]>{>
+=?=a=
+=1=m=s=z=
+=2=x=
+=5=I=
+=i=s=}=
+=k>t>
+=Y=t=
+>!?B?K?Z?
+>"?7?g?y?
+>$>1>e>t>
+>(?/?6?=?[?
+>.>T>
+>;>A>`>
+>@>`>l>
+>+>=>N>V>q>y>
+>=>j>
+>5>;>A>G>M>S>Y>t>
+>H>O>g>y>
+>Y>U?p?|?
+0 1'1-121I1b1h1/2>2X2~2
+0$0D0~0
+0:0o0u0
+0;0V0m0
+0[1d1}1
+0<0G0P0a0l0
+001)2j2
+0'030:0i0p0w0
+0123456789abcdefghjkmnpqrstvwxyz
+03191t1~1
+040=0M0V0f0o0
+040904B0
+0I0f0s0|0
+0M0x0
+0Q112v2}2
+0Y0b0o0u0
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1"2g2
+1&1/151:1X1a1m1u1
+1&1=1U1a1
+1)2S2
+1.2T2[2|2C4e4
+1:2@2
+1[2k2t2{2
+1^1f1l1v1
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+1-1C1
+1'1T1a1l1r1
+121p1
+132[2
+1B1M1>2
+1F1f1q1
+1F1P1V1j1
+1Q2y2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2!353Z3
+2"3.3W3
+2"3m3
+2(3x3
+2,434c5z5
+2.3I3
+2/2B2l2
+2;2n2
+2?2!3(3
+2+202C2a2~2
+2>2r2
+202J2
+242D2H2X2\2`2h2
+252N2h2
+273>3
+2A2O2m2
+2E2w2
+2R2r2
+2R3X3v3
+2U3f3r3~3
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3x3|3
+3 323
+3+333;3A3\3f3~3
+3<3J3U3Z3k3r3
+3>3Y3p3
+3-353H3Q3`3n3v3
+3-3H3
+343D3N3
+35475@5
+374M4V4
+383<3`3d3
+3E4Q4_4g4
+3F4K4`4v4
+4 5R5
+4!4'4D4N4k4v4
+4#484A4p4y4
+4$4F4]4c4
+4(4,4P4T4x4
+4)4:4
+4+4`4
+4=4`4
+404i4
+434J4
+454s4
+465`5j5y5
+4c5a6
+4C5v5
+4SVWQQ
+4Yj%V
+5 5,585D5P5\5h5t5
+5!515;5
+5#5*5J5
+5#5>5F5a5i5
+5$5,5?5H5\5g5o5
+5%6-696i6
+5*555R5]5z5
+5?5h5
+5[6e6}6
+5[7}7
+505y5
+5H5x5
+5I5o5v5
+5ineI
+5ntel
+5Y6r6|6
+6"6;6c6
+6#666=6D6O6Z6e6p6{6
+6$6J6T6q6
+6$707D7X7
+6%666}6
+6%6m6
+6,7w7
+6.6@6f6
+6.676>6t6
+6/676D6L6_6
+6/7u7
+6:6D6^6d6
+6@6T6
+6]7d8
+6>6`6x6
+616A6N6
+6-656;6I6
+6A7H7z7
+6C6M6d6j6n6s6y6}6
+6E6M6\6e6
+6H687C7U7
+6K6}6
+6N6\6
+6Z7d7o7u7
+7 7(7;7D7X7c7k7
+7"7,767D7a7
+7"7=7
+7"737n7
+7"7G7R7Y7
+7%7I7
+7)717R7
+7)727>7c7r7z7
+737@7Q7e7
+748m8
+7-7?7W7b7s7~7
+778R8[8
+778R8i8
+778S8
+797T7m7
+7B7l7
+7R8p8v8
+7W7w7
+8 8&8*80848:8>8D8H8N8R8X8\8v8
+8!888X8a8j8p8u8z8
+8!9j9x9
+8"8F8s8
+8%9M9
+8&8,878K8U8^8g8t8z8
+8&8+888z8
+8(8G8M8V8_8i8r8|8
+8)818@8Q8W8j8r8x8
+8/9I9c9}9
+8^9l9s9z9
+808@8H8
+819]9
+858U8u8
+8B9H9N9T9}9
+8E8q8
+8f9o9
+8O8|8
+9 9'969P9h9
+9&:c:
+9,:D:V:g:o:
+9.9n9
+9':^:
+9\$ t
+9\$,t
+9+9h9
+9<:B:X:d:j:
+9<;C;S;q;
+9=9S9
+90:g:
+919Q9q9
+939;9
+939A9w9
+93uHWV
+94:d:
+959Q9t9
+97s/j
+9o:}:
+9r\sE
+9S9`9~9
+9T9Z9p9x9~9
+AccessControlFlags
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+Action
+ActivityError
+ActivityFailure
+ActivityIntermediateStop
+ActivityStoppedAutomatically
+AddExtensionProgId
+api-ms-win-appmodel-runtime-internal-l1-1-1.dll
+api-ms-win-appmodel-runtime-internal-l1-1-4.dll
+api-ms-win-appmodel-runtime-l1-1-1.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-interlocked-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-path-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-psapi-l1-1-0.dll
+api-ms-win-core-realtime-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-core-windowserrorreporting-l1-1-1.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-l1-1-0.dll
+api-ms-win-security-lsalookup-l2-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+ApplicationUserModelId
+AppModelPackageRepository
+AppUriHandler::AddExtensionProgId
+AppXdbszz9cysstkgdz6xk17sywkqb7gjj0v
+AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs
+AppxRoot
+ATTACH DATABASE '%s' AS '%s';
+automatic index on PackageIdByAll(_PackageID)
+AWSRV
+bad allocation
+bad array new length
+Bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+BEGIN -> COMMIT;
+BEGIN -> ROLLBACK;
+BEGIN EXCLUSIVE /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+BPQRh
+BusyCount
+BusyDelayBetweenRetries
+BusyMaxTimeout
+BusyTimeout
+Cache.Count
+Cache.Hits
+Cache.Misses
+CacheHit
+CacheMiss
+CacheSpill
+CacheUsed
+CacheWrite
+callContext
+CallContext:[%hs] 
+cannot start a transaction within a transaction
+Category
+ChannelName
+Checkpoint
+CheckpointInterval
+CheckpointMaxClockDelta
+Clear
+ClientId
+CloseHandle
+CloseThreadpoolTimer
+CommandLine
+Commit
+COMMIT /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+CompanyName
+CompareStringOrdinal
+Context
+context.RecordPatchIsApplied
+ConvertSidToStringSidW
+CopySid
+count
+Count
+countApplication
+countApplicationExtension
+countPackageExtension
+Cpu:%d%s Mem:%d%s Io:%d%s
+CpuPriority
+CreatedSchemaVersion
+CreateFileW
+CreateMutexExW
+CreateSemaphoreExW
+CreateSetting: Subkey=%ls
+CreateThreadpoolTimer
+CreateWellKnownSid
+CRIM,
+Critical
+currentContextId
+currentContextMessage
+currentContextName
+D$ 9G
+D$ Pj
+D$ PQ
+D$$Pj
+D$(Pj
+D$(PQ
+D$@Pj
+D$\9D$
+D$^WP
+D$`9D$
+D$`SVWQQj
+D$0Pj
+D$4PQQ
+D$4PQQW
+D$8Pj
+D$djd_
+D$hjd_
+D$HPj
+D$HSV
+D$HWP
+D$ljd_
+D$PSPj
+D$TSP
+D$tVW
+D$XPj
+D$xPj
+D$XPj
+DAL.Initialize
+Database
+DatabaseCache.Lifespan
+DatabaseCorruption.Detected
+DatabaseCorruptionFirstDetectedUptime
+DatabaseCorruptionFirstDetectedWhen
+DatabaseCorruptionLastReported
+DatabasePtr
+DatabaseStatisticsUpdateInterval
+DatabaseStatisticsUpdateMaintenanceTaskInterval
+DatabaseStatisticsUpdateMaxClockDelta
+DebugBreak
+DelayLoadFailureHook
+DELETE FROM ApplicationUser;
+DELETE FROM PackageAppInstaller WHERE _PackageAppInstallerID=? AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM PackageAppInstaller WHERE _PackageAppInstallerID=? AND _WorkId=0;
+DELETE FROM PrimaryTileUser WHERE ApplicationIdentity IN ( SELECT _ApplicationIdentityID FROM ApplicationIdentity WHERE (ApplicationUserModelId LIKE ?1 || '!%')) AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM PrimaryTileUser WHERE ApplicationIdentity IN ( SELECT _ApplicationIdentityID FROM ApplicationIdentity WHERE (ApplicationUserModelId LIKE ?1 || '!%')) AND _WorkId=0;
+DeleteCriticalSection
+Deleted
+Deployment
+Deployment.Activation
+Deployment.Extensions.FixProgId
+Deployment.OptionalPackage.FixDependencyType
+Deployment.Package.PopulateMostRecentlyStaged
+Deployment.SetSchemaVersion.Open
+Deployment.SetSchemaVersion.SetSchemaVersion
+DeploymentDatabase
+DeploymentDatabase_Pages
+DeploymentDatabase_PagesCheckpointed
+DeploymentDatabaseAutoCheckpoint
+DeploymentDatabaseCacheSize
+DeploymentDatabaseCheckpointThreshold
+DeploymentDatabaseFileChunkSize
+DeploymentDatabaseJournalSizeLimit
+DeploymentDatabaseOptions
+DeploymentDatabasePageSize
+DeploymentDisposition
+DeploymentJournalSize_After
+DeploymentJournalSize_Before
+DeploymentSize_After
+DeploymentSize_Before
+DETACH DATABASE '%s';
+Disposition
+DownlevelMachineDatabase
+DownlevelMachineDatabaseAutoCheckpoint
+DownlevelMachineDatabaseCacheSize
+DownlevelMachineDatabaseCheckpointThreshold
+DownlevelMachineDatabaseFileChunkSize
+DownlevelMachineDatabaseJournalSizeLimit
+DownlevelMachineDatabaseOptions
+DownlevelMachineDatabasePageSize
+Elapsed
+ElapsedTime
+ElapsedTimeMSec
+EnterCriticalSection
+Entity
+en-US
+EqualSid
+Error
+Error 0x%X in BeginTransaction recording StateRepository migration patches
+Error 0x%X opening the Deployment partition to record StateRepository schema version
+Error 0x%X opening the Machine partition to record StateRepository migration patches
+Error 0x%X opening the Machine partition to record StateRepository schema version
+Error 0x%X setting the Deployment partition StateRepository schema version
+Error 0x%X setting the Machine partition StateRepository schema version
+ErrorCode
+ErrorCount
+EventActivityIdControl
+EventData
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+Exception
+ExecutableName
+ExpandedSQL
+ExpandedSQL=%hs
+Extensions
+ext-ms-onecore-appmodel-staterepository-cache-l1-1-4.dll
+ext-ms-win-security-capauthz-l1-1-1.dll
+FailFast
+FailFastBusySnapshot.StatementInProgress: #%u Index=%u Database=%p Statement=%p SQL=%s
+FailFastBusySnapshot: Statements Total=%u Busy=%u Database=%p FirstBusySQL=%hs
+Failure
+failureCount
+FailureCount
+failureCount
+FailureCount
+failureId
+failureType
+FallbackError
+Field
+Fields
+FileDescription
+Filename
+fileName
+Filename
+fileName
+Filename
+fileName
+Filename
+fileName
+Filename
+fileName
+Filename
+Filename:%s, SQL:%s, TxCallerId:%hs %ls
+FileTypeAssociation::AddExtensionProgId
+FileVersion
+FirstBusySQL
+FirstReportedUptime
+FirstReportedWhen
+FixAppUriHandlerProgId
+FixCount
+FixFileTypeAssociationProgId
+FixNullString() hr=0x%08X SQL='%hs'
+FixProtocolProgId
+FormatMessageW
+Found
+FoundSchemaVersion
+FreeLibrary
+function
+GCChangelogsInterval
+GCTimeToLiveExpiredInterval
+GetApplicationUserModelIdFromToken
+GetChanges() called but !db.IsOpen()
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetFileAttributesW
+GetLastError
+GetLastInsertRowID() called but !db.IsOpen()
+GetLengthSid
+GetLocalTime
+GetModuleFileNameA
+GetModuleHandleExA
+GetModuleHandleExW
+GetModuleHandleW
+GetPackageFullNameFromToken
+GetPersistedRegistryLocationW
+GetProcAddress
+GetProcessHeap
+GetSystemTimeAsFileTime
+GetTempPath2W
+GetTempPathW
+GetTokenInformation
+HashDigestLength
+HeapAlloc
+HeapFree
+hrApplication
+hrApplicationExtension
+hrBeginTx
+hrCommit
+hrDeployment
+HResult
+hresult
+hrExecute
+hrFullTrustProcess
+hrMachine
+hrPackageExtension
+Index
+Information
+InitializeCriticalSectionEx
+InitializeSListHead
+InitOnceBeginInitialize
+InitOnceComplete
+INSERT INTO Activation (_Revision, ActivationKey, Flags, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, _Dictionary) VALUES(?,?,?,?,?,?,?,?,?,?);
+INSERT INTO ApplicationUser (_Revision, _WorkId, User, ApplicationIdentity, Application, Package, PackageUser)SELECT 1, 0, pu.User, ai._ApplicationIdentityID, a._ApplicationID, pu.Package, pu._PackageUserID FROM PackageUser AS pu INNER JOIN Application AS a ON a.Package=pu.Package INNER JOIN ApplicationIdentity AS ai ON ai.ApplicationUserModelId=a.ApplicationUserModelId WHERE pu._WorkId=0;
+INSERT INTO MigratorPatch (_Revision, _WorkId, PatchId, HResult, StateRepositoryVersion, "When", _Dictionary) VALUES(?,?,?,?,?,?,?);
+InternalName
+IoPriority
+IsDebuggerPresent
+IsInAutoCommitMode() called but !db.IsOpen()
+IsProcessorFeaturePresent
+Issue
+j0r0y0
+kernelbase.dll
+KEYWp
+L$ VW3
+L$ WWh
+L$$SVW
+L$\Sh
+L$4^3
+L$l_^[3
+L$lt!S
+L$T_^[3
+LastKnownStatus
+LeaveCriticalSection
+LegalCopyright
+lineNumber
+LineNumber
+lineNumber
+LoadLibraryExW
+Local AppData
+Local\SM0:%lu:%lu:%hs
+LocalAlloc
+LocalFree
+LogHr
+LogNt
+LogStagedFeatureUsage
+LookasideHitPeak
+LookasideMissFullPeak
+LookasideMissSizePeak
+LookasideUsed
+LookasideUsedPeak
+LookupAccountSidW
+LsaLookupClose
+LsaLookupFreeMemory
+LsaLookupGetDomainInfo
+LsaLookupOpenLocalPolicy
+Machine
+Machine.SetSchemaVersion.Open
+Machine.SetSchemaVersion.SetSchemaVersion
+MachineDatabase
+MachineDatabase_Pages
+MachineDatabase_PagesCheckpointed
+MachineDatabaseAutoCheckpoint
+MachineDatabaseCacheSize
+MachineDatabaseCheckpointThreshold
+MachineDatabaseFileChunkSize
+MachineDatabaseJournalSizeLimit
+MachineDatabaseOptions
+MachineDatabasePageSize
+MachineDisposition
+MachineJournalSize_After
+MachineJournalSize_Before
+MachineSize_After
+MachineSize_Before
+MaintenanceInterval
+MaintenanceMaxClockDelta
+MaintenancePerformed
+MallocCount
+MallocCountPeak
+MallocSizePeak
+memcmp
+memcpy
+memmove
+memmove_s
+MemoryPriority
+MemoryUsed
+MemoryUsedPeak
+memset
+message
+Message
+message
+Message
+message
+Method
+Microsoft
+Microsoft Corporation
+Microsoft.deployFullTrustOnHost_8wekyb3d8bbwe
+Microsoft.Windows.SecondaryTileExperience_cw5n1h2txyewy
+Microsoft.Windows.StateRepository.Service
+Microsoft.Windows.StateRepository.Upgrade
+MicrosoftTelemetryAssertTriggeredUM
+Microsoft-Windows-StateRepository
+Microsoft-Windows-StateRepository/Debug
+Microsoft-Windows-StateRepository/Diagnostic
+Microsoft-Windows-StateRepository/Operational
+Microsoft-Windows-StateRepository/Restricted
+Migrator.Deployment.Activation
+Migrator.StateRepository.Activation
+Migrator.StateRepository.ApplicationUser
+Migrator.StateRepository.HasRunFullTrustCapability
+Migrator.StateRepository.NeedsContainerRegistration
+Migrator.StateRepository.NullString
+MigratorErrors
+module
+ms:CriticalData
+ms:Measures
+ms:ReservedKeyword44
+ms:Telemetry
+Msg:[%ws] 
+MultiByteToWideChar
+ntdll.dll
+NtQueryInformationFile
+NtQueryInformationProcess
+NtQueryInformationThread
+NtQueryWnfStateData
+NtSetInformationThread
+NtUpdateWnfStateData
+ObjectLength
+onecore\base\appmodel\common\base32encoding.cpp
+onecore\base\appmodel\common\bytebuffer.cpp
+onecore\base\appmodel\common\cryptoprovider.cpp
+onecore\base\appmodel\common\pathhelpers.cpp
+onecore\base\appmodel\common\registrykey.cpp
+onecore\base\appmodel\common\sidhelper.cpp
+onecore\base\appmodel\common\stateseparation.cpp
+onecore\base\appmodel\common\stringbuilder.cpp
+onecore\base\appmodel\common\userprofile.cpp
+onecore\base\appmodel\common\widestring.cpp
+onecore\base\appmodel\StateRepository\Common\Inc\Security.hpp
+onecore\base\appmodel\staterepository\common\inc\Security.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\blob.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\database.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\databasecachesingleton.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\datatype-hasher.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\datatype-progid.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-activation.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-activation-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-appinstaller.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-application.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-application-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-applicationextension.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-applicationextension-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-applicationuser-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-appurihandler.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-dependency-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-filetypeassociation.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-migrator-deployment-fixprogidinfo.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-migratorpatch.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-package.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageappinstaller.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-package-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageextension.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageextension-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-primarytileuser-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-protocol.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\globals.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\logging.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\repository.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\resourcepriority.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\ResourcePriority.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statement.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Statement.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statementcache.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\StatementCache.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statementexecution.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Utf16String.hpp
+onecore\base\appmodel\staterepository\upgrade\inc\Context.hpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrate.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.extensions.fixprogid.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.optionalpackage.fixdependencytype.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.package.populatemostrecentlystaged.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-staterepository.activation.fulltrustprocess.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-staterepository.appinstaller.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-staterepository.applicationuser.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-staterepository.hasrunfulltrustcapability.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-staterepository.needscontainerregistration.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-staterepository.nullstring.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-staterepository.primarytileuser.deleteendoflifetiles.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-tdr.tdl.import.cpp
+onecore\internal\sdk\inc\wil\opensource/wil/result.h
+onecore\internal\sdk\inc\wil\opensource/wil/token_helpers.h
+onecore\internal\sdk\inc\wil\opensource\wil\resource.h
+onecore\internal\sdk\inc\wil\Staging.h
+onecore\private\base\inc\AppModel\Common\FileInUse.hpp
+onecore\private\base\inc\appmodel\staterepository\dal/Database.hpp
+onecore\private\base\inc\appmodel\staterepository\dal/Repository.hpp
+OpenProcess
+OpenProcess() failed on %u of %u for %hs
+OpenProcessToken
+OpenSemaphoreW
+OpenSetting: Subkey=%ls
+OpenThreadToken
+Options
+OriginalFilename
+originatingContextId
+originatingContextMessage
+originatingContextName
+OutputDebugStringW
+Package %ls has FullTrust content
+Package %ls has IsVailPackaged set
+PackageDependency.Architectures
+PackageDependency.Flags
+PackageDependency.LifetimeArtifact
+PackageDependency.LifetimeKind
+PackageDependency.MinVersion
+PackageDependency.PackageFamilyName
+PackageDependency.PrimaryKey
+PackageDependency.User
+PackageFamilyName
+PackageFullName
+PackageRepositoryRoot
+PageCacheOverflow
+PageCacheOverflowPeak
+PageCachePeak
+PageCacheUsed
+PageCacheUsedPeak
+PartA_PrivTags
+Partition
+PathCchCombine
+PersistedCount
+Phase
+Pj&hH
+Policy.Aggressive.ConnectionMaxAge
+Policy.Aggressive.ConnectionMaxCount
+Policy.Aggressive.ConnectionMinCount
+Policy.Aggressive.GCInterval
+Policy.Aggressive.StatementMaxAge
+Policy.Aggressive.StatementMaxCount
+Policy.Aggressive.StatementMinCount
+Policy.Normal.ConnectionMaxAge
+Policy.Normal.ConnectionMaxCount
+Policy.Normal.ConnectionMinCount
+Policy.Normal.GCInterval
+Policy.Normal.StatementMaxAge
+Policy.Normal.StatementMaxCount
+Policy.Normal.StatementMinCount
+PQSVW
+PRAGMA %s=%I64d;
+PreviousDeploymentVersion
+PreviousMachineVersion
+Priorities
+ProcessCount
+ProcessId
+ProcessIdToSessionId
+ProcessIndex
+ProcessingSQL
+ProductName
+ProductVersion
+Profile
+ProfileImagePath
+Protocol::AddExtensionProgId
+PRVAX
+PRWWh
+PSj4Z
+PSj7Z
+PSjBZ
+PSjGZ
+PSjOZ
+PVj$Z
+PVj%Z
+PVj&Z
+PVj(Z
+PVj3Z
+PVj4Z
+PVjGZ
+PVjKZ
+PVjLZ
+PVjMZ
+PVjNZ
+PVjOZ
+PVjPZ
+PVjQZ
+PVjRZ
+PVjSZ
+PVj-Z
+PVQWRSh
+PWj4Z
+QQSVW
+QQVWh
+QRPVWh`
+QSVWh
+QueryApplicationCapabilitiesEx
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryUnbiasedInterruptTime
+RaiseException
+RaiseFailFastException
+ReadSetting: Name=%ls
+RecordPatchIsApplied.BeginTransaction
+RecordPatchIsApplied.Open
+RegCloseKey
+RegCreateKeyExW
+RegDeleteTreeW
+RegOpenKeyExW
+RegQueryValueExW
+RegSetValueExW
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+RepairGhostMinimumAgeForDeletion
+Required configuration data not found: %ws
+ResolvedCount
+ResolveDelayLoadedAPI
+ReturnHr
+ReturnNt
+Revision
+RoGetActivationFactory
+ROLLBACK /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+RRRPQ
+RtlAcquireSRWLockExclusive
+RtlAcquireSRWLockShared
+RtlAllocateHeap
+RtlCaptureStackBackTrace
+RtlCompareUnicodeString
+RtlConvertSidToUnicodeString
+RtlDeleteElementGenericTableAvl
+RtlDeriveCapabilitySidsFromName
+RtlDetermineDosPathNameType_U
+RtlDisownModuleHeapAllocation
+RtlDllShutdownInProgress
+RtlEnumerateGenericTableWithoutSplayingAvl
+RtlExpandEnvironmentStrings
+RtlFreeHeap
+RtlFreeUnicodeString
+RtlGetDeviceFamilyInfoEnum
+RtlInitializeGenericTableAvl
+RtlInitUnicodeString
+RtlInsertElementGenericTableAvl
+RtlIsStateSeparationEnabled
+RtlLookupElementGenericTableAvl
+RtlNotifyFeatureUsage
+RtlNtStatusToDosErrorNoTeb
+RtlRegisterFeatureConfigurationChangeNotification
+RtlReleaseSRWLockExclusive
+RtlReleaseSRWLockShared
+RtlUnregisterFeatureConfigurationChangeNotification
+runFullTrust
+SchemaUsed
+SchemaVersion
+Scope
+ScratchOverflow
+ScratchOverflowPeak
+ScratchSizePeak
+ScratchUsed
+ScratchUsedPeak
+SELECT _ActivationID, _Revision, ActivationKey, Flags, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, _Dictionary FROM Activation WHERE ActivationKey IS ?;
+SELECT _ApplicationExtensionID, _Revision, _WorkId, Application, "Index", Category, Activation, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, Flags, Subsystem, Parameters, CurrentDirectoryPath, Id, _LocalizedDictionary, _Dictionary FROM ApplicationExtension WHERE (_WorkId=0 OR _WorkId=?);
+SELECT _ApplicationExtensionID, _Revision, _WorkId, Application, "Index", Category, Activation, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, Flags, Subsystem, Parameters, CurrentDirectoryPath, Id, _LocalizedDictionary, _Dictionary FROM ApplicationExtension WHERE _WorkId=0;
+SELECT _ApplicationExtensionID, _Revision, _WorkId, Application, "Index", Category, Activation, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, Flags, Subsystem, Parameters, CurrentDirectoryPath, Id, _LocalizedDictionary, _Dictionary FROM ApplicationExtension WHERE Category=?1 AND (Flags & ?2 = 0 OR Flags & ?3 = 0) AND (_WorkId=0 OR _WorkId=?4);
+SELECT _ApplicationExtensionID, _Revision, _WorkId, Application, "Index", Category, Activation, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, Flags, Subsystem, Parameters, CurrentDirectoryPath, Id, _LocalizedDictionary, _Dictionary FROM ApplicationExtension WHERE Category=?1 AND (Flags & ?2 = 0 OR Flags & ?3 = 0) AND _WorkId=0;
+SELECT _ApplicationID, _Revision, _WorkId, Package, "Index", ApplicationType, Flags, Subsystem, PackageRelativeApplicationId, ApplicationUserModelId, DisplayName, Description, Square150x150Logo, Square44x44Logo, Wide310x150Logo, Square310x310Logo, Square71x71Logo, ForegroundText, BackgroundColor, Activation, HostId, Executable, Entrypoint, StartPage, ResourceGroup, LockScreenNotification, LockScreenBadgeLogo, SplashScreenImage, SplashScreenBackgroundColor, InitialRotationPreference, ApplicationViewMinWidth, AppListEntry, EditionId, VisualGroup, Parameters, CurrentDirectoryPath, _Dictionary FROM Application WHERE (_WorkId=0 OR _WorkId=?);
+SELECT _ApplicationID, _Revision, _WorkId, Package, "Index", ApplicationType, Flags, Subsystem, PackageRelativeApplicationId, ApplicationUserModelId, DisplayName, Description, Square150x150Logo, Square44x44Logo, Wide310x150Logo, Square310x310Logo, Square71x71Logo, ForegroundText, BackgroundColor, Activation, HostId, Executable, Entrypoint, StartPage, ResourceGroup, LockScreenNotification, LockScreenBadgeLogo, SplashScreenImage, SplashScreenBackgroundColor, InitialRotationPreference, ApplicationViewMinWidth, AppListEntry, EditionId, VisualGroup, Parameters, CurrentDirectoryPath, _Dictionary FROM Application WHERE _WorkId=0;
+SELECT _PackageAppInstallerID, _Revision, _WorkId, Package, AppInstaller, _Dictionary FROM PackageAppInstaller WHERE (_WorkId=0 OR _WorkId=?);
+SELECT _PackageAppInstallerID, _Revision, _WorkId, Package, AppInstaller, _Dictionary FROM PackageAppInstaller WHERE _WorkId=0;
+SELECT _PackageAppInstallerID, _Revision, _WorkId, Package, AppInstaller, _Dictionary FROM PackageAppInstaller WHERE Package=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageAppInstallerID, _Revision, _WorkId, Package, AppInstaller, _Dictionary FROM PackageAppInstaller WHERE Package=? AND _WorkId=0;
+SELECT _PackageExtensionID, _Revision, _WorkId, Package, "Index", Category, Activation, HostId, Executable, Entrypoint, RuntimeType, StartPage, Flags, Parameters, CurrentDirectoryPath, Id, ResourceGroup, _Dictionary FROM PackageExtension WHERE (_WorkId=0 OR _WorkId=?);
+SELECT _PackageExtensionID, _Revision, _WorkId, Package, "Index", Category, Activation, HostId, Executable, Entrypoint, RuntimeType, StartPage, Flags, Parameters, CurrentDirectoryPath, Id, ResourceGroup, _Dictionary FROM PackageExtension WHERE _WorkId=0;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageType & ? !=0 AND Flags & ? =0 AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageType & ? !=0 AND Flags & ? =0 AND _WorkId=0;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageType & ? !=0 AND Flags2 & ? !=0 AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageType & ? !=0 AND Flags2 & ? !=0 AND _WorkId=0;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageType & ? !=0 AND Flags2 & ? =0 AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageType & ? !=0 AND Flags2 & ? =0 AND _WorkId=0;
+SELECT _Revision, _WorkId, FileType, ContentType, Extension, "Index", ProgID, _Dictionary FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, FileType, ContentType, Extension, "Index", ProgID, _Dictionary FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND _WorkId=0;
+SELECT _Revision, _WorkId, HostName, Path, Extension, ProgID, AppUriHandlerGroup, _Dictionary FROM AppUriHandler WHERE _AppUriHandlerID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, HostName, Path, Extension, ProgID, AppUriHandlerGroup, _Dictionary FROM AppUriHandler WHERE _AppUriHandlerID=? AND _WorkId=0;
+SELECT _Revision, _WorkId, ProtocolName, ReturnResults, Extension, "Index", ProgID, _Dictionary FROM Protocol WHERE _ProtocolID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, ProtocolName, ReturnResults, Extension, "Index", ProgID, _Dictionary FROM Protocol WHERE _ProtocolID=? AND _WorkId=0;
+SELECT _Revision, ActivationKey, Flags, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, _Dictionary FROM Activation WHERE _ActivationID=?;
+SELECT _Revision, PackageFamily, Uri, Version, LastChecked, CheckUpdateInterval, Flags, PauseUntil, _Dictionary FROM AppInstaller WHERE _AppInstallerID=?;
+SELECT auh._AppUriHandlerID, auh.HostName, p.PackageFullName, pf.PackageFamilyName, a.PackageRelativeApplicationId, a.ApplicationUserModelId, ae.Activation FROM ApplicationExtension AS ae INNER JOIN AppUriHandler AS auh ON auh.Extension=ae._ApplicationExtensionID INNER JOIN Application AS a ON a._ApplicationID=ae.Application INNER JOIN Package AS p ON p._PackageID=a.Package INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE ae.category='windows.appUriHandler';
+SELECT EXISTS(SELECT 1 FROM AppInstaller WHERE _AppInstallerID=? LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM ApplicationExtension WHERE _ApplicationExtensionID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM ApplicationExtension WHERE _ApplicationExtensionID=? AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM AppUriHandler WHERE _AppUriHandlerID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM AppUriHandler WHERE _AppUriHandlerID=? AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM Protocol WHERE _ProtocolID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM Protocol WHERE _ProtocolID=? AND _WorkId=0 LIMIT 1);
+SELECT Flags, Subsystem, HostId, Executable, Entrypoint, StartPage, ResourceGroup FROM Application WHERE _ApplicationID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT Flags, Subsystem, HostId, Executable, Entrypoint, StartPage, ResourceGroup FROM Application WHERE _ApplicationID=? AND _WorkId=0;
+SELECT fta._FileTypeAssociationID, fta.FileType, p.PackageFullName, pf.PackageFamilyName, a.PackageRelativeApplicationId, a.ApplicationUserModelId, ae.Activation FROM ApplicationExtension AS ae INNER JOIN FileTypeAssociation AS fta ON fta.Extension=ae._ApplicationExtensionID INNER JOIN Application AS a ON a._ApplicationID=ae.Application INNER JOIN Package AS p ON p._PackageID=a.Package INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE ae.category='windows.fileTypeAssociation' and (ae.Flags & 0x%08X)=0;
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p WHERE (p.PackageFamily, p.Version, p.PackageType) IN ( SELECT PackageFamily, MAX(Version), PackageType FROM Package WHERE _PackageID IN (SELECT Package FROM PackageAppInstaller) AND PackageType & ? != 0 AND (_WorkId=0 OR _WorkId=?) GROUP BY PackageFamily);
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p WHERE (p.PackageFamily, p.Version, p.PackageType) IN ( SELECT PackageFamily, MAX(Version), PackageType FROM Package WHERE _PackageID IN (SELECT Package FROM PackageAppInstaller) AND PackageType & ? != 0 AND _WorkId=0 GROUP BY PackageFamily);
+SELECT pr._ProtocolID, pr.ProtocolName, p.PackageFullName, pf.PackageFamilyName, a.PackageRelativeApplicationId, a.ApplicationUserModelId, ae.Activation FROM ApplicationExtension AS ae INNER JOIN Protocol AS pr ON pr.Extension=ae._ApplicationExtensionID INNER JOIN Application AS a ON a._ApplicationID=ae.Application INNER JOIN Package AS p ON p._PackageID=a.Package INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE ae.category='windows.protocol';
+ServiceIdleTimeout
+ServiceWaitHintInterval
+SessionId
+SetLastError
+SetProtocolProperty
+SetThreadpoolTimer
+SetThreadToken
+SetUnhandledExceptionFilter
+SHA256
+Sleep
+Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppModel\PackageRepository
+Software\Microsoft\Windows NT\CurrentVersion\ProfileList
+SOFTWARE\Microsoft\Windows\CurrentVersion\AppModel\StateRepository
+SOFTWARE\Microsoft\Windows\CurrentVersion\AppModel\StateRepositoryStatus
+Software\Microsoft\Windows\CurrentVersion\Appx
+SOFTWARE\Microsoft\Windows\CurrentVersion\Appx
+Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+SQLite.AutoIndexWarning
+sqlite3_bind_blob
+sqlite3_bind_int
+sqlite3_bind_int64
+sqlite3_bind_text16
+sqlite3_changes
+sqlite3_clear_bindings
+sqlite3_close
+sqlite3_column_blob
+sqlite3_column_bytes
+sqlite3_column_int
+sqlite3_column_int64
+sqlite3_column_text16
+sqlite3_config
+sqlite3_db_filename
+sqlite3_db_handle
+sqlite3_db_status
+sqlite3_errcode
+sqlite3_errmsg
+sqlite3_exec
+sqlite3_expanded_sql
+sqlite3_finalize
+sqlite3_free
+sqlite3_get_autocommit
+sqlite3_last_insert_rowid
+sqlite3_log
+sqlite3_next_stmt
+sqlite3_prepare_v2
+sqlite3_reset
+sqlite3_shutdown
+sqlite3_snprintf
+sqlite3_sql
+sqlite3_status
+sqlite3_step
+sqlite3_stmt_busy
+sqlite3_vfs_unregister
+SQQPQQPh
+SRCacheContext_CacheShutdown
+SSSSh
+SSSSSSSS
+SSSWh
+StatementCache.Count
+StatementCache.Hits
+StatementCache.Lifespan
+StatementCache.Misses
+StatementCount
+StatementPtr
+StatementUsed
+StateRepository.Activation.FullTrustProcess
+StateRepository.AppInstaller
+StateRepository.ApplicationUser
+StateRepository.Core.dll
+StateRepository.Database.Statistics
+StateRepository.DatabaseCache.Statistics
+StateRepository.FailFastBusySnapshot
+StateRepository.FailFastBusySnapshot.BusyCount
+StateRepository.FailFastBusySnapshot.DatabasePtr
+StateRepository.FailFastBusySnapshot.FirstBusySQL
+StateRepository.FailFastBusySnapshot.Statement#%u.ExpandedSQL
+StateRepository.FailFastBusySnapshot.Statement#%u.Ptr
+StateRepository.FailFastBusySnapshot.Statement#%u.SQL
+StateRepository.FailFastBusySnapshot.StatementCount
+StateRepository.FailFastBusySnapshot.StatementInProgress
+StateRepository.HasRunFullTrustCapability
+StateRepository.log
+StateRepository.NeedsContainerRegistration
+StateRepository.NullString
+StateRepository.PrimaryTileUser.DeleteEndOFLifeTiles
+StateRepository.ResourcePriority.Inadequate
+StateRepository.Task.DataAccessLayer
+StateRepository.Task.Migrate
+StateRepository.Task.WinRTAPI
+StateRepository_DataAccessLayer_DatabaseCache_Add
+StateRepository_DataAccessLayer_DatabaseCache_Get
+STATEREPOSITORY_KEYWORD
+StateRepository_Migrate
+STATEREPOSITORY_PERF_KEYWORD
+StateRepository_Service_UpdateStatus
+StateRepositoryStatus
+StringFileInfo
+Subkey
+SuccessCount
+SVj$Z
+SVj0Z
+SVPhp
+SVWj83
+t$\Qh
+t$|SW
+T$0QQV
+t$HRQV
+t$hSW
+t$HSWVQP
+T$pRQ
+t$TRQ
+t>9\$
+TASK0
+TDR.TDL.Import
+TEMP 
+TEMP$
+TEMP(
+TEMP,
+TEMP`
+TEMP|
+TEMP<
+TEMP4
+TEMP8
+TEMPD
+TEMPH
+TEMPh
+TEMPH
+TEMPl
+TEMPp
+TEMPP
+TEMPX
+TerminateProcess
+threadId
+ThreadId
+threadId
+ThreadId
+threadId
+TimeoutMSec
+t'Ph@
+Trace
+TransactionCallerId
+TransactionCallerID
+TransientCount
+Translation
+TTBLh
+u"h<9
+u$WSQ
+u;9GHt3j
+u19GHt)j
+u4RPj
+u6QPj
+UnhandledExceptionFilter
+Unknown exception
+UPDATE AppInstaller SET _Revision=?, PackageFamily=?, Uri=?, Version=?, LastChecked=?, CheckUpdateInterval=?, Flags=?, PauseUntil=?, _Dictionary=? WHERE _AppInstallerID=? AND _Revision=?;
+UPDATE Application SET Activation=? WHERE _ApplicationID=? AND _WorkId=?;
+UPDATE Application SET Activation=0 WHERE Entrypoint IN ('Windows.FullTrustApplication', 'Windows.PartialTrustApplication');
+UPDATE Application SET Flags=((Flags | 0x14) & ~0x1A0) WHERE Entrypoint='Windows.FullTrustApplication';
+UPDATE Application SET Flags=((Flags | 0x90) & ~0x124) WHERE Entrypoint='Windows.PartialTrustApplication';
+UPDATE ApplicationExtension SET _Revision=?, _WorkId=?, Application=?, "Index"=?, Category=?, Activation=?, HostId=?, Executable=?, Entrypoint=?, RuntimeType=?, StartPage=?, ResourceGroup=?, Flags=?, Subsystem=?, Parameters=?, CurrentDirectoryPath=?, Id=?, _LocalizedDictionary=?, _Dictionary=? WHERE _ApplicationExtensionID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE ApplicationExtension SET _Revision=?, _WorkId=?, Application=?, "Index"=?, Category=?, Activation=?, HostId=?, Executable=?, Entrypoint=?, RuntimeType=?, StartPage=?, ResourceGroup=?, Flags=?, Subsystem=?, Parameters=?, CurrentDirectoryPath=?, Id=?, _LocalizedDictionary=?, _Dictionary=? WHERE _ApplicationExtensionID=? AND _Revision=? AND _WorkId=0;
+UPDATE ApplicationExtension SET Activation=? WHERE _ApplicationExtensionID=? AND _WorkId=?;
+UPDATE ApplicationExtension SET Activation=0;
+UPDATE ApplicationExtension SET Flags=((Flags | 0x14) & ~0x1A0) WHERE Entrypoint='Windows.FullTrustApplication';
+UPDATE ApplicationExtension SET Flags=((Flags | 0x90) & ~0x124) WHERE Entrypoint='Windows.PartialTrustApplication';
+UPDATE AppUriHandler SET _Revision=?, _WorkId=?, HostName=?, Path=?, Extension=?, ProgID=?, AppUriHandlerGroup=?, _Dictionary=? WHERE _AppUriHandlerID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE AppUriHandler SET _Revision=?, _WorkId=?, HostName=?, Path=?, Extension=?, ProgID=?, AppUriHandlerGroup=?, _Dictionary=? WHERE _AppUriHandlerID=? AND _Revision=? AND _WorkId=0;
+UPDATE Dependency SET DependencyType=? WHERE _DependencyID IN(SELECT d._DependencyID FROM Dependency AS d INNER JOIN PackageFamily AS pf ON pf.Name=d.Name INNER JOIN Package AS p ON p.PackageFamily=pf._PackageFamilyID WHERE p.PackageType=?);
+UPDATE FileTypeAssociation SET _Revision=?, _WorkId=?, FileType=?, ContentType=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _FileTypeAssociationID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE FileTypeAssociation SET _Revision=?, _WorkId=?, FileType=?, ContentType=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _FileTypeAssociationID=? AND _Revision=? AND _WorkId=0;
+UPDATE OR IGNORE Activation SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Activation' LIMIT 1);
+UPDATE OR IGNORE Activation SET Entrypoint=NULL WHERE Entrypoint='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Activation' LIMIT 1);
+UPDATE OR IGNORE Activation SET Executable=NULL WHERE Executable='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Activation' LIMIT 1);
+UPDATE OR IGNORE Activation SET ResourceGroup=NULL WHERE ResourceGroup='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Activation' LIMIT 1);
+UPDATE OR IGNORE Activation SET RuntimeType=NULL WHERE RuntimeType='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Activation' LIMIT 1);
+UPDATE OR IGNORE Activation SET StartPage=NULL WHERE StartPage='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Activation' LIMIT 1);
+UPDATE OR IGNORE AppExecutionAlias SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppExecutionAlias' LIMIT 1);
+UPDATE OR IGNORE AppExecutionAliasUser SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppExecutionAliasUser' LIMIT 1);
+UPDATE OR IGNORE AppExtension SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppExtension' LIMIT 1);
+UPDATE OR IGNORE AppExtensionHost SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppExtensionHost' LIMIT 1);
+UPDATE OR IGNORE AppInstaller SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppInstaller' LIMIT 1);
+UPDATE OR IGNORE Application SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET EditionId=NULL WHERE EditionId='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET Entrypoint=NULL WHERE Entrypoint='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET Executable=NULL WHERE Executable='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET ForegroundText=NULL WHERE ForegroundText='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET HostId=NULL WHERE HostId='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET Parameters=NULL WHERE Parameters='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET ResourceGroup=NULL WHERE ResourceGroup='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET SplashScreenImage=NULL WHERE SplashScreenImage='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET Square150x150Logo=NULL WHERE Square150x150Logo='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET Square310x310Logo=NULL WHERE Square310x310Logo='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET Square71x71Logo=NULL WHERE Square71x71Logo='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET StartPage=NULL WHERE StartPage='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET VisualGroup=NULL WHERE VisualGroup='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE Application SET Wide310x150Logo=NULL WHERE Wide310x150Logo='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Application' LIMIT 1);
+UPDATE OR IGNORE ApplicationBackgroundTask SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationBackgroundTask' LIMIT 1);
+UPDATE OR IGNORE ApplicationContentUriRule SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationContentUriRule' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET _LocalizedDictionary=NULL WHERE _LocalizedDictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET Entrypoint=NULL WHERE Entrypoint='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET Executable=NULL WHERE Executable='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET HostId=NULL WHERE HostId='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET Parameters=NULL WHERE Parameters='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET ResourceGroup=NULL WHERE ResourceGroup='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET RuntimeType=NULL WHERE RuntimeType='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationExtension SET StartPage=NULL WHERE StartPage='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationExtension' LIMIT 1);
+UPDATE OR IGNORE ApplicationIdentity SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationIdentity' LIMIT 1);
+UPDATE OR IGNORE ApplicationProperty SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ApplicationProperty' LIMIT 1);
+UPDATE OR IGNORE AppService SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppService' LIMIT 1);
+UPDATE OR IGNORE AppUriHandler SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppUriHandler' LIMIT 1);
+UPDATE OR IGNORE AppUriHandler SET ProgID=NULL WHERE ProgID='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppUriHandler' LIMIT 1);
+UPDATE OR IGNORE AppUriHandlerGroup SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppUriHandlerGroup' LIMIT 1);
+UPDATE OR IGNORE AppxExtension SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppxExtension' LIMIT 1);
+UPDATE OR IGNORE AppxManifest SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='AppxManifest' LIMIT 1);
+UPDATE OR IGNORE Bundle SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Bundle' LIMIT 1);
+UPDATE OR IGNORE BundlePackage SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='BundlePackage' LIMIT 1);
+UPDATE OR IGNORE BundleResource SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='BundleResource' LIMIT 1);
+UPDATE OR IGNORE ConnectedSet SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ConnectedSet' LIMIT 1);
+UPDATE OR IGNORE ConnectedSetPackageFamily SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ConnectedSetPackageFamily' LIMIT 1);
+UPDATE OR IGNORE ContentGroup SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ContentGroup' LIMIT 1);
+UPDATE OR IGNORE ContentGroupFile SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ContentGroupFile' LIMIT 1);
+UPDATE OR IGNORE CustomInstallWork SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='CustomInstallWork' LIMIT 1);
+UPDATE OR IGNORE CustomInstallWork SET Arguments=NULL WHERE Arguments='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='CustomInstallWork' LIMIT 1);
+UPDATE OR IGNORE DefaultTile SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DefaultTile' LIMIT 1);
+UPDATE OR IGNORE DefaultTile SET HoloContentChoice=NULL WHERE HoloContentChoice='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DefaultTile' LIMIT 1);
+UPDATE OR IGNORE DefaultTile SET MixedRealityModel=NULL WHERE MixedRealityModel='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DefaultTile' LIMIT 1);
+UPDATE OR IGNORE DefaultTile SET ShortName=NULL WHERE ShortName='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DefaultTile' LIMIT 1);
+UPDATE OR IGNORE DefaultTile SET UpdateUriTemplate=NULL WHERE UpdateUriTemplate='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DefaultTile' LIMIT 1);
+UPDATE OR IGNORE Dependency SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Dependency' LIMIT 1);
+UPDATE OR IGNORE DependencyGraph SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DependencyGraph' LIMIT 1);
+UPDATE OR IGNORE DeploymentHistory SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DeploymentHistory' LIMIT 1);
+UPDATE OR IGNORE DynamicAppUriHandler SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DynamicAppUriHandler' LIMIT 1);
+UPDATE OR IGNORE DynamicAppUriHandler SET ProgID=NULL WHERE ProgID='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DynamicAppUriHandler' LIMIT 1);
+UPDATE OR IGNORE DynamicAppUriHandlerGroup SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='DynamicAppUriHandlerGroup' LIMIT 1);
+UPDATE OR IGNORE EndOfLifePackage SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='EndOfLifePackage' LIMIT 1);
+UPDATE OR IGNORE Enterprise SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Enterprise' LIMIT 1);
+UPDATE OR IGNORE File SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='File' LIMIT 1);
+UPDATE OR IGNORE FileTypeAssociation SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='FileTypeAssociation' LIMIT 1);
+UPDATE OR IGNORE FileTypeAssociation SET ProgID=NULL WHERE ProgID='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='FileTypeAssociation' LIMIT 1);
+UPDATE OR IGNORE MigratorPatch SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MigratorPatch' LIMIT 1);
+UPDATE OR IGNORE MrtApplication SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MrtApplication' LIMIT 1);
+UPDATE OR IGNORE MrtApplication SET SplashScreenImageReference=NULL WHERE SplashScreenImageReference='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MrtApplication' LIMIT 1);
+UPDATE OR IGNORE MrtApplication SET VisualGroupReference=NULL WHERE VisualGroupReference='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MrtApplication' LIMIT 1);
+UPDATE OR IGNORE MrtDefaultTile SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MrtDefaultTile' LIMIT 1);
+UPDATE OR IGNORE MrtPackage SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MrtPackage' LIMIT 1);
+UPDATE OR IGNORE MrtSharedPri SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MrtSharedPri' LIMIT 1);
+UPDATE OR IGNORE MrtUserPri SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='MrtUserPri' LIMIT 1);
+UPDATE OR IGNORE NamedDependency SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='NamedDependency' LIMIT 1);
+UPDATE OR IGNORE OptionalBundle SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='OptionalBundle' LIMIT 1);
+UPDATE OR IGNORE OptionalBundlePackage SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='OptionalBundlePackage' LIMIT 1);
+UPDATE OR IGNORE OptionalBundleResource SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='OptionalBundleResource' LIMIT 1);
+UPDATE OR IGNORE Package SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Package' LIMIT 1);
+UPDATE OR IGNORE Package SET EditionId=NULL WHERE EditionId='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Package' LIMIT 1);
+UPDATE OR IGNORE PackageAppInstaller SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageAppInstaller' LIMIT 1);
+UPDATE OR IGNORE PackageExtension SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageExtension' LIMIT 1);
+UPDATE OR IGNORE PackageExtension SET Entrypoint=NULL WHERE Entrypoint='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageExtension' LIMIT 1);
+UPDATE OR IGNORE PackageExtension SET Executable=NULL WHERE Executable='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageExtension' LIMIT 1);
+UPDATE OR IGNORE PackageExtension SET HostId=NULL WHERE HostId='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageExtension' LIMIT 1);
+UPDATE OR IGNORE PackageExtension SET Parameters=NULL WHERE Parameters='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageExtension' LIMIT 1);
+UPDATE OR IGNORE PackageExtension SET RuntimeType=NULL WHERE RuntimeType='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageExtension' LIMIT 1);
+UPDATE OR IGNORE PackageExtension SET StartPage=NULL WHERE StartPage='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageExtension' LIMIT 1);
+UPDATE OR IGNORE PackageFamily SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageFamily' LIMIT 1);
+UPDATE OR IGNORE PackageFamilyPolicy SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageFamilyPolicy' LIMIT 1);
+UPDATE OR IGNORE PackageFamilyPolicy SET ValueString=NULL WHERE ValueString='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageFamilyPolicy' LIMIT 1);
+UPDATE OR IGNORE PackageFamilyUser SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageFamilyUser' LIMIT 1);
+UPDATE OR IGNORE PackageFamilyUserResource SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageFamilyUserResource' LIMIT 1);
+UPDATE OR IGNORE PackageIdentity SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageIdentity' LIMIT 1);
+UPDATE OR IGNORE PackageLocation SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageLocation' LIMIT 1);
+UPDATE OR IGNORE PackageMachineStatus SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageMachineStatus' LIMIT 1);
+UPDATE OR IGNORE PackagePolicy SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackagePolicy' LIMIT 1);
+UPDATE OR IGNORE PackagePolicy SET ValueString=NULL WHERE ValueString='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackagePolicy' LIMIT 1);
+UPDATE OR IGNORE PackageProperty SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageProperty' LIMIT 1);
+UPDATE OR IGNORE PackageSourceUri SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageSourceUri' LIMIT 1);
+UPDATE OR IGNORE PackageSuperceded SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageSuperceded' LIMIT 1);
+UPDATE OR IGNORE PackageUser SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageUser' LIMIT 1);
+UPDATE OR IGNORE PackageUserStatus SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PackageUserStatus' LIMIT 1);
+UPDATE OR IGNORE PrimaryTile SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PrimaryTile' LIMIT 1);
+UPDATE OR IGNORE PrimaryTile SET EditionId=NULL WHERE EditionId='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PrimaryTile' LIMIT 1);
+UPDATE OR IGNORE PrimaryTileUser SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PrimaryTileUser' LIMIT 1);
+UPDATE OR IGNORE PrimaryTileUserChangelog SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PrimaryTileUserChangelog' LIMIT 1);
+UPDATE OR IGNORE Protocol SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Protocol' LIMIT 1);
+UPDATE OR IGNORE Protocol SET ProgID=NULL WHERE ProgID='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Protocol' LIMIT 1);
+UPDATE OR IGNORE ProvisionedPackage SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ProvisionedPackage' LIMIT 1);
+UPDATE OR IGNORE ProvisionedPackageDeleted SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ProvisionedPackageDeleted' LIMIT 1);
+UPDATE OR IGNORE ProvisionedPackageExclude SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='ProvisionedPackageExclude' LIMIT 1);
+UPDATE OR IGNORE PublisherCacheFolder SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PublisherCacheFolder' LIMIT 1);
+UPDATE OR IGNORE PublisherCacheFolder SET FolderName=NULL WHERE FolderName='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='PublisherCacheFolder' LIMIT 1);
+UPDATE OR IGNORE Resource SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='Resource' LIMIT 1);
+UPDATE OR IGNORE SecondaryTile SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='SecondaryTile' LIMIT 1);
+UPDATE OR IGNORE SecondaryTile SET EditionId=NULL WHERE EditionId='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='SecondaryTile' LIMIT 1);
+UPDATE OR IGNORE SecondaryTileUser SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='SecondaryTileUser' LIMIT 1);
+UPDATE OR IGNORE SecondaryTileUserChangelog SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='SecondaryTileUserChangelog' LIMIT 1);
+UPDATE OR IGNORE SRJournal SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='SRJournal' LIMIT 1);
+UPDATE OR IGNORE SRJournalArchive SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='SRJournalArchive' LIMIT 1);
+UPDATE OR IGNORE TargetDeviceFamily SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='TargetDeviceFamily' LIMIT 1);
+UPDATE OR IGNORE User SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='User' LIMIT 1);
+UPDATE OR IGNORE WorkInProgress SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='WorkInProgress' LIMIT 1);
+UPDATE OR IGNORE WowDependencyGraph SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='WowDependencyGraph' LIMIT 1);
+UPDATE OR IGNORE XboxPackage SET _Dictionary=NULL WHERE _Dictionary='NULL' AND EXISTS(SELECT 1 FROM sqlite_master WHERE type='table' AND name='XboxPackage' LIMIT 1);
+UPDATE Package SET Flags=((Flags & ~?) | ?) WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE Package SET Flags=((Flags & ~?) | ?) WHERE _PackageID=? AND _WorkId=0;
+UPDATE Package SET Flags2=((Flags2 & ~?) | ?) WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE Package SET Flags2=((Flags2 & ~?) | ?) WHERE _PackageID=? AND _WorkId=0;
+UPDATE PackageExtension SET Activation=? WHERE _PackageExtensionID=? AND _WorkId=?;
+UPDATE PackageExtension SET Activation=0 WHERE Entrypoint IN ('Windows.FullTrustApplication', 'Windows.PartialTrustApplication');
+UPDATE PackageExtension SET Flags=((Flags | 0x14) & ~0x1A0) WHERE Entrypoint='Windows.FullTrustApplication';
+UPDATE PackageExtension SET Flags=((Flags | 0x90) & ~0x124) WHERE Entrypoint='Windows.PartialTrustApplication';
+UPDATE Protocol SET _Revision=?, _WorkId=?, ProtocolName=?, ReturnResults=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _ProtocolID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE Protocol SET _Revision=?, _WorkId=?, ProtocolName=?, ReturnResults=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _ProtocolID=? AND _Revision=? AND _WorkId=0;
+uRtlQueryFeatureConfiguration
+user_version
+UserDomain
+UserName
+UserSID
+UserSid
+UserSID
+UserSid
+UserSID
+UserSid
+UserSID
+VarFileInfo
+Verbose
+VS_VERSION_INFO
+VSjDZ
+VWj:Z
+VWjbZ
+VWjkZ
+vWShh
+WaitForRequestsInUseTimeout
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+Warning
+wcschr
+WerRegisterCustomMetadata
+WEVT_TEMPLATE
+wilActivity
+WilError_03
+WilFailureNotifyWatchers
+wilResult
+WilStaging_02
+win:Critical
+win:Error
+win:Informational
+win:Verbose
+win:Warning
+Windows StateRepository Upgrade
+windows.appUriHandler
+Windows.ContactSupport_cw5n1h2txyewy
+windows.fileTypeAssociation
+Windows.FullTrustApplication
+windows.fullTrustProcess
+Windows.Internal.Tiles.MigrationHelper
+Windows.MiracastView_cw5n1h2txyewy
+Windows.PartialTrustApplication
+windows.protocol
+Windows.StateRepository.dll
+Windows.StateRepositoryUpgrade.dll
+Windows.StateRepositoryUpgrade.pdb
+WindowsCreateStringReference
+WorkId
+WriteFile
+WriteSetting: Name=%ls
+WSj:Z
+WSj]Z
+WVj)Z
+WVj8Z
+X[_^]
+XL93uIW
+Y__^[
+y=VhX
+y5VhX
+yAVhP
+YG;~0r
+yis^9
+yRich
+YY_^[
+YYG;~

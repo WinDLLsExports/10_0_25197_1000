@@ -1,0 +1,2638 @@
+                  />
+                  delay="60000"
+                  type="restartService"
+                <pattern type="File">%windir%\System32\Logfiles\SCM\* [*]</pattern>
+                <pattern type="File">%windir%\System32\Tasks\* [*]</pattern>
+                <pattern type="File">%windir%\System32\Tasks\Microsoft\Windows\UpdateOrchestrator [MusUx_LogonUpdateResults]</pattern>
+                <pattern type="File">%windir%\System32\Tasks\Microsoft\Windows\UpdateOrchestrator\* [*]</pattern>
+                <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Configuration\* [*]</pattern>
+                <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\CredWom\* [*]</pattern>
+                <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Handlers\* [*]</pattern>
+                <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\* [*]</pattern>
+              />
+              </objectSet>
+              <action
+              <objectSet>
+              <pattern type="File">%windir%\System32\LogFiles\SCM\* [*]</pattern>
+              <pattern type="File">%windir%\System32\LogFiles\SCM\* [SCM.evm*]</pattern>
+              <pattern type="File">%windir%\System32\Tasks_Migrated\* [*]</pattern>
+              <pattern type="File">%windir%\Tasks\* [*]</pattern>
+              name="DomainJoinDetected"
+              name="HashingCompleted"
+              name="MicrosoftTaskSchedulerFolderACL"
+              name="MicrosoftTasksFolderACL"
+              name="MigrationCleanupCompleted"
+              name="PrivateRegistryACL"
+              name="ServiceACL"
+              name="SystemRegistryACL"
+              name="TasksFolderACL"
+              path="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule"
+              sddl="D:(A;;CCLCSWLORC;;;AU)(A;;CCLCSWRPDTLOCRRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRRCWDWOSD;;;SY)(A;;CCLCSWLORC;;;BU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)"
+              sddl="D:P(A;CI;FA;;;BA)(A;OI;FRFWSDWDWO;;;BA)(A;CI;FA;;;SY)(A;OI;FRFWSDWDWO;;;SY)(A;CI;FW;;;AU)(A;CI;FW;;;NS)(A;CI;FW;;;LS)(A;OICIIO;FA;;;CO)"
+              sddl="D:P(A;CI;FA;;;BA)(A;OI;FRFWSDWDWO;;;BA)(A;CI;FA;;;SY)(A;OI;FRFWSDWDWO;;;SY)(A;OICI;FR;;;AU)(A;OICI;FR;;;LS)(A;OICI;FR;;;NS)(A;OICIIO;FA;;;CO)"
+              sddl="D:P(A;CI;FA;;;SY)(A;CI;FR;;;BA)"
+              sddl="D:P(A;OICI;KA;;;BA)(A;OICI;KA;;;SY)(A;;KR;;;AU)"
+              sddl="D:P(A;OICI;KRSD;;;BA)(A;OICI;KA;;;SY)"
+            />
+            </actions>
+            </exclude>
+            </include>
+            </locationModify>
+            </merge>
+            </objectSet>
+            <actions>
+            <exclude>
+            <include>
+            <locationModify script="MigXmlHelper.RelativeMove(&apos; %windir%\system32\logfiles\scm&apos;,&apos;%windir%\system32\logfiles\UbpmMigratedStats &apos;)">
+            <locationModify script="MigXmlHelper.RelativeMove(&apos; %windir%\system32\Tasks&apos;,&apos;%windir%\system32\Tasks_Migrated &apos;)">
+            <merge script="MigXmlHelper.DestinationPriority()">
+            <merge script="MigXmlHelper.SourcePriority()">
+            <objectSet>
+            <pattern type="File">%windir%\System32\Logfiles\SCM\* [*]</pattern>
+            <pattern type="File">%windir%\System32\Logfiles\SCM\* [scm*]</pattern>
+            <pattern type="File">%windir%\System32\Tasks\* [*]</pattern>
+            <pattern type="File">%windir%\System32\Tasks\Microsoft\Windows\Customer Experience Improvement Program\Server [ServerRoleCollector]</pattern>
+            <pattern type="File">%windir%\System32\Tasks\Microsoft\Windows\Customer Experience Improvement Program\Server [ServerRoleUsageCollector]</pattern>
+            <pattern type="File">%windir%\System32\Tasks\Microsoft\Windows\UpdateOrchestrator [MusUx_LogonUpdateResults]</pattern>
+            <pattern type="File">%windir%\System32\Tasks\Microsoft\Windows\UpdateOrchestrator\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule [HashingCompleted]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Aliases\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Configuration\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\CredWom\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Handlers\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance\* [*]</pattern>
+            <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\* [*]</pattern>
+            >
+            buildFilter=""
+            buildType="$(build.buildType)"
+            dependOnService="RPCSS,SystemEventsBroker"
+            description="@%SystemRoot%\system32\schedsvc.dll,-101"
+            displayName="@%SystemRoot%\system32\schedsvc.dll,-100"
+            errorControl="normal"
+            group="SchedulerGroup"
+            imagePath="%systemroot%\system32\svchost.exe -k netsvcs -p"
+            language="neutral"
+            name="Microsoft-Windows-TaskScheduler-Service"
+            name="Schedule"
+            objectName="LocalSystem"
+            position="last"
+            processorArchitecture="$(build.processorArchitecture)"
+            publicKeyToken="$(Build.WindowsPublicKeyToken)"
+            requiredPrivileges="SeIncreaseQuotaPrivilege,SeChangeNotifyPrivilege,SeImpersonatePrivilege,SeAssignPrimaryTokenPrivilege,SeTcbPrivilege,SeRestorePrivilege,SeBackupPrivilege,SeSecurityPrivilege,SeTakeOwnershipPrivilege,SeLoadDriverPrivilege,SeSystemProfilePrivilege,SeSystemTimePrivilege,SeProfileSingleProcessPrivilege,SeIncreaseBasePriorityPrivilege,SeCreatePageFilePrivilege,SeCreatePermanentPrivilege,SeShutdownPrivilege,SeDebugPrivilege,SeAuditPrivilege,SeSystemEnvironmentPrivilege,SeUndockPrivilege,SeManageVolumePrivilege,SeIncreaseWorkingSetPrivilege,SeTimeZonePrivilege,SeCreateSymbolicLinkPrivilege,SeLockMemoryPrivilege,SeCreateGlobalPrivilege,SeDelegateSessionUserImpersonatePrivilege"
+            serviceName="schedule"
+            settingsVersionRange="0"
+            sidType="unrestricted"
+            start="auto"
+            startAfterInstall="none"
+            type=""
+            type="win32ShareProcess"
+            versionScope="nonSxS"
+           <pattern type="Registry">HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\CredWom\* [*]</pattern>
+          />
+          </destinationcleanup>
+          </exclude>
+          </failureActions>
+          </include>
+          </merge>
+          </objectSet>
+          </rules>
+          <Arguments>/increment</Arguments>
+          <Command>aitagent</Command>
+          <Command>cmd</Command>
+          <deleteValue
+          <destinationcleanup>
+          <Enabled>true</Enabled>
+          <EndBoundary>2001-01-01T02:00:00</EndBoundary>
+          <exclude>
+          <failureActions resetPeriod="86400">
+          <include>
+          <merge script="MigXmlHelper.SourcePriority()">
+          <objectSet>
+          <rules context="System">
+          <securityDescriptor name="ServiceACL"/>
+          <securityDescriptorDefinition
+          <StartBoundary>2001-01-01T01:00:00</StartBoundary>
+          <UserId>S-1-5-18</UserId>
+          <UserId>S-1-5-19</UserId>
+          buildFilter="not build.isWow"
+          buildType="$(build.buildType)"
+          language="*"
+          name="9e03f75a-bcbe-428a-8f3c-d46f2a444935"
+          name="AtServiceAccount"
+          name="AtTaskMaxHours"
+          name="DataVersion"
+          name="f230d19a-5d93-47d9-a83f-53829edfb8df"
+          name="Microsoft.Windows.Categories"
+          name="Microsoft.Windows.Categories.Services"
+          name="Microsoft-Windows-TaskScheduler-Service.Resources"
+          name="MissedTasksStartupDelay"
+          name="MitigationFlags"
+          name="SD"
+          name="ServiceDll"
+          name="ServiceDllUnloadOnStop"
+          name="ServiceMain"
+          name="SvcMemHardLimitInMB"
+          name="SvcMemMidLimitInMB"
+          name="SvcMemSoftLimitInMB"
+          name="TasksInMemoryQueue"
+          name="TasksPerHighestPrivEngine"
+          name="TasksPerLeastPrivEngine"
+          name="UseXmlStore"
+          processorArchitecture="$(build.arch)"
+          publicKeyToken="$(build.WindowsPublicKeyToken)"
+          publicKeyToken="$(Build.WindowsPublicKeyToken)"
+          publicKeyToken="365143bb27e7ac8b"
+          typeName="Service"
+          typeName="SvcHost"
+          value="%systemroot%\system32\schedsvc.dll"
+          value="&quot;NT AUTHORITY\System&quot;"
+          value="01000480300000003c000000000000001400000002001c000100000000001400ff0f1200010100000000000512000000010100000000000512000000010100000000000512000000"
+          value="01000494C4000000D000000000000000140000000200B0000800000000021800FF011F0001020000000000052000000020020000000118009F011F000102000000000005200000002002000000021400FF011F00010100000000000512000000000114009F011F00010100000000000512000000000214001601120001010000000000050B00000000021400160112000101000000000005140000000002140016011200010100000000000513000000000B1400FF011F00010100000000000300000000010100000000000512000000010100000000000512000000"
+          value="0100148CCC000000D8000000140000001C00000002000800000000000200B0000800000000121800FF011F0001020000000000052000000020020000001918009F011F000102000000000005200000002002000000121400FF011F00010100000000000512000000001914009F011F00010100000000000512000000001314008900120001010000000000050B00000000131400890012000101000000000005130000000013140089001200010100000000000514000000001B1400FF011F00010100000000000300000000010100000000000512000000010100000000000512000000"
+          value="0100149CCC000000D8000000140000001C00000002000800000000000200B0000800000000021800FF011F0001020000000000052000000020020000000118009F011F000102000000000005200000002002000000021400FF011F00010100000000000512000000000114009F011F00010100000000000512000000000314008900120001010000000000050B00000000031400890012000101000000000005130000000003140089001200010100000000000514000000000B1400FF011F00010100000000000300000000010100000000000512000000010100000000000512000000"
+          value="0x00000001"
+          value="0x48"
+          value="1"
+          value="10"
+          value="100"
+          value="2"
+          value="4"
+          value="5"
+          value="50"
+          value="6"
+          value="600"
+          value="ServiceMain"
+          valueType="REG_BINARY"
+          valueType="REG_DWORD"
+          valueType="REG_EXPAND_SZ"
+          valueType="REG_MULTI_SZ"
+          valueType="REG_SZ"
+          version="$(build.version)"
+          version="1.0.0.0"
+        />
+        </exclude>
+        </Exec>
+        </include>
+        </locationModify>
+        </merge>
+        </migXml>
+        </Principal>
+        </registryActions>
+        </rules>
+        </securityDescriptorDefinitions>
+        </serviceData>
+        </TimeTrigger>
+        <Author>$(@%SystemRoot%\system32\aitagent.exe,-701)</Author>
+        <DeleteExpiredTaskAfter>PT0S</DeleteExpiredTaskAfter>
+        <Description>$(@%SystemRoot%\system32\aitagent.exe,-702)</Description>
+        <exclude>
+        <Exec>
+        <include>
+        <locationModify script="MigXmlHelper.RelativeMove(&apos; %windir%\system32\logfiles\scm&apos;,&apos;%windir%\system32\logfiles\UbpmMigratedStats &apos;)">
+        <locationModify script="MigXmlHelper.RelativeMove(&apos; %windir%\system32\Tasks&apos;,&apos;%windir%\system32\Tasks_Migrated &apos;)">
+        <merge script="MigXmlHelper.DestinationPriority()">
+        <merge script="MigXmlHelper.SourcePriority()">
+        <migXml xmlns="">
+        <Principal id="LocalService">
+        <Principal id="LocalSystem">
+        <registryActions>
+        <rules context="System">
+        <SecurityDescriptor>D:(A;;GA;;;BA)(A;;GA;;;SY)(A;;FRFX;;;LS)</SecurityDescriptor>
+        <SecurityDescriptor>D:(A;OICI;FA;;;BA)(A;OICI;FA;;;SY)(A;OICI;GRGX;;;AU)(A;OICI;SDFRFX;;;LS)</SecurityDescriptor>
+        <SecurityDescriptor>D:P(A;;FA;;;BA)(A;;FA;;;SY)(A;;FA;;;LS)(A;;FR;;;AU)</SecurityDescriptor>
+        <SecurityDescriptor>D:P(A;;FRFX;;;BA)(A;;FA;;;SY)</SecurityDescriptor>
+        <securityDescriptorDefinitions>
+        <serviceData
+        <serviceGroup
+        <Source>$(@%SystemRoot%\system32\aitagent.exe,-701)</Source>
+        <supportedComponentIdentity
+        <sysprepOrder order="0x0E00"/>
+        <TimeTrigger>
+        <URI>\Microsoft\Windows\Application Experience\AitAgent</URI>
+        <URI>\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask</URI>
+        <URI>\Microsoft\Windows\TaskScheduler\Idle Maintenance</URI>
+        <URI>\Microsoft\Windows\TaskScheduler\Maintenance Configurator</URI>
+        <URI>\Microsoft\Windows\TaskScheduler\Manual Maintenance</URI>
+        <URI>\Microsoft\Windows\TaskScheduler\Regular Maintenance</URI>
+        <URI>\Microsoft\Windows\Windows Subsystem For Linux\AptPackageIndexUpdate</URI>
+        <UseUnifiedSchedulingEngine>true</UseUnifiedSchedulingEngine>
+        <Version>1.0</Version>
+        >
+        buildFilter="not build.isWow"
+        destinationPath="$(runtime.windows)\System32\Tasks"
+        destinationPath="$(runtime.windows)\System32\Tasks\Microsoft"
+        destinationPath="$(runtime.windows)\System32\Tasks\Microsoft\Windows"
+        destinationPath="$(runtime.windows)\System32\Tasks\Microsoft\Windows\TaskScheduler"
+        keyName="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Security"
+        keyName="HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Schedule"
+        owner="True"
+      />
+      <!-- ACL Microsoft-Windows-IdleTriggerProvider to SD: O:SYG:SYD:(A;;0x120fff;;;SY) -->
+      <!-- ACL Microsoft-Windows-TriggerEmulatorProvider to SD: O:SYG:SYD:(A;;0x120fff;;;SY) -->
+      <!-- Enable CET shadow stacks for the Schedule service (i.e. MITIGATION_FLAG_CET_BASIC_MODE) -->
+      <!-- O:SYG:SYD:AI(A;CIID;FA;;;BA)(A;OIIOID;0x1f019f;;;BA)(A;CIID;FA;;;SY)(A;OIIOID;0x1f019f;;;SY)(A;OICIID;FR;;;AU)(A;OICIID;FR;;;LS)(A;OICIID;FR;;;NS)(A;OICIIOID;FA;;;CO)S:AI -->
+      <!-- O:SYG:SYD:PAI(A;CI;FA;;;BA)(A;OI;0x1f019f;;;BA)(A;CI;FA;;;SY)(A;OI;0x1f019f;;;SY)(A;OICI;FR;;;AU)(A;OICI;FR;;;LS)(A;OICI;FR;;;NS)(A;OICIIO;FA;;;CO)S:AI -->
+      <!-- O:SYG:SYD:PAI(A;CI;FA;;;BA)(A;OI;FRFWSDWDWO;;;BA)(A;CI;FA;;;SY)(A;OI;FRFWSDWDWO;;;SY)(A;CI;FW;;;AU)(A;CI;FW;;;NS)(A;CI;FW;;;LS)(A;OICIIO;FA;;;CO) -->
+      <!-- Registry values for Service Control Manager memory limit default overrides -->
+      </accessControl>
+      </Actions>
+      </categoryInstance>
+      </migXml>
+      </Principals>
+      </RegistrationInfo>
+      </rules>
+      </Settings>
+      </supportedComponent>
+      </sysprepProvider>
+      </Triggers>
+      <accessControl>
+      <Actions Context="LocalService">
+      <Actions Context="LocalSystem">
+      <assemblyIdentity
+      <categoryInstance subcategory="netsvcs">
+      <categoryInstance subcategory="Schedule">
+      <id
+      <migXml xmlns="">
+      <Principals>
+      <RegistrationInfo>
+      <registryValue
+      <rules context="System">
+      <securityDescriptor name="MicrosoftTaskSchedulerFolderACL"/>
+      <securityDescriptor name="MicrosoftTasksFolderACL"/>
+      <securityDescriptor name="PrivateRegistryACL"/>
+      <securityDescriptor name="SystemRegistryACL"/>
+      <securityDescriptor name="TasksFolderACL"/>
+      <Settings>
+      <supportedComponent>
+      <sysprepProvider stage="cleanup">
+      <Triggers>
+      >
+      buildFilter="not build.isWow"
+      buildType="$(build.buildType)"
+      destinationPath="$(runtime.system32)\"
+      destinationPath="$(runtime.windows)\Vss\Writers\System\"
+      discoverable="false"
+      importPath="$(build.nttree)\"
+      language="neutral"
+      name="D61D61C8-D73A-4EEE-8CDD-F6F9786B7124.xml"
+      name="Microsoft-Windows-TaskScheduler-Service"
+      name="schedsvc.dll"
+      optional="false"
+      processorArchitecture="$(build.arch)"
+      publicKeyToken="$(Build.WindowsPublicKeyToken)"
+      resourceType="Resources"
+      sourceName="D61D61C8-D73A-4EEE-8CDD-F6F9786B7124.xml"
+      sourceName="schedsvc.dll"
+      sourcePath=".\"
+      version="$(build.version)"
+      versionScope="nonSxS"
+      writeableType="systemData"
+    <!-- AIT Agent task (deprecated - left here to prevent migration from downlevel) -->
+    <!-- Idle maintenance launcher task (deprecated - left here to prevent migration from downlevel)-->
+    <!-- Kernel CEIP task (deprecated - left here to prevent migration from downlevel) -->
+    <!-- Maintenance configurator task (deprecated - left here to prevent migration from downlevel)-->
+    <!-- Manual maintenance launcher task (deprecated - left here to prevent migration from downlevel)-->
+    <!-- Regular maintenance launcher task (deprecated - left here to prevent migration from downlevel) -->
+    <!-- WSL AptPackageIndexUpdate task (deprecated - left here to prevent migration from downlevel) -->
+    </categoryMembership>
+    </dependentAssembly>
+    </directory>
+    </migXml>
+    </registryKey>
+    </security>
+    </supportedComponents>
+    </sysprepInformation>
+    </Task>
+    </uninstall>
+    <categoryMembership buildFilter="not build.isWow">
+    <categoryMembership>
+    <dependentAssembly dependencyType="prerequisite">
+    <directory
+    <migXml xmlns="">
+    <registryKey
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Aliases">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Configuration">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Handlers">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Boot">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Logon">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Maintenance">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows">
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule\Parameters">
+    <security>
+    <supportedComponents>
+    <sysprepInformation>
+    <Task xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+    <uninstall>
+    >
+    manifestVersion="1.0"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="urn:schemas-microsoft-com:asm.v3"
+  </dependency>
+  </directories>
+  </imaging>
+  </memberships>
+  </migration>
+  </registryKeys>
+  </taskScheduler>
+  </trustInfo>
+  <assemblyIdentity
+  <dependency
+  <directories>
+  <file
+  <imaging>
+  <memberships>
+  <migration settingsVersion="0">
+  <registryKeys buildFilter="not build.isWow">
+  <registryKeys>
+  <taskScheduler buildFilter="not build.isWow">
+  <trustInfo>
+ %s(0x%x)
+ A^_^
+ A^A]A\
+ A_A^_
+ A_A^_^]
+ A_A^_H
+ A_A^A\
+ A_A^A\_]
+ A_A^A\_^
+ A_A^A\_^[]
+ A_A^A]_^
+ A_A^A]A\_
+ A_A^A]A\_^]H
+ A_A^A]A\_H
+ fD9#
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ StoreEnumerationForUpgradeFailed
+ TaskEngineFailedToProcessMessage
+ TaskImageRecoveredAfterMigration
+ TaskRegisteredWithoutCredentials
+ Windows
+!\$ A
+!}oE3
+!TaskEngineProcessReceivedStopTask
+!TaskNotStartedEngineQuotaExceeded
+!TaskRegisteredWithoutSomeTriggers
+!This program cannot be run in DOS mode.
+"7vL/
+"CompatibilityAdapterStartLSAFailed
+"CompatibilityAdapterStartRpcFailed
+"TaskEngineProcessReceivedStartTask
+"TaskUbpmCompatibilityIssueDetected
+"TaskUbpmCompatibilityIssueResolved
+#CompatibilityAdapterTaskSetSdFailed
+$CompatibilityAdapterTaskDeleteFailed
+$CompatibilityAdapterTaskUpdateFailed
+$H;0u*L
+$TaskImageRecoverFailedAfterMigration
+%\VxhG9
+%04ld-%02ld-%02ldT%02ld:%02ld:%02ld%
+%04ld-%02ld-%02ldT%02ld:%02ld:%02ld%+03ld:%02ld
+%4.4hd-%2.2hd-%2.2hdT%2.2hd:%2.2hd:%2.2hd.%3.3hdZ
+%d.%d
+%I64i
+%I64u
+%pathext%
+%s error: %d
+%s, (%d)
+%s\%s
+%SystemRoot%\SYSTEM32\cmd.exe
+%SystemRoot%\System32\logfiles\UbpmMigratedStats
+%SystemRoot%\System32\logfiles\UbpmMigratedStats\
+%SystemRoot%\System32\Tasks
+%SystemRoot%\System32\Tasks_Migrated
+%windir%\system32\taskcomp.dll
+(_^][
+(A^_^[
+(D$`f
+(D$0f
+(D$pf
+(default user)
+(L$Pf
+(L$pf
+(t$ H
+(t$@L
+(t$`H
+(t$`I
+(t$PH
+)L$Pf
+)t$ H
+)t$`H
+)t$PH
+*CompatibilityAdapterDirectoryMonitorFailed
+*CompatibilityAdapterStartNetScheduleFailed
+*CompatibilityAdapterTaskStatusUpdateFailed
+.?AUIException@wmi@@
+.?AV_com_error@@
+.?AVbad_alloc@std@@
+.?AVexception@@
+.?AVException@wmi@@
+.?AVGenericException@wmi@@
+.?AVinvalid_argument@std@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVOutOfMemoryException@wmi@@
+.00cfg
+.bss$00
+.bss$01
+.bss$06
+.bss$dk00
+.bss$dk01
+.bss$dk06
+.bss$pr00
+.bss$zz
+.CRT$XCA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$00$brc
+.data$06
+.data$06$brc
+.data$dk00$brc
+.data$dk01$brc
+.data$r$brc
+.data$zz
+.data$zz$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gehcont
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$00
+.rdata$00$brc
+.rdata$06
+.rdata$06$brc
+.rdata$brc
+.rdata$T$brc
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zz
+.rdata$zz$brc
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$lp00schedsvc.dll!20_pri7
+.text$lp01schedsvc.dll!20_pri7
+.text$lp03schedsvc.dll!35_hybridboot
+.text$lp05schedsvc.dll!50_coldboot
+.text$lp06schedsvc.dll!50_coldboot
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.text$zs
+.text$zy
+.text$zz
+.tls$
+.tls$ZZZ
+.xdata
+.xdata$x
+/tWfA;
+::FirstTime
+::LastTime
+;\$@s
+;\$Ht
+;|$Pr
+;30fD
+;40fD
+;50fD
+;50fDA
+;50fDH
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+?I;>u}
+?terminate@@YAXXZ
+?UBMht
+?what@exception@@UEBAPEBDXZ
+@.data
+@.didat
+@.reloc
+@8}8ukI
+@8q(t
+@8q(u
+@8q*t
+@8q*ttH!t$HL
+@8u(u
+@8y!t9H!|$HL
+@A^_]
+@A^_^
+@A^_^[]
+@A__^[]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A]
+@A_A^A]A\_^[
+@A_A^A]A\_^]
+@AtServiceAccount
+@RSDSO<
+@SUVWATAVAWH
+@SUVWAVH
+@SUVWH
+@SVWATAUAVAWH
+@SVWH
+@USVATAUAVAWH
+@USVAVAWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAVAWH
+@USVWAVH
+@USWH
+@UVWATAUAVAWH
+[t5.i
+\$ A;
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWATAVH
+\$ UVWAVAWH
+\$ UVWH
+\$ WH
+\$@H9_
+\$`H!]
+\$`tK
+\$0H;
+\$4fE
+\$PfD
+\$PH;
+\$PH9y
+\$px I+
+\$px#H+
+\Microsoft
+\Microsoft\Windows
+\PPu2
+\u#fA
+]`f9u"v
+^hH;^pt+H
+^hH;^pt-H
+__C_specific_handler
+__CxxFrameHandler3
+__CxxFrameHandler4
+__dllonexit
+_amsg_exit
+_bstr_account
+_bstr_domain
+_CxxThrowException
+_I_pAcquireBackgroundExecutionMode
+_I_pReleaseBackgroundExecutionMode
+_I_pSchRpcAquireTaskStateNotificationsName
+_I_pSchRpcGetTaskInfo
+_I_pSchRpcRegisterTask
+_initterm
+_Loading_Task_Path_
+_lock
+_ltow_s
+_onexit
+_purecall
+_Total
+_Unavailable_Task_Path_
+_unlock
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wcstoui64
+_wsplitpath_s
+_wtoi
+_wtol
+_XcptFilter
+` AUAVAWH
+` UAVAWH
+`.rdata
+`A^_^[]
+`A^A]_^]
+`A_A^_^]
+`A_A^A\_^[]
+`A_A^A]A\_^]
+{ AVH
+|$ ATAVAWH
+|$ AVH
+|$ E3
+|$ I;
+|$ UATAUAVAWH
+|$ UAUAVH
+|$ UH
+|$(A^
+|$@H+;H
+|$0E3
+|$0tZH
+|$DDv
+|$Xt"A8
+}0,u;H
+}8L!}@E3
+}wL9g
+~.fD9;
+~:B?m
+~88L$Dt
++XW&r
+</assembly>
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<2XN<
+<9t$Pt
+<assembly
+<B w#C
+<s:u A
+040904B0
+0A^_]
+0A^_^
+0A^_^[]
+0A^_^][
+0A^_^H
+0A_A^]
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A\_]
+0A_A^A\_^
+0A_A^A]A\_
+0A_A^A]A\_^[
+0A_A^A]A\_^]
+0x%I64X
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+10fD10fD10fD10fD
+10fDH
+13^"LN
+20fDH
+2333333
+30fDH
+3t|<HYuA
+40fDH
+50fD@
+50fDH
+50fDt}H
+6_H%j
+60fDH
+7MicrosoftTelemetryAssertTriggeredUM
+8{tEH
+8A^_^[
+8A_A^A]A\_^[]
+8V(uuE3
+9\$@vFH
+9\$0E
+9\$0t
+9\$0u+I
+9|$Pv&H
+9D$ t
+9D$0t
+9D$4t
+9D$Dt
+9D$Hr
+9D$Pu
+9o8tK
+9qXvyH
+9t$`uB9t$du<D9m
+9t$0tNL
+9t$PtJH
+9u@vEL
+A^_^[]
+A^A\_^]
+A^A]]
+A_A\_^]
+A_A^]
+A_A^^[]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]A\]
+A_A^A]A\^
+A_A^A]A\_
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A8v(uIH
+A9^@|
+A9^0teH
+A9^4E
+A9>uaH
+A94$I
+A9F@|
+A9F@|fD
+AccessCheck
+Account
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+AcquireStateChangeNotification
+ActionFailure
+ActionLaunchFailure
+ActionName
+Actions
+ActionStart
+ActionSuccess
+AddAce
+address family not supported
+address in use
+address not available
+address_family_not_supported
+address_in_use
+address_not_available
+AdjustTokenPrivileges
+AllocateAndInitializeSid
+AllowHardTerminate
+AllowStartOnDemand
+already connected
+already_connected
+api-ms-win-core-apiquery-l1-1-0.dll
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l2-1-2.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-pcw-l1-1-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-psapi-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-shlwapi-legacy-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-string-obsolete-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-core-threadpool-legacy-l1-1-0.dll
+api-ms-win-core-threadpool-private-l1-1-0.dll
+api-ms-win-core-timezone-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-power-setting-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-credentials-l1-1-0.dll
+api-ms-win-security-lsalookup-l1-1-0.dll
+api-ms-win-security-lsalookup-l2-1-0.dll
+api-ms-win-security-lsapolicy-l1-1-0.dll
+api-ms-win-security-provider-l1-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+api-ms-win-service-core-l1-1-0.dll
+api-ms-win-service-core-l1-1-3.dll
+api-ms-win-service-management-l1-1-0.dll
+api-ms-win-service-management-l2-1-0.dll
+api-ms-win-service-private-l1-1-0.dll
+api-ms-win-service-winsvc-l1-1-0.dll
+ApiSetQueryApiSetPresence
+April
+Arg%d
+argument list too long
+argument out of domain
+Arguments
+AssocQueryStringW
+ATAVAWH
+AtServiceAccount
+Attachments
+Auditor
+Auditor::GetTokenUserAndStatistics
+August
+Author
+AUTHZ.dll
+AuthzFreeAuditEvent
+AuthziFreeAuditEventType
+AuthziInitializeAuditEvent
+AuthziInitializeAuditEventType
+AuthziInitializeAuditParams
+AuthziLogAuditEvent
+backupWasEnabled
+bad address
+bad allocation
+bad file descriptor
+bad message
+bad_address
+bad_file_descriptor
+BatteryRemaining
+BatteryThreshold
+bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+Beta2CredStoreUpgradeFailed
+BootTimeLoad
+BootTrigger
+broken pipe
+Bt2H+
+C(;C,
+C,9C(
+CalendarTrigger
+calloc
+Capabilities
+Capability
+CfD9)t
+ChangeServiceConfig2W
+ChangeTimerQueueTimer
+CheckTokenMembership
+ClassId
+CloseHandle
+CloseServiceHandle
+CloseThreadpoolCleanupGroup
+CloseThreadpoolCleanupGroupMembers
+CloseThreadpoolTimer
+CloseThreadpoolWork
+CLSIDFromString
+CmdlineProcessing
+CoCreateGuid
+CoCreateInstance
+CoFreeUnusedLibraries
+CoInitialize
+CoInitializeEx
+ComHandler
+COMInitializationFailed
+Command
+CompanyName
+CompareFileTime
+Compatibility
+CompatibilityAdapterInit
+CompatibilityAdapterLaunch
+CompatibilityAdapterLoad
+CompatibilityAdapterStartFailed
+compatible
+Completed
+ComputerWakeupToStartTask
+Configuration
+connection aborted
+connection already in progress
+connection refused
+connection reset
+connection_aborted
+connection_already_in_progress
+connection_refused
+connection_reset
+ConsoleConnect
+ConsoleConnectTrigger
+ConsoleDisconnect
+ConsoleDisconnectTrigger
+ConsoleDisplay
+ConsumerName
+Context
+ConvertSecurityDescriptorToStringSecurityDescriptorW
+ConvertSidToStringSidW
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+ConvertStringSidToSidW
+CopyFileW
+CopySid
+CoTaskMemFree
+Could not SetServiceStatus
+CoUninitialize
+Count
+CPUThreshold
+CreateDirectoryW
+CreatedTaskProcess
+CreateEvent (Shutdown)
+CreateEvent (Stop)
+CreateEvent (TimeChanged)
+CreateEventW
+CreateFileW
+CreateFolder
+CreateThreadpoolCleanupGroup
+CreateThreadpoolTimer
+CreateThreadpoolWork
+CreateTimerQueueTimer
+CreateWaitableTimer
+CreateWaitableTimerExW
+CreateWellKnownSid
+CreateXmlReader
+CreateXmlWriter
+CreateXmlWriterOutputWithEncodingName
+CredDeleteW
+CredEnumerateW
+CredFree
+CredMarshalCredentialW
+CredStore
+CredStoreInitializationFailed
+CredWriteW
+CROSOFT_AUTHENTICATION_PACKAGE_V1_0
+cross device link
+Ct6H+
+CurrentQuota
+D$ 0u
+D$ D8
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+D$(E3
+D$(H;
+D$(H9C
+D$@@KL
+D$@E3
+D$@fD
+D$@fD9 t
+D$@L!l$ A
+D$@L;
+D$@L9
+D$`9u
+D$`E3
+D$`f;7t
+D$`fA;6t
+D$`H+
+D$<fE
+D$0E3
+D$0H;
+D$8E3
+d$DfD
+D$HE3
+D$hE3
+D$HH;
+D$lH;
+D$pD9}`
+D$PDk
+D$pE3
+D$PE3
+D$PfA
+D$PfD
+D$pfD9 t
+D$pH+D$hH
+D$pI9
+d$xE3
+d$XfD
+D$XH!\$XI
+D$XH;
+D$XH9D$P
+D:(A;;GA;;;SY)(A;;GR;;;LS)(A;;GR;;;NS)(A;;GR;;;BA)
+D:P(A;OICI;KA;;;BA)(A;OICI;KA;;;SY)
+D:P(A;OICI;KRSD;;;BA)(A;OICI;KA;;;SY)
+D;8vRA
+D;uXr
+D8)t6H
+D8~(tEL
+D8~hu-H
+D9/t H
+D9?vVH
+D9|$0t
+D9|$L
+D9}o|zH
+D9l$@
+D9l$@t
+D9l$0
+D9l$0t
+D9l$t
+D9t$\tBH
+D9t$4t&D
+D9t$d
+D9t$Lt&D
+D9t$ttBH
+D9u(t
+D9vpt
+DATA1
+DATA2
+DataOffset
+DataVersion
+DaysInterval
+DaysOfMonth
+DaysOfWeek
+Deadline
+DebugEvent
+DebugMethodFailure
+December
+Delay
+DelayLoadFailureHook
+Delete
+DeleteCriticalSection
+DeleteExpiredTaskAfter
+DeleteFileW
+DeleteJobSchedule, nextRun:
+DeleteTaskNotification
+DeleteTimerQueueTimer
+DeriveAppContainerSidFromAppContainerName
+Description
+destination address required
+destination_address_required
+DetectionResult
+device or resource busy
+directory not empty
+DisableDownlevelCompatibilityPlugin
+DisableNonAdminTasks
+DisableRpcOverTcp
+DisableThreadLibraryCalls
+DisallowStartIfOnBatteries
+DisallowStartOnRemoteAppSession
+DisplayName
+Documentation
+Domain
+Domain_Account
+domain_Account
+DomainJoinDetected
+Dp<XBhP
+Dt8M+
+DuplicateHandle
+DuplicateToken
+Duration
+DynamicInfo
+E(=csm
+E@A9NPtY
+E|$HH
+E+8D8
+E8=csm
+E9w A
+Eh=csm
+EH=csm
+EnableAt
+EnableBackCompat
+Enabled
+EnableTask
+EndBoundary
+EnginePID
+EngineQuotaApproaching
+EnterCriticalSection
+EnumFolder
+EnumIndex
+en-US
+EoH9Fx
+EqualSid
+ERROR: '(' expected
+ERROR: '?' expected
+ERROR: '[' expected
+ERROR: '>' expected
+ERROR: colon in name
+ERROR: decimal digit expected
+ERROR: declared prefix
+ERROR: entity content not well formed
+ERROR: equal expected
+ERROR: hexadecimal digit expected
+ERROR: illegal name character
+ERROR: illegal qualified name character
+ERROR: illegal xml character
+ERROR: incorrect ATTLIST declaration syntax
+ERROR: incorrect CDATA section syntax
+ERROR: incorrect comment syntax
+ERROR: incorrect conditional section syntax
+ERROR: incorrect DOCTYPE declaration syntax
+ERROR: incorrect document syntax
+ERROR: incorrect ELEMENT declaration syntax
+ERROR: incorrect encoding name syntax
+ERROR: incorrect ENTITY declaration syntax
+ERROR: incorrect NOTATION declaration syntax
+ERROR: incorrect processing instruction syntax
+ERROR: incorrect public identifier syntax
+ERROR: incorrect system identifier syntax
+ERROR: incorrect text declaration syntax
+ERROR: incorrect xml declaration syntax
+ERROR: leading 'xml'
+ERROR: multiple colons in qualified name
+ERROR: name expected
+ERROR: NDATA expected
+ERROR: no ']]>' in element content
+ERROR: non default namespace with empty uri'
+ERROR: not all chunks of value have been read
+ERROR: one root element
+ERROR: PUBLIC expected
+ERROR: quote expected
+ERROR: semicolon expected
+ERROR: SYSTEM expected
+ERROR: text/xmldecl not at the beginning of input
+ERROR: unable to switch the encoding
+ERROR: undeclared prefix
+ERROR: unexpected end of input
+ERROR: unrecognized encoding
+ERROR: unrecognized input signature
+ERROR: wfc: element type match
+ERROR: wfc: no '<' in attribute value
+ERROR: wfc: no external entity references
+ERROR: wfc: no recursion
+ERROR: wfc: parsed entity
+ERROR: wfc: pes between declarations
+ERROR: wfc: pes in internal subset
+ERROR: wfc: undeclared entity
+ERROR: wfc: unique attribute spec
+ERROR: whitespace expected
+ERROR: xml namespace URI (http://www.w3.org/XML/1998/namespace) must be assigned only to prefix 'xml'
+ERROR: 'xml' prefix is reserved and must have the http://www.w3.org/XML/1998/namespace URI
+ERROR: xmlns namespace URI (http://www.w3.org/2000/xmlns/) is reserved and must not be used
+ERROR: 'xmlns' prefix is reserved for use by XML
+ErrorCode
+ErrorDescription
+EtwEventActivityIdControl
+EtwEventEnabled
+EtwEventRegister
+EtwEventUnregister
+EtwEventWrite
+EtwGetTraceEnableFlags
+EtwGetTraceEnableLevel
+EtwGetTraceLoggerHandle
+EtwRegisterTraceGuidsW
+EtwTraceMessage
+EtwUnregisterTraceGuids
+EventAggregateFailure
+EventData
+EventLog
+EventManager
+EventRegister
+EventRegister error
+EventRenderFailure
+EventSetInformation
+EventTrap
+EventTrigger
+EventTriggerEvent
+EventUnregister
+EventWrite error
+EventWriteTransfer
+EVNTD
+EvtClose
+EvtCreateRenderContext
+EvtGetChannelConfigProperty
+EvtOpenChannelConfig
+EvtRender
+EvtSaveChannelConfig
+EvtSetChannelConfigProperty
+EvtSubscribe
+EX=csm
+Ex=csm
+Exception
+Exclusive
+executable format error
+ExecutionFailed
+ExecutionTerminated
+ExecutionTimeLimit
+ExemptRegistrationList
+ExpandEnvironmentStringsW
+ext-ms-win-session-usermgr-l1-1-0
+ext-ms-win-session-usermgr-l1-1-0.dll
+ext-ms-win-session-usermgr-l1-2-0
+ext-ms-win-session-wtsapi32-l1-1-0.dll
+ext-ms-win-shell-shlwapi-l1-1-0.dll
+ext-ms-win-wevtapi-eventlog-l1-1-0.dll
+ext-ms-win-wevtapi-eventlog-l1-1-2.dll
+F(E8w 
+F(E8w t
+F0tl8\$P
+f9,Au
+f9,Gu
+f9,Yu
+f9;u/
+f9<Bu
+f9<Cu
+f9<Ku
+f94Au
+f94Bu
+f94Cu
+f94Ju
+f9LD@
+f9oJt
+f9oLt
+f9ubv
+fA9,Cu
+fA9|E
+fA9<Au
+fA9<Bu
+fA9<Cu
+fA9<Hu
+fA9<Qu
+fA9<Tu
+fA90t
+fA92tIA
+fA94Au
+fA94Cu
+fA94Hu
+fA9O 
+fA9t}
+Failed
+FailedTaskRestart
+Failure Reason
+false
+fB94Bu
+fB94yu
+fC9,Qu
+fC9<Bu
+fC9<Qu
+fC94Au
+fclose
+fD;d$0v
+fD;d$0v*3
+fD9$Au
+fD9$Bu
+fD9$C
+fD9$Fu
+fD9$Hu
+fD9$Ou
+fD9$pu
+fD9$qu
+fD9$Xu
+fD9$Yu
+fD9,Cu
+fD9,Qu
+fD9.t
+fD9|U
+fD9<Cu
+fD9<Fu
+fD9<Hu
+fD9<pu
+fD9<Yu
+fD9<zu
+fD94~u
+fD94yu
+fD94Yu
+fD94zu
+fE9,wu
+fE9<~u
+fE9dE
+February
+fF9$Nu
+fF9$ru
+fF9,vu
+fF9<S
+fF94Yu
+fffffff
+fflush
+FHH9@
+file exists
+file too large
+FileDescription
+filename too long
+filename_too_long
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FindClose
+FindFirstFileW
+FindNextFileW
+floor
+FlushFileBuffers
+fopen_s
+ForcedIdleProcessing
+FpH+FhH
+fputws
+FreeLibrary
+FreeSid
+Friday
+function not supported
+gE#H+
+generic
+GetAce
+GetAclInformation
+GetBasicInstanceInfo
+GetComputerNameExW
+GetComputerNameW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDynamicTimeZoneInformation
+GetFileAttributesExW
+GetFileAttributesW
+GetFileInformationByHandle
+GetFileSizeEx
+GetFinalPathNameByHandleW
+GetLastError
+GetLastRunInfo
+GetLengthSid
+GetModuleHandleExA
+GetModuleHandleExW
+GetNamedSecurityInfoW
+GetProcAddress
+GetProcessHeap
+GetSecurityDescriptorControl
+GetSecurityDescriptorDacl
+GetSecurityDescriptorGroup
+GetSecurityDescriptorLength
+GetSecurityDescriptorOwner
+GetSecurityDescriptorSacl
+GetSecurityInfo
+GetServiceRegistryStateKey
+GetSidIdentifierAuthority
+GetSidSubAuthority
+GetSidSubAuthorityCount
+GetState
+GetSystemTimeAsFileTime
+GetTaskDynamicData
+GetThreadPreferredUILanguages
+GetTickCount
+GetTimeZoneInformation
+GetTokenInformation
+GetUserNameExW
+GetVersionExW
+gfffffffH
+Global\SC_AutoStartComplete
+GP9GT
+GroupId
+H UATAUAVAWH
+H WATAUAVAWH
+H!\$0E3
+H!\$0H
+H!\$0I
+H!\$X3
+H!|$8H
+H!|$H3
+H!T$8H
+H!t$XL
+H;\$0
+H;]@u
+H;^ t,H
+H;^ tT
+H;^ u
+H;_ t)
+H;_ptkH
+H;>t<H
+H;0u*L
+H;1t%H
+H;8u0H
+H;8u2H
+H;D$@
+H;K t
+H;n s\H
+H;n s{H
+H+:t4H
+H+EHIi
+H9\$0
+H98u6H
+HA_A^_^[]
+HashDigestLength
+HashingCompleted
+hc_stateid
+HcQ<H
+HeaderField
+HeaderFields
+HeapAlloc
+HeapCreate
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSetInformation
+HeapSize
+Hidden
+HideAppWindow
+HighestAvailable
+Hn\\2@
+host unreachable
+host_unreachable
+HRESULT
+HResult
+http://schemas.microsoft.com/windows/2004/02/mit/task
+i%PF@
+I;^ t H
+I;^ t/H
+I_pSchRpcEnumTasks
+identifier removed
+IdleCheckTimeout
+IdleEndTimeout
+IdleService
+IdleServiceInitializationFailed
+IdleSettings
+IdleStatusGuid
+IdleTaskId
+IdleTrigger
+Idolater
+ieframe.dll
+IgnorededTaskStart
+IgnoreNew
+IIDFromString
+illegal byte sequence
+ImpersonationFailureEvent
+inappropriate io control operation
+Index
+InfoCode
+Initial call to RegisterServiceCtrlHandler failed
+Initialization sequence:
+Initialize call failed, bailing out
+InitializeAcl
+InitializeAdapter
+InitializeCriticalSection
+InitializeCriticalSectionEx
+InitializeSRWLock
+InstanceId
+InteractiveToken
+InteractiveTokenOrPassword
+InternalName
+interrupted
+Interval
+invalid argument
+invalid bitset<N> position
+invalid map/set<T> iterator
+invalid seek
+invalid string position
+invalid_argument
+io error
+iostream
+iostream stream error
+IOThreshold
+is a directory
+IsPrincipalAllowed
+IsRegistering
+IsValidSid
+iswdigit
+IsWellKnownSid
+itempath
+January
+jinvalid vector<T> subscript
+JobStore
+JobStore::CreateCommonJobStore
+JobStore::RemoveTaskOrFolderP
+k(D8k
+K08S@t
+k9\$0t
+kA,d3
+KBf3_
+KEYW\
+Keyword_IdleTriggerEvent
+Keyword_TriggerEmulatorEvent
+KEYWT
+kPM9m
+L!t$@E3
+L$ E3
+l$ E3
+L$ E3
+L$ SH
+L$ SVWATAUAVAWH
+L$ SVWH
+L$ VWATAVAWH
+l$ VWAVH
+L$ WH
+L$(E3
+l$@D;|$L
+L$@E3
+L$@fA
+L$@fE
+l$@H+
+L$@H3
+L$`E3
+L$`H;
+l$`H+/H
+L$`H3
+L$`H9
+L$<fE
+L$08CI
+L$0E3
+L$0fE;
+L$0H;
+L$0H3
+L$0L9`
+L$8H3
+L$HE3
+L$HfE;
+L$hH3
+L$HH3
+L$HHc
+l$HM;
+L$LA+
+L$PA+
+L$pE3
+L$PE3
+L$pH3
+L$PH3
+L$TE3
+L$XE3
+L$XH3
+L$xH3
+L$XH9L$Pt
+L$xt&
+L;>t!I
+L+VhI
+L9{ t
+L90u&L
+L951 
+L9o(t6H
+L9t$@
+LastRunDateTime
+LauncherId
+LcA<E3
+LeastPrivilege
+LeaveCriticalSection
+LegalCopyright
+LEVL@
+list<T> too long
+LoadBootJobsFailed
+Load-CompareHash
+Load-ComputeHash
+Load-CreateFile
+Load-FileToBuffer
+LoadJobs
+LoadJobsFailed
+LoadLibraryExW
+Load-NoHash
+LoadStringW
+LocalAlloc
+LocalFileTimeToFileTime
+LocalFree
+logoncli.dll
+LogonFailureEvent
+LogonTrigger
+LogonType
+LogonUserExExW
+LogPoint
+LookupAccountNameLocalW
+LookupAccountNameW
+LookupAccountSidLocalW
+LookupPrivilegeValueW
+LowPower
+LsaCallAuthenticationPackage
+LSACleanupFailed
+LsaClose
+LsaConnectUntrusted
+LsaDeregisterLogonProcess
+LsaFreeMemory
+LsaFreeReturnBuffer
+LSAInitializationFailed
+LsaLookupAuthenticationPackage
+LsaOpenPolicy
+LsaQueryInformationPolicy
+LSARegistration
+lstrlenA
+m_account
+m_domain
+m_userName
+MaintenanceComplete
+MaintenanceCycleDependencyError
+MaintenanceKeysMalformed
+MaintenanceLaunchError
+MaintenanceReconfigurationError
+MaintenanceSchedulerTaskError
+MaintenanceSettings
+MaintenanceStateChanged
+MaintenanceTaskBehindDeadline
+MaintenanceTaskError
+MaintenanceTaskWakeupRequested
+MakeSelfRelativeSD
+malloc
+map/set<T> too long
+March
+MatchingElement
+memcmp
+memcpy
+memcpy_s
+memmove
+memmove_s
+memset
+message size
+message_size
+Microsoft
+Microsoft Corporation
+Microsoft.Windows.TaskScheduler
+Microsoft-Windows-IdleTriggerProvider
+Microsoft-Windows-TaskScheduler
+Microsoft-Windows-TaskScheduler/Debug
+Microsoft-Windows-TaskScheduler/Diagnostic
+Microsoft-Windows-TaskScheduler/Maintenance
+Microsoft-Windows-TaskScheduler/Operational
+Microsoft-Windows-TriggerEmulatorProvider
+Migration.TopLevelCopy
+Migration.TopLevelCopyFailed
+Migration_Complete
+Migration_CopyFileFail
+Migration_DFNCreateFileFail
+Migration_DFNGetSecInfoFail
+Migration_DFNRealPathInvalidFail
+Migration_DFNSetSecInfoFail
+Migration_DropBackupPrivFail
+Migration_DropRestorePrivFail
+Migration_SetSddlNotImpersonatingFail
+Migration_SetSddlWithRestorePrivsFail
+Migration_TakeBackupFail
+Migration_TakeRestoreFail
+MigrationCleanupCompleted
+MissedTaskLaunched
+MissedTaskRejected
+MissedTasksStartupDelay
+Monday
+Months
+msvcrt.dll
+MTRCompleted
+MultiByteToWideChar
+MultipleInstancesPolicy
+MVfE;
+MXfF9<S
+N0H;AptPH
+NamedValues
+ncacn_ip_tcp
+ncalrpc
+NdrServerCall2
+NdrServerCallAll
+NetApiBufferFree
+NetGetJoinInformation
+NetIsServiceAccount
+netprofm
+netutils.dll
+network down
+network reset
+network unreachable
+network_down
+network_reset
+network_unreachable
+NetworkSettings
+NewInstanceIgnored
+NewInstanceQueued
+NewTaskInstanceId
+no buffer space
+no child process
+no link
+no lock available
+no message
+no message available
+no protocol option
+no space on device
+no stream resources
+no such device
+no such device or address
+no such file or directory
+no such process
+no_buffer_space
+no_protocol_option
+NoIdleReason
+non-boot
+NoStartUserNotLogged
+not a directory
+not a socket
+not a stream
+NOT compatible (actions)
+not connected
+not enough memory
+not supported
+not_a_socket
+not_connected
+NotificationType
+NotLaunchingOnBatteries
+NotLaunchingOnRailSession
+NotLaunchingOnWorkerSession
+November
+NT AUTHORITY
+NT AUTHORITY\System
+NT TASK
+NT TASK\
+ntdll.dll
+NtIsSystemResumeAutomatic
+NtPowerInformation
+NtQueryInformationProcess
+NtQueryInformationToken
+NtQueryWnfStateNameInformation
+NtSetThreadExecutionState
+NumberOfOccurrences
+O D9vp
+o*DI5
+o,t'H
+O:SYG:SYD:AI(A;CIID;FA;;;BA)(A;OIIOID;0x1f019f;;;BA)(A;CIID;FA;;;SY)(A;OIIOID;0x1f019f;;;SY)(A;OICIID;FR;;;AU)(A;OICIID;FR;;;LS)(A;OICIID;FR;;;NS)(A;OICIIOID;FA;;;CO)S:AI
+O:SYG:SYD:PAI(A;CI;FA;;;BA)(A;OI;0x1f019f;;;BA)(A;CI;FA;;;SY)(A;OI;0x1f019f;;;SY)(A;OICI;FR;;;AU)(A;OICI;FR;;;LS)(A;OICI;FR;;;NS)(A;OICIIO;FA;;;CO)S:AI
+O:SYG:SYD:PAI(A;CI;FA;;;BA)(A;OI;FRFWSDWDWO;;;BA)(A;CI;FA;;;SY)(A;OI;FRFWSDWDWO;;;SY)(A;CI;FW;;;AU)(A;CI;FW;;;NS)(A;CI;FW;;;LS)(A;OICIIO;FA;;;CO)
+o\$PH
+O0D9vp
+ObjectLength
+October
+oD$ f
+oL$0f
+OLEAUT32.dll
+OOBEInProgress
+OpChannelDisabled
+OPCO(
+Opcode_IdleTriggerEvent
+Opcode_TriggerEmulatorEvent
+OPCOL
+OPCOT
+OpenEventW
+OpenProcess
+OpenProcessToken
+OpenSCManagerW
+OpenServiceW
+OpenThreadToken
+operation canceled
+operation in progress
+operation not permitted
+operation not supported
+operation would block
+operation_in_progress
+operation_not_supported
+operation_would_block
+OriginalFilename
+oT$@f
+owner dead
+OwnUpdateCompleted
+p AWH
+p WATAUAVAWH
+p WAVAWH
+p:Xt;6
+p;S>D.X
+p{\pE
+p0R^G'
+p9]Z.
+PA^_]
+pA^_^
+PA^A\_^]
+PA_A]_][
+pA_A^_^]
+PA_A^_^]
+pA_A^_^]
+PA_A^_^]
+pA_A^_^]
+PA_A^A\_^
+PA_A^A\_^[]
+PA_A^A\_^][
+pA_A^A]_^[]
+pA_A^A]A\^[]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+Package
+PackageId
+Parallel
+Parameter
+Partmgr 
+Password
+PathAddBackslashW
+PathFileExistsW
+PathIsPrefixW
+PathSkipRootW
+pAZV}
+pbRvr
+PBT_APMBATTERYLOW
+PBT_APMOEMEVENT
+PBT_APMPOWERSTATUSCHANGE
+PBT_APMQUERYSTANDBY
+PBT_APMQUERYSTANDBYFAILED
+PBT_APMQUERYSUSPEND
+PBT_APMQUERYSUSPENDFAILED
+PBT_APMRESUMEAUTOMATIC
+PBT_APMRESUMECRITICAL
+PBT_APMRESUMESTANDBY
+PBT_APMRESUMESUSPEND
+PBT_APMSTANDBY
+PBT_APMSUSPEND
+pBXV<
+PcwAddQueryItem
+PcwCollectData
+PcwCreateQuery
+PerfTrack_IdleEntryStats
+PerfTrack_IdleExitStats
+Period
+PeriodOfOccurrence
+permission denied
+permission_denied
+PhysDisk
+PowerDeterminePlatformRole
+PowerSettingRegisterNotification
+PowerSettingUnregisterNotification
+PowerSource
+POWRPROF.dll
+ppRp-
+pr]>H
+previousState
+Principal
+Principals
+Priority
+Privilege
+PrivilegeCheck
+ProcessId
+ProcessID
+ProcessId
+ProcessID
+Processor Information
+ProcessTokenSidType
+ProductName
+ProductVersion
+protocol error
+protocol not supported
+protocol_not_supported
+PRVA`
+PRVAh
+PRVAT
+PseudoEventTrap
+pSX^(
+PT%dS
+q*Z~:
+q:_0#
+q:Xt;6
+q0R^G'
+qAZV}
+Qkkbal
+qpRp-
+qqWXW
+qrXRi
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryServiceStatus
+Queue
+QueuedTaskInstanceId
+qxR<5
+rand_s
+RandomDelay
+read only file system
+ReadFile
+realloc
+Reason
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteTreeW
+RegDeleteValueW
+RegEnumKeyExW
+RegFlushKey
+RegGetValueW
+RegisterServiceCtrlHandlerExW
+RegisterTaskNotification
+RegisterWaitForSingleObjectEx
+RegistrationInfo
+RegistrationTrigger
+RegistrationTriggerEvent
+RegNotifyChangeKeyValue
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetValueExW
+RejectedTaskRestart
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+RemoteConnect
+RemoteConnectTrigger
+RemoteDisconnect
+RemoteDisconnectTrigger
+RemoveDirectoryW
+Repetition
+ReplyTo
+RequiredPrivileges
+ResetEvent
+ResolveDelayLoadedAPI
+resource deadlock would occur
+resource unavailable try again
+RestartOnFailure
+RestartOnIdle
+restoreWasEnabled
+result
+result out of range
+ResultCode
+RetrieveTask
+Rpc_DeleteTask
+Rpc_EnableTask
+Rpc_RegisterTask
+Rpc_RunTask
+Rpc_StopTask
+RpcBindingToStringBindingW
+RpcBindingVectorFree
+RpcEpRegister
+RpcEpRegister (I)
+RpcEpRegisterW
+RpcEpUnregister
+RpcImpersonateClient
+RpcInitializationError
+RpcRevertToSelf
+RPCRT4.dll
+RpcServer
+RpcServer::CreateFolder
+RpcServer::CreateRegistrationPath
+RpcServer::EnableTask
+RpcServer::RegisterTask
+RpcServer::RetrieveTask
+RpcServer::RunTask
+RpcServer::SecurityCallback
+RpcServer::SetSecurity
+RpcServer::SetTaskDisabledForCurrentUser
+RpcServer::StopTask
+RpcServerInqBindings
+RpcServerInqCallAttributesW
+RpcServerInqDefaultPrincName
+RpcServerInqDefaultPrincNameW
+RpcServerRegisterAuthInfo
+RpcServerRegisterAuthInfoW
+RpcServerRegisterIfEx
+RpcServerUnregisterIf
+RpcServerUnregisterIfEx
+RpcServerUseProtseq:ncacn_ip_tcp
+RpcServerUseProtseq:ncalrpc
+RpcServerUseProtseqW
+RpcStringBindingParseW
+RpcStringFreeW
+RtlAbsoluteToSelfRelativeSD
+RtlAcquireSRWLockExclusive
+RtlAcquireSRWLockShared
+RtlAddAccessAllowedAce
+RtlAddAce
+RtlAdjustPrivilege
+RtlAllocateAndInitializeSid
+RtlCaptureContext
+RtlCompareMemory
+RtlCreateAcl
+RtlCreateSecurityDescriptor
+RtlDeriveCapabilitySidsFromName
+RtlFindLeastSignificantBit
+RtlFreeSid
+RtlGetAce
+RtlGetControlSecurityDescriptor
+RtlGetCurrentServiceSessionId
+RtlGetDaclSecurityDescriptor
+RtlGetGroupSecurityDescriptor
+RtlGetOwnerSecurityDescriptor
+RtlInitializeSRWLock
+RtlInitString
+RtlInitUnicodeString
+RtlIsStateSeparationEnabled
+RtlLengthSecurityDescriptor
+RtlLengthSid
+RtlLookupFunctionEntry
+RtlNewSecurityObjectEx
+RtlNtStatusToDosError
+RtlPublishWnfStateData
+RtlReleaseSRWLockExclusive
+RtlReleaseSRWLockShared
+RtlSetDaclSecurityDescriptor
+RtlSetGroupSecurityDescriptor
+RtlSetOwnerSecurityDescriptor
+RtlSetSecurityObjectEx
+RtlSidDominates
+RtlSubscribeWnfStateChangeNotification
+RtlUnsubscribeWnfNotificationWaitForCompletion
+RtlVirtualUnwind
+RunLevel
+RunningInstanceStopped
+RunningTaskInstanceId
+RunOnlyIfIdle
+RunOnlyIfNetworkAvailable
+RunTask
+Runtimes
+S-1-5-18
+SamplingInterval
+SamplingNumber
+Saturday
+schedsvc.dll
+schedsvc.DLL
+SchedSvc.pdb
+Schedule
+ScheduleByDay
+ScheduleByMonth
+ScheduleByMonthDayOfWeek
+ScheduleByWeek
+Scheduler
+Scheduler::EvaluateScheduledJob: nextRun=
+Scheduler::StartJobs: run time in the future
+Scheduler::StartJobs: starting
+Scheduler::TimerThreadFunction exception
+Schema
+SearchPathW
+SeAssignPrimaryTokenPrivilege
+SeAuditPrivilege
+SeBackupPrivilege
+SeChangeNotifyPrivilege
+SeCreateGlobalPrivilege
+SeCreatePagefilePrivilege
+SeCreatePermanentPrivilege
+SeCreateSymbolicLinkPrivilege
+SeCreateTokenPrivilege
+Security
+SecurityDescriptor
+SeDebugPrivilege
+SeDelegateSessionUserImpersonatePrivilege
+SeEnableDelegationPrivilege
+SeImpersonatePrivilege
+SeIncreaseBasePriorityPrivilege
+SeIncreaseQuotaPrivilege
+SeIncreaseWorkingSetPrivilege
+SeLoadDriverPrivilege
+SeLockMemoryPrivilege
+SeMachineAccountPrivilege
+SeManageVolumePrivilege
+SendEmail
+SeProfileSingleProcessPrivilege
+September
+SeRelabelPrivilege
+SeRemoteShutdownPrivilege
+SeRestorePrivilege
+Server
+SERVICE_CONTROL_CONTINUE
+SERVICE_CONTROL_DEVICEEVENT
+SERVICE_CONTROL_HARDWAREPROFILECHANGE
+SERVICE_CONTROL_INTERROGATE
+SERVICE_CONTROL_NETBINDADD
+SERVICE_CONTROL_NETBINDDISABLE
+SERVICE_CONTROL_NETBINDENABLE
+SERVICE_CONTROL_NETBINDREMOVE
+SERVICE_CONTROL_PARAMCHANGE
+SERVICE_CONTROL_PAUSE
+SERVICE_CONTROL_POWEREVENT
+SERVICE_CONTROL_SESSIONCHANGE
+SERVICE_CONTROL_SHUTDOWN
+SERVICE_CONTROL_STOP
+ServiceErrorEvent
+ServiceMain
+ServicesActive
+ServiceStartEvent
+ServiceStartFailedEvent
+ServiceStopEvent
+SeSecurityPrivilege
+SeShutdownPrivilege
+SessionId
+SessionLock
+SessionLockTrigger
+SessionMgr
+SessionStateChangeTrigger
+SessionUnlock
+SessionUnlockTrigger
+SeSyncAgentPrivilege
+SeSystemEnvironmentPrivilege
+SeSystemProfilePrivilege
+SeSystemtimePrivilege
+SeTakeOwnershipPrivilege
+SeTcbPrivilege
+SetEndOfFile
+SetEvent
+SetFileInformationByHandle
+SeTimeZonePrivilege
+SetLastError
+SeTrustedCredManAccessPrivilege
+SetSdNotification
+SetSecurity
+SetSecurityInfo
+SetServiceStatus
+SetTaskDisabledForCurrentUser
+SetThreadpoolTimer
+SetThreadPreferredUILanguages
+Settings
+SetUnhandledExceptionFilter
+SetWaitableTimerEx
+SetWakeupTimerFailed
+SeUndockPrivilege
+SHA256
+ShowMessage
+ShutdownAdapter
+ShutdownGuard
+ShutdownGuard::Initialize
+SkipNotification
+Sleep
+SleepConditionVariableSRW
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\IdleService
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Aliases
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\CredWom
+Source
+srand
+SspiCli.dll
+Stage_One
+StartBoundary
+StartFailed
+startIdle
+StartWhenAvailable
+State
+state not recoverable
+StateChange
+StateFlags
+StateName
+status
+StopAtDurationEnd
+StopExisting
+stopIdle
+StopIfGoingOnBatteries
+StopOnIdleEnd
+StoppedOnRequest
+StoppedOnTimeout
+StoppedTaskInstanceId
+StoppingOnBatteries
+StoppingOnIdleEnd
+StopTask
+stream timeout
+String
+string too long
+StringFileInfo
+StringFromCLSID
+StringFromGUID2
+Subject
+SubmitThreadpoolWork
+SubscribeServiceChangeNotifications
+Subscription
+Sunday
+SUVWAVH
+SUVWH
+SUWAUAWH
+SVWATAUAVAWH
+SVWAVH
+system
+System
+SYSTEM
+System
+System\CurrentControlSet\Control\Minint
+SYSTEM\Setup
+System\Setup
+SystemSetupInProgress
+SystemTimeToFileTime
+SystemTimeToTzSpecificLocalTime
+sZfE;
+t H9Y
+t$ AWH
+t$ E3
+t$ UWATAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+t$$H9w(
+t$(E2
+t$(E3
+T$(E3
+t$(E3
+t$@!t$PE3
+t$@;t$x
+T$`E3
+T$0E3
+t$8E3
+t$H;_
+t$HE3
+t$pE;
+t$PE3
+T$PfA
+t$xE3
+t(@8y
+t)H91t$H
+t*8Z!t%8Z u 9Z(t
+t*H98t%H
+t;L90t
+t?f9:t:H
+t'@8y
+t@L;H
+t\@8y
+t+f9+t&f9k
+t<H9=
+t>I;<$t
+t2L;H
+t3H;^pt-H
+t7f9:t2L
+t9H9Y
+Task Scheduler Service
+task:Action
+task:ActionCompleted
+task:ActionFailed
+task:ActionFailedToStart
+task:Beta2CredStoreUpgradeFailed
+task:BootTrigger
+task:CompatDirectoryMonitoringFailed
+task:CompatStart
+task:CompatStartFailed
+task:CompatStartLSAFailed
+task:CompatStartNetschedFailed
+task:CompatStartRPCFailed
+task:CompatTaskDeleteFailed
+task:CompatTaskSetSDFailed
+task:CompatTaskStatusUpdateFailed
+task:CompatTaskUpdateFailed
+task:CompatUpgradeFailed
+task:CompatUpgradeUndetermined
+task:ComputerWakeupToStartTask
+task:ConsoleConnectTrigger
+task:ConsoleDisconnectTrigger
+task:CreatedTaskProcess
+task:Debug
+task:EngineQuotaApproaching
+task:EventAggregateFailed
+task:EventRenderFailed
+task:EventTrigger
+task:FailedTaskRestart
+task:IdleCheckPoint
+task:IdleTaskExecute
+task:IdleTaskExplicitProcessing
+task:IdleTaskExplicitProcessingActive
+task:IdleTaskNotify
+task:IdleTaskPowerNotificationReceived
+task:IdleTaskRegister
+task:IdleTaskUnregister
+task:IdleTrigger
+task:IgnoredTaskRestart
+task:ImmediateTrigger
+task:ImpersonationFailure
+task:ItSpEvt_PerfTrack_IdleEntryStats
+task:ItSpEvt_PerfTrack_IdleExitStats
+task:JobCompletionPending
+task:JobExecute
+task:JobRegistered
+task:LogonFailure
+task:LogonTrigger
+task:MaintenanceComplete
+task:MaintenanceCycleDependencyError
+task:MaintenanceKeysMalformed
+task:MaintenanceLaunchError
+task:MaintenanceReconfigurationError
+task:MaintenanceSchedulerTaskError
+task:MaintenanceStateChanged
+task:MaintenanceTaskBehindDeadline
+task:MaintenanceTaskError
+task:MaintenanceTaskWakeupRequested
+task:MethodFailure
+task:MissedTaskLaunched
+task:MissedTaskRejected
+task:NewInstanceIgnored
+task:NewInstanceQueued
+task:NoStartOnBatteries
+task:NoStartOnRailSession
+task:NoStartOnWorkerSession
+task:NoStartUserNotLogged
+task:NoStartWithoutIdle
+task:NoStartWithoutNetwork
+task:OpChannelDisabled
+task:RegisteredWithoutSomeTriggers
+task:RejectedTaskRestart
+task:RemoteConnectTrigger
+task:RemoteDisconnectTrigger
+task:Run
+task:RunningInstanceStopped
+task:ServiceCOMInitError
+task:ServiceCredStoreInitFailed
+task:ServiceError
+task:ServiceIdleInitFailed
+task:ServiceLSAInitFailed
+task:ServiceMain
+task:ServiceRPCInitError
+task:ServiceSetWakeupTimerFailed
+task:ServiceStartFailed
+task:ServiceStop
+task:ServiceTimeChangeInitFailed
+task:ServiceTimeChangeSignaled
+task:Session
+task:SessionChannelReady
+task:SessionJob
+task:SessionJobReceivedStop
+task:SessionJobsOrphaned
+task:SessionLockTrigger
+task:SessionMain
+task:SessionMainShutdown
+task:SessionManagerConnect
+task:SessionManagerConnectFailed
+task:SessionMessageSend
+task:SessionProcessConnect
+task:SessionProcessIdle
+task:SessionProcessMessage
+task:SessionProcessStart
+task:SessionProcessStartFailed
+task:SessionSentJob
+task:SessionSentJobFailed
+task:SessionUnlockTrigger
+task:SessionWin32ObjCreated
+task:StoppingOffIdle
+task:StoppingOnBatteries
+task:StoppingOnRequest
+task:StoppingOnTimeout
+task:TaskCompleted
+task:TaskDeleted
+task:TaskDisabled
+task:TaskEngineError
+task:TaskEngineExit
+task:TaskEventSubscriptionFailed
+task:TaskFailure
+task:TaskImageRecoveredAfterMigration
+task:TaskImageRecoverFailedAfterMigration
+task:TaskInstanceQueued
+task:TaskInstantiateFailed
+task:TaskLoadFailed
+task:TaskMisconfigured
+task:TaskNotRunServiceBusy
+task:TaskNotStartedEngineQuotaExceeded
+task:TaskNotStartedTaskQuotaExceeded
+task:TaskQuotaApproaching
+task:TaskRegisteredWithoutCreds
+task:TaskStartFail
+task:TaskTerminated
+task:TaskUbpmCompatibilityIssueDetected
+task:TaskUbpmCompatibilityIssueResolved
+task:TaskUpdated
+task:TimeoutWontWork
+task:TimeTrigger
+task:TransactionRollbackFailure
+TASK4-
+TaskAccessChecker::TaskAccessChecker
+TaskCache\Boot
+TaskCache\Logon
+TaskCache\Maintenance
+TaskCache\Plain
+TaskCache\Tasks
+TaskCache\Tasks\
+TaskCache\Tree
+TaskCache\Tree\
+TaskCompatUpgradeFailed
+TaskCount
+TaskDeleted
+TaskDisabled
+TaskEngineChannelReady
+TaskEngineConnected
+TaskEngineErrorEvent
+TaskEngineExitEvent
+TaskEngineIdle
+TaskEngineLaunchEvent
+TaskEngineManagerConnectFailed
+TaskEngineMessageSendFailed
+TaskEngineName
+TaskEngineProccessConnectFailed
+TaskEngineProcessLaunchFailed
+TaskEngineProcessMainShutdown
+TaskEngineProcessMainStarted
+TaskEngineProcessStarted
+TaskEngineSentTaskEvent
+TaskEngineSentTaskFailedEvent
+TaskEngineTasksOrphaned
+TaskEngineWin32ObjectCreated
+TaskEventSubscriptionFailed
+TaskFailureEvent
+TaskInstanceId
+TaskInstanceQueued
+TaskInstantiateFailed
+TaskLoadFailed
+TaskMisconfigured
+TaskName
+TaskNoStartWithoutIdle
+TaskNoStartWithoutNetwork
+TaskNotRunServiceBusy
+TaskNotStartedTaskQuotaExceeded
+TaskPath
+TaskQuotaApproaching
+TaskRegisteredEvent
+TaskRegistrationFailed
+TaskRunEvent
+TaskRunningEvent
+TaskScheduler.log
+TaskScheduler:Alias:
+TaskScheduler:Task:
+TasksInMemoryQueue
+TaskStartEvent
+TaskStartFailedEvent
+TaskStateFlags
+TaskStatus
+TaskSuccessEvent
+TaskTerminationEvent
+TaskUpdated
+TaskXml
+TEMP 
+TEMP$
+TEMP(
+TEMP\
+TEMP`
+TEMP|
+TEMP<
+TEMP0
+TEMP4
+TEMPD
+TEMPd
+TEMPh
+TEMPl
+TEMPp
+TEMPt
+TEMPX
+TEMPx
+TEMPX
+TEMPx
+TEMPX
+TEMPx
+TerminateProcess
+text file busy
+tF=ff
+tHD9f`u
+ThreadID
+Thursday
+TimeChangeInitializationFailed
+TimeChangeSignaled
+timed out
+timed_out
+TimeoutWontWork
+TimerThreadFunction:CreateEvent
+TimerThreadFunction:WAIT_FAILED
+TimerThreadFunction:WaitForMultipleObjects
+TimeSinceUserNotPresent
+TimeTrigger
+TimeTriggerEvent
+Title
+tJL9!t
+tK@8y
+tNL9!t
+too many files open
+too many files open in system
+too many links
+too many symbolic link levels
+too_many_files_open
+TracingLevel
+TransactionRollbackFailure
+Translation
+trD9m
+Triggers
+TTBL8
+TTBLP
+tu@8y
+Tuesday
+TUUUUUU
+tYf93tTL
+TzSpecificLocalTimeToSystemTime
+u @8t$@u
+u 9\$X
+u f9A
+u!D9t$<u
+u!fE;
+u&f9A
+u)A8v(uI3
+u)L;v 
+u*H9y
+u?9C0t
+u\fD92
+u3@8t$@u,H
+u5@8t$@u.H
+u69E0t1H
+UATAUAVAWH
+UAVAWH
+UBMhH
+UBPM.dll
+UbpmAcquireJobBackgroundMode
+UbpmApiBufferFree
+UbpmCloseTriggerConsumer
+UbpmInitialize
+UbpmOpenTriggerConsumer
+UbpmProxy
+UbpmProxySingleton::StopInstances
+Ubpm-RegisterConsumer
+UbpmReleaseJobBackgroundMode
+UbpmSessionStateChanged
+UbpmTerminate
+UbpmTriggerConsumerConfigure
+UbpmTriggerConsumerControl
+UbpmTriggerConsumerControlNotifications
+UbpmTriggerConsumerQueryStatus
+UbpmTriggerConsumerRegister
+UbpmTriggerConsumerSetDisabledForUser
+UbpmTriggerConsumerSetStatePublishingSecurity
+UbpmTriggerConsumerUnregister
+uE9C<u
+ugA9~
+UMgrQueryUserContext
+UnhandledExceptionFilter
+Uninitialization sequence:
+Unknown
+unknown error
+UNKNOWN POWEREVENT
+UNKNOWN SERVICE CONTROL
+UNKNOWN SESSIONCHANGE
+UnregisterWaitEx
+Unrestricted
+UnsubscribeServiceChangeNotifications
+UpdateJobStatus
+Upgrade
+UpgradeFailed
+UpgradeNeedNotDetermined
+UpgradeNetScheduleAccountFailed
+UpgradeStartFailed
+User::CreateUser_AllocationFailure
+User::CreateUser_DomainAccount
+User::CreateUser_MalformedAccount
+User::InitializeUserTable
+User::StreamIn_FromSidToDomainAccountFail
+User::UpdateEntry_NullUserDetails
+UserContext
+USERENV.dll
+UserId
+UserInput
+UserName
+UserPresence
+UserTable
+UseUnifiedSchedulingEngine
+UseXmlStore
+USVWATAUAVAWH
+USVWATAVAWH
+USVWAUAVAWH
+USVWAWH
+UTF-16
+UuidCreate
+UuidEqual
+UuidToStringW
+UUUUUUU
+UVWATAUAVAWH
+UVWATAVH
+UVWATAWH
+UVWAUAVH
+UVWAVAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+v2 incompatible (Capabilities)
+v2 incompatible (Maintenance Task)
+v2 incompatible (Package)
+v2 incompatible (WNF State change trigger)
+Value
+value too large
+ValueQueries
+VarFileInfo
+VATAUAVAWH
+vector<T> too long
+version
+Version
+Volatile
+VS_VERSION_INFO
+VWATAVAWH
+VWAUAVAWH
+VWAVH
+VWAWH
+W%P7o"
+WaitForMultipleObjectsEx
+WaitForSingleObject
+WaitTimeout
+WakeAllConditionVariable
+WakeToRun
+WATAUAVAWH
+WAVAWH
+wcschr
+wcscmp
+wcsncmp
+wcsrchr
+wcsstr
+Wednesday
+Weeks
+WeeksInterval
+WEVT@
+WEVT_TEMPLATE
+WEVTX!
+WideCharToMultiByte
+win:Critical
+win:Error
+win:Info
+win:Informational
+win:ResponseTime
+win:Start
+win:Stop
+win:Verbose
+win:Warning
+WindowSeconds
+Wkd]v
+wkscli.dll
+WMICLNT.dll
+WmiCloseBlock
+WmiOpenBlock
+WmiQueryAllDataW
+wn>Jj
+WnfStateChangeTrigger
+WorkingDirectory
+Wow6432Node\CLSID\
+wP9_Xv&
+WPTaskScheduler.dll
+WptsInitialize
+WptsServer
+WptsTerminate
+WriteFile
+wrong protocol type
+wrong_protocol_type
+WTS_CONSOLE_CONNECT
+WTS_CONSOLE_DISCONNECT
+WTS_REMOTE_CONNECT
+WTS_REMOTE_DISCONNECT
+WTS_SESSION_LOCK
+WTS_SESSION_LOGOFF
+WTS_SESSION_LOGON
+WTS_SESSION_REMOTE_CONTROL
+WTS_SESSION_UNLOCK
+WTSEnumerateSessionsW
+WTSFreeMemory
+WTSQuerySessionInformationW
+WTSQueryUserToken
+x ATAUAVH
+x ATAVAWH
+x AUAVAWH
+x AVH
+x AVM
+x AWH
+x UATAUAVAWH
+x UAVAWH
+x<u2H
+XA_A^A]A\_^[]
+xF@8u
+xku3H
+XmlLite.dll
+xmlns
+xPfD9}Ht+H
+Xy]e\
+y!D9mgt
+y8L9/u
+YJ_b]

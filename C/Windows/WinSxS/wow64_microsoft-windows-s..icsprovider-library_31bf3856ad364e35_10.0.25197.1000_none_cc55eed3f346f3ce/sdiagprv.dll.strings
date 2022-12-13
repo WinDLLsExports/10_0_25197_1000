@@ -1,0 +1,1181 @@
+                    <xs:maxLength value="1024" />
+                    <xs:maxLength value="256" />
+                    <xs:maxLength value="512" />
+                    <xs:minLength value="1" />
+                    <xs:pattern value=".+" />
+                    <xs:pattern value="[^\']+" />
+                    <xs:pattern value="[0-9]+([.][0-9]+)+" />
+                    <xs:pattern value="\w{2}(\w?\-\w{2,4}([\-_]\w{2,6})?)?" />
+                  </xs:restriction>
+                  <xs:documentation>A tag which describes the diagnostic package.</xs:documentation>
+                  <xs:documentation>Base64 encoding of the SHA1 Hash of the certificate used to sign the Diagnostic Package.</xs:documentation>
+                  <xs:documentation>Denotes whether the Diagnostic Package requires adming privileges to run.</xs:documentation>
+                  <xs:documentation>Icon for the Diagnostic Package which can be displayed to end users.</xs:documentation>
+                  <xs:documentation>Text that represents a description of the Diagnostic Package which can be displayed to end users.</xs:documentation>
+                  <xs:documentation>Text that represents name of the publisher of the Diagnostic Package which can be displayed to end users.</xs:documentation>
+                  <xs:documentation>Text that represents the name of the Diagnostic Package which can be displayed to end users.</xs:documentation>
+                  <xs:documentation>The general group of diagnostics to which this diagnostic package belongs to.</xs:documentation>
+                  <xs:documentation>The identifier for this Diagnostic Package.</xs:documentation>
+                  <xs:documentation>The MUI Language string for Diagnostic Package display information, category and keywords.</xs:documentation>
+                  <xs:documentation>The resouce location for this Diagnostic Package.</xs:documentation>
+                  <xs:documentation>The resource location for privacy policy surrounding this Diagnostic Package.</xs:documentation>
+                  <xs:documentation>The version of this Diagnostic Package.  Used to distinguish between instances of Diagnostic package with the same PublisherName and Id.</xs:documentation>
+                  <xs:restriction base="xs:string">
+                  <xs:restriction base="xs:token">
+                </xs:annotation>
+                </xs:simpleType>
+                <xs:annotation>
+                <xs:simpleType>
+              <!-- Begin Display Data -->
+              <!-- Begin Execution Information -->
+              <!-- Begin General Specification Data -->
+              <!-- Begin Identification Data -->
+              <!-- Begin UI Language Information -->
+              <!-- End Display Data -->
+              <!-- End Execution Information -->
+              <!-- End General Specification Data -->
+              <!-- End Identification Data -->
+              <!-- End UI Language Information -->
+              <!-- Extended Metadata not supported by Scripted Diagnostic Engine schema -->
+              <!-- Metadata supported by Scripted Diagnostic Engine schema -->
+              </xs:element>
+              <xs:element name="Category" minOccurs="1" maxOccurs="1">
+              <xs:element name="Description" minOccurs="1" maxOccurs="1">
+              <xs:element name="DiagnosticIcon" type="iconResource" minOccurs="0" maxOccurs="1">
+              <xs:element name="Id" minOccurs="1" maxOccurs="1">
+              <xs:element name="Keyword" minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="Language" minOccurs="1" maxOccurs="1">
+              <xs:element name="PrivacyUrl" type="httpURI" minOccurs="1" maxOccurs="1">
+              <xs:element name="PublisherCertificateHash" type="xs:base64Binary" minOccurs="1" maxOccurs="1">
+              <xs:element name="PublisherName" minOccurs="1" maxOccurs="1">
+              <xs:element name="RequiresAdminPrivileges" type="xs:boolean" minOccurs="0" maxOccurs="1">
+              <xs:element name="Title" minOccurs="1" maxOccurs="1">
+              <xs:element name="Url" type="httpURI" minOccurs="1" maxOccurs="1">
+              <xs:element name="Version" minOccurs="1" maxOccurs="1">
+            </xs:sequence>
+            <xs:documentation>A representation of the attributes and meta data for a single Diagnostic Package.</xs:documentation>
+            <xs:sequence minOccurs="1" maxOccurs="1">
+          </xs:annotation>
+          </xs:complexType>
+          <xs:annotation>
+          <xs:complexType>
+        </xs:element>
+        <xs:element name="DiagnosticPackage" minOccurs="0" maxOccurs="unbounded">
+      </xs:sequence>
+      <xs:documentation>A string which matches the pattern for a resource stored in a DLL. {@filename.dll,-resource id}</xs:documentation>
+      <xs:documentation>A URI which matches the pattern of an HTTP/S URL.</xs:documentation>
+      <xs:documentation>Top level container for Diagnostic Packages expressed in the index.  
+      <xs:pattern value="^@[^,]+,\-[1-9][0-9]*" />
+      <xs:pattern value="https?://.+" />
+      <xs:sequence minOccurs="1" maxOccurs="1">
+      Contains one or more sub-elements.</xs:documentation>
+    </xs:annotation>
+    </xs:complexType>
+    </xs:restriction>
+    <xs:annotation>
+    <xs:complexType>
+    <xs:restriction base="xs:anyURI">
+    <xs:restriction base="xs:string">
+  </xs:element>
+  </xs:simpleType>
+  <xs:element name="DiagnosticPackageCatalog">
+  <xs:simpleType name="httpURI">
+  <xs:simpleType name="iconResource">
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!19wDt
+!19wTt
+!8!9j@Xj
+!This program cannot be run in DOS mode.
+"0)040]0i0n0
+$SVW3
+%s%s=%s
+%s&%s=%d.%d&%s=%d.%d&%s=%d&%s=%d&%s=%d&%s=%d&%s=%d&%s=%d&%s=%d
+%s/%d/%d.%d/%d.%d.%d.%d.0.%d.%d/%d/%s
+%s\%s\%s
+&%s=%u
+(SVW3
+*.xml
+,090I0q0}0
+.?AUIClassFactory@@
+.?AUIDiagnostic@@
+.?AUIDiagnosticCollection@@
+.?AUIDiagnosticMetadata@@
+.?AUIDiagnosticMetadataCollection@@
+.?AUIDiagnosticProvider@@
+.?AUIEnumVARIANT@@
+.?AUIUnknown@@
+.?AV?$LeakDetection@UIDiagnostic@@@@
+.?AV?$LeakDetection@UIDiagnosticCollection@@@@
+.?AV?$LeakDetection@UIDiagnosticMetadata@@@@
+.?AV?$LeakDetection@UIDiagnosticMetadataCollection@@@@
+.?AV?$LeakDetection@UIDiagnosticProvider@@@@
+.?AV?$LeakDetection@UIEnumVARIANT@@@@
+.?AV?$LeakDetection@VBWCContentProviderConfiguration@@@@
+.?AV?$LeakDetection@VCBWCContentDiagnosticProviderImpl@@@@
+.?AV?$LeakDetection@VCDiagnosticMatcher@@@@
+.?AV?$LeakDetection@VCDiagnosticXmlParser@@@@
+.?AV?$LeakDetection@VCLocalContentDiagnosticProviderImpl@@@@
+.?AV?$LeakDetection@VLocalContentProviderConfiguration@@@@
+.?AV?$LeakDetection@VQueryRemoteServerConfiguration@@@@
+.?AV?$Unknown@UIDiagnostic@@@@
+.?AV?$Unknown@UIDiagnosticCollection@@@@
+.?AV?$Unknown@UIDiagnosticMetadata@@@@
+.?AV?$Unknown@UIDiagnosticMetadataCollection@@@@
+.?AV?$Unknown@UIDiagnosticProvider@@@@
+.?AV?$Unknown@UIEnumVARIANT@@@@
+.?AVBWCContentProviderConfiguration@@
+.?AVCBWCContentDiagnosticProviderImpl@@
+.?AVCClassFactory@@
+.?AVCDiagnostic@@
+.?AVCDiagnosticCollection@@
+.?AVCDiagnosticMatcher@@
+.?AVCDiagnosticMetadata@@
+.?AVCDiagnosticMetadataCollection@@
+.?AVCDiagnosticProvider@@
+.?AVCDiagnosticXmlParser@@
+.?AVCLocalContentDiagnosticProviderImpl@@
+.?AVEnumerator@@
+.?AVIDiagnosticProviderImpl@@
+.?AVLocalContentProviderConfiguration@@
+.?AVQueryRemoteServerConfiguration@@
+.?AVSDiagPrvSyncObject@@
+.00cfg
+.CRT$XCA
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.data
+.data$brc
+.data$r$brc
+.data$rs$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.NQ)<
+.rdata
+.rdata$brc
+.rdata$r$brc
+.rdata$sxdata
+.rdata$voltmd
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$mn
+.text$x
+.xdata$x
+/090Y0p0x0}0
+: :;:Q:
+: :+:1:=:M:V:i:
+:":5:=:L:W:t:
+:$:1:::O:
+:%:+:C:\:w:
+:%;8;E;Y;s;|;
+:&:2:T:_:~:
+:(:-:V:f:k:u:
+:):0:A:H:Y:`:
+:,:F:X:e:s:
+:+;>;K;W;
+:<;F;p;w;
+:0:@:P:T:X:l:p:
+:4;;;G;Q;d;};
+:7:V:a:z:
+:8:F:
+:9:J:P:z:
+:9;Z;|;
+:D:U:[:
+:I;U;p;|;
+; ;(;-;
+;#;/;K;R;^;
+;#<,<G<V<^<c<}<
+;$;4;8;P;`;d;h;
+;$;5;:;g;w;|;
+;$;P;o;|;
+;%<2<8<j<t<
+;(<6<><U<[<d<
+;);K;
+;*;;;{;
+;*;;;C;H;s;
+;,;2;[;
+;:;X;v;
+;+;;;K;[;k;{;
+;+;1;7;@;F;L;X;
+;-<;<
+;2<9<D<n<u<}<
+;B;S;Y;
+;C;m;~;
+;N0s;
+? ?$?,?4?L?P?h?l?
+?!?)?1?9?>?P?b?x?
+?!?.?7?
+?$?q?~?
+?$?S?]?~?
+?%?7?e?
+?&?g?t?
+?(?0?4?<?@?H?L?T?X?`?d?l?p?x?|?
+?)?D?~?
+?.?N?V?[?o?u?}?
+??1type_info@@UAE@XZ
+?+?<?B?h?
+?3?<?N?Z?_?
+?F?e?
+?J?Q?
+?name@type_info@@QBEPBDXZ
+@.didat
+@.reloc
+[Q**nKU
+\kernel32.dll
+^(9F0r%
+__ALL__
+__CxxFrameHandler3
+_amsg_exit
+_callnewh
+_except_handler4_common
+_initterm
+_purecall
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_XcptFilter
+`.data
+~$9~(t
+~(9~,t
+~,9~0t
+~@9~Dt
+~<9~@t
+~09~4t
+~49~<t
+~49~8t
+~89~<t
+~D9~Ht
+~H9~Lt
+~L9~Pt
+~P9~Tt
+< =)=6=>=L=T=g=o=z=
+<#<+<C<_<t<
+<#=2=O=X=e=m=r=
+<,<0<8<P<`<p<t<x<
+<,<2<N<k<
+<,<3<@<G<T<^<m<y<~<
+<,=5=Z=c=
+</<@<F<w<
+</<4<E<Q<W<h<m<
+</xs:schema>
+<:<C<P<X<]<u<
+<?xml version="1.0" encoding="utf-8"?>
+<-<=<M<]<m<}<
+<-<5<;<H<P<U<y<
+<'=7=X=a=p=x=}=
+<>=R=]=f=u=}=
+<0<:<[<z<
+<3<D<J<_<p<{<
+<3<S<
+<6=x=
+<7=M=`=s=
+<N<Y<_<
+<s<~<
+<SVW3
+<xs:schema targetNamespace="http://diagnostics.microsoft.com/2007/08/DiagnosticPackageCatalog" elementFormDefault="qualified" xmlns="http://diagnostics.microsoft.com/2007/08/DiagnosticPackageCatalog" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+= =%=5=B=Q=f=
+= =%=D=_=d=u=
+= =8=I=Z=k=|=
+=">b>
+=(=0=5=z=
+=,=0=H=L=T=X=l=p=
+=/=H=M=^=j=v=
+=@=Q=W=l=}=
+=+>8>G>T>Z>|>
+='>:>A>I>|>
+=3=B=K=Y=
+=E=h=
+=q[1R%U
+=Y=i=q=
+=Y=s=
+>$>(>8><>@>X>\>`>t>x>
+>&?|?
+>)>1>?>G>M>Z>e>
+>)>1>6>W>b>j>
+>*?1?a?
+>,>@>H>M>\>f>t>~>
+>;>m>
+>?>e>r>
+>+?4?A?I?Q?Y?^?u?
+>0>7>G>L>k>|>
+>4>>>r>
+>5?;?F?M?R?X?
+>8>|>
+>D>U>[>r>
+>I>Q>W>j>
+>K?U?k?r?w?
+>L>Y>_>r>y>
+>P>]>m>y>~>
+>P>W>
+>S>d>j>
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,0004080<0@0H0P0X0`0d0h0l0p0t0x0|0
+0 0\0`0d0h0
+0 090B0]0
+0!0.030H0N0V0[0
+0#0,020:0@0
+0$0(080<0@0X0\0`0t0x0
+0$0*050I0O0X0
+0%0N0W0t0~0
+0&020?0D0U0]0b0p0w0
+0:0x0
+0]0e0j0w0
+0<0^0
+0=0d0
+000@0a0j0y0
+021<1
+030;0@0W0c0
+040904B0
+080>0^0d0o0v0~0
+0SVW3
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1$1,141L1P1h1l1
+1 1%1N1W1
+1 1-151:1\1
+1 1e1
+1 2.2
+1 20252T2o2t2
+1!151
+1"1)1:1B1G1W1d1k1
+1"1*1/1W1a1
+1#1(11161@1]1q1
+1$1?1D1U1a1g1x1}1
+1(1=1J1g1p1v1
+1*12181[1g1l1
+1*1L1n1
+1,151B1J1O1b1s1
+1.171D1P1U1e1r1
+1/1@1F1^1w1
+1;2C2a2i2n2
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+1'1,1?1`1j1r1
+1'1,1[1q1
+111G1_1f1w1~1
+181P1l1
+192L2\2w2}2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2!3.343x3
+2!333<3I3Q3Y3a3f3
+2"222;2a2h2t2}2
+2"2B2O2_2k2v2
+2#2+23282L2e2o2w2
+2$2)2/2C2H2T2e2m2
+2$2,212n2|2
+2$2=2X2a2n2y2
+2$3T3x3
+2%262A2m2v2
+2,30383@3X3
+2_2m2
+2+23292j2v2{2
+2'2,262F2K2T2Y2c2
+223=3P3
+252H2e2
+282d2
+2I2S2w2~2
+3 3~3
+3 3=3J3O3Y3i3n3w3|3
+3 3J3
+3"3+373C3L3Y3f3{3
+3"3P3`3e3
+3#3+333@3E3i3
+3$4)4^4c4
+3%3*3D3M3e3n3
+3%3+33383b3t3}3
+3)4Z4
+3[3l3r3
+3<4L4f4x4
+3'343?3L3T3Y3
+3-363M3e3{3
+3'3C3U3d3n3
+373B3J3`3f3o3
+3A3X3m3
+3F3X3a3n3z3
+3K3V3
+4!4K4
+4"4*4/4^4t4
+4"5)5R5\5
+4#4U4]4b4u4|4
+4%4.4O4
+4&454:4C4H4R4
+4(414N4k4}4
+4(5l5
+4)565,656J6V6[6k6v6
+4+4B4Z4x4
+425^5|5
+434^4
+4'4-4>4C4a4k4s4
+444D4T4d4h4l4
+454M4
+4a4k4
+4E4O4
+4G4O4T4h4o4u4
+4L4g4p4}4
+4L5a5
+4P4x4
+5 5054585P5T5X5l5p5
+5!5*585A5P5Z5i5u5z5
+5!5H5T5
+5"5=5
+5#5-5J5^5n5s5
+5&575A5Q5X5
+5(555@5M5U5Z5
+5(595H5Y5g5r5
+5*6_6n6
+5:5F5K5`5f5n5s5
+5>5e5
+516:6G6O6T6}6
+596\7m7
+5C5R5
+5e5q5w5
+5E5X5e5y5
+6 6%6b6j6o6
+6 6H6Y6_6w6
+6 7D7`7
+6$656F6W6h6y6
+6$6-6D6\6r6
+6$696A6T6[6
+6%64696B6G6Q6t6
+6%7.7C7K7P7v7
+6(6K6g6u6
+6)6:6@6
+6,6064686<6@6D6H6P6h6x6
+6:7G7W7w7
+60696P6h6~6
+62696d6s6
+686A6
+6B6G6]6r6~6
+6H6P6U6y6
+6O6v6
+6R6\6f6
+7!8H8i8
+7"7.7
+7"797Q7|7
+7#838T8]8u8~8
+7$7(7<7@7X7\7`7d7h7l7
+7%7:7G7T7z7
+7%7=7V7q7z7
+7%8O8
+7&7;7A7G7P7V7\7h7
+7*71797
+7.7E7]7{7
+7/7M7a7g7*8H8W8`8i8~8
+7?8M8d8k8}8
+7@7w7
+728u8~8
+7'7>7I7_7g7l7
+7-757:7L7S7w7
+7'777<7F7U7Z7c7h7r7
+7-7M7m7
+7'7W7j7q7y7
+7'888G8X8g8x8~8$9,919>9G9w9
+7C7M7s7
+7f8p8
+8!8'80868<8H8
+8"8<8C8W8d8k8
+8"888@8E8t8}8
+8&989A9N9Z9_9l9t9z9
+8(8-8Z8f8k8
+8,959@9G9_9e9k9q9w9}9
+8/9@9O9`9f9
+818B8S8d8
+84888<8P8T8l8p8
+848H8\8p8
+859?9p9{9
+8'979<9F9U9Z9c9h9r9
+898F8[8a8g8p8v8|8
+8B8K8X8`8o8w8|8
+8B9h9p9
+8O9X9q9
+8P8h8
+8SVW3
+9 9?9r9
+9":\:u:
+9$9,919O9q9z9
+9&:0:p:}:
+9*9N9_9e9}9
+9.969<9Y9x9
+9':::A:I:
+9_(tD
+9_,tJ
+9094989<9@9D9H9P9h9x9|9
+909A9G9^9s9
+91:a:s:|:
+999c9
+9d9q9
+9I:^:m:
+9Q-DTX>
+9t$8u
+9X:`:{:
+AccessType
+Address
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-heap-obsolete-l1-1-0.dll
+api-ms-win-core-io-l1-1-1.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-localization-l1-2-2.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-string-l2-1-0.dll
+api-ms-win-core-string-obsolete-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-synch-l1-2-1.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-sysinfo-l1-2-0.dll
+api-ms-win-core-wow64-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+APQh9
+AZj-X
+BaseBoardModel
+BaseBoardOEM
+BaseBoardTableParser
+BaseBoardVersion
+BIOSMajorRelease
+BIOSMinorRelease
+BIOSReleaseDate
+BIOSTableParser
+BIOSVendor
+BIOSVersion
+Buffer
+BufferLength
+Build
+BuildNumber
+BWCContentProviderConfig
+BWCContentProviderConfiguration::CreateInstance
+BWCContentProviderConfiguration::GetConfigurationKey
+BWCContentProviderConfiguration::GetDWORDValue
+BWCContentProviderConfiguration::GetRemoteServer
+BWCContentProviderConfiguration::GetRemoteServerPartnerParameter
+BWCContentProviderConfiguration::GetRemoteServerResponseId
+BWCContentProviderConfiguration::GetRemoteServerTimeout
+BWCContentProviderConfiguration::GetRemoteServerVersion
+BWCContentProviderConfiguration::GetSzValue
+BWCContentProviderConfiguration::Initialize
+BWCRequest
+BWCResponse
+BytesScanned
+cancel
+Canceled
+CancelSynchronousIo
+Category
+CBWCContentDiagnosticProviderImpl::Cancel
+CBWCContentDiagnosticProviderImpl::ConfigureConnector
+CBWCContentDiagnosticProviderImpl::CreateInstance
+CBWCContentDiagnosticProviderImpl::FindDiagnosticsBySearchMetadata
+CBWCContentDiagnosticProviderImpl::GetPreferredUILanguages
+CBWCContentDiagnosticProviderImpl::Initialize
+CBWCContentDiagnosticProviderImpl::ParseResponse
+CBWCRequest::AddEscapedPostParameter
+CBWCRequest::AddLocaleParameter
+CBWCRequest::AddSystemConfigurationParameters
+CBWCRequest::CreateInstance
+CBWCRequest::get_HostName
+CBWCRequest::get_RequestBody
+CBWCRequest::get_RequestUrlPath
+CBWCRequest::get_Timeout
+CBWCResponse::CreateInstance
+CBWCResponse::ExtractDiagnostics
+CBWCResponse::get_DiagnosticCollection
+CBWCResponse::ValidateXml
+CClassFactory::CreateInstance
+CDiagnostic::get_Category
+CDiagnostic::get_Description
+CDiagnostic::get_DiagnosticIcon
+CDiagnostic::get_DisplayName
+CDiagnostic::get_Id
+CDiagnostic::get_IsLocal
+CDiagnostic::get_Keywords
+CDiagnostic::get_PrivacyUrl
+CDiagnostic::get_Publisher
+CDiagnostic::get_PublisherCertificateHash
+CDiagnostic::get_RequiresAdminPrivilege
+CDiagnostic::get_Url
+CDiagnostic::get_Version
+CDiagnostic::Load
+CDiagnostic::put_Category
+CDiagnostic::put_Description
+CDiagnostic::put_DisplayName
+CDiagnostic::put_IsLocal
+CDiagnostic::put_Url
+CDiagnosticCollection::Add
+CDiagnosticCollection::AddRange
+CDiagnosticCollection::Append
+CDiagnosticCollection::Clear
+CDiagnosticCollection::get__NewEnum
+CDiagnosticCollection::get_Count
+CDiagnosticCollection::get_Item
+CDiagnosticCollection::InitSynch
+CDiagnosticMatcher::CreateInstance
+CDiagnosticMatcher::Match
+CDiagnosticMatcher::MatchId
+CDiagnosticMatcher::MatchKeywords
+CDiagnosticMatcher::ResolveDisplayInformation
+CDiagnosticMatcher::ResolveKeywords
+CDiagnosticMetadata::get_Type
+CDiagnosticMetadata::get_Value
+CDiagnosticMetadata::put_Type
+CDiagnosticMetadata::put_Value
+CDiagnosticMetadataCollection::Add
+CDiagnosticMetadataCollection::AddRange
+CDiagnosticMetadataCollection::Clear
+CDiagnosticMetadataCollection::get__NewEnum
+CDiagnosticMetadataCollection::get_Count
+CDiagnosticMetadataCollection::get_Item
+CDiagnosticMetadataCollection::InitSynch
+CDiagnosticProvider::CopyCulture
+CDiagnosticProvider::CopyDiagnosticMetadata
+CDiagnosticProvider::EnforceQueryRemoteServerPolicy
+CDiagnosticProvider::FindDiagnosticsBySearchMetadata
+CDiagnosticProvider::InitSynch
+CDiagnosticProvider::put_QueryRemoteServer
+CDiagnosticProvider::WaitForProviders
+CDiagnosticXmlParser::CreateInstance
+CDiagnosticXmlParser::get_Category
+CDiagnosticXmlParser::get_Description
+CDiagnosticXmlParser::get_DiagnosticIcon
+CDiagnosticXmlParser::get_Id
+CDiagnosticXmlParser::get_Keywords
+CDiagnosticXmlParser::get_Name
+CDiagnosticXmlParser::get_PrivacyUrl
+CDiagnosticXmlParser::get_PublisherCertificateHash
+CDiagnosticXmlParser::get_PublisherName
+CDiagnosticXmlParser::get_RequiresAdminPrivileges
+CDiagnosticXmlParser::get_Url
+CDiagnosticXmlParser::get_Version
+CDiagnosticXmlParser::ReadXmlBoolElement
+CDiagnosticXmlParser::ReadXmlStringArrayElement
+CDiagnosticXmlParser::ReadXmlStringElement
+cfg:Execution/cfg:Description
+cfg:Execution/cfg:Icon
+cfg:Execution/cfg:Name
+cfg:Index/cfg:Category
+cfg:Index/cfg:Id
+cfg:Index/cfg:Keyword
+cfg:Index/cfg:PrivacyUrl
+cfg:Index/cfg:PublisherName
+cfg:Index/cfg:RequiresAdminPrivileges
+cfg:Index/cfg:Version
+CHAN8
+CHttpConnector
+CHttpConnector::Abort
+CHttpConnector::AddProxyServers
+CHttpConnector::BuildProxyLists
+CHttpConnector::Close
+CHttpConnector::CloseProxyList
+CHttpConnector::CompareProxyToLastKnownGoodProxy
+CHttpConnector::CreateInstance
+CHttpConnector::get_ResponseStream
+CHttpConnector::get_StatusCode
+CHttpConnector::InitializeProxyList
+CHttpConnector::OpenConnection
+CHttpConnector::PossibleProxyError
+CHttpConnector::put_Timeout
+CHttpConnector::put_UserAgent
+CHttpConnector::Send
+CHttpConnector::SetRequestOptions
+CHttpConnector::TryNextProxy
+CHttpConnector::UseNextProxy
+CHttpConnector::WaitForResponse
+CLocalContentDiagnosticProviderImpl::AddDiagnosticToResult
+CLocalContentDiagnosticProviderImpl::CreateInstance
+CLocalContentDiagnosticProviderImpl::FindDiagnosticsBySearchMetadata
+CLocalContentDiagnosticProviderImpl::GetPreferredUILanguage
+CLocalContentDiagnosticProviderImpl::Initialize
+CLocalContentDiagnosticProviderImpl::ScanLocalIndexFromPath
+CloseHandle
+CoCreateInstance
+CoInitializeEx
+CompanyName
+ConfigurationKey
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+ConvertToString
+CoUninitialize
+Count
+CreateDiagnosticProviderWorkerThread
+CreateEventW
+CreateStreamOnHGlobal
+CreateThread
+CResourceLoader::CreateInstance
+CResourceLoader::LoadLocalizedResource
+CResourceLoader::LoadModule
+CResourceLoader::ParseLocalizedResource
+Culture
+CXmlValidator::AddSchema
+CXmlValidator::CreateInstance
+CXmlValidator::ValidateDocument
+D$ ;D$$uP
+D$ PQ
+D$ PSW
+D$$Ph|$
+D$$PQ
+D$,PQ
+D$@Ph
+D$0;D$
+D$0Phl$
+D$hPj
+D$TPW
+D$xPj
+D$XQQQPQV
+dcp:Category
+dcp:Description
+dcp:DiagnosticIcon
+dcp:Id
+dcp:Keyword
+dcp:PrivacyUrl
+dcp:PublisherCertificateHash
+dcp:PublisherName
+dcp:RequiresAdminPrivileges
+dcp:Title
+dcp:Url
+dcp:Version
+DelayLoadFailureHook
+DeleteCriticalSection
+Description
+DestroySystemConfiguration
+Diagnostic
+DiagnosticCollection
+DiagnosticIcon
+DiagnosticMatcher
+DiagnosticMetadata
+DiagnosticMetadataCollection
+DiagnosticMetadataCollectionCopy
+DiagnosticPackage
+DiagnosticPackageCatalog.xsd
+DIAGNOSTICPACKAGECATALOG.XSD
+DiagnosticProviderImpl
+DiagnosticProviderThreadHandle
+DiagnosticProviderWorkerThread
+DiagnosticQuery
+Diagnostics
+DiagnosticXmlParser
+DisableThreadLibraryCalls
+DisplayName
+dJ;3Y
+DllCanUnloadNow
+DllGetClassObject
+DocumentRoot
+ECFirmwareMajorRelease
+ECFirmwareMinorRelease
+EnableQueryRemoteServer
+EnterCriticalSection
+Enumerator::Add
+Enumerator::Clone
+Enumerator::get_Array
+Enumerator::GetIndex
+Enumerator::GetItem
+Enumerator::GetNamedItem
+Enumerator::Next
+Enumerator::put_Array
+Enumerator::Remove
+Enumerator::RemoveNamed
+Enumerator::Reset
+Enumerator::Skip
+en-US
+Error
+errors
+EventActivityIdControl
+EventData
+EventRegister
+EventUnregister
+EventWriteTransfer
+ExpandEnvironmentStringsW
+f;0u/
+f;D$4uB
+f9T$ u
+Family
+FCDiagnosticProvider::get_QueryRemoteServer
+FieldName
+FileDescription
+FileVersion
+FindClose
+FindFirstFileExW
+FindNextFileW
+FindResourceExW
+FreeLibrary
+G9_0v$
+GatherProductValue
+GatherSMBIOS
+GatherSystemConfiguration
+GeoId
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetFullPathNameW
+GetLastError
+GetLongPathNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetNativeSystemInfo
+GetProcAddress
+GetProcessHeap
+GetProductInfo
+GetSystemDirectoryW
+GetSystemFirmwareTable
+GetSystemInfo
+GetSystemTimeAsFileTime
+GetSystemWindowsDirectoryW
+GetThreadPreferredUILanguages
+GetTickCount
+GetUserGeoID
+GetVersionExW
+GlobalAlloc
+GlobalFree
+GlobalLock
+GlobalUnlock
+GSWj\3
+hBMSR
+HeapAlloc
+HeapFree
+Hostname
+HostName
+Hostname
+http%s://%s/%s
+http://diagnostics.microsoft.com/2007/08/DiagnosticPackageCatalog
+HttpConnector
+HttpError
+Index
+IndexDirectory
+IndexPath
+InitializeCriticalSection
+Internal
+InternalName
+IsCharAlphaNumericW
+IsInternal
+IsLocal
+IsMatch
+IsMobilePc
+IsMSFTInternal
+IsValidLocaleName
+IsWow64
+IsWow64Proc
+IsWow64Process
+ItemsAdded
+j:Zf;
+j@^9}
+j@Yf;
+Keywords
+Languages
+LCIDToLocaleName
+LeaveCriticalSection
+LegalCopyright
+LoadLibraryExW
+LoadResource
+LoadStringW
+LocalContentProviderConfiguration::CreateInstance
+LocalContentProviderConfiguration::GetConfigurationKey
+LocalContentProviderConfiguration::GetPathToLocalSystemIndex
+LocalContentProviderConfiguration::GetSzValue
+LocalContentProviderConfiguration::Initialize
+Locale
+LocaleFallback
+LocaleNameToLCID
+LocalizedValue
+LocalSystemIndex
+LockResource
+lstrcmpiW
+M QRSP
+malloc
+MAPS|
+memcpy
+memmove
+memset
+Method
+Microsoft
+Microsoft Corporation
+Microsoft-Windows-Diagnosis-ScriptedDiagnosticsProvider
+Microsoft-Windows-Diagnosis-ScriptedDiagnosticsProvider/Debug
+Microsoft-Windows-Diagnosis-ScriptedDiagnosticsProvider/Operational
+MobilePc
+Model
+Module
+MSFTInternal
+msvcrt.dll
+MultiByteToWideChar
+N0U0w0
+NodeList
+ntdll.dll
+NumLanguages
+object
+OEMSKU
+OLEAUT32.dll
+OPCOT
+OriginalFilename
+OSMajorVersion
+OSMinorVersion
+p$h`@
+p(hh@
+p,ht@
+P9;ty
+PackageConfiguration
+Parameter
+ParamName
+ParseError
+ParseErrorReason
+pLh4A
+PowerDeterminePlatformRole
+POWRPROF.dll
+PPh ^
+PPPPQ
+PPVWj
+PQQQhh7
+PQRVW
+PrivacyUrl
+ProcessorArchitecture
+ProductKeyValue
+ProductName
+ProductType
+ProductValue
+ProductVersion
+Proxy
+ProxyBypass
+PSh@@
+Publisher
+PublisherCertificateHash
+PublisherName
+PVh0@
+PWVVhh7
+QPh0B
+QQSV3
+QQSVW
+QQSVW3
+QRPh,
+QueryParameter
+QueryPerformanceCounter
+QueryRemoteServer
+QueryRemoteServerAllowed
+QueryRemoteServerConfiguration::CreateInstance
+QueryRemoteServerConfiguration::GetDWORDValue
+QueryRemoteServerConfiguration::GetGroupPolicySetting
+QueryRemoteServerConfiguration::GetSystemWidePreference
+QueryRemoteServerConfiguration::Initialize
+Reason
+RefCount
+RegCloseKey
+RegGetValueW
+RegOpenKeyExW
+RegQueryValueExW
+RemoteServer
+RemoteServerPartnerParameter
+RemoteServerResponseId
+RemoteServerTimeout
+RemoteServerVersion
+RequestBody
+RequestUrlPath
+RequiresAdminPrivileges
+ResetEvent
+ResolveDelayLoadedAPI
+Resource
+ResourceId
+ResourceLoader
+ResourcePath
+ResponseCode
+ResultSize
+ResumeThread
+RPCRT4.dll
+RSDS%
+ScanTable
+sdiagprv
+SDIAGPRV.DLL
+SDIAGPRV.dll
+sdiagprv.pdb
+SDiagPrvSyncObject::InitSynch
+SDIAGRPRV_QUERY_PARAMETER
+search
+SelectionNamespaces
+ServicePackMajor
+ServicePackMinor
+SetEvent
+SetThreadPreferredUILanguages
+SetUnhandledExceptionFilter
+SHLWAPI.dll
+SizeofResource
+Sleep
+Software\Microsoft\SQMClient
+SOFTWARE\Microsoft\Windows\ScriptedDiagnosticsProvider
+SOFTWARE\Microsoft\Windows\ScriptedDiagnosticsProvider\Policy
+Software\Policies\Microsoft\SQMClient
+SOFTWARE\Policies\Microsoft\Windows\ScriptedDiagnosticsProvider\Policy
+SQQRVQQ
+Stream
+String
+StringFileInfo
+System\CurrentControlSet\Control\SystemInformation
+SystemConfiguration
+SystemManufacturer
+SystemProductName
+SystemTableParser
+SystemType
+t#hTI
+t#Whd6
+t$$WQ
+t$,h0$
+t%h$4
+t%h8J
+t%hxJ
+t%Sh</
+t%Vh /
+t%Vh,H
+t%VhhG
+t%Vht4
+t%VhX?
+t%Wh$V
+t%Wh0>
+t%Wh0U
+t%Whd/
+t%WhhG
+t%Whx/
+t%WhXU
+t&hP>
+t&hTL
+t&hXK
+t(Sh\V
+t*h$-
+t*h$1
+t*hD.
+t,hDI
+t,ShXP
+t.h@W
+t;hH1
+t?hd6
+t\hpE
+t{hD-
+t|SW3
+t+Sh<G
+t<Wh,?
+t=Vh$V
+t=Vh0U
+t=VhXU
+t=WhX?
+t0VhpE
+t2h(:
+t2h@;
+t4Phx;
+t7VhdD
+t9hl0
+t9VhDB
+Table
+TableParser
+taVh$-
+tbh$5
+tBVh\V
+tBVhPH
+tcVh M
+tcVh@M
+tCVhl-
+tcVhtM
+tdVh$K
+tdVh<K
+tdVhpL
+TEMP 
+TEMP|
+TEMP<
+TEMPD
+TEMPt
+TerminateProcess
+tEWhDB
+teWhp.
+thh$5
+tHVh(:
+tJVh(L
+tlht=
+tPh`O
+tPh<5
+Translation
+tTh$<
+tUVhd6
+tUVhh8
+t'Vhl:
+tWhDI
+twWhpH
+tYh`B
+tZhXP
+u"90u
+u=Ph S
+U0o0x0
+UILanguage
+uIPh(T
+uIPh0S
+uIPhDT
+uIPhPS
+UnhandledExceptionFilter
+Unknown
+UrlEscapeW
+UrlPath
+UserAgent
+UuidCreate
+Value
+ValueName
+VarFileInfo
+Version
+VMAP4
+VS_VERSION_INFO
+VShHN
+WaitForMultipleObjects
+wcsrchr
+WEVT_TEMPLATE
+WideCharToMultiByte
+win:Error
+win:Informational
+win:Start
+win:Stop
+win:Verbose
+win:Warning
+Windows Scripted Diagnostic Provider API
+Windows Scripted Diagnostic Provider Client (Version %d.%d.%d.%d Build %d)
+WINHTTP.dll
+WinHttpCloseHandle
+WinHttpConnect
+WinHttpGetDefaultProxyConfiguration
+WinHttpGetIEProxyConfigForCurrentUser
+WinHttpGetProxyForUrl
+WinHttpOpen
+WinHttpOpenRequest
+WinHttpQueryHeaders
+WinHttpReadData
+WinHttpReceiveResponse
+WinHttpSendRequest
+WinHttpSetOption
+WinHttpSetTimeouts
+WinSqmAddToStream
+Wow64DisableWow64FsRedirection
+Wow64RevertWow64FsRedirection
+WWWWhX;
+WWWWj
+x?hX>
+XmlDocument
+xmlns:cfg='http://www.microsoft.com/schemas/dcm/configuration/2008' xmlns:dcp='http://diagnostics.microsoft.com/2007/08/DiagnosticPackageCatalog' xmlns:ms='urn:schemas-microsoft-com:xslt' 
+XmlValidator
+XsdDocument
+xWVVVhBMSR
+Y__^[

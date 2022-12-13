@@ -1,0 +1,3623 @@
+                          
+                                                measuring emulation behaviors and performance.
+                                                recording sandbox processes like Chromium.
+                                                This is the default value.
+                                                useful for measuring emulation behaviors and performance.
+                                       Adequate for traces that will be replayed on a
+                                       and of equal or greater capability
+                                       commonly-available support in the replay CPU.
+                                       completely different CPU architecture,
+                                       Intel/AMD 64-bit CPU supporting AVX.
+                                       Intel/AMD 64-bit CPU supporting AVX2.
+                                       like an Intel trace on ARM64.
+                                       Note that 64-bit traces may not replay correctly
+                                       than the CPU used to record.
+                                       with 32-bit tools when recorded using this mode.
+                         be done to work around memory impact issues.
+                         impact the performance of tracing and should only
+                       contiguous address space, which may add significant
+                       file will be fully mapped in memory. This reduces the
+                       I/O overhead, but the entire file is mapped in
+                       memory pressure to 32-bit processes.
+                       This is the default.
+                    from the process instrumentation callback instead.
+                    The recorder will be initialized using the old method,
+                   (As used in the Standalone Collector scenario).
+                   (default on OS with no UI)
+                   (forever).  You must specify a full path to the output
+                   (this is the default).
+                   (until reboot).  For -plm apps you can only specify the 
+                   <file> format is similar to format of -out.
+                   <file>.%lc%ls.  Do not combine with -out.
+                   a full path to the output location with -out.
+                   a version number is used to prefix the trace file name.
+                   address will replay in the same order they executed live.
+                   after the system is initialized. Not supported by inbox tttracer.exe
+                   Allows an event to be signaled when tracing initialization
+                   and -delete for the parameters required for each case. 
+                   and further reduces the data captured for each module
+                   auto mode.
+                   be in the same session as this client.  This
+                   be readable by the process being traced. (Managed selective recording format
+                   cannot attach to a waiting/sleeping process, so -ni prevents
+                   contiguously before artificially breaking into a new fragment.
+                   control to the console after it starts tracing.
+                   corresponding ttdconfig passed in must be of managed selective recording format.
+                   Default           - Default CPU support, just requires basic
+                   Default value is %u.
+                   determine causality but it optimizes recording performance and trace
+                   during replay. Default value is %u.
+                   e.g., notepad.exe specialfile.txt only the instance of
+                   each thread switches processors.
+                   EmulatorForRecording       - Inject one combined DLL for recording, useful for
+                   EmulatorOnly               - Inject only the emulator without recording, useful for
+                   Enables managed recording (default is full tracing)
+                   Enables selective recording using the configuration file
+                   exit the process and save the trace file to
+                   file - The ring will be in a file on disk.
+                   file size.
+                   file.  This option may significantly increase the size of
+                   followed by the program + arguments or the package + app
+                   for inter-process analysis on traces taken simultaneously.
+                   For -plm apps it must be specified, and you must include
+                   for the parameters required. 
+                   for x86 and 10 for ARM32. Change this setting in order to 
+                   However, if paired with -selectiveRecording then the
+                   identify key scenarios where the tool is used.
+                   If '-injectMode' is not specified, LoaderForCombinedRecording is assumed by default,
+                   Implies -noDumpFull. -fastAtomicOps    Loosen the restriction that atomic operations on the same
+                   infinitely.
+                   information in the log.
+                   instead thread recording must be initiated via API call.
+                   IntelAvx2Required - Assumes that the replay CPU will be
+                   IntelAvxRequired  - Assumes that the replay CPU will be
+                   is complete.
+                   is not supported on OneCore.
+                   it if the guest is still active.  Use -stop all to cancel
+                   launch that app. These PLM apps can only be setup for 
+                   limit the memory impact ONLY if you are running out of 
+                   LoaderForCombinedRecording - Inject the loader to load one combined DLL for recording.
+                   LoaderForEmulator          - Inject the loader to load the emulator without recording,
+                   LoaderForRecording         - Inject the loader to load individual DLLs for recording.
+                   located at the specified path.  The configuration file must
+                   location with -out.
+                   mappedFile - The ring will be in a file, but the entire
+                   Maximum number of recordings that can be ongoing at any one
+                   memory. The .out file will give hints this effect.
+                   mode the default is %uGB and the minimum value is %uMB.
+                   MostAggressive    - Assumes that the replay CPU will be similar
+                   MostConservative  - Requires no special support in the replay CPU.
+                   Must be combined with -onLaunch and it will only
+                   must be included. 
+                   must be included. You must specify a full path to the output
+                   Note: Changing this value to a lower number can severely
+                   Note: This must be the last option in the command-line,
+                   notepad.exe with that file name will be recorded.
+                   of the passed in process name.  The process must
+                   option is incompatible with -ring.
+                   package (-delete <package>) and all apps within that 
+                   package (-onLaunch <package>) and all apps within that 
+                   package will be removed from future tracing
+                   package will be set for TTD tracing on their next launch.
+                   per segment, which determines the parallelism granularity used
+                   placed on the guest process' memory by TTD. If not 
+                   point in time.
+                   Possible <support> values:
+                   Possible modes:
+                   process when the traced process will run with low privileges.
+                   processes exit (or, for any processes still running when
+                   processes, useful when there's no intent to do managed debugging.
+                   record the target if its command line contains the string.
+                   required when paired with -managed flag) 
+                   Rest of the options will be passed to downlevel tracer.
+                   scenario name. We collect this information and use it to
+                   session is not running with high enough privileges to load
+                   session.  This is useful if the client starting the trace
+                   Signal a guest process to insert the string into its
+                   specified by process ID.
+                   specified then default per platform is used: 55 for x64, 16
+                   state of the process.
+                   Terminate with the specified exit code a process
+                   the computer shuts down, on the next reboot).
+                   the CPUs that will be used to replay the trace.
+                   The current setting is %u (%hs).
+                   The default for in-memory ring on 32-bit processes is %uMB.
+                   The default name for a single app package is 'app' and 
+                   the package and the app (-launch <package> <app>).
+                   the specified exit code after the timer runs out.
+                   the trace file.  This option is enabled by default for ring
+                   There is no ability to specify only 1 app. You must specify
+                   this instance of TTTracer will be deleted after the guest
+                   This is the only mode that uses the program arguments.
+                   This is useful for situations when the command line argument
+                   This is useful when the process initiating the recording
+                   This may allows TTTracer to exit much quicker after recording ends.
+                   This option is enabled by default for non-ring traces.  This
+                   timing out while waiting for the guest.
+                   to the debugger's bare necessities.
+                   trace file, takes a snapshot of the guest process on attach.
+                   trace file.  The string must be less than %u characters.
+                   trace sessions on the system to end.  Specify -1 to wait
+                   tracer will replace the first instance of '%lc' with a
+                   tracer's exit value.
+                   traces.
+                   tracing if specifying the plm option. See -launch
+                   tracing if specifying the plm option. See -launch, -onlaunch,
+                   tracing. For -plm apps you can only specify the 
+                   TTT into the process.
+                   uniquely identifies the process you are interested in, 
+                   use the UI to turn tracing on.
+                   value is %uMB, and the maximum value is %uMB.
+                   version number.  By default the executable's base name with
+                   When in ring buffer mode the default is %uMB, the minimum
+                   when tracing. This value affects the total memory overhead
+                   wishes to pass a handle to the process being recorded.
+                   with -onLaunch.  Does not stop current
+                   with the previous in the same thread. This makes it harder to
+                   You can trace without administrator privileges
+          In addition, the user can specify if processes to be connected 
+          of processes, it has to connect to parents of these processes. 
+          specify to which processes TTTracer is supposed to Connect to at
+          startup of TTTracer. In order for TTTracer to see creation 
+          to should also be traced by adding "$" after process name.
+         (((((                  H
+         (i.e. svchost groups) will determine if one should trace a particular
+         category, in case of conflicting specifications, this category has
+         -configProcess ba*=exclude
+         -configProcess bar.exe=connect,trace
+         -configProcess cde.exe=traceChildrenOnly
+         -configProcess foo.exe=connect
+         -configProcess sv*=traceChildren
+         depth level for processes to be traced by adding integer after the 
+         determined by one of the previous categories. If the user does not
+         except that the specified processes in the category are not traced.
+         in both this and the previous category (and avoid using "$").
+         included.
+         name of a process.
+         only processes for which TTTracer traces based on their command line
+         options. If the user specifies this option, command line parameters
+         specification from the previous category applies entirely here
+         specify processes that should be traced along with all processes
+         specify processes that should never be traced. Except for the first
+         specify this category, all svchost processes are assumed to be 
+         specify which processes to trace. The same processes can be specified
+         svchost process if svchost is supposed to be traced, which is 
+         that are created in this process tree. The user can specify the
+         the precedence.
+         this category is a special subclass category. Svchosts are the 
+        PauseThread|       Pause the user-mode tracing for a thread.
+        QueryCore|         Query core-based kernel-mode tracing.
+        QueryProcess|      Query thread-based user-mode tracing for a process.
+        RegisterProgram}   Register a program to trace on launch.
+        ResumeThread|      Resume the user-mode tracing for a thread
+        StartProcess|      Start thread-based user-mode tracing for a process. Note that kernel-mode and user-mode tracing is exslusive.
+        StopCore|          Stop core-based kernel-mode tracing.
+        StopProcess|       Stop thread-based user-mode tracing for a process.
+       [connect]
+       [exclude]
+       [svcHostTrace]
+       [traceChildren]
+       [traceChildrenOnly]
+       a tracing initialization complete event from the guest process.
+       ba*
+       bar.exe $
+       cde.exe 3
+       DcomLaunch
+       foo.exe
+       solution for others to use, or transfer the software or this agreement to any third party.
+       sv*
+       traceChildrenOnly.
+       where categories are connect, trace, traceChildren, exclude, and 
+      (                          
+      (option 6.)
+      (tracing of svchost as a process has to be specified by other
+      behaves in the same way as described in the description of config file
+      -configSvcHost LocalService
+      -configSvcHost netsvc
+      configuration options):
+      Connect to prcess foo.exe:
+      Connect to process bar.exe and trace it:
+      Do not trace any processes whose name starts with "ba"
+      such as LocalService, netsvc, DcomLaunch... This configuration option
+      themselves:
+      Trace all children of processes named cde.exe but not the processes 
+      Trace all processes that start with "sv" and all their children:
+      Trace svchost processes from groups LocalService and netsvc
+      where svchostGroup referst to the command line option for svchost.exe
+    1. Connect - 
+    2. Trace - 
+    3. Exclude - 
+    4. TraceChildren - 
+    5. TraceChildrenOnly - 
+    6. SvchostTrace - 
+    a) work around any technical limitations in the software that only allow you to use it in certain ways;
+    An example. Connect to processes foo.exe and bar.exe (also trace bar.exe). 
+    b) reverse engineer, decompile or disassemble the software;
+    c) remove, minimize, block, or modify any notices of Microsoft or its suppliers in the software;
+    d) use the software for commercial, non-profit, or revenue-generating activities;
+    e) use the software in any way that is against the law or to create or propagate malware; or
+    f) share, publish, distribute, or lend the software, provide the software as a stand-alone hosted
+    only up to level 3, but not the process itself. Out of all svchost 
+    processes, trace only those that have DcomLaunch in their command line:
+    Recording process (PID:%u) on trace file: %ls
+    starting with "ba". Also trace all children of the process cde.exe  
+    Trace all processes and all their children starting with "sv", but not 
+   "Connect" can be combined with any of 4 categories, but any of the latter 4
+   (%S:%u)
+   applicable law gives you more rights despite this limitation, you will not (and have no right to):
+   applicable provisions of the Microsoft Privacy Statement.
+   categories are mutually exclusive. Categories are not case sensitive.
+   comply with applicable law, including getting any required user consent, and maintain a prominent
+   -configProcess <process>=<categories>
+   -configSvcHost <svchostGroup>
+   Configuration file is organized by categories. For each category, the 
+   Configuration using command line is organized by process names. The user
+   Example:
+   Examples of usage:
+   features in the software may enable collection of data from users of your applications that access or
+   for the software. Any support provided is "as is", "with all faults", and without warranty of any kind.
+   In order to configure svchost processes, use the following syntax:
+   learn more about Microsoft's data collection and use in the product documentation and the Microsoft
+   privacy policy that accurately informs users about how you use, collect, and share their data. You can
+   Privacy Statement at https://go.microsoft.com/fwlink/?LinkId=521839. You agree to comply with all
+   products and services. Your opt-out rights, if any, are described in the product documentation. Some
+   specifies the process and what TTTracer is supposed to do with it. The 
+   syntax is as follows:
+   that to Microsoft. Microsoft may use this information to provide services and improve Microsoft's
+   The user can use wildcards (*) within any category. There are 6 categores:
+   use the software. If you use these features to enable data collection in your applications, you must
+   user lists processes (on separate lines) that belong to that category.
+  %hs trace dumped to %ls
+  Trace family nesting level is %u; Parent process ID is %u
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+ !"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ -%ls %llx
+ /attach 
+ /ClientParams 
+ /duration 0
+ /duration 1
+ /InjectMode 
+ /MaxInstructionsPerFragment 
+ /MaxInstructionsPerSegment 
+ /NoAttachViaThread
+ /PplDebuggingToken "
+ /PplDebuggingToken "####"
+ /RecordScenario 
+ /SelectiveRecording "
+ /SuspendedAtLaunch
+ /TelemetryFeatureSessionId "
+ /threadId 
+ : error:(%u)%s
+ -?                Display this help.
+ -??               Display this help.
+ 0L0S0c0
+ already under tracing control and needs to be restarted.
+ -attach <PID>     Attach to a running process specified by process ID.
+ -autoStart        If tracing stops in a guest process, automatically restart
+ -bg               Attach to a process in non-interactive mode and return
+ -boot             Used internally to mark service tracing from boot
+ -bootSvc          Used internally to mark service tracing from boot
+ -children         Trace through family of child processes.
+ -cleanup          Uninstall process monitor driver
+ -cmdLineFilter "<string>"
+ -console <file>   Re-direct console output to the specified file or directory.
+ -context <name>   Launches the guest process with the security context
+ -delete           Stop future tracing of a program previously specified
+ -deleteTraceFilesOnExit Ensures that any trace and output files created by
+ -downlevel        Force to trace via downlevel mode. It must be placed as first option.
+ -dumpFull         In addition to dumping every loaded module image into the
+ -dumpMinimalModuleData Explicitly turns off both -dumpFull and -dumpModules behavior,
+ -dumpModules      Dumps a copy of every loaded module image into the trace
+ -enableBreak      Allow breaking process
+ -errCheck <0|1|2|3> Enable or disable placing extra error debug checking
+ FZ6{M
+ -getTracePID <file> Get process ID from target trace file(*.run). Use this internal option exclusively.
+ -hardware key1=value1,key2=value2,... Control hardware tracing. To get more information, use '-hardware help'.
+ -help             Display this help.
+ http://www.microsoft.com/windows0
+ If you need that type of sharing run in an elevated administrator console
+ ignoring the -group option.
+ -inheritHandles   Specifies that the process to be recorded must inherit handles.
+ -initialize       Manually initialize your system for tracing.  
+ -injectMode <mode> Specify how recording DLLs are injected into the target process.
+ -launch           Launch and trace the program (default).
+ -loadOnly <PID>   Loads TTT into the process, but does not start a trace
+ -managed 
+ -mark "<string>" <PID>
+ -maxConcurrentRecordings <count>
+ -maxFile <size>   Maximum size of the trace file in MB.  When in full trace
+ -maxInstructionsPerFragment <num> Specifies how many instructions can be emulated
+ -maxInstructionsPerSegment <num> Specifies how many instructions will be emulated
+ Microsoft Corporation. All rights reserved.
+ -ni               Attach to a process in non-interactive mode.  The tracer
+ -noAttachViaThread Specifies to not use an injected thread to initialize the recorder.
+ -noAutoDumpFull   Turns off the automatic application of -dumpFull to managed
+ -noConfigConnect  Does not connect to running processes in service mode
+ -noDumpFull       Explicitly turns off both -dumpFull and -dumpModules behavior.
+ -noExit           Do not exit after trace complete
+ -noFastAtomicOps  Tighten the restriction that atomic operations on the same
+ -noFlush          Don't flush the trace file before exiting.
+ -nogroup          Does not collect extra information in the trace to allow
+ -noReconfigureProcMon Instructs TTTracer to fail if a reconfiguration of the process monitor server would be performed otherwise.
+ -noRedirect       Force to trace via the TTD tracer only (no downlevel). It must be placed as first option.
+ -noRing           Take a full trace of the guest process (default).
+ -noUI             Disables the UI for manual control of recording.
+ -numVCpu <number> Specifies a number of Virtual CPUs to be reserved and used
+ -onInitCompleteEvent <eventName>
+ -onLaunch         Trace programs or services each time they are started
+ -out <file>       Specify a trace file name or a directory.  If a file, the
+ -parent <name>    Use with -onLaunch to specify a currently running parent
+ -passThroughExit  Pass the guest process exit value through as the
+ -persistent       Trace programs or services each time they are started
+ -plm              To specify a PLM app/package for tracing from launch or to
+ -quiet            Do not display any standard output.
+ -recordMemoryProtect   Records a custom event with the initial memory protection
+ -recordProcessorSwitches  Records a thread-local custom event whenever
+ -replayCpuSupport <support>  Specifies what support is expected from
+ -ring             Trace to a ring buffer.
+ -ringMode <mode>  Specify how to record a ring trace. Possible modes:
+ -saveCrash <file> If the guest process hits an unhandled exception,
+ -scenario <name>  Use this flag to mark your usage of this tool with a
+ -selectiveRecording <path>
+ sequence sharing between this process and processes in the Global\ namespace.
+ -skipContiguousAtomics Ignore atomic instructions whose sequence IDs are contiguous
+ -status           Show programs scheduled for future tracing.
+ -stop             Stop tracing the process specified (name, PID or "all").
+ -terminate <code> <PID> 
+ -tExit <ecode>    (Only with -timer) Forces the application to terminate with
+ this client does not have the privileges to use the Global\ namespace
+ This may be an indication of a privileges problem or that the process is
+ -threadsRunNativelyByDefault  Threads don't start recording automatically,
+ -timer <seconds>  Stops recording after the specified amount of time.
+ -tracingOff       Starts application with trace recording off.  You can
+ -wait <timeout>   Wait for up to the amount of seconds specified for all
+ was not found: %I64u
+' will be recorded on launch.
+!_is_double
+!m_seqMutex
+!m_sharedSequenceData
+!pageEntry.IsInitialPage
+!This program cannot be run in DOS mode.
+"%u %s 0 0 %u %I64x %u %u %u %u %x %u
+"B <1=
+"Microsoft Window
+"tPj(
+#.X'=
+#0X$*
+$060g0{0
+$0H0S0`0
+%08lX-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X
+%hs trace written to '%ls'
+%hs!%p: 
+%hs%ls
+%hs%ls (Error Code 0x%08x)
+%hs%ls (Error Code 0x%08x:  %ls)
+%hs(%d) tid(%x) %08X %ws
+%hs(%u)\%hs!%p: 
+%ls does not exist in TTD installation directory %ls
+%ls was not found as a direct dependency for "%ls" (%ls).
+%ls was not stopped because it wasn't running.
+%ls was removed as a dependency for "%ls" (%ls).
+%ls was stopped.
+'%ls' will be recorded on launch
+'%ls' will be recorded on launch (%hs)
+'%ls' will be recorded on launch, even after reboot
+%ls(%hs) (PID:%u): Process exited with exit code %d after %ums
+%ls(%hs) (PID:%u): Recording stopped after %ums
+%ls\%ls%02u%ls
+%s %u packet error: failed to read CloseUserInfo.
+%s %u packet error: file close packet was already detected
+%s %u packet error: packet NumberOfPages (%u) and streamInformation number of pages (%Iu) are out ot sync.
+%s %u packet error: the stream hasn't been opened.
+%s %u packet error: the stream was already closed
+%s packet error: streamId is null
+%S#[k
+%s(%u): %s
+%s(%u): error:(%u,0x%X) %s
+%u < %u
+%u <= %u
+%u == %u
+%u >= %u
+%u.%u.%u.%u
+%zu processes are still being actively recorded
+(%u - %u = %u) == (%u - %u = %u)
+(caller: %p) 
+(null)
+(private build)
+(unknown)
+*070\0i0
+,6Lt81JuN66whDAon1E0toa1CR2nrvjcmwVA1OsMxhD8=0Z
+,j%Xf
+.?AU?$default_delete@$$BY0A@E@std@@
+.?AV?$_ExceptionPtr_static@Vbad_alloc@std@@@?A0x327206fc@@
+.?AV?$_ExceptionPtr_static@Vbad_exception@std@@@?A0x327206fc@@
+.?AV_ExceptionPtr_normal@?A0x327206fc@@
+.?AV_Generic_error_category@std@@
+.?AV_Interruption_exception@details@Concurrency@@
+.?AV_Ref_count_base@std@@
+.?AV_System_error@std@@
+.?AV<lambda_1>@?1???$_MakeTToUnitFunc@E@details@Concurrency@@YA?AV?$function@$$A6AEE@Z@std@@ABV?$function@$$A6AXE@Z@4@@Z@
+.?AV<lambda_1>@?1???$_MakeTToUnitFunc@V?$task@X@Concurrency@@@details@Concurrency@@YA?AV?$function@$$A6AEV?$task@X@Concurrency@@@Z@std@@ABV?$function@$$A6AXV?$task@X@Concurrency@@@Z@4@@Z@
+.?AV<lambda_1>@?1??_MakeVoidToUnitFunc@details@Concurrency@@YA?AV?$function@$$A6AEXZ@std@@ABV?$function@$$A6AXXZ@5@@Z@
+.?AV<lambda_1>@?1??_Perform@?$_WhenAllImpl@XV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$task@X@Concurrency@@@std@@@std@@@std@@@details@Concurrency@@SA?AV?$task@X@4@ABVtask_options@4@V?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$task@X@Concurrency@@@std@@@std@@@std@@1@Z@
+.?AV<lambda_1>@?4??_ScheduleContinuationTask@_Task_impl_base@details@Concurrency@@QAEXPAU_ContinuationTaskHandleBase@34@@Z@
+.?AV<lambda_1>@?5??LaunchInServiceMode@TTD@@YAJAAVDiagnosticsSink@2@V?$not_null@PB_W@gsl@@1@Z@
+.?AV<lambda_1>@?7???R0?4??_ScheduleContinuationTask@_Task_impl_base@details@Concurrency@@QAEXPAU_ContinuationTaskHandleBase@34@@Z@QBE@XZ@
+.?AV<lambda_1>@?7??InitConnectingAndTracing@ProcessManager@TTD@@AAE?AV?$task@X@Concurrency@@KW4TraceDecision@3@@Z@
+.?AV<lambda_1>@?CC@??_CancelAndRunContinuations@?$_Task_impl@E@details@Concurrency@@UAE_N_N00ABV?$shared_ptr@U_ExceptionHolder@details@Concurrency@@@std@@@Z@
+.?AV<lambda_2>@?BA@??_Perform@?$_WhenAllImpl@XV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$task@X@Concurrency@@@std@@@std@@@std@@@details@Concurrency@@SA?AV?$task@X@4@ABVtask_options@4@V?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$task@X@Concurrency@@@std@@@std@@@std@@1@Z@
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVbad_exception@std@@
+.?AVbad_function_call@std@@
+.?AVbad_optional_access@std@@
+.?AVbad_variant_access@std@@
+.?AVbad_weak_ptr@std@@
+.?AVerror_category@std@@
+.?AVexception@std@@
+.?AVfilesystem_error@filesystem@std@@
+.?AVinvalid_operation@Concurrency@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVResultException@wil@@
+.?AVruntime_error@std@@
+.?AVstl_condition_variable_interface@details@Concurrency@@
+.?AVstl_condition_variable_win7@details@Concurrency@@
+.?AVstl_critical_section_interface@details@Concurrency@@
+.?AVstl_critical_section_win7@details@Concurrency@@
+.?AVsystem_error@std@@
+.?AVtask_canceled@Concurrency@@
+.?AVtype_info@@
+.00cfg
+.crash
+.CRT$XCA
+.CRT$XCC
+.CRT$XCU
+.CRT$XCZ
+.CRT$XDA
+.CRT$XDU
+.CRT$XDZ
+.CRT$XIA
+.CRT$XIC
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLC
+.CRT$XLZ
+.CRT$XPA
+.CRT$XPX
+.CRT$XPXA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$r
+.data$rs
+.edata
+.gfids
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.rdata
+.rdata$r
+.rdata$sxdata
+.rdata$T
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata$x
+/regserver
+/SPhh
+/unregserver
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+: :(:0:8:@:H:P:X:`:h:p:x:
+: :(:0:8:@:H:P:X:l:t:|:
+: :(:0:T:\:d:p:
+: :-:Y:w:
+: :<:D:L:\:h:p:
+: ;b;r;
+:!:-:5:A:I:U:]:i:q:}:
+:!:<:b:v:
+:!;.;4;?;_;w;
+:":g:w:}:
+:":T:g:v:
+:#:6:V:_:f:r:
+:$:,:4:<:D:L:T:\:d:l:t:|:
+:$:,:4:<:D:L:T:\:h:
+:$:8:X:`:l:
+:$;/;J;T;,<7<w<
+:%:3:
+:%;L;u;z;
+:&:/:F:O:z:
+:&:+:8:z:
+:&:5:A:M:[:f:p:{:
+:&;f;
+:(:0:@:d:l:t:|:
+:(:0:8:D:d:p:
+:(:0:X:l:t:|:
+:);6;J;\;
+:*;Z;};
+:.:::R:
+:.:<:J:X:i:
+:.;h?
+:.;N;k;
+:/:P:o:
+:/;V;
+:::]:
+:';/;R;g;
+:-;m;
+:+;<;,=
+:<:I:f:
+:1:;:
+:2:<:F:Q:X:b:l:
+:3:K:
+:3:X:
+:3;w;
+:4:D=
+:7;w<
+:9;D;
+:A:H:
+:A;R;c;
+:C:V:
+:C;P;
+:f:k:
+:G:T:m:
+:H:x:
+:H;N;T;Z;`;f;
+:I:y:
+:I;[;p;
+:L:d:
+:M:m:
+:r:}:
+:V:|:
+:wDt=j 
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;$;0;P;X;`;l;t;
+; ;(;0;8;@;H;P;X;`;h;p;x;
+; ;@;L;l;t;|;
+;!;);
+;!;,;8;=;O;o;u;|;
+;";.;6;B;J;V;^;j;r;~;
+;";Q;^;
+;"<E<r<
+;#<+<;<B<O<]<w<
+;#<0<5<@<\<~<
+;$;,;4;<;D;P;X;
+;$;,;4;D;P;X;|;
+;$;,;L;T;d;x;
+;$;0;P;h;p;x;
+;$<G<_<
+;%;);/;3;=;P;d;
+;%;:;O;d;
+;%;0;G;
+;&;8;C;N;Y;d;
+;&;A;e;z;
+;&;I;Q;b;o;
+;&;z;
+;(;^;v;
+;(;H;P;X;`;h;p;|;
+;(;y;
+;);I;
+;*<M<
+;,;4;B;U;t;
+;,<7<h<z<
+;.;A;N;T;g;x;
+;/;^;
+;/<O=a=g=
+;@;N;`;{;
+;@;S;l;};
+;\<w<
+;_;p;
+;},sk
+;+;|;
+;+<C<R<q<
+;=;X;
+;0<c<
+;1;;;q;
+;3;\;j;
+;4;X;`;h;x;
+;8;X;x;
+;8<E<s<*=[=
+;E;N;
+;E<M<Z<j<
+;H r3
+;t$,v-
+;V;j;p;
+;w<}<
+;WAt#f
+;Y;o;u;t<
+? ?@?H?T?t?|?
+? ?>?G?g?|?
+?!?J?b?z?
+?$?,?<?H?h?t?
+?$?,?4?<?D?L?T?\?d?l?t?|?
+?$?,?4?<?D?T?`?
+?$?0?P?X?`?l?
+?%?>?V?^?k?
+?%?4?A?
+?&?E?b?
+?(?D?L?T?d?p?x?
+?(?F?
+?*?/?B?G?Z?_?o?t?
+?*?2???J?V?i?
+?,?^?
+?,?<?H?h?p?x?
+?,?4?<?D?L?T?d?l?|?
+?,?H?P?X?d?
+?.?L?R?[?g?
+?.?o?
+?;?H?h?z?
+?'?<?
+?-?=?g?
+?@s-f
+?_?|?
+?1?T?a?|?
+?2?>?E?g?p?
+?3?h?u?
+?5Wg4p
+?E?`?
+?j?z?
+?l?{?
+?O?]?d?s?
+?P?X?j?w?
+?T?~?
+?w?WP
+@.data
+@.reloc
+@_^[]
+@b;zO]
+@Vj(j
+[%hs(%hs)]
+[%hs]
+[aOni*{
+\\.\com_microsoft_idna_ProcLaunchMon
+\BaseNamedObjects
+\Device\IPT
+\drivers
+\ManagedRuntime
+\MicrosoftInstrumentationEngine_x86.dll
+\ProcessRecordProfiler_x86.config
+\Sessions\%u%ls
+\TTDPlm.dll
+\TTTracer.exe
+\tttracer.exe
+\tttracer.exe 
+\TTTracer.exe 
+\TTTracer.exe" 
+^<V7w
+^0\0Z
+^8B,t
+^PQQQQQ
+_^[Y]
+__crt_strtox::floating_point_value::as_double
+__crt_strtox::floating_point_value::as_float
+_cabs
+_hypot
+_is_double
+_logb
+_nextafter
+`.rdata
+`1d1h1l1p1t1x1
+`3d3h3l3
+{324F817A-7420-4E6D-B3C1-143FBED6D855}
+{C712AF3D-ED1E-46A9-B843-E9014D29CAEE}
+{D;{H
+{t4=$
+|"j\XP
+|$hWQ
+|$pWQ
+}MO,BP
+~ $s%r
+~ +~4+
+~2Pj0
+~'hX!
+~p_^]
+< <(<0<<<\<d<l<x<
+< <(<4<T<\<h<
+< <,<4<T<\<d<
+< <@<P<X<|<
+< <<<D<L<\<h<p<
+< =+=
+< t4<
+<"<A<a<~<
+<"<h<
+<#=S=
+<$<(<,<0<
+<$<,<4<<<D<L<T<\<d<l<t<|<
+<$<.<
+<$<6<H<Z<l<~<
+<&<2<:<F<N<Z<b<n<v<
+<&<5<C<U<o<u<
+<&=U=
+<(<-<8<^<
+<)<E<
+<,<^<
+<,<4<@<H<p<
+<,=m=
+<;=l=
+<?<F<]<m<
+<]=w=
+<+=e=
+<<<D<P<p<|<
+<-<=<W<
+<'<2<[<
+<=<J<l<
+<=upG8
+<><H<
+<>=_=
+<>=}=
+<0<4<<<@<D<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+<3<:<W<m<
+<4<9<O<h<
+<4<v<
+<4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+<5<Q<V<c<i<z<
+<5=B=Y=m=w=
+<8<@<H<X<h<p<
+<at.<rt!<wt
+<C=:>
+<D=q=
+<F=Y=
+<H?W?o?
+<I<[<y<
+<ItC<Lt3<Tt#<h
+<l=}=
+<N<V<
+<nofile>
+<S<v<
+<unknown InjectMode>
+<unknown>
+<V=Z=^=b=f=j=n=r='>l?p?t?x?|?
+<Y=g=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =/=@=j=
+= ='===n=
+= =2=D=V=h=z=
+= =8=@=H=P=X=|=
+= =8=H=P=l=t=|=
+= =9=^=k=
+= >0>9>Y>`>v>
+= >0>h>t>
+=!=1=A=Q=a=q=
+=!>.>@>I>}>
+="=*=6=>=J=R=^=f=r=z=
+=#>Q>
+=$=,=<=H=h=p=|=
+=$=,=<=H=h=t=|=
+=$=,=4=<=D=L=T=\=d=l=t=|=
+=$=0=B=N=\=g=q=|=
+=$>E>W>
+=&=5=<=
+=(=H=P=X=h=p=
+=)=9=
+=)>Q>
+=.=4=;=a=
+=/>@>
+=\=7>
+=+>P>
+=-=:=F=c=j=
+==>c>p>u>
+=-=O=
+=1>G>
+=4=<=H=h=t=
+=4=G=Q=j=
+=5=^=
+=6=C=I=}=
+=8=D=d=p=
+=9=H=b=q=
+=A=V=j={=??E?W?]?
+=A>S>
+=C=U=J>a>s>
+=C>K>S>|>
+=connect
+=H>i>
+=j*Xf;
+=L=T=\=l=x=
+=N=]=
+=Q=n={=
+=trace
+=U=j=
+> ?P?
+> >(>0><>\>h>
+> >(>4>T>`>
+> >(>H>d>l>t>
+> >?>~>
+> >2>
+>!?M?
+>!>%>
+>!>.>m>|>
+>!>->;>F>P>[>
+>!>Q>
+>"?/?C?P?u?
+>">0>E>k>
+>$>,>4>@>H>|>
+>$>,>4><>D>T>`>
+>$>D>L>X>x>
+>%>T>]>f>t>}>
+>&?q?
+>&>8>B>U>_>m>v>
+>(>0>8>D>d>p>
+>(>1>E>Q>k>~>
+>)>S>X>a>m>x>
+>*?V?`?
+>*>J>W>l?
+>,>D>R>r>|>
+>,>Z>a>h>o>v>
+>.>;>]>j>~>
+>.>@>R>g>|>
+>.>k>
+>/>@>_>r>
+>@>I>e>l>
+>@>L>T>l>t>
+>@s5f
+>[>h>
+><?R?k?
+>>?n?
+>->]>
+>->>>F>M>n>~>
+>0>a>
+>1>7>a>r>z>
+>2?b?
+>4?r?
+>5>`>
+>6>;>D>
+>7>t>
+>9?i?
+>9?q?
+>c?k?
+>C?n?
+>C?Q?k?
+>d?y?
+>D>m>
+>D>T>`>
+>I>V>y>
+>P?]?t?
+>P>z>
+>x?}?
+>X>g>
+>Y?i?
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0
+0 0(000<0\0h0
+0 0@0H0d0l0t0
+0 0B0O0c0u0
+0 1`1
+0"0(0.040:0@0F0L0R0
+0"0E0L0S0
+0#191N1o1
+0#1N132a2
+0$0,040<0D0P0p0x0
+0$000P0X0`0l0
+0$020@0N0T0j0p0v0
+0$040@0H0`0p0x0
+0$1g1
+0$1T1
+0%01060g0
+0%0a0
+0%1a1
+0&0,090B0
+0&0.060>0F0N0V0^0f0m0u0
+0(0<0D0L0T0\0l0x0
+0(040\0h0
+0(090
+0(181H1X1h1
+0,090p0
+0,1a1
+0.0_0l0w0
+0.0V0p0
+0/0M0e0
+0/1x1
+0:0]0
+0:0d0q0
+0?1J1
+0?1L1
+0@0p0
+0^_[]
+0<1X8\8L9P9T9X9p9
+0>0g021A1Q2
+0'0`1l1
+000;0b0m0
+000@0E0P0
+00D0T0d0p0
+0'1,111G1L1Q1g1l1q1
+010>0x0
+040904E4
+050K0k0w0d2
+051>1N1W1g1p1
+060F0j0u0~0
+061f1
+070=0B0H0S0Y0d0k0p0y0
+080D0O0
+081y1
+0E0Q0n1u1
+0F1S1o1
+0G0T0h0z0
+0g1|1
+0K1L2\2m2u2
+0n0u0
+0P0^0j0
+0S1`1
+0S1c1~1
+0X0r0
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1l1p1t1x1|1
+1 1(1
+1 1(1\1d1l1|1
+1 1@1H1P1\1|1
+1!2+212
+1"1,1;1C1O1h1o1
+1"121r1y1~1
+1"9*909
+1#181M1b1w1
+1#IND
+1#INF
+1#QNAN
+1#SNAN
+1$1,1<1H1P1h1x1
+1$2S2^2
+1%1:1H1T1\1d1p1x1
+1%1+131F1L1m1s1
+1&1D1k1
+1(10181@1H1T1\1|1
+1(7,7074787<7@7D7H7L7X7\7`7d7h7l7p7t7
+1)1x1
+1*1/171D1{1
+1*1A1]1
+1*1N1
+1,181X1`1h1t1|1
+1,1D1w1
+1,1H1e1r1
+1,2~2
+1. DATA COLLECTION. The software may collect information about you and your use of the software and send
+1.10.33.0
+1/2C2U2
+1;2i2y2
+1?2g2o2}2
+1@2D2H2L2d2h2x2|2
+1}3B4
+1+282
+1<1L1q1
+1-1:1i1
+1-1<1
+1'101x1
+1'1-1>1G1a1w1
+112a2
+1-2L2t2
+132^2
+140528173333Z
+141<1D1T1`1h1
+181@1H1P1\1|1
+181D1L1t1x1
+192L2}2
+192y2
+1A2h2~2
+1a2s2
+1E1\1l1q1
+1e2s2
+1F1w1
+1G1^1q1
+1H2a2r2
+1L1Y1r1
+1Q2p2
+1R2a2g2
+1W2s2
+1X1k1w1
+1Z2_2t2y2
+2 2(2<2\2h2
+2 2,222C2
+2!3l3
+2"2)242:2A2W2`2k2r2
+2"2O2X2
+2#3N3
+2$2,2<2D2L2T2\2l2t2
+2$242@2H2l2t2
+2$3Q3
+2&2,212d2y2
+2(202<2\2d2p2x2
+2(202=2H2T2g2
+2(202K2]2
+2. SCOPE OF LICENSE. The software is licensed, not sold. Microsoft reserves all other rights. Unless
+2.2H2b2g2l2y2
+2/3q3
+2;2J2
+2[8Z:b:
+2\3|3
+2+262D2V2
+2+373H3v3
+2+3N3\3
+2<2F2c2
+2<2I2d2m2v2
+20282@2P2\2d2
+212L2y2
+213z3
+220630175940Z
+222U2
+2-2k2s2
+230915175940Z0p1
+231093+4715690
+232l2
+24282T2X2t2x2
+252?2e2o2
+252L2
+272[2k2
+272>2G2\2
+272F2j2o2c3
+273U3`3h3s3y3
+282@2H2P2X2`2h2t2
+282X2d2|2
+290528174333Z0}1
+293=3A3E3I3M3Q3U3Y3]3{3c4g4k4o4s4w4{4
+2B3P3k3
+2G2\2
+2J2[2
+2K2f3
+2M2Z2i2}2
+2M3k3z3
+2T2z2
+2X3j3
+3 3(343T3`3
+3 3@3\3`3
+3 3-383D3W3v3
+3 3D3L3\3d3l3t3|3
+3 4-4X4j4
+3!3`3r3
+3"3,363F3V3f3o3
+3#3J3X3k3w3
+3#424
+3$3,343<3D3L3T3\3d3l3t3|3
+3$3-3g3v3
+3$4)4.4
+3$444\4
+3$474D4^4m4
+3%3\3
+3&585
+3(343<3p3x3
+3(3H3P3X3`3h3p3|3
+3(3J3x3
+3)494x4
+3*3;3U3o3
+3,303H3L3d3h3l3t3
+3. SUPPORT SERVICES. Microsoft is not obligated under this agreement to provide any support services
+3:3U3g3y3
+3;3H3x3
+3_3e3
+3<3D3L3T3\3h3
+3<4l4
+3=4d4q4
+30383@3H3P3X3d3
+303S3
+30484@4P4\4|4
+313e3
+314C4c4w4
+333:3P3
+3'4h4
+3-4Z4
+353B3H3
+373Z3}3
+383r3
+3B3t3
+3D4t4
+3http://www.microsoft.com/pkiops/Docs/Repository.htm0
+3J4W4
+3K4{4
+3K4Z4
+3L3}3
+3L3Y3l3q3
+3M3~3
+3o3}3
+3p5t5x5|5
+3R3]3
+3S3_3
+3S4s4
+3W4}4
+4 4$4(4<4@4P4`4p4t4x4
+4 4%4+4R4a4
+4 4&424Q4W4p5
+4 4(404H4T4t4
+4 4,4L4T4\4h4p4
+4 4@4`4h4t4
+4 484h4
+4 5(5l5t5
+4 5,5>5D5\5g5v5
+4 5`5
+4!4=4b4
+4!484\4y4
+4"5l5
+4#4b5
+4$4,444<4D4L4T4\4d4l4t4|4
+4$4@4]4i4
+4$4H4W4`4m4
+4%4+41474
+4%4>4L4n4
+4%4O4_4
+4%535
+4&414N5
+4&5;5F5c5v5
+4&5-525B5z5M6
+4(4/4]4
+4(4H4P4\4|4
+4(575
+4,484X4d4
+4,5<5A5T5p5u5
+4,5H5
+4.4U4c4q4w4
+4/444x4
+4/5=5Z5
+4:4d4
+4:4P4m4
+4;<;D;L;T;\;d;l;t;|;
+4?5L5
+4[6q6
+4<4Y4n4t4
+40484@4P4\4d4|4
+40484T4\4d4p4x4
+414Q4r4v4|4
+42484O4\4
+425d5k5
+435y5
+4-4<4
+475B5J5
+475g5%6
+494f4
+4G4Y4(5?5P5
+4L4V4
+4N4]4
+4N5_5e5
+4R4[4d4m4
+4S5e5}5
+4TtdCmdLine
+4Z4b4
+5 5(50585@5H5P5X5`5h5p5x5
+5 5@5L5l5x5
+5!6)626X6j6q6
+5"545F5X5j5|5
+5"5C5c5h5w5
+5#5)5.53595>5C5I5W5]5m5s5
+5#606D6S6
+5$5,545<5D5L5T5\5d5l5t5|5
+5$5,545<5D5L5T5\5d5l5x5
+5$5,545<5L5p5
+5$5F5e5
+5%5*515r5z5
+5%5.545:5
+5%5+505Q5v5
+5%6;6
+5&5S5k5|5
+5(545<5p5
+5(555i5}5
+5*5<5N5`5r5
+5*5g5w5
+5,5|5
+5,505@5D5H5P5T5h5l5p5t5
+5,545<5H5P5p5
+5,6\6
+5.5Q5
+5.6Q6t6
+5/6l6
+5:6F6]6
+5@5{5
+5\5s5
+5]5z5
+5`6v6&7
+5=6u6
+50585T5d5p5
+50585T5h5p5x5
+525V5
+535A5s5
+536)9\9t:
+545A5F5T5
+5-5m5
+5-6]6
+5'6~6
+565v5
+566E6q6
+5-6H7[7c7
+5'6P6
+575C5H5S5
+5D6l6
+5D6l6y6
+5E6^6p6
+5F6Z8^8b8f8j8n8r8v8094;8;<;@;D;H;L;P;
+5H5h5
+5I5a5
+5ineI
+5J6a6
+5M6Z6D7Q7p7
+5Microsoft Development Root Certificate Authority 20140
+5ntel
+5S6s6
+5T7r7{7
+5V5z5
+6 6(606<6\6d6p6x6
+6 6(60686@6H6P6X6`6h6p6x6
+6 6,6L6T6`6
+6 6@6L6l6x6
+6"6(6:6D6
+6#9B9
+6$6,6<6H6P6t6|6
+6$6,646<6D6L6T6\6d6l6t6|6
+6$6<6@6\6`6|6
+6$7,747@7H7h7
+6(6/6
+6(6H6h6
+6(6H6P6X6d6
+6(6L6d6
+6)6;6M6_6
+6)656|6
+6*6N6u6
+6*7M7]7
+6,7F7\7}7
+6;6I6f6k6p6u6
+6]6i6r6
+6`6t6
+6<6D6T6\6d6l6t6|6
+6064686@6X6h6l6|6
+606B6T6f6x6
+607;7
+616>6C6T6a6f6
+61666;6G6a6f6k6w6
+626=6D6e6{6
+626F6
+627E7p7
+656=6b6g6o6
+656B6L6y6
+657k7
+6'6>6h6w6
+6-6H6
+6'6s6
+6'7C7
+6c6j6q6x6
+6C6y6
+6C7q7
+6C'y4
+6D7|7
+6E6P6
+6E7]7
+6E7S7
+6F7b7
+6G6w6
+6jfSW
+6Q6a6g6
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 7$7(7@7P7`7d7l7p7
+7 7(70787@7H7P7X7`7h7p7x7
+7 7,7L7X7x7
+7 7?7F7g7m7
+7!8+8X8
+7"7(7.777<7B7H7M7S7Y7^7d7j7o7u7}7
+7"7)70777F7R7_7l7
+7"7+7Q7`7h7z7
+7#848
+7#8N8 9-9B9
+7$7,747<7D7L7T7\7d7l7t7|7
+7$7,747<7D7L7T7\7h7
+7$7,7D7T7p7
+7$7k7
+7%7-797A7M7U7a7i7u7}7
+7&8e8
+7&8Q8^8r8
+7(7-7A7
+7(7H7h7
+7)7/7K7v7
+7)8X8
+7,7]7
+7,7>7P7b7{7
+7,747<7D7T7\7d7l7t7|7
+7,787\7d7l7t7|7
+7,8w8
+7/7K7Y7j7|7
+7:7J7O7Z7
+7;7}7
+7;7q7x7}7
+7\7h7
+7|7%838J8
+7+7?7C7G7K7O7S7W7[7_7_;
+7+7N7o7
+7+8c8
+7<7D7T7\7d7l7t7
+7<8J8n9^:
+708]8k8
+708S8
+718C8
+728r8.;
+738=8B8N8i8
+748w8
+757B7|7
+767Y7
+768=8O8^8
+777g7
+7'848x<
+7B7m7z7
+7C8q8
+7D7Q7_7d7q7
+7E7R7r7
+7G7X7j7
+7H7M7
+7K7d7t7
+7P7_7z7
+7QhH1
+7QhP2
+7R8_8
+7RhX4
+7Sh$/
+7ShP.
+7T7[7}7
+7V96:c:
+7X7k7
+8 8$8
+8 8$8,8D8T8d8h8
+8 8(80888@8H8P8X8`8h8p8x8
+8 808T8\8d8l8t8|8
+8"8V8
+8"9\9
+8#949~9
+8#9N9
+8$8,8<8D8T8`8h8
+8$8,848<8D8L8T8\8d8l8t8|8
+8$8,848<8D8L8X8x8
+8$8,888X8`8l8
+8$8,8H8P8X8h8t8|8
+8$8:8H8d8n8|8
+8$8G8j8
+8$8R8
+8%9Y9c9u9
+8&8Q8
+8(848T8\8d8l8x8
+8(848T8l8x8
+8(8X8
+8)818L8T8`8h8t8|8
+8*808U8
+8*9j9
+8.9Q9
+8/8P8`8~8
+8/9_9
+8/9K9
+8;8C8]8k8r8
+8@8H8T8|8
+8@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9
+8^8tb9^4~]
+8`9k9
+8+:Z:f:k:
+8+8N:
+8<8V8s8z8
+8>8O8
+80:p;
+80888@8H8\8d8l8t8|8
+819g9::O:^:>;U;p;
+839`9
+868U8v8
+878;8?8C8G8
+879q9
+8-8L8Y8m8
+8'9@9U9
+8-9_9{9
+898F8Z8l8
+8a8g8t8
+8H9]9p90>b>
+8I8P8Y8_8r8}8
+8J8b8l8
+8k8p8u8z8
+8r8~8
+8S9~9#:Q:
+8U t"
+8XHuR8XIuM9X@uH
+9 9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9 9(90989@9H9P9X9`9h9p9x9
+9 9(949T9\9d9l9x9
+9 989\9d9l9|9
+9 989E9K9
+9!:[:
+9!9+939D9a9~9
+9":,:3:O:\:x:
+9":S:
+9#9*909Q9X9
+9#9G9M9k9
+9$:3:E:X:r:
+9$:A:U:
+9$9,949<9D9L9T9\9d9l9t9|9
+9$9,949<9H9l9t9
+9$909P9X9`9l9t9
+9$9U9f9
+9%9+949;9C9f9
+9&:T:r:
+9&9T9c9
+9(90989@9H9P9d9l9t9|9
+9*949@9H9T9\9m9y9
+9,:2:
+9,989X9d9
+9,9R9
+9/9f9s9
+9/9M9t9
+9\;|;
+9_9m9{9
+9~H}2
+9+:W:
+9+949M9i9t9
+9<<J<d<
+9<9L9P9\9`9t9
+9<9O9b9t9
+909O9p9
+92:t:U<u<
+929E9J9U9x9
+93:X:
+93uHWV
+949<9D9L9T9\9d9l9t9|9
+949S9x9
+95:A:
+96:T:|:
+97s/j
+989H9T9\9
+9'9`9
+9C9`9
+9D:L:T:\:d:p:x:
+9E WW
+9e9n9|9
+9G9R9
+9I:Q:Y:a:i:
+9I9Y9c9
+9j:z:
+9N:X:w:|:
+9N9a9h9
+9O:f:
+9p u"
+9p$u*
+9T:X:`:|:
+9W9j9w9
+9Y0tA
+A<;A@tPhXF
+A-<Fu
+A<lt'<tt
+A0a0k0
+A0S0{0
+A4+A0jH
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+AcquireSRWLockExclusive
+Action
+Action={StartCore|         Start core-based kernel-mode tracing.
+ActiveEventHandle
+AddAccessAllowedAceEx
+AddAce
+address family not supported
+address in use
+address not available
+AdjustTokenPrivileges
+Administrative privileges are required in order to perform this operation
+Administrative privileges are required in order to record program execution
+advapi32
+ADVAPI32.dll
+advapi32.dll
+af-ZA
+af-za
+All active recording sessions have completed
+AllocateAndInitializeSid
+already connected
+An error occurred
+An incompatible version of ProcLaunchMon.sys is already running. Please run 'tttracer.exe -cleanup' to remove the incompatible driver or reboot.
+An internal error occurred
+An unknown failure occurred while attempting to remove recording configuration for package '%ls'
+AND NON-INFRINGEMENT.
+Another instance of TTTracer is performing monitoring already.
+api-ms-
+api-ms-win-appmodel-runtime-l1-1-2
+api-ms-win-core-datetime-l1-1-1
+api-ms-win-core-file-l1-2-2
+api-ms-win-core-file-l1-2-4
+api-ms-win-core-localization-l1-2-1
+api-ms-win-core-localization-obsolete-l1-2-0
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-processthreads-l1-1-2
+api-ms-win-core-string-l1-1-0
+api-ms-win-core-synch-l1-2-0
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-2-1
+api-ms-win-core-version-l1-1-0
+api-ms-win-core-winrt-l1-1-0
+api-ms-win-core-wow64-l1-1-2.dll
+api-ms-win-core-xstate-l2-1-0
+api-ms-win-eventing-controller-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0
+api-ms-win-rtcore-ntuser-window-l1-1-0
+api-ms-win-security-cpwl-l1-1-0.dll
+api-ms-win-security-systemfunctions-l1-1-0
+AppPolicyGetProcessTerminationMethod
+April
+ar-ae
+ar-AE
+ar-BH
+ar-bh
+ar-dz
+ar-DZ
+AreFileApisANSI
+ar-EG
+ar-eg
+argument
+argument list too long
+argument out of domain
+ar-iq
+ar-IQ
+ar-jo
+ar-JO
+ar-kw
+ar-KW
+ar-lb
+ar-LB
+ar-LY
+ar-ly
+ARM64
+ARM64EC
+ar-MA
+ar-ma
+ar-om
+ar-OM
+ar-qa
+ar-QA
+ar-sa
+ar-SA
+ar-sy
+ar-SY
+ar-tn
+ar-TN
+ar-ye
+ar-YE
+atan2
+Attach
+-Attach
+-Attach and -Launch are mutually exclusive and cannot be specified together
+Attaching to %u
+August
+automation. TTD is included with this version of Windows to improve diagnostics gathering and is not
+AutoStart
+-AutoStart and -PassThroughExit are incompatible and may not be specified together
+az-AZ-Cyrl
+az-az-cyrl
+az-az-latn
+az-AZ-Latn
+B<;B@
+B0+B,
+bad address
+bad allocation
+bad array new length
+bad file descriptor
+bad function call
+bad message
+Bad optional access
+bad variant access
+bad_weak_ptr
+BC .=
+be-BY
+be-by
+bg-bg
+bg-BG
+Blocking recording due to hitting the concurrent recording limit
+BlockRecording
+bn-in
+bn-IN
+BootSvc
+broken pipe
+bs-BA-Latn
+bs-ba-latn
+BufferSize
+C ;G$
+ca-ES
+ca-es
+CallContext:[%hs] 
+Can not create the specified trace file directory, '%ls'
+Can not start the monitor service now because there's another instance performing monitoring.
+Cannot attach to a guest process that is already under the runtime's control; restart the process before attaching to it again
+Cannot find StreamId(%u).
+Cannot install a 32-bit driver on a 64-bit machine; please use the 64-bit version
+Cannot re-attach to the guest process
+CE(QQ
+ChangeServiceConfigW
+CheckTokenMembership
+Children
+CL$ @PQ
+Cleanup
+-Cleanup
+ClientEventHandle
+CloseFile
+CloseFile packet error: failed to read CloseUserInfo.
+CloseFile packet error: file is already closed.
+CloseFile packet error: packet NumberOfBookkeepingPages (%u) is less than the processed number of book keeping pages (%u).
+CloseFile packet error: packet NumberOfPages (%u) is greater than the expected number of pages (%u)
+CloseFile packet error: packet NumberOfStreams (%u) is not same as expeted number of streams (%Iu).
+CloseHandle
+ClosePage
+ClosePage %Iu packet error (streamId %u): failed to read CloseUserInfo
+ClosePage %Iu packet error (streamId %u): MinGeneration (%u) is greater than MaxGeneration (%u)
+ClosePage %Iu packet error (streamId %u): page is already closed.
+ClosePage %Iu packet error (streamId %u): UsedSizeInBytes (%u) is too big.
+ClosePage packet error (streamId %u): no pages in the stream.
+ClosePage packet error (streamId %u): stream is already closed.
+ClosePage packet error (streamId %u): stream reached file end.
+ClosePage packet error (streamId %u): the file is already closed.
+ClosePage packet error (streamId-%u): can't find streamId.
+ClosePage packet error: streamId is null.
+CloseServiceHandle
+CloseStream
+CloseThreadpoolWait
+CloseThreadpoolWork
+CM$QQ
+CmdLineFilter
+CoCreateInstance
+CoGetApartmentType
+CoGetObjectContext
+CoInitializeEx
+Command line contains Unicode quotation or dash characters similar to the ASCII equivalents.  These characters will not be treated as special when the command line is parsed.  Was the command copied-and-pasted from Microsoft Word?
+Communication between the guest process and this client could  not be established, which may be an indication of permissions  or privileges problems (see '%ls' for more details)
+CommunicationBufferHandle
+CompanyName
+Config
+-Config/-ConfigProcess/-ConfigSvcHost
+ConfigHelp
+ConfigProcess
+ConfigSvcHost
+configuration means that the user has to specify how TTTracer will
+Configure
+Configuring TTTracer as a service using command line:
+Configuring TTTracer as a service using configuration file:
+Connect
+connection aborted
+connection already in progress
+connection refused
+connection reset
+CONOUT$
+Console
+Context
+Context callback failed.
+Control thread stopped to allow guest process to exit: tag:%I64u
+Control:
+ControlService
+ControlTraceW
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+ConvertStringSidToSidW
+Copyright (C) Microsoft Corporation. All rights reserved.
+COR_ENABLE_PROFILING
+COR_PROFILER
+COR_PROFILER_PATH_32
+CORECLR_ENABLE_PROFILING
+CORECLR_PROFILER
+CORECLR_PROFILER_PATH_32
+CorExitProcess
+Corrupted trace file written to '%ls%hs'.  SEE ERROR OUTPUT FILE '%ls' FOR MORE DETAILS
+CoTaskMemAlloc
+CoTaskMemFree
+Could not change configuration for service "%ls" (%ls).
+Could not change configuration for service %ls.
+Could not delete registry key %ls.
+Could not open service "%ls" (%ls).
+Could not open service %ls.
+Could not query configuration for service "%ls" (%ls).
+Could not query configuration for service %ls.
+Could not remove %ls dependency from %ls.
+Could not stop %ls.
+Could not uninstall %ls.
+CoUninitialize
+Crash file '%ls' is a directory
+Create page reader: failed to open file "%ls", error: %ls
+Create page reader: failed to read header from file "%ls". Error: %ls
+Create page reader: failed to read header from file "%ls". Expected %Iu bytes but got %u
+Create page reader: invalid file header file type (%u) for file "%ls"
+Create page reader: invalid file header marker for file "%ls"
+create_directories
+CreateDialogParamW
+CreateDirectoryW
+CreateEnvironmentBlock
+CreateEventExW
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateModernAppToDelete
+CreateModernAppToTrace
+CreateMutexExW
+CreateMutexW
+CreateProcess Exited.
+CreateProcess unprotected Exited.
+CreateProcessW
+CreateProcessWithTokenW
+CreateSemaphoreExW
+CreateServiceW
+CreateThread
+CreateThreadpoolWait
+CreateThreadpoolWork
+CreateToolhelp32Snapshot
+CreateWaitableTimerExW
+Creating group sequence with name '%ls'
+cross device link
+crypt32.dll
+CryptStringToBinaryW
+cs-CZ
+cs-cz
+csrss.exe
+cy-GB
+cy-gb
+D$ Pj
+D$ SVW3
+D$ SVWj
+D$$dg
+D$(SVW
+D$,SW3
+D$0PSShP@"
+D$0xg
+D:(A;OICI;GA;;;BA)(A;OICI;GRGX;;;WD)(A;OICI;GRGX;;;S-1-15-2-1)(A;OICI;GRGX;;;S-1-15-2-2)
+D:(A;OICI;GA;;;WD)(A;OICI;GA;;;S-1-15-2-1)(A;OICI;GA;;;S-1-15-2-2)
+D:\a\_work\1\s\build\vcpkg_installed\x86-windows\include\wil\filesystem.h
+D:\a\_work\1\s\build\vcpkg_installed\x86-windows\include\wil\resource.h
+D:\a\_work\1\s\build\vcpkg_installed\x86-windows\include\wil\result.h
+D:\a\_work\1\s\build\vcpkg_installed\x86-windows\include\wil\result_macros.h
+D:\a\_work\1\s\build\vcpkg_installed\x86-windows\include\wil\rpc_helpers.h
+D:\a\_work\1\s\build\vcpkg_installed\x86-windows\include\wil\win32_helpers.h
+D:\a\_work\1\s\src\Communication\communication.cpp
+D:\a\_work\1\s\src\InternalSDK\inc\AclApiUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\CommandLineUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\FileNameGenerationUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\FileUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\GlobalRecordingPolicy.h
+D:\a\_work\1\s\src\InternalSDK\inc\IfeoUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\InstallationConfig.h
+D:\a\_work\1\s\src\InternalSDK\inc\PathUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\ProcessUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\RegistryUtils.h
+D:\a\_work\1\s\src\InternalSDK\inc\WindowsStringUtils.h
+D:\a\_work\1\s\src\ProcLaunchMon\ProcessLaunchMonitorUserClient.cpp
+D:\a\_work\1\s\src\TTDRecord\ActiveRecordingSessionManagement.cpp
+D:\a\_work\1\s\src\TTDRecord\ElevatedInjectionServiceManagement.cpp
+D:\a\_work\1\s\src\TTDRecord\FileNameGeneration.cpp
+D:\a\_work\1\s\src\TTDRecord\GuestProcessCreation.cpp
+D:\a\_work\1\s\src\TTDRecord\IfeoOnLaunchRecordingControl.cpp
+D:\a\_work\1\s\src\TTDRecord\ProcessMonitorClient.cpp
+D:\a\_work\1\s\src\TTDRecord\ProcessMonitorLib\ConfigurationParser.cpp
+D:\a\_work\1\s\src\TTDRecord\ProcessMonitorLib\ProcessManager.cpp
+D:\a\_work\1\s\src\TTDRecord\ProcessMonitorLib\ProcessTermination.cpp
+D:\a\_work\1\s\src\TTDRecord\ProcessMonitorServer.cpp
+D:\a\_work\1\s\src\TTDRecord\TTDMonitorServiceInstall.cpp
+D:\a\_work\1\s\src\TTDRecord\ttdrecord.cpp
+D:\a\_work\1\s\src\TTDRecord\TTTracerActions.cpp
+D:\a\_work\1\s\src\TTDRecord\TTTracerAttachAndLaunch.cpp
+D:\a\_work\1\s\src\TTDRecord\TTTracerCommandLine.cpp
+D:\a\_work\1\s\src\TTDRecord\TTTracerHardwareRecordingControl.cpp
+D:\a\_work\1\s\src\TTDRecord\TTTracerInterface.cpp
+D:\a\_work\1\s\src\TTDRecord\TTTracerReinvocation.cpp
+D:\a\_work\1\s\src\TTDRecord\UwpRecordingControl.cpp
+da-DK
+da-dk
+dddd, MMMM dd, yyyy
+de-AT
+de-at
+DebugActiveProcessStop
+DebugBreak
+Debugger
+December
+de-ch
+de-CH
+DecodePointer
+de-DE
+de-de
+Default
+Delete
+-Delete
+DeleteCriticalSection
+DeleteFileW
+DeleteProcThreadAttributeList
+DeleteService
+DeleteTraceFilesOnExit
+-DeleteTraceFilesOnExit was specified, but TTTracer was unable to register '%ls' for deletion on reboot.  If the guest process is still running when the system shuts down, the files will not be deleted.
+de-li
+de-LI
+de-lu
+de-LU
+destination address required
+DestroyEnvironmentBlock
+DestroyPrivateObjectSecurity
+device or resource busy
+DeviceIoControl
+Diagnose failed: %s
+Diagnose failed: %s === 
+Diagtrack
+DialogBoxParamW
+Did not connect to any process specified to be connected to at startup
+Did not connect to processes specified by '%ls'
+directory not empty
+Disabled on-launch recording for '%ls'
+DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED "AS IS." YOU BEAR THE RISK OF USING IT. MICROSOFT
+div-MV
+div-mv
+downlevel
+Downlevel
+Drivers loaded for recording will remain loaded until a reboot.  Run 'tttracer.exe -cleanup' to remove the driver manually
+DumpBinaries
+DumpFull
+-DumpFull and -NoAutoDumpFull are incompatible and may not be specified together
+-DumpFull and -Ring are incompatible and may not be specified together
+DumpMinimalModuleData
+DumpModules
+DuplicateHandle
+DuplicateTokenEx
+E ^PQQQQ
+E@;EDu
+e+000
+EA PhT
+Ejl_f;
+EL;EPu
+el-gr
+el-GR
+eLK(w
+EmulatorForRecording
+EmulatorOnly
+EnableBreak
+Enabled on-launch recording for '%ls'
+EnableKernelFlags
+en-au
+en-AU
+en-BZ
+en-bz
+en-ca
+en-CA
+en-CB
+en-cb
+EncodePointer
+en-GB
+en-gb
+en-IE
+en-ie
+en-jm
+en-JM
+en-nz
+en-NZ
+en-ph
+en-PH
+EnterCriticalSection
+Entering CreateProcess unprotected...
+Entering CreateProcess...
+en-TT
+en-tt
+EnumDependentServicesW
+EnumServicesStatusExW
+en-us
+en-US
+en-za
+en-ZA
+en-zw
+en-ZW
+ErrCheck
+Error (internal): It looks like launching/attaching to the guest process is hung.
+Error creating the process; was Time Travel Debugging installed correctly?
+Error getting exit code from injector process
+Error getting the current version: %ls
+Error starting the process
+Error streamId %u, page %u: PacketCount (%u) and UsedSizeInBytes (%u) must be both zero or both non-zero.
+Error streamId:%u, page:%u - CloseUserInfo missing for a page which is not the last page in stream.
+Error streamId:%u, page:%u - PageBuffer is not usable. Ignoring page.
+Error while waiting for injector process to exit
+Error: 
+Error:  
+Error:  Tracing of %ls processes is not supported on %ls
+Error: AdjustTokenPrivileges failed
+Error: C++ exceptions are not being recorded because %S|%S!%s was not found: %I64u
+Error: Cannot attach to the guest process with PID %u.
+Error: channel version mismatch: channel:%u open:%u
+Error: Client initialization failed status:%u
+Error: Client initialization failed with writer code:%u:0x%I64x
+Error: client params message to big to send to guest
+Error: Communication link with guest process is down: tag:%I64u
+Error: Could not create active channel event
+Error: Could not create client message event
+Error: Could not create guest message event
+Error: Could not create mutex for group sequencing
+Error: Could not create mutex for guest process communication
+Error: Could not create shared memory space for guest process communication
+Error: Could not create shared memory space for the group sequencing
+Error: Could not create shared memory view for the group sequencing
+Error: Could not create the feedback keys
+Error: Could not delete file %S
+Error: Could not get the log file name
+Error: Could not map shared memory space for guest process communication
+Error: Could not obtain mutex to close the channel; closing anyway
+Error: Could not obtain mutex to close the group sequence; closing anyway
+Error: Could not obtain mutex to create the group memory sequence
+Error: Could not obtain mutex to open the channel
+Error: Could not obtain mutex to open the group sequence
+Error: Could not open process %S(%u).
+Error: Could not queue the tracing session (CreateThread): %ls
+Error: Could not release mutex after client get
+Error: Could not release mutex after client get (no message)
+Error: Could not release mutex after closing the channel
+Error: Could not release mutex after closing the group sequence
+Error: Could not release mutex after creating the channel
+Error: Could not release mutex after creating the group sequence
+Error: Could not release mutex after failing to find queue to reserve for client get
+Error: Could not release mutex after failing to find queue to reserve for send
+Error: Could not release mutex after openning the channel
+Error: Could not release mutex after openning the group sequence
+Error: Could not release mutex after sending the guest a message
+Error: Could not release mutex while waiting for the send queue to empty
+Error: Could not remove the debugging mode from process:0x%x
+Error: Could not restart tracing the guest process: tag:%I64u
+Error: Could not send guest reply to start process request
+Error: Could not send guest the timer stop request
+Error: CreateEnvironmentBlock of current process failed
+Error: CreateWaitableTimer failed.  Not setting the timer
+Error: Did not find %ls
+Error: Did not specify a valid namespace when creating the communication channel.
+Error: DuplicateTokenEx of agent failed
+Error: ETW events are not being recorded because %S!%s
+Error: Failed forking trace of child process PID:%u; hr=0x%x; Child OutputFile:%ls
+Error: Failed getting token for the security context GetUserToken:
+Error: Failed starting the guest process %ls
+Error: Failed to get the proc address for CreateProcessWithTokenW
+Error: failed to reserve mutex for guest process communication %d
+Error: failed to reserve mutex for reseting the channel %d
+Error: failed to resume the guest
+Error: Failed to send message to guest to restart tracing
+Error: Failed to set DACLs on the channel kernel objects
+Error: Failed to set DACLs on the shared sequence kernel objects
+Error: Failed to set up standalone environment for managed launch
+Error: Failed to start the tracing control dialog box.
+Error: Failed to wait for TTD to attach to guest process.
+Error: GetTokenInformation failed
+Error: GlobalAlloc failed
+Error: Guest process reported an error during tracing: TTD writer code: %d:%I64u
+Error: Guest process session (%u) does not match the client session (%u);
+Error: Guest process terminated with exitcode: %u - 0x%X
+Error: InitializeGroupSequence failed due to falure to CreateGroupSequence.
+Error: Injecting into guest process
+Error: Injecting into guest process failed with exitcode: %u - 0x%X
+Error: Log file closed and guest program terminated.
+Error: LookupPrivilegeValue failed
+Error: Lost communication with the guest process
+Error: mapping group sequence memory
+Error: mapping shared communication memory
+Error: Must specify either local or global namespace
+Error: opening active channel event %S
+Error: opening client message event %S
+Error: opening group sequence memory %S
+Error: opening guest message %S
+Error: opening shared communication memory %S
+Error: OpenProcess of agent failed (%u)
+Error: OpenProcessToken failed
+Error: OpenProcessToken of agent failed
+Error: Process with Id %u has shadow stack enabled and therefore is not supported for recording
+Error: Process with Id %u uses an unrecognized architecture
+Error: Process with PID %u is not under tracing control.
+Error: ProcessIdToSessionId failed
+Error: Raise fast fail exceptions are not being tracked because %S!%s was not found: %I64u
+Error: SetWaitableTimer failed.  Not setting the timer
+Error: The guest stopped tracing normally, but this client never received
+Error: timed out reserving mutex when getting a message
+Error: Timed out waiting for guest process PID:%u tracing session to end.
+Error: timed out waiting for space on the message queue
+Error: Tracing stopped because the writer is in an inconsistent state: line %I64u
+Error: Tracing stopped because the writer is out of memory: line %I64u
+Error: Trying to attach to a guest that is already being traced
+Error: Trying to reset a channel of a guest with an active tracing session
+Error: Unhandled exceptions are not being tracked because %S|%S!%s was not found: %I64u
+Error: WTSEnumerateProcesses failed
+error:(%u,0x%X) %s
+ErrorMsg
+Errors
+ErrorType
+ErrorValue
+es-ar
+es-AR
+es-BO
+es-bo
+es-cl
+es-CL
+es-CO
+es-co
+es-CR
+es-cr
+es-do
+es-DO
+es-ec
+es-EC
+es-ES
+es-es
+es-gt
+es-GT
+es-HN
+es-hn
+es-mx
+es-MX
+es-ni
+es-NI
+es-pa
+es-PA
+es-pe
+es-PE
+es-pr
+es-PR
+es-py
+es-PY
+es-sv
+es-SV
+es-UY
+es-uy
+es-VE
+es-ve
+et-EE
+et-ee
+eu-ES
+eu-es
+EventRegister
+EventSetInformation
+EventWriteTransfer
+Exception
+Exclude
+executable format error
+ExecuteTTTracerCommandLine
+exists
+ExitCode
+ExitProcess
+ext-ms-
+ext-ms-win-ntuser-dialogbox-l1-1-0
+ext-ms-win-ntuser-windowstation-l1-1-0
+ext-ms-win-session-wtsapi32-l1-1-0
+F.jgYf;
+F.jXZ
+f;D$ u
+f;F,t
+F@PSh
+F-<at
+F-<gt
+F0^[]
+F0PSh
+F4+F0jH
+F4PSh,N
+f9:t!V
+F95t:
+Fail to schedule the chore!
+Failed to %hs IPT tracing for process %u
+Failed to %ls elevated injection service
+Failed to %ls elevated injection service (wow64)
+Failed to acquire SeDebugPrivilege
+Failed to adjust token privileges for current process
+Failed to attach to the guest process
+Failed to attach to the guest process; output file is '%ls'
+Failed to bind to the RPC server
+Failed to check the recording policy for the user of guest process.
+Failed to close the guest process object (internal error)
+Failed to compute full path to '%ls'
+Failed to compute length of full path to '%ls'
+Failed to compute the size of the configuration file
+Failed to configure app '%ls %ls' with trace file output directory '%ls'
+Failed to configure package debugging settings for package '%ls' with settings '%ls'
+Failed to connect to Process Launch Monitor driver
+Failed to connect to service control manager
+Failed to connect to the service control manager
+Failed to control hardware recording
+Failed to convert security descriptor for auto-start session; auto-start will not be enabled
+Failed to convert security descriptor for TTD Process Monitor server
+Failed to convert security descriptor string
+Failed to convert the configuration file contents
+Failed to create %hs Image File Execution Options registry key for '%ls':  A non-empty %hs key already exists for this program
+Failed to create %hs Image File Execution Options registry key for '%ls':  An empty %hs key already exists for this program, and deletion of that key failed
+Failed to create a monitor service retry registry key.
+Failed to create auto-start cancellation event; auto-start will not be enabled
+Failed to create auto-start session; auto-start will not be enabled
+Failed to create event for service-exit synchronization
+Failed to create event to control TTD Process Monitor server
+Failed to create event to synchronize with non-interactive TTTracer process
+Failed to create file '%ls'
+Failed to create file set for '%ls.%ls'
+Failed to create file set in directory '%ls' from template with prefix '%ls' and suffix '%ls':  All possible names taken
+Failed to create Image File Execution Options registry key for '%ls'
+Failed to create inheritable handles to '%ls'
+Failed to create name of event to synchronize with non-interactive TTTracer process
+Failed to create object for app '%ls %ls'
+Failed to create object for package '%ls'
+Failed to create Process Launch Monitor thread
+Failed to create security descriptor DACL
+Failed to create the Process Launch Monitor service
+Failed to create thread to process recording completion events
+Failed to create toolhelp process snapshot
+Failed to delete Image File Execution Options Debugger value for '%ls'
+Failed to delete newly created crash file at '%ls'
+Failed to delete the Process Launch Monitor service
+Failed to disable debugging of user process %u
+Failed to disable on-launch recording for '%ls'
+Failed to disable on-launch recording for one or more executables
+Failed to disable on-launch recording for one or more UWP app packages
+Failed to disable on-launch recording of all packages
+Failed to duplicate handle
+Failed to duplicate token
+Failed to enable Ctrl+Break handling
+Failed to enable on-launch recording for UWP app package '%ls'
+Failed to enable on-launch recording of '%ls'
+Failed to enumerate all executables registered for on-launch recording
+Failed to enumerate all processes being actively recorded
+Failed to enumerate processes in snapshot
+Failed to enumerate services which depend on %ls.
+Failed to enumerate subkeys under registry key
+Failed to enumerate values of registry key
+Failed to find IDNA for this recording session, use TTD instead. Recording may fail if instructed to record a 32-bit process. To record 32-bit processes, you may use an official partner drop which will fall back to older recording technology.
+Failed to get exit code of service installation command '%ls'
+Failed to get exit code of user process %u
+Failed to get package name for process '%u'
+Failed to get process image file name for process %u
+Failed to get process image name for process %u
+Failed to get process name for process %u
+Failed to get service group information from registry
+Failed to get the process image file name for process %u; this process will not be recorded
+Failed to get trace file name for process %u
+Failed to impersonate logged on user
+Failed to initialize RPC server:  Could not register interface handle
+Failed to initialize RPC server:  Could not specify protocols
+Failed to initialize RPC server:  Unable to listen for RPC requests
+Failed to install %ls.
+Failed to install elevated injection service
+Failed to issue request to the TTD Process Monitor server to stop monitoring
+Failed to launch app '%ls %ls' for recording with settings '%ls'
+Failed to launch downlevel version of TTTracer
+Failed to launch the guest process
+Failed to launch the guest process; output file is '%ls'
+Failed to launch the guest process; see '%ls' for information
+Failed to launch user process
+Failed to load TTD Windows Store and UWP Support Module; this copy of TTD may not support recording of Windows Store apps or UWP apps
+Failed to lookup SeDebugPrivilege value
+Failed to move .run file to '%ls'
+Failed to move existing file from '%ls' to '%ls.old'
+Failed to obtain the current session ID for the Process Launch Monitor driver
+Failed to obtain the version of the Process Launch Monitor driver installed.
+Failed to obtain wait event from Process Launch Monitor driver
+Failed to open '%ls':  File not found
+Failed to open configuration file '%ls'
+Failed to open CRT file descriptor
+Failed to open CRT stream
+Failed to open Image File Execution Options registry key
+Failed to open Image File Execution Options registry key for '%ls'
+Failed to open OnInitCompleteEvent named '%ls'
+Failed to open process
+Failed to open process %u
+Failed to open process %u for synchronization
+Failed to open process token
+Failed to open Selective Recording config file '%ls'
+Failed to open service '%ls'
+Failed to open service control manager
+Failed to open svchost registry key
+Failed to open the Process Launch Monitor service
+Failed to open thread %u
+Failed to open token for current process
+Failed to pause IPT tracing for thread %u
+Failed to perform string binding to connect to RPC server
+Failed to query Image File Execution Options registry key for '%ls'
+Failed to query information for registry key
+Failed to query information for service '%ls'
+Failed to query TTD Process Monitor server status
+Failed to query volatility of registry key
+Failed to read the configuration file contents
+Failed to reconfigure process monitor server
+Failed to register auto-start cancellation; auto-start will not be enabled
+Failed to reinvoke TTTracer as non-interactive with command line '%ls'
+Failed to remove recording configuration for package '%ls'
+Failed to rename '%ls' to '%ls'
+Failed to resolve all process ids to names; try re-running with elevated privileges
+Failed to resolve some process ids to names, so some processes being recorded were ignored; elevated privileges may be required to stop recording those processes
+Failed to resume IPT tracing for thread %u
+Failed to resume non-interactive TTTracer after process was created
+Failed to resume the suspended user process %u
+Failed to run service installation command '%ls'
+Failed to schedule wait for process %u
+Failed to send marker string to the guest process
+Failed to send stop command to process %u
+Failed to send termination command to the guest process
+Failed to set DACLs on file '%ls'
+Failed to set Image File Execution Options Debugger value for '%ls'
+Failed to set Image File Execution Options key security info for '%ls'
+Failed to set permissions on TTD binaries in %ls
+Failed to set security attributes on %ls
+Failed to set the Image File Execution Options debugger value for '%ls':  The debugger string is too long.  Please place TTTracer in a shorter path, or reduce the number of arguments.  (Requested debugger value is '%ls'.)
+Failed to set the monitor service retry registry key to a starting value.
+Failed to set up service recording on auto-start.
+Failed to start %ls.
+Failed to start IPT tracing for CPU cores
+Failed to start process monitor server
+Failed to start recording '%ls'
+Failed to start recording process %u
+Failed to start the IPT service
+Failed to start the Process Launch Monitor service
+Failed to stop guest process
+Failed to stop IPT tracing for CPU cores
+Failed to stop recording of process %u
+Failed to stop recording of some processes
+Failed to stop recording process %u
+Failed to stop the Process Launch Monitor service
+Failed to stop TTD Process Monitor server
+Failed to wait after completion
+Failed to wait for completion of service installation command '%ls'
+Failed to wait for exit synchronization event
+Failed to wait for non-interactive TTTracer to start recording
+Failed to wait for user process %u to exit
+Failed to wait on the creation event handle
+FailFast
+fa-ir
+fa-IR
+FastAtomicOps
+FastFailCloseFile
+FastFailCloseFile packet error:  packet NumberOfPages (%u) is not same as the expected number of pages (%u)
+FastFailCloseFile packet error: file is already closed.
+FastFailCloseFile packet error: packet NumberOfBookkeepingPages (%u) is less than the processed number of book keeping pages (%u).
+FastFailCloseFile packet error: packet NumberOfStreams (%u) is not same as expeted number of streams (%Iu).
+Feature
+FeatureSessionId
+FeatureUsed
+February
+FFG;}
+fi-fi
+fi-FI
+file exists
+file too large
+FILE: %s
+FileDescription
+filename too long
+FileReader OpenFile error: failed to create file page reader.
+FileReader OpenFile error: file version used a newer recorder-Major:%u, Minor:%u (> %u)
+FileReader OpenFile error: invalid file version-Major:%u, Minor:%u
+FileReader OpenFile error: streamId %u, page %u - pageInfo.CloseUserInfo size (%Iu) is greater than PageSummary size (%Iu).
+FileReader OpenFile error: streamId %u, page %u - pageInfo.CloseUserInfo size (%Iu) is less than PacketLevelHeader size (%Iu).
+FileReader OpenFile error: streamId %u, page %u - Payload size (%u bytes) is not big enough to contain the buffer described in the payload's PageLevelHeader (%u bytes).
+FileReader OpenFile error: streamId %u's streamInfo.OpenUserInfo size (%Iu) can't even fit the common stream info.
+FileReader OpenFile error: streamInfo.OpenUserInfo size (%Iu) can't fit ProcessStreamOpenInfo size (%Iu) for streamId %u.
+FileReader OpenFile error: streamInfo.OpenUserInfo size (%Iu) can't fit ThreadStreamOpenInfo size (%Iu) for streamId %u.
+FileReader OpenFile error: Unknown type (%u) for streamId %u.
+FileVersion
+FindClose
+FindFirstFileExW
+FindNextFileW
+FindResourceW
+first argument
+firstTrace || gpo->IsAttach
+Fj)[f;
+FL+FH
+floor
+FlsAlloc
+FlsFree
+FlsGetValue
+FlsSetValue
+FlushFileBuffers
+fo-FO
+fo-fo
+Forked trace of child process %ls(%u)(%ls); LogFile:%ls OutputFile:%ls
+FormatMessageA
+FormatMessageW
+fr-BE
+fr-be
+fr-ca
+fr-CA
+fr-ch
+fr-CH
+FreeEnvironmentStringsW
+FreeLibrary
+FreeLibraryWhenCallbackReturns
+FreeSid
+frexp
+fr-FR
+fr-fr
+Friday
+fr-lu
+fr-LU
+fr-MC
+fr-mc
+ft&9q
+function not supported
+FUNCTION: %s
+G$_^]
+G_^[]
+g0p0~1
+G8QQP
+generic
+GetAce
+GetAclInformation
+GetACP
+GetCommandLineA
+GetCommandLineW
+GetConsoleMode
+GetConsoleOutputCP
+GetConsoleWindow
+GetCPInfo
+GetCurrentDirectoryW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetEnvironmentStringsW
+GetExecutableFilename failed
+GetExitCodeProcess
+GetFileAttributesExW
+GetFileAttributesW
+GetFileInformationByHandleEx
+GetFileSizeEx
+GetFileType
+GetFileVersionInfo failed with error %u
+GetFileVersionInfoExW
+GetFileVersionInfoSize failed with error %u
+GetFileVersionInfoSizeExW
+GetFullPathNameW
+GetHandleInformation
+GetKernelObjectSecurity
+GetLastError
+GetLocalTime
+GetMaxPackageNameLength
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetNamedSecurityInfoW
+GetNativeSystemInfo
+GetOEMCP
+GetPackageFromPid
+GetProcAddress
+GetProcessHeap
+GetProcessInformation
+GetProcessMitigationPolicy
+GetSecurityDescriptorDacl
+GetSecurityDescriptorSacl
+GetStartupInfoW
+GetStdHandle
+GetStringTypeW
+GetSystemDirectoryW
+GetSystemTimeAsFileTime
+GetSystemWow64Directory2W
+GetSystemWow64DirectoryW
+GetTickCount
+GetTokenInformation
+GetTracePid
+-GetTracePid
+GetVersion
+GetVersionExW
+ghttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crl0
+GIVES NO EXPRESS WARRANTIES, GUARANTEES, OR CONDITIONS. TO THE EXTENT PERMITTED UNDER APPLICABLE LAWS,
+gl-es
+gl-ES
+Global\ttd_a_2_%02u_%02u_%x
+Global\ttd_c_2_%02u_%02u_%x
+Global\ttd_g_2_%02u_%02u_%x
+Global\ttd_m_2_%02u_%02u_%x
+Global\ttd_s_2_%02u_%02u_%x
+Global\ttdSeq_m_2_%02u_%02u
+Global\ttdSeq_s_2_%02u_%02u
+Global\TTDTracerRunSignalingEvent
+gpo->GuestProcessHandle
+Group tracing GUID: %ls
+Guest process exited with exit code %u
+Guest Process is %ls binary.
+GUEST_COMMUNICATION::CloseChannel
+GUEST_COMMUNICATION::CreateChannel
+GUEST_COMMUNICATION::GetMessageForClient
+GUEST_COMMUNICATION::OpenChannel
+GUEST_COMMUNICATION::ReserveSendQueue
+GUEST_COMMUNICATION::ResetChannel
+GUEST_COMMUNICATION::SendGuestMessage
+GUEST_GROUP_SEQUENCE::CloseGroupSequence
+GUEST_GROUP_SEQUENCE::CreateGroupSequence
+GUEST_GROUP_SEQUENCE::OpenGroupSequence
+GuestEventHandle
+GuestExitedWithCode
+gu-in
+gu-IN
+handle the processes that are already running as well as new processes.
+Hardware
+-Hardware
+-hardware supports the following key/value pairs (separated by comma):
+Hardware tracing action is not specified
+Hardware tracing mode is not specified
+HeapAlloc
+HeapFree
+HeapReAlloc
+HeapSize
+he-il
+he-IL
+HH:mm:ss
+hi-IN
+hi-in
+HKLM\Software\Microsoft\TTD\RecordingPolicy
+host unreachable
+hr-ba
+hr-BA
+hr-HR
+hr-hr
+hu-hu
+hu-HU
+hy-am
+hy-AM
+identifier removed
+id-id
+id-ID
+If this is a wow process, were the wow TTD components installed?
+ihttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crt0
+illegal byte sequence
+Image full path is not provided for registering program for hardware tracing
+ImageFullPath
+ImageFullPath=<path>       Specify the path to the image file for tracing on launch.
+ImpersonateLoggedOnUser
+inappropriate io control operation
+InboxCmdLine
+IND)ind)
+indexInStream < pStreamEntry->PageCount
+Info: Running group tracing in a Local\ namespace.  There will not be
+InheritHandles
+Initialize
+-Initialize
+InitializeAcl
+InitializeConditionVariable
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionEx
+InitializeProcThreadAttributeList
+InitializeSecurityDescriptor
+InitializeSListHead
+InitializeSRWLock
+Initializing Time Travel Debugging for Attach to %u
+Initializing Time Travel Debugging for Launch of %S
+InitOnceBeginInitialize
+InitOnceComplete
+inity
+INITY
+InjectMode
+Install
+IntelAvx2Required
+IntelAvxRequired
+intended for direct use as a stand-alone solution.
+InterlockedFlushSList
+Internal Error: Attempted to open two tracing control dialog boxes.
+InternalName
+InternalTest
+interrupted
+Invalid
+invalid argument
+Invalid argument for option '%ls'; 32-bit integer expected
+Invalid argument for option '%ls'; 64-bit integer expected
+Invalid argument for option '%ls'; expected an integer value 0, 1, 2, or 3
+Invalid argument for option '%ls'; expected one of 'Default', 'MostConservative', 'MostAggressive', 'IntelAvxRequired', or 'IntelAvx2Required'
+Invalid argument for option '%ls'; expected one of 'File', 'MappedFile', or 'Memory'
+Invalid argument for option '%ls'; expected one of 'LoaderForRecording', 'LoaderForCombinedRecording', 'LoaderForEmulator', 'EmulatorForRecording', or 'EmulatorOnly'
+Invalid argument for -scenario:  The scenario string cannot be longer than 32 characters
+Invalid argument for -scenario:  The scenario string must contain only ASCII alphabetic and numeric characters
+Invalid categories specified in configuration string '%ls'
+Invalid configuration string '%ls'
+Invalid first argument for option '%ls'; 32-bit integer expected
+invalid hash bucket count
+Invalid path: %ls
+Invalid process creation event received from Process Launch Monitor driver
+Invalid second argument for option '%ls'; 32-bit integer expected
+Invalid security descriptor string
+invalid seek
+invalid string position
+invalid string_view position
+Invalid UWP app target:  The app name is missing
+Invalid wait event received from Process Launch Monitor driver
+io error
+IPT core tracing is off
+IPT core tracing is on with IptOption = 0x%llx
+IPT tracing for CPU cores was started successfully
+IPT tracing for CPU cores was stopped successfully
+IPT tracing was %s for process %u
+IptNumTries
+IptNumTries=<num>          Specify the number of tries for tracing on launch.
+IptOption
+IptOption=<option>         Specify the IPT tracing option. See aka.ms\rept for more details.
+IptTraceDuration
+IptTraceDuration=<seconds> Specify the valid period for the number of tries on launch.
+is a directory
+IsDebuggerPresent
+is-IS
+is-is
+IsProcessorFeaturePresent
+Issued request to the TTD Process Monitor server to stop monitoring
+IsTokenRestricted
+IsValidCodePage
+IsWindowVisible
+IsWow64Process
+IsWow64Process2
+it-ch
+it-CH
+it-IT
+it-it
+iu+-,
+Ixh 3
+j _f;
+j h|)
+j"[VWWWW
+j"Xf;
+j"Xf9
+j%[f9
+j%Yf9
+j%Zf9
+j*_f99
+j*Zf9
+j*Zf9TA
+j.Yf9
+j/[f;
+j/[j\Z
+j/Yf;
+j/Zf;
+j:Xf;
+j:Yf;
+j\^f;
+j\Yf;
+j\Yj"Z;
+j\Yj/[
+j^Xf9E
+j+pb)
+j0Xf;
+j0Z9^4t
+ja-jp
+ja-JP
+January
+-jd[;
+jD_Wj
+jg[jG
+jGYf;
+jjjjj
+JjlZf;
+jjZf;
+jXPh 
+jXXf;
+j-Yf;
+k2mUU&
+K32EnumProcesses
+K32GetModuleFileNameExW
+ka-ge
+ka-GE
+kernel32
+KERNEL32.dll
+kernel32.dll
+kernelbase
+kernelbase.dll
+KernelCoreIpt
+kk-KZ
+kk-kz
+kn-in
+kn-IN
+kok-in
+kok-IN
+ko-kr
+ko-KR
+ky-kg
+ky-KG
+L$$^3
+L$,_^[3
+L$\_^3
+L$4_[3
+Launch
+-Launch
+Launched app specified (PID:%u) for the package '%ls'.
+Launching '%ls'
+Launching '%ls %ls' with arguments '%ls'
+Launching '%ls' without recording because it did not match the filter '%ls'
+LCMapStringEx
+LCMapStringW
+ldexp
+LeaveCriticalSection
+LegalCopyright
+Lhttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20PCA%202014.crl0j
+LINE: %d
+LoaderForCombinedRecording
+LoaderForEmulator
+LoaderForRecording
+LoadLibraryExW
+LoadLibraryW
+LoadOnly
+-LoadOnly
+LoadResource
+Local\SM0:%lu:%lu:%hs
+LocaleNameToLCID
+LocalFree
+LockResource
+log10
+LogFileMode
+Logging recorder console output to '%ls'
+LogHr
+LogNt
+logonui.exe
+LookupPrivilegeValueW
+lsass.exe
+lsm.exe
+lstd::exception: %hs
+lt-lt
+lt-LT
+lv-LV
+lv-lv
+M$j"^QRRRRR
+M,j"^QRRRRR
+MACHINE\
+Managed
+-Managed and -Attach are incompatible and may not be specified together
+-Managed and -Parent are incompatible and may not be specified together
+Managed tracing not supported for non launch applications
+ManualRecordingOnly
+map/set too long
+MappedFile
+MapViewOfFile
+MapViewOfFileEx
+March
+-Mark
+MaxConcurrentRecordings
+MaxFile
+MaxGeneration is Null.
+MaxGeneration(%u) is less than MinGeneration(%u).
+MaxInstructionsPerFragment
+MaxInstructionsPerSegment
+MaxRetries
+Memory
+Memory mapped page reader OpenFile error: failed to read file OpenUserInfo.
+Memory mapped page reader OpenFile error: file has been truncated from %u to %u pages.
+Memory mapped page reader OpenFile error: file header page size in bytes (%u) is too short.
+Memory mapped page reader OpenFile error: file revision (%u) doesn't match the reader (%u).
+Memory mapped page reader OpenFile error: file size (%llu) is not multiple of page size (%Iu).
+Memory mapped page reader OpenFile error: invalid file type (%u) - memory mapped file type expected.
+Memory mapped page reader OpenFile error: invalid log file header marker.
+Memory mapped page reader OpenFile error: Log2FilePageSizeInBytes is out of bounds.
+Memory mapped page reader OpenFile error: pageSizeInBytes (%Iu) is less than total LogFileHeader size (%Iu).
+Memory mapped page reader OpenFile error: the file must have more than one page.
+Memory mapped page reader OpenFile error: total number of %u pages reached before completing reading the log file.
+Memory mapped page reader view error: failed to map the first page.
+Message received: %u
+message size
+Microsoft (R) %hs 1.01.10
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1>0<
+Microsoft Corporation1'0%
+Microsoft Development PCA 2014
+Microsoft Development PCA 20140
+MICROSOFT EXCLUDES ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+MICROSOFT TIME TRAVEL DEBUGGING (TTD)
+Microsoft Windows0
+Microsoft.Windows.DebuggingTools.DebuggerEngine
+MicrosoftInstrumentationEngine_ConfigPath32_ProcessRecording
+MicrosoftInstrumentationEngine_LogLevel
+Microsoft-OCA-IPT
+MicrosoftProductionDiagnostics_RuntimeFolder
+MinGeneration is Null.
+MinimumBuffers
+minkernel\crts\ucrt\inc\corecrt_internal_strtox.h
+mi-NZ
+mi-nz
+Missing '%ls' for option '%ls'
+Missing arguments for option '%ls'
+mk-MK
+mk-mk
+ml-IN
+ml-in
+MM/dd/yy
+mn-mn
+mn-MN
+Mode={IPT}                 The only hardware tracing mode is IPT.
+ModernAppIpt
+Modes:
+Monday
+Monitor mode may not be used with -Children. -Children will be ignored.
+MonitorDriverSessionId
+MonitorDriverVersion
+MostAggressive
+MostConservative
+MoveFileExW
+mr-IN
+mr-in
+ms-bn
+ms-BN
+mscoree.dll
+Msg:[%ws] 
+ms-MY
+ms-my
+mt-MT
+mt-mt
+MultiByteToWideChar
+MutexHandle
+N<;N<_^t
+N09^4
+NAN(IND)
+nan(ind)
+NAN(SNAN)
+nan(snan)
+nb-no
+nb-NO
+ncalrpc
+NdrClientCall2
+NdrServerCall2
+network down
+network reset
+network unreachable
+Nhttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20PCA%202014.crt0
+NI_Detached
+nl-be
+nl-BE
+nl-nl
+nl-NL
+nn-no
+nn-NO
+no buffer space
+no child process
+No executables are currently scheduled to be recorded on launch
+no link
+no lock available
+no message
+no message available
+No processes are being monitored or recorded
+No processes are currently being recorded
+No processes are specified to connect at startup
+No processes matching '%ls' are currently being recorded
+No programs scheduled for future recording
+no protocol option
+no space on device
+no stream resources
+no such device
+no such device or address
+no such file or directory
+no such process
+NoAttachViaThread
+NoAutoDumpFull
+NoConfigConnect
+NoDumpFull
+NoExit
+NoFastAtomicOps
+NoFlush
+NoGroup
+Non-interactive TTTracer exited before it started recording
+Non-interactive TTTracer failed to start recording within a reasonable time
+non-volatile
+NoReconfigureProcMon
+NoRedirect
+NoRing
+not a directory
+not a socket
+not a stream
+not connected
+not enough memory
+not supported
+November
+ns-za
+ns-ZA
+NtAllocateVirtualMemory
+NtClose
+NtCreateFile
+NtDeviceIoControlFile
+ntdll
+ntdll.dll
+NtFlushVirtualMemory
+NtMapViewOfSection
+NtOpenDirectoryObject
+NtQueryDirectoryObject
+NtQueryInformationProcess
+NtSetInformationProcess
+NtSystemDebugControl
+NtTraceEvent
+NtUnmapViewOfSection
+NumVcpu
+O<;O@t
+O<;O<tN
+O5a8V2
+obwQ4
+October
+OLE32.dll
+OLEAUT32.dll
+on a command line. Users can use both methods but if there are conflicting
+On versions of Windows older than Windows 10, TTD is only able to record 64-bit processes, falling back to older recording technology (IDNA) for this recording session. If you know all recorded processes will be 64 bit, you can record with TTD by making -noredirect the first parameter.
+OnInitCompleteEvent
+OnLaunch
+-OnLaunch
+On-launch recording disabled for '%ls'
+On-launch recording disabled for %u executables
+On-launch recording disabled for %u UWP app packages
+On-launch recording is not enabled for '%ls'
+Only one of -DumpModules, -DumpFull, -DumpMinimalModuleData, or -NoDumpFull may be specified
+Only one of -NoRing or -Ring may be specified
+Only one of -Out or -SaveCrash may be specified
+Only one of the following options may be specified:  %ls
+Ony one of -FastAtomicOps or -NoFastAtomicOps may be specified
+OpenEventW
+OpenFileMappingW
+Opening group sequence with name '%ls'
+OpenMutexW
+OpenPage
+OpenPage %u packet error (streamId %u): failed to read OpenUserInfo.
+OpenPage %u packet error (streamId %u): page is beyond the file end.
+OpenPage %u packet error (streamId %u): PageIndexInStream (%u) is not zero.
+OpenPage %u packet error (streamId %u): PageIndexInStream is out of sync [(pageIndex +1):%Iu, packet PageIndexInStream:%u].
+OpenPage %u packet error (streamId %u): previous page is out of sync (pageInformation PageIndexInFile:%u, pPacket PageIndexInFile%u).
+OpenPage %u packet error (streamId %u): the file was already closed.
+OpenPage %u packet error (streamId %u): the page was already opened.
+OpenPage %u packet error (streamId %u): the stream already reached the file end.
+OpenPage %u packet error (streamId %u): the stream was alredy closed.
+OpenPage packet error (streamId %u): PageIndexInStream is beyond file end.
+OpenPage packet error: streamId is null
+OpenProcess
+OpenProcessToken
+OpenSCManagerW
+OpenSemaphoreW
+OpenServiceW
+OpenStream
+OpenStream %u packet error: failed to read OpenUserInfo.
+OpenStream %u packet error: file close packet was already detected
+OpenStream %u packet error: the stream is aready in the collection.
+OpenStream packet error: stream id is null
+OpenThread
+operation canceled
+operation in progress
+operation not permitted
+operation not supported
+operation would block
+OptIn
+Option '%ls' specified multiple times, with different argument values
+Option '-%ls' was unused
+Options:
+OriginalFilename
+OS:%u.%u.%u EDITION:%ls
+OutputDebugStringA
+OutputDebugStringW
+OutputFileHandle
+ow:t/
+owCt8
+owner dead
+P_f9~
+p<SSS
+PackageFamilyName
+PackageFamilyName=<package> Specify the package name of a packaged app.
+Page index %u is out of bounds. The stream has %Iu pages.
+Page reader error: failed to read page %u of streamId %u.
+Page reader error: page header NextPageIndexInFile (%u) is less than IndexInFile (%u) for page %u of streamId %u.
+Page reader error: wrong header page marker for page %u of streamId %u.
+Page reader error: wrong page header IndexInFile (%u) for page %u of streamId %u.
+Page reader error: wrong page header IndexInStream (%u) for page %u of streamId %u.
+Page reader error: wrong page header streamId (%u) for page %u of streamId %u.
+Page reader warning: the file seems truncated. Page header NextPageIndexInFile (%u) points past the end of the file for page %u of streamId %u.
+Page[%u] index(%u) entry is not valid
+Page[%u] index(%u) is too large (>= %u)
+Page[%u] index(%u) is too small (< %u)
+pageEntry.CurrentGenerationId <= pStreamEntry->CurrentGenerationId
+pageEntry.IndexInStream < pStreamEntry->LifetimePageCount
+pageEntry.InitialGenerationId <= pageEntry.CurrentGenerationId
+pageEntry.InitialGenerationId >= pStreamEntry->InitialGenerationId
+pageEntry.StreamId == streamId
+pa-IN
+pa-in
+Parent
+PartA_PrivTags
+PassThroughExit
+Pause
+Paused IPT tracing for thread %u.  Before pausing, the thread tracing was %hs
+PauseThread
+permission denied
+Persistent
+persistent
+-Persistent
+Persistent 
+-persistent is not available in this installation of TTD. (File %ls not found.)
+PFVSh
+Ph@@"
+Pj%Ph
+Please see '%ls' for warning messages about your trace file
+pl-PL
+pl-pl
+Policies
+PP9E u
+PPhXv
+PPjLj
+PplDebuggingToken
+PPPPP
+PPPPPPPP
+PPPPPWV
+PPPSW
+PPSWP
+PQQhH@"
+PQQSVW
+PQQVW
+PQSVW
+Process %u (0x%x) '%ls' is currently being recorded
+Process %u (0x%x) is currently being recorded
+Process %u is being traced by IPT with IptOption = 0x%llx
+Process %u is not being traced by IPT
+Process Launch Monitor driver failed to get the next event
+Process Launch Monitor driver failed to resume process %u
+Process Launch Monitor driver failed to start monitoring process %u
+Process Monitor decided not to record process %u
+Process Monitor decided to connect to process %u (running)
+Process Monitor decided to connect to process %u (suspended)
+Process Monitor decided to record process %u
+Process32FirstW
+Process32NextW
+ProcessEvents
+ProcessId
+ProcessId=<id>             Specify the process id (in decimal).
+ProcessIdToSessionId
+Processing process %u:  %ls
+ProcessMonitoring
+ProcessRecording_ConfigPath
+ProcessRecording_StandaloneDebug
+ProcLaunchMon
+ProcLaunchMon.sys
+Product
+ProductName
+ProductVersion
+protocol error
+protocol not supported
+PRRQVRR
+PRRRRR
+PShP,
+PShpN
+PShxz
+PSShL@"
+PSSQh
+PSSSSS
+PSSSSSSh 
+pStreamEntry->LifetimePageCount - pageEntry.IndexInStream == pStreamEntry->PageCount - indexInStream
+PSWh^
+PSWh|
+PSWhc
+PSWhh
+PSWhm
+PSWhr
+PSWhw
+pt-br
+pt-BR
+pt-PT
+pt-pt
+PVhDf
+PVVVVV
+PVWjc
+PVWjh
+PVWjm
+PWVj9
+PWWQW
+PWWWh\Y
+PWWWQ
+q0o0m
+QPhT=
+QPWj;
+QQQPQQQQQQQW
+QQQQQPQj
+QQSVj8j@
+QQSVW
+QQSVW3
+QQSVWd
+QRhX)
+QSVWj
+Query
+QueryCore
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryProcess
+QueryServiceConfigW
+Quiet
+quz-BO
+quz-bo
+quz-EC
+quz-ec
+quz-pe
+quz-PE
+QWSPh
+r*f;u
+r;f;u
+r]f;u
+r~f;u
+r6f;u
+r8f;u
+r9f;u
+RaiseException
+RaiseFailFastException
+rbf;u
+read only file system
+ReadFile
+ReadProcessMemory
+Received request to start tracing
+Reconfigure
+Record
+RecordedProcessChildCreated
+RecordedTracefileInfo
+RecorderVersion
+Recording Failed
+Recording of %ls (PID: %u) did not complete successfully
+Recording of '%ls' from boot is not supported
+Recording of Windows Store apps and UWP apps is only supported on Windows 8 and later operating systems
+Recording process %ls(%u)        From parent process %ls(%u)
+Recording UWP apps from launch is not supported in this version of TTD
+RecordingPolicy
+RecordingProhibited
+RecordingProhibitedByWER
+RecordIpt
+RecordMemoryProtect
+RecordProcessorSwitches
+RecordType
+Redmond1
+ref;u
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyW
+RegDeleteTreeW
+RegDeleteValueW
+RegEnumKeyExW
+RegEnumValueW
+RegGetValueW
+Register
+RegisterProgram
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetKeySecurity
+RegSetKeyValueW
+RegSetValueExW
+Release: %ls
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReplayCpuSupport
+ResetEvent
+resource deadlock would occur
+resource unavailable try again
+result out of range
+Resume
+Resumed IPT tracing for thread %u.  Before resuming, the thread tracing was %hs
+ResumeThread
+Retrying ...
+Retrying...
+ReturnHr
+ReturnNt
+RevertToSelf
+rF;3tB
+r-f;u
+rFf;u
+rHf;u
+rIf;u
+Ring page reader Open error: file revision (%u) doesn't match the reader (%u).
+RingMode
+rKf;u
+rlf;u
+rof;u
+ro-ro
+ro-RO
+RpcBindingFree
+RpcBindingFromStringBindingW
+RpcExceptionFilter
+RPCRT4.dll
+Rpcrt4.dll
+RpcServerListen
+RpcServerRegisterIf
+RpcServerUseAllProtseqsIf
+RpcStringBindingComposeW
+RpcStringFreeW
+rpf;u
+RPRRj
+RQPhd
+RQVSQ
+RRRRR
+rsf;u
+RSPhD?
+rTf;u
+RtlInitUnicodeString
+RtlUnwind
+Running %S
+ru-RU
+ru-ru
+rWf;u
+RWPQj
+RWQhD
+rZf;u
+S:(ML;;NW;;;LW)
+s<VVV
+sa-IN
+sa-in
+Saturday
+SaveCrash
+Scenario
+ScenarioType
+second argument
+SeCreateGlobalPrivilege
+SeDebugPrivilege
+se-fi
+se-FI
+Selective
+Selective Recording is not supported when kernel debugging with user-mode exception handling is enabled
+SelectiveRecording
+Sending message to the guest to restart tracing: %S
+se-NO
+se-no
+September
+services.exe
+services.exe=
+services.exe=connect
+se-se
+se-SE
+SessionContext
+SessionID: %ls
+SetConsoleCtrlHandler
+SetEntriesInAclW
+SetEnvironmentVariableW
+SetEvent
+SetFilePointerEx
+SetKernelObjectSecurity
+SetLastError
+SetNamedSecurityInfoW
+SetPermisionsForFolder
+SetSecurityDescriptorDacl
+SetSecurityDescriptorSacl
+SetStdHandle
+SetThreadpoolWait
+SetThreadPriority
+SetUnhandledExceptionFilter
+SetWaitableTimer
+Shared memory contains: 0x%16I64x, 0x%I64x
+SharedSequenceBufferHandle
+SharedSequenceMutexHandle
+ShowUI
+Simulation time of '%ls' (%ls): %ums.
+SizeInKilobytes
+SizeofResource
+SkipContiguousAtomics
+sk-SK
+sk-sk
+Sleep
+SleepConditionVariableCS
+SleepConditionVariableSRW
+sl-si
+sl-SI
+sma-no
+sma-NO
+sma-se
+sma-SE
+smj-NO
+smj-no
+smj-se
+smj-SE
+smn-FI
+smn-fi
+sms-FI
+sms-fi
+smss.exe
+smss.exe=exclude
+snan)
+SNAN)
+Software\Microsoft\TTD
+Software\Microsoft\TTD\MonitorService
+SOFTWARE\Microsoft\Windows Kits\Ceip
+Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\
+Software\Microsoft\Windows NT\CurrentVersion\Svchost
+Some services or services.exe will be recorded on launch
+specifications, behavior is undefined.
+sq-AL
+sq-al
+sr-BA-Cyrl
+sr-ba-cyrl
+sr-ba-latn
+sr-BA-Latn
+sr-SP-Cyrl
+sr-sp-cyrl
+sr-sp-latn
+sr-SP-Latn
+SSh[s
+SSRQP
+SSSPS
+SSSRP
+SSSSj
+SSSSS
+SSSSSSPSSSSV
+Start
+start
+StartCore
+started
+StartProcess
+StartServiceW
+StartTraceW
+state not recoverable
+Status
+-Status
+-Stop
+StopCore
+stopped
+Stopped recording process %u
+StopProcess
+stream timeout
+StreamId is Null.
+string too long
+StringFileInfo
+StringFromGUID2
+SubmitThreadpoolWork
+SUCCEEDED(hr)
+Successfully installed service to enable unelevated processes to initiate recording
+Successfully requested addition of marker to trace of process %u
+Successfully requested termination of recording of process %u
+Successfully uninstalled the monitor service.
+Successfully uninstalled the Process Launch Monitor driver
+Sunday
+SuspendThread
+svchost.exe
+svchost.exe=trace
+svchost.exe=traceChildren
+SvchostTrace
+sv-fi
+sv-FI
+SVj63
+sv-se
+sv-SE
+SVWjA_
+SVWQQ3
+SVWUj
+SWh@(
+SWh0'
+SWht'
+sw-ke
+sw-KE
+syr-SY
+syr-sy
+system
+SYSTEM\CurrentControlSet\Control\WMI\Autologger\Microsoft-OCA-IPT
+t$$PV
+t%j Y+
+t&@f;
+t(j.[
+t(VVS
+t)j(Ph
+t,h`V
+t?SSS
+t]SSSWSSSj
+t+j\Y
+t+Whd5
+t0j%h
+t2hl4
+t4VVj
+t6;3t2j
+t9;7t5j
+ta-IN
+ta-in
+taSSSS
+tb9^4~]
+te-IN
+te-in
+Terminate
+-Terminate
+TerminateProcess
+TExit
+text file busy
+The '%ls' argument must be followed by the program or app to be traced
+The '-%ls' option must be the first option
+The argument for hardware tracing is malformed
+The -AutoStart option and service configuration options are incompatible and may not be specified together
+The -AutoStart option is incompatible with the -OnLaunch option; they may not be specified together
+The -CmdLineFilter and -Attach options are incompatible and may not be specified together
+The -CmdLineFilter and -LoadOnly options are incompatible and may not be specified together
+The communication channel was created with a different version of TTD
+The configuration file is too large
+The -Context and -Attach options are incompatible and may not be specified together
+The -Context and -LoadOnly options are incompatible and may not be specified together
+The -Context option is not supported on this operating system
+The file is unusable. Its OpenUserInfo has size (%Iu). Expected size: %Iu. Aborting.
+The file name template '%ls' has multiple wildcards; only one wildcard is supported
+The file's CloseUserInfo size (%Iu) is too small. Expected size: %Iu. Assuming defaults.
+The guest process is already being recorded
+The list provided was not properly null-terminated.
+The -MaxConcurrentRecordings option must specify a value higher than 0
+The monitor service is not installed
+The monitor service was installed and has been started.
+The monitor service was installed, but it could not be started. It will be started on startup.
+The monitoring thread has failed
+The -OnLaunch and -Persistent options are incompatible and may not be specified together
+The -OnLaunch option may only be used with -Parent with this version of TTD
+The -OnLaunch options requires -Out to be specified
+The -Parent option may not be used when recording services
+The -Parent option may not be used with -Children. -Children will be ignored.
+The -Plm option is incompatible with the Service Configuration options
+The -Plm option requires -Out to be specified
+The process is already being record by TTD
+The process is not being recorded by TTD
+The Process Launch Monitor driver is not installed
+The Process Monitor Server cannot be reconfigured using this version of TTD
+The provided options do not request any action be taken
+The requested minimum generation (%u) is beyond the file's maximum (%u). There's no usable data in the file.
+The specified directory, '%ls', is not a directory
+The specified -MaxFile size of %u MB is invalid.  For ring mode recording, the value must be between %u and %u MB.  For non-ring recording, the value must be at least %u MB.
+The specified trace file name '%ls' cannot be used for service-mode recording.  A directory name, or a file name containing wildcards must be used.
+The stream ID (%u) is invalid: points outside of the ring
+The stream is not valid
+The stream is null
+The -TExit option required -Timer to be specified
+The version of the Process Launch Monitor driver installed is too old.
+There was an error trying to modify dependencies for service "%ls" (%ls).
+There were errors in profile setup. This distribution of TTTracer.exe does not support managed recording.
+These services and service host groups will be recorded on launch:
+This can be done in two ways: (i) with a configuration file, and (ii)
+This function cannot be called on a default constructed task
+This recording session is using TTD on a downlevel OS. If you use other options to interact with this recording session  (e.g. -stop, -delete, -terminate) remember to use -noredirect as the first parameter.
+ThreadId
+ThreadId=<id>              Specify the thread id (in decimal).
+ThreadsRunNativelyByDefault
+th-TH
+th-th
+Thursday
+Time Travel Debugging
+Time Travel Debugging (TTD) command line utility is not meant for use in custom software or
+Time Travel Debugging Recording Manager
+Time: %02u/%02u/%04u %02u:%02u:%02u
+timed out
+Timer
+TimeTravelDebuggingVolatilityProbe
+tl=('
+tn-ZA
+tn-za
+too many files open
+too many files open in system
+too many links
+too many symbolic link levels
+tPSVWP
+Trace
+Trace dumped to %S
+Tracechildren
+TraceChildren
+Tracechildrenonly
+TraceFileHandle
+Tracing child process with PID %u and inaccessible TID %u
+Tracing child process with PID %u but no TID
+Tracing child process with PID %u TID %u
+Tracing started
+Tracing stopped by timer
+TracingOff
+Tracking process %ls(%u)        From parent process %ls(%u)
+TraditionalAppIpt
+Translation
+tr-TR
+tr-tr
+TryAcquireSRWLockExclusive
+TrySetHandleIntegrityLevel
+Tt)jhZf;
+Tt0jh[f;
+TTD initialization inside of the guest process never completed
+TTD is already loaded into the guest process
+TTD loaded into the guest '%ls' (%ls): %ums.
+TTD Monitor Service
+TTD Process Launch Monitor Driver
+TTD recording is disabled by policy on this device. To change the policy set %ls to %u (Manual recording only).
+TTD recording is disabled by policy on this device. To change the policy set %ls to %u (Unrestricted) or %u (Manual recording only).
+TTD recording is disabled by policy on this device. To change the policy set %ls to %u.
+TTD::DeleteOutputFile
+TTD::EmitFeedbackMessage
+TTD::EnablePriv
+TTD::GetTracefileSize
+TTD::GetUserToken
+TTD::InitializeForAttach
+TTD::InitializeGroupSequence
+TTD::InitiateGuestProcess
+TTD::ManageTTDTrace
+TTD::QueueTraceStart
+TTD::ReStartGuestTracing
+TTD::RunInjectorProcess
+TTD::SetManagedInstrumentationEnvironment
+TTD::ShowFlushDialog
+TTD::SignalSelf
+TTD::StartGuestProcess
+TTD::StopTracing
+TTD::TraceChildProcess
+TTD::TTDSendMarkerToGuestProcess
+TTD::TTDSendMessageToGuestProcess
+TTD::UserHasPrivilege
+TTD::WaitForInjectorProcessCompletionAndGetExitCode
+ttd_a_
+ttd_a_2_%02u_%02u_%x
+ttd_c_2_%02u_%02u_%x
+ttd_g_2_%02u_%02u_%x
+ttd_m_2_%02u_%02u_%x
+ttd_ni_%x_%x
+ttd_s_2_%02u_%02u_%x
+TtdExternalCmdLine
+TTDInject.exe
+TTDLog
+TTDMonitorService
+TTDRecord
+TTDRecord.dll
+TTDRecord.pdb
+TTDRecordCPU.dll
+TTDRecordUI.dll
+ttdSeq_m_2_%02u_%02u
+ttdSeq_s_2_%02u_%02u
+TTDService.exe
+TtdTestLab
+TTDTracerAutoStartEvent
+TTDTracerRunSignalingEvent
+TTDTracerStopServiceEvent
+TtdWatson
+TTDWriter.dll
+tt-ru
+tt-RU
+TTTracer
+tttracer.exe
+TTTracer_cfg
+tttracer_output_%
+Tuesday
+tXh0u
+u RP3
+u"hT:
+u$VQ;
+u$WPQ
+u$WWSV
+u(RPW
+u}9^4~x
+u0St:
+uf_^[
+uk-ua
+uk-UA
+UL-`5P
+UnhandledExceptionFilter
+unknown
+Unknown
+unknown error
+Unknown error
+Unknown exception
+Unknown key '%ls' in the argument for hardware tracing
+UnmapViewOfFile
+unordered_map/set too long
+Unrecognized command line option '%ls'
+Unrestricted
+Unsupported Options:
+until reboot
+Unused_3_was_ForceCloseStream
+Unused_6_was_ForceClosePage
+uOPPV
+UpdateProcThreadAttribute
+UQPXY]Y[
+ur-PK
+ur-pk
+URPQQh
+Usage: %ls [options] [mode] [PID | program [<arguments>] | <package> <app>]]
+user32
+user32.dll
+USER32.dll
+USERENV.dll
+UserProcessIpt
+UserThreadIpt
+Using TTTracer as a service requires configuration. In this context,
+uSSSSj
+UTF-16LEUNICODE
+UTF-8
+UuidCreate
+UUUUU
+UWP app package '%ls' will be recorded from launch
+UWP app packages cannot be recorded from launch with -Parent
+UWP app packages cannot be recorded from launch with -Persistent
+UWP app packages cannot be recorded from launch with this version of TTD
+uXSVW
+uz-uz-cyrl
+uz-UZ-Cyrl
+uz-UZ-Latn
+uz-uz-latn
+V +V4+
+v*@PW
+V.jx_f;
+V.qNDR
+V0T0R
+v2!L.2
+Value
+value too large
+VarFileInfo
+vector too long
+verifier.dll
+VerifyIsValidHeapBuffer(pageEntry.CloseUserInfo, false)
+VerifyIsValidHeapBuffer(pageEntry.OpenUserInfo , false)
+VerifyVersionInfoW
+VerQueryValue failed to find the file info
+VerQueryValueW
+VerSetConditionMask
+version
+VisualStudioSnapshot
+VisualStudioTests
+vi-VN
+vi-vn
+vj*Xf;
+Vj0XPW
+volatile
+VPPPPP
+VRhp:
+VRPh<2
+VRPhl2
+VS_VERSION_INFO
+VSSSSS
+VVVVV
+VWj0+
+VWjbZ
+VWjkZ
+VWWWPW
+w,;P$w'
+W@j0P
+w<VVV
+W4_^]
+W8^0uc
+W8^0ue
+-Wait
+WaitForMultipleObjects
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolWaitCallbacks
+WakeAllConditionVariable
+WakeConditionVariable
+Warning:  
+Warning: `UuidCreate` failed because 'Rpcrt4.dll' couldn't be loaded.
+Warning: A PPL debug token was provided with an option that is not supported for PPL processes. To record a PPL process use -attach or -parent.
+Warning: Could not record the trace for inter-process analysis;
+Warning: Detected the image load of %S; tracing with Application Verifier should be done with -dumpfull switch.
+Warning: DLL load at base address %I64x ignored because the header is unreadable.
+Warning: Failed to decode the PPL Debugging Token because crypt32.dll couldn't be loaded.
+Warning: Failed to decoded the PPL Debugging Token with error 0x%08x
+Warning: Failed to flush trace file to disk
+Warning: Failed to get a handle to the tracefile, after recording finished.
+Warning: Failed to set the ProcessDebugAuthInformation with NTSTATUS 0x%08x
+Warning: Load failed because TTD is already loaded into the guest
+Warning: Problem reported by TTD: Unexpected Event Code:%I64d
+Warning: TTD reported an unsupported instruction at address 0x%I64x
+Washington1
+Wbad exception
+Wednesday
+wfPPS
+WideCharToMultiByte
+WilError_03
+WindbgNext
+WindowsTestLab
+wininit.exe
+winlogon.exe
+wIPS3
+WjPY+
+WPWWV
+WPWWWWhD@"
+WriteConsoleW
+WriteFile
+wrong protocol type
+wtsapi32
+WTSEnumerateProcessesW
+WTSFreeMemory
+WVhx"
+WWWRWWWj
+WWWVWWWj
+WWWWPWj
+WWWWW
+X[_^]
+X9Gd}
+xh-ZA
+xh-za
+y)QVS
+y\VSh
+Y_[^]
+Y_^[Y]
+Y__^[
+y0w0u
+Yj"Xf;
+YPhxz
+Yu-f;
+YVh@J
+YY^[]
+YYh`E
+YYPhDf
+YYPhh
+Z\9;s
+zh-chs
+zh-CHS
+zh-cht
+zh-CHT
+zh-cn
+zh-CN
+zh-HK
+zh-hk
+zh-mo
+zh-MO
+zh-SG
+zh-sg
+zh-TW
+zh-tw
+zu-za
+zu-ZA
+ZWVPj

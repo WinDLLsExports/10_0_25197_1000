@@ -1,0 +1,199 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\WinSxS\amd64_microsoft-windows-native-80211_31bf3856ad364e35_10.0.25197.1000_none_bf47f6c55d5004a4\WdiWiFi.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    WppRecorder.sys
+    NDIS.SYS
+    NETIO.SYS
+    cng.sys
+    WDFLDR.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C00F7208 Import Address Table
+             1C00F7648 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         83E RtlCompareMemory
+                          8F EtwRegister
+                          92 EtwSetInformation
+                          94 EtwUnregister
+                         44C IoWMIRegistrationControl
+                         5E6 MmGetSystemRoutineAddress
+                         C9E tolower
+                         C81 qsort
+                         4C4 KeGetCurrentIrql
+                          F0 ExFreeToNPagedLookasideList
+                          BA ExAllocateFromNPagedLookasideList
+                         101 ExInitializeNPagedLookasideList
+                          D5 ExDeleteNPagedLookasideList
+                         818 RtlAnsiCharToUnicodeChar
+                         BB5 ZwQueryValueKey
+                         B76 ZwOpenKey
+                         721 PoRegisterPowerSettingCallback
+                         B89 ZwPowerInformation
+                         735 PoUnregisterPowerSettingCallback
+                         88E RtlEqualUnicodeString
+                         8FC RtlInitUnicodeString
+                         4B2 KeExpandKernelStackAndCalloutEx
+                         375 IoGetDeviceObjectPointer
+                         4D8 KeInitializeEvent
+                         307 IoBuildDeviceIoControlRequest
+                         459 IofCallDriver
+                         590 KeWaitForSingleObject
+                         6D6 ObfDereferenceObject
+                         5F3 MmIsVerifierEnabled
+                         4E0 KeInitializeSpinLock
+                          9A EtwWriteTransfer
+                         5FC MmMapLockedPagesSpecifyCache
+                         50E KeQueryDpcWatchdogInformation
+                         544 KeReleaseSpinLock
+                         480 KeAcquireSpinLockRaiseToDpc
+                         B24 ZwClose
+                         857 RtlCopyUnicodeString
+                         C30 __chkstk
+                         CAC wcscpy_s
+                         CA8 wcscat_s
+                         9DF RtlUTF8ToUnicodeN
+                          70 DbgPrintEx
+                          EE ExFreePoolWithTag
+                         598 KseQueryDeviceFlags
+                          BD ExAllocatePool2
+                         C3E _purecall
+
+    WppRecorder.sys
+             1C00F71B8 Import Address Table
+             1C00F75F8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 WppAutoLogStop
+                           2 WppAutoLogStart
+                          10 imp_WppRecorderReplay
+                           4 WppAutoLogTrace
+                           D imp_WppRecorderLogDumpLiveData
+                           E imp_WppRecorderLogGetDefault
+                           6 imp_WppRecorderDumpLiveDriverData
+
+    NDIS.SYS
+             1C00F7000 Import Address Table
+             1C00F7440 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         1DE NdisRetreatNetBufferListDataStart
+                         1C5 NdisQueueIoWorkItem
+                          16 NdisAllocateIoWorkItem
+                          A6 NdisFreeIoWorkItem
+                          DA NdisGetVersion
+                          1E NdisAllocateNetBufferListContext
+                           F NdisAdvanceNetBufferListDataStart
+                          AD NdisFreeNetBufferListContext
+                         1C2 NdisQueryNetBufferPhysicalCount
+                         18F NdisMSleep
+                         109 NdisInitializeEvent
+                         1E7 NdisSetEvent
+                         15B NdisMIndicateStatusEx
+                         164 NdisMOidRequestComplete
+                         158 NdisMIndicateReceiveNetBufferLists
+                         183 NdisMSendNetBufferListsComplete
+                         121 NdisMAllocatePort
+                         181 NdisMRestartComplete
+                         165 NdisMPauseComplete
+                         1CB NdisReadNetworkAddress
+                         18A NdisMSetMiniportAttributes
+                         224 NdisWriteConfiguration
+                         1C7 NdisReadConfiguration
+                          44 NdisCloseConfiguration
+                         1AF NdisOpenConfigurationEx
+                         14B NdisMFreePort
+                         162 NdisMNetPnPEvent
+                          A2 NdisFreeCloneNetBufferList
+                           E NdisAdvanceNetBufferDataStart
+                          70 NdisCopyFromNetBufferToNetBuffer
+                         1DD NdisRetreatNetBufferDataStart
+                          12 NdisAllocateCloneNetBufferList
+                         225 NdisWriteErrorLogEntry
+                         143 NdisMDeregisterMiniportDriver
+                          D1 NdisGetRoutineAddress
+                         179 NdisMRegisterMiniportDriver
+                         155 NdisMIdleNotificationComplete
+                         157 NdisMIdleNotificationConfirm
+                          D7 NdisGetSystemUpTimeEx
+                         1E8 NdisSetOptionalHandlers
+                         20A NdisWaitEvent
+                         1DC NdisResetEvent
+                          BF NdisGetDataBuffer
+
+    NETIO.SYS
+             1C00F7160 Import Address Table
+             1C00F75A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         181 NmrDeregisterProvider
+                         186 NmrWaitForProviderDeregisterComplete
+                           B ConvertInterfaceLuidToGuid
+                         184 NmrRegisterProvider
+
+    cng.sys
+             1C00F71F8 Import Address Table
+             1C00F7638 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          42 SystemPrng
+
+    WDFLDR.SYS
+             1C00F7188 Import Address Table
+             1C00F75C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 WdfLdrQueryInterface
+                           6 WdfVersionBind
+                           9 WdfVersionUnbindClass
+                           7 WdfVersionBindClass
+                           8 WdfVersionUnbind
+
+  Section contains the following exports for WdiWiFi.sys
+
+    00000000 characteristics
+    EB534346 time date stamp
+        0.00 version
+           1 ordinal base
+           6 number of functions
+           6 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000B3550 DllInitialize
+          2    1 0002FEB0 DllUnload
+          3    2 000467D0 Wdi_NdisMDeregisterWdiMiniportDriver
+          4    3 000467F0 Wdi_NdisMIndicateStatusEx
+          5    4 000468D0 Wdi_NdisMOidRequestComplete
+          6    5 000469B0 Wdi_NdisMRegisterWdiMiniportDriver
+
+  Summary
+
+        2000 .data
+        1000 .edata
+        2000 .idata
+        8000 .pdata
+       1A000 .rdata
+        5000 .reloc
+        1000 .rsrc
+       D2000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 PAGE
+        1000 fothk

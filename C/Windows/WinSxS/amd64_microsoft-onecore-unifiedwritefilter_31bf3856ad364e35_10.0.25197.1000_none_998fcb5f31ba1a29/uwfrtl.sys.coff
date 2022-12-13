@@ -1,0 +1,218 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\WinSxS\amd64_microsoft-onecore-unifiedwritefilter_31bf3856ad364e35_10.0.25197.1000_none_998fcb5f31ba1a29\uwfrtl.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    WDFLDR.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0009028 Import Address Table
+             1C0009340 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         396 IoGetStackLimits
+                         470 KdRefreshDebuggerNotPresent
+                         463 KdDebuggerEnabled
+                         464 KdDebuggerNotPresent
+                         590 KeWaitForSingleObject
+                         564 KeSetEvent
+                         4D8 KeInitializeEvent
+                         4AD KeEnterCriticalRegion
+                         9A3 RtlRunOnceBeginInitialize
+                         4DC KeInitializeMutex
+                         9A4 RtlRunOnceComplete
+                         4FA KeLeaveCriticalRegion
+                         307 IoBuildDeviceIoControlRequest
+                         459 IofCallDriver
+                         541 KeReleaseMutex
+                         8FC RtlInitUnicodeString
+                         C59 _vsnwprintf
+                         8BE RtlFreeUnicodeString
+                         9C6 RtlStringFromGUID
+                         2F8 IoAllocateErrorLogEntry
+                         453 IoWriteErrorLogEntry
+                         BFF ZwUpdateWnfStateData
+                         6A0 NtShutdownSystem
+                         BB2 ZwQuerySystemInformation
+                         841 RtlCompareUnicodeString
+                         48E KeAreAllApcsDisabled
+                         179 ExUuidCreate
+                         B76 ZwOpenKey
+                         BA8 ZwQueryKey
+                         B52 ZwEnumerateValueKey
+                         B47 ZwDeleteValueKey
+                         104 ExInitializeResourceLite
+                          D7 ExDeleteResourceLite
+                          AA ExAcquireResourceSharedLite
+                          A9 ExAcquireResourceExclusiveLite
+                         145 ExReleaseResourceLite
+                         4E0 KeInitializeSpinLock
+                         4DF KeInitializeSemaphore
+                         498 KeClearEvent
+                         98C RtlQueryRegistryValuesEx
+                         477 KeAcquireInStackQueuedSpinLock
+                         53C KeReleaseInStackQueuedSpinLock
+                         6C6 ObReferenceObjectByHandle
+                         7FA PsThreadType
+                         6D6 ObfDereferenceObject
+                         B24 ZwClose
+                         52D KeReadStateEvent
+                         543 KeReleaseSemaphore
+                         58E KeWaitForMultipleObjects
+                         7F9 PsTerminateSystemThread
+                         749 PsCreateSystemThread
+                         175 ExUnregisterCallback
+                          CF ExCreateCallback
+                         12D ExRegisterCallback
+                         526 KeQueryTimeIncrement
+                         857 RtlCopyUnicodeString
+                          9A EtwWriteTransfer
+                         10F ExInterlockedPushEntryList
+                         4C4 KeGetCurrentIrql
+                         10E ExInterlockedPopEntryList
+                          72 DbgPrompt
+                         157 ExSetTimer
+                         14A ExReleaseSpinLockExclusive
+                          D8 ExDeleteTimer
+                          92 EtwSetInformation
+                          C3 ExAllocateTimer
+                         169 ExTryAcquirePushLockExclusiveEx
+                         122 ExQueueWorkItem
+                          A7 ExAcquirePushLockExclusiveEx
+                         140 ExReleasePushLockExclusiveEx
+                          B1 ExAcquireSpinLockExclusive
+                          94 EtwUnregister
+                          C1 ExAllocatePoolWithTag
+                          8F EtwRegister
+                          70 DbgPrintEx
+                         492 KeBugCheckEx
+                          EE ExFreePoolWithTag
+                         50B KeQueryActiveProcessorCountEx
+                          BD ExAllocatePool2
+
+    WDFLDR.SYS
+             1C0009000 Import Address Table
+             1C0009318 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           6 WdfVersionBind
+                           8 WdfVersionUnbind
+                           7 WdfVersionBindClass
+                           9 WdfVersionUnbindClass
+
+  Section contains the following exports for uwfrtl.sys
+
+    00000000 characteristics
+    6BDAFAB5 time date stamp
+        0.00 version
+           1 ordinal base
+          80 number of functions
+          80 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000CA40 ??0UWFRTL_SYNC_ACCESS_BASE@@IEAA@PEBVUWFRTL_SYNC_ACCESS_DESCRIPTOR@@@Z
+          2    1 0000C8F0 ??0UWFRTL_SYNC_ACCESS_DESCRIPTOR@@IEAA@XZ
+          3    2 0000CA60 ??1UWFRTL_SYNC_ACCESS_BASE@@IEAA@XZ
+          4    3 0000C940 ??1UWFRTL_SYNC_ACCESS_DESCRIPTOR@@IEAA@XZ
+          5    4 00003130 ??3_DEFERRED@UWFRTL_MULTI_IO@@SAXPEAX@Z
+          6    5 00002ED0 ?PrepareForDeferredIo@UWFRTL_MULTI_IO@@QEAAJK@Z
+          7    6 00002E70 ?PrepareForIo@UWFRTL_MULTI_IO@@QEAAJXZ
+          8    7 0000A9A0 ?UwfrtlAcquireGlobalConfig@@YAXXZ
+          9    8 0000A820 ?UwfrtlCfgApiBreakpoint@@YAJXZ
+         10    9 0000BF30 ?UwfrtlCompareLooseBindingVolumeIds@@YA_NAEBU_UWF_CONFIG_VOLUME_ID@@0@Z
+         11    A 0000C7A0 ?UwfrtlCompareTightBindingVolumeIds@@YA_NAEBU_UWF_CONFIG_VOLUME_ID@@0@Z
+         12    B 0000C280 ?UwfrtlCompareUnicodeString@@YAJAEBU_UNICODE_STRING@@0_N@Z
+         13    C 0000AC90 ?UwfrtlConfigHorm@@YAXW4_UWF_CONFIG_HORM_STATE@@@Z
+         14    D 0000ACC0 ?UwfrtlConfigHormUnsafe@@YAXW4_UWF_CONFIG_HORM_STATE@@@Z
+         15    E 0000C3F0 ?UwfrtlCreateLocalUuid@@YAXPEAU_GUID@@@Z
+         16    F 0000C350 ?UwfrtlDelay@@YAJK@Z
+         17   10 0000C750 ?UwfrtlDeleteValueKey@@YAJPEAXPEBU_KEY_VALUE_FULL_INFORMATION@@@Z
+         18   11 0000C5D0 ?UwfrtlEnumerateValueKey@@YAJPEAXKW4_KEY_VALUE_INFORMATION_CLASS@@PEAPEAXW4UWFRTL_ALLOC_TAG@@PEAK@Z
+         19   12 0000C720 ?UwfrtlFreeKeyInformation@@YAXPEAXW4UWFRTL_ALLOC_TAG@@@Z
+         20   13 0000BE70 ?UwfrtlFreeVolumeId@@YAXPEAU_UWF_CONFIG_VOLUME_ID@@@Z
+         21   14 0000C150 ?UwfrtlGetAvailableCommit@@YAJPEA_K@Z
+         22   15 0000A850 ?UwfrtlGetGlobalConfigPtr@@YAJPEAPEAU_UWFRTL_UWF_CONFIG@@@Z
+         23   16 0000AC80 ?UwfrtlGetOverlayFlags@@YAKXZ
+         24   17 0000AB60 ?UwfrtlGetRomModeDispositionUnsafe@@YA?AW4_UWFVOL_ROM_MODE_DISPOSITION@@XZ
+         25   18 0000BA80 ?UwfrtlGetVolumeId@@YAJPEAU_DEVICE_OBJECT@@PEAU_UWF_CONFIG_VOLUME_ID@@1@Z
+         26   19 0000C2A0 ?UwfrtlHasPathPrefix@@YA_NAEBU_UNICODE_STRING@@0_N@Z
+         27   1A 0000C1F0 ?UwfrtlInitUnicodeStringSafe@@YAJPEAG_KPEAU_UNICODE_STRING@@@Z
+         28   1B 0000A010 ?UwfrtlInitialize@@YAJXZ
+         29   1C 00002020 ?UwfrtlIsDebuggerPresent@@YA_N_N@Z
+         30   1D 0000AA80 ?UwfrtlIsGlobalConfigAcquired@@YA_NXZ
+         31   1E 0000AC40 ?UwfrtlIsHormEnabledUnsafe@@YA_NXZ
+         32   1F 0000A670 ?UwfrtlIsProtectedVolume@@YAJPEAU_DEVICE_OBJECT@@PEAEPEAKPEAU_GUID@@@Z
+         33   20 0000AAA0 ?UwfrtlIsReadOnlyMediaMode@@YA_NPEAW4_UWFVOL_ROM_MODE_DISPOSITION@@@Z
+         34   21 0000AAD0 ?UwfrtlIsReadOnlyMediaModeUnsafe@@YA_NPEAW4_UWFVOL_ROM_MODE_DISPOSITION@@@Z
+         35   22 0000A4A0 ?UwfrtlIssueStateNotification@@YAXPEBUUWFRTL_STATE_NOTIFICATION@@@Z
+         36   23 0000C450 ?UwfrtlOpenKey@@YAJPEAPEAXKAEBU_UNICODE_STRING@@@Z
+         37   24 0000C820 ?UwfrtlQueryBcdHiveFileLocation@@YAJPEAPEBG@Z
+         38   25 0000C4B0 ?UwfrtlQueryKey@@YAJPEAXW4_KEY_INFORMATION_CLASS@@PEAPEAXW4UWFRTL_ALLOC_TAG@@PEAK@Z
+         39   26 0000A280 ?UwfrtlRegisterStateNotification@@YAJPEAPEAXP6AXPEBUUWFRTL_STATE_NOTIFICATION@@PEAX@_E2@Z
+         40   27 0000AA20 ?UwfrtlReleaseGlobalConfig@@YAXXZ
+         41   28 0000C120 ?UwfrtlRestartSystem@@YAJXZ
+         42   29 0000AD00 ?UwfrtlRetrieveConfig@@YAJXZ
+         43   2A 0000A530 ?UwfrtlSendIoctlSynchronously@@YAJPEAU_DEVICE_OBJECT@@KPEAXK1KPEA_K_N@Z
+         44   2B 0000C020 ?UwfrtlSendNotificationEvent@@YAJW4_UWF_NOTIFICATION_EVENT@@PEAXPEBXK@Z
+         45   2C 0000BF60 ?UwfrtlSendWnfEvent@@YAJW4_UWF_NOTIFICATION_EVENT@@@Z
+         46   2D 0000ABA0 ?UwfrtlSetRomModeDispositionFlagUnsafe@@YA?AW4_UWFVOL_ROM_MODE_DISPOSITION@@W41@_N@Z
+         47   2E 00002B30 ?UwfrtlSystemCheckState@@YA_NW4UWFRTL_SYSTEM_STATE_ASPECT@@@Z
+         48   2F 00002BE0 ?UwfrtlSystemClearState@@YA_NW4UWFRTL_SYSTEM_STATE_ASPECT@@@Z
+         49   30 00002B60 ?UwfrtlSystemSetState@@YA_NW4UWFRTL_SYSTEM_STATE_ASPECT@@@Z
+         50   31 0000D2A0 ?UwfrtlTelemetryLogNotificationEvent@@YAXW4_UWF_NOTIFICATION_EVENT@@_K@Z
+         51   32 00002760 ?UwfrtlThreadpoolWorkitemEnqueue@@YAJPEBUUWFRTL_THREADPOOL_WORKITEM@@W4UWFRTL_THREADPOOL_QUEUE_ID@@@Z
+         52   33 00002750 ?UwfrtlThreadpoolWorkitemInitialize@@YAXPEAUUWFRTL_THREADPOOL_WORKITEM@@P6AXW4UWFRTL_THREADPOOL_QUEUE_ID@@PEAX@Z2@Z
+         53   34 0000A3A0 ?UwfrtlUnregisterStateNotification@@YAXPEAX@Z
+         54   35 0000CAD0 ?acquireExclusive@UWFRTL_SYNC_ACCESS_BASE@@IEAAXXZ
+         55   36 0000C9D0 ?acquireExclusive@UWFRTL_SYNC_ACCESS_DESCRIPTOR@@AEBAXXZ
+         56   37 00003390 ?acquireSequenceContext@UWFRTL_MULTI_IO@@AEAAPEAU_SEQUENCE_CONTEXT@1@XZ
+         57   38 0000CA80 ?acquireShared@UWFRTL_SYNC_ACCESS_BASE@@IEAAXXZ
+         58   39 0000C990 ?acquireShared@UWFRTL_SYNC_ACCESS_DESCRIPTOR@@AEBAXXZ
+         59   3A 00002FF0 ?evtWdfRequestCompletionRoutine@UWFRTL_MULTI_IO@@CAXPEAUWDFREQUEST__@@PEAUWDFIOTARGET__@@PEAU_WDF_REQUEST_COMPLETION_PARAMS@@PEAX@Z
+         60   3B 000032E0 ?freeSequencePool@UWFRTL_MULTI_IO@@AEAAXXZ
+         61   3C 0000CB20 ?release@UWFRTL_SYNC_ACCESS_BASE@@IEAAXXZ
+         62   3D 0000CA10 ?release@UWFRTL_SYNC_ACCESS_DESCRIPTOR@@AEBAXXZ
+         63   3E 00003420 ?startSequence@UWFRTL_MULTI_IO@@AEAAJPEAU_SEQUENCE_CONTEXT@1@@Z
+         64   3F 0000CB90 DllInitialize
+         65   40 0000CBA0 DllUnload
+         66   41 00012010 DriverEntry
+         67   42 00001660 UwflogCompleteEntry_UWFLOG_LEVEL_ASSERTION
+         68   43 00001570 UwflogCompleteEntry_UWFLOG_LEVEL_CRITICAL
+         69   44 00001A40 UwflogCompleteEntry_UWFLOG_LEVEL_ERROR
+         70   45 00001E20 UwflogCompleteEntry_UWFLOG_LEVEL_INFORMATION
+         71   46 00001850 UwflogCompleteEntry_UWFLOG_LEVEL_LOW_RESOURCES
+         72   47 00002010 UwflogCompleteEntry_UWFLOG_LEVEL_TRACE
+         73   48 00001C30 UwflogCompleteEntry_UWFLOG_LEVEL_WARNING
+         74   49 000015E0 UwflogNewEntry_UWFLOG_LEVEL_ASSERTION
+         75   4A 000014F0 UwflogNewEntry_UWFLOG_LEVEL_CRITICAL
+         76   4B 000019C0 UwflogNewEntry_UWFLOG_LEVEL_ERROR
+         77   4C 00001DA0 UwflogNewEntry_UWFLOG_LEVEL_INFORMATION
+         78   4D 000017D0 UwflogNewEntry_UWFLOG_LEVEL_LOW_RESOURCES
+         79   4E 00001F90 UwflogNewEntry_UWFLOG_LEVEL_TRACE
+         80   4F 00001BB0 UwflogNewEntry_UWFLOG_LEVEL_WARNING
+
+  Summary
+
+        1000 .data
+        2000 .edata
+        1000 .idata
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        4000 .text
+        1000 GFIDS
+        1000 INIT
+        5000 PAGE
+        1000 fothk

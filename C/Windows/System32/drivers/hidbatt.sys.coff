@@ -1,0 +1,100 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\hidbatt.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    BATTC.SYS
+    HIDPARSE.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0009070 Import Address Table
+             1C00092A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         590 KeWaitForSingleObject
+                         733 PoStartNextPowerIrp
+                         81D RtlAppendUnicodeStringToString
+                         857 RtlCopyUnicodeString
+                          BD ExAllocatePool2
+                          EE ExFreePoolWithTag
+                         B24 ZwClose
+                         C04 __C_specific_handler
+                         45A IofCompleteRequest
+                         610 MmProbeAndLockPages
+                         2FB IoAllocateMdl
+                         749 PsCreateSystemThread
+                         6C6 ObReferenceObjectByHandle
+                         35E IoFreeMdl
+                         2F9 IoAllocateIrp
+                         3F7 IoReuseIrp
+                         7F9 PsTerminateSystemThread
+                         555 KeResetEvent
+                         307 IoBuildDeviceIoControlRequest
+                         30C IoCancelIrp
+                         35B IoFreeIrp
+                         6D6 ObfDereferenceObject
+                         354 IoFileObjectType
+                         376 IoGetDeviceProperty
+                         B74 ZwOpenFile
+                         4D8 KeInitializeEvent
+                         459 IofCallDriver
+                         328 IoCreateDevice
+                         564 KeSetEvent
+                         303 IoAttachDeviceToDeviceStack
+                         39E IoInitializeRemoveLockEx
+                         342 IoDeleteDevice
+                         6E5 PoCallDriver
+                         346 IoDetachDevice
+                         3A2 IoInvalidateDeviceState
+                         3DD IoReleaseRemoveLockAndWaitEx
+                         3DE IoReleaseRemoveLockEx
+                         627 MmUnlockPages
+                         2F0 IoAcquireRemoveLockEx
+
+    BATTC.SYS
+             1C0009000 Import Address Table
+             1C0009230 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 BatteryClassStatusNotify
+                           5 BatteryClassUnload
+                           0 BatteryClassInitializeDevice
+                           1 BatteryClassIoctl
+
+    HIDPARSE.SYS
+             1C0009028 Import Address Table
+             1C0009258 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           F HidP_GetUsages
+                          18 HidP_SetUsageValue
+                           D HidP_GetUsageValue
+                          14 HidP_MaxUsageListLength
+                           5 HidP_GetCaps
+                           9 HidP_GetLinkCollectionNodes
+                          11 HidP_GetValueCaps
+                           4 HidP_GetButtonCaps
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .pdata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        5000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 fothk

@@ -1,0 +1,4956 @@
+----------------------------------------------------------------------
+             
+                                                                                       %r%0
+                                [octs=on|off] [dtr=on|off|hs]
+                                [rts=on|off|hs|tg] [idsr=on|off]
+                                [to=on|off] [xon=on|off] [odsr=on|off]
+                            screen at a time.
+                            will be displayed.
+                           [/C] [/I] [/-I] [/Q] [/F] [/L] [/G] [/H] [/R] [/T]
+                           [/EXCLUDE:file1[+file2][+file3]...] [/COMPRESS]
+                           [/U] [/K] [/N] [/O] [/X] [/Y] [/-Y] [/Z] [/B] [/J]
+                           adding a source file.
+                           destination directory. Cannot use with the /A
+                           files.
+                           replaced.
+                           source files. Cannot use with the /A switch.
+                           switch.
+                           use with /S or /U switches.
+                        it can lead to unexpected result.
+                        It must not be located on <source volume>.
+                        opened handles to the volume would then be invalid.
+                        or a path to the volume mount point.
+                        This option will be ignored on refsutil salvage v1.
+                        WARNING: Not only this will take longer time to run,
+                      (implies /F).
+                      (implies /F, when /scan not specified).
+                      (implies /R)
+                      All opened handles to the volume would then be invalid
+                      are queued for offline repair (i.e. "chkdsk /spotfix").
+                      Bypass all online repair; all defects found
+                      corruption was detected, even if /F was not specified.
+                      current size.
+                      data (implies /F).
+                      Doskey macros.
+                      entries.
+                      file on the disk.
+                      fragmentation.
+                      instead of recovering their contents.
+                      mount point, or volume name.
+                      number of kilobytes.  If size is not specified, displays
+                      On NTFS: Displays cleanup messages if any.
+                      other tasks running on the system.
+                      possible. This may have a negative performance impact on
+                      structure.
+                      Uses more system resources to complete a scan as fast as
+                  (1.02, 1.50, 2.00, 2.01, 2.50).  The default
+                  (128K, 256K for sector size > 512 bytes).
+                  128K, 256K, 512K, 1M, 2M, 4M, 8M, 16M, 32M.
+                  128K, 256K, 512K, 1M, 2M.
+                  180, 320, 360, 640, 720, 1.2, 1.23, 1.44, 2.88, or 20.8).
+                  above 4096.
+                  and assumes empty label when no label is specified.
+                  are strongly recommended for general use.
+                  as /DAX:enable.
+                  bus, boosting IO performance.  A volume can be formatted
+                  By default, a non-tiered volume will be formatted with small
+                  by default.
+                  cluster size.
+                  default value which generally depend on the volume size.
+                  exFAT supports 512, 1024, 2048, 4096, 8192, 16K, 32K, 64K,
+                  FAT supports 512, 1024, 2048, 4096, 8192, 16K, 32K, 64K,
+                  FAT: Number of clusters <= 65526
+                  FAT32 supports 512, 1024, 2048, 4096, 8192, 16K, 32K, 64K,
+                  FAT32: 65526 < Number of clusters < 4177918
+                  following restrictions on the number of clusters on a volume:
+                  Format will immediately stop processing if it decides that
+                  handles to the volume would no longer be valid.
+                  Heat gathering to be disabled.
+                  high-density drive.
+                  If "count" is zero, we'll just zero every sector on the
+                  Integrity is enabled on storage that supports data redundancy
+                  large size file records.  /L and /L:enable forces format to
+                  mount point or volume name.
+                  mount point, or volume name.
+                  mount point, or volume name.  If volume name is specified,
+                  Note that the FAT and FAT32 files systems impose the
+                  NTFS compression is not supported for allocation unit sizes
+                  NTFS supports 512, 1024, 2048, 4096, 8192, 16K, 32K, 64K,
+                  NTFS, UDF).
+                  NTFS, UDF, ReFS).
+                  number each time followed by writing zeros to every sector.
+                  ReFS supports 4096, 64K.
+                  revision is 2.01.
+                  Short names are disabled by default
+                  Short names are enabled by default
+                  size file records and a tiered volume will be formatted with
+                  spotfix (i.e. chkdsk /spotfix) will not work.
+                  State can specify "enable" or "disable".  /DAX is considered
+                  than 2MB will result in a 2MB log file.  Zero indicates the
+                  the /MP flag is unnecessary.
+                  the above requirements cannot be met using the specified
+                  The minimum supported size is 2MB, so specifying size smaller
+                  the new volume. "state" is either "enable" or "disable"
+                  TxF is disabled by default
+                  TxF is enabled by default
+                  use large size file records and /L:disable forces format to
+                  use small size file records.
+                  volume.  In DAX mode, the volume is accessed via the memory
+                  volume. This switch is ignored when /Q is specified.
+                  with DAX mode only if the hardware is DAX capable.
+                 a virtual drive.
+                 Actual          On Disk
+                 checked at boot time and chkdsk is run on those that are
+                 dirty.
+                 drives are not accumulated between command invocations.
+                 if the drive is dirty.
+                 mount point, or volume name.
+                 specified amount of time in seconds.  If time is not
+                 specified, displays the current setting.
+                into the backup directory <Dir>.
+                level="asInvoker"
+                the volume would then be invalid.
+                uiAccess="false"
+               .obj extension respectively.
+               all files underneath the directory obj or all files with the
+               applicable.
+               assumes that destination must be a directory.
+               assumes that destination must be a file.
+               copied, that file will be excluded from being copied.  For
+               doesn't change the attribute.
+               empty directories and subdirectories.
+               example, specifying a string like \obj\ or .obj will exclude
+               existing destination file.
+               If no date is given, copies only those files whose
+               include empty directories or subdirectories. /T /E includes
+               not support encryption.
+               Same as /S /E. May be used to modify /T.
+               should be in a separate line in the files.  When any of the
+               source time is newer than the destination time.
+               Specifies a list of files containing strings.  Each string
+               strings match any part of the absolute path of the file to be
+               turns off the archive attribute.
+              All open handles to the volume will not be valid.
+              files and directories allow access by all users.
+              mount point, or volume name.
+              Specifies a contiguous file in the root directory
+              that will be the place holder for NTFS system files.
+             after a mismatch.
+             number of lines.
+             Specifies a file or files to search.
+             Specifies the first file or set of files to compare.
+             Specifies the second file or set of files to compare.
+            />
+            <requestedExecutionLevel
+            are separated by blanks.
+            create a snapshot of the volume for processing.
+            detection. With this switch set leak detection will be restarted once for every corrupted
+            directory found on the volume.
+            option.
+            reported by /q. Ommision of this switch will create a scratch buffer in %TEMP%.
+            Switches can be present in the MORE environment
+            synchronously (this is not recommended). Default is 4.
+            variable.
+            will scrub all files under the given directory. It can not be used together with /g
+          %1!d! file(s) copied.
+         Assuming cluster size is %1!d! bytes.
+         Directory name and info are lost because of corruption/writes.
+         do not stop the scan%!
+        ... queued for offline repair.
+        ... repaired online.
+        </requestedPrivileges>
+        <requestedPrivileges>
+        AllocatedLength:        %8!#016llx!
+        CreationTime:           %4!#016llx!
+        FileAttributes:         %10!#08x!
+        FileSize:               %9!#016llx!
+        Hash:       %1!#08x!
+        LastAccessTime:         %7!#016llx!
+        LastChangeTime:         %6!#016llx!
+        LastModificationTime:   %5!#016llx!
+        PackedEaSize:           %11!#04x!
+        ReparsePointTag:        %13!#04x!
+        Reserved:               %12!#04x!
+        SecurityId: %2!#08x!
+       !FindAutochkBlockers
+       [drive:][path][filename] [/S [/D]] [/L]
+       Please run quick scan or full scan phase first%!
+      and all subfolders.
+      Specifies a file or files for attrib to process.
+      the target of the Symbolic Link
+  -   Clears an attribute.
+    /C      Clear screen before displaying page
+    /E      Enable extended features
+    /P      Expand FormFeed characters
+    /S      Squeeze multiple blank lines into a single line
+    /Tn     Expand tabs to n spaces (default 8)
+    ?       Show help line
+    [drive:][path]filename  Specifies a file to display one
+    +n      Start displaying the first file at line n
+    </security>
+    <ret>   Display next line
+    <security>
+    <space> Display next page
+    =       Show line number
+    1.- Bad sectors in required areas of the volume.
+    2.- %2 structures in areas required by %1.
+    are accepted at the -- More -- prompt:
+    Baud:            %1
+    Code page:      %1
+    Columns:        %1
+    command - displays help information on that command.
+    command-name            Specifies a command whose output
+    CTS handshaking: %1
+    Data Bits:       %1
+    DSR handshaking: %1
+    DSR sensitivity: %1
+    DTR circuit:     %1
+    ExtendedInfo:
+    F       Display next file
+    File "%1" and file "%2" both own logical cluster %3
+    File "%1" and file "%2" both own logical clusters [%3, %4)
+    File %1 refers to a non-existent security descriptor %2
+    FileId:         %2!#04x! %3!04x!`%4!08x!
+    FileReparseKey: %1!#08x!
+    files   List of files to be displayed. Files in the list
+    FileSystemReference: %2!#04x! %3!04x!`%4!08x!
+    Flags: %0
+    Found %1 bad clusters in file "%2" starting at file offset %3
+    Found %1 bad free clusters starting at logical cluster %2
+    Found %1 clusters allocated to file "%2" at offset "%3" marked as free
+    Found %1 files (%2) which refer to a non-existent security descriptor %3
+    Found %1 files (%2) with bad links
+    Found %1 lost files (%2); requesting reconnection to index "%3" of directory "%4"
+    Found %1 missing entries (%2) in index "%3" of directory "%4"
+    Found a bad index "%1" in directory "%2"
+    Found a bad subtree in index "%1" of directory "%2"
+    Found a cycle in index "%1" from directory "%2"
+    Found a file "%1" with bad links
+    Found a mis-ordered index "%1" from directory "%2"
+    Found a naming cycle beginning at directory "%1" and ending in directory "%2"
+    Found a partially mis-ordered index "%1" from directory "%2"
+    Found an unneeded link (%1) in index "%2" of directory "%3"
+    Found corrupt basic file structure for "%1"
+    Found corrupt security descriptor entry at offset %2 in %1:$SDS
+    Found corruption in index "%1" of directory "%2"
+    Found lost file "%1"; requesting reconnection to index "%2" of directory "%3"
+    Found missing Index entry for file "%1" from index "%3" of directory "%2"
+    Found unused file metadata marked as used
+    Handle removed.
+    Hash:       %1!#08x!
+    If extended features are enabled, the following commands
+    Info:
+    Keyboard delay: %1
+    Keyboard rate:  %1
+    Length: %4!#08x!
+    Lines:          %1
+    Lost and found is located at \%1
+    name="Microsoft.Windows.Filesystem.Autochk"
+    Offset: %3!#016llx!
+    P n     Display next n lines
+    ParentDirectory: %1!#04x! %2!04x!`%3!08x!
+    Parity:          %1
+    Printer output is being rerouted to serial port %1
+    Printer output is not being rerouted.
+    processorArchitecture="x86"
+    Q       Quit
+    QuotaChangeTime:    %4!#016llx!
+    QuotaExceededTime:  %7!#016llx!
+    QuotaFlags:         %2!s!
+    QuotaLimit:         %6!#016llx!
+    QuotaSid:           %8!s!
+    QuotaThreshold:     %5!#016llx!
+    QuotaUsed:          %3!#016llx!
+    QuotaVersion:       %1!#08x!
+    RTS circuit:     %1
+    S n     Skip next n lines
+    Security ID %1 is non-existent and unused
+    SecurityHashKey:
+    SecurityId: %2!#08x!
+    Stop Bits:       %1
+    this drive.
+    Timeout:         %1
+    type="win32"
+    version="5.1.0.0"
+    XON/XOFF:        %1
+   "foundfiles.<volume signature>.txt" may not have been written yet and so no file
+   %1 lost allocation units were found in %2 chains.
+   /A   Use ASCII instead of extended characters.
+   /D:device   Specifies a print device.
+   /F   Display the names of the files in each folder.
+   [drive1:][path1]filename1 [drive2:][path2]filename2
+   <file list> can be generated by copying "foundfiles.<volume signature>.txt"
+   <target directory>.  If Scan Phase is stopped too early,
+   <working directory>.  If the Scan Phase was previously stopped, running with
+   A disk error occurred during writing of the file allocation table.
+   An allocation error occurred. The file size will be adjusted.
+   and preserving files that should be restored.  The PowerShell cmdlet
+   are not corrupted and so there is no need to scan the entire volume to
+   Attempt to determine if <source volume> is an ReFS volume and determine
+   be determined.  This is a standalone phase.
+   Cannot recover .. entry, processing continued.
+   Cannot recover .. entry.
+   Copy all files described in "foundfiles.<volume signature>.txt" to
+   Copy all the files in <file list> from <source volume> to <target directory>.
+   Discovered files will be logged to "foundfiles.<volume signature>.txt" under
+   Disk check cannot continue past this point in the folder structure.
+   Folder is joined.
+   Folder is totally empty, no . or ..
+   from this folder, then run disk checking again.
+   if the volume is mountable. When a volume is not-mountable, reason(s) will
+   It will perform a Full Scan Phase followed by a Copy Phase.
+   It will perform a Quick Scan Phase followed by a Copy Phase.
+   locate them.  This also reduces the recovery of stale files/directories/volumes.
+   -m                   Recover all possible files including deleted ones.
+   Quick Scan <source volume> for any recoverable files.
+   recoverable files.
+   recoverable files/directories/volumes.
+   refsutil salvage -C <source volume> <working directory> <target directory> <options>
+   refsutil salvage -D <source volume> <working directory> <options>
+   refsutil salvage -FA <source volume> <working directory> <target directory> <options>
+   refsutil salvage -FS <source volume> <working directory> <options>
+   refsutil salvage -IC <source volume> <working directory> <options>
+   refsutil salvage -QA <source volume> <working directory> <target directory> <options>
+   refsutil salvage -QS <source volume> <working directory> <options>
+   refsutil salvage -SL <source volume> <working directory> <target directory> <file list> <options>
+   Salvage files in an interactive console for advanced users.
+   Scan entire <source volume> for any recoverable files.
+   Select-String may be helpful in filtering "foundfiles.<volume signature>.txt"
+   The CHDIR command cannot switch to the root folder.
+   The file allocation table (FAT) on disk %1 is corrupted.
+   The files in <file list> must have first been identified by the Scan Phase
+   The folder structure past this point cannot be processed.
+   the -FS flag again will resume the scan from where it left off.
+   the -QS flag again will resume the scan from where it left off.
+   The root folder on this volume is full. To perform a disk check,
+   This mode also requires files generated from either of the Scan Phases.
+   This mode may take a long time as it will scan the entire volume for any
+   This mode runs quicker as it assumes some critical structures of the volume
+   though the scan need not have been run to completion.
+   to a new file, removing lines referencing files that shouldn't be restored,
+   to only include desired paths, extensions, or file names.
+   -v                   Verbose mode
+   will be copied to <target directory>.
+   Windows cannot find the %1 folder.
+   Windows has found an entry that contains a nonvalid attribute.
+   Windows requires space in the root folder. Remove some files
+   -x                   Force the volume to dismount first if necessary.  All
+  "string"   Specifies the text string to find.
+  %1 bad file records processed.                                     %r%0
+  %1 data files processed.                                           %r%0
+  %1 EA records processed.                                           %r%0
+  %1 file records processed.                                                        %r%0
+  %1 file SDs/SIDs processed.                                        %r%0
+  %1 files processed.                                                               %r%0
+  %1 free clusters processed.                                                       %r%0
+  %1 index entries processed.                                                       %r%0
+  %1 large file records processed.                                   %r%0
+  %1 reparse records processed.                                      %r%0
+  %1 security descriptor bytes processed.                            %r%0
+  %1 unindexed files recovered to lost and found.                    %r%0
+  %1 unindexed files recovered to original directory.
+  %1 unindexed files scanned.                                        %r%0
+  %1 USN bytes processed.                                                           %r%0
+  ...
+  /1              Formats a single side of a floppy disk.
+  /4              Formats a 5.25-inch 360K floppy disk in a
+  /8              Formats eight sectors per track.
+  /A                       Adds new files to destination directory. Cannot
+  /A           Copies only files with the archive attribute set,
+  /A         Displays differences in ASCII characters.
+  /A         Displays only first and last lines for each set of differences.
+  /A:size         Overrides the default allocation unit size. Default settings
+  /B                  NTFS only: Re-evaluates bad clusters on the volume
+  /B           Copies the Symbolic Link itself versus the target of the link.
+  /B         Performs a binary comparison.
+  /C                  NTFS only: Skips checking of cycles within the folder
+  /C              NTFS only: Files created on the new volume will be compressed
+  /C             Schedules a drive to be checked at boot time; chkdsk will run
+  /C           Continues copying even if errors occur.
+  /C         Displays only the count of lines containing the string.
+  /C         Disregards case of ASCII letters when comparing files.
+  /C         Disregards the case of letters.
+  /COMPRESS    Request network compression during file transfer where
+  /CvtArea:filename
+  /D              UDF 2.50 only: Metadata will be duplicated.
+  /D             Deletes a substituted (virtual) drive.
+  /D             Restores the machine to the default behavior; all drives are
+  /D         Displays differences in decimal format.
+  /D  Processes folders as well.
+  /D:m-d-y     Copies files changed on or after the specified date.
+  /DAX[:state]    NTFS Only: Enable direct access storage (DAX) mode for this
+  /E           Copies directories and subdirectories, including empty ones.
+  /EXCLUDE:file1[+file2][+file3]...
+  /EXENAME=exename    Specifies the executable.
+  /F                  Fixes errors on the disk.
+  /F           Displays full source and destination file names while copying.
+  /F:size         Specifies the size of the floppy disk to format (1.44)
+  /forceofflinefix    NTFS only: (Must be used with "/scan")
+  /freeorphanedchains FAT/FAT32/exFAT only: Frees any orphaned cluster chains
+  /FS:filesystem  Specifies the type of the file system (FAT, FAT32, exFAT,
+  /FS:NTFS    Specifies that the volume will be converted to NTFS.
+  /G           Allows the copying of encrypted files to destination that does
+  /H           Copies hidden and system files also.
+  /HISTORY            Displays all commands stored in memory.
+  /I                  NTFS only: Performs a less vigorous check of index
+  /I           If destination does not exist and copying more than one file,
+  /-I          If destination does not exist and copying a single specified file,
+  /I         Ignores the case of characters when searching for the string.
+  /I:state        ReFS only: Specifies whether integrity should be enabled on
+  /INSERT             Specifies that new text you type is inserted in old text.
+  /J           Copies using unbuffered I/O. Recommended for very large files.
+  /K           Copies attributes. Normal Xcopy will reset read-only attributes.
+  /L           Displays files that would be copied.
+  /L         Compares files as ASCII text.
+  /L         Displays line numbers for differences.
+  /L  Work on the attributes of the Symbolic Link versus
+  /L:size             NTFS only:  Changes the log file size to the specified
+  /L[:state]      NTFS Only: Overrides the default size of file record.
+  /LBn       Sets the maximum consecutive mismatches to the specified
+  /LISTSIZE=size      Sets size of command history buffer.
+  /LogSize[:size] NTFS Only: Specifies the size for NTFS log file in kilobytes.
+  /M           Copies only files with the archive attribute set,
+  /M         Do not prompt for compare more files.
+  /MACROFILE=filename Specifies a file of macros to install.
+  /MACROS             Displays all Doskey macros.
+  /MACROS:ALL         Displays all Doskey macros for all executables which have
+  /MACROS:exename     Displays all Doskey macros for the given executable.
+  /markclean          FAT/FAT32/exFAT only: Marks the volume clean if no
+  /MP             Specifies that the volume should be treated as a
+  /N           Copies using the generated short names.
+  /N         Displays line numbers with the displayed lines.
+  /N         Displays the line numbers on an ASCII comparison.
+  /N:sectors      Specifies the number of sectors per track.
+  /N=number  Compares only the first specified number of lines in each file.
+  /nnnn      Specifies the number of consecutive lines that must match
+  /NoRepairLogs   NTFS Only: Disables NTFS repair logs.  If the flag is set
+  /NoSecurity Specifies that the security settings on the converted
+  /NoTrim         Skip sending trim (delete notification) during format.
+  /O           Copies file ownership and ACL information.
+  /OFF[LINE] Do not skip files with offline attribute set.
+  /offlinescanandfix  Runs an offline scan and fix on the volume.
+  /OVERSTRIKE         Specifies that new text overwrites old text.
+  /P                       Prompts for confirmation before replacing a file or
+  /P           Prompts you before creating each destination file.
+  /P:count        Overwrite the volume "count" times using a different random
+  /perf               NTFS only: (Must be used with "/scan")
+  /Q              Performs a quick format. Note that this switch overrides /P.
+  /Q           Does not display file names while copying.
+  /R                       Replaces read-only files as well as unprotected
+  /R                  Locates bad sectors and recovers readable information
+  /R           Overwrites read-only files.
+  /R:revision     UDF only: Forces the format to a specific UDF version
+  /REINSTALL          Installs a new copy of Doskey.
+  /S                       Replaces files in all subdirectories of the
+  /S           Copies directories and subdirectories except empty ones.
+  /S  Processes matching files in the current folder
+  /S:state        Specifies support for short filenames (enable, disable)
+  /scan               NTFS only: Runs an online scan on the volume
+  /sdcleanup          NTFS only: Garbage collect unneeded security descriptor
+  /SPARSE      Preserves the sparse state when copying a sparse file.
+  /spotfix            NTFS only: Runs spot fixing on the volume
+  /T           Creates directory structure, but does not copy files. Does not
+  /T         Does not expand tabs to spaces.
+  /T:time        Changes the AUTOCHK initiation countdown time to the
+  /T:tracks       Specifies the number of tracks per disk side.
+  /TrNH           NTFS and ReFS Only: For volumes with tiered storage, causes
+  /TXF:state      Specifies if txf should be enabled/disabled (enable, disable)
+  /U                       Replaces (updates) only files that are older than
+  /U           Copies only files that already exist in destination.
+  /U         Compare files as UNICODE text files.
+  /V                  On FAT/FAT32: Displays the full path and name of every
+  /V           Verifies the size of each new file.
+  /V          Specifies that Convert will be run in verbose mode.
+  /V         Displays all lines NOT containing the specified string.
+  /V:label        Specifies the volume label.
+  /W                       Waits for you to insert a disk before beginning.
+  /W           Prompts you to press a key before copying.
+  /W         Compresses white space (tabs and spaces) for comparison.
+  /X                  Forces the volume to dismount first if necessary.
+  /X              Forces the volume to dismount first if necessary.  All opened
+  /X             Excludes a drive from the default boot-time check.  Excluded
+  /X           Copies file audit settings (implies /O).
+  /X          Forces the volume to dismount first if necessary.
+  /Y              No prompt, force the volume to dismount if necessary
+  /Y           Suppresses prompting to confirm you want to overwrite an
+  /-Y          Causes prompting to confirm you want to overwrite an
+  /Z           Copies networked files in restartable mode.
+  [/HISTORY] [/INSERT | /OVERSTRIKE] [/EXENAME=exename] [/MACROFILE=filename]
+  [drive:][path][filename]
+  [drive:][path]filename
+  [drive1:][path1]filename Specifies the source file or files.
+  [drive1:][path1]filename1
+  [drive2:][path2]         Specifies the directory where files are to be
+  [drive2:][path2]filename2
+  [drive2:]path  Specifies a physical drive and path you want to assign to
+  [macroname=[text]]
+  +   Sets an attribute.
+  A   Archive file attribute.
+  B   SMR Blob attribute.
+  data1      Specifies location and name(s) of first file(s) to compare.
+  data2      Specifies location and name(s) of second files to compare.
+  destination  Specifies the location and/or name of new files.
+  drive:          Specifies the drive letter of a drive.
+  drive1:        Specifies a virtual drive to which you want to assign a path.
+  filename            FAT/FAT32 only: Specifies the files to check for
+  H   Hidden file attribute.
+  I   Not content indexed file attribute.
+  label           Specifies the label of the volume.
+  macroname           Specifies a name for a macro you create.
+  nnn   Specifies a code page number.
+  O   Offline attribute.
+  P   Pinned attribute.
+  R   Read-only file attribute.
+  S   System file attribute.
+  source       Specifies the file(s) to copy.
+  text                Specifies commands you want to record.
+  U   Unpinned attribute.
+  V   Integrity attribute.
+  volume              Specifies the drive letter (followed by a colon),
+  volume          Specifies the drive letter (followed by a colon),
+  volume         Specifies the drive letter (followed by a colon),
+  volume      Specifies the drive letter (followed by a colon),
+  X   No scrub file attribute.
+---------- %1
+---------- %1: %2
+ <%#x,%#I64x>
+ 8] u
+---- Commands Supported ----
+ Directory of %1
+---- Leak Detection and Fixing ----
+ Microsoft Corporation. All rights reserved.
+--- MORE ---%0
+-- More %1%2%3 -- %4%0
+ Operating System
+ Phase duration (%1): %2.
+ r~RRR
+---- Triage and corruption handling ----
+ Windows
+!G@!GD_
+!h0*@
+!HDYj0ZRf
+!T$ 3
+!This program cannot be run in DOS mode.
+"chkdsk /f" will be required to repair the volume.
+"Chkdsk /scan" has found and repaired critical volume bitmap corruption online and must restart the scan.
+"Chkdsk /scan" has found volume bitmap corruption which can only be repaired by "chkdsk /f".  Aborting.
+"chkdsk /scan" is aborting due to corruption found in the $Boot file.
+"chkdsk /scan" is aborting due to self-healing command failure: %1
+"Chkdsk /scan" is restarting due to stale information about crosslinks.
+"Force Full Chkdsk" volume state is set -- spotfix is not possible.
+#F@#VD
+$*     Symbol replaced by everything following macro name on command line.
+$1-$9  Batch parameters.  Equivalent to %%1-%%9 in batch programs.
+$AttrDef
+$AttrDef, $BitMap, $Boot, $BadClus, $Secure, $UpCase, $Extend
+$ATTRIBUTE_LIST
+$BadClus
+$Bitmap
+$BITMAP
+$Boot
+$Corrupt
+$DATA
+$EA_INFORMATION
+$Extend
+$FILE_NAME
+$hT,@
+$INDEX_ALLOCATION
+$INDEX_ROOT
+$Info
+$LogFile
+$LOGGED_UTILITY_STREAM
+$MFTMirr
+$OBJECT_ID
+$ObjId
+$Quota
+$Repair
+$Reparse
+$REPARSE_POINT
+$RmMetadata
+$Secure
+$SECURITY_DESCRIPTOR
+$STANDARD_INFORMATION
+$SVW3
+$SYMBOLIC_LINK
+$T     Command separator.  Allows multiple commands in a macro.
+$TXF_DATA
+$UpCase
+$UsnJrnl
+$Verify
+$Volume
+$VOLUME_INFORMATION
+$VOLUME_NAME
+$VOLUME_VERSION
+%#I64x
+%02x 
+%04X%04X
+%08X-
+%08X_dir.chk
+%08Xfile.chk
+%1      %2
+%1  first allocation unit is not valid. The entry will be truncated.
+%1  Folder has non-zero file size.
+%1  Has handle extended attribute set belonging to another file.
+%1  Invalid name.  Folder entry removed.
+%1  Invalid time stamp.
+%1  Unrecognized extended attribute handle.
+%1 %2 %3.
+%1 %2, %3.
+%1 (Y/N)? %0
+%1 -> %2
+%1 -> %2 (Y/N)? %0
+%1 allocation units available on disk.
+%1 available allocation units on disk.
+%1 Bad clusters in file "%2" starting at file offset %3 ... %0
+%1 Bad free clusters starting at logical cluster %2 ... %0
+%1 bad sectors were encountered during the format.  These sectors
+%1 bits in each FAT entry.
+%1 bytes are available.
+%1 bytes available on disk.
+%1 bytes free.
+%1 bytes in %2 files.
+%1 bytes in %2 folders.
+%1 bytes in %2 hidden files.
+%1 bytes in %2 recoverable files.
+%1 bytes in %2 recovered files.
+%1 bytes in bad sectors.
+%1 bytes in each allocation unit.
+%1 bytes in extended attributes.
+%1 bytes of free disk space added.
+%1 bytes of free disk space would be added.
+%1 bytes total disk space.
+%1 cannot be converted because it contains files or directories
+%1 clusters allocated to file "%2" at offset "%3" are marked as free ... %0
+%1 contains %2 non-contiguous blocks.
+%1 corruption record processed in %2 seconds.
+%1 corruption records processed in %2 seconds.
+%1 EB are available.
+%1 EB total disk space.
+%1 Errors in . and/or .. corrected.
+%1 file system. This volume cannot be converted to %2.
+%1 File(s)
+%1 file(s) added
+%1 File(s) copied
+%1 file(s) recovered.
+%1 file(s) replaced
+%1 files have an invalid security ID ... %0
+%1 FORMAT does not support user selected allocation unit sizes.
+%1 GB are available.
+%1 GB total disk space.
+%1 is cross-linked on allocation unit %2.
+%1 is currently being printed
+%1 is dirty.  You may use the /C option to schedule chkdsk for
+%1 is not a complete name.
+%1 is not a valid drive specification.
+%1 is not a valid file system
+%1 is not available for %2 drives.
+%1 is not dirty.
+%1 KB are available.
+%1 KB available on disk.
+%1 KB in %2 alternate data streams.
+%1 KB in %2 directories.
+%1 KB in %2 files.
+%1 KB in %2 folders.
+%1 KB in %2 hidden files.
+%1 KB in %2 indexes.
+%1 KB in %2 recoverable files.
+%1 KB in %2 recovered files.
+%1 KB in %2 stream directories.
+%1 KB in bad sectors.
+%1 KB in use by the system.
+%1 KB occupied by the log file.
+%1 KB of free disk space added.
+%1 KB of free disk space would be added.
+%1 KB total disk space.
+%1 may be an invalid name in folder %2.
+%1 may not be converted to %2
+%1 MB are available.
+%1 MB available on disk.
+%1 MB in %2 alternate data streams.
+%1 MB in %2 directories.
+%1 MB in %2 files.
+%1 MB in %2 indexes.
+%1 MB in %2 stream directories.
+%1 MB in bad sectors.
+%1 MB in use by the system.
+%1 MB of additional physical memory is needed
+%1 MB total disk space.
+%1 of %2 bytes recovered.
+%1 PB are available.
+%1 PB total disk space.
+%1 percent complete. (%2 of %3 bad file records processed) %r%0
+%1 percent complete. (%2 of %3 data files processed)       %r%0
+%1 percent complete. (%2 of %3 EA records processed)       %r%0
+%1 percent complete. (%2 of %3 file records processed)     %r%0
+%1 percent complete. (%2 of %3 file SDs/SIDs processed)    %r%0
+%1 percent complete. (%2 of %3 files processed)            %r%0
+%1 percent complete. (%2 of %3 free clusters processed)    %r%0
+%1 percent complete. (%2 of %3 index entries processed)    %r%0
+%1 percent complete. (%2 of %3 large file records processed)%r%0
+%1 percent complete. (%2 of %3 reparse records processed)  %r%0
+%1 percent complete. (%2 of %3 SD bytes processed)         %r%0
+%1 percent complete. (%2 of %3 unindexed files recovered)  %r%0
+%1 percent complete. (%2 of %3 unindexed files scanned)    %r%0
+%1 percent complete. (%2 of %3 USN bytes processed)        %r%0
+%1 percent completed.                  %r%0
+%1 percent completed.               %r%0
+%1 percent completed.%2             %r%0
+%1 TB are available.
+%1 TB total disk space.
+%1 total allocation units on disk.
+%1 total bytes memory.
+%1 was not converted to %2
+%1!*s!%2
+%1!*s!%2!.*S!
+%1!*s!Attribute:
+%1!*s!Block          : %2!#018llx!
+%1!*s!Block %2!d!    : %3!#018llx!
+%1!*s!Block Count    : %2!d!
+%1!*s!Block Offset   : %2!#010x!
+%1!*s!Call Stack:
+%1!*s!Child FRN      : %2!#06x! %3!04x!`%4!08x!
+%1!*s!ChildFRS %2!d! : %3!#06x! %4!04x!`%5!08x!
+%1!*s!ChildFRS Count : %2!d!
+%1!*s!Context Type   : %2
+%1!*s!Corruption Context %2!2d!:
+%1!*s!Corruption Record:
+%1!*s!Corruption Record: %2!#018llx!
+%1!*s!CorruptionHint%2!1d!: %3
+%1!*s!CorruptionResolution1: %2!s!
+%1!*s!CorruptionResolution2: (%2!#018llx!)
+%1!*s!Crossing Extent :
+%1!*s!Data:
+%1!*s!Description:
+%1!*s!Entry Ordinal  : %2!d!
+%1!*s!Extent:
+%1!*s!File:        %2!d!
+%1!*s!FileName: %2
+%1!*s!Flags          : %2!s!
+%1!*s!FRN            : %2!#06x! %3!04x!`%4!08x!
+%1!*s!FRN %2!d! : %3!#06x! %4!04x!`%5!08x!
+%1!*s!FRN Count      : %2!d!
+%1!*s!Header:
+%1!*s!Index          :
+%1!*s!InstanceTag    : %2!38s!
+%1!*s!Invalid or malformed corruption record!
+%1!*s!LCN            : %2!#018llx!
+%1!*s!Length         : %2!d! bytes
+%1!*s!Line Number: %2!d!
+%1!*s!NtfsCallStack:
+%1!*s!Offset         : %2!#018llx!
+%1!*s!Owning Extent   :
+%1!*s!Parent FRN     : %2!#06x! %3!04x!`%4!08x!
+%1!*s!Recover FRN    : %2!#06x! %3!04x!`%4!08x!
+%1!*s!Run Length     :         %2!#010x!
+%1!*s!Security Id    : %2!#010x!
+%1!*s!SelfHealingContext:
+%1!*s!SourceTag:   %2!d!
+%1!*s!TypeCode: %2!#x! Name: %3!.*s!
+%1!*s!Value          :
+%1!*s!Value Length   : %2!d! bytes
+%1!*s!VCN: %2!#018llx! LCN: %3!#018llx! Length: %4!#010x!
+%1!*s!Verb           : %2!s!
+%1!*s!Verb-Specific Fields:
+%1!*s!Version        : %2!1d!.%3!1d!
+%1!16d! Dir(s)
+%1!d! container index table entry pages processed (%2!d! invalid page(s)).
+%1!d! container table entry pages processed (%2!d! invalid page(s)).
+%1!d! error(s) encountered while scanning partition.
+%1!d!: %2
+%1!I64d! disk clusters analyzed (%2!d!%%)...%r%0
+%1!I64d! table roots validated (%2!d!%%).  %r%n%0
+%1!I64d! table roots validated (%2!d!%%)...%r%0
+%1!I64d! tables enumerated (%2!d!%%).  %r%n%0
+%1!I64d! tables enumerated (%2!d!%%)...%r%0
+%1%2%3%4%5.
+%1%2%3%4.
+%1%2.
+%1:  %2
+%1: %2 %3
+%1: => %2
+%1: not rerouted
+%10.1f
+%10u%u
+%2!02d!/%3!02d!/%4!04d! %5!02d!:%6!02d!:%7!02d! AM    <DIR>          %1
+%2!02d!/%3!02d!/%4!04d! %5!02d!:%6!02d!:%7!02d! AM %8!17ld! %1
+%2!02d!/%3!02d!/%4!04d! %5!02d!:%6!02d!:%7!02d! PM    <DIR>          %1
+%2!02d!/%3!02d!/%4!04d! %5!02d!:%6!02d!:%7!02d! PM %8!17ld! %1
+%2d%2d%u%I64d%I64d%3d%02d%02d%W
+%4/%5/%6.
+%d%d%d%d
+%d%s%s
+%d.%1d
+%I64d
+%I64d%x%x
+%I64u.%02u %s
+%I64x
+%I64X
+%I64x%I64x
+%I64x%I64x%I64x
+%I64x%I64x%I64x%I64x
+%I64x%I64x%I64x%x
+%I64x%I64x%I64x%x%x
+%I64x%I64x%x%x
+%I64x%W
+%I64x%W%d
+%I64x%W%I64x
+%I64x%W%I64x%I64x
+%I64x%W%I64x%W%I64x
+%I64x%W%W%I64x
+%I64x%W%W%I64x%I64x
+%I64x%W%x%I64x
+%I64x%ws%ws
+%I64x%x
+%I64x%x%I64x
+%I64x%x%x
+%I64x%x%x%I64x
+%I64x%x%x%x
+%rInitializing volume from %1.
+%s%04d%02d%02d%02d%02d%02d%s
+%s-%s
+%s:%I64u,
+%s\%s
+%s\System Volume Information\Chkdsk\WVBackingStore%d.dat
+%W %X%I64X
+%W%08x
+%W%d%2d%I64d%I64d%2d%3d%02d%02d%W
+%W%I64u
+%W%I64x
+%W%I64X
+%W%I64x%I64x
+%W%I64x%I64x%I64x
+%W%I64X%X
+%W%I64x%x%I64x
+%W%I64x%x%x
+%W%I64x%x%x%I64x
+%W%q%q%q%q
+%W%q%q%q%q%q%q%q
+%W%q%q%q%q%q%q%q%q%q%q%q%q
+%W%W%I64x
+%W%W%W
+%W%W%W%W
+%W%X%I64X
+%W%x%I64x
+%W%x%x%I64x
+%ws%ws
+%X%I64X
+%x%I64x
+%x%I64x%I64x
+%x%I64x%I64x%I64x
+%x%I64x%x
+%x%I64x%x%I64x
+%X%W%d
+%X%W%I64X
+%x%W%I64x
+%x%W%I64x%x%I64x
+%X%W%W
+%X%W%X
+%x%x%I64x
+%x%x%I64x%I64x
+%X%x%I64x%I64x%I64x
+%x%x%I64x%I64x%I64x
+%x%x%I64x%x%I64x%I64x
+%x%x%W%x%W%I64x
+%x%x%x
+%x%x%x%I64x
+%x%x%x%x
+%x%x%x%x%I64x
+%x%x%x%x%x
+%x%x%x%x%x%I64x
+%x%x%x%x%x%x
+&0A0w021
+(%1%%)%0
+(%2!I64d! bytes).
+(0C0k0q0z0
+(F = file, D = directory)? %0
+(vnjdYj
+)sl^_
+*****
+***** %1
+*.*%0
+*RPQV
+,Qh0G@
+.          
+..         
+.00cfg
+.1V1j1
+.data
+.data$brc
+.gfids
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.rdata
+.rdata$brc
+.rdata$sxdata
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.text
+.text$mn
+.w:t 
+.xdata$x
+/a          If leak detection finds a corruption, setting this switch attempt to fix it and re-run leak
+/d          Diagnose only. Leaks will be printed to stdout, but not fixed.
+/F and /MARKCLEAN are mutually exclusive.
+/FORCEOFFLINEFIX can be specified only with /SCAN.
+/g          Scrub the global tables of the volume. It can not be used together with /s <id> option.
+/PERF can be specified only with /SCAN.
+/q          Query required space for operation.
+/s <file>   Run operation using <file> as a scratch buffer. <file> must be able to grow to the value
+/s <id>     Scrub the directory corresponding to <id>. <id> Is the file id for the directory. This
+/SDCLEANUP can not be specified with /r, /b, /i, or /c options.
+/t <count>  Number of threads to spawn for leak detection. Specifying a value of 0 will run leak detection
+/v          Verbose output.
+/x          Operate holding an exclusive lock on the volume. Without this switch leak detection will
+:#;0;H;R;l;
+:%:+:2:
+:%;L<_<z<
+:&:?:X:
+:&:U:`:f:n:
+:&;+;<;l;q;
+:):q:
+:,:>:P:`:o:|:
+:.:P:f:
+:.;9;F;
+:/:N:v:
+:/;P;q;
+:/;U;l;z;
+:-:O:
+:-;L<U<a<m<
+:?>u>
+:_;.=
+:+:9:]:
+:+:E:V:i:u:
+:+|$<
+:=:}:
+:=;e;
+:0:L:P:l:p:
+:3;o;
+:4:<:I:
+:6;=;
+:8:k:
+:9;V<c<~<
+:b:k:p:
+:B;M;
+:C:K:
+:D:P:z:
+:e;p;
+:G:b:
+:G:x:
+:K:[:s:
+:N;e;l;
+:S;q;
+:T:X:`:h:
+:t;y;
+:W:r:
+:x;w<W=|=
+:Xf9DNBu
+;!;1;S;
+;!<\<
+;";\;
+;"<^<}<
+;#;G;
+;%;2;?;L;Y;f;s;
+;&<p<
+;(<O<
+;);=;H<f<z<
+;*<3<
+;.<H<t<
+;/;I;
+;/<:<G<
+;;;^;j;
+;;;N;q;
+;';@;
+;?;U;v;
+;?<F<
+;`;u;
+;{ls:
+;{lsE
+;|$@w'
+;+;{;
+;+>1>8>V>c>
+;'<9<Z<h<
+;-<H<h<
+;=;\;g;t;
+;0;P;
+;0<Q<f<
+;3;M;m;
+;3=K=X=
+;4;l;
+;8;=;N;
+;9<C<
+;B@si
+;B<p<
+;C;`;
+;D$ sF
+;e<w<
+;F(s=
+;F(vN
+;Fdw'
+;Fdwe
+;FHw,
+;G(s SV
+;G(s%VS
+;G(s:
+;G(wh
+;G<v.Ph
+;G8sf3
+;H<S<i<t<
+;H<tj
+;HlsS
+;JlsO
+;K<k<
+;K<u<
+;L$0w/r
+;N<.=Q=f=
+;NXwy
+;O=u=
+;Ols5
+;Q<m<
+;R;x;
+;R<[=
+;S;`;w;
+;t$,v-
+;V8s#f9H
+;VLw3r
+;Y;o;};
+? ?-?z?
+?"?1?7?F?L?[?a?p?v?
+?#?k?
+?#?N?
+?$???i?{?
+?$?J?
+?%?J?V?
+?&?h?u?
+?(?p?
+?)?D?
+?,?>?T?
+?.?N?f?
+?/?<?t?
+????????.???
+?-???D?
+?'?A?}?
+?^?r?
+?<?}?
+?<?C?
+?1?:?
+?3?=?^?|?
+?4?G?S?
+?8?T?`?k?p?u?z?
+?A?S?^?k?
+?M?S?[?a?g?m?}?
+?M?V?t?}?
+?R?z?
+@.rsrc
+@0;H$s
+@0;x$
+@9C,t
+@9G0t
+@j [f;E
+@Ph,)@
+[%1]%2
+[j.Zj?Y
+[Line: %1]%0
+[Options: psfq=<space><ret>]%0
+[u"8]
+\ <%#x,%#I64x>
+\$ 9E
+\$(t)
+\$,w5r
+\$D;\$
+\$Extend\$ObjId
+\$Extend\$Quota
+\$Extend\$Reparse
+\$Extend\$RmMetadata\$Repair
+\$Extend\$UsnJrnl
+\??\BootPartition
+\??\SystemPartition
+\??\Volume{
+\BOOTEX.LOG
+\Device
+\device\
+\Device\Harddisk
+\Device\KeyboardClass%d
+\Device\MountPointManager
+\Device\Setup
+\Device\Volume
+\EA DATA. SF
+\Registry\Machine\
+\Registry\Machine\Hardware\DESCRIPTION\System
+\Registry\Machine\System\CurrentControlSet\Control
+\REGISTRY\MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager
+\Registry\Machine\System\Setup
+^(9^ t
+^95p I
+^f9LE
+^Vh,)@
+_ 9_,t
+_,_^[
+_._^[]
+_^[Y]
+_|_^[
+_9~0t
+_alldiv
+_allmul
+_allrem
+_allshl
+_aulldiv
+_aullrem
+_aullshr
+_chkstk
+_vsnprintf
+_vsnwprintf
+_wcsicmp
+_wcslwr
+_wcsnicmp
+_wcstoui64
+_wcsupr
+_wtoi64
+_wtol
+`.data
+{(YRPhP'@
+{,h|j
+{0YRPhP'@
+|$(9|$$v
+|$@Pj
+|8N$}$
+|Qh0G@
+~(_^[]
+~8+~0
++060C0`0
+<!-- Copyright (c) Microsoft Corporation -->
+<!=b=
+<$</<<<)=<=z=
+<$<I<Y<s<
+<%#x,%#I64x>
+<&<=<N<i<z<
+<&>;>
+<(<5<n<y<
+<(<8<H<X<
+<(<m<
+<)<6<C<P<]<j<w<
+<)=6=Q=f=s=
+<)=H=R=`=e=
+<*<{?
+<,=R=V>}>
+<.={=
+</assembly>
+</trustInfo>
+<:=[=q=
+<:=R=
+<;=G=">
+<???,%#I64x>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<\<h<}<
+<]=b=
+<+<D<
+<+=4=N=X=u=
+<<<G<T<
+<-<C=u?
+<-<F<M<W<
+<><n<z<
+<0<M<j<
+<0=M=X=e=
+<4<H<j<
+<4=j=s=
+<7=J=c=
+<8=C=P=u=
+<9=P=[=h='>=>[>p>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<assemblyIdentity
+<B=M=Z=w=~=b?
+<c=3>M>
+<ClusterSize>   Cluster size of the volume.  Either 4096 or 65536.
+<D<S<
+<D=I=Z=
+<description>Auto Check Utility</description>
+<drive>         Drive letter in format "L:".
+<drive>     Drive letter in format "L:", or a path to the volume mount point.
+<f<y<
+<j=v>
+<K=S=7>>>F>_>
+<k=t=
+<MajorVersion>  Major version of the ReFS volume.
+<MinorVersion>  Minor version of the ReFS volume.
+<options>
+<Q<j<
+<r=i>
+<source volume>         ReFS volume to process. Drive letter in format "L:",
+<SVW3
+<target directory>      Location where identified files will be copied to.
+<trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+<U<j<
+<working directory>     Location to store temporary information and logs.
+<w'tR
+<y<A=
+=!>F>
+=!>I>
+="=W=i=
+=">2>
+=">5>
+=#=<=O=]=v=
+=$>>>K>
+=%>B>
+=&=1=<=
+=(?T?
+=(=9=
+=(=F>O?
+=*>X>j>
+=,=C=d=r=
+=,=L={=
+=.>:>Z>h>
+=\>z>
+=^>y>
+=<>N>Y>f>
+=2>]>
+=2>b>
+=2>N>
+=5=x=
+=5>>>W>
+=B>M>
+=c>k>
+=d=i=q=
+=G=f=
+=i>|>
+=j>o>
+=P=]=
+=R=]=j=
+=S=`=~=
+=W>f>
+>!><>
+>#?(?9?
+>$>m>r>
+>%>+>0>A>
+>%>>>H>j>
+>*?x?
+>,?z?
+>,>b>
+>+?6?C?
+>=?P?
+>>?\?o?
+>0>@>N>^>
+>0u)8^
+>1?O?
+>1>J>a>
+>3><>[>
+>3>L>e>
+>5?K?i?v?
+>5?O?\?
+>7>W>`>e>
+>D>_>
+>I?e?
+>K?{?
+>U>k>Z?
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0:0o0
+0 1H1K2c2l2u2
+0 1R3
+0!0(0<0@1`1m1v1
+0!0\0u0
+0!0Z0w0
+0!1+1x1
+0"1F1
+0"1q2
+0#080
+0#0b0
+0%0D0[0|0
+0%0r0
+0%1j1
+0&151[1
+0(191
+0.0<0d0
+0.181B1d1
+0.1Z1o1z1
+0/0B0b0g0t0
+0:1Z1t1*2A2
+0@1g1
+0]1h1u1:2
+0+1A1W1m1
+0-030B0H0W0]0l0r0
+0-0W0c0
+011>1l1;2M2
+0-1i2s2
+030j0
+040904B0
+041m1x1
+051c1
+080t0
+081A1r1{1
+090V0r0
+091H1y1
+091P1<3F4
+0B1]1E3y4
+0C1p1
+0E0I1z1
+0e0t0
+0f;1u
+0f1k1
+0f1S2_2z2
+0H1l1
+0hD.@
+0hT.@
+0L1U1q1
+0m0K1[2q2
+0p1z1
+0r0~0
+'0R4e4m4
+0T1]1
+0x%1 and instance tag 0x%2 in file 0x%4 is not aligned.
+0x%1 exceeded the page size 0x%3.
+0x%1 is too small.  The minimum value is 0x%3.
+0x%2 and 0x%4 have different names %3 and %5
+0x%2 and 0x%4 have non-contiguous VCN numbers 0x%3 and 0x%5
+0x%2 should be after attribute of type 0x%3 and instance tag 0x%4.
+0x%2, length 0x%1, and the attribute value offset is 0x%3.
+0x%2, length 0x%1, and the mapping pairs offset is 0x%3.
+0x%3 is not aligned.
+0x%3 is not set.
+0x%4 at offset 0x%1 is invalid.  The correct value is 0x%3.
+0x%4 exceeded the page size 0x%3.
+0x%4 is incorrect.  The expected value is 0x%3.
+0x%4 is larger than the remaining length 0x%3 of a page.
+0x%4 is not equal to 0x%3.
+0x%4 is not in multiple of 0x%3.
+0x%4 is too small.  The minimum value is 0x%3.
+0x%5 is incorrect.  The expected value is 0x%4.
+0y1/2<2I2S2d2
+0Z1g1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1#1w1
+1$1/161=1D1J1-2?2
+1$121K1j1w1
+1$2)2:2y2
+1$2X2}2
+1%232L2
+1*1]1h1u1
+1/1X1
+1@1,2
+1]1b1
+1<2.3
+10 mismatches - ending compare
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+112_2
+1'141
+1'1h1
+1-2_2j2w2
+1234567890+-
+1-242\2
+182G2m2
+191H1[1j1
+1B1K1
+1B1l1
+1c1e2w2
+1C2/3
+1c2N3Y3f3
+1d1.2a2b3
+1h,.@
+1hd.@
+1hx.@
+1m2v2
+1N2i2~2
+1o1|1
+1q2x2
+1R2q2
+1S1]1
+1T5]5
+1U1`1m1
+1Y2l2}2
+1Z1l1
+1Z2'3]405
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2!2,292z2
+2!252;2y2~2
+2!3G3c3
+2#2-2=2M2]2f2
+2#3I3\3a3
+2#3X3A4N4
+2$2:2P2f2x2
+2$2>2u2
+2$21223g3t3
+2(2k3
+2*333Q3a3{3
+2,3J3
+2.292F2
+2.2J2[2q2
+2@2M2
+2@3S3n3
+2^2h2
+2_3|3
+2+282
+2=3J3/484
+2>3J3a3
+202J2B3X6
+203P3a3w3
+203Z3
+2-2"3
+2-3:3
+2-3;7i7t7
+232@2g2
+232I2_2u2
+232K2
+233y3
+242=2T2
+243C3i3
+252@2M2
+273e3
+2A3f3
+2A3P3v3
+2D2T3m3
+2E3w3
+2E3X3
+2G3a4j4
+2h,.@
+2L3b3
+2M2e2
+2Pj-Q
+2r3(4C4
+2T3a3
+2u48]
+2V3k3
+2X3v3
+2Y3u3
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3*3L3
+3 3+3J4^4
+3!4.4A4
+3!494t4
+3"4-4
+3#3]4w4
+3#3_3
+3$3-363G3V3_3n3t3
+3%474B4O4J5
+3%4N4i4
+3(3/3
+3(3E3b3
+3(434@4
+3(434C4b4
+3.373H3Q3j3
+3/3?3K3W3c3o3{3
+3:3X3v3
+3?3K3X3
+3+3[3`3q3
+3+353S3X3
+316D6
+323M3#4]4s4
+324<4n4v5d6
+324e4
+324I4i4
+3-3P3
+3'3y3
+349u:
+3-4S4z4
+363@3R3
+365;5y6
+373P3j3w3
+373q3
+374~4
+383a3
+393D3U3e3u3
+395l6x6
+3d4|4
+3f6s6*7\7i7
+3j3t3
+3J4`4
+3L3k3t3
+3O6\6
+3P4j4
+3r4}466
+3V4`4y4
+3V4h5r5
+3Y3g3x3
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4&505w7
+4 4)424;4D4M4^4m4v4
+4 5e5V6
+4 5i5
+4%515O6
+4%5k5
+4&434{4
+4&454[4z4
+4&4C4
+4(4=4j4
+4(4b4
+4)4<4H4[4l4
+4,4d4
+4,4M4\4
+4.5;5
+4[4t4
+4\6g6w6
+4+414@4F4U4
+4<4g4
+4>5r5
+405<5
+4096 bytes.
+415S5
+4-4?4Q4c4n4{4
+444L4_4o4z4
+445A5k5v5
+445f5
+474I4
+484P4
+494D4Q4
+495F5
+4D5~7
+4D9`9|9
+4g5*616
+4H4d4P5
+4h4v4
+4H5`5m5
+4h7e9
+4J4b5
+4J5O5f7
+4O4T4e4
+4Q5L7W7z7
+4R4o4
+4SVWQ
+4T4_4l4H5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5#505A7
+5$5T5Y5j5#6(696m6
+5(6`6f6
+5)5L5
+5*555i5{5
+5*6S6
+5.6G6
+5:6L7Q7
+5@5I5g5|5^6u6
+5[5h5u5
+5\5f5v5
+5>5c5
+50J0|0
+516f6
+527;7?:
+5-535B5H5W5]5l5r5
+59s t,h
+5b6g6x6
+5b7G8~8
+5c6.7
+5C6H6
+5d6u6
+5F6C7N7[7O8s8
+5H5d5y5
+5H6|6
+5I5w5
+5J5y5
+5J5Z5
+5K6m6
+5k7}7;8
+5o5u5
+5Y5p5
+5Y6w6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6!6G6
+6!7S7x7
+6"6/6b6m6z6
+6"6^6|6
+6$7L7
+6%616D6c6
+6%707a7
+6&6/6P6Y6
+6&6<6R6h6~6
+6&7/7<7
+6&7f7
+6)6/6>6D6S6Y6h6n6}6
+6*6@6H6W6_6p6w6
+6*747Q7!8*8
+6/6H6_6
+6/6q6
+6?7U7
+6>6C6
+616?6M6
+616`6m6
+616a6
+617_9l9
+617>7
+61o1\2
+646L6a6@7E7M7
+657n7
+676_6o6
+6-7N8a8T9a9z9
+697?7
+697g7
+6a899M:b:
+6C7c7h7y7
+6d6~6
+6d9y9
+6H7c7
+6H7g7
+6l7w7
+6PhP-@
+6T7~7
+6Z7>9J9
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 7<7[768
+7!7+7H7K8Y8j8t8
+7#737a7q7
+7#8:8f8
+7#8T8
+7%797T7w7
+7%828N:g:t:
+7%9A9U:q:7<L<
+7&7F7
+7)7\7o7|7
+7)7O7
+7)8[8
+7*898P8^8
+7,8F8
+7.7D7Z7p7
+7:8X8`8
+7?8h8
+7?8H8c8
+7?8u8
+7@8M8
+7^7|7
+7_^[]
+7_7z7'929?9i9{9
+7=7c7
+7=8J819!:,:9:i:
+7>8[8
+71767n:
+748=8~8
+748L8Y8
+757?8
+757{7
+767X7{7
+7-8>9I9
+7-868V8y8
+7a>l>
+7A8S8t8
+7C7R7z7
+7C8f8{8
+7D:k:'=
+7F7l7
+7G9Y9v9
+7h,.@
+7h<*@
+7h8.@
+7I8Z8
+7J7{7
+7o7|7
+7O8~8
+7Q8b8
+7U8p8
+7V7k7
+7V8_8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 868L8b8x8
+8!8:8S8
+8!9b9z9
+8#868
+8#9Z9
+8$9;9\9j9
+8%8+818T8
+8&838
+8(8O8]8z8
+8(9K9}9
+8)8M8u8
+8/9J9T9i9v9
+8:9F9
+8;8@8H8J9
+8[:o:
+8[8i8;9F9
+8_$t#
+819l9~9
+848g8r8g9F:9;@;F;|;
+849E9
+858n8u8
+8-9V9
+8A:L:
+8C$tv
+8CrRc
+8d8y8
+8F8m8
+8J9Y9
+8L8_8
+8L9W9
+8P9d9u9
+8q:|:
+8Z:t:d;
+8Z8u8
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9!:g:4;`;
+9":<:q:
+9":S:
+9#:Q;
+9#;V?
+9(9:9E9R9
+9(9>9T9j9
+9)9q9
+9*:B:
+9*979
+9,9C9
+9/:I:
+9\$`u
+9\:x:
+9\8,t
+9\9,t
+9^$tE
+9_@t\
+9_\v+
+9_0uW
+9_XtM
+9`9R;j;
+9{,vH
+9{@uij
+9{0u:j
+9{lt7f9F
+9|$ w
+9|$(u
+9|$4t>QQ
+9|:h;
+9~$vW
+9>:#;
+91;J;e;
+919F9U9_9v9
+92:R:a:
+959w9
+96:[:
+969<9x9
+979C9\9g9s9
+97u6j Y
+98:E:
+98:X:
+99;^;#<R<
+9'9^9
+9'939?9K9W9c9o9{9
+9'989U9
+999Y9p9
+9'9j9
+9a:~<
+9A4u&
+9A9r9
+9CrHd
+9D$pu
+9g:!;0;
+9G0u\
+9I:R:k:~:
+9L$,w
+9N8vD
+9p@tq
+9q:{:
+9Q@tOQQ
+9q4uV
+9Qlt[
+9r:x:
+9S9g9
+9T$$w
+9t$8u
+9t$Tt4
+9TSCr
+9w\v#
+A background low-level format of the media is in progress.
+A disk check has been scheduled.
+A disk read error occurred
+A disk read error occurred%0
+A downpointer (VCN 0x%2) was found in index %1 in file 0x%3 but the index has no index allocation attribute.
+A file contains extended attributes,
+A hardware error occurred while formatting this disc. You can
+A low-level format on this media may take a long time. The
+A media error has been detected. Bad sectors may be present on the volume.
+A nonvalid parameter was specified.
+A restart of your computer is necessary in order for convert to continue.
+A scan is already running on this drive. Chkdsk can not run more than one scan on a drive at a time.
+A snapshot error occured while scanning this drive. Run an offline scan and fix.
+A snapshot error occured while scanning this drive. You can try again, but if this problem persists, run an offline scan and fix.
+A<< u
+A0;p$
+A9O0t
+A9O0u^
+A9O0uy
+ABPhXR@
+Access denied
+Access denied - %1
+Access Denied as you do not have sufficient privileges or
+Active code page for device %1 is %2
+Active code page: %1
+Add %1? (Y/N) %0
+ADD_ATTRIBUTE%0
+Adding %1
+Adding %1 bad clusters to the Bad Clusters File.
+Adding %1 lost files to index "%3" of directory "%2" ... %0
+Adding FID pointing to ICB at block %2 in directory
+Adding lost file "%1" to index "%3" of directory "%2" ... %0
+Adding parent FID pointing to ICB at block %2 in directory
+Adding stream ICB entry pointing to ICB at block %2 in
+ADDING_INDEX_ENTRY%0
+AddMissingOrStaleEntries
+All attribute of type 0x%1 and instance tag 0x%2 should be indexed
+All filenames for File %1 are invalid.
+All NTFS boot sectors are unreadable or corrupt.  Cannot continue.
+All NTFS boot sectors are unwriteable.  Cannot continue.
+ALL OPENED HANDLES TO THIS VOLUME WOULD THEN BE INVALID.
+All specified files are contiguous.
+allocated length 0x%3.
+Allocation unit size changed to %1 bytes.
+Allocation unit size must be less than or equal to %1MB.
+An attempt to split the index verification stage into %1 or less passes
+An error occurred reading the root directory.
+An error occurred while examining files and directories.
+An error occurred while examining the boot region.
+An error occurred while examining the free space on the volume.
+An error occurred while examining the volume bitmap.
+An error occurred while reading the file allocation table (FAT %1).
+An error occurred while recovering lost files.
+An error occurred while running Format.
+An incorrect volume label was entered for this drive.
+An index entry from index %2 of file %1 is incorrect.
+An index entry of index %2 in file 0x%1 points to file 0x%3
+An index entry of index %2 in file 0x%1 points to unused file 0x%3.
+An instance of refsutil already exists for drive %1!s!.
+An invalid directory ID was provided. The directory ID is the upper 64 bits of the file ID.
+An invalid filename %1 (%3) was found in directory %2.
+An operating system wasn't found. Try disconnecting any drives that don't
+An unconditional format will be performed.
+An unspecified error occurred (%1 %2).
+An unspecified error occurred.
+and copy those files to another volume.
+and instance tag 0x%2 is incorrect.
+and instance tag 0x%2.
+and instance tag 0x%3 in file 0x%4.
+and instance tag 0x%3.
+and instance tag 0x%4 in file 0x%5.  The maximum value is 0x%2.
+and make sure the disk is unlocked.
+and offset 0x%2.  The attribute length is 0x%3.
+and offset 0x%4.  The attribute list length is 0x%5.
+and press ENTER when ready... %0
+and USA count 0x%3 is incorrect.
+application compatibility problems, particularly with setup applications.
+are found.
+ARWQQ
+as commanded.
+assigned using the SUBST or ASSIGN command.
+Associates a path with a drive letter.
+at block %1.
+at block %2.
+at offset 0x%1 for 0x%2 bytes.
+at2Nt
+Attempting to allocate more disk space.
+Attempting to read the Reserve Volume Descriptor Sequence.
+Attempts to diagnose heavily damaged ReFS volumes, identify remaining files,
+ATTR_LENGTH_TOO_BIG%0
+ATTR_LENGTH_TOO_SMALL%0
+ATTR_LOWEST_VCN_IS_NOT_ZERO%0
+ATTR_RECORD_LENGTH_CANNOT_BE_ZERO%0
+ATTR_RECORD_LENGTH_MISALIGNED%0
+ATTR_RECORD_LENGTH_TOO_SMALL%0
+ATTR_RECORD_OFFSET_TOO_LARGE%0
+ATTR_RECORD_TOO_LARGE%0
+ATTR_SHOULD_BE_INDEXED%0
+ATTR_SHOULD_BE_NAMED%0
+ATTR_SHOULD_BE_RESIDENT%0
+ATTR_SHOULD_NOT_BE_INDEXED%0
+ATTR_SHOULD_NOT_BE_RESIDENT%0
+ATTR_SHOULD_NOT_HAVE_NAME%0
+ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [+O | -O] [+I | -I] [+X | -X] [+P | -P] [+U | -U]
+attribute is outside the base file record segment.
+Attribute list entry with type code %1 in file %2 is corrupt.
+Attribute list for file %1 is corrupt.
+Attribute list for file %1 is unreadable.
+Attribute list for file %1 is unsorted.
+Attribute list found in the log file.
+Attribute name is not allowed for attribute of type 0x%1
+attribute of type 0x%3 and instance tag 0x%4 in file 0x%5.
+Attribute record (%1, %2) from file record segment %3
+Attribute record of type 0x%1 and instance tag 0x%2 is cross linked
+Attribute record of type 0x%1 is cross linked starting at
+Attribute records for file record segment %1 are unsorted.
+Attribute records from file record segment %1 are badly linked.
+ATTRIBUTE_LIST_FOUND%0
+ATTRIBUTE_NOT_FOUND%0
+Auto Check Utility
+autocheck autochk
+autochk
+AutoChk
+Autochk cannot lock system volume due to a sharing violation.
+Autochk cannot run due to an error caused by a recently installed software package.
+AUTOCHK to run on it the next time you reboot.
+AutoChk.Exe
+autochk.pdb
+AUTOCHK: Clearing chkdsk ran once flag on %S (%S) - QuerySucceeded: %s; CHKDSK_RAN_ONCE %s set; Status: 0x%08x
+AutoChkSkipSystemPartition
+AutoChkTimeOut
+B f;E
+B.reloc
+B@QQj
+B`;qdr
+B9S$t
+BA:FA
+BAAD_^
+Background format is incomplete, skipping reserve AVDP and VDS checks.
+backup.  Do you want to continue? (Y/N) %0
+Bad clusters in extended attribute file header relocated.
+Bad clusters removed from folder.
+Bad command line syntax
+Bad file record checking%0
+Bad index "%1" in directory "%2" ... %0
+Bad links in lost chain at cluster %1 corrected.
+Bad numeric argument:
+Bad sectors found.
+Bad sectors were found and tested while examining free space on the volume.
+Bad subtree in index "%1" of directory "%2" ... %0
+BAD_FILE_NAME_LENGTH_IN_FILE_NAME_VALUE%0
+BAD_FRS
+BAD_FRS%0
+BAD_MAPPING_PAIRS%0
+BadClusters
+BadClusters%0
+BadFreeClusters
+BadFreeClusters%0
+BadFRS
+BadFRS%0
+bcd.dll
+BcdCloseObject
+BcdForciblyUnloadStore
+BcdGetElementData
+BcdOpenObject
+BcdOpenStore
+BEA01
+because disk checking was run without the /F (fix) parameter.
+because this file contains too many file names.
+before using the RECOVER command.
+Begin leak verification pass 1 (Cluster leaks)...
+Begin leak verification pass 2 (Reference count leaks)...
+Begin leak verification pass 3 (Compacted cluster leaks)...
+Begin leak verification pass 4 (Remaining cluster leaks)...
+Beginning volume scan... This may take a while...
+BinarySample%0
+BitLocker encryption and the encrypted data on the volume has been removed.
+BitLocker encryption on the volume could not be removed.
+BITMAP_CORRUPT%0
+Blanking media ...
+block %1.
+Block differs from the geometry reported by the driver.
+Boot sector at 0x%1!llx! contains invalid value(s):
+Boot sector at 0x%1!llx! doesn't appear to be ReFS.
+Boot sector at 0x%1!llx! has checksum failure%!
+Boot sector at 0x%1!llx! not readable.
+Boot sector checked.
+BOOT2
+bootex.log
+BootExecute
+BOOTMGR
+BOOTMGR    
+BOOTMGR is compressed
+BOOTMGR is compressed%0
+BOOTMGR is missing
+BOOTNXT
+bootTel.dat
+BOOTTGT
+Both copies of the boot information for this volume are corrupt.
+Both reparse point and EA INFORMATION attributes exist in file 0x%1.
+Bp;qtr
+BreakCycle
+BreakCycle%0
+Breaking links between parent file %1 and child file %2.
+Breaking links between parent ICB at block %1 and child ICB
+Breaking the parent 0x%1 and child 0x%2
+BuildMFTcache
+but the extended attribute file was not found.
+but the file has no object id in it.
+but the file has no reparse point in it.
+but there is no file name index.
+but was not defined in the security descriptor stream.
+bytes free in the file record segment is 0x%2 and the total length
+Bytes per container     : 0x%6!llx!
+Bytes per container     : 0x%8!llx!
+Bytes per container     : 0x%9!llx!
+Bytes per sector        : 0x%3!x!
+Bytes per sector        : 0x%4!x!
+C f9E
+C(9s 
+C<;HPt
+CallStack%0
+can scan the drive more efficiently if it has more memory available.
+Cannot access file %1
+Cannot allocate memory for container table for volume with signature %1!x!.
+Cannot allocate memory for file %1%!
+Cannot allocate memory%!
+cannot be guaranteed to have been cleaned.
+cannot be read.
+Cannot change label on this volume.  The request is not supported.
+Cannot change label.  This volume is write protected.
+Cannot check extended attribute log.
+Cannot convert %1.  The volume is write protected.
+Cannot CONVERT a network drive.
+Cannot convert an extended attribute.
+Cannot CONVERT volume on this device.
+Cannot copy data stream%!
+Cannot copy file %1%!
+Cannot create the elementary file system structures.
+Cannot create working file to record index LCNs%!
+Cannot define a logical volume using main or reserve Volume
+Cannot determine background format status.
+Cannot determine file system of drive %1.
+Cannot determine location of system directory.
+Cannot determine start of last UDF session on incremental media.
+Cannot determine the number of sectors on this volume.
+Cannot dismount the drive.
+Cannot enable compression for the volume.
+Cannot enable graceful handling of control signals.
+Cannot enable integrity for the volume.
+Cannot enumerate file extents for source file%!
+Cannot find any disk pages for container index table for volume with signature %1!x!%!
+Cannot find any disk pages for container tables for volume with signature %1!x!%!
+Cannot find any disk pages for dup container table for volume with signature %1!x!.
+Cannot find any disk pages for primary container table for volume with signature %1!x!.
+Cannot find cluster size from meta-data file %1%!
+Cannot find root directory for volume %1%!
+Cannot find root page for directory %1%!
+Cannot find root page of root directory for volume %1%!
+Cannot find the utility library which contains CHKDSK for the
+Cannot find undamaged root for container index table for volume with signature %1!x!%!
+Cannot find undamaged root for dup container table for volume with signature %1!x!.
+Cannot find undamaged root for primary container table for volume with signature %1!x!%!
+Cannot find volume signature from meta-data file %1%!
+Cannot fix errors in Anchor Volume Descriptor Pointer.
+Cannot fix Logical Volume Integrity Descriptor. Chkdsk aborted.
+Cannot fix Volume Descriptor Sequence.
+Cannot format a CD-ROM drive.
+Cannot format a network drive.
+Cannot format a RAM DISK drive.
+Cannot format with the allocation size %1.
+Cannot format.  This volume is write protected.
+Cannot get file pair info for root entry of file %1%!
+Cannot initialize volume %1%!
+Cannot initialize volume for meta-data file %1%!
+Cannot initialize volume%!
+Cannot load container table for volume with signature %1!x!.
+Cannot load meta-data file %1%!
+Cannot locate or create an NTFS index.
+Cannot lock current drive.
+Cannot lock the drive.  The volume is still in use.
+Cannot open file %1 for write access%!
+Cannot open file list %1%!
+Cannot open metadata file for volume with signature %1!x!.
+Cannot open output file%!
+Cannot open the file root of file %1%!
+Cannot open volume for direct access.
+Cannot perform a cyclic copy
+Cannot process metadata tables for volume with signature %1!x!%!
+Cannot query state of drive %1
+Cannot read Anchor Volume Descriptor Pointer. Chkdsk aborted.
+Cannot read at partition offset 0x%1!I64x!.
+Cannot read boot sector%!
+Cannot read boot sector.
+Cannot read parent directory page hosting the root of file %1%!
+Cannot read the file allocation table (FAT).
+Cannot RECOVER a network drive
+Cannot RECOVER an ASSIGNed or SUBSTed drive
+Cannot relocate existing file system structures
+Cannot reroute printer output to serial device %1.
+Cannot restart background format.
+Cannot retrieve current system uppercase table.
+Cannot set end of file for output file%!
+Cannot set output file size%!
+Cannot stop printer rerouting at this time.
+Cannot translate virtual LCN 0x%1!I64x! to real LCN%!
+Cannot truncate file %1 to zero size%!
+Cannot unlock the drive.
+Cannot write boot sector.
+Cannot write the file allocation table (FAT).
+Cannot write to file at file offset 0x%1!I64x! for 0x%2!x! bytes%!
+Cannot XCOPY from a reserved device
+CANNOT_FIND_UNNAMED_DATA_ATTR%0
+Can't find file %1
+Can't find/open file: %1
+Can't read file: %1
+CD             Displays the name of or changes the current directory.
+CD001
+CDROM
+CDW01
+CDW02
+changed during the chkdsk run.
+CHCP [nnn]
+Check all newly added driver NtCreateFile and NtOpenFile calls or run:
+check your disk at full speed.
+check your disk at full speed.  Make sure the allowed user address space
+CHECK_DATA
+checked the next time the system restarts? (Y/N) %0
+Checking existing disk format.
+Checking File System %1.
+Checking file system on %1
+Checkpoints checked.
+Checks a disk and displays a status report.
+Checksum library initialization failed.
+CHKDQ
+Chkdsk
+CHKDSK [volume[[path]filename]]] [/F] [/V] [/R] [/X] [/I] [/C] [/L[:size]] [/B] [/scan] [/spotfix]
+CHKDSK aborted.
+Chkdsk aborted.
+CHKDSK aborted.
+CHKDSK Aborted.
+CHKDSK aborted.
+Chkdsk cannot be run on this type of media.
+Chkdsk cannot continue.
+CHKDSK cannot delete all corrupt directory entries.
+Chkdsk cannot dismount the volume because it is a system drive or
+Chkdsk cannot run because the volume is in use by another
+Chkdsk could not find a valid VAT at the end of the volume.
+Chkdsk could not find a valid VAT on the media.
+Chkdsk could not schedule this volume to be checked
+CHKDSK discovered free space marked as allocated in the
+CHKDSK discovered free space marked as allocated in the bitmap for index %2 for file %1.
+CHKDSK discovered free space marked as allocated in the volume bitmap.
+Chkdsk has been scheduled manually to run on next reboot
+CHKDSK is adjusting the size of the log file.
+CHKDSK is assuming the default.
+CHKDSK is checking system files.
+CHKDSK is checking the directory tree for cycles.
+CHKDSK is compacting the security descriptor stream
+Chkdsk is copying last valid VAT at block %1 to the end of the
+CHKDSK is creating new root directory.
+CHKDSK is determining if the volume is downgradeable...
+CHKDSK is downgrading the volume...
+CHKDSK is examining lost files.
+CHKDSK is examining Usn information...
+CHKDSK is identifying lost files.
+CHKDSK is looking for orphan ICBs ...
+CHKDSK is recovering lost files.
+CHKDSK is recovering remaining unindexed files.
+CHKDSK is resetting recovery information...
+CHKDSK is resetting the log file.
+CHKDSK is resetting Usn information...
+Chkdsk is running on media that does not support writes in place.
+CHKDSK is scanning unindexed files for reconnect to their original directory.
+CHKDSK is searching for a valid VAT ...
+CHKDSK is verifying file data (stage %1 of %2)...
+CHKDSK is verifying files (stage %1 of %2)...
+CHKDSK is verifying free space (stage %1 of %2)...
+CHKDSK is verifying ICB links ...
+CHKDSK is verifying ICBs ...
+CHKDSK is verifying indexes (stage %1 of %2)...
+CHKDSK is verifying link counts and parent entries ...
+CHKDSK is verifying object size for ICBs with alternate data streams ...
+CHKDSK is verifying security descriptors (stage %1 of %2)...
+CHKDSK is verifying Usn Journal...
+Chkdsk scan speed is being throttled to reduce impact on system and application
+Chkdsk was executed in read/write mode.
+Chkdsk was executed in read-only mode on a volume snapshot.
+Chkdsk was executed in read-only mode.  A volume snapshot was not used.
+Chkdsk was executed in scan mode on a volume snapshot.
+Chkdsk was executed in spotfix mode on a read-write volume.
+Chkdsk was executed in verify mode on a volume snapshot.
+CHKDSK was unable to adjust the size of the log file
+CHKDSK was unable to adjust the size of the log file.
+chkdskAborted
+chkdskArgumentsBitmask
+chkdskAutocheck
+ChkdskCompleted
+chkdskCountAttributeListEntriesDeleted
+chkdskCountAttributesDeleted
+chkdskCountCloudFileReparsePointIndexEntriesDeleted
+chkdskCountCloudFileReparsePointsDeleted
+chkdskCountIndexEntriesDeleted
+chkdskCountReparsePointAttributeListEntriesDeleted
+chkdskCountReparsePointIndexEntriesDeleted
+chkdskCountReparsePointsDeleted
+chkdskDuration
+chkdskExitStatus
+chkdskFileSystemName
+chkdskFixLevel
+chkdskHouseKeepingBitmask
+chkdskNumberUserFiles
+chkdskProgramName
+chkdskResult
+ChkdskRunInfo
+chkdskSequenceNumber
+chkdskSourceTag
+chkdskStage
+ChkdskStageEntered
+ChkdskStarting
+chkdskVerb
+chkdskVerbDuration
+ChkdskVerbEncountered
+chkdskVerbHeaderFlags
+chkdskVerbObjectId
+chkdskVerbOutcome
+chkdskVerbOutcomeStatus
+chkdskVerbSignature
+chkdskVerbSourceId
+chkdskVolumeGuid
+chkdskVolumeIsDirty
+chkdskVolumeSize
+CHKNTFS /C volume [...]
+CHKNTFS /D
+CHKNTFS /T[:time]
+CHKNTFS /X volume [...]
+CHKNTFS cannot be used for the cdrom drive %1.
+CHKNTFS cannot be used for the network drive %1.
+CHKNTFS cannot be used for the ram disk %1.
+CHKNTFS does not work on floppy drive.
+CHKNTFS volume [...]
+CHKNTFS: drive specifiers may not contain wildcards.
+CHKNTFS: Incorrect command-line format.
+Classifying data found during quick scanning...
+Cleaning up %1 unused security descriptors.
+Cleaning up %3 unused index entries from index %2 of file %1.
+Cleaning up %3 unused index entries from index %2 of file 0x%1.
+Cleaning up encrypted flag for file 0x%1.
+Cleaning up instance tags for file %1.
+Cleaning up instance tags for file 0x%1.
+Cleaning up minor inconsistencies on the drive.
+Cleaning up sparse flag for file 0x%1.
+clear the dirty bit on this drive by running CHKDSK /F or allowing
+CLEAR_VOLUME_BITMAP%0
+Clearing unused security descriptor stream entries.
+CLEARING_IN_USE%0
+cluster 0x%2 for possibly 0x%3 clusters.
+Cluster Count: %2!I64d! (0x%2!I64x!).
+Cluster size            : 0x%1!x!
+Cluster size            : 0x%5!x!
+Cluster size            : 0x%6!x!
+Cluster size must be a multiplication of the physical sector size (%1 bytes).
+cluster size value for this drive is %1.
+Cluster Size:  %1!d! (0x%1!x!).
+Cluster zero is missing from the data attribute in boot file.
+ClusterCount
+CLUSTERS_ALREADY_IN_USE%0
+ClusterSize
+Code page operation not supported on this device
+Code page status:  MODE CON[:] CP [/STATUS]
+Collation rule value for index %1 of file %2 is incorrect.
+Command Completed.
+Command failed.
+command history; ALT+F7 clears command history; F8 searches command
+command-name | MORE [/E [/C] [/P] [/S] [/Tn] [+n]]
+Communication failure with device.  Format failed.
+COMP [data1] [data2] [/D] [/A] [/L] [/N=number] [/C] [/OFF[LINE]] [/M]
+COMPACT_SD
+CompanyName
+Compare error at %1 %2
+Compare more files (Y/N) ? %0
+Compares the contents of two files or sets of files.
+Compares two files or sets of files and displays the differences between
+Comparing %1 and %2...
+Comparing files %1 and %2
+Compression is not available for %1.
+Compression is not supported on volumes with clusters larger than
+Configures system devices.
+Connect
+Connect%0
+consistence.  The entry has length of 0x%3 and a file name length of 0x%2.
+Consult the online Command Reference in Windows Help
+contain an operating system.
+contain an operating system.%0
+Container Table checked.
+contains unicode NULL.
+Conversion complete
+Conversion from %1 volume to %2 volume is not available.
+conversion.
+Convert cannot gain exclusive access to the %1 drive,
+Convert cannot run because the volume is in use by another
+Convert failed to dismount the volume.
+Convert folder to file (Y/N)? %0
+Convert has relocated existing file system structures.
+Convert lost chains to files (Y/N)? %0
+CONVERT volume /FS:NTFS [/V] [/CvtArea:filename] [/NoSecurity] [/X]
+Convert will take some time to process the files on the volume.
+Converting drive %1 to %2...
+Converting file system
+Converts a FAT volume to NTFS.
+Copies files and directory trees.
+COPY           Copies one or more files to another location.
+Copy all files found...
+Copy Phase Command Line Usage:
+Copy Phase with Interactive Console:
+Copy Phase with List Command Line Usage:
+copy%0
+Copying: %1...%0
+Copyright (c) 2015 Microsoft Corp.
+Corrected name %1 in folder %2.
+Correcting cross-link for file %1.
+Correcting cycles in directory tree.
+Correcting directory count to %1 in Logical Volume Integrity Descriptor.
+Correcting encrypted file record segment %1.
+Correcting error in directory %1
+Correcting error in index %2 for file %1.
+Correcting errors in Anchor Volume Descriptor Pointer.
+Correcting errors in File Set Descriptor at block %1.
+Correcting errors in Metadata Bitmap.
+Correcting errors in Space Bitmap Descriptor at block %1.
+Correcting errors in the Attribute Definition Table.
+Correcting errors in the Bad Clusters File.
+Correcting errors in the Boot File.
+Correcting errors in the Log File.
+Correcting errors in the Master File Table (MFT) mirror.
+Correcting errors in the master file table's (MFT) BITMAP attribute.
+Correcting errors in the master file table's (MFT) DATA attribute.
+Correcting errors in the uppercase file.
+Correcting errors in the Volume Bitmap.
+Correcting errors in the Volume Descriptor Sequence.
+Correcting errors in Unallocated Space Descriptor in the Volume
+Correcting extended attribute information in file %1.
+Correcting file count to %1 in Logical Volume Integrity Descriptor.
+Correcting file name errors in system file record segment %1.
+Correcting inconsistencies between main and mirror metadata.
+Correcting invalid Information Length %2 to %3 in ICB at block %1.
+Correcting invalid Object Size %2 to %3 in ICB at block %1.
+Correcting minor file name errors in file %1.
+Correcting number of partitions to %1 in Logical Volume Integrity
+Correcting partition free space for partition %1 to %2 in Logical Volume
+Correcting partition size for partition %1 to %2 in Logical Volume
+Correcting Recorded Blocks field in ICB at block %1.
+Correcting reparse point file record segment %1.
+Correcting sparse file record segment %1.
+Correcting system file name errors in file %1.
+Correcting the Main Volume Descriptor Sequence using the
+Correcting the Reserve Volume Descriptor Sequence using the
+Correcting total allocated size in attribute record (%1, %2)
+Corrupt Attribute Definition Table.
+Corrupt EA set for file 0x%1.  The EA name is of length 0x%2.
+Corrupt EA set for file 0x%1.  The remaining length, 0x%2,
+Corrupt EA set for file 0x%1.  The unpacked length, 0x%2,
+Corrupt EA set for file 0x%1.  The unpacked total length, 0x%2,
+Corrupt File "%1" ... %0
+Corrupt master file table.  CHKDSK aborted.
+Corrupt master file table. Windows will attempt to recover
+Corrupt security descriptor entry at offset %2 in %1:$SDS ... %0
+Corrupt uppercase Table -- aborting.  Run "chkdsk /f" to repair.
+Corruption due to bad sectors was found while examining files in directory %1.
+corruption found and fixed.
+corruption found.
+Corruption in index "%1" of directory "%2" ... %0
+Corruption was found while examining files and directories.
+Corruption was found while examining files in directory %1 (%2).
+Corruption was found while examining the boot region.
+Corruption was found while examining the volume bitmap.
+corruption.  Please run CHKDSK with the /F (fix) option to correct these.
+CorruptSDEntry%0
+Could not check volume %1 for errors.
+Could not expand second file name so as to match first
+Could not find file %1
+Could not schedule an automatic conversion of the drive.
+Couldn't read boot sector%!
+Couldn't write boot sector%!
+Couldn't write mirror boot sector%!
+Couldn't write primary boot sector%!
+Creates, changes, or deletes the volume label of a disk.
+Creating a default security descriptor.
+Creating a new directory ICB at block %1
+Creating a new directory ICB at block %1 with parent ICB
+Creating default security descriptor for undefined security ID %1.
+Creating file system structures.
+Creating index %1 for file %2.
+Creating Main Volume Descriptor Sequence at sector %1.
+Creating new File Set Descriptor at block %1.
+Creating new Logical Volume Integrity Descriptor at block %1.
+Creating new Metadata Bitmap File at block %1.
+Creating new Metadata Bitmap.
+Creating new Metadata Mirror File at block %1.
+Creating new Non-allocatable Space File at block %1.
+Creating new Non-allocatable Space Stream at block %1.
+Creating new Space Bitmap Descriptor at block %1.
+Creating object id file.
+Creating quota file.
+Creating reparse point file.
+Creating Reserve Sparing Table at sector %1.
+Creating Reserve Volume Descriptor Sequence at sector %1.
+Creating the scratch file...
+Creating Usn Journal %1 data stream
+Creating Usn Journal file.
+Creating volume snapshot on drive %1!s!...
+Critical error encountered.
+Critical master file table (MFT) files are corrupt.
+CRITICAL%0
+Cross link resolved by copying.
+Cross linked allocation for ICB at block %1. Deleting cross
+CROSS_LINK_DETECTED%0
+crosses the page boundary.
+CrossLink
+CrossLink%0
+Current keyboard does not support this code page
+Current LCN (0x%1!llx!) scanned larger than TotalScanUnitCount (0x%2!llx!) of the volume
+Current leaf index entry of length 0x%3 is at depth 0x%2 which
+Cycle beginning at directory "%1" and ending in directory "%2" ... %0
+D$ ;E
+D$ 9D$H
+D$ 9D$X
+D$ PS
+D$ QQ
+D$ RP
+D$ SV3
+D$ SVj
+D$ uRh
+D$$_^[
+D$$j Y
+D$$kE
+D$$PQ
+D$$PV
+D$$ulh
+D$&XP
+D$(;D$ 
+D$(_^
+D$(_^3
+D$(h@
+D$(Ph
+D$(PQQ
+D$(PQVj
+D$(PS
+D$(QQ
+D$,_^[
+D$,9~
+D$,P3
+D$,Ph
+D$,PWR
+D$;PW
+D$\Ph
+D$\PW
+D$`_^3
+D$`Pj
+D$`PQQ
+D$|PW
+D$+PP
+D$<_^3
+D$<PS
+D$09D$PwHWVRQ
+D$0PQ
+D$0PQQ
+D$0QP
+D$0VPW
+D$4_^
+D$4PVVV
+D$8_^
+D$8hd(@
+D$8Ph
+D$8VPQR
+D$dkE
+D$DPQ
+D$DWQVPQ
+D$H;A
+D$HQP
+D$L9D$p
+D$LPSSSV
+D$P_^[
+D$pPh
+D$PPj
+D$PPPW
+D$T9M
+D$t9M
+D$tVP
+D$TWP
+D$X_^
+D$X9H
+D$Xf9D$T
+D$Xf9D$Tw;
+D$XPQQ
+Data attribute verification%0
+Data classification failed%!
+DAX is not supported on MBR partitioned disk.  Try formatting without
+DAX is supported only on GPT data partition.  Try formatting without
+DAX support or repartition the disk with GPT.
+DAX support.
+days%0
+DbgPrint
+DbgPrintEx
+Default
+default
+default cluster size is being used.
+Default quota record is missing from index %2 in file %1.
+Default to %1 data bits.
+Default to %1 stop bits.
+Default to even parity.
+DEFAULT_LIMITS%0
+Delete current volume label (Y/N)? %0
+Deleted corrupt attribute list entry
+Deleted corrupt attribute list for file %1.
+Deleted duplicate filename %1 (%3) in directory %2.
+Deleted invalid filename %1 (%3) in directory %2.
+Deleted unreadable attribute list for file %1.
+Deleting an index entry from index %2 of file %1.
+Deleting an index entry with Id %3 from index %2 of file %1.
+Deleting corrupt attribute record (0x%1, %2)
+Deleting corrupt extended attribute set in file %1.
+Deleting corrupt Extented Attribute ICB in ICB at block %1.
+Deleting corrupt Extented Attribute Space in ICB at block %1.
+Deleting corrupt file record segment %1.
+Deleting directory entries in %1
+Deleting duplicate attribute records (%1, %2)
+Deleting duplicate object id from file record segment %1.
+Deleting Extended Attribute ICB entry in stream ICB at block %1.
+Deleting Extended Attribute ICB entry pointing to ICB at block %2
+Deleting extended attribute set
+Deleting FID pointing to ICB at block %2 in directory
+Deleting FID pointing to ICB at block %2 in directory ICB
+Deleting index entry %3 in index %2 of file %1.
+Deleting invalid system file name %1 (%3) in directory %2.
+Deleting orphan file record segment %1.
+Deleting parent FID pointing to ICB at block %2 in directory
+Deleting Stream Directory ICB entry pointing to ICB at block %2
+Deleting Stream ICB entry in stream ICB at block %1. Hierarchical
+Deleting stream ICB entry pointing to ICB at block %2 in
+Deleting system stream directory ICB entry in File Set Descriptor.
+Deleting the unique ID system stream since the volume has been
+Deleting USN Journal file.
+DELETING_ATTRIBUTE%0
+DELETING_GENERIC_INDEX_ENTRY%0
+DELETING_INDEX_ENTRY%0
+DENY_DEFRAG%0
+Descriptor Sequence.
+Descriptor Sequence. Chkdsk aborted.
+Descriptor.
+Destination pathname exceeded 256 characters.
+Detected a duplicate object id from file record segment %1.
+Detected bad clusters in logfile.
+Detected cycles in directory tree.
+Detected errors in the Log File.
+Detected errors in the Master File Table (MFT) mirror.
+detected in file %1 of name %2.
+Detected minor inconsistencies on the drive.  This is not a corruption.
+Detected orphaned file %1 (%2), should be recovered into directory file %3.
+DETECTED_IN_DRIVER%0
+Determining disk space required for file system conversion...
+Device %1 is not currently available.
+Device Status:     MODE [device] [/STATUS]
+Dh *@
+DHBf;E
+Diagnose Phase Command Line Usage:
+differs from the specified cluster size.
+DIR            Displays a list of files and subdirectories in a directory.
+dir%0
+dir%04d.chk
+dir_%08X.chk
+DirClusters
+directory ICB at block %1.
+dirty or scheduled to be checked on next reboot.
+DisableDeleteNotification
+Disabling index cycle analysis.
+Disk checking has been cancelled.                       %b
+Disk checking is not available on disk %1.
+Disk error
+Disk error%0
+Disk is not formatted.
+Disk not formatted or not FAT.
+Display mode:      MODE CON[:] [COLS=c] [LINES=n]
+Displays or changes file attributes.
+Displays or modifies the checking of disk at boot time.
+Displays or sets the active code page number.
+Displays output one screen at a time.
+Do you want to schedule Windows to check your disk the next time
+Does %1 specify a file name
+does not have a mount point or drive letter.
+DOS_FILE_NAME_ALREADY_ENCOUNTERED%0
+DOS_NTFS_NAMES_ARE_IDENTICAL%0
+DOS_NTFS_NAMES_HAVE_DIFFERENT_PARENTS%0
+DOSKEY [/REINSTALL] [/LISTSIZE=size] [/MACROS[:ALL | :exename]]
+Dot entry found in root folder.  Entry removed.
+Dot entry in folder %1 has incorrect link.  Link corrected.
+Dot-dot entry found in root folder.  Entry removed.
+Dot-dot entry in folder %1 has incorrect link.  Link corrected.
+DQBf;
+Drive %1 does not exist.
+Drive %1 is already %2.
+DRIVE %1 WILL BE LOST!
+Drive already SUBSTed
+drive won't be usable during this period and it is recommended
+due to the presence of reparse point in file %1.
+due to too much fragmentation within the volume.
+dummy
+Duplicate parent FID found in directory ICB at block %1.
+DUPLICATE%0
+DUPLICATED_INSTANCE_TAG%0
+E SVW
+E$9D$(uE
+E$SV3
+E(SVW
+E<QhH$@
+E0VW3
+EA DATA. SF
+EA Information is incorrect.
+EA verification%0
+early eject. This is not a corruption. Chkdsk will fix the
+EaSize
+Edits command lines, recalls Windows commands, and creates macros.
+Eg: refsutil fixboot D: 3 1 65536 -f -w c:\backup
+Eg: refsutil fixboot D: 3 3 4096
+Eg: refsutil leak D: /a /d /v /t 4
+Eg: refsutil leak D: /a /t 4 /s R:\scratch.tmp
+Eg: refsutil leak D: /q
+Eg: refsutil salvage -QA R: N:\WORKING N:\DATA -x
+Eg: refsutil triage D: /s 15100
+Eg: refsutil triage D: /s 16040 /v
+Encountered corruption (Index allocated but free) at LCN 0x%1!016llx!. Halting leak detection.
+Encountered corruption (LCN in use but unallocated) at LCN 0x%1!016llx!. Halting leak detection.
+Encrypted data stream found in file record segment %1.
+Encryption failed.
+End leak verification pass 1. Found %1!llu! leaked clusters on the volume.
+End leak verification pass 2. Found %1!llu! leaked references on the volume.
+End leak verification pass 3.
+End leak verification pass 4. Fixed %1!llu! leaks during this pass.
+Enter current volume label for drive %1 %0
+Entries %2 to %3 were affected.
+Enumerating files from discovered tables on volume with signature %1!x!.
+en-US
+Environmental variable FORMAT_SECTORS error.
+Erasing invalid label.
+Error converting directory %1.
+Error converting file %1.
+Error converting file data.
+Error detected in index %2 for file %1.
+Error during disk read
+Error during disk write
+Error GLE:%1!d!
+Error in allocation descriptors for ICB at block %1. Truncating
+Error in extended attribute log.
+Error in IOCTL call.
+Error in writing the output log.
+Error reading directory %1
+Error reading folder %1.
+Error reading help file.
+Error reading partition table.
+Error scrubbing file "%1!s!". Error: %2!d!
+Error writing File Allocation Table (FAT).
+Error writing folder.
+Error writing partition table.
+Error:
+Error: No volume metadata files found%!
+Errors detected in encrypted file record segment %1.
+Errors detected in reparse point file record segment %1.
+Errors detected in sparse file record segment %1.
+Errors detected in the Bad Clusters File.
+Errors detected in the Boot File.
+Errors detected in the uppercase file.
+Errors found.  CHKDSK cannot continue in read-only mode.
+Errors in extended attribute file header corrected.
+Errors in file allocation table (FAT) corrected.
+Errors were found in the Attribute Definition Table.
+EtwEventRegister
+EtwEventSetInformation
+EtwEventUnregister
+EtwEventWriteTransfer
+Eu,j0Xf9F
+Examining %1 corruption record ...
+Examining %1 corruption records ...
+Examining an index entry with id %3 in index %2 of file %1.
+Examining identified metadata disk data for versioning and consistency.
+Examining Usn Journal %1 data stream
+Examining Usn Journal file record segment.
+Examining volume with signature %1!x! for salvageable files.
+exFAT
+EXIT           Quits the ReFS salvage program.
+exit%0
+Extended attribute file contains no extended attributes.  File deleted.
+Extended attribute file has handle.  Handle removed.
+Extended attribute file is unsorted.
+extended attribute file.
+Extended attribute information in file %1 is corrupt.
+Extended attribute log is unintelligible.
+Extended attribute set and a reparse point detected in file %1.
+Extended attribute set with handle %1 owner changed
+Extended error %1
+Extended Error %1
+Extending the volume is not supported.
+Extra errors and warnings may be reported as the volume may have
+Extra links between parent file %1 and child file %2 detected.
+-f              Ignore any valid boot sector found.  Fix boot sector based on input parameters.
+F RRRRh
+F RRRRh 
+F VVh
+F$;F t
+F,f;G,
+F.:G.
+F;t$Hr
+F;w\r
+f[f_f
+f[fYf
+F\SPj
+f^fYf
+f_f^fYf
+f_fYf
+f`&gf
+f`fPfQf3
+F071b1
+f3G f3G4f
+F4f;E
+f9\$\s
+f9<Bu
+f90u.;
+f9A$u
+f9A&u
+f9H(v$
+f9s tI
+f9tABt
+Failed to backup mirror boot sector.
+Failed to backup primary boot sector.
+Failed to correct errors in index %2 of file %1.
+Failed to create new root directory.
+Failed to create scratch file for leak detection.
+Failed to create snapshot for leak detection. GLE: %1!d!
+Failed to create temporary scratch file %1!s!. GLE: %2!d!
+Failed to create transaction. NT: %1!08x!
+Failed to create virtual file mapping for file. GLE: %1!d!
+Failed to determine the next writable address for incremental media.
+Failed to dismount the volume: %1
+Failed to enumerate table: %1!s!. NT: %2!08x!
+Failed to fix master file table (MFT) mirror.
+Failed to fix master file table (MFT).  CHKDSK aborted.
+Failed to fix security descriptor for file %1.
+Failed to fix the attribute definition table.
+Failed to fix the bad clusters file.
+Failed to fix the boot file.
+Failed to fix the log file.
+Failed to fix the object id file.
+Failed to fix the quota file.
+Failed to fix the reparse point file.
+Failed to fix the security descriptors data stream.
+Failed to fix the uppercase file.
+Failed to fix the Usn Journal %1 data stream.
+Failed to fix the Usn Journal file.
+Failed to fix volume bitmap.  CHKDSK aborted.
+Failed to hotfix unreadable file %1.
+Failed to hotfix unreadable system file %1.
+Failed to initialize or fix the master file table (case %1).  CHKDSK aborted.
+Failed to initialize or fix the volume bitmap (case %1).  CHKDSK aborted.
+Failed to initialize the volume label.
+Failed to initialize underlying data structures status %1.
+Failed to insert missing data attribute.
+Failed to insert the index entry.
+Failed to lock the volume: %1
+Failed to map virtual file into memory. GLE: %1!d!
+Failed to mark the space used by the logical volume in the UASD.
+Failed to mount the ReFS volume. NT: %1!08x!
+Failed to obtain container range for leaked range.
+Failed to open volume.
+Failed to open volume: %1
+Failed to query file size for file: %1
+Failed to read and verify Volume Recognition Sequence.
+Failed to read file%!
+Failed to record bad clusters.
+Failed to recover lost data.
+Failed to recover lost files.
+Failed to set EOF for file to %1!llu! bytes. GLE: %2!d!
+Failed to set file pointer for file to %1!llu! bytes. GLE: %2!d!
+Failed to set file pointer%!
+Failed to transfer logged messages to the event log with status %1.
+Failed to write file%!
+Failed to write to the root folder.
+Failure to access device: %1
+Failure to write %1... to file.
+Fake writing boot sector at 0x%1!llx! as option -w is not specified
+FALSE
+FAT/FAT32 file system is not supported on this device.
+FAT16/12
+FAT1t
+FAT32
+FAT32 file system is not supported on this device.
+FAT3f
+FC /B [drive1:][path1]filename1 [drive2:][path2]filename2
+FC [/A] [/C] [/L] [/LBn] [/N] [/OFF[LINE]] [/T] [/U] [/W] [/nnnn]
+FC: %1 longer than %2
+FC: cannot open %1 - No such file or folder
+FC: Incompatible Switches
+FC: Incorrect Windows XP Version
+FC: Insufficient number of file specifications
+FC: Invalid Switch
+FC: no differences encountered
+FC: Out of memory
+FC: Unable to open %1.  File unavailable for read access.
+FDt&j
+Ff;3r
+Ff;7r
+FID references block beyond the end of the partition.
+fIfKf
+File "%1" and file "%2" both own logical cluster %3 ... %0
+File "%1" and file "%2" both own logical clusters [%3, %4) ... %0
+File %1 has an invalid security ID ... %0
+File %1 has been orphaned since all its filenames were invalid
+File %1 is missing a data attribute.
+File %s is cross-linked.
+File 0x%1 has bad reparse point attribute.
+File 0x%1 only has a standard information attribute.
+file 0x%3 is incorrect.  The expected value is 0x%2.
+file 0x%5 is too small.  The minimum value is 0x%4.
+File and folder verification is complete.
+File being truncated.
+File cannot be copied onto itself
+File creation error - %1
+File data verification completed.
+File list not specified%!
+File not found
+File not found - %1
+File pair info for file %1 is not a name index entry%!
+File pair info for file %1 is not for a file%!
+File path is too long to be displayed.
+File record segment %1 is an orphan.
+File record segment %1 is corrupt.
+File record segment %1 is unreadable.
+File record verification%0
+file relationship.  This also makes the child an orphan.
+File Set Descriptor at block %1 is corrupt or unreadable.
+File type %1 in ICB tag not supported in UDF. Chkdsk aborted.
+File verification completed.
+File verification failed.
+FILE%04d.CHK
+file%08X.chk
+File(s) not found : %1
+File: %1 %0
+FILE_DELETED%0
+FILE_NAME_ATTRIBUTE_ONLY%0
+FILE_NAME_DOS%0
+FILE_NAME_INDEX_PRESENT_BIT_SET%0
+FILE_NAME_NTFS%0
+FILE_RECORD_NOT_IN_USE%0
+FILE_RECORD_REUSED%0
+file1 = %3
+File1 only has %1 lines
+file2 = %4
+File2 only has %1 lines
+FileClusters
+FileDescription
+Files are different sizes.
+Files compare OK
+Files on this volume cannot be recovered with this version of UNTFS.DLL.
+files or directories named $Mft, $MftMirr, $LogFile, $Volume,
+Files with offline attribute were skipped.
+FileSystem
+FileVersion
+FIND [/V] [/C] [/N] [/I] [/OFF[LINE]] "string" [[drive:][path]filename[ ...]]
+FIND:  %0
+FIND: Incorrect Windows XP version
+FIND: Invalid switch
+FIND: Parameter format not correct
+FIND: Required parameter missing
+Finding volume signature files failed%!
+Finished.
+First free byte offset corrected in file record segment %1.
+First free byte offset is incorrect in file record segment %1.
+fixboot   Repair boot sectors
+Fixing (%1) Stage %2: %3%% (%4 of %5); Total: %6%%; ETA: %7:%8:%9 %10%r%0
+Fixing Anchor Volume Descriptor Pointer at block %1 with
+Fixing collation rule value for index %1 of file %2.
+Fixing corrupt attribute record (%1, %2)
+Fixing critical master file table (MFT) files with MFT mirror.
+Fixing flags for file record segment %1.
+Fixing incorrect information in file record segment %1.
+Fixing mirror copy of the security descriptors data stream.
+Flags for file record segment %1 are incorrect.
+Floppy disk is too small to hold the FAT32 file system.
+Floppy disks cannot be formatted with the eXFAT file system.
+Floppy disks cannot be formatted with the ReFS file system.
+Floppy disks cannot be formatted with the UDF file system.
+Folder %1 causes cycle in folder structure.
+Folder %1 has bad clusters.
+Folder %1 is entirely unreadable.
+Folder %1.
+Folder entry removed.
+Folder PATH listing
+Folder PATH listing for volume %1
+Folder truncated.
+for 0x%2 bytes contains non-zero.
+for file 0x%1.  EA INFORMATION equals 0x%2 while EA DATA equals 0x%3.
+for file record segment %1.
+For more information on a specific command, type HELP command name.
+For more information on a specific command, type HELP command-name.
+For more information on tools see the ReFS salvage reference in the online help.
+for possibly 0x%2 clusters in file 0x%3.
+for the last valid VAT and placing it at the end of the disk.
+ForceFullChkdsk
+ForceFullChkdsk%0
+ForceProactiveScan
+ForceProactiveScan%0
+Format aborted.
+Format another (Y/N)? %0
+FORMAT cannot enable the file system.
+Format cannot run because the volume is in use by another
+Format complete.                        %b
+FORMAT does not support the HPFS file system type.
+Format failed due to timeout.
+Format failed.
+Format for /n switch is /n=XXXX
+format is complete.
+FORMAT volume [/FS:file-system] [/V:label] [/Q] [/L[:state]] [/A:size] [/C] [/I:state] [/X] [/P:passes] [/S:state]
+FORMAT volume [/Q]
+FORMAT volume [/V:label] [/Q] [/F:size] [/P:passes]
+FORMAT volume [/V:label] [/Q] [/P:passes]
+FORMAT volume [/V:label] [/Q] [/T:tracks /N:sectors] [/P:passes]
+Formats a disk for use with Windows.
+Formatting %1 Bytes
+Formatting %1 EB
+Formatting %1 GB
+Formatting %1 KB
+Formatting %1 MB
+Formatting %1 PB
+Formatting %1 TB
+Formatting %1.%2M
+Formatting thinly provisioned volume %1 without quick format is not allowed.
+Formatting thinly provisioned volume without quick format is not allowed.
+Found %1 bad clusters.
+Found aliased metadata tuple at LCN %1!016llx!. Stopping leak detection.
+Found corrupt FID pointing to directory ICB at block %2 in stream
+Found corruption (aliased refcount) in refcount analysis at CLCN %1!016llx! Real refcount: %2!d! Reported refcount: %3!d!. Stopping leak detection.
+Found duplicate filename %1 (%3) in directory %2.
+Found invalid file identifier in FID pointing to ICB at block %2
+Found invalid references to root directory ICB at block %1
+Found invalid references to system stream directory ICB at block %1
+Found leaked clusters: %1!llu!
+Found mismatch in Anchor Volume Descriptor Pointers.
+Found mismatching Sparing Tables with identical sequence numbers.
+Found orphan ICB at block %1.
+Found reference leaks: %2!llu!
+Found ReFS boot sector at 0x%1!llx! with the following parameters:
+Found valid boot sector at 0x%1!llx! with:
+found.%03d
+FOUND.%03d
+fPfPgf
+fPfQf
+fPfSfQf
+fPfVfXf^f;
+fQfPf
+fQfVg
+fQfWfRf
+FR:GR
+Free space on volume:          %1 KB
+Free space recovery%0
+Free space verification is complete.
+FreeClusters
+fRfQf
+fRfQfRf
+From "kd" to list the files which may be preventing autochk from running.
+from %2 to %3.
+from file record segment %1.
+from file record segment %3.
+from file record segment 0x%3.
+FRS_SCAN
+FRS_USA_OFFSET_BELOW_MINIMUM%0
+FRSAllocate
+FRSAllocate%0
+fSfPfQfVfW
+fSfRf
+fSfRf+
+fSfSfU
+Ft]</t
+fTfVgf
+FUJITSU FMR-
+Full Automatic Mode Command Line Usage:
+Full Scan Phase Command Line Usage:
+fVf@fPfH
+fXf[f
+fXfXfXfX
+fY[ZfYfY
+fYf[fX
+fYfXf
+fYfYf3
+fYfYfYfY
+fYfZ&f9
+fYfZf3
+fYfZfQfVf
+fZf^fYf[fSfQfVfRf
+fZf_fY
+fZfYfBfQfV
+G SSSSh0
+G VPRQ
+G$;G t
+G$_^[
+G$h,I
+G/RPQ
+G0;H$
+G4hVf
+GA:BA
+GA:BAu
+GarbageCollectSDS
+GatherRefCounts
+GD;P8u
+GD9H,|
+General failure
+GLOBALLY_VERIFIED%0
+Graphically displays the folder structure of a drive or path.
+GWj0P
+H0;Q$s
+H0;Q$sP
+H0;y$
+has allocated length of 0x%3 instead of 0x%4.
+has failed.  Windows will not be able to check your disk at full speed.
+Heap allocation of %1 bytes failed.
+HELP [command]
+Help file could not be found.
+Here are the automatic mode Command Line Usages:
+Here are the manual mode Command Line Usages:
+HiddenClusters
+history; F9 selects a command by number; ALT+F10 clears macro definitions.
+hours%0
+I0;A$
+I0c0m0z0
+i9W$td
+ICB at block %1.
+ICB link verification completed.
+ICB object size verification completed.
+ICB strategy type %1 in ICB tag not supported in UDF. Chkdsk aborted.
+ICB verification completed.
+id index in file 0x%1.
+ID_DELETED%0
+Identified files may be copied as soon as the scan finds them by stopping the
+Identifier
+If a path is not specified, FIND searches the text typed at the prompt
+If no switches are specified, CHKNTFS will display if the specified drive is
+Ignore log and continue? (Y/N) %0
+IH+H8
+Illegal device name - %1
+in directory ICB at block %1.
+in file 0x%1 is incorrect.  The correct value is 0x%3.
+in file 0x%1.
+in file 0x%3 is already in use.
+in file 0x%3 is incorrect.
+in file 0x%3 is not indexable.
+in file 0x%3 is not recognized.
+in file 0x%3 should not be resident.
+in file 0x%3 should not be zero.
+in file 0x%3.
+in file 0x%4 is incorrect.
+in file 0x%4 is incorrect.  The expected value is 0x%3.
+in file 0x%4 is not equal to 0x%3.
+in file 0x%4 is not recognized.
+in file 0x%5 is below 0x%4.
+in file 0x%5 is incorrect.  The expected parent is 0x%1.
+in file 0x%5.
+in file 0x%6 is incorrect.  The attribute list entry name length is 0x%3,
+in file record segment %3.
+in ICB at block %1.
+in restartable mode.
+in the scan state file.  Please starts with an empty working directory.
+Incompatible switches detected%!
+inconsistence with the index entry length 0x%3.
+inconsistent.  The valid data length is 0x%1, file size 0x%2, and
+INCONSISTENT_FILE_NAME_VALUE%0
+Incorrect duplicate information in file %1.
+Incorrect information was detected in file record segment %1.
+Incorrect link count for ICB at block %1.
+Incorrect number of parameters - %1
+Incorrect operating system version
+Incorrect read at offset 0x%1 for 0x%3 bytes but got 0x%2 bytes.
+Incorrect Windows version
+Incorrect Windows XP version
+Incorrect write at offset 0x%1 for 0x%3 bytes but wrote 0x%2 bytes.
+INCORRECT_ATTR_NAME_OFFSET%0
+INCORRECT_FIRST_ATTR_OFFSET%0
+INCORRECT_FIRST_FREE_BYTE%0
+INCORRECT_FRS_HEADER%0
+INCORRECT_FRS_MULTI_SECTOR_HEADER_SIGNATURE%0
+INCORRECT_FRS_USA_OFFSET%0
+INCORRECT_FRS_USA_SIZE%0
+INCORRECT_INDEX_ENTRY_FILE_NAME_FLAGS%0
+INCORRECT_INDEX_ENTRY_FILE_REF%0
+INCORRECT_RESIDENT_ATTR%0
+INCORRECT_SEGMENT_NUMBER%0
+INCORRECT_SEQUENCE_NUMBER%0
+INCORRECT_STD_INFO_ATTR_SIZE%0
+Index "%1" of directory "%2" has a cycle ... %0
+Index "%1" of directory "%2" is mis-ordered ... %0
+Index "%1" of directory "%2" is partially mis-ordered ... %0
+Index %1 for file %2 is missing.
+Index %2 in file %1 is corrupt.
+Index %2 in file %1 is incorrectly sorted.
+Index %2 of file %1 contains %3 unused index entries.
+index allocation attribute in file 0x%1.
+Index entries referencing file %1 will not be validated
+Index entry %3 in index %2 of file %1 is incorrect.
+Index entry %3 of index %2 in file 0x%1 points to unused file 0x%4.
+Index entry for file "%1" is missing from index "%3" of directory "%2" ... %0
+Index verification completed.
+Index verification stage cannot be split into %1 passes.
+Index verification stage will be split into %1 passes.
+Index verification%0
+INDEX_ENTRY_FILE_NAME_HAS_INCORRECT_PARENT%0
+INDEXABLE_ATTR_SHOULD_NOT_HAVE_NAME%0
+IndexAttribute
+IndexAttribute%0
+IndexCycle
+IndexCycle%0
+IndexEntry
+IndexEntry%0
+IndexOffset
+IndexOffset%0
+IndexOrder
+IndexOrder%0
+IndexSort
+IndexSort%0
+IndexSubtree
+IndexSubtree%0
+IndexValidation
+Initialization failed.
+Initializing the File Allocation Table (FAT)...
+Insert another disk and type <Return> to continue... %0
+Insert new disk for drive %1
+Insert Windows XP disk in drive %1:
+Inserting an index entry into index %2 of file %1.
+Inserting an index entry with Id %3 into index %2 of file %1.
+Inserting data attribute into file %1.
+Inserting default quota record into index %2 in file %1.
+instance tag 0x%2.
+instance tag 0x%3 in file 0x%4 is not aligned.
+instance tag 0x%3 in file 0x%4.
+instance tag 0x%4 is larger than the allocated length 0x%2.
+instance tag 0x%4 is too big.  The maximum value is 0x%2.
+instance tag 0x%4 is too small.  The minimum value is 0x%2.
+Instance tags need renumbering for file %1.
+INSTANCE_TAG_TOO_LARGE%0
+Insufficient disk space
+Insufficient disk space for conversion
+Insufficient disk space on current disk.
+Insufficient disk space to copy cross-linked portion.
+Insufficient disk space to correct disk error.
+Insufficient disk space to recover lost data.
+Insufficient disk space.
+Insufficient free space to create duplicate metadata. Switching to
+Insufficient free space to create Main Volume Descriptor Sequence.
+Insufficient free space to create Reserve Sparing Table.
+Insufficient free space to create Reserve Volume Descriptor Sequence.
+Insufficient Memory
+Insufficient memory
+Insufficient memory for full index scan.
+Insufficient memory to grow DOSKEY list.
+Insufficient memory.
+Insufficient privilege to perform the operation or access denied.
+Insufficient space in extended attribute file for its header.
+Insufficient stack space.
+Integrity Descriptor.
+Integrity is not available for %1.
+Internal consistency error.
+Internal error.
+Internal Info:
+InternalName
+invalid allocation descriptors.
+Invalid baud rate specified
+Invalid boot sector%!
+Invalid characters in volume label
+Invalid chkdsk parameter version number.
+Invalid code page
+Invalid date
+Invalid drive or file name
+Invalid drive specification
+Invalid drive specification.
+Invalid existing format.
+Invalid flags in FID.
+Invalid keyboard delay
+Invalid keyboard rate
+Invalid macro definition.
+Invalid media byte.
+Invalid media or Track 0 bad - disk unusable.
+Invalid number of parameters
+Invalid operation requested%!
+Invalid Parameter - %1
+Invalid parameter - %1
+Invalid parameter combination
+Invalid parameters detected%!
+Invalid parent FID found in directory ICB at block %1.
+Invalid partition reference in Extended Attribute ICB entry.
+Invalid partition reference in FID.
+Invalid partition reference in Stream Directory ICB entry.
+Invalid path
+Invalid path - %1
+Invalid path with loop found for Table[0x%1!I64x!'%2!I64x!]%!
+Invalid Path, not all directories/files copied
+Invalid registry entry.
+Invalid ScanUnitSize of %1 while expecting %2.
+Invalid source directory %1%!
+Invalid switch
+Invalid switch - %1
+Invalid switch - /%1
+Invalid System Stream detected.  System stream information is lost.
+Invalid target directory %1%!
+Invalid thread count.
+Invalid volume label
+Invalid working directory%!
+INVALID_ARRAY_LENGTH_COUNT%0
+INVALID_ATTR_FORM_CODE%0
+INVALID_FILE_ATTR%0
+INVALID_LCN%0
+INVALID_NON_RESIDENT_ATTR_SIZES%0
+INVALID_NON_RESIDENT_ATTR_TOTAL_ALLOC%0
+INVALID_NON_RESIDENT_ATTR_TOTAL_ALLOC_BLOCK%0
+INVALID_RUN_LENGTH%0
+INVALID_SECURITY_ID%0
+INVALID_VCN%0
+InvalidSecurityId
+InvalidSecurityId%0
+is 0x%3.
+is a duplicate.
+is already in use.
+is corrupt.
+is different from other leaf index entry which has a depth of 0x%1.
+is incorrect.  The correct length is 0x%3.
+is incorrect.  The correct reparse tag in file 0x%4 is 0x%3.
+is incorrect.  The correct value is 0x%3.
+is incorrect.  The expected value is 0x%4.
+is larger than the total data length, 0x%3.
+is marked as index node when it should not.
+is not
+is not marked as index node.
+is not set.
+is not the same as the record length, 0x%3.
+is set to a maximum.
+is too large.  The instance tag should be less than 0x%3.
+is too large.  The maximum value is 0x%3.
+is too small.
+is too small.  The minimum length is 0x%3.
+isprint
+isspace
+It needs at least 0x%3 bytes.
+It will be reduced.
+its offset 0x%2.
+j _f9<F
+j X8F
+j Yf9L~@t
+j%Xf;
+j(Xf;
+j(Yf;
+j.Yf;
+j.Zf;
+j?Xf9G
+j?Yj.Z
+j\Yf;
+j0Xf9E
+JA9C,t
+jdYQRP
+jX^VSW
+jX_Wj
+K PQQ
+K WQR
+K&f9H
+K0;A(sL
+K4PPjpj
+KDf9q
+Key            :
+KeyRules library initialization failed.
+L$ 9D$T
+L$ RPj
+L$$PQQWV
+L$$PRQ
+L$$PV
+L$$QPQ
+L$$QPR
+L$$RPW
+L$&QPQ
+L$(PQ
+L$(VQ
+L$)QPQ
+L$,_^[3
+L$,9H
+L$,PQ
+L$,QPQ
+L$,QWRP
+L$,RP
+L$@RSSV
+L$`PV
+L$<+L$8
+L$<RPV
+L$09M
+L$4Qh
+L$8PQ
+L$8Qh
+L$DPP3
+L$dWQ
+L$lj X;
+L$lQj
+L$LRPW
+L$lRQ
+L$lWP
+L$pPP
+L$pPPWh
+L$pRQ
+L$XVR
+LABEL [/MP] [volume] [label]
+LABEL [drive:][label]
+Label too big -- volume labels must be 32 or fewer characters.
+larger than %1 seconds.  The default is %2 seconds.
+largest USN encountered, 0x%2, plus eight in file 0x%3.
+LCN_NOT_EXIST%0
+LdrSetMUICacheType
+leak      Leak Detection and Fixing
+Leak detection and fixing did not complete successfully.
+Leak detection found corruption for file ID 0x%1!016llx!`%2!016llx!.
+Leak detection found corruption in a directory. Please re-run leak detection with the "/a" switch or invoke "refsutil triage %1!s! /s %2!llu!".
+Leak detection is invoking automatic corruption fixing...
+LegalCopyright
+length is 0x%1, file size 0x%2, and allocated length 0x%3.
+less than a page.
+LIMIT_REACHED%0
+LINE%0
+Lines: %0
+Link count and parent entry verification completed.
+linked ICB allocation.
+Local time: %1!d!/%2!d!/%3!d! %4!d!:%5!02d!:%6!02d!
+Lock violation
+Logging discovered files to: foundfiles.<volume signature>.txt
+Logical Volume Integrity Descriptor at block %1 is corrupt.
+Lost chain cross-linked at cluster %1.  Orphan truncated.
+Lost file identification completed.
+Low level format of CD/DVD media failed..
+lower than 2.50
+LPT%1: rerouted to COM%2:
+-m %0
+Main metadata file at block %1 is corrupt.
+Main Volume Descriptor Sequence is corrupt or unreadable.
+Main Volume Descriptor Sequence.
+MAINTENANCE%0
+Major version           : %1!d!
+Major version           : %2!d!
+Make sure that the required file exists and try again.
+management in UDF. Chkdsk aborted.
+master file table (MFT) bitmap.
+master file table from disk.
+master security descriptor at offset 0x%1.
+MaxWriteViewCacheSize
+may be corrupt; run CHKDSK /f to fix it.
+may cancel the disk check, but it is strongly recommended
+MBRCh
+MBRDh
+media for UDF compliance in future when the background
+memcmp
+memcpy
+memmove
+memset
+MEMSTICK.IND
+Metadata bitmap file at block %1 is corrupt.
+MFT_BITMAP_NOT_SET%0
+MFT_CORRUPT%0
+MFT_OFFSET_TOO_LARGE%0
+Microsoft
+Microsoft Corporation
+Microsoft ReFS Salvage [Version 10.0.11070]
+Microsoft.Windows.FileSystem.Chkdsk
+might report errors when no corruption is present.
+milliseconds%0
+Minor file name errors were detected in file %1.
+Minor version           : %2!d!
+Minor version           : %3!d!
+minutes%0
+Mirror metadata file at block %1 is corrupt.
+Mirror security descriptor block different from that of
+Mismatch between in-references and file type for for ICB at
+Mismatch between parent FID and in-reference found to directory
+Mismatch between parent FID references and file type for for ICB
+Missing %1 entries in index "%3" of directory "%2" ... %0
+Missing object id index entry or duplicate object id detected
+MISSING_BASE_FILE_RECORD%0
+MISSING_DOS_NAME%0
+MISSING_ENCRYPTED_FLAG_IN_STD_INFO%0
+MISSING_FILE_NAME_INDEX_PRESENT_BIT%0
+MISSING_INDEX_ENTRY%0
+MISSING_NTFS_NAME%0
+MISSING_PARENT_IN_FILE_NAME%0
+MISSING_REPARSE_POINT_FLAG_IN_STD_INFO%0
+MISSING_SPARSE_FLAG_IN_STD_INFO%0
+MISSING_STANDARD_INFO%0
+modified.
+Modifying flags to 0x%3 for FID pointing to ICB at block %2
+Modifying Root ICB location in File Set Descriptor to block %1.
+Modifying System Stream Directory ICB location in File Set Descriptor
+MORE /E [/C] [/P] [/S] [/Tn] [+n] [files]
+MORE [/E [/C] [/P] [/S] [/Tn] [+n]] < [drive:][path]filename
+more information).  A stopped scan may be restarted where it left off by
+More than one %1 entry in folder %2.
+More than one %1 entry in folder %2.  Entry removed.
+More than one dot entry in folder %1.  Entry removed.
+MORE%0
+MS-DOS window. Try again from the Windows XP shell or command prompt.
+MSTK_PRO.IND
+MSWIN4.1
+Multiple non-identical parent FID found in directory ICB at block %1.
+Multiple object id files found.  Ignoring extra object id files.
+Multiple object id index entries in file 0x%1
+Multiple quota files found.  Ignoring extra quota files.
+Multiple references found to directory ICB at block %1.
+Multiple references found to file stream ICB at block %1.
+Multiple reparse file found.  Ignoring extra reparse files.
+Multiple Usn Journal file found.  Ignoring extra Usn Journal files.
+Multiple volume metadata files found. Choose which volume to work upon:
+Must enter both /t and /n parameters.
+Must specify a file system
+N0;Q$sN
+Name of first file to compare: %0
+Name of second file to compare: %0
+Name table translation is not available for conversion to %1.
+Need count entry for extended attribute set at cluster %1 corrected.
+NeedEaCount       0x%2            0x%5
+NjKXj
+no corruption found.
+No corruption is detected.
+No file to print
+No files added
+No files found - %1
+No files replaced
+No further action is required.
+No memory available.
+NO NAME    
+NO NAME    FAT12   3
+NO NAME    FAT32   3
+No phase specified%!
+No repair needed.
+No salvageable file found in %1%!
+No serial port setting changed.
+No subfolders exist %1
+No valid boot sector found.
+No valid checkpoint%!
+No valid superblock%!
+NON_RESIDENT_ATTR_COLLISION%0
+NON_RESIDENT_ATTR_HAS_BAD_MAPPING_PAIRS_OFFSET%0
+NON_RESIDENT_ATTR_HAS_UNALIGNED_MAPPING_PAIRS_OFFSET%0
+NON_RESIDENT_ATTR_MAPPING_PAIRS_OFFSET_TOO_SMALL%0
+Non-allocatable Space File is corrupt or unreadable.
+Non-allocatable Space Stream is corrupt or unreadable.
+non-duplicated metadata for logical volume.
+NoOp%0
+normal
+Not enough memory.
+Not resetting hidden file - %1
+Not resetting system file - %1
+not support writes in place.
+not to shutdown the machine until format is complete.
+Note that providing /d alongside /a will triage all found directory/file corruptions, but will not fix leaks.
+Now checking %1...
+NSR01
+NSR02
+NSR03
+NtAdjustPrivilegesToken
+NtAllocateVirtualMemory
+NtCancelIoFile
+NtClearEvent
+NtClose
+NtCreateEvent
+NtCreateFile
+NtDelayExecution
+NtDeviceIoControlFile
+NtDisplayString
+ntdll.dll
+NtDrawText
+NtFlushBuffersFile
+NtFreeVirtualMemory
+NTFS    
+NTFS 4.0
+NTFS 5.0
+NTFS file system is not supported on this device optimized for removal.
+NTFS file system is not supported on this device.
+NTFS RECOVER cannot be used to recover system files. Use CHKDSK instead.
+NTFS Recover could not write elementary disk structures.  The volume
+NTFS RECOVER failed.
+NTFS RECOVER has detected that the volume is corrupt.  Run CHKDSK /f
+NTFS_FILE_NAME_ALREADY_ENCOUNTERED%0
+NTFS_SPARSE_FLAG_SET_IN_STD_INFO%0
+NtFsControlFile
+NtfsFileName:
+NtfsObjectIdInfo:
+NTFSu
+NTLDR
+NtOpenDirectoryObject
+NtOpenFile
+NtOpenKey
+NtOpenProcessToken
+NtOpenSymbolicLinkObject
+NtOpenThreadToken
+NtQueryDirectoryObject
+NtQueryInformationFile
+NtQueryPerformanceCounter
+NtQuerySymbolicLinkObject
+NtQuerySystemInformation
+NtQuerySystemTime
+NtQueryValueKey
+NtQueryVolumeInformationFile
+NtReadFile
+NtResetEvent
+NtSerializeBoot
+NtSetEvent
+NtSetInformationFile
+NtSetThreadExecutionState
+NtShutdownSystem
+NtTerminateProcess
+NtWaitForMultipleObjects
+NtWaitForSingleObject
+NtWriteFile
+NULL_FOUND_IN_ATTR_NAME%0
+NULL_FOUND_IN_FILE_NAME_OF_FILE_NAME_VALUE%0
+Number of Clusters      : 0x%2!llx!
+Number of clusters      : 0x%7!llx!
+Number of clusters      : 0x%8!llx!
+Number of clusters exceeds 32 bits.
+Number of sectors       : 0x%5!llx!
+Number of sectors       : 0x%6!llx!
+Number of sectors       : 0x%7!llx!
+O _^[Y]
+O PQQ
+O0;A(
+O0;A(r
+Object Table checked.
+OBJECT_ID%0
+ObjIdFoundFilesScan
+ObjIdIndexDupScan
+ObjIdIndexScan
+occured.
+ODQPj
+of 0x%2 instead of 0x%3.
+of a valid VAT on the last written block and if necessary searching
+of file %3 is incorrect.
+of file %3.
+of index %1 in file 0x%4 is incorrect.
+of index %2 in file 0x%4 with parent 0x%1.
+of index %2 with parent 0x%1 in file 0x%3.
+of index %2 with parent 0x%1 in file 0x%4.
+of name %2.
+of the reparse data buffer.
+of type %4 and instance tag 0x%5.  The attribute name offset is
+of type 0x%1 and instance tag 0x%2.
+of type 0x%3 and instance tag 0x%4.
+of type 0x%4 and instance tag 0x%5.  The attribute name offset is
+OFFSET%0
+On such media chkdsk operation is limited to verifying the presence
+on volume %1.
+One of your disks needs to be checked for consistency. You
+One or more Anchor Volume Descriptor Pointers are missing.
+onecore\base\fs\utils\ifsutil\src\volume.cxx
+onecore\base\fs\utils\ifsutil\src\wvcache.cxx
+onecore\base\fs\utils\ufat\src\fatsa.cxx
+onecore\base\fs\utils\ufat\src\fatsachk.cxx
+onecore\base\fs\utils\ufat\src\fatvol.cxx
+onecore\base\fs\utils\ufat\src\rfatsa.cxx
+onecore\base\fs\utils\untfs\src\attrdef.cxx
+onecore\base\fs\utils\untfs\src\attrlist.cxx
+onecore\base\fs\utils\untfs\src\attrrec.cxx
+onecore\base\fs\utils\untfs\src\badfile.cxx
+onecore\base\fs\utils\untfs\src\frs.cxx
+onecore\base\fs\utils\untfs\src\frsstruc.cxx
+onecore\base\fs\utils\untfs\src\indxchk.cxx
+onecore\base\fs\utils\untfs\src\indxtree.cxx
+onecore\base\fs\utils\untfs\src\logfile.cxx
+onecore\base\fs\utils\untfs\src\mftinfo.cxx
+onecore\base\fs\utils\untfs\src\mftref.cxx
+onecore\base\fs\utils\untfs\src\ntfschk.cxx
+onecore\base\fs\utils\untfs\src\rafile.cxx
+onecore\base\fs\utils\untfs\src\rasd.cxx
+onecore\base\fs\utils\untfs\src\sdchk.cxx
+onecore\base\fs\utils\untfs\src\spotfix.cxx
+onecore\base\fs\utils\untfs\src\upfile.cxx
+onecore\base\fs\utils\untfs\src\usnjrnl.cxx
+Only 0x%1 bytes returned from a read of 0x%d bytes
+Only a file or directory ICB can have extended attributes in UDF.
+Only the "/L:<size>" option may be used with the "/F" option.
+Only unallocated space bitmap is supported for free space
+Optical media cannot be formatted with the eXFAT file system.
+Option(s) specified: %0
+Option: %0
+or $Quota in the root directory.
+or appear in the wrong order.
+or directory name on the target
+or piped from another command.
+OriginalFilename
+Orphan file record recovery%0
+Orphan reconnection%0
+Orphan recovery to lost and found%0
+ORPHAN_FRS
+OrphanChildFRS
+OrphanChildFRS%0
+OS/2 Boot Manager
+Out of memory
+Out of memory.
+Overwrite %1 (Yes/No/All)? %0
+OwnerID: %1!#08x!
+p4h0&@
+PackedEaSize      0x%1            0x%4
+PAGING_FILE_CORRUPT%0
+Parameter definitions:
+Parameter format not correct -
+Parameter format not correct - %1
+Parameters incompatible with fixed disk.
+Parameters not compatible.
+Parameters not supported by drive.
+Parameters not supported.
+Parent directory page hosting the root of file %1 is a director page%!
+Parent directory page hosting the root of file %1 is invalid%!
+Parent FID found in the middle of directory ICB at block %1.
+Parent FID not found in directory ICB at block %1.
+parent file 0x%1 is not a base file record segment.
+Parse Error
+Parse Error %1
+Partition is %1 bytes aligned. %0
+Partition is %1 KB aligned. %0
+Partition is %1 MB aligned. %0
+Partition length of 0x%1!d! is too small.
+Path not found
+Path not found - %1
+Pathname exceeded 256 characters.
+performance, please use the /perf switch.
+performance.  Given the number of files and directories on the drive, Windows
+Performing low level format ...
+Ph$)@
+Ph,)@
+Ph@$@
+Ph\$@
+Ph`G@
+Ph0S@
+Ph0U@
+Ph8.@
+Phase and Copy Phase will run sequentially.  In manual mode, each phase can be
+phases to be run separately as well as Scan Phase to be paused and resumed.
+Phh,@
+Phl*@
+PhlU@
+Php'@
+PhP-@
+Phx'@
+Phx+@
+Pj QQ
+PjHQQ
+Please free some disk space and run CHKDSK again.
+Please run "chkdsk /f" to fix the issues.
+Please run "chkdsk /f" to repair the volume.
+Please run "chkdsk /spotfix" to fix the issues.
+Please run chkdsk /f to find and fix all problems with this drive.
+Please run chkdsk /scan to find the problems and queue them for repair.
+Please run chkdsk /scan to fully analyze the problems and queue them for repair.
+Please specifies the correct volume or working directory.
+PLEASE USE IT ACCORDING TO THE GIVEN INSTRUCTIONS.
+Please use the /f parameter as well.
+Please use the /FS switch to specify the file system
+Please wait while the system restarts.
+Please wait while your computer restarts.
+point to the same file 0x%2.
+points beyond the length, 0x%3, of the index.  VCN is unknown.
+Possible causes are:
+PPh\@
+PPj PPWV
+PPPj 
+PPPjP
+PPPPh$
+PPPQh
+PPPVP
+PPRPP
+PPWPPP
+PQh,R@
+PQhD'@
+PQhP'@
+PQQj`
+PQQQW
+PQQSQQVW
+PQRQQ
+Preinstallation completed successfully.  Press any key to
+Press any key to continue . . .
+Press any key to restart
+Press any key to restart%0
+Press any key when ready to begin copying file(s)%0
+Press Ctrl+Alt+Del to restart
+Press Ctrl+Alt+Del to restart%0
+Press Ctrl+C at any time to stop the scan.
+Press ENTER to begin recovery of the file on drive %1
+prevailing Anchor Volume Descriptor Pointer.
+PREVENTS_MOUNT%0
+PRh,.@
+PRhP'@
+PRINT [/D:device] [[drive:][path]filename[...]]
+Prints a text file.
+Proceed (Y/N)? %0
+Proceed to regenerate boot sectors with the following parameters:
+Proceed with Format (Y/N)? %0
+Proceed with Format using a 64K cluster (Y/N)? %0
+Proceed with Format using the cluster size chosen by the
+Proceed with low level format (Y/N)? %0
+Proceed with quick format instead (Y/N)? %0
+Proceed with unconditional format (Y/N)? %0
+process.  Chkdsk may run if this volume is dismounted first.
+process.  Convert may run if this volume is dismounted first.
+process.  Format may run if this volume is dismounted first.
+process.  Would you like to schedule this volume to be
+Processing %1
+Processing %1!I64d! of %2!I64d! object table pages (%3!d!%%)...%r%0
+ProductName
+ProductVersion
+Progress: %4 of %5 done; Stage: %1%%; Total: %2%%; ETA: %6:%7:%8 %9%r%0
+Property set found in file record segment %1.
+ProScan
+ProscanIoPriority
+ProscanMemoryPercentage
+Provides help information for Windows XP commands.
+PRQQQ
+PRRRQ
+PSShx
+PSSSW
+Pt/QR
+PVjDRh
+PVVVQ
+PVWjdX3
+PWh<f
+PWh=f
+PWh>f
+PWPWQPh
+q h,.@
+q8j$Y
+Q8SV3
+QD8V t
+Qh G@
+Qh,)@
+Qh\$@
+Qh`(@
+Qh<G@
+Qh0G@
+Qh4G@
+QhD,@
+QhHG@
+QhL$@
+QhL.@
+QhLG@
+QhT$@
+QhTG@
+QPh,.@
+QPh`R@
+QPPhH
+QPVQQ
+QQSQW
+QQSVW
+QQVW3
+QRh,.@
+QRPhP'@
+QRPPW
+QRRRP
+qsort
+QSSSP
+QSVQ3
+QSVW3
+QSVWj
+Qtz</t
+Quick Automatic Mode Command Line Usage:
+Quick scan completed.  Assuming cluster size is %1!d! bytes.
+Quick Scan Phase Command Line Usage:
+QuickFormat another (Y/N)? %0
+QuickFormatting %1 Bytes
+QuickFormatting %1 EB
+QuickFormatting %1 GB
+QuickFormatting %1 KB
+QuickFormatting %1 MB
+QuickFormatting %1 PB
+QuickFormatting %1 TB
+QuickFormatting %1.%2M
+QuotaUserData:
+QVRWPQQ
+r%;~$s W
+r(PQV
+r.;w$s)V
+r=;w$s8V
+r4w93
+r9&8-t
+rC;w$s>V
+rE;A$s@PR
+Read %1!I64d! of %2!I64d! MBs (%3!d!%%)...%r%0
+Read error.
+Read failure with status 0x%1 at offset 0x%2 for 0x%3 bytes.
+read in file 0x%3.
+Readable file record segment %1 is not writeable.
+Reading at offset 0x%1!I64x! failed%!  Total error encountered is %2!d!.
+Reading second NTFS boot sector instead.
+Read-only chkdsk found bad on-disk uppercase table - using system table.
+recent software package installation.
+Record %1 of %2: %0
+RECOVER [drive:][path]filename
+RECOVER drive:
+RECOVER on an entire volume is no longer supported.
+RECOVER_FREE_SPACE
+RECOVER_ORPHAN_LOSTFOUND
+RECOVER_ORPHAN_ORIGINAL_RECONNECT
+RECOVER_USER_FILES
+Recovering orphaned file %1 (%2) into directory file %3.
+Recovers readable information from a bad or defective disk.
+Recreating deleted index %2 in file %1.
+Redirect printing: MODE LPTn[:]=COMm[:]
+RefCountValidation
+reference 0x%3.  The expected attribute type is 0x%1.
+References found to non-existent ICB at block %1.
+ReFS file system is not supported on this device.
+ReFS Salvage has a Scan Phase and a Copy Phase.  In automatic mode, the Scan
+ReFS version: %1!d!.%2!d!
+Reinsert disk for drive %1:
+remaining length, 0x%2, of a page.  The minimum value is 0x%3.
+Remove disks or other media.%0
+RemoveUnusedSDs
+Removing %1 clusters from the Bad Clusters File.
+Removing corrupt index %2 in file %1.
+Removing nonvalid long folder entry from %1...
+Removing orphaned long folder entry %1...
+Removing trailing folder entries from %1
+Renamed to %3 but still could not resolve the name conflict.
+Renamed to %3.
+Repaired extended attributes.
+Repairing an index entry in index %2 of file %1.
+Repairing an index entry with id %3 in index %2 of file %1.
+Repairing invalid filename %1 (%3) in directory %2.
+Repairing invalid system file name %1 (%3) in directory %2.
+Repairing the security file record segment.
+Repairing the unreadable security descriptors data stream.
+Repairing Usn Journal %1 data stream.
+Repairing Usn Journal file record segment.
+REPAIRING_FILE_ATTRIBUTES%0
+REPAIRING_FILE_RECORD_FLAGS%0
+REPAIRING_FIRST_FREE_BYTE%0
+REPAIRING_SECURITY_ID%0
+REPAIRING_SEGMENT_NUMBER%0
+REPAIRING_SEQUENCE_NUMBER%0
+Reparse point and Object ID verification%0
+Reparse point found in file record segment %1.
+Reparse Tag, 0x%1, is a reserved tag.
+REPARSE_ID%0
+REPARSE_POINT_FLAG_SET_IN_STD_INFO%0
+ReparseDataLength, 0x%1, inconsistence with the attribute length 0x%2.
+ReparseIndexKey:
+ReparseIndexScan
+Replace %1? (Y/N) %0
+REPLACE [drive1:][path1]filename [drive2:][path2] [/A] [/P] [/R] [/W]
+REPLACE [drive1:][path1]filename [drive2:][path2] [/P] [/R] [/S] [/W] [/U]
+Replaces files.
+Replacing %1
+Replacing bad clusters in logfile.
+Replacing invalid security id with default security id for file %1.
+Replacing missing or invalid security descriptor for file %1.
+Required parameter missing -
+re-running the Scan phase with the same command line options.
+Reserve Sparing Table not present on the disk.
+Reserve Volume Descriptor Sequence is corrupt or unreadable.
+Reserve Volume Descriptor Sequence.
+Reseting invalid ICB tag flags in ICB at block %1.
+RESIDENT_ATTR_COLLISION%0
+Resizing log file is not supported.
+respectively in file 0x%6.
+Resume volume scanning from LCN 0x%1!x! (0x%2!x! each).
+Resume volume scanning from LCN 0x%1!x!.
+Resync Failed.  Files are too different.
+Retrying snapshot creation.  GLE: %1!d!
+rG;A$sBPR
+Rh,'@
+rH;w$sCV
+Rhp I
+RhP'@
+Rhx'@
+Richd
+rM;w$sHV
+root index %1 in file 0x%4 are not equal.
+RPhP'@
+RPht"@
+RPQQQ
+RPRQQ
+RSDS1@z
+RtlAcquireSRWLockExclusive
+RtlAddAccessAllowedAce
+RtlAddAce
+RtlAllocateHeap
+RtlAnsiStringToUnicodeString
+RtlCaptureContext
+RtlCaptureStackBackTrace
+RtlClearBits
+RtlCompareUnicodeString
+RtlComputeCrc32
+RtlCopySid
+RtlCrc64
+RtlCreateAcl
+RtlCreateSecurityDescriptor
+RtlCreateSystemVolumeInformationFolder
+RtlDeleteCriticalSection
+RtlDeleteElementGenericTable
+RtlDeleteElementGenericTableAvl
+RtlDeleteElementGenericTableAvlEx
+RtlDeleteSecurityObject
+RtlDosPathNameToNtPathName_U
+RtlDosPathNameToNtPathName_U_WithStatus
+RtlEnterCriticalSection
+RtlEnumerateGenericTableAvl
+RtlEnumerateGenericTableWithoutSplaying
+RtlEnumerateGenericTableWithoutSplayingAvl
+RtlEqualUnicodeString
+RtlExpandEnvironmentStrings_U
+RtlFindMessage
+RtlFindSetBits
+RtlFormatMessage
+RtlFreeAnsiString
+RtlFreeHeap
+RtlFreeUnicodeString
+RtlGetPersistedStateLocation
+RtlGetSystemBootStatus
+RtlGetVersion
+RtlInitAnsiStringEx
+RtlInitializeBitMap
+RtlInitializeCriticalSection
+RtlInitializeGenericTable
+RtlInitializeGenericTableAvl
+RtlInitializeSid
+RtlInitializeSRWLock
+RtlInitUnicodeString
+RtlInitUTF8StringEx
+RtlInsertElementGenericTable
+RtlInsertElementGenericTableAvl
+RtlInsertElementGenericTableFullAvl
+RtlLeaveCriticalSection
+RtlLengthRequiredSid
+RtlLengthSecurityDescriptor
+RtlLengthSid
+RtlLookupElementGenericTable
+RtlLookupElementGenericTableAvl
+RtlLookupElementGenericTableFullAvl
+RtlLookupFirstMatchingElementGenericTableAvl
+RtlMultiByteToUnicodeN
+RtlNewSecurityObject
+RtlNormalizeProcessParams
+RtlNumberGenericTableElementsAvl
+RtlNumberOfSetBits
+RtlOemToUnicodeN
+RtlPrefixUnicodeString
+RtlPublishWnfStateData
+RtlQueryInformationAcl
+RtlQueryRegistryValuesEx
+RtlRaiseStatus
+RtlRandomEx
+RtlReleaseSRWLockExclusive
+RtlSetBits
+RtlSetDaclSecurityDescriptor
+RtlSetGroupSecurityDescriptor
+RtlSetLastWin32ErrorAndNtStatusFromNtStatus
+RtlSetSystemBootStatus
+RtlSizeHeap
+RtlSubAuthoritySid
+RtlSystemTimeToLocalTime
+RtlTimeToTimeFields
+RtlTryEnterCriticalSection
+RtlUnhandledExceptionFilter
+RtlUnicodeStringToAnsiString
+RtlUnicodeToMultiByteN
+RtlUnicodeToOemN
+RtlUnwind
+RtlUpcaseUnicodeString
+RtlUTF8StringToUnicodeString
+RtlValidRelativeSecurityDescriptor
+RtlValidSecurityDescriptor
+RtlVerifyVersionInfo
+RtlWriteRegistryValue
+Run CHKDSK with the /F (fix) option to correct these.
+run separately.  Progress and logs are saved in a working directory to allow
+Run time = %1!d! seconds.
+Running CHKDSK in read-only mode.
+Running holding volume %1!s! exclusive...
+Running Scan-Phase:
+RVPQ3
+RVRVQj
+S RPQW
+s WVPR
+s$h(N@
+s$h8N@
+s$hLN@
+s(VRW
+S@QRPP
+s|h(G@
+s0WQQ
+s8PWh
+s8QPWh
+salvage   Salvage operations for corrupt volume
+SALVAGE %1>%0
+Same parameter entered twice.
+Saving UNFORMAT information.
+scan and running the Copy phase (see the usage text with "refsutil salvage -?" for
+Scan state file TotalScanUnitCount (0x%1!llx!) does not match that of the current volume.
+Scanning and repairing drive (%1)...
+Scanning and repairing drive (%1): %2%% complete
+Scanning and repairing drive...
+Scanning and repairing drive: %1%% complete
+Scanning phase completed.
+Scanning volume for recoverable files.
+schedule it to be converted the next time the
+Scrubbing file "%1!s!"
+Scrubbing global tables.
+SDEntry
+SDRPQQ
+SDS_NOT_FOUND%0
+Search for orphans completed.
+Search for VAT completed.
+Searches for a text string in a file or files.
+seconds%0
+Sectors per cluster     : 0x%4!x!
+Sectors per cluster     : 0x%5!x!
+SectorSize
+Security descriptor compaction%0
+Security descriptor for file %1 is missing or invalid.
+Security descriptor verification completed.
+Security descriptor verification%0
+Security ID %1 is non-existent and unused ... %0
+Security ID %1 was referenced in one or more file records
+Security Information not supported by destination file system.
+SecurityDescriptorHeader:
+SecurityHashKey:
+SecurityId: %1!#08x!
+Select code page:  MODE CON[:] CP SELECT=yyy
+SELF_HEALING_ATTEMPTED%0
+self-healing requires we abort and restart the scan.
+SelfHealingResult%0
+Serial port:       MODE COMm[:] [BAUD=b] [PARITY=p] [DATA=d] [STOP=s]
+Session Manager
+Set number of sectors on drive to %1.
+SET_FILE_NAME_FLAGS%0
+SET_MFT_BITMAP%0
+SET_VOLUME_BITMAP%0
+Sh8 I
+Sh8#@
+Sh9{ltL
+Sharing violation
+Short file name enable/disable is not available for %1.
+should be filled with zeros.
+should not be set.
+should not have name.
+shut down/reboot.
+SID_VALID%0
+Since boot sector is invalid, assuming cluster size is %1!d! bytes
+Skip looking for any valid boot sector.
+SKIP_SELF_HEALING%0
+skipping certain checks of the volume.
+Skipping drive %1 because it is not an NTFS volume.
+Skipping drive %1 because it is not an NTFS, FAT, or FAT32 volume.
+Skipping further messages about recovering orphans.
+Skipping USN Journal verification.
+sLh(G@
+slh\$@
+slhp'@
+sLj QPh
+sLPRWh
+-smr            Specifies this if volume is of SMR format.  Cluster size must be 65536.
+Snapshot creation failed.  CHKDSK cannot perform an online scan of the volume.
+Snapshot was deleted.  CHKDSK cannot continue.
+so it cannot convert it now.  Would you like to
+Some clusters occupied by attribute of type 0x%1 and instance tag 0x%2
+Some file allocation tables (FAT) are unreadable.
+Some file allocation tables (FAT) are unwriteable.
+Sorting attribute list for file %1.
+Sorting attribute records for file record segment %1.
+Sorting extended attribute file.
+Sorting index %2 in file %1.
+Source directory may be changing.
+Source path required
+Source pathname exceeded 256 characters.
+Source volume not specified%!
+Space Bitmap Descriptor at block %1 is corrupt or unreadable.
+Space required for conversion: %1 KB
+Space required for leak detection and fixing: %1!llu!MB.
+space will not be used.  A file of at least %1 MB is needed.
+Sparing Table at block %1 is corrupt or unreadable.
+Sparing Table missing or unreadable on media that is not
+Sparse data stream found in file record segment %1.
+Specified drive does not exist.
+Specify only one of /D, /X, /C, and /T.
+SPECULATIVE%0
+SpotFix
+SpotVerify
+SSh!@
+SSh`P
+SSSSh
+SSVu0
+SSWPS
+SSWSP
+Stage 1: Examining basic file system structure ...
+Stage 2: Examining file name linkage ...
+Stage 3: Examining security descriptors ...
+Stage 4: Looking for bad clusters in user file data ...
+Stage 5: Looking for bad, free clusters ...
+STALE_INFORMATION%0
+STALE_UNNAMED_INDEX_ENTRY_POINTS_TO_FRS%0
+standard information attribute.
+starting at 0x%3 for possibly 0x%4 clusters.
+Starting offset of the thinly provisioned or DAX partition is not aligned to a cluster boundary.
+Status for device *:%0
+STD_INFO_NON_RESIDENT%0
+STD_INFO_TOO_SMALL%0
+streams not allowed in UDF
+StringFileInfo
+structure is too deep.
+SUBST [drive1: [drive2:]path]
+SUBST drive1: /D
+Superblocks checked.
+SVWh|
+SVWj0
+SVWj53
+SVWPj
+SVWUj
+SVWv(
+Switch %1 is not implemented
+swprintf_s
+SymbolicLink
+system (Y/N)? %0
+System Partition is not allowed to be formatted.
+system restarts (Y/N)? %0
+system restarts.
+System Volume Information
+System Volume Information\Chkdsk
+system; its file system cannot be converted
+SYSTEM_FILE_CORRUPT%0
+SystemClusters
+SystemPartition
+SystemStartOptions
+t SVj
+t SWj
+t"8^ t
+t"jdRV
+t#SVj
+t#SWj
+t$ QWS
+t$ RP
+t$ t/j
+t$ VQ
+T$$;U
+T$$Q3
+T$$QQ
+t$$QQ
+t$$RP
+t$$Sj
+T$$u";
+T$$VY
+t$$Wf
+t$$WV
+t$(Ph
+T$(PR
+t$(QQ
+T$(QQ
+t$(Yf
+T$,QPj
+t$,WP
+t$@Ph
+t$@QV
+t$`VQ
+t$<VP
+T$0;U
+T$0jHY
+T$0QQ
+t$0QQ
+t$0RP
+t$0WP
+t$0WQ
+T$4RQ
+T$8PPf
+t$8VW
+t$8WQ
+t$D;t$
+t$dI3
+t$DRP
+t$H;t$
+t$H;t$(
+t$LRP
+t$LVR
+t$LWVQ
+T$PQQ
+t$TRP
+t$TWV
+t$XVQ
+t%8_ t
+t%9p0t
+t(;G(s#;G0t
+t(hT$@
+t(QPj
+t*h(F@
+t/hJ 
+t/RQj
+t?8K$tE
+t@j _
+t@RQj
+t]jXY
+t`jXY
+t+RQQQ
+t+SSj
+t<SSSS
+t>#q@#QD
+t39>t
+t4YQ3
+t5Qj0
+tag %2 contains unicode NULL.
+tag 0x%2 in file 0x%5 is incorrect.  The expected value is %4.
+tag 0x%3 is not quad aligned.
+tag 0x%4 exceeded the attribute length 0x%2.
+tag 0x%4 is incorrect.  The expected value is 0x%2.
+tag 0x%4 is too small.  The minimum value is 0x%2.
+tag 0x%5 is incorrect.  The attribute has value of length 0x%1,
+Target Defect Managed.
+Target directory not specified%!
+TCPAf
+TCPAu$
+tcRQh
+TEA01
+TESTED_DUPLICATE%0
+TestInformation%0
+TESTING%0
+that you continue.
+The "/DAX" option can only be used once.
+The "/DAX:" option accepts only "enable" or "disable".
+The "/I:" option accepts only "enable" or "disable".
+The "/L" option can only be used once.
+The "/L" option cannot be specified with the "/F" option.
+The "/L:" option accepts only "enable" or "disable".
+The "/R:" and "/D" options are only supported on the UDF file system.
+The "/s:" option only accepts "enable" or "disable".
+The "/scan" option cannot be specified with the "/spotfix" option.
+The "/scan" option cannot be specified with the "/verify" option.
+The "/txf:" option only accepts "enable" or "disable".
+The "/verify" option cannot be specified with the "/F" option.
+The "/verify" option cannot be specified with the "/spotfix" option.
+The %1 drive is already scheduled for an automatic
+The %1 entry contains a nonvalid link.
+The %1 file system is not enabled.  The volume
+The %1 file was not found.
+The %2 index is missing from file 0x%1.
+The /C option functions only on NTFS volumes.
+The /C option is only valid with the /UNCOMPRESS option.
+The /I and /I:passes cannot be specified at the same time.
+The /I option functions only on NTFS volumes.
+The /I or /C switch reduces the amount of time required to run Chkdsk by
+The /Z and /O (or /X) options conflict: cannot copy security
+The actual value is 0x%2 while the expected value is 0x%1.
+The allocated length 0x%1 is not in multiple of 0x%2 for attribute
+The allocation attribute does not exist.
+The API %1 failed with error %2.
+The API %1 processed the wrong number of bytes.
+The attribute definition table cannot be read.
+The attribute definition table content is incorrect.
+The attribute definition table length 0x%1 is incorrect.
+The attribute definition table length, 0x%1, is not divisible by 0x%2.
+The attribute form code 0x%1 is invalid for attribute of type 0x%2
+The attribute length 0x%1 for attribute of type 0x%3 and
+The attribute length 0x%3 of attribute of type 0x%1 and name %2 in
+The attribute list entry with attribute of type 0x%1 and instance tag
+The attribute list entry with attribute of type 0x%1 and instance tag 0x%2
+The attribute list in file 0x%1 does not contain
+The attribute list in file 0x%1 indicates the standard information
+The attribute list in file 0x%1 is missing.
+The attribute list length 0x%2 in file 0x%3 is incorrect.
+The attribute name for attribute of type 0x%1 and instance tag 0x%2
+The attribute name is colliding with the mapping pairs for attribute
+The attribute name offset 0x%3 of attribute list entry with attribute of
+The attribute name offset for attribute of type 0x%1
+The attribute of type 0x%1 and instance tag 0x%2
+The attribute of type 0x%1 and instance tag 0x%2 has bad mapping pairs.
+The attribute of type 0x%1 and instance tag 0x%2 in file 0x%5
+The attribute of type 0x%1 and instance tag 0x%2 should be after
+The attribute of type 0x%1 and instance tag 0x%2 should be indexed.
+The attribute of type 0x%1 and instance tag 0x%2 should be resident.
+The attribute of type 0x%1 and instance tag 0x%2 should have a name.
+The attribute of type 0x%1 and instance tag 0x%2 should not be indexed.
+The attribute of type 0x%1 and instance tag 0x%2 should not be resident.
+The attribute of type 0x%1 in file 0x%2 is missing.
+The attribute of type 0x%1 in file 0x%4 has allocated length
+The attribute of type 0x%2 and instance tag 0x%3 is inconsistence.
+The attribute record length 0x%1 is too small for attribute of
+The attribute record offset 0x%1 is too large for attribute of type 0x%3
+The attribute type 0x%1 with name %2 in file 0x%3 is missing.
+The attribute value length is 0x%1.
+The attributes with instance tags 0x%2 and 0x%4 have different
+The attributes with same type code 0x%1 but different instance tags
+The AUTOCHK initiation countdown time is set to %1 second(s).
+The bad sectors will only be repaired if the "/r" option is specified.
+The bytes available, 0x%1, in the file record segment header for
+The bytes available, 0x%2, in index header for index %1 in file
+The bytes per block, 0x%3, read from index buffer of VCN 0x%2
+The bytes per index buffer, 0x%2, for index root %1 in file
+The cluster size is illegal.
+The cluster size must be a minimum of 16KB.
+The clusters per index buffer, 0x%2, for index root %1 in file
+The code page specified is not valid.
+The collation rule 0x%3 for index root %1 in file 0x%2
+The conversion failed.
+The conversion has probably failed.
+The conversion to %2 did not take place.
+The conversion will take place automatically the next time the
+The correct value is 0x%2.
+The current log file size is %1 KB.
+The current logfile size is too big.
+The current volume has 0x%2!llx! LCNs in it.
+The data attribute is either resident or missing in the log file.
+The data attribute is either resident or missing in the MFT mirror.
+The data attribute is missing from the upcase file.
+The data attribute of the MFT mirror is not contiguous for 0x%1 sectors.
+The data stream with name %1 in file 0x%2 is not recognized.
+The data written out is different from what is being read back
+The default allocation size for the medium is %2.
+The default log file size for this volume is %2 KB.
+The deleting of the USN Journal is in progress.
+The device cannot be set to the specified number of lines and/or columns.
+The device is busy.
+The device is not DAX capable.  Try formatting without DAX support.
+The device is offline.
+the device's property sheet.
+The directory may be damaged or there may be insufficient disk space.
+The disk contains structures that are not supported in UDF %1.%2.
+The disk does not have enough space to replace bad clusters
+The disk geometry recorded in the volume's Bios Parameter
+The disk is too large to format for the specified file system.
+the disk may be locked by another process.
+The DOS and NTFS file name attributes in file 0x%1 are identical.
+The DOS file name attribute in file 0x%1 is incorrect.
+The DOS name has 0x%1 as parent.  The NTFS name has 0x%2 as parent.
+The down pointer of current index entry with length 0x%1 is invalid.
+The drive, the path, or the file name is not valid.
+The EA DATA is not readable for file 0x%1.
+The EA DATA size, 0x%2, in file 0x%1 is incorrect.
+The EA Data value length, 0x%1, in file 0x%2 is incorrect.
+The EA INFORMATION attribute is not consistency with the EA DATA attribute
+The EA INFORMATION is not readable for file 0x%1.
+The EA INFORMATION size, 0x%2, in file 0x%1 is incorrect.
+The EA Information value length, 0x%1, in file 0x%2 is incorrect.
+The EA total packed length, 0x%2, is too large in file 0x%1.
+The encrypted flag in standard information attribute in file 0x%1
+The entry points to file 0x%2.
+The expected name is %2.
+The expected size is 0x%3.
+The expected value is 0x%1.
+The expected value is 0x%2 or 0x%3.
+The expected value is 0x%2.
+The expected value is 0x%3.
+The extent list of the attribute list is crossed linked at 0x%1
+The file "%1!s!" was correctly scrubbed.
+The file %1 specified to the /CvtArea option cannot be found at the root.
+The file %1 specified to the /CvtArea option must be in one contiguous block.
+The file 0x%1 belongs to parent 0x%3 but got 0x%2 as parent.
+The file 0x%1 has file name %2 when it should be %3.
+The file 0x%3 pointed to by an index entry of index %2 with
+The file 0x%4 pointed to by index entry %3 of index %2 with
+The file allocation table (FAT) is corrupted.
+The file attributes flag 0x%1 in file 0x%3 is incorrect.
+The file may be damaged or there may be insufficient disk space.
+The file name attributes in file 0x%3 has different parents.
+The file name in file name value in attribute of type 0x%1 and instance
+The file name in system file record segment %1 contains errors.
+The file name index present bit in file 0x%1 should not be set.
+The file name index present bit is not set for file 0x%1.
+The file name index present bit is set in file 0x%1
+The file name length is zero for attribute of type 0x%1
+The file name value length 0x%1 for attribute of type 0x%3 with
+The file record segment size 0x%1 is invalid in file 0x%2.
+The file reference 0x%3 of an index entry of index %2
+The file reference 0x%4 of index entry %3 of index %2
+The file system has been converted.
+The file system will be enabled when you restart the system.
+The first attribute of type 0x%1 and instance tag 0x%2
+The first attribute offset 0x%1 in file 0x%2 is incorrect.
+The first free byte, 0x%1, in file 0x%4 is incorrect.  The number of
+The first free byte, 0x%2, and bytes available, 0x%3, for
+The first free byte, 0x%2, in index header of index %1
+The first index entry of length 0x%1 is a leaf but it is not in the root.
+The first index entry of length 0x%1 is a leaf but the previous entry is not.
+The first index entry offset, 0x%2, for index %1 in file 0x%4
+The first NTFS boot sector is unreadable or corrupt.
+The first NTFS boot sector is unwriteable.
+The following are some special codes in Doskey macro definitions:
+The given volume name does not have a mount point or drive letter.
+The hash value 0x%2 of the security descriptor entry with Id
+The highest VCN 0x%1 of attribute of type 0x%3 and instance
+The index %1 is not a known quota index in file 0x%2.
+The index %1 is not a known security index in file 0x%2.
+The index allocation allocated length, 0x%2, for index %1 in file
+The index allocation for index %1 in file 0x%2 is invalid or missing.
+The index allocation value length, 0x%2, for index %1 in file
+The index attribute of type 0x%2 for index root %1
+The index bitmap %2 in file 0x%1 is incorrect.
+The index bitmap %2 is missing in file 0x%1.
+The index bitmap %2 is present but there is no corresponding
+The index bitmap for index %1 in file 0x%2 is invalid or missing.
+The index buffer at VCN 0x%2 of index %1 in file 0x%3
+The index entry attribute length 0x%2 of index entry type 0x%1
+The index entry data offset 0x%1 and length 0x%2 is
+The index entry length 0x%1 is incorrect.  The maximum value is 0x%2.
+The index entry length 0x%1 is too large.  The maximum value is 0x%2.
+The index entry length 0x%2 for index %1 in file 0x%4
+The index entry length is incorrect for index entry type 0x%1.
+The index entry length is too small for index entry type 0x%1.
+The index entry offset, 0x%2, of index %1
+The index entry offset, 0x%3, of index %1 and VCN 0x%2
+The index header for index %1 and VCN 0x%2 in file 0x%3
+The index header of index %1 in file 0x%2
+The index root %2 is missing in file 0x%1.
+The indexable attribute of type 0x%1 and instance tag 0x%2
+The instance tag 0x%2 of attribute of type 0x%1 in file 0x%3
+The instance tag 0x%2 of attribute of type 0x%1 in file 0x%4
+The is an attribute list attribute within the attribute list in file 0x%1.
+The length, 0x%2, of the root index %1 in file 0x%4
+The length, 0x%2, of the security data stream entry at offset
+The length, 0x%3, of the attribute list entry with attribute of type
+The log file size must be greater than 0.
+The lowest vcn, 0x%2, is not zero for attribute of type 0x%1
+The mapping pairs offset 0x%1 for attribute of type 0x%2 and instance
+The mapping pairs offset 0x%1 for attribute of type 0x%3 and instance
+The master file table's (MFT) BITMAP attribute is incorrect.
+The master file table's (MFT) DATA attribute is incorrect.
+The Mastered option should be used instead.
+The maximum value is 0x%2.
+The media being formatted has been removed or has become invalid.
+The media cannot be formatted with the specified UDF version.
+The MFT mirror is different from the MFT.
+The MFT mirror starting at cluster 0x%1 for 0x%2 sectors
+The minimum value is 0x%2.
+The minimum value is 0x%4.
+The mirror copy of the security descriptors data stream contains errors.
+The multi-sector header signature for VCN 0x%2 of index %1
+The multi-sector header signature in file 0x%1 is incorrect.
+The multi-sector header with total size 0x%1, USA offset 0x%2,
+The name %1 specified to the /CvtArea option must be a file name.
+The new file system is %1.
+the next time the system restarts.
+The non resident attribute of type 0x%4 and instance tag 0x%5 is
+The non resident attribute of type 0x%4 is inconsistent.  The valid data
+The NTFS file name attribute in file 0x%1 is incorrect.
+The NTFS file system does not function on floppy disks.
+The number of lines and columns cannot be changed in a full screen.
+The number of passes specified through /I is invalid.
+The object id file is missing.
+The object id in file 0x%2 already existed in the object
+The object id in file 0x%2 does not appear in the object
+The object id in index entry in file 0x%1 is incorrect.
+The object id index entry in file 0x%1 points to file 0x%2
+The offset 0x%2 stored in the security descriptor entry with Id
+The old encrypted flag is being replaced by the new encrypted flag
+the page boundary.
+The parent 0x%2 in an object id index entry in file 0x%1
+The parent 0x%2 in the reparse point index entry with tag 0x%4
+The parent 0x%3 of index entry %4 of index %2
+The quota file is missing.
+The record length 0x%1 is too large for attribute of type 0x%3
+The record length 0x%1 of attribute of type 0x%2 and
+The record length of attribute of type 0x%1 and instance tag 0x%2
+The ReFS file system does not need to be checked.
+The remaining of a security data stream page starting at offset 0x%1
+The remaining of an USN page at offset 0x%1 in file 0x%2
+the remaining problems must be fixed offline.
+The remaining USN block at offset 0x%1 in file 0x%2 is
+The remaining USN page length 0x%2 is too small to fit another
+The reparse flag in standard information attribute in file 0x%1
+The reparse point file is missing.
+The reparse point in file 0x%2 does not appear in
+The reparse point index entry in file 0x%1 points to file 0x%2
+the reparse point index in file 0x%1.
+The reparse point length, 0x%1, has exceeded a maximum of 0x%2.
+The reparse point length, 0x%1, is less than a minimum of 0x%2.
+The reparse tag 0x%2 of reparse point index entry in file 0x%1
+The resident attribute for attribute of type 0x%4 and instance
+The resident attribute name is colliding with the resident value for attribute
+The root index %1 in file 0x%3 is incorrect.
+The root index %2 in file 0x%1 is missing or invalid.
+The screen cannot be set to the number of lines and columns specified.
+The second MFT starting LCN in the boot sector is incorrect.
+The second NTFS boot sector is unwriteable.
+The security data stream entry at offset 0x%1 does not fit into the
+The security data stream entry at offset 0x%1 with length 0x%2
+The security data stream is missing from file 0x%1.
+The security data stream size 0x%1 should not be less than 0x%2.
+The security descriptor entry with Id 0x%2 at offset 0x%1 is invalid.
+The security descriptor in file 0x%1 cannot be read.
+The security descriptor in file 0x%1 is invalid.
+The security descriptors data stream is unreadable.
+The security file record segment is incorrect.
+The security Id 0x%1 in file 0x%2 is invalid.
+The security Id 0x%2 of security descriptor entry at offset 0x%1
+The segment number 0x%1 in file 0x%2 is incorrect.
+The sequence number 0x%1 in file 0x%2 is incorrect.
+The size of the %1 entry is not valid.
+The size specified for the log file is too big.
+The size specified for the log file is too small.
+The sparse flag in standard information attribute in file 0x%1
+The sparse flag of attribute of type 0x%1 and name %2 in file
+The specified AUTOCHK initiation countdown time cannot be less than zero or
+The specified cluster size is invalid. Format failed.
+The specified cluster size is too big for %1.
+The specified cluster size is too small for %1.
+The specified cluster size is too small. The minimum valid
+The specified disk appears to be a non-Windows XP disk.
+The specified drive is the system partition on an ARC-compliant
+The specified format cannot be mastered on 2.88MB drives.
+The specified option is not supported.
+The specified options are not supported by this serial device
+The specified path was not found.
+The specified volume name does not have a mount point or drive letter.
+The standard information attribute in file 0x%1 is missing.
+The standard information attribute length 0x%1 is incorrect.
+The supplied drive is mounted read-only or write protected.
+The switch /Y may be preset in the COPYCMD environment variable.
+The system cannot find the file name specified.
+The system cannot find the path specified.
+The system file bit is not set for file 0x%1.
+The target of the symbolic link %1 does not exist
+The target path not specified.
+The target volume does not support symbolic links
+The total allocated size 0x%1 for attribute of type 0x%3 and
+The total allocated size 0x%3 of attribute of type 0x%1 and instance
+The total allocated size in attribute record (%1, %2)
+The two index entries of length 0x%1 and 0x%2 are either identical
+The type of the file system is %1.
+The unnamed data attribute in file 0x%1 is missing.
+The upcase file content is incorrect.
+The upcase file length 0x%1 is incorrect.  The expected value is 0x%2.
+The upcase table cannot be read.
+The USA check value, 0x%2, at block 0x%1 is incorrect.
+The USA offset 0x%1 in file 0x%2 is incorrect.
+The USA offset 0x%1 in file 0x%3 is too small.
+The USA offset 0x%3 of VCN 0x%2 of index %1
+The USA size 0x%1 in file 0x%3 is incorrect.
+The USA size 0x%3 of VCN 0x%2 of index %1 in file
+The USN attrib of type code 0x%1 and name %2 cannot be
+The USN Journal entry at offset 0x%1 and length 0x%2 crosses
+The USN Journal entry at offset 0x%1 in file 0x%4 is not
+The USN Journal entry length 0x%2 at offset 0x%1 in file
+The USN Journal entry length 0x%2 at offset 0x%1, in file
+The USN Journal entry version %2.%3 at offset 0x%1
+The USN Journal length 0x%1 in file 0x%3 is less than
+The USN Journal length 0x%1 in file 0x%3 is too large.
+The USN Journal length 0x%1 in file 0x%4 is less the
+The USN Journal offset 0x%1 in file 0x%2 is not at a page boundary.
+The USN value 0x%1 of USN Journal entry at offset 0x%2
+The valid data length, 0x%1, of the MFT mirror is too small.
+The value length, 0x%1, of the MFT mirror is too small.
+The VCN 0x%2 of index %1 in file 0x%3 is already in use.
+The VCN 0x%2 of index %1 in file 0x%3 is incorrect.
+The VCN 0x%2 of index %1 in file 0x%4 is inconsistence with
+the VCN 0x%3 stored inside the index buffer.
+The view index present bit is not set for file 0x%1.
+The volume %1
+The volume %1!s! is not a ReFS volume.
+The Volume Bitmap is incorrect.
+The volume contains an invalid or corrupt ReFS boot sector. The volume may not be a ReFS volume.
+The volume has been successfully checked, but Windows was unable
+The volume in %1 contains an unsupported UDF version.
+The volume information attribute is missing from file 0x%1.
+The volume is an unsupported ReFS version. This utility supports versions up to %1!d!.%2!d!. Volume is %3!d!.%4!d!.
+The volume is clean.
+The volume is dirty.
+The volume is downgradeable.
+The volume is in use by another process. Chkdsk
+The volume is too big for %1.
+The volume is too fragmented to be converted to NTFS.
+The volume is too large to convert.
+The volume is too small for %1.
+The volume is too small for the requested cluster size.
+The volume is too small for the specified file system.
+The volume label is too long.
+The volume may have inconsistencies. Run Chkdsk, the disk checking utility.
+The volume must be less than 2048 MB in size to change this if the
+The volume was not previously closed properly and may contain errors.
+The volume will be checked for bad sectors.
+There are %1 unused security descriptors.
+There are more than one DOS file name attribute in file 0x%1.
+There are more than one NTFS file name attribute in file 0x%1.
+There are no readable file allocation tables (FAT).
+There are not enough system resources to satisfy the requested operation.
+There are too many files and directories on this volume for windows to
+there is an active paging file on it.  Would you like to schedule
+There is no DOS file name attribute in file 0x%1.
+There is no help for this utility.
+There is no list of previously identified issues associated with this drive.
+There is no list of previously identified potential issues associated with this drive.
+There is no media in the drive.
+There is no NTFS file name attribute in file 0x%1.
+There is no physical LCN for VCN 0 in data attribute of the MFT mirror.
+There is no root in Table[0x%1!I64x!'%2!I64x!].
+There is no writable space available in the physical partition
+There is not enough disk space to enlarge the logfile to the default size.
+There is not enough disk space to enlarge the logfile to the specified size.
+There was an error adding reserved ranges to the scratch file.
+There was an error during verification pass 1.
+There was an error during verification pass 2.
+There was an error initializing the repair engine. Leak detection is unable to continue.
+There was an error opening the ReFS volume in read/write mode for leak repairs. GLE: %1!d!
+There was an error processing certain leaks. Not all leaks on the volume may have been fixed. NT: %1!08x!
+There was an error querying the volume for allocations.
+There was an error reading or writing from the scratch file. Your disk may be full.
+There was an error reserving space for the scratch file. Your disk may be full.
+There was an error sparsing the scratch file. GLE: %1!d!
+This command is not supported by the help utility.  Try "%1 /?".
+This conversion will also remove your previous operating system
+This could revert the media to a previous state before the corruption
+This device cannot be formatted in quick mode.
+This device does not support the /F option.
+This device requires proprietary format utility from manufacturer.
+This disk can be QuickFormatted and does not need a
+This disk cannot be QuickFormatted.
+This doesn't look like an ReFS volume.
+This drive is dirty and cannot be converted. You will need to
+THIS IS AN EXPERIMENTAL VERSION OF CHKDSK.
+This is caused by a driver holding a file opened for write access.
+This may be overridden with /-Y on the command line.
+This never gets printed.
+This operation can not be performed on a read-only volume.
+This operation is not necessary under the current version of Windows.
+This program requires administrator privileges.
+This version of NTFS volume cannot be downgraded.
+This volume cannot be checked with this version of UNTFS.DLL.
+This volume cannot be converted to %1.
+This volume cannot currently undergo triage. We are sorry for the inconvenience.
+This volume is configured for use only by the ReFS file system.
+this volume to be checked the next time the system restarts? (Y/N) %0
+This volume will be checked the next time the system restarts.
+t'hpG@
+tK9_(t
+tMQh`(@
+tn8] ti
+tNQjP
+to block %1.
+To change printer settings use the Printers option in Control Panel
+To change the way this device is optimized, select the Policies tab in
+To check the current disk, type CHKDSK with no parameters.
+To compare sets of files, use wildcards in data1 and data2 parameters.
+To display the log file size, use "CHKDSK /L" with no other options.
+To do so, please run CHKDSK from the command line.
+To enable Chkdsk to use all available system memory and increase scan
+to enable windows to check your disk at full speed.
+to fix it.
+To format with specified cluster size, align the partition to %1 KB.
+To format with specified cluster size, align the partition to %1 MB.
+To get equivalent functionality use CHKDSK.
+to mark the volume as clean.
+to search for superblock%!
+To skip disk checking, press any key within %1 second(s). %r%0
+To specify the size of the command history buffer under Window NT,
+to write a new valid VAT.
+Too many arguments in command line.
+Too many open files
+Too many parameters - %1
+Too much lost data to recover it all.
+toQj(
+Total
+Total cluster fixed  : %3!llu!
+Total disk space:              %1 KB
+Total duration: %1 (%2 ms).
+Total size entry for extended attribute set at cluster %1 corrected.
+TotalDuration:%I64u
+tpjXY
+Translation
+TREE [drive:][path] [/F] [/A]
+triage    Handle corruptions
+Triage attempted to scrub the ID, but due to a file system limitation it cannot guarantee success.
+Triage failed with error %1!d!.
+Triage has completed succesfully.
+Triage was unable to open file "%1!s!".
+tRj Vj V
+trjxY
+Truncating badly linked attribute records
+Truncating corrupt attribute list for file %1.
+try again with a different disc, but if this problem persists,
+Trying to recover allocation unit %1.                          %0
+TSVW3
+tu9|$puo
+tvjpYQ
+tVSSW
+tVVj0
+twjpYV
+Two identical attribute list entries of type 0x%1 and instance tag 0x%2
+Two identical attributes of type 0x%1 and instance tag 0x%2 are
+tY9|$(uS
+type 0x%1 and instance tag 0x%2 in file 0x%5 is too small.
+type 0x%3 and instance tag 0x%4.  The minimum value is 0x%2.
+Type CHCP without a parameter to display the active code page number.
+type codes 0x%1 and 0x%3 respectively in file 0x%5.
+Type SUBST with no parameters to display a list of current virtual drives.
+Typematic rate:    MODE CON[:] [RATE=r DELAY=d]
+tz8] tu
+tZQh,%@
+u"j@Y
+u$jHY
+u$jTY
+u$WSQ
+u$WWj@j
+u(PPW
+u)jxY
+u)VQQ
+u*C;]
+u*f9w
+u,h@+
+u/h!&
+u;8C,u6
+u}8_$u5VS
+u08C@t+
+u1f9A
+u1h?.
+u1hJ,
+u48V t
+u48W t
+u5hI:
+u8h\$@
+u'9w u"
+UDF does not allow metadata duplication on media that does
+UDF does not allow metadata duplication on UDF versions
+UDF version %1 is not supported.
+uEQhL.@
+uf;} u
+uG9^ u
+u'hG4
+ulha&
+uMGWh
+Unable to build path.
+Unable to change attribute - %1
+Unable to change the volume version.
+Unable to clear chkdsk ran once flag on %1, error: 0x%2.
+Unable to collect logged messages.
+Unable to correct an error in system file %1.
+Unable to create a thread with error code %1.
+Unable to create directory
+Unable to create directory - %1
+Unable to create event. GLE %1!d!
+Unable to create index %1 for file %2.
+Unable to create the MEMSTICK.IND file.
+Unable to delete created snapshot due to it being the newest one. The snapshot will be automatically deleted on volume dismount.
+Unable to delete uninstall backup image - %1
+Unable to determine volume version and state.  CHKDSK aborted.
+Unable to dismount drive %1!s!. GLE: %2!d!
+Unable to downgrade the volume.
+Unable to enable automatic volume upgrade on drive %1.
+Unable to find child frs 0x%1 with sequence number 0x%2.
+Unable to initialize an extent list for attribute type 0x%1 with
+Unable to initialize device %1
+Unable to initialize the Minstore library. NT: %1!08x!
+Unable to locate attribute of type 0x%1, lowest vcn 0x%2,
+Unable to locate attribute with instance tag 0x%2 and segment
+Unable to locate the file name attribute of an index entry
+Unable to locate the file name attribute of index entry %3
+Unable to lock drive %1!s!. GLE: %2!d!
+Unable to notify other components that this volume has changed.
+Unable to obtain a handle to live volume.
+Unable to obtain a handle to the event log.
+Unable to obtain the LCN in data attribute for VCN 0x%1 of the MFT.
+Unable to obtain the LCN in data attribute of the MFT mirror.
+Unable to open %%TEMP%% path. GLE: %2!d!
+Unable to open drive %1!s!.
+Unable to open file %1!s!. GLE %2!d!
+Unable to query extent list entry 0x%3 from attribute
+Unable to query LCN from VCN 0x%2 for attribute of type 0x%1.
+Unable to query the name of a file name index entry of length 0x%3
+Unable to read file
+Unable to read reparse point data buffer.
+Unable to read the security descriptors data stream.
+Unable to read the Usn Journal %1 data stream.
+Unable to schedule the setting of security attributes (%1).
+Unable to set chkdsk ran flag.
+Unable to set chkdsk ran once flag.
+Unable to set security attributes (%1).
+Unable to set the AUTOCHK initiation countdown time.
+Unable to set the quota out of date flag.
+Unable to setup the attribute list in file 0x%1.
+Unable to setup the child file record segment 0x%2 in file 0x%1.
+Unable to unlock drive. GLE: %1!d!
+Unable to write to attribute %1 of file %2.
+unconditional format which can take a long time.
+unexpected corruption found.
+Unexpected end of file
+unexpected outcome from self-healing -- "chkdsk /f" required.
+Unknown attribute of type 0x%1 and instance tag 0x%2.
+Unknown error.
+Unknown%0
+UNKNOWN_ATTR_TO_ATTR_DEF_TABLE%0
+Unneeded index entry in index "%1" of directory "%2" ... %0
+UnpackedEaSize    0x%3            0x%6
+uNQhL.@
+Unreadable extended attribute header.
+Unreadable master file table.  CHKDSK aborted.
+Unreadable master file table. Windows will attempt to recover
+Unrecognized media.
+Unrecoverable error in folder %1.
+Unsupported sector size.  Cannot convert volume to %1.
+Unsupported UDF version in Volume Descriptor Sequence.
+UNTFS: Can't read log file signature.
+UNTFS: Log File $DATA attribute is resident.
+Unused extended attribute set with handle %1 deleted from
+Unused file metadata marked as used ... %0
+Unused, unreadable, or unwriteable portion of extended attribute file removed.
+UP and DOWN ARROWS recall commands; ESC clears command line; F7 displays
+Updated primary boot sector with mirror boot sector.
+Updating FAT media type.
+Updating the master file table's (MFT) BITMAP attribute.
+Updating the master file table's (MFT) DATA attribute.
+Updating the Volume Bitmap.
+Upgrading and downgrading the volume at the same time will have no effect.
+UQPXY]Y[
+urf9s tl
+urj0Y
+URPQQh
+uRQhL.@
+Usage: refsutil fixboot <drive> <MajorVersion> <MinorVersion> <ClusterSize> [-f] [-w <Dir>] [-smr] [-x]
+Usage: refsutil leak <drive> [/a] [/x] [/v] [/d] [/q] [/t <count>] [/s <file>]
+Usage: refsutil triage <drive> [/s <id>] [/g] [/v]
+Use /OFFLINE for not skipping such files.
+use the /listsize switch which sets the number of commands to remember.
+Use the system restore feature from the control panel to restore the system to a point prior to the
+User file recovery%0
+using the Live File System on this drive is not recommended.
+USN Journal entry at offset 0x%1 in file 0x%4.
+Usn Journal verification completed.
+USN journal verification%0
+uXQQQQ
+uZ9Z uU
+uZjXY
+-v %0
+v Phx+@
+v/RQh
+v~f9p
+v2RQRS
+v8h<E@
+VALIDATE_EA
+VALIDATE_INDEX
+VALIDATE_REPARSE_OBJID_INDEXES
+VALIDATE_SD
+VALIDATE_USN
+ValidateEntriesInIndex
+ValidateEntriesInIndex2
+ValidateSDSStream
+Validating discovered table roots on volume with signature %1!x!.
+VarFileInfo
+Verbose output not supported by NTFS CHKDSK.
+Verifying %1 Bytes
+Verifying %1 EB
+Verifying %1 GB
+Verifying %1 KB
+Verifying %1 MB
+Verifying %1 PB
+Verifying %1 TB
+Verifying %1.%2M
+VerSetConditionMask
+Vh,)@
+Vh\$@
+Vh8#@
+VhP'@
+Vhx$@
+Volume %1 created %2 %3
+Volume %1 is UDF version %2.%3.
+Volume dismounted.  All opened handles to this volume are now invalid.
+Volume downgraded.                              %b
+Volume has 0x%1 file record segments which is more than 32 bits.
+Volume in drive %1 has no label
+Volume in drive %1 is %2
+Volume initialization failed.
+Volume is not UDF format.
+Volume label (11 characters, ENTER for none)? %0
+Volume label (15 characters, ENTER for none)? %0
+Volume label (32 characters, ENTER for none)? %0
+Volume label cannot be added because the root directory on this volume is full.
+Volume label change cancelled.
+Volume label is %1.
+Volume label is not supported with /8 parameter.
+Volume serial number is %1 %2:%3
+Volume Serial Number is %1-%2
+Volume serial number is %1-%2
+volume. This will revert the volume to its state at %2:%3 on
+Volume{
+VPWWW
+VQhHG@
+VRPhP'@
+VRWPQ
+VS_VERSION_INFO
+Vt?</
+VVRhp I
+-w <Dir>        Actually write to the boot sector(s) if needed and backup the current boot sector(s)
+W%SystemRoot%
+w(Ph,.@
+W1d1}1
+w4h,'@
+W9pxt
+WARNING!  /C parameter specified.
+WARNING!  /F parameter not specified.
+WARNING!  /I parameter specified.
+WARNING!  The %1 file system is not enabled.
+WARNING!  The cluster size chosen by the system is %1 bytes which
+WARNING!  The cluster size for this volume, 64K bytes, may cause
+WARNING!  The file specified to /CvtArea is too small and its
+WARNING!  This device may not work properly if /A option is specified.
+WARNING!  This device may not work properly since /A option is specified.
+WARNING, ALL DATA ON NON-REMOVABLE DISK
+Warning:
+Warning: Cannot find root info for Table[0x%1!I64x!'%2!I64x!] on volume with signature %3!x!%!
+Warning: Error occurred while quick scanning volume.
+WARNING: THIS OPERATION CHANGES BOOT SECTOR(S) OF A VOLUME AND CAN RESULT IN TOTAL LOSS OF DATA.
+Warning: To get the latest version of files with least corruption,
+was not able to send command for self-healing due to lack of memory.
+wcscat_s
+wcschr
+wcscpy_s
+wcsncmp
+wcsspn
+wcsstr
+wcstoul
+wEB;S
+wgt^-1
+Wh\$@
+When this phase of conversion is complete, the computer will restart.
+which is beyond the MFT.
+which is not a base file record segment.
+which is not in use.
+which is unreadable.
+whPhx+@
+will not be converted.
+Windows can set log file size on NTFS volumes only.
+Windows cannot adjust the size of the log file due to possible
+Windows cannot check a disk attached through a network.
+Windows cannot check a disk that is substituted or
+Windows cannot format this type of media.
+Windows cannot perform an online scan on the volume because it is in the "Full Chkdsk Needed" state.
+Windows cannot recover master file table.  CHKDSK aborted.
+Windows cannot run disk checking on CD-ROM and DVD-ROM drives.
+Windows cannot run disk checking on more than one volume of the same file system.
+Windows cannot run disk checking on this volume because it is write protected.
+Windows cannot upgrade this FAT volume.
+Windows could not fix all issues with this drive.
+Windows could not verify the list of previously identified potential issues.
+Windows disk checking cannot fix errors (/F) when run from an
+Windows failed to remove clusters from the Bad Clusters File.
+Windows found errors on the disk, but will not fix them
+Windows found problems with the file system that could not be corrected.
+Windows has checked the file system and found problems.
+Windows has examined the list of previously identified issues and found no problems.
+Windows has examined the list of previously identified potential issues and found no problems.
+Windows has examined the list of previously identified potential issues and found problems.
+Windows has finished checking the disk.
+Windows has finished checking your disk.
+Windows has fixed all previously identified issues with this drive.
+Windows has found problems and encountered online repair failure -- "chkdsk /f" required.
+Windows has found problems and some were fixed online;
+Windows has found problems and they were all fixed online.
+Windows has found problems that must be fixed offline.
+Windows has made corrections to the file system.
+Windows has scanned the file system and found no problems.
+Windows is checking your disk with a slower index verification algorithm
+Windows is verifying file allocations...
+Windows is verifying files and folders...
+Windows is verifying free space...
+Windows may not detect all cycles on your volume because the directory
+Windows replaced bad clusters in file %1
+Windows supports re-evaluating bad clusters on NTFS volumes only.
+Windows was unable to determine if the specified volume is a system volume.
+Windows will avoid writes to the end of the media to allow
+Windows will check your disk the next time you start
+Windows will now check the disk.                        %b
+Windows will recover the file in the orphan recovery phase.
+with parent 0x%1 is not the same as 0x%4.
+with parent 0x%1 is not the same as 0x%5.
+with reserved NTFS names in the root directory. There can be no
+with type code %1 in file %2.
+Working directory not specified%!
+Would you like to enable it (Y/N)? %0
+Would you like to force a dismount on this volume? (Y/N) %0
+Write error.
+Write failure with status 0x%1 at offset 0x%2 for 0x%3 bytes.
+Write protect error accessing drive.
+Wrote mirror boot sector.
+Wrote primary boot sector.
+WRPhP'@
+WWVhp I
+-x              Force the volume to dismount first if necessary.  All opened handles to
+-x %0
+x`h8&@
+XCOPY may not be able to copy all files or directories within the directory.
+XCOPY source [destination] [/A | /M] [/D[:date]] [/P] [/S [/E]] [/V] [/W]
+xMhX$I
+XPh f
+XPh,)@
+XPPh,)@
+Y__^[
+y40VW
+Yj V3
+You can only use /FREEORPHANEDCHAINS or /MARKCLEAN on FAT/FAT32/exFAT.
+You have to invoke this utility running in elevated mode
+You may enable BitLocker again after formatting is complete.
+You must specify at least one drive name.
+you start your computer? (Y/N) %0
+you wish to use on this volume.
+your computer.
+Your drive may still be corrupt even after running CHKDSK.
+YQPQV
+YRPhP'@
+YY_^[
+YYv^QQ
+YYvOQQ
+YYvXQQ
+z$QQRQ

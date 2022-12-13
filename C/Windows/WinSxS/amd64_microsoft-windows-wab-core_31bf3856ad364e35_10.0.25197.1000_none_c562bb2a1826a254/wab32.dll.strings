@@ -1,0 +1,3022 @@
+     
+                        <xs:field xpath="@ElementID"/>
+                        <xs:selector xpath="tns:Certificate"/>
+                        <xs:selector xpath="tns:ContactID"/>
+                        <xs:selector xpath="tns:Date"/>
+                        <xs:selector xpath="tns:EmailAddress"/>
+                        <xs:selector xpath="tns:IMAddress"/>
+                        <xs:selector xpath="tns:Name"/>
+                        <xs:selector xpath="tns:Person"/>
+                        <xs:selector xpath="tns:PhoneNumber"/>
+                        <xs:selector xpath="tns:Photo"/>
+                        <xs:selector xpath="tns:PhysicalAddress"/>
+                        <xs:selector xpath="tns:Position"/>
+                        <xs:selector xpath="tns:Url"/>
+                    <!-- labels for all Collections -->
+                    <!-- labels for Person -->
+                    <!-- labels for PhoneNumber -->
+                    <!-- labels for Photo -->
+                    <!-- labels for PhysicalAddress -->
+                    <!-- require unique element IDs on all Certificate entries -->
+                    <!-- require unique element IDs on all ContactID entries -->
+                    <!-- require unique element IDs on all Date entries -->
+                    <!-- require unique element IDs on all EmailAddress entries -->
+                    <!-- require unique element IDs on all IMAddress entries -->
+                    <!-- require unique element IDs on all names entries -->
+                    <!-- require unique element IDs on all people entries -->
+                    <!-- require unique element IDs on all PhoneNumber entries -->
+                    <!-- require unique element IDs on all Photo entries -->
+                    <!-- require unique element IDs on all physicalAddresses entries -->
+                    <!-- require unique element IDs on all Position entries -->
+                    <!-- require unique element IDs on all uri entries -->
+                    </xs:unique>
+                    <xs:enumeration value="Agent"/>
+                    <xs:enumeration value="BBS"/>
+                    <xs:enumeration value="Business"/>
+                    <xs:enumeration value="Car"/>
+                    <xs:enumeration value="Cellular"/>
+                    <xs:enumeration value="Domestic"/>
+                    <xs:enumeration value="Fax"/>
+                    <xs:enumeration value="International"/>
+                    <xs:enumeration value="ISDN"/>
+                    <xs:enumeration value="Logo"/>
+                    <xs:enumeration value="Mobile"/>
+                    <xs:enumeration value="Modem"/>
+                    <xs:enumeration value="Pager"/>
+                    <xs:enumeration value="Parcel"/>
+                    <xs:enumeration value="PCS"/>
+                    <xs:enumeration value="Personal"/>
+                    <xs:enumeration value="Postal"/>
+                    <xs:enumeration value="Preferred"/>
+                    <xs:enumeration value="TTY"/>
+                    <xs:enumeration value="UserTile"/>
+                    <xs:enumeration value="Video"/>
+                    <xs:enumeration value="Voice"/>
+                    <xs:minLength value="1"/>
+                    <xs:unique name="ElementID_Must_Be_Unique_CertificateCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_ContactIDCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_DateCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_EmailAddressCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_IMAddressCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_NameCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_PersonCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_PhoneNumberCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_PhotoCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_PhysicalAddressCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_PositionCollection">
+                    <xs:unique name="ElementID_Must_Be_Unique_UrlCollection">
+                    including any attribute from other namespaces -->
+                 [0-9A-Fa-f] == one character from the ranges, inclusive (hex)
+                 \-  == the dash character, not part of regexp -->
+                 {8} == repeated 8 times
+                <!-- elements from other namespaces are allowed here -->
+                <!-- tns:CertificateCollection is a collection of 1 or more Certificate elements -->
+                <!-- tns:ContactIDCollection is a collection of 1 or more ContactID elements -->
+                <!-- tns:dates is a collection of 1 or more Date elements -->
+                <!-- tns:emailAddresses is a collection of 1 or more EmailAddress elements -->
+                <!-- tns:IMAddressCollection is a collection of 1 or more IMAddress elements -->
+                <!-- tns:NameCollection is a collection of 1 or more name elements -->
+                <!-- tns:PersonCollection is a collection of 1 or more Person elements -->
+                <!-- tns:phoneNumbers is a collection of 1 or more PhoneNumber elements -->
+                <!-- tns:PhotoCollection is a collection of 1 or more Photo elements -->
+                <!-- tns:PhysicalAddressCollection is a collection of 1 or more PhysicalAddress elements -->
+                <!-- tns:PositionCollection is a collection of 1 or more Position elements -->
+                <!-- tns:UrlCollection is a collection of 1 or more Url elements -->
+                <!-- top level elements without hierarchy/labels applied -->
+                </xs:element>
+                </xs:restriction>
+                <xs:attribute name="ContentType" type="xs:string" use="required"/>
+                <xs:attribute name="type" type="xs:string" fixed="binary"/>
+                <xs:attribute name="type" type="xs:string" fixed="dateTime"/>
+                <xs:attribute name="type" type="xs:string" fixed="string"/>
+                <xs:attributeGroup ref="tns:contactAttributes"/>
+                <xs:element name="CertificateCollection" type="tns:CertificateCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="ContactIDCollection" type="tns:ContactIDCollection" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:element name="CreationDate" type="xs:dateTime"  minOccurs="1"   maxOccurs="1"/>
+                <xs:element name="DateCollection" type="tns:DateCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="EmailAddressCollection" type="tns:EmailAddressCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="Extended" type="tns:Extended" nillable="true" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Gender"       type="tns:gender"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+                <xs:element name="IMAddressCollection" type="tns:IMAddressCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="Mailer"       type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+                <xs:element name="NameCollection" type="tns:NameCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="Notes"        type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+                <xs:element name="PersonCollection" type="tns:PersonCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="PhoneNumberCollection" type="tns:PhoneNumberCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="PhotoCollection" type="tns:PhotoCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="PhysicalAddressCollection" type="tns:PhysicalAddressCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="PositionCollection" type="tns:PositionCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:element name="ProgID"       type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+                <xs:element name="UrlCollection" type="tns:UrlCollection" minOccurs="0" maxOccurs="1" nillable="true">
+                <xs:enumeration value="Female"/>
+                <xs:enumeration value="Male"/>
+                <xs:enumeration value="Unspecified"/>
+                <xs:restriction base="xs:string">
+                and entryAttributes -->
+                and labels (and elements from other namespaces)
+                and with an ElementID attribute
+                and with contactAttributes  -->
+                including simpleExtension namespaces -->
+                of multi value property entries -->
+                or a uri -->
+                with a minimum length of 1 -->
+                with labels (and elements from other namespaces)
+                with optional type information (e.g. SMTP)
+                with value of (Preferred, Personal, Business, Mobile, Pager, Fax)
+                with value of Male, Female or Unspecified -->
+               content is interpreted as base64 encoded binary data
+               represented as a string, without the surrounding {} -->
+               which must have a MIME content type attribute
+               with contactAttributes allowed -->
+            <!-- c:Contact must have c:Version="1" attribute set -->
+            <!-- regexp language primer:
+            </xs:all>
+            </xs:extension>
+            </xs:restriction>
+            </xs:simpleType>
+            <xs:all>
+            <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##other" processContents="skip"/>
+            <xs:attribute name="Version"          type="xs:positiveInteger" fixed="1"/>
+            <xs:element name="Address"         type="tns:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="AddressLabel"    type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Alternate"    type="tns:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Certificate" type="tns:Certificate" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="Company"      type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="ContactID" type="tns:ContactID" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="Country"         type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Date" type="tns:Date" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="Department"   type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="EmailAddress" type="tns:EmailAddress" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="Extended"        type="tns:Extended" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="ExtendedAddress" type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="FamilyName"   type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="FormattedName"    type="tns:string"       minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="FormattedName" type="tns:string"  minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Generation"   type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="GivenName"    type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="IMAddress" type="tns:IMAddress" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="JobTitle"     type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Label" type="tns:Label" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="LabelCollection" type="tns:LabelCollection"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Locality"        type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="MiddleName"   type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Name" type="tns:Name" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="NickName"     type="tns:string"   minOccurs="0"  maxOccurs="1" nillable="true"/>
+            <xs:element name="Number"       type="tns:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Office"       type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Organization" type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Person" type="tns:Person" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="PersonID"         type="tns:string"       minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="PhoneNumber" type="tns:PhoneNumber" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="Phonetic"     type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Photo" type="tns:Photo" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="PhysicalAddress" type="tns:PhysicalAddress" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="POBox"           type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Position" type="tns:Position" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="PostalCode"      type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Prefix"       type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Profession"   type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Protocol"     type="tns:string"     minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Region"          type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Role"         type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Street"          type="tns:string"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Suffix"       type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="ThumbPrint"   type="tns:binary"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Title"        type="tns:string"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Type"            type="tns:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Url"             type="tns:uri"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Url" type="tns:Url" minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="Value"           type="tns:binary"   minOccurs="0"   maxOccurs="1" nillable="true"/>
+            <xs:element name="Value"           type="tns:dateTime" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Value"        type="tns:binary"   minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Value"        type="tns:string"     minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Value"        type="tns:uri"     minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="Value"        type="tns:valueGUID"     minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:extension base="tns:anyURI">
+            <xs:extension base="tns:GUID">
+            <xs:extension base="tns:labelUnion">
+            <xs:extension base="xs:base64Binary">
+            <xs:extension base="xs:dateTime">
+            <xs:extension base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:pattern value="[0-9A-Fa-f]{8}\-[0-9A-Fa-f]{4}\-[0-9A-Fa-f]{4}\-[0-9A-Fa-f]{4}\-[0-9A-Fa-f]{12}"/>
+            <xs:restriction base="tns:string">
+            <xs:simpleType>
+            language="*"
+            name="Microsoft.Windows.Common-Controls"
+            processorArchitecture="amd64"
+            publicKeyToken="6595b64144ccf1df"
+            type="win32"
+            version="6.0.0.0"
+           attributeFormDefault=  "qualified"
+           elementFormDefault=    "qualified"
+           targetNamespace="http://schemas.microsoft.com/Contact"
+           version="1.0">
+           xmlns:ext=      "http://schemas.microsoft.com/Contact/Extended"
+           xmlns:tns=      "http://schemas.microsoft.com/Contact"
+           xmlns:xs=       "http://www.w3.org/2001/XMLSchema"
+          xmlns:c=      "http://schemas.microsoft.com/Contact"
+          xmlns:xsi=    "http://www.w3.org/2001/XMLSchema-instance">
+        />
+        </xs:all>
+        </xs:choice>
+        </xs:complexType>
+        </xs:restriction>
+        </xs:sequence>
+        </xs:simpleContent>
+        </xs:union>
+        <assemblyIdentity
+        <xs:all minOccurs="0" maxOccurs="1">
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+        <xs:attribute name="ElementID" type="tns:GUID" use="required"/>
+        <xs:attribute name="ModificationDate" type="xs:dateTime"/>
+        <xs:attribute name="type" type="xs:string" fixed="arrayElement"/>
+        <xs:attribute name="type" type="xs:string" fixed="arrayNode"/>
+        <xs:attribute name="Version"          type="xs:positiveInteger" default="1"/>
+        <xs:attributeGroup ref="tns:arrayElementAttributes"/>
+        <xs:attributeGroup ref="tns:contactAttributes"/>
+        <xs:attributeGroup ref="tns:entryAttributes"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+        <xs:restriction base="xs:anyURI">
+        <xs:restriction base="xs:string">
+        <xs:sequence>
+        <xs:simpleContent>
+        <xs:union memberTypes="tns:anyURI">
+        A
+    <!-- *****************************************-->
+    <!-- attribute type definitions -->
+    <!-- complex type definitions -->
+    <!-- element definitions -->
+    <!-- tns:anyURI is an xs:anyURI
+    <!-- tns:arrayElementAttributes are attributes present in DOM on container elements
+    <!-- tns:binary is a base64Binary
+    <!-- tns:Certificate is one Certificate
+    <!-- tns:CertificateCollection is a sequence of Certificate entries -->
+    <!-- tns:contact is the root element in instance documents -->
+    <!-- tns:contactAttributes is the standard group of attributes allowed on tns elements
+    <!-- tns:ContactID is one ContactID
+    <!-- tns:ContactIDCollection is a sequence of ContactID entries -->
+    <!-- tns:Date is one date element
+    <!-- tns:DateCollection is a sequence of Date entries -->
+    <!-- tns:dateTime is a standand dateTime
+    <!-- tns:EmailAddress is one email address
+    <!-- tns:EmailAddressCollection is a sequence of EmailAddress entries -->
+    <!-- tns:entryAttributes are attributes present on individual multi value property entries
+    <!-- tns:Extended is any elements from other namespaces
+    <!-- tns:gender is a tns:string
+    <!-- tns:GUID is a GUID
+    <!-- tns:IMAddress is one IMAddress
+    <!-- tns:IMAddressCollection is a sequence of IMAddress entries -->
+    <!-- tns:label is a labelUnion, with contactAttributes -->
+    <!-- tns:LabelCollection is a sequence of Label elements -->
+    <!-- tns:labelUnion is the union of a string
+    <!-- tns:Name is one Name
+    <!-- tns:NameCollection is a sequence of Name entries -->
+    <!-- tns:Person is one person element
+    <!-- tns:PersonCollection is a sequence of Person entries -->
+    <!-- tns:PhoneNumber is one PhoneNumber
+    <!-- tns:PhoneNumberCollection is a sequence of PhoneNumber entries -->
+    <!-- tns:Photo is one Photo element
+    <!-- tns:PhotoCollection is a sequence of Photo entries -->
+    <!-- tns:PhysicalAddress is one address
+    <!-- tns:PhysicalAddressCollection is a sequence of PhysicalAddress entries -->
+    <!-- tns:Position is one Position
+    <!-- tns:PositionCollection is a sequence of Position entries -->
+    <!-- tns:string is a standand string
+    <!-- tns:uri is a tns:anyURI
+    <!-- tns:Url is one Url
+    <!-- tns:UrlCollection is a sequence of Url entries -->
+    <!-- tns:valueGUID is a tns:GUID
+    </dependentAssembly>
+    </xs:attributeGroup>
+    </xs:complexType>
+    </xs:element>
+    </xs:simpleType>
+    <c:Extended xsi:nil="true"/>
+    <dependentAssembly>
+    <xs:attributeGroup name="arrayElementAttributes">
+    <xs:attributeGroup name="contactAttributes">
+    <xs:attributeGroup name="entryAttributes">
+    <xs:complexType name="binary">
+    <xs:complexType name="Certificate">
+    <xs:complexType name="CertificateCollection">
+    <xs:complexType name="ContactID">
+    <xs:complexType name="ContactIDCollection">
+    <xs:complexType name="Date">
+    <xs:complexType name="DateCollection">
+    <xs:complexType name="dateTime">
+    <xs:complexType name="EmailAddress">
+    <xs:complexType name="EmailAddressCollection">
+    <xs:complexType name="Extended">
+    <xs:complexType name="gender">
+    <xs:complexType name="IMAddress">
+    <xs:complexType name="IMAddressCollection">
+    <xs:complexType name="Label">
+    <xs:complexType name="LabelCollection">
+    <xs:complexType name="Name">
+    <xs:complexType name="NameCollection">
+    <xs:complexType name="Person">
+    <xs:complexType name="PersonCollection">
+    <xs:complexType name="PhoneNumber">
+    <xs:complexType name="PhoneNumberCollection">
+    <xs:complexType name="Photo">
+    <xs:complexType name="PhotoCollection">
+    <xs:complexType name="PhysicalAddress">
+    <xs:complexType name="PhysicalAddressCollection">
+    <xs:complexType name="Position">
+    <xs:complexType name="PositionCollection">
+    <xs:complexType name="string">
+    <xs:complexType name="uri">
+    <xs:complexType name="Url">
+    <xs:complexType name="UrlCollection">
+    <xs:complexType name="valueGUID">
+    <xs:element name="contact">
+    <xs:simpleType name="anyURI">
+    <xs:simpleType name="GUID">
+    <xs:simpleType name="labelUnion">
+ !"#$%&'()*+,-./OPQRSTUVWX0123456Yjlpt~
+ !"#$%&'()*+,-./OPQRSTUVWX0123456Zkmqu
+ !00:O
+ *@?Spe
+ /PATH:"
+ }}{\fldrslt{\cf2\ul 
+ <=!3HL+ERW2Z_d7onu;
+ A^_]
+ A^_^
+ A^A\_
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A\_^[]
+ A_A^A]_^
+ A_A^A]A\]
+ A_A^A]A\_
+ A_A^A]A\_^]
+ and 
+ FE)9[X6Qgg9tnuB
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ u0E9~
+ Windows
+!$}>M
+!:t:=
+!\$ H
+!\$ L
+!\$$H9Y8tkH
+!\$(E3
+!\$(H
+!\$@H
+!\$h3
+!\$hH
+!\$hI
+!\$PH
+!\$pH
+!|$ H
+!|$ L
+!|$(A
+!|$(E
+!|$`3
+!|$0L
+!|$hH
+!|$HH
+!|$p!
+!}0!}@!}8H
+!}0H!}8H
+!2DE@EPSRRSRRR
+!D$0H
+!D$8A
+!hEpf
+!t$`<
+!t$PE3
+!t$PH
+!t$pM
+!t$X$
+!t$XE
+!This program cannot be run in DOS mode.
+!w>z04H
+"" 6 
+""$*--33
+"$$+-02366
+"$(*-023
+"$(+-02
+"%R+.8
+"((+-03
+"lNF81
+"New contact created from Shell UI"
+"Opened Contacts folder in File Explorer"
+"piAT
+"r'uL
+"WABOpen API called"
+"WABOpenEx API called"
+"WR(Aad#m\c5
+$((-00366
+$()+-236
+'$'('*R
+$(+-0336
+$@B9|
+$6E]u\z
+$S7BR
+%!!!!!%w@!!!!!9y-,
+%.4d%.2d%.2dT%.2d%.2d%.2dZ
+%1% %2% %3
+%ProgramFiles%\Windows Mail\wab.exe
+%s %Id
+%s (%d)%s
+%s*%s
+%s=%s
+%s0x%X
+%u.%u.%u
+%W,+$
+&6ul#k
+-&EKE
+&fD;'t)A
+(%s=%s)
+(%s=%s*)
+(%s=*%s)
+(%s=*%s*)
+(%s=~%s)
+(:%4J
+(-~<>
+(A^_^[
+(cn=*)
+(D$ H
+(D$@H
+(D$`H
+(D$0H
+(D$PH
+(D$pH
+(D$PH
+(H^T4+
+(k@1K/3
+(objectCategory=group)
+(objectCategory=person)
+(objectclass=*)
+)4~8FI
+)D$@I
+)D$`fH
+)D$`H
+)D$0A
+)D$0H
+)D$PA
+)D$pD
+)D$pE
+)D$pL
+)D;{4~
+)HR?s}
+)j-MG
+)L$@A
+)T$PH
+)wF@AAHw
+**DOM had no parseError
+**XML Error Info Error:
+*12g%
+*72MY
+*hd-m
+*NQNJHF-$)($$$#/FLQ
+*SSSNOGG!!
+,!6`?,Q
+,,Cn'
+,;Qps!M
+,@F9L
+,1Ecd][WW7_
+,'nb~
+.00cfg
+.contact
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gehcont
+.gfids
+.giats
+.group
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$T$brc
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata
+/c:contact/
+/c:contact/c:Extended
+/Certificate
+/Company
+/Contact 
+/ContactID
+/Country
+/CreateContact 
+/CreateGroup 
+/Date
+/Department
+/EmailAddress
+/export
+/FamilyName
+/FormattedName
+/Generation
+/GivenName
+/Group 
+/GUID:
+/GUID:"
+/IMAddress
+/import
+/JobTitle
+/Locality
+/MiddleName
+/Name
+/NickName
+/Number
+/Office
+/PATH:
+/Person
+/PhoneNumber
+/Photo
+/PhysicalAddress
+/POBox
+/Position
+/PostalCode
+/Profession
+/Region
+/Street
+/Title
+/Value
+-/X.TVVUSY
+:-%}<
+:::<?Fy(1
+:\cf0 
+:LK%UZ[0jpq;
+':t+=
+;"u_H
+;\$@snH
+;\$8s2
+;|$4uIM
+;}0}sH
+;9s(t
+;9sFH
+;D$`s
+;D$8H
+;D$8v
+;Kl~.
+;L$`r
+;L$0s
+;L$Ps:
+;t$Ds6E3
+;UPsvH
+?@?@@WCY
+?]H!5
+?<9;;
+?A][[[WVUW
+?H!\$ L
+?x!ez
+?X{}lyg
+@.data
+@.didat
+@.reloc
+@0=!G
+@7}zO?
+@8,>u
+@A^_]
+@A^_^
+@A^_^][
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_]
+@A_A^A\_^
+@A_A^A]
+@A_A^A]A\_
+@A_A^A]A\_^]
+@aol.com
+@Gp i3%
+@HcuPA
+@HcuPH
+@L@t7
+@L93u
+@msn.com
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAVAWH
+@SUVWAVH
+@SUVWAWH
+@SUVWH
+@SVWATAUAVAWH
+@SVWH
+@uQE3
+@USVWATAUAVAWH
+@USVWATAUAWH
+@USVWATAVAWH
+@USVWAVAWH
+@USVWAVH
+@USVWAWH
+@USVWH
+@USWATAUAVAWH
+@USWH
+[ UVWH
+[ VWAVH
+[:}&%
+[9999999999999999]
+[fddd
+[lc6u
+[MSP2P]Blob
+[MSP2P]Credentials
+[MSP2P]PeerName
+[MSP2P]Property
+[MSWABMAPI]PropTag
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWAUAVH
+\$ UVWAVAWH
+\$ UVWH
+\$ UWATAVAWH
+\$ WH
+\$(E3
+\$@fD
+\$@H#
+\$0E;o`
+\$0E3
+\$0H;
+\$0H;|$8tb
+\$0L9k
+\$8E;
+\$hD;
+\$P;\$<
+\$PD9d$<
+\$PE3
+\$PL+
+\$x9]xt
+\$XE3
+\$XH!t$P!t$HH!t$@H
+\:951
+\2R{f
+\B;;10
+\cf0 
+\cf1 
+\fs%i 
+\InprocServer32
+\nfEE;
+\par\rtlpar
+\RM|xV}
+\rtlpar
+\ZYOQ
+] fD9;
+]:u9H
+][ae_chnxv|z
+]]a^d^
+]m`lU
+^dd^^^
+^zi.d
+________________________________________________________________
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+_`9q`v
+_`fD;
+_5 lo
+_amsg_exit
+_callnewh
+_grK]
+_initterm
+_lock
+_onexit
+_pH9w(t 
+_purecall
+_rl2[
+_t9>e
+_unlock
+_vsnprintf
+_vsnwprintf
+_wcsicmp
+_wfullpath
+_wrename
+_XcptFilter
+_YVS>-,NI
+` UAVAWH
+`.rdata
+`|0Q)f
+`4y+,
+`A^_^
+`A_A^_^]
+`A_A^A\_^[]
+`A_A^A]A\_^]
+`-eU}
+`kppnhq
+`L*r!
+{ ATAVAWH
+{ AVH
+{ f9{
+{ UATAUAVAWH
+{ UAVAWH
+{/>dm
+{\field{\*\fldinst{ HYPERLINK 
+{\field{\*\fldinst{ HYPERLINK mailto:
+{\urtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Segoe UI;}}{\colortbl ;\red%.3d\green%.3d\blue%.3d;\red%.3d\green%.3d\blue%.3d;\red0\green0\blue0;}\viewkind4\uc1\pard\li%i\ri%i\f0\fs%i
+{w?<%!!!!%@ 
+|$ AVH
+|$ E3
+|$ H;
+|$ H+
+|$ UATAUAVAWH
+|$ UAVAWH
+|$ UH
+|$(A_
+|$(E3
+|$,=~
+|$@E3
+|$@E9x(t
+|$`!\$03
+|$`E3
+|$0E3
+|$0L9w t
+|$8A_A^A\
+|$8E3
+|$HE3
+|$p9|$`vB
+|$PE3
+|$pE3
+|$PE3
+|$pE3
+|$PE3
+|$XE3
+|P>GM,~:
+} D9,
+}*Uxo
+}3E;&t
+}d@Ha
+}PL9o
+}s~!Ab
+~~xxxx
+~=mA&
+~C"[]5.dd:9gh9Ikk9\rr<ow|?
+~L!c_;*igC6ijBBop?Wpv?gx}E}
+~lgo;
+~vff~
+~vv~~x
+~xnwxx
+<!-- Copyright (c) Microsoft Corporation -->
+<!-- Copyright Microsoft Corporation. All Rights Reserved. -->
+<!-- TODO: figure out how to restrict nodes with Version to always have ModificationDate -->
+</assembly>(
+</c:contact>
+</dependency>
+</xs:schema>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<@vNA
+<A HREF="%s">%s</A>
+<A HREF="mailto:%s">%s</A>
+<'A9O
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<assemblyIdentity type="win32" name="Microsoft.Windows.InternetExplorer.AddressBook.API" version="1.0.0.0" processorArchitecture="amd64"/>
+<c:contact c:Version="1"
+<dependency>
+<description>Windows Address Book API</description>
+<GfD;'uZH
+<St?t
+<t#A+
+<xs:schema
+=>?@AD
+=D@::@
+=sRfE
+->&rU
+>01:n`
+>tzfE
+>wkt|+
+040904B0
+0A^_]
+0A^_^
+0A^_^[]
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A\_]
+0A_A^A\_^
+0A_A^A]A\]
+0A_A^A]A\_
+0A_A^A]A\_^]
+0A9I0uRH
+0k43]^/
+0u!D;
+0uIE3
+0w/tq
+1%.4d%.2d%.2d
+1.2.840.113549.1.9.1
+1.2.840.113549.1.9.15
+1.2.840.113556.1.4.800
+1.3.6.1.4.1.311.16.4
+1.3.6.1.5.5.7.3.4
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+1Z$5+
+2.5.29.17
+2.5.29.7
+2.5.4.3
+22266OPPP
+224<TTTVVU
+'2M9&
+3+07444z
+31L6Zm)
+3f97t
+3m!*rp
+4-"^y-
+4HL;uP
+4ICMC?C4"cN
+4Y+@Z
+5D9U`t/
+5dB:'
+5H!\$ L
+5L!D$@A
+789:;<Yjlpt~
+'7aC)
+7xzzF
+8D9l$(H
+9)ecRas
+9)udH
+9;G[B
+9\$(H
+9\$(t
+9\$@u
+9\$`t
+9\$|u
+9\$0v
+9\$Dt
+9\$HH
+9\$Ht
+9\$Pu
+9\$XH
+9\$xu
+9]gt=L
+9_ t%H
+9_ uzH
+9{@v"H
+9{0v"H
+9|$@t
+9|$0u
+92v!A
+9D$ H
+9D$0H
+9D$0uF
+9D$Pu
+9D$Pu;
+9L$`u
+9L$Ht)H
+9L$L|A
+9R0ut
+9s~bd
+9t$ u
+9t$(H
+9t$`I
+9t$`t@I
+9t$0H
+9t$du
+9t$pL
+9t$Pt
+9t$XH
+9t$xH
+9z%te
+A H9D$P
+a&kS;)
+A:ImageList_Destroy
+A:tw=@
+A;}`r
+A;~(s{H
+A;U`r
+A;w(r
+A]\[[WWXXX__
+a]]hjuxx
+A^_^[]
+A^_^][
+A^A\]
+A^A]_^]
+A^A]A\_]
+A__^[]
+A__^][
+A_A\]
+A_A]A\_^
+A_A]A\_^[]
+A_A^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]_]
+A_A^A]_^
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_[]
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A_A^A]A\_^]H
+A|;Axr%
+A<222244::443"
+A8H9Y0t8
+A9]`vH
+A9]`vJI
+A9^ u
+A9^ u<
+A9} u
+A97t7I
+A97tDE
+A9Axs
+A9GlD
+A9O@t=
+A9vduGH
+A9w(vA
+aaaLGGE&%%
+AAAUUS
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/.
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/?>
+AbortDoc
+acaaaaa
+Accepting new files
+AcquireSRWLockExclusive
+ACROBAT
+Action
+ActivateActCtx
+AddressBook
+ADVAPI32.dll
+ADVAPI32.DLL
+AGENT
+AhD9y
+AllowSetForegroundWindow
+AlphaBlend
+Alternate
+APPLELINK
+arrayElement
+arrayNode
+ATAVAWH
+ATTMAIL
+attribute
+Ax9A$t
+AxA9D
+B D9T
+B.95\ ]
+B:tp=
+B?9&Ba
+B0;B,~s+B,
+B0D9H u
+b4!^?
+BASE64
+BB8<8
+BCP"B
+BEGIN
+BEGIN:VCARD
+BeginDeferWindowPos
+BeginPaint
+BfD98u
+bg$;#
+binary
+binary/x-ms-wab-mapi
+bindname=
+Business
+BUTTON
+Bx9B$t
+C/f;GZu H
+c:ContentType
+c:ElementID
+c:Label
+c:LabelCollection
+c:ModificationDate
+c:type
+c:Version
+c=s::x
+C09x u'
+C09x uz
+C8H!C@H
+callto:
+CallWindowProcW
+Cellular
+CertAddCertificateContextToStore
+CertAddEncodedCertificateToStore
+CertCloseStore
+CertCompareCertificate
+CertCreateCertificateContext
+CertDeleteCertificateFromStore
+CertDuplicateCertificateContext
+CertEnumCertificatesInStore
+CertFindCertificateInStore
+CertFindRDNAttr
+CertFreeCertificateContext
+CertGetCertificateContextProperty
+CertGetIssuerCertificateFromStore
+CertificateCollection
+CertNameToStrW
+CertOpenStore
+CertOpenSystemStoreW
+CertRDNValueToStrW
+CertVerifyTimeValidity
+CertViewPropertiesA
+CharLowerA
+CharLowerW
+CharNextA
+CharNextW
+CharPrevW
+CHARSET
+CharUpperA
+CharUpperW
+CheckDlgButton
+CheckMenuRadioItem
+CheckRadioButton
+CHt$H
+CID_V1:
+client=MS_OutlookAddressBook,o=Microsoft,c=US
+CloseClipboard
+CloseHandle
+CLSID\
+CLSIDFromString
+CoCreateInstance
+CoGetMalloc
+CoI!V
+CoInitialize
+CoInitializeEx
+COMCTL32.DLL
+comctl32.dll
+comdlg32.dll
+comment
+commonName
+CompanyName
+CompareFileTime
+CompareStringA
+CompareStringW
+conferenceInformation
+contact
+Contact Printer Window
+Contact Rich Preview Window
+ContactIDCollection
+Contacts Notification Engine
+Contacts Notification Window
+ContentType
+CopyFileW
+CoTaskMemFree
+CoUninitialize
+CoWaitForMultipleHandles
+Cp90t
+CPL!0A
+CreateActCtxW
+CreateBindCtx
+CreateBrushIndirect
+CreateCompatibleDC
+CreateDialogParamW
+CreateDIBSection
+CreateEventW
+CreateFileW
+CreateFontIndirectW
+CreateMutexW
+CreatePopupMenu
+CreatePropertySheetPageA
+CreatePropertySheetPageW
+CreateThread
+CreateTimerQueueTimer
+CreateURLMoniker
+CreateWindowExW
+CreationDate
+CRYPT32.DLL
+CRYPT32.dll
+CryptAcquireContextW
+CryptCreateHash
+CryptDecodeObject
+CryptDecodeObjectEx
+CryptDestroyHash
+CRYPTDLG.dll
+CryptGetHashParam
+CryptHashData
+CryptMsgClose
+CryptMsgGetParam
+CryptMsgOpenToDecode
+CryptMsgUpdate
+CryptReleaseContext
+CThreadCallback WNDCLASS %p
+Cx9Chu
+D!|$`D!|$XL!|$PD!|$HH
+D!|$hH
+D!|$p
+D!|$PL
+D!}wI
+D!d$(L
+D!d$@H
+D!D$dH
+D!d$l
+D!D$LD
+D!d$pF9d
+D!E`D!D$`L!D$pL!D$hL!E
+D!EhA
+D!l$ 
+D!l$h
+D!t$(3
+D$ C;D
+D$ D9l$@L
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+D$ H!\$ 3
+D$ H+
+D$ I#
+D$$E3
+D$$fD93
+D$(9;t
+d$(E3
+D$(E3
+d$(E3
+D$(E3
+d$(E3
+D$(E3
+d$(E3
+D$(E3
+d$(E3
+D$(H+
+D$(L!|$ 
+D$(L+
+D$,(L
+D$,+D$$
+D$,2f
+D$,u{
+D$@;D$0
+D$@B9\
+D$@D;
+D$@D+
+d$@D9
+D$@D9D$4tG
+D$@E3
+D$@H#
+D$@L9c u
+D$`;E
+D$`D!|$XA
+D$`E3
+D$`H9D$@u
+D$`I+
+d$|D;
+D$09D$4wn3
+D$0A9
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0E3
+D$4+D$$
+D$8D;E
+D$8E3
+d$8E3
+D$8fE
+D$8fH
+D$8H!\$0
+D$8H!|$0
+D$8Hc
+D$8L;
+D$D9E
+D$DE3
+D$H;8
+D$h;D$0
+D$HA;
+D$hE+
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+D$HH#
+d$HH+
+D$hHk
+D$hI+D$
+D$HL9`
+D$HL9yh
+d$LD;
+D$lE3
+D$p;E
+D$pD9
+D$PE+
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pf;>t
+D$PfD
+D$PfD98td
+D$PH;D$ tTA
+D$TA;
+D$tD;
+D$TE3
+D$tE3
+D$THc
+D$XD!l$0L
+D$XD9
+D$xD9
+D$XD9|$8u$
+D$XD9u
+D$XE3
+D$xE3
+D$xH;
+D$xH+
+D$XH9
+D$XHc
+D$XL9D$Pu
+D$xuKH
+D:tv=
+D;|$0
+D;|$H
+D;|$P
+D;}HsW
+D;D$`s'A
+D;d$D
+D;d$DL
+D;d$P|
+D;l$4uJM
+D;t$@
+D;t$D
+D;wXs.H
+D;yl~
+D+EHD
+D+t$p
+D===@O:::PPP
+D8$8u
+D84*u
+D9?u%L
+D9@L+
+D9\$D
+D9\$Tu
+D9|$0L
+D9|$0u
+D9|$D
+D9|$PI
+D9|$pt[H
+D9|$tt
+D9|$XH
+D9|$Xt
+D9}Pt
+D9}PtEH
+D9}Pu
+D92t%H
+D98tBH
+D98vuL
+D9A<tIIc
+D9d$ H
+D9d$@t
+D9d$`t
+D9d$<
+D9D$0
+D9d$0u
+D9d$8
+D9d$D
+D9D$D
+D9D$Dt9D
+D9d$Tt
+D9d$Tu+E
+D9d$XH
+D9d$Xt
+D9gpt
+D9h uA
+D9I u
+D9k I
+D9k u6
+D9k,u
+D9l$(H
+D9l$(u
+D9l$@
+D9l$@H
+D9l$`
+D9l$0t)H
+D9l$8t
+D9l$H
+D9l$hH
+D9l$HH
+D9l$lH
+D9MXu
+D9o8t3H
+D9p`v
+D9sHu
+D9t$@
+D9t$@u
+D9t$<
+D9t$0H
+D9t$0L
+D9t$H
+D9t$hH
+D9t$L|
+D9t$PuOA
+D9uhtSH
+D9UPvGI
+D9w(u
+DA<9224;:<:4444::RRSS
+DateCollection
+dateTime
+DD@=::::OPP
+DD===@O:::OPP
+DDD;DCCD
+DE>$#j]T&v
+DeactivateActCtx
+Decorate Type
+DefWindowProcW
+Delay Picture Sync
+DelayLoadFailureHook
+DeleteCriticalSection
+DeleteDC
+DeleteFileW
+DeleteObject
+DeleteTimerQueueTimer
+department
+DestroyAcceleratorTable
+DestroyMenu
+DestroyWindow
+DialogBoxParamW
+DispatchMessageW
+Display Type
+DisplayContactsFolder
+display-name
+DllCanUnloadNow
+DllGetClassObject
+DllPath
+DragQueryFileW
+DrawTextW
+Dt$ 3
+E(< u
+E(=csm
+e(q8#
+E))D.&MK=A
+e:e4H
+E;@B<<<::<:RTS
+E\$(L
+E\$`H
+E\$0H
+E\$8L
+E\$HE3
+E\$HH
+E\$PH
+E\$PI
+E\$XE3
+E][ae_chnxv|z
+E^\bf`dioyw}{
+E_B9\
+E|$(H
+E|$8H
+E|$PH
+E|$pH
+E|$XE3
+E++G 
+E09x 
+E0D!p
+E8=csm
+e8D9 t
+E9#t~E
+E9,$s
+E9/~Y
+E9} uBE3
+E9'vQE
+eaMP9X
+eccac
+ED$@E3
+ED$@I
+ED$8H
+ED$PE3
+ED$pH
+ED$PH
+ED$xE3
+ED$xH
+ED;t$Hu4H
+eeRRRRRReeRRPP00 
+EH=csm
+Eh=csm
+eHA9D$
+Ei-*c
+EL$(H
+EL$0H
+EL$8H
+EL$HE3
+EL$HH
+EL$hH
+EL$PH
+EL$pH
+element
+ElementID
+EMAIL
+EmailAddressCollection
+EmailAddressCollection/EmailAddress[%d]
+EmailAddressCollection/EmailAddress[%d]/Address
+EmailAddressCollection/EmailAddress[%d]/Type
+EmptyClipboard
+emptycontact.xml
+EMPTYCONTACT.XML
+EnableMenuItem
+EnableThemeDialogTexture
+EnableWindow
+ENCODING
+END:VCARD
+EndDeferWindowPos
+EndDialog
+EndDoc
+EndPage
+EndPaint
+EnterCriticalSection
+EnumUILanguagesW
+EoD9]
+EQ@Q@@P:PPR
+ErrorCode: %I32X
+ET$(D
+ET$(E3
+Et$(M
+ET$`I
+ET$0H
+Et$0H
+ET$0H
+Et$0H
+ET$8H
+ET$8I
+Et$HE3
+ET$HL
+ET$PD9l$(H
+ET$pH
+ET$PH
+ET$pH
+Et$PI
+ET$PI
+ET$xL
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+EWORLD
+ewt,I
+Ex=csm
+EX=csm
+EXD9D$D
+exhaustive-errors
+eXL9uHt>E3
+ExpandEnvironmentStringsW
+explore
+Extended
+ExtTextOutW
+EYYYYYYhltttt
+EZZZZZYimuuuu
+F%6F#t
+f&"&"
+F,D+F
+f;|$ t8L
+f;D$ t
+f;D$ u
+f;E@t=
+f;EHtE
+f@D;l$8
+F8<"u
+f9)t/
+f9,^u
+f9,{u
+f9,~u
+f9,Au
+f9,Bu
+f9,Cu
+f9,Gu
+f9,Pu
+f9,Su
+f9,wu
+f9,Xu
+f9,Yu
+f9\G\u
+f9<Au
+f9<Fu
+f9<Hu
+f9<iu
+f9<Ku
+f9<Xu
+f9>t>H
+f93t=H
+f94_u
+f94Au
+f94Bu
+f94Cu
+f94Gu
+f94Hu
+f94Ju
+f94Ku
+f94Pu
+f94Su
+f94Xu
+f9D$@teA
+f9D$8u
+fA9)t]H
+fA9\E
+fA9|E
+fA9<$t,H
+fA9<Fu
+fA90t
+fA90u
+fA94@u
+fA94|u
+fA94Au
+fA94Cu
+fA94Du
+fA94Fu
+fA94xu
+fA9tE
+facsimileTelephoneNumber
+Failed property name parse for:
+fB9<@u
+fB9<~u
+fB94Hu
+fB94Ju
+fB94wu
+Fc:Version="1"
+fC9,Cu
+fC9D]
+fC9te
+fD;+t?H
+fD;<H
+fD;0u
+fD;2u
+fD;3u
+fD;8t-
+fD;8u
+fD;'u
+fD9 u,H+
+fD9$^u
+fD9$_u
+fD9$~u
+fD9$Au
+fD9$Bu
+fD9$Cu
+fD9$Fu
+fD9$Gu
+fD9$Hu
+fD9$Ju
+fD9$Ku
+fD9$ku
+fD9$Ou
+fD9$Qu
+fD9$Vu
+fD9$wu
+fD9$Xu
+fD9(t
+fD9)u-
+fD9,{u
+fD9,Au
+fD9,Bu
+fD9,Cu
+fD9,Fu
+fD9,Gu
+fD9,Hu
+fD9,Yu
+fD9.t
+fD9<Au
+fD9<Bu
+fD9<Cu
+fD9<Fu
+fD9<Gu
+fD9<Hu
+fD9<Ju
+fD9<pu
+fD9<Xu
+fD9<Yu
+fD9<Zu
+fD9>u
+fD94Au
+fD94Bu
+fD94Cu
+fD94Fu
+fD94Gu
+fD94Ju
+fD94Ku
+fD94Qu
+fD99t
+fD99teD
+fD9lu
+fD9t$@u
+fD9'thfD9?tbA
+fD9'u
+fE;8t
+fE9#t
+fE9$^u
+fE9$Au
+fE9$Fu
+fE9$Nu
+fE9$Ou
+fE9$Pu
+fE9$Su
+fE9,Du
+fE9,Fu
+fE9,nu
+fE9;t
+fE9;u
+fE9<[u
+fE90t{L
+fE94@u
+fE94Cu
+fE94Du
+fE94Pu
+fE9LE
+fE9LM
+Female
+fF9$@u
+fF9$pu
+fF9$Pu
+fF9$pu
+fF9,@u
+fF9,{u
+ffffffff
+ffffffffo
+fG9<Pu
+FileDescription
+FilePos: %ld
+FileTimeToSystemTime
+FileVersion
+FillRect
+FindClose
+FindCloseChangeNotification
+FindFirstChangeNotificationW
+FindFirstFileW
+FindNextChangeNotification
+FindNextFileW
+FindPosition
+FindResourceW
+FindWindowW
+FNew contact created from Shell UI
+Font Size
+FormatMessageW
+FreeLibrary
+FreeLibraryAndExitThread
+FreeResource
+FTHxV
+fvffw
+FXD9EHt!
+G$E9g 
+g?z[q
+G09p 
+G0A9X
+GDI32.dll
+GdipAlloc
+GdipCloneImage
+GdipCreateBitmapFromHBITMAP
+GdipCreateBitmapFromHICON
+GdipCreateBitmapFromResource
+GdipCreateBitmapFromScan0
+GdipCreateBitmapFromStream
+GdipCreateBitmapFromStreamICM
+GdipCreateFromHDC
+GdipCreateHICONFromBitmap
+GdipDeleteGraphics
+GdipDisposeImage
+GdipDrawImageRectI
+GdipFree
+GdipGetImageEncoders
+GdipGetImageEncodersSize
+GdipGetImageGraphicsContext
+GdipGetImageHeight
+GdipGetImageWidth
+GdipGraphicsClear
+gdiplus.dll
+GdiplusShutdown
+GdiplusStartup
+GdipSaveImageToFile
+GdipSetCompositingMode
+Gender
+GetCapture
+GetClassInfoW
+GetClientRect
+GetCurrentDirectoryW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetCursorPos
+GetDateFormatW
+GetDC
+GetDesktopWindow
+GetDeviceCaps
+GetDlgCtrlID
+GetDlgItem
+GetDlgItemTextW
+GetFileAttributesExW
+GetFileAttributesW
+GetFileSize
+GetFocus
+GetKeyState
+GetLastError
+GetLocaleInfoW
+GetLongPathNameW
+GetMenuItemCount
+GetMenuItemInfoW
+GetMessageW
+GetModuleFileNameW
+GetModuleHandleA
+GetModuleHandleExW
+GetModuleHandleW
+GetObjectW
+GetOpenFileNameW
+GetOverlappedResult
+GetParent
+GetProcAddress
+GetProcessHeap
+GetProfileIntW
+GetSaveFileNameW
+GetShortPathNameW
+GetStockObject
+GetSubMenu
+GetSysColor
+GetSysColorBrush
+GetSystemMenu
+GetSystemMetrics
+GetSystemTime
+GetSystemTimeAsFileTime
+GetTempFileNameW
+GetTempPathW
+GetTextExtentPoint32W
+GetTextExtentPointW
+GetTickCount
+GetTimeFormatW
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetUserDefaultLCID
+GetUserDefaultUILanguage
+GetUserNameExW
+GetUserNameW
+GetVersion
+GetWindowLongPtrW
+GetWindowLongW
+GetWindowPlacement
+GetWindowRect
+GetWindowTextLengthW
+GetWindowTextW
+GhI;<
+givenName
+GL9A@t;
+GlobalFree
+GlobalLock
+GlobalUnlock
+Got this far:
+gpD9gpt
+H B>C
+H UATAUAVAWH
+h UAVAWH
+H USVWATAVAWH
+H VWATAVAWH
+h VWATAVAWH
+H WATAUAVAWH
+H WAVAWH
+H!\$ H
+H!\$ L
+H!\$(
+H!\$(M
+H!\$`H
+H!\$0
+H!\$0D
+H!\$0E
+H!\$0H
+H!\$8L
+H!\$HE3
+H!\$hH
+H!\$X
+H!\$X3
+H!\$XD
+H!\$XH
+H!]83
+H!|$ 
+H!|$ E3
+H!|$(L
+H!|$@H
+H!|$0
+H!|$0E3
+H!|$8!|$0
+H!|$8H
+H!}@M
+H!}HI
+H!D$(E
+H!E H
+H!l$h
+H!s H
+H!t$ 
+H!t$ E3
+H!t$(E3
+H!t$(L
+H!t$0M
+H!t$pM
+H!t$PM
+H!u03
+H!u0L
+H!u83
+H!U8E3
+H!uHH
+H!uXH
+H!x H
+H;\$pt
+H;FHvqH
+H;qHt
+H;t$PtDA
+H;YXt
+H_^[]
+H+^HH
+H+D$0u
+H+D$8H
+H1VTVVVVVVVV
+H9\$h
+H9^ u
+H9^(u.
+H9|$0t
+H9~8t
+H9>u"D
+H9A(u
+H9B8u
+H9l$@t
+H9l$Xt]H
+H9t$@t
+H9t$8t
+H9w@t 
+H9w0t 
+H9w8t 
+H9Y(tFH
+H9Y0t
+H9Y8u
+HA_A^A]A\_^[]
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+HcD$hH;
+HcEPB
+HcQ<H
+HcWpI
+Hd;H`sH;
+HE9~d
+HeapAlloc
+HeapCreate
+HeapDestroy
+HeapFree
+HeapReAlloc
+hh':'mm':'ss
+hH]?B
+HIMAGELIST_QueryInterface
+hnvvffg
+homePhone
+homePostalAddress
+HrCopyStream
+HrCreateAccountManager
+HrStreamToByte
+http://
+http://schemas.microsoft.com/Contact
+http://schemas.microsoft.com/Contact/Extended
+http://www.w3.org/2001/XMLSchema-instance
+I!(!*
+I(IPJ
+I?'!!%%<
+i~t!|
+I9<$u+I
+IBMMAIL
+iD9D$HtbD
+IDAT~
+IDATx
+IDI_ICON_ABOOK
+IMAddressCollection
+image
+image/
+imagehlp.dll
+ImageList_Create
+ImageList_Destroy
+ImageList_Draw
+ImageList_LoadImageA
+ImageList_LoadImageW
+ImageList_ReplaceIcon
+ImageList_SetBkColor
+IMM32.dll
+ImmAssociateContext
+ImmGetCompositionStringW
+ImmGetContext
+ImmReleaseContext
+InitCommonControlsEx
+InitializeCriticalSection
+initials
+InsertMenuItemW
+InsertMenuW
+InternalName
+INTERNET
+InternetCanonicalizeUrlW
+InvalidateRect
+IPPhone
+IQ`lKLL
+IsChild
+IsDBCSLeadByte
+IsDialogMessageW
+IsDlgButtonChecked
+IsRectEmpty
+IsWindow
+IsWindowEnabled
+IsWindowVisible
+ixZ4{
+iZT^<
+K H91t
+K M9&t
+K VWAVH
+K(H91t
+k*&\I
+k;iYgp
+K@L91t
+K0H91t
+k7w7\
+K8L9!t
+k9\$Pu
+Kb]P&.f2
+KERNEL32
+KERNEL32.dll
+Kf91u/f
+kgay(
+kHcUP3
+KillTimer
+kMH&r~
+L!(E3
+L!\$(I#
+L!|$ 3
+L!|$ H
+L!|$(M
+L!|$0L
+L!|$H3
+L!|$hA
+L!|$hL
+L!|$pH
+L!|$PH
+L!d$(H
+L!D$@A
+L!d$0
+L!l$ L!l$(D!m
+L!l$(L
+L!l$@
+L!l$`H
+L!l$83
+L!l$HM
+L!l$P
+L!T$ A
+L!t$ L
+L!t$(D!t$ 
+L!t$03
+L!t$8D
+L!t$hH
+L$ E3
+L$ Hc
+L$ L+
+L$ LcF
+L$ M+
+L$ SVWAVH
+L$ SVWH
+L$ USVWH
+L$ UVWATAUAVAWH
+L$ UVWAVAWH
+l$ VWATAUAWH
+l$ VWATAVAWH
+l$ VWAUAVAWH
+l$ VWAVH
+L$$D;
+L$$E3
+l$(D;t$Ht
+L$(E3
+l$(E3
+L$(E3
+l$(E3
+L$(E3
+L$(H3
+l$(M+
+l$,2f
+L$@+D$xE3
+L$@9L$Ht%H
+l$@D9
+l$@E3
+L$@E3
+L$@fD
+L$@H!|$(L
+L$@H3
+l$@L+
+l$`E3
+L$`E3
+L$`H;L
+l$`H+
+L$`H3
+L$09L$8t
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+L$0H;
+L$0H3
+L$0L!d$ H
+L$4E3
+L$8D+
+L$8E3
+L$8H3
+l$dA+
+l$hA9
+L$hD+|$tH
+l$HE3
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+l$HE3
+L$HE3
+L$hE3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+l$PD9d$hu<D;
+L$PD9i
+L$PE3
+l$pE3
+L$pE3
+L$PE3
+L$Pf91t6H
+l$PfD
+L$PH3
+L$pH3
+L$pL9d$xt
+L$xB9
+L$XE3
+L$xE3
+L$XH3
+l$xH9
+L;d$`
+l6O{-
+L9!u:H
+L9!um3
+L9.t9H
+L9|$@t
+L9|$h
+L9|$p
+L9>t7E9>v
+L9>tAE9>v*H
+L9D$@
+L9d$`
+L9D$x
+L9eHt!H
+L9i t
+L9I(u
+L9l$ 
+L9q@uPH
+L9t$(t
+L9t$@t
+L9t$p
+L9t$pt
+L9'u;I
+L9y(u
+Label
+LABEL
+LabelCollection
+Labeled Multi Fields
+Labeled Simple Fields
+Labeled Single Field
+labeledURI
+Labels
+LANGUAGE
+Large
+lbec\
+Lc|$0D
+LcA<E3
+LcD$ 
+LcD$$E3
+LcD$\H
+LcD$`H
+LcD$TH
+LcD$XH
+LCMapStringW
+LDAP Connection Timeout
+LDAP Default Country
+ldap://
+ldap_abandon
+ldap_bind_sW
+ldap_bindW
+ldap_connect
+ldap_control_freeW
+ldap_controls_freeW
+ldap_count_entries
+ldap_count_values_len
+ldap_count_valuesW
+ldap_create_page_controlW
+ldap_err2stringW
+ldap_first_attributeW
+ldap_first_entry
+ldap_get_dnW
+ldap_get_values_lenW
+ldap_get_valuesW
+ldap_initW
+ldap_memfreeW
+ldap_msgfree
+ldap_next_attributeW
+ldap_next_entry
+ldap_openW
+ldap_parse_page_controlW
+ldap_parse_resultW
+ldap_result
+ldap_result2error
+ldap_search_ext_sW
+ldap_search_extW
+ldap_search_stW
+ldap_search_sW
+ldap_searchW
+ldap_set_optionW
+ldap_sslinitW
+ldap_unbind
+ldap_value_free_len
+ldap_value_freeW
+LeaveCriticalSection
+Legacy Windows Address Book Window
+LegalCopyright
+Level1Property
+Level2Property
+Level3Multiprop
+Level3Property
+Line Break
+Line: %d
+lineInitialize
+LinePos: %d
+lineShutdown
+LineTo
+lineTranslateDialog
+Ljesf
+l-lQh
+LoadCursorW
+LoadIconW
+LoadImageW
+LoadLibraryExW
+LoadLibraryW
+LoadMenuW
+LoadResource
+LoadStringA
+LoadStringW
+Local\MPSWabDataAccessMutex
+LocalAlloc
+LocalFree
+LockResource
+lstrcmpA
+lstrcmpiA
+lstrcmpiW
+lstrcmpW
+Lu.:/
+M(9E(L
+M:@compuserve.com
+M:tQ=
+M:u'L
+m@u63
+m0#"-
+M9&tYL9!tT
+MAILER
+MailTo
+malloc
+Manager
+mapi32.dll
+MAPIPDL
+MAPISendMail
+MAPISendMailW
+MapWindowPoints
+MCIMAIL
+memcmp
+memcpy
+memmove
+memset
+MessageBoxW
+Microsoft
+Microsoft (R) Contacts DLL
+Microsoft Corporation
+Microsoft.Windows.AddressBook
+Microsoft\Address Book\
+MJJJA??4AAJJJJEU
+ML</<
+MLANG.dll
+MM=M=MV=V
+mobile
+MODEM
+ModificationDate
+ModifyMenuW
+MoveFileExW
+MoveFileW
+MoveToEx
+MoveWindow
+MPEG2
+msftedit.dll
+mshelp://
+mshelp://windows/?id=26ce0593-f146-454e-92a2-5fe1107da4b0
+mshelp://windows/?id=331d2a68-5c2c-4a2c-a5ef-d68979b945de
+mshelp://windows/?id=66a5a63f-1d72-4594-96da-78d57f04852a
+mshelp://windows/?id=aacf89de-1878-4226-848f-c57919a16442
+MSIMG32.dll
+MSOERT2.dll
+msvcard.xsd
+MSVCARD.XSD
+msvcrt.dll
+MSWHEEL_ROLLMSG
+MulDiv
+MultiByteToWideChar
+MultipleErrorMessages
+mx||x
+N"^b;,ej?;ff<Iim=]rv@oy
+n$?(Lu
+n(I9u
+N12Ez
+NameCollection
+NamedPropCount
+NamedProps
+NewParser
+NICKNAME
+NLJN5+"
+NNY/W
+No Contact Name
+Not accepting files
+Notes
+ntdll.dll
+NW<<Y
+nyA7<
+O:tc=
+O:u(H
+o\$PH
+o|uHC|
+Oc5#n
+oD$ f
+OfficeFax
+OfficePager
+OffsetRect
+OhA9_
+oL$0f
+ole32.dll
+OLEAUT32.dll
+OleRun
+OOQ"t
+OpenClipboard
+Opened Contacts folder in File Explorer
+OpenFileStreamShareW
+OpenFileStreamW
+organizationalUnitName
+organizationName
+OriginalFilename
+oT$@f
+Other
+otherFacsimileTelephoneNumber
+otherMailbox
+otherPager
+OUTLOOK
+OutputDebugStringW
+OX9D$pL
+p AWH
+P Q(hH
+p WATAUAVAWH
+p WAVAWH
+p"QVm
+p(_><
+P(R,:
+p:\8~
+p:tP=
+p:U6}'
+P:wCtx
+P:wGt9=
+p@WZz
+p0R^G'
+p2]>p
+p2_zB64
+p3X<O
+PA\_]
+pA^_^
+PA^_^][
+PA^A\_^]
+PA__^[]
+PA_A^_^]
+pA_A^A\_^[]
+pA_A^A]_^[]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+Pager
+PAGER
+pager
+pAOn}
+PARCEL
+Parenthesized
+paS8V
+PatBlt
+PathAddBackslashW
+PathAddExtensionW
+PathAppendW
+PathCanonicalizeW
+PathCombineW
+PathCreateFromUrlW
+PathFileExistsW
+PathFindExtensionW
+PathFindFileNameW
+PathGetDriveNumberW
+PathIsDirectoryW
+PathIsNetworkPathW
+PathRemoveBackslashW
+PathRemoveBlanksW
+PathRemoveFileSpecW
+PathRenameExtensionW
+paZ<9
+pC_v>
+PeekMessageW
+Personal
+PersonCollection
+PhoneNumberCollection
+PHOTO
+PhotoCollection
+phQtQ
+pHUx*
+PhysicalAddressCollection
+physicalDeliveryOfficeName
+pJ`aFbgk=
+pJZ4=?
+PKEY_Comment
+PKEY_Company
+PKEY_Contact_Birthday
+PKEY_Contact_BusinessAddressCity
+PKEY_Contact_BusinessAddressCountry
+PKEY_Contact_BusinessAddressPostalCode
+PKEY_Contact_BusinessAddressPostOfficeBox
+PKEY_Contact_BusinessAddressState
+PKEY_Contact_BusinessAddressStreet
+PKEY_Contact_BusinessHomePage
+PKEY_Contact_BusinessTelephone
+PKEY_Contact_CarTelephone
+PKEY_Contact_EmailAddress
+PKEY_Contact_FirstName
+PKEY_Contact_FullName
+PKEY_Contact_HomeAddressCity
+PKEY_Contact_HomeAddressCountry
+PKEY_Contact_HomeAddressPostalCode
+PKEY_Contact_HomeAddressPostOfficeBox
+PKEY_Contact_HomeAddressState
+PKEY_Contact_HomeAddressStreet
+PKEY_Contact_HomeFaxNumber
+PKEY_Contact_HomeTelephone
+PKEY_Contact_LastName
+PKEY_Contact_MiddleName
+PKEY_Contact_MobileTelephone
+PKEY_Contact_NickName
+PKEY_Contact_PagerTelephone
+PKEY_Contact_PrimaryTelephone
+PKEY_Contact_WebPage
+PKEY_FileCount
+pkW:v
+PMLHLF5.''#
+PositionCollection
+POSTAL
+postalAddress
+postalCode
+PostMessageW
+POWERSHARE
+PPMM==J=J==E
+pPP~v
+pqG5N$
+Preferred
+Presence Display Text
+Presence Help URL
+PrintDlgExW
+PRODIGY
+ProductName
+ProductVersion
+PropertySheetA
+PropertySheetW
+PropTag1
+PropTag2
+PropVariantClear
+PropVariantCopy
+pRPX!
+pSU>y
+PtInRect
+PVj6m
+pW$< 
+pZR0k
+pzUp6>
+q"QVm
+q"ZR 
+q:\8~
+q:_0#
+Q:tM=
+q:U6}'
+q[Q>`>
+Q_bcdv
+Q<}&<
+q0R^G'
+q0St$
+q2_zB64
+q3X<O
+q9^pv
+qa\Tk
+qaS8V
+qaZ<9
+qb\vP
+qC]~[7
+qhQtQ
+qHUx*
+qi[P%6
+qIP>8
+qJZ4=?
+qK\VO&
+QNY.-
+QOf0V
+qqU|!?\
+QRRRR
+QRRTTTTUU
+qs]Rz7
+qSU>y
+qsY8S
+QTIME
+QueryPerformanceCounter
+QUOTED-PRINTABLE
+QvX6y
+Qxfiuxhi
+qy^tW
+qZWVt/
+r:MqV
+R1L2Q
+ReadDirectoryChangesW
+ReadFile
+Reason: %ws
+Rectangle
+RectVisible
+RedrawWindow
+RegCloseKey
+RegCreateKeyExW
+RegDeleteValueW
+RegEnumKeyExW
+RegEnumValueW
+RegGetValueW
+RegisterClassExW
+RegisterClassW
+RegisterTraceGuidsW
+RegisterWaitForSingleObject
+RegisterWindowMessageW
+RegOpenKeyExW
+RegQueryValueExW
+RegQueryValueW
+RegSetValueExW
+RegSetValueW
+ReleaseActCtx
+ReleaseCapture
+ReleaseDC
+ReleaseMutex
+ReleaseSRWLockExclusive
+ReleaseStgMedium
+RemoveMenu
+Reports
+ResolveDelayLoadedAPI
+RFW?Y
+RICHEDIT50W
+RPCRT4.dll
+RpcStringFreeW
+RSDSK
+RSRSTRS
+RSSSSSRSSSS
+RtlCaptureContext
+RtlLookupFunctionEntry
+RtlMoveMemory
+RtlVirtualUnwind
+rUXj[
+rVD9}Pu
+RZ^/m
+s AVH
+s399t
+s6E9q
+S9\$Pu
+SbjKL
+schemas
+schema-validation
+ScreenToClient
+sefE9 t-
+SEJSJSASSSUS
+SelectionLanguage
+SelectionNamespaces
+SelectObject
+SendDlgItemMessageW
+SendMail
+SendMailTo
+SendMessageW
+SendVCF
+Server ID
+SetAbortProc
+SetAsMe
+SetBkColor
+SetBkMode
+SetCapture
+SetClipboardData
+SetCursor
+SetDlgItemTextW
+SetEndOfFile
+SetEvent
+SetFileAttributesW
+SetFilePointer
+SetFocus
+SetForegroundWindow
+SetLastError
+SetMapMode
+SetMenuInfo
+SetTimer
+SetUnhandledExceptionFilter
+SetWindowLongPtrW
+SetWindowLongW
+SetWindowPos
+SetWindowTextW
+SHChangeNotify
+sHcUP3
+SHELL32.dll
+ShellExecuteExW
+ShellExecuteW
+ShellUICommand_OnEditW
+ShellUICommand_OnExportW
+ShellUICommand_OnImportW
+ShellUICommand_OnNewContactW
+ShellUICommand_OnNewEmailW
+ShellUICommand_OnNewGroupW
+SHGetFolderPathW
+SHGetKnownFolderIDList
+SHGetKnownFolderPath
+SHGetMalloc
+SHLWAPI.dll
+Show Title
+ShowWindow
+SHParseDisplayName
+SHRegCloseUSKey
+SHRegCreateUSKeyW
+SHRegEnumUSKeyW
+SHRegEnumUSValueW
+SHRegGetUSValueW
+SHRegGetValueW
+SHRegOpenUSKeyW
+SHRegQueryInfoUSKeyW
+SHRegQueryUSValueW
+SHRegSetUSValueW
+SHRegWriteUSValueW
+SHStrDupW
+SizeofResource
+Sleep
+SleepConditionVariableSRW
+Software\Clients\Mail\Windows Mail
+Software\Microsoft\WAB
+Software\Microsoft\WAB\Advanced Settings
+Software\Microsoft\WAB\Import
+Software\Microsoft\WAB\Me
+Software\Microsoft\WAB\Reading Pane
+Software\Microsoft\WAB\Resources\Labels
+Software\Microsoft\WAB\Resources\Titles
+Software\Microsoft\WAB\WAB Sort State
+Software\Microsoft\WAB\WAB4
+Software\Microsoft\WAB\WAB4\ExtContext
+Software\Microsoft\WAB\WAB4\ExtDisplay\DistList
+Software\Microsoft\WAB\WAB4\ExtDisplay\MailUser
+Software\Microsoft\WAB\WAB4\LastFind
+Software\Microsoft\WAB\WAB4\NamedVCardProps
+Software\Microsoft\Windows\CurrentVersion\App Paths\wab.exe
+Software\Microsoft\Windows\CurrentVersion\App Paths\wabmig.exe
+Software\Policies\Microsoft\Internet Account Manager\Account Pref
+SOUND
+Source of XML Error:
+sR\Y)
+srand
+SspiCli.dll
+SSSSSSSSSSQ
+Standard
+StartDocW
+StartPage
+State
+Store Picture As Link
+strchr
+StrChrW
+strcmp
+StrCmpIW
+StrCmpNIA
+StrCmpNIW
+StrCmpW
+StrCSpnW
+street
+streetAddress
+string
+StringFileInfo
+StringFromCLSID
+strstr
+StrStrIW
+StrStrW
+StrToIntA
+supportedCapabilities
+surname
+SURUSSSR
+SUVWATAUAVAWH
+SUVWH
+swscanf_s
+Synchronize My Pictures
+SysDateTimePick32
+SystemParametersInfoW
+SystemTimeToFileTime
+sZfD9'tTf
+t!L!|$0L
+t"D;8u
+t"H9s
+t$ A90t
+T$ E3
+t$ E3
+T$ E3
+t$ fD
+t$ UWATAUAVH
+t$ UWATAVAWH
+t$ UWAUAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+t$(;_0s0H
+t$(9s
+t$(E3
+T$(E3
+t$(E3
+T$(E3
+t$@A;
+T$@D;
+T$@E3
+T$@H;
+T$`;U
+t$`A;
+T$`A+
+T$`E3
+t$`I!v(H9u
+t$<u:
+T$0A;
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$8E3
+T$8E3
+t$9(t H
+T$D;\$4
+t$D9s u
+t$HD;}
+T$HE3
+t$HE3
+T$HE3
+t$L;0
+T$lD;
+t$LE;
+T$LE3
+t$p9u
+t$pA97
+T$PE3
+T$pE3
+t$PE3
+T$PE3
+t$pE3
+T$PE3
+t$PE3
+T$PE3
+T$pE3
+T$PE3
+T$pE3
+t$XD;
+t$XD9y
+T$XE3
+t$XE3
+T$XE3
+t$xE3
+T$XE3
+t%9uXv 
+t*<:t&3
+t/9L$Pr);
+T::442224::::4444:R:RSR
+T:t-A
+t'@8;t"H
+t@fD9
+T[7"Ny
+t\a{k
+t\fD96tVH
+t|E9#twL
+t+9Y$t&M
+t+fA9
+t+L9|$`t$I
+t+L9d$@t$I
+t=fD9
+t>;9r+
+t4H;E
+t5A9E@u
+t6A9D$@u
+t6D9d$8L
+t8D!m
+t9D9#t4H
+t9I!?
+tA92t=D
+tAD9x
+tapi32.dll
+tapiRequestMakeCall
+TaskDialogIndirect
+tATb}
+tB!\$ H
+tBfD;/u'
+tcD9)t^
+tD91u@H9q
+t-D9't(H
+te;y |
+telephoneNumber
+Terminal
+TerminateProcess
+Text Margin
+TextOutW
+tg@89tbH
+t-I!7L
+TITLE
+title
+Title Color
+tJM9]
+tKfD9
+tKLcH
+TlsAlloc
+TlsFree
+TlsGetValue
+TlsSetValue
+toH!X
+tooltips_class32
+Top Level Field
+Top Level Presence Field
+TouchFileTimes
+tPE9]
+TraceEvent
+TrackPopupMenu
+TranslateMessage
+Translation
+tRH!x
+tsH!H
+tSI9\
+tTLcH
+Ttqb}C
+TTTTT
+tUH!t$0E3
+tVD9}Pu
+tVH!x
+tWfD9>tQL
+twuU}
+tx9/t
+txL9L
+tY@8;tTH
+tY~=I
+u H9E
+u L9}
+u!dkb
+u!H9}
+u$H9t$Xt@H
+u&9]ht
+u&L9}
+u(9D$@H
+u(9Egt#H
+u)D9e
+u;D9s
+u?H;|$@u8H
+u?H;q t9H;q
+u?M9A
+u@9l$pt:H
+u1H!|$0L
+u1H!t$0L
+u4ZsvzJ7
+u5H!|$0L
+u5H;G
+u7L9M
+U8H!E8H
+U9Ewu
+u9fD9|$Pt-H
+u9H9_pu
+UATAUAVAWH
+UATAVH
+UATAWH
+UAVAWH
+uD9{Hu
+u-D9l$@L
+u'D9t$0H
+u'f9tC
+ugD!@
+uH!\$H!\$@H
+uhH95
+uJ2&u
+UJJJSJSJAA@4U
+uKH9w8uEH9w@u?H
+uLH9B
+UMCMCCM
+umich.edu
+un,E&
+UnhandledExceptionFilter
+UnregisterClassW
+UnregisterTraceGuids
+UnregisterWaitEx
+Unspecified
+UpdateWindow
+URL: %ws
+UrlCanonicalizeW
+UrlCollection
+UrlIsW
+urlmon.dll
+uS'.G
+User Tile Dimensions
+User Tile Margin
+USER32.dll
+userCertificate
+userCertificate;binary
+userSMIMECertificate
+userSMIMECertificate;binary
+UserTile
+UserTile.png
+USVWATAUAVAWH
+USVWATAVAWH
+USVWAUAVAWH
+USVWAWH
+uTD9#uOH
+UuidCreate
+UuidFromStringW
+UuidToStringW
+UVAVH
+UVWATAUAVAWH
+UVWATAVH
+UVWAUAVH
+UVWAVAWH
+uW9EXuRH
+UWATAUAVH
+UWATAVAWH
+UWATH
+UWAUAVAWH
+UWAVH
+UxTheme.dll
+uy9\$dusH
+v*b\U
+V:ucD
+V:uCK
+v4~R(
+VALUE
+VarFileInfo
+VCARD
+VERSION
+Version
+VhiL$D
+VIDEO
+Voice
+VOICE
+VR,%`^8/^\7>\V/LQG
+VS_VERSION_INFO
+VUUUA
+VUUUD
+vvnnv
+VVVVDV
+VVVVVVTVV
+VWATAVAWH
+VWAUAVAWH
+VWAVH
+vYiX""k
+'W"444447
+W&(09
+w@t"-
+w@t$-
+w}Ww6D
+w47;t
+w4fA9*
+WAB Root Container
+WAB User Tile Control
+wab.exe
+wab:Anniversary
+wab:Assistant
+wab:Birthday
+wab:Manager
+wab:Spouse
+WAB_DocHost
+WAB_IMPORT
+WAB32.dll
+WAB32.DLL
+WAB32.dll
+WAB32.DLL
+wab32.pdb
+wab32res.dll
+WABBrowseView
+WABCreateIProp
+wabmig.exe
+WABOpen
+WABOpen API called
+WABOpenEx
+WABOpenEx API called
+wabrules
+WaitForMultipleObjects
+WaitForSingleObject
+WakeAllConditionVariable
+WATAUAVAWH
+WATAVH
+WAVAWH
+wcschr
+wcsncmp
+wcsstr
+wcstok_s
+wcstoul
+wFt$-
+WideCharToMultiByte
+WININET.dll
+WinSqmIncrementDWORD
+WINTRUST.dll
+WinVerifyTrust
+wKt"-
+WLDAP32.DLL
+WriteFile
+wVD9T$(t
+wyFCC2/**
+wyyyyFF
+x ATAVAWH
+x ATAVAWI
+x AUAVAWH
+x AVH
+x AW3
+x UATAUAVAWH
+x UAVAWH
+X UVWAVAWH
+x%D9t$ L
+x(H9K0tf
+x:D9l$HH
+x\D9t$ H
+x]D9|$Pt
+x|;7u
+x~~~~x
+x~~~v
+x2fD;|$Pt*D
+X3zaqv
+x7u3E
+x8D9l$(u
+xA_A^_^][
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^][
+xaD9l$hH
+xbuWH
+XD1"C
+xD9D$0t!E
+xD9D$Tt\
+xg9\$@vQE3
+XML Parse Error Begin
+XML Parse Error End
+XML_FILE
+xmlns:
+xmlns:c='http://schemas.microsoft.com/Contact'
+xoD9}
+XPath
+XPath: 
+xsi:nil
+xUf;|$(uNH
+X-WAB-GENDER
+xwD9u
+xxfFp
+XXWXX
+xxx~w
+Y:t:=
+y193u
+y7LcCXE3
+Yr"X,
+yyyy'-'MM'-'dd
+YYYYYYhltttt
+z*$oo
+Z:t,=
+zsRakRb:*is4
+zvA WW2(__80df=@lm<Tlq;fwz@y{

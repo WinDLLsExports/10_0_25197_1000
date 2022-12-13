@@ -1,0 +1,336 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\OpenSSH\ssh-agent.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    libcrypto.dll
+    KERNEL32.dll
+    ADVAPI32.dll
+    CRYPT32.dll
+    WS2_32.dll
+    USER32.dll
+
+  Section contains the following imports:
+
+    libcrypto.dll
+             140044620 Import Address Table
+             140071C28 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         6DF EVP_sha384
+                         6CB EVP_md5
+                         6DE EVP_sha256
+                         5AC EVP_Digest
+                         6DC EVP_sha1
+                         39F DSA_SIG_free
+                         3A2 DSA_SIG_new
+                         6E0 EVP_sha512
+                         586 EVP_CIPHER_CTX_key_length
+                         587 EVP_CIPHER_CTX_new
+                         678 EVP_aes_256_cbc
+                         5A0 EVP_CipherInit
+                         6AB EVP_des_ede3_cbc
+                         3A6 DSA_do_verify
+                         3A5 DSA_do_sign
+                         66D EVP_aes_192_cbc
+                         57E EVP_CIPHER_CTX_ctrl
+                         3F0 ECDSA_SIG_new
+                         3F4 ECDSA_do_verify
+                         3ED ECDSA_SIG_free
+                         3F2 ECDSA_do_sign
+                         58E EVP_CIPHER_CTX_set_key_length
+                         59D EVP_Cipher
+                         681 EVP_aes_256_gcm
+                         58B EVP_CIPHER_CTX_set_app_data
+                         582 EVP_CIPHER_CTX_get_app_data
+                           F AES_set_encrypt_key
+                           A AES_encrypt
+                         669 EVP_aes_128_gcm
+                         581 EVP_CIPHER_CTX_free
+                         47A EC_POINT_oct2point
+                         1A9 BN_bn2bin
+                         47D EC_POINT_point2oct
+                         1A8 BN_bin2bn
+                         956 RAND_bytes
+                         9CC RSA_sign
+                         1B6 BN_div
+                         17F BN_CTX_new
+                         17C BN_CTX_free
+                         980 RSA_blinding_on
+                         1B9 BN_dup
+                         420 EC_GROUP_get_order
+                         3A8 DSA_free
+                         469 EC_POINT_cmp
+                         1B1 BN_clear_free
+                         461 EC_KEY_set_private_key
+                         214 BN_value_one
+                         465 EC_METHOD_get_field_type
+                         478 EC_POINT_mul
+                         9AD RSA_new
+                         984 RSA_free
+                         52A ERR_get_error
+                         471 EC_POINT_get_affine_coordinates_GFp
+                         462 EC_KEY_set_public_key
+                         1BB BN_free
+                         474 EC_POINT_is_at_infinity
+                         46D EC_POINT_free
+                         660 EVP_aes_128_cbc
+                         446 EC_KEY_free
+                         44A EC_KEY_get0_public_key
+                         3B7 DSA_new
+                         479 EC_POINT_new
+                         412 EC_GROUP_cmp
+                         1F4 BN_new
+                         449 EC_KEY_get0_private_key
+                         448 EC_KEY_get0_group
+                         1B2 BN_cmp
+                         20C BN_sub
+                         426 EC_GROUP_method_of
+                         454 EC_KEY_new_by_curve_name
+                         1FB BN_num_bits
+                         9C2 RSA_public_decrypt
+                         9D0 RSA_up_ref
+                         9CA RSA_set_method
+                         9CE RSA_size
+                         98A RSA_get_default_method
+
+    KERNEL32.dll
+             140044160 Import Address Table
+             140071768 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         48A TlsSetValue
+                         489 TlsGetValue
+                         487 TlsAlloc
+                         2CD InitializeCriticalSectionAndSpinCount
+                          B2 DeleteCriticalSection
+                         31E LeaveCriticalSection
+                          D0 EnterCriticalSection
+                         430 SetLastError
+                         3E8 RtlUnwindEx
+                         1F3 GetModuleHandleW
+                         245 GetStartupInfoW
+                         2E2 IsDebuggerPresent
+                         2D1 InitializeSListHead
+                         396 QueryPerformanceCounter
+                         2E8 IsProcessorFeaturePresent
+                         467 SetUnhandledExceptionFilter
+                         494 UnhandledExceptionFilter
+                         3E9 RtlVirtualUnwind
+                         3E3 RtlLookupFunctionEntry
+                         3DF RtlCaptureContext
+                         488 TlsFree
+                         444 SetStdHandle
+                         326 LoadLibraryExW
+                         3A7 ReadConsoleOutputA
+                         3FF SetConsoleCursorPosition
+                          23 GetConsoleWindow
+                          22 Beep
+                         107 FillConsoleOutputAttribute
+                         4ED WriteConsoleOutputA
+                         3A6 ReadConsoleInputW
+                         3FE SetConsoleCursorInfo
+                         40B SetConsoleWindowInfo
+                         17A GetConsoleCP
+                         17F GetConsoleCursorInfo
+                         3EA ScrollConsoleScreenBufferA
+                         407 SetConsoleScreenBufferSize
+                         408 SetConsoleTextAttribute
+                         108 FillConsoleOutputCharacterA
+                           2 CreateWaitableTimerA
+                         4F2 WriteConsoleW
+                          2D CancelSynchronousIo
+                         183 GetConsoleMode
+                         402 SetConsoleMode
+                         4BC WaitForSingleObjectEx
+                         418 SetEnvironmentVariableW
+                         1B0 GetDriveTypeW
+                         3FD SetConsoleCtrlHandler
+                         1EF GetModuleFileNameW
+                         1D5 GetFullPathNameW
+                         1DD GetLastError
+                          FC ExitProcess
+                         42D SetHandleInformation
+                         1F2 GetModuleHandleExW
+                         10F FindClose
+                          84 CreateNamedPipeW
+                          61 WaitForMultipleObjects
+                         115 FindFirstFileExW
+                          2E GetNamedPipeClientProcessId
+                         123 FindNextFileW
+                         23E GetQueuedCompletionStatus
+                          95 CreateThread
+                          FD ExitThread
+                         35F OpenProcess
+                         143 FreeLibraryAndExitThread
+                         2B8 HeapFree
+                         41A SetEvent
+                          3A CloseHandle
+                         19D GetCurrentProcessId
+                          89 CreateProcessW
+                          66 CreateEventA
+                          79 CreateIoCompletionPort
+                          4D ConnectNamedPipe
+                         3AF ReadFile
+                         4F3 WriteFile
+                          2C CancelIoEx
+                         20D GetOverlappedResult
+                         2B4 HeapAlloc
+                          4C CompareStringW
+                         312 LCMapStringW
+                           A LocalFree
+                         40F SetCurrentDirectoryW
+                         196 GetCurrentDirectoryW
+                         2BB HeapReAlloc
+                         19C GetCurrentProcess
+                         246 GetStdHandle
+                         482 TerminateProcess
+                         24B GetStringTypeW
+                         167 GetCommandLineA
+                         414 SetEndOfFile
+                         1A1 GetCurrentThreadId
+                         4BA WaitForMultipleObjectsEx
+                          CB DuplicateHandle
+                         27D GetTickCount64
+                         425 SetFilePointerEx
+                         1CB GetFileType
+                         3AC ReadConsoleW
+                         363 OpenThread
+                         136 FlushFileBuffers
+                         1C9 GetFileSizeEx
+                         188 GetConsoleScreenBufferInfo
+                         2EC IsValidCodePage
+                         149 GetACP
+                         20A GetOEMCP
+                         4BB WaitForSingleObject
+                          75 CreateFileW
+                         158 GetCPInfo
+                          CC EncodePointer
+                         1B6 GetEnvironmentStringsW
+                         141 FreeEnvironmentStringsW
+                         228 GetProcessHeap
+                         223 GetProcAddress
+                          22 GetComputerNameW
+                         142 FreeLibrary
+                         4E4 WideCharToMultiByte
+                         25C GetSystemTimeAsFileTime
+                         2BD HeapSize
+                         3A1 RaiseException
+                          FF ExpandEnvironmentStringsW
+                         1DE GetLocalTime
+                         253 GetSystemDirectoryW
+                         29A GetWindowsDirectoryW
+                         1BA GetExitCodeProcess
+                          2B CancelIo
+                           D CreateNamedPipeA
+                         4F4 WriteFileEx
+                          6D CreateFileA
+                         3B0 ReadFileEx
+                         477 SleepEx
+                         3E4 RtlPcToFileHeader
+                         168 GetCommandLineW
+                         1CD GetFinalPathNameByHandleW
+                         39F QueueUserAPC
+                         349 MultiByteToWideChar
+                          5F VerifyVersionInfoW
+                         4A1 VerSetConditionMask
+                         3D6 ResetEvent
+
+    ADVAPI32.dll
+             140044000 Import Address Table
+             140071608 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          DA EventWrite
+                          D7 EventRegister
+                          5A ConvertSidToStringSidW
+                           1 LookupAccountSidW
+                         107 GetSidIdentifierAuthority
+                          63 CopySid
+                         135 IsValidSecurityDescriptor
+                          F2 GetLengthSid
+                           0 LookupAccountNameW
+                          69 CreateProcessAsUserW
+                         1E9 RegDeleteTreeA
+                         237 RevertToSelf
+                         1D4 RegCloseKey
+                         200 RegOpenCurrentUser
+                         1DC RegCreateKeyExA
+                         1E2 RegDeleteKeyExA
+                         1F1 RegEnumKeyExW
+                         125 ImpersonateLoggedOnUser
+                         1EA RegDeleteTreeW
+                         202 RegOpenKeyExA
+                         203 RegOpenKeyExW
+                         20F RegQueryValueExW
+                          70 CreateWellKnownSid
+                         1DD RegCreateKeyExW
+                         137 IsWellKnownSid
+                         21F RegSetValueExW
+                         194 OpenProcessToken
+                          49 CheckTokenMembership
+                          BC DuplicateToken
+                          5F ConvertStringSecurityDescriptorToSecurityDescriptorW
+                          BD DuplicateTokenEx
+                         10C GetTokenInformation
+                         196 OpenSCManagerW
+                         258 SetServiceStatus
+                         229 RegisterServiceCtrlHandlerW
+                         25C StartServiceA
+                         25E StartServiceCtrlDispatcherW
+                         198 OpenServiceW
+
+    CRYPT32.dll
+             140044138 Import Address Table
+             140071740 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          DE CryptStringToBinaryA
+                          C3 CryptProtectData
+                          E1 CryptUnprotectData
+                          7C CryptBinaryToStringA
+
+    WS2_32.dll
+             1400445C0 Import Address Table
+             140071BC8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          30 WSAGetOverlappedResult
+                             Ordinal    21
+                             Ordinal     6
+                             Ordinal    23
+                          48 WSARecv
+                             Ordinal     3
+                          26 WSADuplicateSocketW
+                          57 WSASocketW
+                             Ordinal   111
+                             Ordinal   115
+                          4D WSASend
+
+    USER32.dll
+             1400445A8 Import Address Table
+             140071BB0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          2F GetWindowPlacement
+                          5B ShowWindow
+
+  Summary
+
+       35000 .data
+        4000 .pdata
+       30000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       43000 .text

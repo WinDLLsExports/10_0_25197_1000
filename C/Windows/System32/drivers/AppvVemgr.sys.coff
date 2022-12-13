@@ -1,0 +1,177 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\AppvVemgr.sys
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    FLTMGR.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C00250A8 Import Address Table
+             1C00254F0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         541 KeReleaseMutex
+                         97B RtlPrefixUnicodeString
+                          9A EtwWriteTransfer
+                         948 RtlLengthSid
+                         964 RtlNumberGenericTableElementsAvl
+                         354 IoFileObjectType
+                          8B EtwActivityIdControl
+                         564 KeSetEvent
+                          BD ExAllocatePool2
+                         BA3 ZwQueryInformationToken
+                         6C6 ObReferenceObjectByHandle
+                         887 RtlEnumerateGenericTableAvl
+                         145 ExReleaseResourceLite
+                         B46 ZwDeleteKey
+                         B50 ZwEnumerateKey
+                         854 RtlCopySid
+                         32D IoCreateFile
+                         459 IofCallDriver
+                         BB5 ZwQueryValueKey
+                          EE ExFreePoolWithTag
+                         4D8 KeInitializeEvent
+                         88C RtlEqualSid
+                         BF4 ZwTerminateProcess
+                         590 KeWaitForSingleObject
+                         B24 ZwClose
+                         BEE ZwSetValueKey
+                         A43 SeExports
+                         104 ExInitializeResourceLite
+                         B7B ZwOpenProcess
+                         B76 ZwOpenKey
+                         4FA KeLeaveCriticalRegion
+                         BA8 ZwQueryKey
+                         B47 ZwDeleteValueKey
+                         912 RtlIntegerToUnicodeString
+                         342 IoDeleteDevice
+                         344 IoDeleteSymbolicLink
+                          94 EtwUnregister
+                         45A IofCompleteRequest
+                         335 IoCreateSymbolicLink
+                          8F EtwRegister
+                         375 IoGetDeviceObjectPointer
+                         8BF RtlGUIDFromString
+                         88E RtlEqualUnicodeString
+                         4DC KeInitializeMutex
+                         C5C _wcsicmp
+                         CB9 wcstoul
+                         7E0 PsSetCreateProcessNotifyRoutineEx
+                          6F DbgPrint
+                         CB5 wcsrchr
+                         90A RtlInsertElementGenericTableAvl
+                         C04 __C_specific_handler
+                         C59 _vsnwprintf
+                         480 KeAcquireSpinLockRaiseToDpc
+                         4C4 KeGetCurrentIrql
+                         81D RtlAppendUnicodeStringToString
+                          92 EtwSetInformation
+                         81E RtlAppendUnicodeToString
+                         4E0 KeInitializeSpinLock
+                         544 KeReleaseSpinLock
+                         757 PsGetCurrentProcessId
+                         75F PsGetCurrentThreadId
+                         5E6 MmGetSystemRoutineAddress
+                         6C1 ObOpenObjectByPointer
+                         328 IoCreateDevice
+                         349 IoDeviceObjectType
+                         BE7 ZwSetSecurityObject
+                         9B4 RtlSetDaclSecurityDescriptor
+                         3AD IoIsWdmVersionAvailable
+                         808 RtlAddAccessAllowedAce
+                         807 RtlAbsoluteToSelfRelativeSD
+                         CA9 wcschr
+                          C1 ExAllocatePoolWithTag
+                         C5F _wcsnicmp
+                         861 RtlCreateSecurityDescriptor
+                         947 RtlLengthSecurityDescriptor
+                         C44 _snwprintf
+                         A29 SeCaptureSecurityDescriptor
+                         8E1 RtlGetSaclSecurityDescriptor
+                         8DE RtlGetOwnerSecurityDescriptor
+                         8D4 RtlGetGroupSecurityDescriptor
+                         8CC RtlGetDaclSecurityDescriptor
+                         C3E _purecall
+                         307 IoBuildDeviceIoControlRequest
+                          AA ExAcquireResourceSharedLite
+                         94F RtlLookupElementGenericTableAvl
+                         B33 ZwCreateKey
+                         8FC RtlInitUnicodeString
+                          A9 ExAcquireResourceExclusiveLite
+                         8BE RtlFreeUnicodeString
+                         6D6 ObfDereferenceObject
+                         84A RtlConvertSidToUnicodeString
+                         B52 ZwEnumerateValueKey
+                         4AD KeEnterCriticalRegion
+                          D7 ExDeleteResourceLite
+                         B7D ZwOpenProcessTokenEx
+                         872 RtlDeleteElementGenericTableAvl
+                         904 RtlInitializeGenericTableAvl
+                         4A4 KeDelayExecutionThread
+                         841 RtlCompareUnicodeString
+                         1FD FsRtlIsNameInExpression
+                         A00 RtlValidSid
+
+    FLTMGR.SYS
+             1C0025000 Import Address Table
+             1C0025448 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          63 FltFreeSecurityDescriptor
+                          2A FltCloseCommunicationPort
+                          E7 FltSendMessage
+                          CD FltQueueGenericWorkItem
+                          14 FltAttachVolume
+                          73 FltGetFilterFromName
+                          FD FltStartFiltering
+                          93 FltGetVolumeFromName
+                          D8 FltReleaseFileNameInformation
+                          47 FltDetachVolume
+                          32 FltCreateCommunicationPort
+                          16 FltBuildDefaultSecurityDescriptor
+                          AD FltObjectDereference
+                          29 FltCloseClientPort
+                          11 FltAllocateGenericWorkItem
+                          70 FltGetFileNameInformationUnsafe
+                          D2 FltRegisterFilter
+                         107 FltUnregisterFilter
+                          51 FltEnumerateInstances
+                          60 FltFreeGenericWorkItem
+
+  Section contains the following exports for AppvVemgr.sys
+
+    00000000 characteristics
+    F823DD2B time date stamp
+        0.00 version
+           1 ordinal base
+           1 number of functions
+           1 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00014880 VeMgrLookupProcess
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        2000 .idata
+        1000 .pdata
+        9000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       19000 .text
+        1000 GFIDS
+        1000 INIT
+        2000 PAGE
+        1000 fothk

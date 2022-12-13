@@ -1,0 +1,456 @@
+                $PSBoundParameters['OutBuffer'] = 1
+            $outBuffer = $null
+            $PSBoundParameters['OutBuffer'] = 1
+            $scriptCmd = {& $wrappedCmd @PSBoundParameters }
+            $steppablePipeline = $scriptCmd.GetSteppablePipeline($myInvocation.CommandOrigin)
+            $steppablePipeline.Begin($PSCmdlet)
+            $steppablePipeline.End()
+            $steppablePipeline.Process($_)
+            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Microsoft.PowerShell.Core\Invoke-Command', [System.Management.Automation.CommandTypes]::Cmdlet)
+            {
+            }
+            if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer))
+            Test-Caller -CallStack (Get-PSCallStack)
+            throw
+        ${AllowRedirection},
+        ${ApplicationName},
+        ${ArgumentList},
+        ${AsJob},
+        ${Authentication},
+        ${CertificateThumbprint})
+        ${ComputerName},
+        ${ConfigurationName},
+        ${ConnectingTimeout},
+        ${ConnectionUri},
+        ${ContainerId},
+        ${Credential},
+        ${EnableNetworkAccess},
+        ${FilePath},
+        ${HideComputerName},
+        ${HostName},
+        ${InDisconnectedSession},
+        ${InputObject},
+        ${JobName},
+        ${KeyFilePath},
+        ${NoNewScope},
+        ${Port},
+        ${RemoteDebug},
+        ${RunAsAdministrator},
+        ${ScriptBlock},
+        ${Session},
+        ${SessionName},
+        ${SessionOption},
+        ${SSHConnection},
+        ${SSHTransport},
+        ${Subsystem},
+        ${ThrottleLimit},
+        ${UserName},
+        ${UseSSL},
+        ${VMId},
+        ${VMName},
+        $CallStack
+        $outBuffer = $null
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters }
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($myInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+        $steppablePipeline.End()
+        $steppablePipeline.Process($_)
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Microsoft.PowerShell.Utility\Invoke-Expression', [System.Management.Automation.CommandTypes]::Cmdlet)
+        [Alias('Args')]
+        [Alias('Cn')]
+        [Alias('Command')]
+        [Alias('Disconnected')]
+        [Alias('HCN')]
+        [Alias('IdentityFilePath')]
+        [Alias('PSPath')]
+        [Alias('URI','CU')]
+        [Alias('VMGuid')]
+        [guid[]]
+        [hashtable[]]
+        [int]
+        [Parameter(Mandatory=$true)]
+        [Parameter(ParameterSetName='ComputerName')]
+        [Parameter(ParameterSetName='ComputerName', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='ComputerName', Position=0)]
+        [Parameter(ParameterSetName='ComputerName', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='ContainerId')]
+        [Parameter(ParameterSetName='ContainerId', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='ContainerId', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='ContainerId', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathComputerName')]
+        [Parameter(ParameterSetName='FilePathComputerName', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='FilePathComputerName', Position=0)]
+        [Parameter(ParameterSetName='FilePathComputerName', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathContainerId')]
+        [Parameter(ParameterSetName='FilePathContainerId', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='FilePathContainerId', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathContainerId', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathRunspace')]
+        [Parameter(ParameterSetName='FilePathRunspace', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='FilePathRunspace', Position=0)]
+        [Parameter(ParameterSetName='FilePathSSHHost')]
+        [Parameter(ParameterSetName='FilePathSSHHost', Mandatory=$true)]
+        [Parameter(ParameterSetName='FilePathSSHHostHash')]
+        [Parameter(ParameterSetName='FilePathSSHHostHash', Mandatory=$true)]
+        [Parameter(ParameterSetName='FilePathUri')]
+        [Parameter(ParameterSetName='FilePathUri', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='FilePathUri', Position=0)]
+        [Parameter(ParameterSetName='FilePathUri', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathVMId')]
+        [Parameter(ParameterSetName='FilePathVMId', Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathVMId', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='FilePathVMId', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathVMId', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathVMName')]
+        [Parameter(ParameterSetName='FilePathVMName', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='FilePathVMName', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='FilePathVMName', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='InProcess')]
+        [Parameter(ParameterSetName='InProcess', Mandatory=$true, Position=0)]
+        [Parameter(ParameterSetName='Session')]
+        [Parameter(ParameterSetName='Session', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='Session', Position=0)]
+        [Parameter(ParameterSetName='SSHHost')]
+        [Parameter(ParameterSetName='SSHHost', Mandatory=$true)]
+        [Parameter(ParameterSetName='SSHHost', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='SSHHostHashParam')]
+        [Parameter(ParameterSetName='SSHHostHashParam', Mandatory=$true)]
+        [Parameter(ParameterSetName='SSHHostHashParam', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='Uri')]
+        [Parameter(ParameterSetName='Uri', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='Uri', Position=0)]
+        [Parameter(ParameterSetName='Uri', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='VMId')]
+        [Parameter(ParameterSetName='VMId', Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='VMId', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='VMId', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='VMId', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='VMName')]
+        [Parameter(ParameterSetName='VMName', Mandatory=$true, Position=1)]
+        [Parameter(ParameterSetName='VMName', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ParameterSetName='VMName', ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ValueFromPipeline=$true)]
+        [pscredential]
+        [psobject]
+        [scriptblock]
+        [string[]]
+        [string]
+        [switch]
+        [System.Management.Automation.CallStackFrame[]]
+        [System.Management.Automation.CredentialAttribute()]
+        [System.Management.Automation.Remoting.PSSessionOption]
+        [System.Management.Automation.Runspaces.AuthenticationMechanism]
+        [System.Management.Automation.Runspaces.PSSession[]]
+        [System.Object[]]
+        [uri[]]
+        [ValidateNotNull()]
+        [ValidateNotNullOrEmpty()]
+        [ValidateRange(1, 65535)]
+        [ValidateSet('true')]
+        {
+        }
+        } catch {
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer))
+        Test-Caller -CallStack (Get-PSCallStack)
+        throw
+        throw 'Invoke-Expression cannot be used in a script'
+        try {
+    ${Command})
+    $caller = $CallStack[1]
+    $location = $caller.Location
+    )
+    [CmdletBinding(DefaultParameterSetName='InProcess', HelpUri='https://go.microsoft.com/fwlink/?LinkID=2096789', RemotingCapability='OwnedByCommand')]
+    [CmdletBinding(HelpUri='https://go.microsoft.com/fwlink/?LinkID=2097030')]
+    [Parameter(Mandatory=$true, Position=0, ValueFromPipeline=$true)]
+    [string]
+    {
+    }
+    } catch {
+    begin
+    end
+    if ($location -eq '<No file>') {
+    'Invoke-Command'
+    'Invoke-Expression'
+    param(
+    process
+    try {
+    Write-Verbose -Message $('caller: ' + $location) -Verbose
+!This program cannot be run in DOS mode.
+#Blob
+#GUID
+#Strings
+$276fbfc1-d71f-4619-a7c1-0181077ee283
+(?i)(.*(invoke-expression|invoke-command|\$\([\b\s]*iex|\$\([\b\s]*icm|\[char\]).*)|(^[\b\s]*&.*)|(.*;[\b\s]*&.*)|(\[system\.)|("|')
+*Microsoft (R) Windows (R) Operating System
+.ctor
+.NETFramework,Version=v4.5
+.text
+@.reloc
+_CorDllMain
+`.rsrc
+<Module>
+=An error written by a cmdlet into the PowerShell error stream
+000004b0
+10.0.0.0
+10.0.10011.16384
+10.0.25197.1000
+9Copyright (c) Microsoft Corporation. All rights reserved.
+ActiveModeVar
+AddCommand
+AddParameter
+AddScript
+AddXmlToReport
+Append
+AppendChild
+Assembly Version
+AssemblyCompanyAttribute
+AssemblyCopyrightAttribute
+AssemblyDelaySignAttribute
+AssemblyFileVersionAttribute
+AssemblyKeyFileAttribute
+AssemblyProductAttribute
+AsyncCallback
+begin
+BeginStop
+Boolean
+Cancel
+ClassInterfaceAttribute
+ClassInterfaceType
+Clear
+CLSCompliantAttribute
+CodeGeneration
+Column Number
+CompanyName
+CompilationRelaxationsAttribute
+ComVisibleAttribute
+Concat
+ConvertScriptErrorToXml
+ConvertStringToXml
+Copyright (c) Microsoft Corporation. All rights reserved.
+Create
+CreateAttribute
+CreateDefault
+CreateElement
+CreateRunspace
+CreateTextNode
+CreateXmlDeclaration
+culture
+CultureInfo
+Debug
+DebuggableAttribute
+DebuggingModes
+engine
+EngineVar
+Enter
+Error Text
+ErrorRecord
+ErrorRecordDescription
+ErrorRecordName
+ErrorRecordName?
+errorString
+errorXml
+EscapeSingleQuotedStringContent
+ExecuteCommand
+Export-ModuleMember -Function @(
+FileDescription
+FileVersion
+function Invoke-Command {
+function Invoke-Expression {
+function Test-Caller {
+get_Attributes
+get_Commands
+get_Count
+get_CurrentThread
+get_Error
+get_FullyQualifiedErrorId
+get_HasValue
+get_InvocationInfo
+get_InvocationStateInfo
+get_Item
+get_OffsetInLine
+get_OuterXml
+get_Reason
+get_ScriptLineNumber
+get_ScriptName
+get_SessionStateProxy
+get_State
+get_Streams
+GetCurrentDirectory
+get-diaginput
+GetExecutingAssembly
+GetFileName
+GetString
+GetTypeFromHandle
+GetValue
+GetValueOrDefault
+GuidAttribute
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\ScriptedDiagnostics
+IAsyncResult
+Initialize
+InitializeRunspace
+InitialSessionState
+InitialSessionStateEntryCollection`1
+Int32
+InteractivityAgent
+InternalName
+Invoke
+IScriptedDiagnosticHost
+IScriptedDiagnosticInteraction
+IsNullOrEmpty
+Ky?!Qac
+LegalCopyright
+Line Number
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+m_Engine
+m_Lock
+m_PowerShell
+m_ResetScriptCommand
+m_ResourceManager
+m_ResultPath
+m_Runspace
+m_SetScriptCommand
+ManagedHost
+ManagedHostResources
+ManagedHostResources.resources
+Marshal
+MatchCollection
+Matches
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+Microsoft.PowerShell
+Microsoft.Win32
+Microsoft.Windows.Diagnosis
+Microsoft.Windows.Diagnosis.Commands
+Microsoft.Windows.Diagnosis.Commands.GetDiagInput
+Microsoft.Windows.Diagnosis.Commands.UpdateDiagReport
+Microsoft.Windows.Diagnosis.Commands.UpdateDiagRootcause
+Microsoft.Windows.Diagnosis.Commands.WriteDiagProgress
+Microsoft.Windows.Diagnosis.Commands.WriteDiagTelemetry
+Microsoft.Windows.Diagnosis.SDCommon
+Microsoft.Windows.Diagnosis.SDHost
+Microsoft.Windows.Diagnosis.SDHost.dll
+Microsoft.Windows.Diagnosis.SDHost.pdb
+Monitor
+mscoree.dll
+mscorlib
+NeutralResourcesLanguageAttribute
+Nullable`1
+Od:\os\public\x86fre\onecoreuap\internal\sdk\ref\strongnamekeys\fake\windows.snk
+OriginalFilename
+PADPADP
+param(
+parameterNames
+parameterValues
+PowerShellException
+powerShellVersion
+process
+ProductName
+ProductVersion
+PSAuthorizationManager
+PSCommand
+PSDataCollection`1
+PSDataStreams
+PSInvocationState
+PSInvocationStateInfo
+PSObject
+RealMode
+RegexOptions
+Registry
+resultPath
+RSDSp
+RunScript
+RunspaceFactory
+RuntimeCompatibilityAttribute
+RuntimeTypeHandle
+s_Data
+s_DefaultLocation
+s_E_FAIL
+s_GetInput
+s_LoadPowershellCmdletProxiesCommand
+s_Name
+s_ParameterValueRegex
+s_Path
+s_PowershellCmdletProxies
+s_PowerShellError
+s_RegistryKeyProtectionDisabled
+s_RegistryPathProtectionDisabled
+s_ScriptColumn
+s_ScriptError
+s_ScriptErrorText
+s_ScriptException
+s_ScriptLine
+s_ScriptName
+s_SDIAG_E_CANCELLED
+s_SDIAG_E_MANAGEDHOST
+s_SDIAG_E_POWERSHELL
+s_SDIAG_E_SCRIPT
+s_SetLocation
+s_SetProgress
+s_UpdateReport
+s_UpdateRootcause
+s_WriteTelmetry
+Script
+Script Error
+ScriptColumn
+ScriptColumnM
+ScriptedDiagnostics
+ScriptError
+scriptError
+ScriptErrorText
+ScriptErrorText\
+ScriptException
+ScriptLine
+ScriptLineh
+ScriptName
+ScriptNameu
+scriptPath
+SendErrorToReport
+SessionStateCmdletEntry
+SessionStateCommandEntry
+set_AuthorizationManager
+set_Commands
+set_CurrentCulture
+set_CurrentUICulture
+set_InnerText
+set_Runspace
+set-location
+SetVariable
+StringFileInfo
+System
+System.Collections.ObjectModel
+System.Diagnostics
+System.Globalization
+System.IO
+System.Management.Automation
+System.Management.Automation.Language
+System.Management.Automation.Runspaces
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.InteropServices
+System.Runtime.Versioning
+System.Text.RegularExpressions
+System.Threading
+System.Xml
+tagName
+TargetFrameworkAttribute
+ThrowExceptionForHR
+ToString
+Translation
+TurnOffCheck
+update-diagreport
+UpdateDiagRootCause
+update-diagrootcause
+UTF-8
+v4.0.30319
+VarFileInfo
+VS_VERSION_INFO
+WrapNonExceptionThrows
+write-diagprogress
+write-diagtelemetry
+XmlAttribute
+XmlAttributeCollection
+XmlDocument
+XmlElement
+XmlNode
+XmlText

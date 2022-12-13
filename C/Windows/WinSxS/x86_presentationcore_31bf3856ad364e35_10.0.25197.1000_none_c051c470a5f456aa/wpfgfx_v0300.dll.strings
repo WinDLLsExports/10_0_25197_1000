@@ -1,0 +1,4074 @@
+      
+        
+            
+             
+                    
+                                + Data.AttenAndRange.y * DistToLight
+                                + Data.AttenAndRange.z * DistToLight * DistToLight,
+                                1.0);
+                              * atten
+                              * pow(max(dot(TransformedNormal, HalfVector), 0), SpecularPower)
+                              * spot
+                              * step(DistToLight, Data.AttenAndRange.w);
+                            + Data.AttenAndRange.y * DistToLight
+                            + Data.AttenAndRange.z * DistToLight * DistToLight,
+                            1.0);
+                          * atten
+                          * max(dot(TransformedNormal, VecToLight), 0)
+                          * spot
+                          * step(DistToLight, Data.AttenAndRange.w);
+                    - sampleToOriginCrossOriginNorm * sampleToOriginCrossOriginNorm);
+                    // ellipse defining the end of the gradient. When rendering this region
+                    // Ensure that the gradient space does not wrap around,
+                    // Given an infinite precicision machine, we'd never get to this case since
+                    // interpolating with the last stop at the center point.
+                    // This negative region appears when the gradient origin is outside the
+                    // This value for u picks the first texel in the texture.
+                    // we choose the last texel color.
+                    // we do not have an infinite precision machine, so we may still get here.
+                    // we should have skipped the quadratic equation up top. Nevertheless,
+                    u = 1.0f - GradInfoParams.flHalfTexelSizeNormalized;
+                    u = 1.0f;
+                    u = GradInfoParams.flHalfTexelSizeNormalized;
+                //
+                // against integer overflow, so we need to do the check manually.
+                // Refrast & probably hw implement wrapping/clamping logic by first casting
+                // the float to an integer and then doing integer math.  They are not robust
+                {
+                }
+                else                                                         
+                if (u < 0.0)
+                if (u > MAX_RELIABLE_WRAP_VALUE)
+            // ellipse defining the end of the gradient. When rendering this region
+            // This complex region appears when the gradient origin is outside the
+            // we choose the last texel color.
+            {
+            }
+            }   
+            4.0f * (  GradInfoParams.gradientSpanNormalized * GradInfoParams.gradientSpanNormalized * A
+            else
+            if (u < GradInfoParams.flHalfTexelSizeNormalized)
+            u = (2 * A * GradInfoParams.gradientSpanNormalized) / (sqrt(determinant) - B);
+            u = 1.0f - GradInfoParams.flHalfTexelSizeNormalized;
+        );
+        // AttenAndRange.w is the light's range
+        // CosHalfPhiAndCosDiff.x = cos(Phi/2)
+        // CosHalfPhiAndCosDiff.y = cos(Theta/2) - cos(Phi/2)
+        // Get distance (in unit circle) from sample point to the gradient origin:
+        // in WorldView space, the camera is at <0> so just invert the position
+        // normalize L
+        // see brushspan.cpp for an explanation of why the determinant is calculated this way.
+        // the max is to ensure that the attenuation only diminishes the light
+        {
+        }
+        else
+        firstTexelRegionRadiusSquared)
+        float A = dot(sampleToOrigin, sampleToOrigin);
+        float atten = 1.0 / max(Data.AttenAndRange.x
+        float B = 2.0f * dot(GradInfoParams.ptGradOrigin, sampleToOrigin);
+        float determinant = 
+        float DistToLight = length(VecToLight);
+        float rho = max(dot(Data.Direction, VecToLight), 0);
+        float sampleToOriginCrossOriginNorm = dot(sampleToOrigin, ptGradOriginPerp);
+        float spot = saturate((rho - Data.CosHalfPhiAndCosDiff.x) / Data.CosHalfPhiAndCosDiff.y);
+        float2 ptGradOriginPerp = {GradInfoParams.ptGradOrigin.y, -GradInfoParams.ptGradOrigin.x};
+        float2 sampleToOrigin = samplePos - GradInfoParams.ptGradOrigin;
+        float3 HalfVector = normalize(normalize(-TransformedPosition.xyz) + Data.Direction);
+        float3 HalfVector = normalize(normalize(-TransformedPosition.xyz) + VecToLight);
+        if (0.0f > determinant)
+        Output.Diffuse.rgb += Data.Color.rgb
+        Output.Diffuse.rgb += Data.Color.rgb * pow(max(dot(HalfVector, TransformedNormal), 0), SpecularPower);
+        PixelShader  = compile ps_2_0 PixelShader();
+        sampleGradientTexCoord = GradInfoParams.flHalfTexelSizeNormalized;
+        u = GradInfoParams.flHalfTexelSizeNormalized;
+        VecToLight /= DistToLight;
+        VertexShader = compile vs_2_0 VertexShader();
+    #define MAX_RELIABLE_WRAP_VALUE 32768
+    )
+    ) : COLOR
+    //
+    //       an instruction (slt) that returns 0 or 1 and multiplies that times the output color
+    //       textures. The card needs to interpolate different 1/w values.
+    // AttenAndRange.w is the light's range
+    // CosHalfPhiAndCosDiff.x = cos(Phi/2)
+    // CosHalfPhiAndCosDiff.y = cos(Theta/2) - cos(Phi/2)
+    // Ensure that the gradient space does not wrap around,
+    // Get distance (in unit circle) from sample point to the gradient origin:
+    // high risk of overflowing.
+    // Initialize the output alpha because the specular
+    // interpolating with the last stop at the center point.
+    // lighting functions ignore it.
+    // normalize L
+    // NOTE: Dividing the output position by w here will completely break
+    // Note: This does not actually generate a branch. The compiler translates this into
+    // optimizes away what's not used.
+    // Right now, only COLOR0 or NORMAL is used in a pass. The compiler
+    // Simple radial gradient
+    // supported since that's what refrast has.
+    // the max is to ensure that the attenuation only diminishes the light
+    // There are overflow issues in refrast and hw implementation of clamping.
+    // Therefore we need to clamp ourselves in areas of the shader that have a
+    // These will be optimized away when not in use
+    // We will go with 32768 as the maximum number of wraps that's support in 
+    {
+    }
+    }    
+    BlendColor = Diffuse;
+    CalcAmbientLighting_VS_ConstData Data,
+    color *= sampleGradientColor;
+    color *= tex1D(TextureSampler, u);
+    curPixelColor *= BlendColor;
+    curPixelColor *= data.alpha.a;
+    curPixelColor *= data.diffuse;
+    curPixelColor *= sampledColor.a;
+    curPixelColor *= sampledColor;
+    curPixelColor *= sampledColorAvg;
+    curPixelColor.a *= data.alpha.a;
+    curPixelColor.a *= Diffuse.a;
+    curPixelColor.rgb *= sampledColor.rgb;
+    curPixelColor.rgb *= sampledColorAvg.rgb;
+    else
+    float    SpecularPower;
+    float atten = 1.0 / max(Data.AttenAndRange.x
+    float DistToLight = length(VecToLight);
+    float distToOriginSqr = uc_dx*uc_dx + uc_dy*uc_dy;
+    float firstTexelRegionRadiusSquared = GradInfoParams.flHalfTexelSizeNormalized * GradInfoParams.flHalfTexelSizeNormalized;
+    float rho = max(dot(Data.Direction, VecToLight), 0);
+    float sampleGradientTexCoord = sqrt(distToOriginSqr);
+    float spot = saturate((rho - Data.CosHalfPhiAndCosDiff.x) / Data.CosHalfPhiAndCosDiff.y);
+    float u;
+    float uc_dx = samplePos.x;
+    float uc_dy = samplePos.y;
+    float2 inputUV,
+    float2 samplePos,
+    float2 sampleToFirstTexelRegionCenter = samplePos - GradInfoParams.ptFirstTexelRegionCenter;
+    float2 unitUMajor = unitUMinor * 3;
+    float2 unitUMinor = float2(data.ddxyEstimated.x / 8, 0);
+    float2 unitVMajor = unitVMinor * 3;
+    float2 unitVMinor = float2(0, data.ddxyEstimated.y / 8);
+    float2 uv = inputUV;
+    float2 uv;
+    float2 UV_0     : TEXCOORD0,
+    float2 UV_1     : TEXCOORD1
+    float3 Normal   : NORMAL,
+    float3 VecToLight = Data.Position - TransformedPosition;
+    float4 BlendColor,
+    float4 curColor = Diffuse;
+    float4 Diffuse  : COLOR0
+    float4 Diffuse  : COLOR0,
+    float4 Diffuse  : COLOR0;
+    float4 Diffuse,
+    float4 Position : POSITION,
+    float4 Position : POSITION;
+    float4 sampledColor = tex2D(TextureSampler, uv);
+    float4 sampledColor0 = tex2D(TextureSampler, uv01.xy);
+    float4 sampledColor1 = tex2D(TextureSampler, uv01.zw);
+    float4 sampledColor2 = tex2D(TextureSampler, uv23.xy);
+    float4 sampledColor3 = tex2D(TextureSampler, uv23.zw);
+    float4 sampledColorAvg = (sampledColor0 + sampledColor1 + sampledColor2 + sampledColor3) / 4;
+    float4 sampleGradientColor;
+    float4 WorldPos2D,
+    float4x4 View, WorldView, WorldViewProj, WorldViewAdjTrans;
+    if (dot(Data.Direction, TransformedNormal) > 0)
+    if (dot(sampleToFirstTexelRegionCenter, sampleToFirstTexelRegionCenter) <
+    if (dot(VecToLight, TransformedNormal) > 0)
+    if (sampleGradientTexCoord < GradInfoParams.flHalfTexelSizeNormalized)
+    in    CalcDiffuseDirectionalLighting_VS_ConstData Data,
+    in    CalcDiffusePointLighting_VS_ConstData Data,
+    in    CalcDiffuseSpotLighting_VS_ConstData Data,
+    in    CalcSpecularDirectionalLighting_VS_ConstData Data,
+    in    CalcSpecularPointLighting_VS_ConstData Data,
+    in    CalcSpecularSpotLighting_VS_ConstData Data,
+    in    float    SpecularPower,
+    in    float2  uv,
+    in    float3   TransformedNormal,
+    in    float4   TransformedPosition,
+    in    float4x4 mat4x4WorldViewAdjTransTransform,
+    in    float4x4 mat4x4WorldViewProjTransform,
+    in    float4x4 mat4x4WorldViewTransform,
+    in    GetSpecularPower_VS_ConstData Data,
+    in    sampler TextureSampler,
+    in  Get3DTransforms_VS_ConstData Data,
+    inout float2 outputUV
+    inout float3   Normal,
+    inout float3 TransformedNormal
+    inout float4   Position,
+    inout float4  curPixelColor
+    inout float4 BlendColor
+    inout float4 color
+    inout float4 curPixelColor
+    inout float4 outputUV01,
+    inout float4 outputUV23
+    inout VertexShaderOutput Output
+    mat4x4WorldViewAdjTransTransform = Data.mat4x4WorldViewAdjTransTransform;
+    mat4x4WorldViewProjTransform     = Data.mat4x4WorldViewProjTransform;
+    mat4x4WorldViewTransform         = Data.mat4x4WorldViewTransform;
+    MultiplyAlpha_NonPremultiplied_PS_ConstData data,
+    MultiplyAlpha_PS_ConstData data,
+    MultiplyAlphaMask_Transform_InputUV_VS_ConstData data,
+    MultiplyConstant_PS_ConstData data,
+    MultiplyRadialGradientCentered_PS_ConstData GradInfoParams,
+    MultiplyRadialGradientNonCentered_PS_ConstData GradInfoParams,
+    MultiplySuperSampleTexture_NoTransform_InputUV_VS_ConstData data,
+    MultiplySuperSampleTexture_Transform_InputUV_VS_ConstData data,
+    MultiplyTexture_Transform_InputUV_VS_ConstData data,
+    Normal          = normalize(mul(Normal, (float3x3)mat4x4WorldViewAdjTransTransform));
+    out   float SpecularPower,
+    out float4x4 mat4x4WorldViewAdjTransTransform
+    out float4x4 mat4x4WorldViewProjTransform,
+    out float4x4 mat4x4WorldViewTransform,
+    Output.Diffuse = Data.Color;
+    Output.Diffuse = float4(1.0, 1.0, 1.0, 1.0);
+    Output.Diffuse.a = 0.0;
+    Output.Diffuse.rgb += Data.Color.rgb
+    Output.Diffuse.rgb += Data.Color.rgb * max(dot(TransformedNormal, Data.Direction), 0);
+    Output.Diffuse.rgb = min(Output.Diffuse.rgb, 1.0);
+    Output.Position = mul(Position, mat4x4WorldViewProjTransform);
+    Output.Position = mul(WorldPos2D, Data.mat4x4WorldToProjection);
+    outputUV = inputUV;
+    outputUV.x = inputUV.x*data.mat3x2TextureTransform[0][0] + inputUV.y*data.mat3x2TextureTransform[1][0] + data.mat3x2TextureTransform[2][0];
+    outputUV.y = inputUV.x*data.mat3x2TextureTransform[0][1] + inputUV.y*data.mat3x2TextureTransform[1][1] + data.mat3x2TextureTransform[2][1];
+    outputUV01.xy = uv + unitUMajor - unitVMinor;
+    outputUV01.zw = uv - unitUMinor - unitVMajor;
+    outputUV23.xy = uv - unitUMajor + unitVMinor;
+    outputUV23.zw = uv + unitUMinor + unitVMajor;
+    pass P0
+    Position        /= Position.w;
+    Position        = mul(Position, mat4x4WorldViewTransform);
+    return curColor;
+    return Output;
+    sampleGradientColor = tex1D(TextureSampler, sampleGradientTexCoord);
+    sampler TextureSampler,
+    SpecularPower = Data.SpecularPower.x;
+    Transform2D_VS_ConstData Data,
+    TransformedNormal *= -1.0;
+    uv.x = inputUV.x*data.mat3x2TextureTransform[0][0] + inputUV.y*data.mat3x2TextureTransform[1][0] + data.mat3x2TextureTransform[2][0];
+    uv.y = inputUV.x*data.mat3x2TextureTransform[0][1] + inputUV.y*data.mat3x2TextureTransform[1][1] + data.mat3x2TextureTransform[2][1];
+    VecToLight /= DistToLight;
+    VertexShaderOutput Output = (VertexShaderOutput)0;
+   float2 uv,
+   float4 uv01,
+   float4 uv23,
+   inout float4 curPixelColor
+   sampler TextureSampler,
+  !!!"""##$$$%%%&&&'''((())))***+++,,,,---....////000011122223333344445555666677777888899999:::::;;;;;<<<<<=====>>>>>?????@@@@@AAAAABBBBBBCCCCCCDDDDDEEEEEEFFFFFFGGGGGGHHHHHHIIIIIIJJJJJJKKKKKKKLLLLLLMMMMMMMNNNNNNOOOOOOOPPPPPPPQQQQQQQRRRRRRRSSSSSSSTTTTTTTTUUUUUUUVVVVVVVWWWWWWWWXXXXXXXXYYYYYYYZZZZZZZZ[[[[[[[[\\\\\\\\\]]]]]]]]^^^^^^^^_________````````aaaaaaaaabbbbbbbbbccccccccdddddddddeeeeeeeeeefffffffffggggggggghhhhhhhhhhiiiiiiiiijjjjjjjjjjkkkkkkkkkklllllllllmmmmmmmmmmnnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqqrrrrrrrrrrssssssssssstttttttttttuuuuuuuuuuuvvvvvvvvvvvwwwwwwwwwwwxxxxxxxxxxxyyyyyyyyyyyyzzzzzzzzzzz{{{{{{{{{{{{|||||||||||}}}}}}}}}}}}~~~~~~~~~~~~
+  eb 0x%p 'p';g  -- terminate Process
+  eb 0x%p 't';g  -- terminate Thread
+  g                    -- Go (continue)
+  tc=
+  tE=
+ !"#$
+ !"#$%
+ !"#$%;&&&'(('((;)*+,-./012;345678;;;;;;;;;;;;;;;;;;;;9:
+ !"#777777777777777777$$%&&''()*)7))77+7',),)-./0123456
+ .NET Framework
+ ;^,r
+ ;F,r
+ ;G,r
+ ;K,s3
+ `tB=
+ {BU)
+ 2D2h2
+ K J  #
+ Microsoft Corporation.  All rights reserved.
+ Microsoft Operations Puerto Rico1
+ or regular debugging.
+ pt*=
+ pt+=
+ pt1=
+ r-h\
+ SVW3
+ SVWj
+! !(!!"#")""
+!! ##%%&&$$''++(**),,,//
+!!!!!!""""""
+!$&(*,.02468:<>@BCEGIKLNPQSUVXZ[]^`acdfgijlmopqstuwxy{|}~
+!~ !~
+!9!;;
+!This program cannot be run in DOS mode.
+!XlX@
+""*"**3f
+#$%,-./
+#2B9r5B
+$$$$&&
+$;%L0r
+$`2X`F
+$0D0P0X0
+$2`3l3s3
+$Microsoft Ireland Operations Limited1&0$
+$SVW3
+$tZ=H
+$WWWWj
+%+7DP\
+'%s' : macro redefinition
+'%s' already has a body
+'%s' is not a valid instruction in this shader version
+'%s' is not a valid register name.  Registers must start with v_, r_, c_, b_, or i_ depending on the register type. (o_ for vs_3_0 only)
+%s semantic '%s'
+%s semantic '%s' has been deprecated; use '%s%d' instead
+%s semantic '%s' not yet implemented in ps_1_x
+%s semantics '%s' has been deprecated; use '%s%d' instead
+%s X%u: 
+%s%s is not supported on ps_1_%i
+%s%s%u
+%s%s%ux%u
+'%s': %s cannot be declared 'const'
+'%s': %s cannot be declared 'extern'
+'%s': %s cannot be declared 'inline'
+'%s': %s cannot be declared 'shared'
+'%s': %s cannot be declared 'static'
+'%s': %s cannot be declared 'uniform'
+'%s': %s cannot be declared 'uniform out'
+'%s': %s cannot be declared 'volatile'
+'%s': %s cannot be target specific
+'%s': %s cannot have %ss
+'%s': %s cannot have annotations
+'%s': %s cannot have semantics
+'%s': %s must be a literal expression
+'%s': %s must be numeric
+'%s': array dimension must be between 1 and 65536
+'%s': array dimensions must be literal scalar expressions
+'%s': array dimensions of %s must be explicit
+'%s': array dimensions of type must be explicit
+'%s': cannot %sconvert from '%s' to '%s'
+'%s': entrypoint not found
+'%s': extern %s cannot be declared 'static'
+'%s': function does not take %u parameter%s
+'%s': function must return a value
+'%s': function return value differs from prototype
+'%s': function return value missing semantics
+'%s': function return value must be numeric
+'%s': functions cannot be declared 'extern'
+'%s': functions cannot be declared 'uniform'
+'%s': identifier represents a %s, not a %s
+'%s': implicit array missing %s
+'%s': implicit array type does not match %s
+'%s': input parameter '%s' missing semantics
+'%s': intrinsic function does not take %u parameter%s
+'%s': loop control variable used outside for-loop scope conflicts with a previous declaration in the outer scope; most recent definition used
+'%s': missing %s
+'%s': missing default value for parameter '%s'
+'%s': non-numeric uniform %s cannot have %ss
+'%s': output only %s cannot have %ss
+'%s': output paramaters cannot be declared 'const'
+'%s': output parameter '%s' missing semantics
+'%s': output parameter '%s' never assigned a value
+'%s': recursive functions not yet implemented
+'%s': secondary array dimensions must be explicit
+'%s': uniform %s cannot be declared 'static'
+'%s': void function cannot have a semantic
+'%s': void functions cannot return a value
+%sstruct{%u}
+%Thj=>H?@NA  B  C DPQRSE
+&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+&1b1(5
+(%u): 
+(0,0004080<0@0
+(030G0R0i0
+(040<0H0T0\0h0t0|0
+(6`+)-+,-
+(dwFlags & MilRTInitialization::FullScreenNoAutoRotate) == 0
+(m_pvReferencedSystemBits == 0)
+(No kernel debugger is present.) Respond with:
+(SVW3
+(VWQQ
+)(+,-
+))e,}
+)*+,-
+)*+,-./
+)*+,-./}
+){4[]
+)}NO))
+)={()<D
+)474=4
+)5=62
+)8_(u
+)AP^]
+)Microsoft Root Certificate Authority 20100
+)Microsoft Root Certificate Authority 20110
+***  
+***   %s%ls%sSource: `%ls:%ld`
+***   Investigate the stack capture to determine the source of the HRESULT.
+*** Assertion failed: %ls%ls%ls
+**U*UU
+*?*kXIc
+*+,-./
+*0/0A0y0~0
+*0@0E0J0[0
+*0^0m0{0
+,(([)!
+,(,)+
+,{O_<,><d
+,0004080<0@0D0H0L0P0T0X0\0`0d0
+,080@0L0X0`0
+,A]p2A
+./0123Kf567NnOU
+.8_)u
+.rsrc
+.text
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// End of Dynamic Shader Code
+// Fragment Pixel Shader fragments...
+// Fragment Vertex Shader functions...
+// Main Pixel Shader
+// Main Vertex Shader
+// Pixel Fragment Data...
+// Pixel Shader Constant Data
+// Samplers...
+// Technique
+// Vertex Fragment Data...
+// Vertex Shader Constant Data
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+: ;';.;C;I;P;
+:!:G:P:Y:^:d:~:
+:!;C;e;
+:":&:*:.:2:6:::>:B:F:J:N:R:V:Z:^:b:f:j:n:r:v:z:~:
+:":):/:
+:":3:q:v:
+:#:-:::C:O:_:v:
+:#:`:
+:#:3:@:O:\:o:
+:#:u:z:
+:#:U:Z:k:
+:$:(:.:2:8:<:B:F:L:P:X:a:i:y:
+:$:o<
+:$;];
+:$;|<
+:$<A<
+:%:*:A:a:f:}:
+:%:-:2:6:::>:B:F:J:N:R:
+:%;5;Z;q;
+:&;7;`;
+:(:-:>:U:
+:(:Q:v:
+:(;U;
+:)(]=)
+:,;U;E<
+:,P#G
+:.;W<[<_<c<g<k<o<s<w<{<
+::;H;[;l;
+:':+:/:3:7:;:?:C:
+:-:4:::A:M:
+::G~@:
+:;:t:
+:;;@;Q;s;
+:;<)>?
+:;<,>?:;
+:;<=>
+:;<=>?%
+:-;A;U;g;a<
+:-;R;i;
+:];b;t;
+:^:!=V>
+:+:V:
+:<:p:u:
+:=;Y;
+:'=2===H=o=
+:0:;:Y:d:
+:0:f:m:t:
+:1:A:S:w:
+:1:D:K:_:V;
+:1:E:`:v:
+:1;S;)=
+:3:U:w:
+:3<O<j<x<
+:4:@:X:d:|:
+:4:f:z:
+:5;_;
+:5;N;S;
+:55f%%f
+:6;H;N;c;i;z;
+:7:<:L: ;<;B;Q;
+:7;a;|;
+:9:{:
+:9:c:
+:A;F;];
+:A;F;];x;};
+:B:H:O:Y:
+:C:d:i:z:
+:C;^;
+:C;J;m>
+:c;j;o;~;
+:d:p:x:
+:F:M:]:O<
+:f;9u+f
+:h:t:|:
+:I;U;_;k;u;
+:J;B<i<t<z<
+:j;o;
+:k;!< >%?N?n?
+:K;d;i;
+:l:x:
+:O;f;
+:O;z;
+:Q:9;H;
+:q;w;
+:QShP
+:tPSI
+:tQSI
+:V:r;
+:xCQyzC%
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;$;(;,;0;4;8;C;t;x;|;
+; ;$;(;,;0;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;,;8;@;
+; ;3;J;Y;p;
+; ++i)
+;!;1;A;Q;a;n;x;
+;"<z<
+;#<6<=<C<Q<Y<f<l<s<z<
+;#<H<X<_<r<w<
+;$;0;<;D;P;\;d;
+;$;0;8;
+;%;,;2;:;A;G;N;V;};
+;%;?;b;x;
+;&;2;
+;(;,;0;4;D;^;
+;(;4;<;H;T;\;
+;(;f;
+;);4;R;];{;
+;);k;
+;)?7?
+;)<@<|<
+;*<x<
+;*>P>{>
+;,,(,,+,,DE,c,=,?,,,,def
+;,;A;M;T;
+;,vKD,NO
+;.;>;N;^;p;
+;.?J?g?u?
+;.=L=j=
+;/<@<L<X<d<l<p<x<|<
+;:<O<
+;;;@;V;
+;-;3;
+;-;P;U;l;
+;';T;
+;?;U;
+;@<b<
+;]=k={=
+;_Lt6V
+;`<1>
+;`=g=n=
+;|;'=H=
+;~(v_S3
+;+;1;o;
+;+<1<D<H<L<
+;<=;<
+;<=>?
+;'<E<Y<o<
+;'<U<
+;-<y<
+;><+>I>(?
+;0;d;
+;0;T;`;x;
+;2<g<W=y=
+;3;C;[;k;
+;3;N;i;
+;3;Q;d;{;
+;4;R;
+;6;=;D;K;Q;
+;6;d;|;
+;8<<<@<D<H<L<P<T<X<\<`<d<h<l<p<t<x<
+;8<=<D<
+;9;J;\;
+;9;Q;^<
+;9~8v|
+;A s"
+;A(r#
+;A;];o;
+;A<u7
+;A4s0
+;A8uJ
+;ADr"hJ
+;ADr%
+;AHs0
+;AHu 
+;ALtz
+;B uO
+;B<\<a<r<
+;B8u 
+;B8uJ
+;C(v#j j
+;C(v#jPj
+;C|VWru
+;C<H<X<
+;C0tS3
+;Cd}!
+;CLs0
+;CTv"
+;d;h;l;p;
+;D;m;
+;d;x;
+;d<;=
+;D=a=
+;E SVW
+;e<v<
+;F uD
+;F(s2
+;FXv#jPj
+;G0uc9E
+;h;m;
+;H\sS
+;H`s3
+;h=/>u>
+;H8uU
+;HHsS
+;i<|<
+;I<V<`<c=d?w?
+;j;o;
+;K0v&3
+;L$$w
+;L$,}
+;L$,r
+;L<X<`<l<x<
+;N,s!9XHs
+;N>l>t>x>|>
+;NLr)
+;NLv39E
+;O=`=
+;P<\<d<p<|<
+;q<|<
+;QHu.
+;T$(r
+;t<|<
+;tcJtRJtAJt0Jt
+;u<|<
+;V;k<
+;V8w_
+;W;\;a;
+;w8ug
+;X`u6
+;X`ul
+;Y`u);Qtu$
+? ?$?(?,?0?4?8?
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+? ?$?(?,?0?4?8?x?
+? ?3?F?z?
+?!?%?)?-?1?5?9?=?A?E?I?M?Q?U?Y?]?a?e?i?m?q?u?y?}?
+?!?A?a?
+?"?(?.?5?>?D?T?q?z?
+?"?9?{?
+?#?(?9?P?
+?#?0?a?u?
+?#?4?C?
+?%s target does not support texture lookups
+?&?+?B?m?
+?&?A?P?U?_?n?
+?&?U?p?
+?(?4?<?
+?(?A?
+?*?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?
+?,?0?l?p?t?x?|?
+?/?<?J?T?
+?/?L?l?
+??_U@YAPAXI@Z
+??_V@YAXPAX@Z
+?-?4?;?F?M?X?\?`?d?h?l?p?t?x?|?
+?-?D?f?
+?'?t?
+?@?b?
+?@ABC
+?0V0[0b0,1
+?1?G?c?
+?2?O?Z?_?l?{?
+?333333
+?6?=?C?]?d?n?t?{?
+?7?s?{?
+?B?w?
+?D?L?b?
+?d?p?|?
+?f;>tZ
+?F?W?j?
+?internal error: result register invalid
+?O8v?;
+?tb;M
+?te;E
+?V?_?h?m?
+@ ;A 
+@ t =
+@ t"=
+@ t#;
+@ t-=
+@ t==
+@ tf=
+@$;A$t
+@,;A,u*j
+@.reloc
+@;CLr
+@;E |
+@;F(r
+@;F,r
+@;F8r
+@;F8s
+@;FLr
+@[_^]
+@_^[]
+@`;F`
+@<3A<=
+@H;GHu
+@j@X9E
+@l@tF
+@p@9F4s
+@PPWS
+@PWWS
+@Qm6t
+@st?=
+@tt&=
+@tt5=
+@VWj@
+[)~<,D{)
+[0;Z0
+[Et0$
+[v#;E
+[XvG;E
+\$(vr
+\$,+\$$
+\$0RP
+\$P9\$
+\$T+T$
+\$x|4
+\$x|7
+\00_^
+]$VWQQ
+]$VWS
+]):;,)(
+]////////X]
+]:;<=>?[
+]2a2e2i2m2q2u2y2}2
+]9u,u
+]w"t3
+^$;Z$u
+^[YY]
+^\t3S
+^8^[]
+^88^It
+^dPRS
+^T9^\u
+^WRVj
+^X;_Xs
+_ _^[
+_[{:;def?
+_^[Y]
+_^u89CLt
+__clean_type_info_names_internal
+__CppXcptFilter
+__dllonexit
+__FILE__
+__LINE__
+_0C;^
+_adjust_fdiv
+_amsg_exit
+_bias opportunity missed because source was not clamped 0 to 1
+_CIacos
+_CIasin
+_CIatan
+_CIatan2
+_CIcos
+_CIcosh
+_CIexp
+_CIfmod
+_CIlog
+_CIpow
+_CIsin
+_CIsinh
+_CIsqrt
+_CItan
+_CItanh
+_clearfp
+_ConstantTable
+_controlfp
+_copysign
+_crt_debugger_hook
+_decode_pointer
+_encode_pointer
+_encoded_null
+_except_handler4_common
+_finite
+_fpclass
+_initterm
+_initterm_e
+_isnan
+_lock
+_malloc_crt
+_onexit
+_PS_ConstData
+_purecall
+_recalloc
+_resetstkoflw
+_Sampler
+_strdup
+_stricmp
+_unlock
+_VS_ConstData
+_vsnprintf
+_vsnwprintf
+_wcsicmp
+_wtoi
+` !*+,JKY
+`.data
+``t'=
+`3t<=E
+`st%=
+`st&=
+`SVW3
+`tt'=
+`UUe?
+{@_^3
+{0;7t*
+{8;7t,
+| VVVV
+|!9L$Hw
+|!C;^
+|!C;_4r
+|$ F;
+|$(|7;
+|$,Yu
+|$||%
+|$0!t$0
+|$0+\$,+|$(3
+|$8|+
+|$P9|$
+|/9^`t(
+|;;V$}6
+|;G;~
+|^WWWWj
+|{"%^_
+|}C;^
+|~G;~
+|<F;u
+|6C;_
+|89}0t
+|AWWWWSWW
+|BC;]
+|BG;~
+|CC;^
+|f9~L
+|H8_)u
+|hK,_
+|QG;~
+|sC;^
+|SVWj
+|wG;~
+|WWWWWj
+}:;<=>?%
+}:;<=>?[
+}0<1@1D1H1L1
+}1jaS
+}1jrV
+}-jnW
+~@luZ
+~>HHt*Ht HHt
++)-))
++:J:j:
+++-+[-kn-)
++0:0]0h0v0|0
++0F;u
++D$$+
+< <$<(<,<0<4<8<<<@<D<H<
+< <$<(<,<0<4<8<<<@<D<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+< <$<(<z<
+< <(<4<@<H<X<d<l<x<
+<!<&<3<K<y<
+<!=C=k=
+<"<9<T<Y<p<
+<#<7<K<_<s<
+<$<.<<<d<|<
+<%<-<7<?<G<]<c<u<y<}<
+<%<C<N<l<w<
+<%=b=}=
+<&<3<H<q<
+<&=P=i=
+<(<-<D<
+<(<O<T<h<
+<(=">
+<(>/+
+<)=;=S=\=`=d=h=l=p=t=x=|=
+<*=<=
+<,=p=
+</<7<M<o<
+</<G<t<
+<;{Pt7VS
+<?<D<K<
+<?=E=N=U=Z=`=u=
+<@=E=]=p=
+<[uuF
+<^=d=
+<+<[<q<
+<+=@=L=X=d=p=|=
+<'<.<8<B<L<V<`<j<t<
+<-<@<&>
+<-<3<
+<-<3<9<D=J=^=r=
+<-<4<;<d<i<w<
+<=<B<
+<-=E=L=S=Z=l=u=|=
+<-=P=u=
+<-=u=
+<0@0D0H0L0P0
+<1<6<o<
+<1<c<
+<1<F<o<
+<2<a<g<
+<2<W<u<
+<3<\<z<
+<3<><T<w<
+<3<i<
+<5<M<T<[<b<t<
+<7=;=?=
+<7={=
+<7=q?{?
+<a<f<k<
+<A=F=W=
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"><assemblyIdentity version="1.0.0.0" processorArchitecture="X86" name="wpfgfx_v0300" type="win32"></assemblyIdentity><dependency><dependentAssembly><assemblyIdentity type="win32" name="Microsoft.VC80.CRT" version="8.0.50727.1830" processorArchitecture="x86" publicKeyToken="1fc8b3b9a1e18e3b"></assemblyIdentity></dependentAssembly></dependency></assembly>P
+<D>]>
+<e=}=
+<F=K=]=
+<F=W=\=n=
+<F=z=
+<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+<h=r=}=
+<iu6h
+<L?\?
+<n=s=
+<NULL>
+<p=t=x=|=
+<T<`<h<t<
+<T<z<
+<V=[=p=
+<Y=a=q=y=
+<Z?p?t?x?|?
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =(=
+= =L=
+= =M=R=f=
+= >A>F>y>
+= >F>K>]>o>
+=!?)?/?5?=?E?K?Q?Y?a?g?m?z?
+=!=%=)=-=1=5=9===A=E=I=M=Q=U=Y=]=a=e=i=m=q=u=y=}=
+=!>'>.>8>?>F>M>T>q>|>
+="=`=t=
+="=O=f=
+=#=.=K=]=
+=$=,=8=D=L=
+=$=,=D=M=R=_=f=o=u={=
+=$>)>5>
+=$>,>
+=%=8=K=^=d=
+=&=-=;=N=V=\=b=h=n=t=z=
+=&=1=O=Z=x=
+=(=/=
+=(=0=<=H=P=
+=(=8=I=
+=(=Y=z=
+=)=.=3=y=
+=)=Y=
+=*=M=R=f=}=
+=*>V>
+=,?3?9?C?I?P?V?\?c?i?p?w?}?
+=,=3=K=
+=,>1>E>\>
+=.=`=
+=/=g=f>
+=/=X=]=
+=;>W?]?
+=@=Y=
+=@>H>L>P>_>
+=]mE=H
+=^=4>
+=_?w?
+=`>l>
+=<?F?
+=<=c=
+=<>H>P>\>h>p>|>
+=-=?=b=
+='=?=E=K=Q=X=h=
+==>?@@ABBCDEEFGGHJ33LMNNPPPPPPPPPPRRROOOOOSTTTUUVVWWIIIII[[[[[[YYYYY````````ddeeeeeffffffgghhhh
+=-=E=L=S=d=h=l=p=t=x=|=
+='=G=l=q=
+=-=u=
+=>>T>
+=->o>
+=0=5=L=g=l=
+=0=C=N=W=^=
+=1=t=
+=2=h=v=
+=2=V=[=`=
+=3>R>
+=8=<=
+=8>D>L>X>d>l>x>
+=9>E>n>
+=A>]>i>
+=A>c>
+=a>R?a?
+=c>y>
+=D>l>
+=D>P>X>d>p>x>
+=e=j={=
+=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+=h>~>
+=i>{>
+=I>a>
+=L=f=
+=N=o=t=
+=N>t>
+=o=~=
+=O>r?
+=oB`*sBr wB
+=P>~>
+=Q=l=
+=Q>j>q>x>
+=R>7?S?
+=v={=
+=X=\=`=d=h=q=
+=Z=o=
+> ?%?6?
+> ?0?@?N?\?h?m?r?
+> >$>(>,>0>4>8><>@>D>H>
+> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>(>,>x>
+> >,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>
+> >>>g>
+> >4>H>`>d>h>
+>!>%>)>->1>5>9>=>A>E>I>M>Q>U>Y>]>a>e>i>m>q>u>y>}>
+>!>&>,>8>E>K>Q>X>^>d>j>v>
+>!>W>\>
+>!>Y>k>p>
+>">Z>_>|>
+>#>(>@>R>[>l>~>
+>$>(>,>0>
+>$>B>l>q>
+>$>R>W>h>
+>%?9?O?e?{?
+>&>.>7>=>U>
+>(>C>H>_>z>
+>)>5><>B>I>P>W>^>e>l>s>
+>)>A>H>O>
+>*?<?_?
+>*>\>
+>*>F>`>
+>.?3?:?Z?_?z?
+>.?F?
+>:?[?f?x?
+>'?,?C?a?
+>?:)<
+>?:)<)>?:<<;>?:
+>?:)<:>?:)<
+>??g?
+>@>G>M>
+>@>L>T>`>l>t>
+>`?d?h?l?p?t?x?|?
+>+>D>\>u>
+>+>D>M>[>b>o>u>
+>+>H>S>q>|>
+>'>,>H>b>v>
+>'>v>
+>0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+>0>z>
+>1>l>
+>2?W?
+>2>K>d>
+>3?8?L?
+>4?k?
+>4>9>@>
+>4>C>j>y>
+>4>o>s?
+>5?q?
+>7?<?
+>7?u?z?
+>8?U?}?
+>9?@?G?a?g?v?
+>A>b>h>>?Y?`?
+>C>y>
+>D?I?\?
+>D>I>P>{>
+>H?b?
+>h?m?t?
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+>I>c>w>
+>j?p?
+>K?i?n?|?
+>m>q>u>y>}>
+>M>S>Y>]>c>g>n>v>~>
+>Q?z?
+>struct 
+>WWWj
+>X>p>z>
+>Y?`?g?n?u?
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0+0@0o0z0
+0 000<0D0P0\0d0p0|0
+0 1H1
+0 t-=
+0 tP=
+0!0%0)0-0105090=0A0E0I0M0Q0U0Y0]0a0e0i0m0q0u0y0}0
+0!0'0-0P0T0X0\0`0d0h0l0p0t0x0|0
+0"0]0c0h0
+0"0n0
+0"0z0
+0"1F1M1T1Z1
+0#0*000S0Y0l0y0
+0#0*010<0f0q0w0
+0#0T0
+0#1-1<1A1j1(2E2L2`2d2h2l2p2t2x2|2
+0%0/050;0B0L0X0a0z0
+0%0E0f0j0n0r0v0z0~0
+0&030A0
+0&1^1
+0&1G1L1\1s1
+0(0{0
+0(080>0
+0(1l1
+0)<[4
+0)0a0+6q;y;
+0)0T0|0
+0)9=;b<:=0>u>
+0*0=0C0V0\0o0u0
+0*0T0t0
+0*101;1Y1d1
+0,0m0
+0,1A1F1
+0.070>0G0T0c0q0~0
+0.0I0N0e0
+0.1<1@1D1H1L1P1U1\1
+0;1C1V1
+0?1W1
+0@0H0L0P0T0X0\0i0
+0@0J0
+0^0q0
+0`t;=
+0{};~
+0-}+4-6|
+0+1<1M1b1
+0+1A1P1{1
+0<0^0y0
+'0=0B0T0
+0=0n0
+0>1g1
+0'0]0b0t0
+00050
+000K0P0`0z0
+001C1L1V1
+0'1/1q1
+0-1=1G1Q1f3{3
+010<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0'1014181<1@1D1H1L1P1T1X1\1y1
+01116H6_6
+0123456
+0123456789
+014<4G4R4]4h4s4~4
+-020@0V0b0
+0-2G2
+031E1[1b1v1
+040904B0
+050U0l0s0
+051:1A1a1f1#2u2
+060S1\1a1g1
+061<1K1
+070`0e0w0
+0-838T8
+0A1Y1
+0b3^49;
+0d2h2l2p2t2x2|2
+0e0!161
+0k2s2
+0L0Q0^0w0
+0l1x1
+0M1m1
+0N0w0
+0N3d3
+0NNt0N
+0o4]5d5
+0P1}1
+0pt%=
+0ptL=
+0PtM=
+0R0+5
+0T>1?}?
+0T1Y1k1
+0tt(=
+0tt-=
+0V2`2i2 3i3
+0VWj0
+0WVh 
+0WWWWj
+0Y2o2
+0Y7r8y8
+1 1$1
+1 1$1(1,1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1$1(1,1014181<1V1
+1 1$1+1<1C1O1\1`1d1h1l1p1t1x1|1
+1 1&1,131Q1j1
+1 1(1x1
+1 2%292S2m2
+1 2S2Y2
+1!1&1,1D1I1U1d1j1v1
+1!2&262M2i2
+1"1&1*1.12161:1>1B1F1J1N1R1V1Z1^1b1f1j1n1r1v1z1~1
+1#2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+1$151]1b1r1"2'282[2`2r2
+1%1*1A1\1a1x1
+1%171?1I1P1X1b1j1r1
+1%1H1W1]1h1l1p1t1x1|1
+1%2;2D5M5
+1&111?1
+1&151E1T1c1l1q1|1
+1&2s2
+1(0&0
+1(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2
+1)1/151<1F1R1[1t1
+1)141?1
+1)2Y2
+1*1$2
+1*1;1
+1*242T2[2
+1,2P2
+1.151s1
+1.3Q3I6
+1/0-0
+1:1|1
+1:2D2P2j2q2~2
+1@1G1
+1@2_2d2|2
+1^3n3
+1+161x1|1
+1+1Q1=2f2
+1+20252F2
+1<1F1
+1<1x1
+1<2@2D2O2{2
+1>1J1
+1>2\2
+100701213655Z
+101=1F1
+10151_1h1
+101I1b1w1
+102T2X2\2`2d2h2l2p2
+1'1:1t1
+1'1;1J1
+110708205909Z
+1'1K1S1Z1
+12191@1G1O1T1c1
+123456789:;
+1'2s2
+1-2U2
+1'3#464<4H4v4|4
+143X394X4z5
+152D2T2X2p2w2~2
+17162h2]3t3
+18_(u
+18_)u
+181h1u1
+182|2
+19^ v
+192G2N2
+192R2q2
+1A1F1~1
+1a1u1
+1A2J2n2
+1A4v4
+1B1G1Z1
+1C2p2z2
+1c2U<
+1d2m3
+1E2x2
+1f;2u
+1F`9_
+1F2d2
+1H1Q1u2z2
+1H1w1q2
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1i;b=
+1J1k1p1
+1L2d2
+1M1Y1}1
+1p1|1
+1P2N3U3
+1p2u2
+1Pj{V
+1q132
+1R4~4
+1W1_1r1
+1W4w5
+1X1p1y1
+1Z4x4
+2 2$2(2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\276v6
+2 2$2(2,2024282<2@2T2
+2 2(242@2H2
+2 2,202:2@2F2
+2 2S2X2l2
+2 3%373J3
+2 3`3e3
+2 5*545
+2"2&2*2.22262:2>2B2F2J2N2R2V2Z2^2b2f2j2n2r2v2z2~2
+2"2/2H2o2
+2"3G4O4s4
+2"3r3]4
+2"3s3
+2#2'2+2/23272;2?2C2G2K2O2S2W2[2_2c2g2k2o2s2w2{2
+2#2R2f2s2x2
+2#3o6M8o8]9
+2$2,282D2L2
+2$2/2P4T4X4\4`4d4h4l4p4t4x4|4
+2$202<2D2P2\2d2
+2$3-363G3L3R3e3l3}3
+2%2*292n2
+2%282a2f2x2
+2%2e2
+2&2)3H3O3V3]3d3k3p3u3
+2&5?5
+2(202<2H2P2\2h2p2|2
+2(242@2L2X2d2p2|2
+2)2J2k2
+2*2L2f2
+2*3=3P3
+2*363
+2*3k3
+2,2E2Z2s2
+2,323
+2,395
+2,6064686<6@6D6H6
+2.2`2
+2;1^u
+2;2_2d2
+2;3B3T3[3`3g3B5
+2;6=<
+2+22292@2T2X2\2`2d2h2p2t2x2|2
+2+3H3X3
+2<2q2
+2<3@3D3H3 5&5-5r5y5
+2=2G2Q293
+2=9b9
+2>5t5
+201015172821Z
+201215213145Z
+202:2
+20210504053413.179Z0
+20210504111501Z
+20210505111501Z0w0=
+20353F3
+2070I0r0
+211202213145Z0t1
+21292C2J2R2\2d2l2
+2'2;2O2c2u2S3{4
+220112172821Z0
+22373I3o3t3
+230012+4630090
+232?2
+23282?2
+233p3H6
+233s3
+24445677899::;;;;;
+25<I<
+250701214655Z0|1
+252I2w2
+253A3F3_3=4B4T4~4
+26=6H6S6p6{6
+260708210909Z0~1
+28_)u
+282=2T2o2t2
+283<3@3D3H3L3P3
+283O3V3\3
+2A3n4
+2B2l2q2
+2B2W2\2
+2D5L5P5T5X5\5`5
+2e3Z4
+2E4K4
+2F2N2y2
+2G2l2n6
+2H3\4
+2I2_2d2v2
+2J2R2
+2L3b3
+2l4!<A<;>[>+?]?
+2m2y2!4'4B4R4X4h4p4
+2M4~4
+2m9Z=
+2P2]2
+2P4V6
+2W3^3e3o3y3
+2X3<5@5D5a5u5
+2X3d3l3x3
+2Y3;4A4j6
+2z3u4
+3 3$3(3,3034383<3@3D3H3L3P3}3
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3$3(3,3034383<3@3D3m3
+3 3$3(3,3034383<3@3D3V3d3k3r3y3
+3 3,3Y3_3j3
+3 3@3h3m3|3
+3 4g4&5o5)6
+3!3&363I3x3
+3!323W3
+3"3&3*3.32363:3>3B3F3J3N3R3V3Z3^3b3f3j3n3r3v3z3~3
+3"3:3M3
+3#6N8K9
+3#6z6
+3$303<3H3T3`3l3x3
+3$373`3
+3$3G3M3T3
+3$4]4
+3$4h4
+3%3C3x3
+3%4j4
+3%4y4
+3(303`3l3t3
+3(383<3
+3(4F4O4X4]4p4|4
+3)3J3R3h3
+3)424
+3*3/3@3
+3*393H3W3f3z3
+3*4;4
+3,3B3T3Z3`3e3w3|3
+3.0.6920.9151
+3.0.6920.9151 built by: WinRelRS6
+3:4N4a4
+3@3d3
+3[3`3
+3[4~4
+3\3h3p3|3
+3^4a6
+3_^[]
+3`4f4~4
+3<3D3d3~3
+3<4"5v5
+3=4K4`4r4{4
+3>3C3W3
+3>3V3
+3>4k5
+30<0m4v4_9h9
+333?333?333?333?
+333?333?333?333?333?
+3335_5x5|5
+333P3
+3'3C3k3p3
+34393A3S3
+34484<4@4D4H4L4P4T4X4\4`4d4 6
+363@3D3H3S3
+363T3s3
+375i5
+3A3I3
+3b3g3
+3C3I3w4}4
+3c3j3p3t3x3|3
+3C4V4
+3d3p3x3
+3e3r3
+3E3W3h3o3
+3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3H4i4
+3h4l4p4t4x4|4
+3http://www.microsoft.com/pkiops/docs/primarycps.htm0@
+3j4P5
+3K5{5
+3P4\4q4x4
+3r4g:
+3s4{4
+3T3:4
+4 4$4(4,4
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4v4
+4 4$4(4,4044484<4@4D4H4o4u4
+4 4)424<4F4O4Y4
+4 4*444>4a4k4u4
+4 4,444@4L4T4
+4 414D4
+4 686T6[6c6s6
+4!5&5=5
+4"4&4*4.42464:4>4v5$7V7
+4"44484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4$4*40464<4B4G4M4W4\4m4
+4$4,484H4T4`4l4x4
+4$4<4`4
+4$40484D4P4X4
+4$4U4Y4]4
+4$5h5
+4%4A4
+4%5*575P5
+4&4-4
+4(404
+4(444<4H4T4\4
+4(4-444^4
+4)4W4\4m4
+4.5Z5
+4/4:4R4c4t4
+4/4x4}4
+4/5U5^5f5
+4;4P4T4X4\4`4d4h4l4p4t4x4|4
+4@4H4^4p4
+4@7B<u<=>
+4[5t5
+4\6d6h6l6p6t6x6|6
+4^8z8
+4_4L5j5
+4_5x7
+4`6K7J8o8v8
+4<4O4T4g4z4
+4=5B5V5s5
+4=5S5h5
+4>5X5
+405V7
+40N0R0V0Z0^0b0f0j0n0r0v0z0~0
+41464G4a4u4
+414B4
+416;6
+417<7E7
+424D4
+42575E5X5
+427s8Q:
+434x4
+435P8l:
+444K4
+445x5
+4567+
+4'5B6F6J6N6R6V6Z6^6b6f6j6n6r6v6z6~6
+464T4r4
+475f5m5{5
+48?7+
+494g4
+4B4G4T4[4d4j4p4{4
+4B4Z4
+4C5g5
+4C9l9p9t9x9|9
+4D4L4R4X4`4f4m4
+4D5P5X5d5p5x5
+4D5z5
+4D9[9v9
+4E5J5_5
+4H4M4_4r4
+4H5T5\5h5t5|5
+4I4n4}4
+4J4c9s98>
+4K5{5
+4L4X4
+4L5W5
+4L5X5`5l5x5
+4M4n4
+4M5c5
+4m5w5
+4p5x5|5
+4Q4]4
+4R6N9
+4R90=
+4T4[4a4
+4U4Z4n4
+4VWj0
+4X5i5
+4y4k5
+4Z5p5
+5 5$5(5,5054585<5@5D5H5L5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5x5|5
+5 5$5-5]5
+5 5$565D5K5R5Y5b5t5x5|5
+5 5,54585D5L5P5\5p5|5
+5 8m:t:{:
+5!637D7f7
+5"5)505:5D5P5T5X5\5`5d5h5l5p5t5x5|5
+5"5;5T5m5
+5"5'5,5=5
+5#5=5O5Z5h5
+5$5(5,5054585<5@5D5H5
+5$5,5\5
+5$5+505Z5
+5%5,5l5
+5%6P8X8
+5&5=5W5
+5&515
+5&5-5]5
+5(6A7L7
+5(7:7G7w7
+5)5j5t5x5|5
+5)6:6Y6m6
+5*5=5y5
+5*656
+5,5@5T5{5
+5/5<5A5R5i5~5
+5/595C5M5O6T6[6b6i6
+5:6A6H6R6\6n6
+5?5n5
+5@5E5\5x5
+5@6`6p6
+5\8g8t8
+5^6o6W7
+5^8>9D9^9
+5`6d6h6l6p6t6x6
+5+696
+5<6J6z6
+5<7G7p7|7
+5=5G5
+505S5
+505v5
+525=5C5J5n5u5z5
+52575K5t5y5
+526:6A6
+546x6
+5-545;5A5y5
+556:6Q6m6
+5-5H5M5]5
+5'606o8x8|8
+565I5b5{5
+566V6x6
+585\5
+586<6@6D6H6L6P6t6
+5a6m7z7
+5C5j5
+5D6L6h6p6
+5e6=7
+5e6y6
+5g>}>
+5i5n5
+5K5X5w5
+5M7d7
+5P5\5d5p5|5
+5P7i7d8
+5s5z5
+5S6`6d6h6
+5T5\5j5
+5t6x6|6
+5t7E8Y;
+5W5_5
+5Y7.898D8~8
+6 6$6(6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6 6$6(6,6064686<6@6D6H6L6P6X6\6`6d6h6l6p6t6x6|6
+6 6$6(6J6|6
+6 6%6+656>6I6U6Z6j6o6u6{6
+6 6,686@6
+6 60656D6w6~6
+6 6K6]6
+6 7_8
+6!636D6K6[6b6h6p6
+6$606@6L6T6\6h6x6
+6$606<6D6
+6$7A7V7k7
+6%6>6R6c6h6x6
+6%666;6L6c6}6
+6&=+?
+6&6;6M6`6u6
+6&626>6J6V6i687J7\7m8
+6&6-666<6E6L6W6r6x6#718
+6&7y7
+6(646<6
+6(646b6g6y6
+6(6X6]6n6
+6)6)7G7_7g7|7
+6)6B6
+6*6A6X6
+6*6K6m6
+6*7/7D7m7u7
+6*8;8V8
+6.6W6_6u6
+6.757<7C7P7z7
+6/6=6^6
+6/8;8I8[8V;~;
+6:7P7
+6;6@6Q6h6w6
+6?6T6z6
+6@6E6^677C7H7t7
+6^6|6
+6+707?7o7v7|7
+6<6@6D6H6L6
+6>7L7S7Z7
+607<7D7P7\7d7
+607Q7W7
+61?1H1
+626=6]6}6
+626D6]6t6
+636D6b6
+646B7X7s7
+646X6d6|6
+647)9
+647@7H7T7`7h7t7
+656E7
+658V8a8
+6'646
+667I7P7s9
+667l7|7
+6-6G6
+6'7,7?7U7s7
+6'7+819I9h9
+6'777c7
+677v7
+69t$@
+69u u
+6A9Q9A;
+6b6W8g8
+6D7X7y7
+6E7W7r7X8~8
+6F8U8
+6g6"7@7s7
+6I9{9
+6J6n6{6
+6m7|7
+6M7n7
+6n7u7
+6O7`7
+6O7l7v7~7
+6P7u7
+6Q6p6
+6R;`<k<
+6R7y7
+6RQh 
+6u7z7
+6Z7r7
+7 7$7(7,70747`7d7h7l7p7t7x7|7
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 7&747;7w7
+7 7(70787@7X7p7x7
+7 7(787D7L7X7d7l7x7
+7 7,747@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 767M7W7z7
+7 7'7.787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 8d8
+7!7@7
+7!797Q7g7
+7!8&8-8
+7!9g9
+7"7&7*7.72767:7>7B7S7[7h7
+7#7'7+7
+7#7S7m7
+7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7$7*70767<7B7H7N7T7Z7`7f7l7t7x7|7
+7$747
+7$787j7o7
+7&7`7d7h7l7p7t7
+7&7V7_7
+7&8+8<8o8v8|8
+7(747L7p7
+7(8~8
+7(8I8
+7,8{:
+7.7R7_7}7
+7/7A7q7
+7/7G7
+7;7A7
+7;9a:
+7?9^9
+7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7]8s8x8
+7+7@7
+7+7M7T7Z7
+7=7C7J7Q7X7
+7>7H7
+7>8]8
+707]7
+7084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+727o7w7
+727U7g7
+747X7
+75:{:
+75:T:
+758k8
+767;7W7i7
+7-7]7f7k7|7
+7-747;719{9
+78:S:u:
+7'8T8
+798Y9
+7d>h>l>p>
+7g:}:
+7G8}8
+7h9l9p9t9x9|9
+7I7P7W7}7
+7J8e8n8
+7J8S8
+7K8Q8
+7L7P7
+7l85:H:S:
+7L9{9
+7m7r7
+7M8n8}8
+7N7S7e7
+7O;8<
+7P;l;
+7T8X8^8d8j8p8v8|8
+7x8f;><i<
+7Y8_8
+7Z9d9h9l9{9J;r;
+8 8$8(8,80848@8F8W8]8c8j8u8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 8$8(8084888@8D8H8P8T8X8`8d8h8p8t8x8
+8 8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 8(8C8K8i8q8
+8 9,949@9L9T9`9l9t9
+8 9d9
+8"8+878e8o8
+8"8S8}8
+8#8.8W8
+8#8{8V<
+8#8H8P8f8
+8#9*9L9S9^9e9k9q9v9
+8#9e9
+8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8
+8$8)8:8
+8$8,8|8
+8$838B8Y8m8
+8$9)9<9
+8$90989D9P9X9d9p9x9
+8&838J8V8]8d8k8x8
+8(808<8H8P8\8h8p8
+8(9-9c9h9y9
+8)8<8G8L8W8k8
+8)8V9
+8)9:9e:
+8*858I8
+8*868
+8*9g9Z;
+8/8E8
+8/9,<_=t=}=
+8:8E8
+8:8p8|8
+8';8;S;d;
+8;8M8v8
+8;9V9
+8[=c=i=o=u={=
+8^(t39^$t
+8_hLp
+8_Ht}
+80858F8a8
+8094989<9
+809t9
+828R9W9i9
+83888L8z8
+838L8B9R9
+849?9
+849@9
+85:J:g:
+859]9
+879<9M9{9
+879X9y9
+88:=:
+88@@m8rGe
+889<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+8-8I8Y8^8t8
+89~tt3
+89K|v
+8A8F8V8i8
+8B8G8X8
+8B9-;?;
+8c9q9R:
+8-cFF4
+8E9h9o:
+8F;z;
+8F8K8\8
+8GqtM8GptH8CqtC8Cpt>
+8h9m9
+8I8c:v:C;p;{;
+8J<v?
+8M$VW
+8M8v8
+8O8n8
+8o9w9
+8P:W:k:
+8P;g;~;
+8P8m8t8{8
+8P9[9z9
+8S9Z9g9n9
+8t#9}
+8V9p9
+8VWj8
+8Z9|9
+9 :%:*:/:
+9 :%:<:f:n:
+9 >&>.>
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9 9$9(9094989@9D9H9P9T9X9`9d9h9p9t9x9
+9 9%9*90969;9F9W9a9e9k9v9|9
+9 9G:
+9 9h9x9|9
+9 9U9]9
+9!:<:
+9!9&989[9`9q9
+9!9I9Q9g9z9
+9#9'9+9/93979;9?9C9G9K9O9S9W9[9_9c9
+9$9(9,9094989<9@9
+9%:S:X:]:
+9&:/:X:k:
+9(:0:K:S:n:v:
+9(;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+9(909<9H9P9
+9):Y:h:
+9*:;:Z:n:
+9*:N:
+9*939O9X9r9{9
+9*979E9O9_9l9z9
+9*979p9
+9/9O9
+9::B:]:e:
+9:78#
+9?:>= >&>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+9\$@t-
+9] VW
+9^ th
+9^ uE9^$t
+9^\u$9^P
+9^\v4
+9^\WtJ3
+9^\Wu
+9^<tg
+9^<Wv~
+9^0t%
+9^0t}
+9^8v"
+9^8Wt6
+9^lt%
+9^Lv;
+9^LWvo
+9^PuN9^TuI
+9^Puo9^Tuj
+9_4vQ
+9_9}:
+9_puB;
+9_puz
+9`:l:t:
+9{,v~!|$
+9{|v(
+9{Ht2
+9~$t(
+9~(u`
+9~,v<
+9~Lt7
+9~lu29}
+9~Xu)
+9<:T:
+9<9{9
+9<9e9
+9<9n9
+9=9Q9V9m9
+9>:d:
+90tT9p
+929N9^9
+949:9A9K9\9":8:
+95:::N:
+97t,A
+98:\:a:r:);F;K;[;
+989\9
+9'9,9;9
+9'9B9Z9a9h9o9
+9'9f9":T:X:\:`:d:
+9a:j:q:{:
+9A<u+3
+9A9V9
+9B9`9k9
+9C(to9C,
+9c:V;"={=
+9C`VW
+9C9H9\9
+9CTuD
+9E$t.9E
+9E:7<N<S<b<
+9e:i:m:q:u:y:}:
+9F<tw
+9FPt7
+9G:B;H;W;r;
+9G`u|
+9H$t]h 5
+9H:]<B=^=
+9h9~9
+9H9e9l9r9
+9Htt%
+9I9N9e9
+9K8u&
+9L$ sD
+9L$ vr
+9L$$t
+9L$@w
+9L$0r
+9l:x:
+9M$uW9M 
+9M:R:j:
+9m:z:
+9M9a9f9y9
+9Ntum@;F
+9Nxtg
+9O$u'
+9O9T9e9
+9P$tv
+9P$u.9P
+9P:j:k;
+9P:T:X:\:`:d:h:l:p:t:x:|:
+9p4t'9p
+9p4u 
+9p8u+
+9p9u9
+9ptu2
+9Q9b9n9
+9qlu&
+9R:a;
+9r?|?
+9R9t9x9|9
+9S@VW
+9S9c:
+9t$(~
+9u$t2
+9u4t^
+9u8t 
+9U9~9
+9U9b9o9
+9w:L;
+9w8t\
+9x$tG
+9X\tb
+9X`v$3
+9x<u$
+9X8u4
+9X8VtA
+9xHSv(
+9Y4s8
+A ;B u
+A [9y 
+A [9y u
+A tz=
+A Zt,
+A;K|r
+A@Y!A
+A{d9|$
+A<;B<t
+A33[Aff
+a8CzD:C
+AA@@NKG
+AAGGNK
+addressing operations are not allowed on input registers '%s'
+addressing operations are not allowed on output registers '%s'
+addressing operations not allowed on temporary registers '%s'
+ADVAPI32.dll
+AHF;s
+AllocateLocallyUniqueId
+alpha
+annotation members
+APPID
+Arguments
+array dimensions must be literal scalar expressions
+array expected
+array reference cannot be used as an l-value; not natively addressable
+asm_fragment
+asymetric returns from if statements not yet implemented
+at)It;
+AT;AX
+atan2
+atLJtX
+AttenAndRange
+audio
+Avalon EVR
+Axtwj
+B;VLr
+B`VWRh
+B|WVS
+B0@;A
+B1I1V1
+batch processing error
+Bevel
+BevelWidth
+bf&!D
+BH;FH
+BH;FHu1
+Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0
+Binormal
+binormal
+BINORMAL
+BitBlt
+BL+J 
+BlendIndices
+BLENDINDICES
+blendindices
+blendweight
+BlendWeight
+BLENDWEIGHT
+boolean constant register '%s' must be defined as a variable of type bool only
+break
+Break, Go (continue), terminate Process, or terminate Thread (bgpt)? 
+break_c
+BreakOnUnexpectedErrors
+breakp
+bt:Ht+
+C Pj[
+C PQQ
+C v4;E
+C$vL;E
+C$VW3
+C(9C,u
+C(Ph@
+C(vG;E
+C,@u`
+C,9C0wZf
+C,vI;E
+C;^<s/
+C;^Lr
+C;_ s
+C;_$s
+C;{lt>V
+C@_^3
+C\PjB
+C\uX9CDuS
+c_$zz%d
+C`;C,u
+C<@9F<s
+C<9x,
+C0_^3
+C0vD;E
+c1;3C3
+C4v=;E
+C8v;;E
+C9_ vR
+C9_Dv[
+C9X\u
+CalcAmbientLighting
+CalcDiffuseDirectionalLighting
+CalcDiffusePointLighting
+CalcDiffuseSpotLighting
+CalcSpecularDirectionalLighting
+CalcSpecularPointLighting
+CalcSpecularSpotLighting
+call, callnz, label, and ret instructions are not allowed in assembly fragments
+callnz
+calloc
+can read from texcoord and use it for texlookup only in ps_1_4 and higher
+cannot %sconvert from '%s' to '%s'
+cannot access texture coordinate w-component in a general way in ps_1_%i
+cannot access w component from texcoord in general expression
+cannot bind sampler to sampler array, sampler must be bound to %i
+cannot bind sampler to sampler array. In ps_1_%i, samplers must be bound to the same stage as their TEXCOORD
+cannot bind sampler to user specified stage, sampler must be bound to %i
+cannot bind sampler to user specified stage. In ps_1_%i, samplers must be bound to the same stage as their TEXCOORD
+cannot bind the same variable to multiple constants in the same constant bank
+cannot clip from a swizzled vector
+cannot convert from 'object type' to 'numeric type'
+cannot map expression to pixel shader instruction set
+cannot map expression to vertex shader instruction set
+cannot map general loop to this instruction set
+cannot map swizzle to ps_1_4
+cannot map this dependent texture read to ps_1_%i
+cannot match lerp because lerp factor is not _sat'd
+cannot match to texm* because texm* can only have bx2 modifier on input texload
+cannot match to texm* because texm* cannot have source modifiers on input texcoord
+cannot match to texreg2ar or texreg2gb instruction because cannot have input modifiers
+cannot match to texreg2rgb instruction because can only have input modifier _bx2
+cannot perform dependent texture read which in any way is based on color inputs
+cannot perform double dependent texture read in ps_1_x
+cannot perform texture load that is in anyway dependent on COLOR registers
+cannot perform texture lookup twice from a user bound or similar array access sampler in ps_1_%i
+cannot read from a texcoord which was used as input in a sampler
+cannot read from same texcoord. In ps_1_%i, each sampler must have a unique TEXCOORD
+catch
+CD:CE
+CD:CEt
+CD:CEu
+CD3DDeviceManager::ComposeCreateParameters
+CD98u
+CDEF3!289AB"GH
+CDPh#
+CDPh<
+CDPh3
+CDPhs
+CDQQP
+centroid
+CEVVP
+CFVVP
+CGXc=
+character continues past end of file
+Chttp://www.microsoft.com/pkiops/crl/MicCodSigPCA2011_2011-07-08.crl0a
+CHvD;E
+CHwBitmapColorSource::GetSysMemUpdateSurfaceSource
+CInteropDeviceBitmap::Present D3D failure
+Cl u69s
+clamp
+class
+ClearTypeLevel
+ClientToScreen
+clip cannot be performed from a constant or literal
+Clip must be from a 3 vector in ps_1_%i
+clip must be performed from a float3 vector for ps_1_x models
+clip must be performed from a float4 vector for ps_2_0 models
+clip not supported in texture shaders
+CloseHandle
+CMILCOMBase::InternalAddRef
+CoCreateInstance
+CoInitialize
+Color
+color
+Color
+COLOR
+COLOR outputs must be contiguous from COLOR0 to COLORn
+COLOR%d must be a four-component vector
+column_major
+CombineRgn
+comma expression used where an initializer list may have been intended
+comment continues past end of file
+Comments
+CompanyName
+compile
+compile_fragment
+complement cannot be used with other modifiers
+complement is not supported in this shader version
+complement opportunity missed because input result WAS clamped from 0 to 1
+Conditional block too complex
+conditional must be numeric
+conflicting sampler array bindings
+conflicting user defined sampler bindings. If two samplers have the same user binding, they cannot both be used in the same shader
+const
+const 
+const_cast
+constant register '%s' must be defined as a variable '%s'
+constant register address out of bounds on constant '%s', size %d, offset %d
+constant table info exceeds maximum comment size
+Constant variable '%s' bound to register greater than 8191 (%d requested)
+constructors only defined for numeric base types
+continue
+CosHalfPhiAndCosDiff
+CoTaskMemAlloc
+CoTaskMemFree
+Could not create display set.
+CoUninitialize
+CPvG;E
+CreateCompatibleBitmap
+CreateCompatibleDC
+CreateDCW
+CreateDIBSection
+CreateEventW
+CreateFileA
+CreateFileMappingA
+CreateFileMappingW
+CreateFileW
+CreateICW
+CreatePalette
+CreateRectRgnIndirect
+CreateThread
+cross
+ct8It
+CTABP
+curColor
+currentPosition
+CXv;;E
+D$ !\$
+D$ ;F,
+D$ ;H
+D$ \;K
+D$ _^[
+D$ +D$
+D$ Pj
+D$ PW
+D$ QQ
+D$$@;
+D$$+D$
+D$$pG
+D$$Pj
+D$$PP
+D$$PSSj
+D$$PV
+D$$PW
+D$$VV
+D$(_^[
+D$(+D$
+D$(+D$4P
+D$(J#
+D$(P3
+D$(Ph
+D$(Pj
+D$(PPPP
+D$(PVV
+D$(QQ
+D$(SVW
+D$,9D$ r
+D$,jtX
+D$,P3
+D$,Pj
+D$,PS
+D$,PSj
+D$,PV
+D$,QQ
+D$,t`9]
+D$@PS
+D$@QQ
+D$\PP
+D$<Pj
+D$0+D$(
+D$0Pj
+D$0PSQ
+D$0PVV
+D$0QQ
+D$4+D$,9L$
+D$4Pj
+D$4PV
+d$4RP
+D$4t%
+D$8_^[
+D$8+D$,+
+D$8PQV
+D$8PS
+D$8PV
+D$8QQ
+D$D9D$<
+D$DPQ
+D$DPV
+D$dPV
+D$DSWV
+D$hDE
+D$hj8
+D$hPS
+D$HPSS
+D$hPVV
+D$HPW
+D$HQQ
+D$L|#
+D$L|&
+D$LG;|$0
+D$Lj4P
+D$LP3
+D$lPj
+D$PPj
+D$pPVV
+D$PSP
+D$TDE
+D$tPj
+D$TPPPP
+D$x|:
+D$XQQ
+d$XRP
+D{wVWj
+D=xz#
+d0h0l0p0t0x0|0
+d0Z1s3
+d3d9.dll
+D3D9GetSWInfo
+D3DCOLORtoUBYTE4
+D3DX: (WARN) An allocation of zero bytes should return a unique non-null pointer to at
+D3DX: (WARN) D3DX relies upon this behavior.
+D3DX: (WARN) least zero bytes. Deletion of a null pointer should quietly do nothing.
+D3DX: (WARN) Overloaded ::new and ::delete operators do not conform to C++ standards:
+D3DX_VERSION
+d8_)u
+Data_PS.
+Data_VS.
+DbgBreakPoint
+DbgPrintEx
+DbgPrompt
+DDBLD373A
+ddxyEstimated
+debug info exceeds maximum comment size; no debug info emitted
+decimal value truncated to 32bits
+Decls
+default
+default value
+define
+defined
+degrees
+delete
+DeleteCriticalSection
+DeleteDC
+DeleteObject
+dependent texture read chain cannot exceed 1 in ps_1_4
+dependent texture read not supported on ps_1_%i
+depth
+DEPTH
+Depth
+DEPTH must be a scalar
+determinant
+deviceTransform
+DghYt
+Diffuse
+DIFFUSE
+diffuse
+dimension of conditional does not match value
+DIRECT3D
+DIRECT3D_VERSION
+Direct3DCreate9
+Direct3DCreate9Ex
+Direct3DShaderValidatorCreate9
+Direction
+disable
+DisableD3DXPSGP
+DisableGpuThrottling
+DisableHWAcceleration
+DisableInstrumentationBreaking
+DisablePSGP
+DisableThreadLibraryCalls
+discard
+DispatchMessageW
+DISPLAY
+distance
+division by zero
+DllGetClassObject
+DLYwh
+double
+dp2add
+DrawEscape
+Drop Shadow
+DSVW3
+dSVW3
+duplicate macro parameter '%s'
+duplicate usages specified
+DuplicateHandle
+DVWj@
+DWMAPI.dll
+DwmAttachMilContent
+DwmDetachMilContent
+DwmFlush
+DwmGetCompositionTimingInfo
+DwmGetGraphicsStreamClient
+DwmGetTransportAttributes
+DwmIsCompositionEnabled
+dword
+DwordExpr
+dxva2.dll
+DXVA2CreateDirect3DDeviceManager9
+dynamic_cast
+Dz|QQ3
+DzaB;U
+E :A`u(
+E C;]
+E HtBHHt
+E j ^u
+E jP^u
+E PSW
+E WVW
+E%BRo(B
+E(_^[]
+E(SHPSW
+e,55B
+e_.,>
+E{!}ux
+e>2U0>
+E0C1)0'
+E3q3F5
+E9I9M9Q9U9Y9]9a9e9i9m9q9u9y9}9
+ecKpH
+EdgeProfile
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicCodSigPCA2011_2011-07-08.crt0
+EnableDebugControl
+end of file
+End of HSC: m_actualState
+End of HSC: m_currentInternalState
+End of HSC: m_pendingInternalState
+End of HSC: m_targetInternalState
+End of HSC: m_targetState
+end of line
+endif
+endloop
+endrep
+EnterCriticalSection
+entrypoint
+EnumDisplayDevicesW
+EnumDisplayMonitors
+EnumDisplaySettingsW
+EqualRect
+error
+error X%u: 
+error: %s
+Et2Ht
+evr.dll
+exceeded maximum constant registers
+ExitProcess
+ExpandOutput
+explicit
+expression can only be map to texreg2rgb, but this instruction is not supported on 1_%i
+extern
+F !\$(!\$,
+F ;G uJ
+F [Y]
+F fff
+F$;G$uB
+F$_^]
+F$www
+F(;G(u:
+F(;G(uA
+F(+F 9F0
+F, u{
+F,;G,u2
+F,SWV3
+F,WHP
+F,Xj 
+f:\binaries.x86ret\bin\i386\Optimization\opt\wpf\wpfgfx_v0300.pdb
+f:\dd\wpf\src\graphics\common\shared\milcom.cpp
+f:\dd\wpf\src\graphics\core\hw\d3ddevicemanager.cpp
+f:\dd\wpf\src\graphics\core\hw\hwbitmapcolorsource.cpp
+f:\dd\wpf\src\graphics\shared\util\utillib\debugbreak.cpp
+F;{4tAV
+F;s$r
+F;s,r
+F;s|r
+F;t$Tr
+F;wLr
+F@;FH
+F\_^[
+f+D$8
+F<;G<un
+F0;F8
+F0PVQQ
+F0tA9]
+F4;G4uh
+F4[_^
+F4+F,S
+F49F8[
+F8;G8uv
+F8+F0P
+F8t.9^4t)!]
+f91t7
+F9t$ 
+faceforward
+failed to open source file: '%s'
+false
+Fd^[]
+FF@@BB
+ffffff
+FGbc%Ide
+FileDescription
+FileVersion
+FindClose
+FindFirstFileW
+FindResourceW
+Fl@tZ
+Flavor=Retail
+flHalfTexelSizeNormalized
+FlHt5H
+FlipNormal
+float
+float 
+float '%g'
+float '%gf'
+float '%gh'
+float '%gl'
+float constant
+float expected
+float2 
+float3 
+float4
+float4 
+float4x2 
+float4x4 
+floor
+FOG must be a scalar
+Fp+Fh9
+Fp9^xt
+fragment info exceeds maximum comment size
+FreeLibrary
+frexp
+friend
+FT;FXt
+Ft+Fl9
+function
+function '%s' missing implementation
+function parameters
+Function: 
+functional defines in preprocessor expressions not yet implemented
+fwidth
+FWWW\]G
+FX;Fl
+FXt+WWh
+G Hu5
+G tR9^$
+G$;F$u$
+G$t$W
+G$tZ9^(
+G,9Xpt
+G,t,9^0t
+G,t=9^0u 9^4
+G;{ r
+G;{,r
+G;~$r
+G;~,r
+G;~\r
+G;~|r
+G;~4r
+G;~8r
+G;~8s0
+G;~Dr
+G;~Lr
+g_samAccumColor
+g_samShdColor
+g_samSrcColor
+G`;C`u
+G0;F0u
+G0+G4;
+G4+F4
+G49^ t
+G7V%&+5k
+g8_(u
+G8+G<;
+G8+G0H
+G9FLu
+GammaLevel
+Gauss Blur
+Gd;Gh
+GDI32.dll
+GdiEntry13
+GDIProcessHandleQuota
+GDj`Y3
+Get3DTransforms
+GetClientRect
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDC
+GetDesktopWindow
+GetDeviceCaps
+GetDIBits
+GetFileSize
+GetFullPathNameA
+GetGuiResources
+GetLastError
+GetModuleHandleA
+GetModuleHandleW
+GetMonitorInfoW
+GetProcAddress
+GetProcessHeap
+GetRefCountOnChannel was called on a resource that is not anymore on this channel
+GetRegionData
+GetSpecularPower
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemPaletteEntries
+GetSystemTimeAsFileTime
+GetTickCount
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetVersionExA
+GetVersionExW
+GetWindowDC
+GH;Ghs!
+gi-$ lmo
+global variables
+GlobalUnlock
+GlowColor
+GlowSize
+GLSV3
+gradientSpanNormalized
+GX_^[
+gYt6=5/
+h#jQ*
+H$;OH
+H(:K(u
+H(;OT
+H0;H,w
+h0f123
+H8;N8t
+h8_)u
+HardwareInformation.MemorySize
+hCLIT
+Hd;Kd
+hDBUG
+HeapAlloc
+HeapFree
+HeapReAlloc
+hex value truncated to 32bits
+hFINF
+hFXLC
+Hh;Kh
+HHt)Hu
+HHt,Hu
+HHt1HHt$Ht
+HHtLHt(H
+HHttHt7H
+HHtZHt
+Hl;Kl
+Hp;Kpuz
+hPRES
+hPRSI
+HSVW3
+Ht;Ktur
+Ht@Hub
+Ht]Ht
+Ht6HHt
+Ht7Ht
+Ht8Ht.Ht$Ht
+Ht9HHt
+HtAHud
+HtBHuf
+HtJHt1Hu
+http://www.microsoft.com0
+HtVHt2Ht
+HtZHt2H
+HVWj<
+HVWjH
+HX9s<t
+I ;K r{
+'i' is only supported with debug builds.
+I$;N$
+I,9HX
+I.?>*:R>
+i^<io
+i_$zz%d
+I`;H`
+I0;K0
+ifdef
+ifndef
+Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^
+IIt2IIt
+IMAGE
+imaginary square root
+IMILBitmapEffect_GetOutput
+IMILBitmapEffect_GetParentEffect
+IMILBitmapEffect_IMILBitmapEffectConnections_GetInputConnector
+IMILBitmapEffect_IMILBitmapEffectConnections_GetOutputConnector
+IMILBitmapEffect_IMILBitmapEffectConnectionsInfo_GetNumberInputs
+IMILBitmapEffect_IMILBitmapEffectConnectionsInfo_GetNumberOutputs
+IMILBitmapEffect_IMILBitmapEffectGroup_Add
+IMILBitmapEffect_IMILBitmapEffectGroup_GetInteriorInputConnector
+IMILBitmapEffect_IMILBitmapEffectGroup_GetInteriorOutputConnector
+IMILBitmapEffect_IMILBitmapEffectPrimitive_GetAffineMatrix
+IMILBitmapEffect_IMILBitmapEffectPrimitive_HasAffineTransform
+IMILBitmapEffect_IMILBitmapEffectPrimitive_HasInverseTransform
+IMILBitmapEffect_IMILBitmapEffectPrimitive_SetValue
+IMILBitmapEffect_IMILBitmapEffectPrimitive_TransformPoint
+IMILBitmapEffect_IMILBitmapEffectPrimitive_TransformRect
+IMILBitmapEffect_SetInputSource
+IMILBitmapEffectConnector_IsConnected
+IMILBitmapEffectInputConnector_ConnectTo
+IMILBitmapEffectInputConnector_GetConnection
+IMILBitmapEffectOutputConnector_GetConnection
+IMILBitmapEffectOutputConnector_GetNumberConnections
+IMILBitmapEffectRenderContext_GetFinalTransform
+IMILBitmapEffectRenderContext_GetOutputDPI
+IMILBitmapEffectRenderContext_GetOutputPixelFormat
+IMILBitmapEffectRenderContext_SetInitialTransform
+IMILBitmapEffectRenderContext_SetOutputDPI
+IMILBitmapEffectRenderContext_SetOutputPixelFormat
+IMILBitmapEffectRenderContext_SetRegionOfInterest
+IMILBitmapEffectRenderContext_SetUseSoftwareRenderer
+implicitly 
+include
+include interface required to support #include from resource or memory
+Inconsistent semantic definition: %s and %s
+incorrect number of arguments to numeric-type constructor
+indefinite acos
+indefinite arccosine
+indefinite arcsine
+indefinite asin
+indefinite logarithm
+indefinite power
+infinite/indefinite log
+initial value
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+initializer
+InitializeSListHead
+inline
+inout
+input
+Inputs
+InstalledDisplayDrivers
+instruction coissue is not supported in this shader version
+instruction predication is not supported in this shader version
+integer '%dl'
+integer '%u'
+integer '%uul'
+integer constant
+integer constant register '%s' must be defined as a variable of type int3 or int4 only
+InterlockedCompareExchange
+InterlockedDecrement
+InterlockedExchange
+InterlockedExchangeAdd
+InterlockedFlushSList
+InterlockedIncrement
+InterlockedPushEntrySList
+intermediate rendering error
+internal error: argument missing context (A%u)
+internal error: argument used without having been initialized (A%u, I%u)
+internal error: argument was never used (A%u)
+internal error: argument was never used (A%u, I%u)
+internal error: arguments not vectorized
+internal error: cannot read from argument pool (A%u)
+internal error: cannot write to argument pool (A%u, I%u)
+internal error: component out of range
+internal error: DST test failure
+internal error: endif mismatch
+internal error: if block with non matching predicates found
+internal error: IF with size greater then 1 found
+internal error: illformed write field
+internal error: input register missing semantic
+internal error: InputRemap component matchup failed
+internal error: instruction missing outputs
+internal error: instruction size mismatch
+internal error: invalid swizzle found
+internal error: l-value expected
+internal error: malformed clip found
+internal error: multiple breaks found
+internal error: multiple write to same output
+internal error: next match table entry index is negative
+internal error: no profile exists for this pixel shader version
+internal error: no profile exists for this shader version
+internal error: no profile exists for this vertex shader version
+internal error: non-vectorized pool violated port constraints
+internal error: out of memory
+internal error: output argument was never initialized (A%u)
+internal error: output register missing semantic
+internal error: overlapping output writes
+internal error: production failed
+internal error: production failed!
+internal error: result violated port constraints
+internal error: scope missing
+internal error: scope underflow
+internal error: stack underflow
+internal error: texld alias found
+internal error: unexpected Alias on texture declaration
+internal error: unexpected argument type
+internal error: unexpected endif found
+internal error: unexpected input register type
+internal error: unexpected output register
+internal error: unexpected output register type
+internal error: unknown node
+internal error: unrecognized expression
+internal error: unrecognized statement
+internal error: unrecognized value
+internal error: unvectorized register found
+internal error: uppropagation failed
+internal error: write to output with instruction other than mov
+internal warning: optimization did not converge
+InternalName
+InteropDeviceBitmap_AddDirtyRect
+InteropDeviceBitmap_Create
+InteropDeviceBitmap_Detach
+InteropDeviceBitmap_GetAsSoftwareBitmap
+IntersectRect
+intrinsic function '%s' is not yet implemented
+invalid %s
+invalid %s semantic '%s'
+Invalid %s semantics - POSITIONT0
+invalid complement expression
+Invalid dirty region
+Invalid input register '%s' specified
+invalid input semantic '%s', only _centroid allowed
+invalid instruction modifiers '%s'
+invalid mask '%s'
+invalid or unsupported integer constant expression
+Invalid output register '%s' specified
+Invalid pixel shader input register '%s' specified
+invalid preprocessor command '%s'
+invalid reference to %s semantic '%s'
+invalid reference to input semantic '%s%d'
+invalid reference to output semantic '%s%d'
+invalid register '%s'
+invalid register '%s[%u]'
+invalid register '%s[...]'
+invalid register semantic '%s', or variable must be bound to multiple register banks (%c register binding required)
+invalid register, input, or constant name '%s'
+invalid subscript '%s'
+invalid swizzle '%s'
+invalid type used for '%s' %s semantics
+invalid use of '%s'
+InvalidateRect
+isalnum
+isalpha
+IsDebuggerPresent
+isdigit
+isfinite
+isinf
+isnan
+IsProcessorFeaturePresent
+IsRectEmpty
+isspace
+IsWindow
+IsWow64Process
+isxdigit
+It5It
+It8Iu5
+ItJIt+IuD
+ItkIt+
+j QRj
+j!X+E
+j#X9E
+j@[Sj
+j@^Vj
+j@XPW
+J0;H0u
+j3bI)
+jPQRj
+jQhD(
+Jt"Jt
+K PPQP
+K,+K$
+K@v[;M
+K`_^[
+K0V0s0~0
+kernel32.dll
+KERNEL32.dll
+KernelType
+KH+K@
+KKba[
+KKK\\\\]]p
+Kl;Olu
+Kp;Opu
+KPt/k
+KXv=;M
+L$ ;L$(}
+L$ Qh
+L$ Qj
+L$ QP
+L$ QRP
+L$ QV
+L$ QVP
+L$ SP
+L$ vD
+L$$~5
+L$$+L$
+L$$Qh
+L$$QQQ
+L$$QRP
+L$$QS
+L$$QW
+L$(Qh
+L$(QP
+L$(QS
+L$,;E
+L$,+L$ 
+L$,QRP
+L$,QS
+L$,QV
+L$@+L$83
+L$@QV
+L$\Qh
+L$<+L$0
+L$0}M
+L$0+T$ 
+L$0VP
+L$0Y3
+L$4_^[3
+L$4QV
+L$8QP
+L$8QV
+L$DQ3
+L$DQW
+L$H;L$
+L$L+|$@3
+L$L+L$ 
+L$lQW
+L$P9L$Hr
+L$pFP
+L$T9L$Lr
+L$TQP
+L$XQP
+L$xQP
+l;zlu
+l;zlu.
+L@array index out of bounds
+l1x1 3,3(6
+l8_)u
+label
+ldexp
+LeaveCriticalSection
+Legal_Policy_Statement
+Legal_policy_statement
+LegalCopyright
+length
+LI|kQ
+LightAngle
+literal values outside range -1 to 1 are clamped on all ps_1_x shading models
+LoadLibraryA
+LoadLibraryW
+LoadResource
+local variables
+LocalAlloc
+LockResource
+log10
+loop control variables
+loop does not appear to terminate in a timely manner (%d iterations)
+lSShb
+lstrcmpiA
+l-value specifies const object
+LVWjH
+M0e0r0
+M0K0I
+malloc
+MapViewOfFile
+mat3x2TextureTransform
+mat4x4WorldToProjection
+mat4x4WorldViewAdjTransTransform
+mat4x4WorldViewProjTransform
+mat4x4WorldViewTransform
+Matrices cannot be specified in temp registers with the fragment linker
+matrix
+matrix dimensions must be between 1 and %u
+matrix dimensions must be literal scalar expressions
+maximum address register index exceeded
+maximum bool register index exceeded
+maximum boolean register index exceeded - Try reducing number of constant branches
+maximum constant register index exceeded - Try reducing number of constants referenced
+maximum input register index exceeded
+maximum iterator register index exceeded - Try reducing number of loops
+maximum iterator register index exceeded - Try reducing number of loops and depth of loops
+maximum loop register index exceeded
+maximum number of inputs exceeded
+maximum number of samplers exceeded. %s target can have a maximum of %i samplers
+maximum predicate register index exceeded
+maximum sampler register index exceeded
+maximum temp register index exceeded
+MaxMultisampleType
+MB).QBB
+MbP?U
+-mCh]oC,
+mcm+A
+memcpy
+memmove
+memset
+MFCreateDXSurfaceBuffer
+MFCreateVideoSampleFromSurface
+Microsof
+Microsoft
+Microsoft (R) D3DX9 Shader Assembler 4.08.01.0612
+Microsoft (R) D3DX9 Shader Compiler 4.08.01.0612
+Microsoft (R) HLSL Shader Compiler 9.19.949.1104
+Microsoft Code Signing PCA 2011
+Microsoft Code Signing PCA 20110
+Microsoft Corporation
+Microsoft Corporation0
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1(0&
+Microsoft Corporation1-0+
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+MIL FAILURE: Unexpected HRESULT 0x%08x in caller: %s
+MIL3DCalcBrushToIdealSampleSpace
+MIL3DCalcProjected2DBounds
+MILAddRef
+MilChannel_AppendCommandData
+MilChannel_BeginCommand
+MilChannel_CommitChannel
+MilChannel_EndCommand
+MilChannel_GetMarshalType
+MilChannel_SendSyncCommand
+MilChannel_SetNotificationWindow
+MilChannel_SetReceiveBroadcastMessages
+MilComposition_PeekNextMessage
+MilComposition_SyncFlush
+MilComposition_WaitForNextMessage
+MilCompositionEngine_DeinitializePartitionManager
+MilCompositionEngine_EnterCompositionEngineLock
+MilCompositionEngine_ExitCompositionEngineLock
+MilCompositionEngine_GetComposedEventId
+MilCompositionEngine_InitializePartitionManager
+MilCompositionEngine_UpdateSchedulerSettings
+MilConnection_CreateChannel
+MilConnection_DestroyChannel
+MilContent_AttachToHwnd
+MilContent_DetachFromHwnd
+MilCore-%d
+MILCreateBitmapEffectOuterPublic
+MILCreateEventProxy
+MILCreateFactory
+MilCreateReversePInvokeWrapper
+MILCreateStreamFromStreamDescriptor
+MILFactoryCreateBitmapEffect
+MILFactoryCreateBitmapEffectContext
+MILFactoryCreateBitmapEffectOuter
+MILFactoryCreateBitmapRenderTarget
+MILFactoryCreateMediaPlayer
+MILFactoryCreateSWRenderTargetForBitmap
+MilGlyphCache_AppendCommandDataAtRenderTime
+MilGlyphCache_BeginCommandAtRenderTime
+MilGlyphCache_EndCommandAtRenderTime
+MilGlyphRun_SetGeometryAtRenderTime
+MILInitializeBitmapEffectPublic
+MilInstrumentationBreak
+MILIStreamWrite
+MILLoadResource
+MILMediaCanPause
+MILMediaClose
+MILMediaGetBufferingProgress
+MILMediaGetDownloadProgress
+MILMediaGetMediaLength
+MILMediaGetNaturalHeight
+MILMediaGetNaturalWidth
+MILMediaGetPosition
+MILMediaHasAudio
+MILMediaHasVideo
+MILMediaIsBuffering
+MILMediaNeedUIFrameUpdate
+MILMediaOpen
+MILMediaProcessExitHandler
+MILMediaSetBalance
+MILMediaSetIsScrubbingEnabled
+MILMediaSetPosition
+MILMediaSetRate
+MILMediaSetVolume
+MILMediaShutdown
+MILMediaStop
+MilPlayer_Create
+MilPlayer_Process
+MILQueryInterface
+MILRelease
+MilReleasePInvokePtrBlocking
+MILRenderTargetBitmapClear
+MILRenderTargetBitmapGetBitmap
+MilResource_CreateOrAddRefOnChannel
+MilResource_DuplicateHandle
+MilResource_GetRefCountOnChannel
+MilResource_ReleaseOnChannel
+MilResource_SendCommand
+MilResource_SendCommandBitmapSource
+MilResource_SendCommandMedia
+MILStreamNotifyReadComplete
+MILSwDoubleBufferedBitmapAddDirtyRect
+MILSwDoubleBufferedBitmapCreate
+MILSwDoubleBufferedBitmapGetBackBuffer
+MILSwDoubleBufferedBitmapProtectBackBuffer
+MilSyncPacketTransport_Create
+MilSyncPacketTransport_Present
+MilTransport_AddRef
+MilTransport_Create
+MilTransport_CreateFromPacketTransport
+MilTransport_CreateTransportParameters
+MilTransport_DisconnectTransport
+MilTransport_Release
+MilUnexpectedError
+MILUpdateSystemParametersInfo
+MilUtility_ArcToBezier
+MilUtility_CopyPixelBuffer
+MilUtility_GeometryGetArea
+MilUtility_GetPointAtLengthFraction
+MilUtility_GetTileBrushMapping
+MilUtility_PathGeometryBounds
+MilUtility_PathGeometryCombine
+MilUtility_PathGeometryFlatten
+MilUtility_PathGeometryHitTest
+MilUtility_PathGeometryHitTestPathGeometry
+MilUtility_PathGeometryOutline
+MilUtility_PathGeometryWiden
+MilUtility_PolygonBounds
+MilUtility_PolygonHitTest
+MilVersionCheck
+MilVisualTarget_AttachToHwnd
+MilVisualTarget_DetachFromHwnd
+MsgWaitForMultipleObjects
+MSVCR80.dll
+MulDiv
+MultiplyAlpha
+MultiplyAlpha_NonPremultiplied
+MultiplyAlphaMask_NoTransformFromUV
+MultiplyAlphaMask_Transform_InputUV
+MultiplyByInputDiffuse
+MultiplyByInputDiffuse_NonPremultipliedInput
+MultiplyConstant
+MultiplyRadialGradientCentered
+MultiplyRadialGradientNonCentered
+MultiplySuperSampleTexture_NoTransform_InputUV
+MultiplySuperSampleTexture_Transform_InputUV
+MultiplyTexture_NoTransformFromUV
+MultiplyTexture_Transform_InputUV
+multi-register semantics are not allowed in fragments '%s'
+mutable
+N(PQW
+N`QRP
+N0L0J
+N8j Qj
+N8jPQj
+namespace
+ND;H\r
+NdC;]
+NdQRP
+NeedsRePresentOnWake
+negate and divide modifiers cannot be combined
+NH+H$
+NH9H0u
+NhQRP
+NlQRP
+NoDialogs
+noise
+Noise
+non-matrix types cannot be declared 'row_major' or 'column_major'
+Normal
+NORMAL
+normal
+normalize
+not cannot be used with other modifiers
+not enough actual parameters for macro '%s'
+NtCreateSection
+ntdll.dll
+NtMapViewOfSection
+NtQuerySystemInformation
+NtUnmapViewOfSection
+nX]uHvMwOx}~
+NxQRW
+O 9N r
+O$;N$u
+O$VPQW
+O\9wl
+o_%s%d
+O<;OD
+O<B;U
+O0M0K
+o0w0}0
+O8;O@
+O8+O0IxC
+object assignments are not allowed inside functions
+object literals are not allowed inside functions
+Object types are not allowed in structs
+octal value truncated to 32bits
+oDepth
+offset
+OffsetRect
+oK0D$"<
+OL;Oh
+ole32.dll
+OLEAUT32.dll
+only a0.x is allowed as a relative address register in vs_1_1
+only one address register reference allowed in a relative address expression
+only one address register reference is allowed in a relative address expression
+only vs_1_1, vs_2_0, vs_2_x, vs_2_sw, ps_2_0, ps_2_x, and ps_2_sw are supported for assembly fragments
+opacity
+Opacity
+operator
+OriginalFilename
+Ot+Ol
+Outer Glow
+Output
+output
+Output.
+OutputDebugStringA
+OutputDebugStringW
+Outputs
+overlapping output semantics
+overlapping register semantics not yet implemented '%c%u'
+overloaded function not found
+OXHt,N4
+P t*=
+P t,=
+p t@=
+P t9=
+P tl=
+P tS=
+p tt=
+P VQRP
+P(j)j
+P(j2j
+P(jtj
+P(VQRP
+P?}7dn
+P`t'=
+P`t4=
+p`tj=
+P`VQRP
+p<3q<
+P0e0l477
+p4;2t#
+P5T5X5\5`5d5h5l5p5t5x5|5
+P89:t
+pack_matrix
+Parameters
+Passes
+pause
+PDB;Q
+PeekMessageW
+PH9PX
+phase
+PHB9U
+PhCTAB
+pixel shader must minimally write all four components of COLOR0
+pixelfragment
+PixelShader
+pixelshader
+PixelShader(
+PixelShaderConstantData Data_PS;
+PixelStructure
+Please check for proper Direct3D 9 installation.
+pLNWxN
+position
+Position
+POSITION
+PositionT
+POSITIONT
+positiont
+PostMessageW
+PPPIP
+PPPPV
+PPPPVP
+PPPPVS
+PPPV3
+PpWt#
+PQRSW
+pragma
+predicates are not supported in this shader version
+presentation error
+private
+PrivateBuild
+ProductName
+ProductVersion
+program is order of magnitude too large to compile to ps_1_%i
+program is order of magnitude too large to compile to ps_1_4
+program too big
+program too complex to compile to ps_1_4
+program too complex: exceeded available constant registers.
+program too complex: out of temporary registers
+program too complex; there are more active values than registers
+PropVariantClear
+PropVariantCopy
+protected
+PRQV3
+PRVWjZ
+ps.1.0
+ps.1.1
+ps.1.2
+ps.1.3
+ps.1.4
+ps.2.0
+ps.2.a
+ps.2.b
+ps.2.sw
+ps.2.x
+ps.3.0
+ps.3.sw
+ps_1_0
+ps_1_0 is no longer supported; using ps_1_1
+ps_1_1
+ps_1_2
+ps_1_3
+ps_1_4
+ps_2_0
+ps_2_a
+ps_2_b
+ps_2_sw
+ps_2_x
+ps_3_0
+ps_3_sw
+PSize
+Psize
+psize
+PSIZE
+PSIZE must be a scalar
+PSQR3
+Pst"=
+Pst,=
+Pst-=
+pT9pXs
+ptFirstTexelRegionCenter
+ptGradOrigin
+PTPh`T
+ptt =
+ptt"=
+Ptt.=
+public
+PVh!y
+PVVt)
+PVVt;
+PX9u0
+Q ;P 
+Q SVW
+Q$;S$u
+q$Rh@
+q$Vh@
+q(9>u
+Q(9PT
+Q,G;x
+Q>U0j
+Q6W6]6S:
+qauds
+QEX82q'
+QH9PH
+QlSV3
+qmids
+QPRh|
+QPRht
+QQjcP
+QQQPh
+QQQQj
+QQSV3
+QQSVW
+QQSVW3
+QQSW3
+QQVj&
+QQVj(
+QQVW3
+QQXXXXXXoooo""<<
+QRj|P
+QRPh0P
+qsort
+QSVW3
+QtCHt@Ht-Ht
+QueryDepthSList
+QueryPerformanceCounter
+QueryPerformanceFrequency
+QWSSPR
+r(9r,s
+R,;P,u
+R,;S,t
+r_$Int%d
+R`;Q`t
+r~akow
+R0@;E
+R0P0N
+radians
+Radius
+RaiseException
+rDB;U
+RealizePalette
+RectInRegion
+redefinition of '%s'
+redefinition of formal parameter '%s'
+Redmond1
+reflect
+refract
+RegCloseKey
+register
+RegisterTraceGuidsW
+RegisterWindowMessageW
+RegOpenKeyA
+RegOpenKeyExW
+RegQueryValueExA
+RegQueryValueExW
+reinterpret_cast
+relative address refrences too deep
+relative addressing not allowed for pixel shaders
+relative addressing not supported in ps_1_x
+relative addressing not supported in vs_1_0 instruction set
+relative addressing of destination parameters is not supported in this shader version
+relative addressing of predicates is not supported in this shader version
+ReleaseDC
+ReleaseOnChannel was called on a resource that is not anymore on this channel
+Relief
+RequiredVideoDriverDate
+ResetEvent
+return
+RGB9Rast.dll
+RGB9Rast_2.dll
+Richc
+round
+row_major
+RQSje
+rsqrt
+RSSVS
+rt~9}
+Rt3Nt0Nt&Nt
+RtlCaptureStackBackTrace
+RtlClearBits
+RtlFindClearBitsAndSet
+RtlInitializeBitMap
+RtlInterlockedFlushSList
+RtlSetBits
+RWWRR
+s$9>t
+s(VQQ
+s@9>t
+S0Q0O
+sample
+SAMPLE
+Sample
+sampler
+sampler 
+sampler array index must be a literal expression
+sampler mismatch: sampler used inconsistently
+Sampler variable '%s' does not specify the sampler type.  Explicit sampler types required for asm fragments.
+sampler_state
+sampler1D
+sampler2D
+sampler3D
+samplerCUBE
+sampleStart
+saturate
+scalar expected
+scalar registers cannot be masked
+scalar registers cannot be swizzled
+scalar, vector, or matrix expected
+sdQPRV
+SelectObject
+SelectPalette
+Semantics
+SetEvent
+SetLastError
+SetLayeredWindowAttributes
+SetLayout
+setlocale
+SetMilPerfInstrumentationFlags
+SetRect
+SetThreadPriority
+SetUnhandledExceptionFilter
+SH;WX
+shader cannot compile to a ps_1_%i shader because this model can't match all the dependent texture read(s) this shader requires
+shader too complex. Try reducing number of texture loads used
+shader version expected
+shadowColor
+ShadowDepth
+shared
+short
+signed
+sincos
+sizeof
+SizeofResource
+Sj Z3
+Sj,[V
+Sl;V@
+Sleep
+SleepEx
+Smoothness
+smoothstep
+Softness
+Software\Microsoft\Avalon.Graphics
+Software\Microsoft\Direct3D
+Software\Microsoft\Windows NT\CurrentVersion\Windows
+Software\Microsoft\Windows NT\CurrentVersion\WinSAT
+source modifiers are not allowed on destination parameters
+source modifiers are not allowed on predicates
+source modifiers incompatible with SUB instruction
+SPECIAL
+SPECULAR
+specular
+Specular
+SpecularPower
+spVRP
+SQj*P
+SSSPj
+SSSPj|V
+SSSS%
+SSSSVS
+SSSSW
+SSSSWSS
+SSSSWSSP
+Stack
+Start of HSC: m_actualState
+Start of HSC: m_currentInternalState
+Start of HSC: m_pendingInternalState
+Start of HSC: m_targetInternalState
+Start of HSC: m_targetState
+stateblock
+stateblock_state
+States
+static
+static_cast
+Stmts
+strchr
+Streams
+string
+string constant
+string continues past end of file
+string continues past end of line
+StringFileInfo
+struct
+struct PixelShaderConstantData
+struct VertexShaderConstantData
+struct VertexShaderOutput
+structure members
+stVRP
+SVSSS
+SVVVh
+SVWhLp
+SVWht
+SVWQQ
+SVWt+f
+SVWu$
+SVWv:
+SVWvl
+switch
+Swizzle
+SWWWW
+sX9>t
+syntax error
+syntax error : unexpected %s
+syntax error: unexpected %s
+SystemParametersInfoW
+SystemTimeToFileTime
+sZSVW
+T    for (int i = 0; i < 
+t!HHt
+t!Hu5
+t"HHu
+t"VVVj
+T$ |0
+T$ +L$$
+T$ +t$4+T$0
+T$ RP
+t$ SP
+t$ SVP
+t$ SVW
+t$ SVWP
+t$ SWP
+t$ VP
+t$ WQ
+t$$|'
+T$$}H
+T$$~H
+T$$RP
+t$$SV
+T$(;L$
+T$(|0
+T$(G;
+T$(RP
+T$(RW
+t$(SV
+t$(VS
+T$,G;
+T$,RP
+t$,WP
+T$@RSS
+T$\RP
+T$\RV
+T$`|0
+T$`|4
+T$|RS
+t$<+s
+T$<RP
+T$0|0
+T$0RP
+t$0VS
+T$4RP
+T$8|0
+T$8RP
+t$8VW
+t$A;M
+t$DPR3
+T$H|4
+T$HRP
+T$LRj
+T$lRP
+t$p|7
+T$PRP
+T$tRP
+T$TRP
+T$X|4
+T$x|4
+T$xRP
+T$XRP
+T$xRP
+t%9{(r
+T'%s': ambiguous function call
+t&Nt<Nu
+t(G;}
+t(HuVj
+t(It%It"It
+t)WVS
+t,90t(9p
+t.Nt&Nt
+t.PP%
+t/9{dtG
+t/HuM
+t/It'It
+T;A s
+t@It'It
+t@SVW
+t\JtRJt*Ju
+T_[Y]
+T_^[]
+T_^[Y]
+t`Ht.H
+t`Ht9Ht
+t~HHtz
+t+VVj
+t<Ht1Ht.H
+t<QQQQj
+t<Vh`,
+t>OOt:O
+t09_pu
+t0Nt-Nt#Nt
+t19F8u,
+T2?u$F?<vZ?
+t2<\u'
+t2HHt"Ht'Ht Ht
+t2It*It
+t49^Pu/9^Tu*
+t6It)IIt
+t79FPu29FTu-
+T8^`t
+T8^Ht
+t8WVS
+T9_xu&
+t-9F8u(
+t9Ht1Ht.Ht
+t9Ht-Ht!Ht
+t-9p(v'
+tA;G8t<C
+Tangent
+TANGENT
+tangent
+target does not support relative addressing
+tChpR
+tcHt(Ht
+tCHt7Ht+Ht
+Tdivision by zero in preprocessor expression
+techinque
+technique
+technique T0
+tEHHtA
+template
+temporary and constant registers are not allowed in assembly fragments
+temporary, constant, and output registers are not allowed in vs_3_0 assembly fragments
+TerminateProcess
+TerminateThread
+TESSFACTOR
+Tessfactor
+tessfactor
+tex1D
+tex1D will considered dependent since texcoord was not declared as at least float2
+tex1Dbias
+tex1Dgrad
+tex1Dlod
+tex1Dproj
+tex2D
+tex2Dbias
+tex2Dgrad
+tex2Dlod
+tex2Dproj
+tex3D
+tex3Dbias
+tex3Dgrad
+tex3Dlod
+tex3Dproj
+texbem
+texbeml
+TEXCOORD
+Texcoord
+texcoord
+texcoord inputs used directly (that is, other than sampling from textures) in shader body in ps_1_%i are always clamped from 0 to 1
+'texcoord' reference exceeds valid range for this shader model (max: %i)
+texcrd
+texCUBE
+texCUBEbias
+texCUBEgrad
+texCUBElod
+texCUBEproj
+texdepth
+texdp3
+texdp3tex
+texkill
+texld
+texldb
+texldd
+texldl
+texldp
+texlod not supported on this target
+texm3x2depth
+texm3x2pad
+texm3x2tex
+texm3x3
+texm3x3pad
+texm3x3spec
+texm3x3tex
+texm3x3vspec
+texreg2ar
+texreg2gb
+texreg2rgb
+TextContrastLevel
+texture
+texture loads or clips cannot be from inputs not marked TEXCOORD
+texture1D
+texture2D
+texture3D
+textureCUBE
+Tfloat  
+tg98tc9x
+tgItS
+tH9X 
+Thales TSS ESN:0842-4BE6-C29A1%0#
+The bitmap bits moved. We cannot handle this well because we reference them
+The render thread failed unexpectedly.
+tHHt$Huw
+This break is due to an unexpected HRESULT in the caller, not this method.
+throw
+tiHt5H
+tIjiP
+timeBeginPeriod
+timeEndPeriod
+Tinternal error: unhandled production
+Tj Q3
+tJIt1It
+tKB;V
+tlHtZHHtM
+TNULL
+TNullFunction
+token
+token '%s'
+tolower
+too many arguments to target TX
+too many nested #includes
+too many outputs to target TX
+too many texture loads and reads from texcoords
+toupper
+tp9w$
+tqItX
+TraceEvent
+TraceMessage
+Transform2D
+Transform3D
+TranslateMessage
+Translation
+transpose
+Tried to AddRef an object which has previously been freed (refcount went to 0).
+TryEnterCriticalSection
+tsHtE
+tsIt<
+TSSSj
+TSSSS
+tSVQQ
+Tt"Sj
+Tt)W3
+Tu%hP
+TuBhHl
+TuJ9=l
+TuJ9=p
+tV<"v0<.v#<1v(<2t
+tV9_$
+tv9P<tq
+TVh2i
+t-Vj 
+TvRII
+TvTJJ
+tw91ts
+tw9N8u6
+t-WhL~
+TWWWW
+tx_1_0
+tYHHt<
+type mismatch
+type mismatch between conditional values
+typedef
+TypeDefs
+typename
+Types
+TYQPV
+tZHHtV
+tZVVVVj
+u"PhB
+u#AA@@
+u$+D$
+u%9FXu
+u(jvh
+u)9FXt
+u)hL4
+u,@BB
+u,AA@@
+u?9^lt"
+u@9E u;
+u>9P8
+u09x<u+
+u0C;^
+U0S0Q
+u19_(
+u'9FDu h0
+u'9Y u"
+ud9X$u[
+unable to emmulate write masks for ps_1_%i shader model
+unable to emulate vector conditionals in ps_1_%i shader model
+unable to match texm because computed texcoord is used in shader
+unable to match texm* because source inputs are not in appropriate texture coordinates. See ps_1_% assembly reference for more information
+undeclared identifier '%s'
+undef
+unexpected #elif
+unexpected #elif following #else
+unexpected #else
+unexpected #else following #else
+unexpected #endif
+unexpected end of file
+unexpected end of file in macro expansion
+Unexpected HRESULT in MilInstrumentation* caller
+unexpected tokens following preprocessor directive
+UnhandledExceptionFilter
+uniform
+union
+UNKNOWN
+unknown
+UnmapViewOfFile
+unrecognized compiler target '%s'
+Unrecognized response.
+unrecognized shader version
+UnregisterTraceGuids
+unsigned
+unsupported compiler target '%s'
+UpdateLayeredWindow
+UpdateLayeredWindowIndirect
+uphPi
+UsageType
+UseDX9LText
+USER32.dll
+user32.dll
+UseReferenceRasterizer
+USERProcessHandleQuota
+using
+uT@@j
+uTVWh
+UUUUUU
+UV.-;.,>,(),+,,.,@ABC,()G+,,,]+
+uv9C\uq9C`ul2
+uY<=u3
+v ;r u
+v"QPShpC
+v&jPj
+v);x8
+v)j j
+v)jPj
+v,SVW
+V@;PX
+v_%s%d
+v`j V
+v`jPV
+V<;PT
+v<3r<
+V0;V8
+V0a0K6
+v0Wh`
+v4WSj
+V89Q8t
+Value
+value
+Values
+VarFileInfo
+variable
+variable '%s' used without having been completely initialized
+VariableDim
+VBRWj
+vector
+vector dimension must be a literal scalar expression
+vector dimension must be between 1 and %u
+version token
+vertex shader must minimally write all four components of POSITION
+vertexfragment
+VertexShader
+vertexshader
+VertexShader(
+VertexShaderConstantData Data_VS;
+VertexShaderOutput
+VFace
+vFace
+VFACE
+VideoMemoryBandwidth
+VideoMemorySize
+virtual
+VirtualAlloc
+VirtualFree
+VirtualProtect
+Vjc_W
+v'jPj
+VkQ@w
+vLWjt
+volatile
+volume
+VPPVj
+vs.1.0
+vs.1.1
+vs.2.0
+vs.2.a
+vs.2.sw
+vs.2.x
+vs.3.0
+vs.3.sw
+vs_1_0
+vs_1_0 is no longer supported; using vs_1_1
+vs_1_1
+vs_2_0
+vs_2_a
+vs_2_sw
+vs_2_x
+vs_3_0
+vs_3_sw
+VS_VERSION_INFO
+Vtu9]
+VVVVj
+VVVVRVV
+VWSh0
+vWSVW
+VZ;[st'<
+w!t8=
+w"SWj
+w-%&G4
+w(96u
+w@B;U
+W~18^H
+w<tx=
+w0Sh`
+w3t^=
+WaitForMultipleObjects
+WaitForSingleObject
+warning
+WARNING: MILCore: Direct3D 9 is not installed or load failed.
+WARNING: MILCore: Unable to locate Direct3DCreate9.
+Washington1
+wcsncpy_s
+weights
+WerRegisterMemoryBlock
+wEt7=
+wgtY=
+WH;SX
+while
+WICCreateImagingFactory_Proxy
+WideCharToMultiByte
+WindowsCodecs.dll
+WINMM.dll
+wJt$=
+WorldView
+WorldViewAdjTrans
+WorldViewProj
+Wow64DisableWow64FsRedirection
+Wow64RevertWow64FsRedirection
+Wp+Wh
+wpfgfx_v0300.dll
+WPPPj
+WPShu8
+WQShY8
+WqVNHE
+WShb 
+WShQ"
+WSjbh\
+WSjQhh
+WSVVj
+Wt(jP
+w't:=
+Wt|=p
+Wu^!]
+wUtJ=
+WVRQPh
+WWWPj
+WWWS3
+WWWSj
+WWWW3
+WWWWj
+WWWWQWW
+WWWWSWW
+WWWWV
+WXA;M
+wXG;~
+wyt9=
+x ;x@
+X@;Y@
+X+E$P
+X<;Y<u 
+X<;Z<
+X8;Y8u(
+X8+XH;
+XFt$=
+XH;ZH
+XH;ZHu,
+XH;ZHu+
+Xj _3
+xL;{Lu2
+xT;xX
+y u>S
+Y__^[
+y8_^]
+yacc stack overflow
+YH;ZHu
+yi#pc 
+yP[_3
+Yt?VVVj
+yXB~-\B
+YYt%9
+YYt&R
+YYu&jb
+YYu5jI
+z.9Wv
+z8_(u
+z9N`u
+zf`;K
+zH;yHu"
+zl;ylt
+ZZZZZiiijjkkll-------mm__nnn..

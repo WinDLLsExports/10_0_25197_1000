@@ -1,0 +1,150 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\vpci.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    WppRecorder.sys
+    winhv.sys
+    vmbkmcl.sys
+    WDFLDR.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C000C058 Import Address Table
+             1C000C3C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         5FA MmMapIoSpaceEx
+                         592 KfRaiseIrql
+                         47E KeAcquireSpinLockAtDpcLevel
+                         546 KeReleaseSpinLockFromDpcLevel
+                         4FE KeLowerIrql
+                         629 MmUnmapIoSpace
+                         4C4 KeGetCurrentIrql
+                          BD ExAllocatePool2
+                          EE ExFreePoolWithTag
+                         480 KeAcquireSpinLockRaiseToDpc
+                         544 KeReleaseSpinLock
+                         564 KeSetEvent
+                         4AD KeEnterCriticalRegion
+                         590 KeWaitForSingleObject
+                         3F7 IoReuseIrp
+                         4D8 KeInitializeEvent
+                         459 IofCallDriver
+                         4FA KeLeaveCriticalRegion
+                         35B IoFreeIrp
+                         361 IoFreeWorkItem
+                         C59 _vsnwprintf
+                         4D9 KeInitializeGuardedMutex
+                         2F9 IoAllocateIrp
+                         2FE IoAllocateWorkItem
+                         51C KeQueryNodeActiveAffinity
+                         514 KeQueryHighestNodeNumber
+                         8A5 RtlFindLeastSignificantBit
+                         91D RtlIoEncodeMemIoResource
+                         3C3 IoQueueWorkItem
+                         839 RtlCmDecodeMemIoResource
+                         8A8 RtlFindMostSignificantBit
+                         3FF IoSetDevicePropertyData
+                         376 IoGetDeviceProperty
+                         498 KeClearEvent
+                         3A1 IoInvalidateDeviceRelations
+                         367 IoGetAttachedDeviceReference
+                         37A IoGetDmaAdapter
+                         475 KeAcquireGuardedMutex
+                         53A KeReleaseGuardedMutex
+                         45A IofCompleteRequest
+                         377 IoGetDevicePropertyData
+                         12D ExRegisterCallback
+                         4E0 KeInitializeSpinLock
+                         626 MmUnlockPagableImageSection
+                         5F5 MmLockPagableDataSection
+                         175 ExUnregisterCallback
+                         6D6 ObfDereferenceObject
+                          CF ExCreateCallback
+                         44C IoWMIRegistrationControl
+                         5E6 MmGetSystemRoutineAddress
+                         912 RtlIntegerToUnicodeString
+                         857 RtlCopyUnicodeString
+                          70 DbgPrintEx
+                         8FC RtlInitUnicodeString
+
+    WppRecorder.sys
+             1C000C030 Import Address Table
+             1C000C3A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           2 WppAutoLogStart
+                          10 imp_WppRecorderReplay
+                           4 WppAutoLogTrace
+                           3 WppAutoLogStop
+
+    winhv.sys
+             1C000C2B8 Import Address Table
+             1C000C628 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          11 WinHvProcessorNumberToVpIndex
+
+    vmbkmcl.sys
+             1C000C210 Import Address Table
+             1C000C580 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          44 VmbClientChannelInitSetRingBufferPageCount
+                          29 VmbChannelInitSetStateChangeCallbacks
+                          26 VmbChannelInitSetProcessPacketCallbacks
+                          3C VmbChannelSetPointer
+                           5 VmbChannelCleanup
+                           B VmbChannelDisable
+                          24 VmbChannelInitSetMaximumPacketSize
+                           E VmbChannelGetInterfaceInstance
+                          49 VmbPacketAllocate
+                          4A VmbPacketFree
+                          55 VmbPacketSetPointer
+                          4D VmbPacketGetPointer
+                          53 VmbPacketSetCompletionRoutine
+                          4F VmbPacketSend
+                           C VmbChannelEnable
+                          2C VmbChannelPacketComplete
+                          2D VmbChannelPacketDeferToPassive
+                          14 VmbChannelGetPointer
+                          37 VmbChannelSendSynchronousRequest
+                           2 VmbChannelAllocate
+
+    WDFLDR.SYS
+             1C000C000 Import Address Table
+             1C000C370 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 WdfLdrQueryInterface
+                           6 WdfVersionBind
+                           9 WdfVersionUnbindClass
+                           7 WdfVersionBindClass
+                           8 WdfVersionUnbind
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        7000 .text
+        1000 GFIDS
+        1000 INIT
+        9000 PAGE
+        1000 fothk

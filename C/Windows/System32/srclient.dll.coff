@@ -1,0 +1,213 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\srclient.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    msvcrt.dll
+    SPP.dll
+    KERNEL32.dll
+    ntdll.dll
+    ole32.dll
+    ADVAPI32.dll
+    POWRPROF.dll
+
+  Section contains the following exports for SRCLIENT.dll
+
+    00000000 characteristics
+    941C8280 time date stamp
+        0.00 version
+           1 ordinal base
+          13 number of functions
+          13 number of names
+
+    ordinal hint RVA      name
+
+          3    0 000037B0 DisableSR
+          4    1 00003830 DisableSRInternal
+          5    2 000038C0 EnableSR
+          6    3 00003940 EnableSREx
+          7    4 000039C0 EnableSRInternal
+          8    5 00003A50 SRNewSystemId
+          9    6 00003AD0 SRRemoveRestorePoint
+         10    7 00003B50 SRSetRestorePointA
+         11    8 00003BF0 SRSetRestorePointInternal
+         12    9 00003CA0 SRSetRestorePointW
+         13    A 00003D40 SetSRStateAfterSetup
+          1    B 000077B0 SysprepCleanup
+          2    C 000077D0 SysprepGeneralize
+
+  Section contains the following imports:
+
+    msvcrt.dll
+             18000F3B8 Import Address Table
+             180011FB0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         51D wcsrchr
+                         3A1 _wcsnicmp
+                         4A3 memset
+                         36D _vscwprintf
+                         49F memcpy
+                          5E __C_specific_handler
+                         189 _initterm
+                          B7 _amsg_exit
+                          5A _XcptFilter
+                          C8 _callnewh
+                         493 malloc
+                         4CE strchr
+                         376 _vsnwprintf
+                         459 free
+                         397 _wcsicmp
+                         50E wcschr
+
+    SPP.dll
+             18000F390 Import Address Table
+             180011F88 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           C SxTracerShouldTrackFailure
+                           9 SxTracerDebuggerBreak
+                           B SxTracerGetThreadContextRetail
+                           7 SppFreeGroupPropArray
+
+    KERNEL32.dll
+             18000F250 Import Address Table
+             180011E48 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         501 RtlLookupFunctionEntry
+                         508 RtlVirtualUnwind
+                         5EA UnhandledExceptionFilter
+                         5A8 SetUnhandledExceptionFilter
+                         235 GetCurrentProcess
+                         5C8 TerminateProcess
+                          DD CreateFileW
+                         239 GetCurrentThread
+                         3B8 IsWow64Process
+                         330 GetTickCount
+                         349 GetVolumeInformationW
+                         247 GetDiskFreeSpaceExW
+                         17F ExpandEnvironmentStringsW
+                         12B DeleteFileW
+                         305 GetSystemDirectoryW
+                         136 DeviceIoControl
+                         34D GetVolumePathNameW
+                         34B GetVolumeNameForVolumeMountPointW
+                         46B QueryDosDeviceW
+                         23A GetCurrentThreadId
+                         236 GetCurrentProcessId
+                         474 QueryPerformanceCounter
+                         5B8 Sleep
+                         192 FindClose
+                          97 CloseHandle
+                         281 GetLastError
+                         1A9 FindNextFileW
+                         19D FindFirstFileW
+                         30E GetSystemTimeAsFileTime
+                         3F6 LocalFree
+                         568 SetLastError
+                         416 MultiByteToWideChar
+                         4F9 RtlCaptureContext
+                         1F4 GetCommandLineW
+                         295 GetModuleFileNameW
+                         137 DisableThreadLibraryCalls
+                         24E GetDriveTypeW
+
+    ntdll.dll
+             18000F440 Import Address Table
+             180012038 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         20B NtQueryValueKey
+                         11D NtCreateFile
+                         20D NtQueryVolumeInformationFile
+                         45B RtlGetSuiteMask
+                         44D RtlGetNtSystemRoot
+                         102 NtClose
+                         5A9 RtlRunOnceExecuteOnce
+                         6FB WinSqmAddToStreamEx
+                         255 NtSetInformationFile
+                         1E6 NtQueryInformationFile
+                         440 RtlGetLastNtStatus
+                         5DB RtlSetThreadErrorMode
+                         520 RtlNtStatusToDosError
+                          54 EtwTraceMessage
+                         42B RtlGetCurrentTransaction
+                         5BC RtlSetCurrentTransaction
+                         387 RtlDeleteCriticalSection
+                         494 RtlInitializeCriticalSection
+                         1AE NtOpenKey
+
+    ole32.dll
+             18000F4E0 Import Address Table
+             1800120D8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          8C CoTaskMemFree
+                          61 CoInitializeEx
+                          91 CoUninitialize
+                          2B CoCreateInstance
+                          8D CoTaskMemRealloc
+                          8B CoTaskMemAlloc
+                         20D StringFromGUID2
+
+    ADVAPI32.dll
+             18000F170 Import Address Table
+             180011D68 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         15C GetTraceEnableFlags
+                         15D GetTraceEnableLevel
+                         15E GetTraceLoggerHandle
+                         2AB RegisterTraceGuidsW
+                         32B UnregisterTraceGuids
+                         31E TraceMessage
+                         282 RegOpenKeyExW
+                         25A RegCreateKeyExW
+                         251 RegCloseKey
+                          81 ConvertStringSecurityDescriptorToSecurityDescriptorW
+                          93 CreateWellKnownSid
+                         2D9 SetNamedSecurityInfoW
+                         148 GetSecurityDescriptorDacl
+                         28F RegQueryValueExW
+                         29F RegSetValueExW
+                         267 RegDeleteTreeW
+                         269 RegDeleteValueW
+                         2B6 ReportEventW
+                          ED DeregisterEventSource
+                          1F AdjustTokenPrivileges
+                         19A LookupPrivilegeValueW
+                         20B OpenProcessToken
+                         210 OpenThreadToken
+                         11F FreeSid
+                          5F CheckTokenMembership
+                          20 AllocateAndInitializeSid
+                         2A4 RegisterEventSourceW
+
+    POWRPROF.dll
+             18000F380 Import Address Table
+             180011F78 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CallNtPowerInformation
+
+  Summary
+
+        1000 .data
+        1000 .pdata
+        4000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        E000 .text

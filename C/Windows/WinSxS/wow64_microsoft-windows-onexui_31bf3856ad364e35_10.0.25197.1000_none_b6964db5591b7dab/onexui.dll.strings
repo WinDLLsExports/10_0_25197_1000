@@ -1,0 +1,684 @@
+            <element id="atom(buttonpane)" layout="borderlayout()"                      background="themeable(dtb(TaskDialog, 8, 0), threedface)"                      padding="themeable(gtmar(TaskDialog, 8, 0, 3602), rect(0rp,9rp,0rp,9rp))">                <element layoutpos="right" layout="flowlayout(0)" contentalign="wrapright | pathellipsis | wordellipsis" >                    <pushbutton id="atom(OKButton)" accessible="true" accRole="pushbutton"/>                    <pushbutton id="atom(CancelButton)" accessible="true" accRole="pushbutton"/>                </element>            </element>            <element id="atom(SKBSizing)" layout="borderlayout()" layoutpos="none" />
+            <element id="atom(buttonpane)" sheet="ButtonsStyle" layout="borderlayout()" layoutpos="top" >                <element layout="flowlayout(0,0,2,2)" contentalign="wrapright | pathellipsis | wordellipsis" padding="rect(0rp, 10rp, 0rp, 0rp)" margin="rect(0rp, 30rp, 0rp, 5rp)" >                    <button id="atom(OKButton)" sheet="ButtonsStyle" accessible="true" class="CommandButton" content="OK" selected="true" />                    <button id="atom(CancelButton)" sheet="ButtonsStyle" class="CommandButton" content="Cancel" />                </element>            </element>            <element id="atom(SKBSizing)" layout="borderlayout()" layoutpos="none" />
+            <element id="atom(CapsLockArea)" layoutpos="top" layout="flowlayout(0,0,2,0)" sheet="CredDialog" class="Information" visible="false">                <element id="atom(CapsLockImageArea)" class="ImageAlignmentWrapper" layout="verticalflowlayout(0,2,1)" visible="false">                    <element id="atom(CapsLockIcon)" class="SmallIcon" %capsLockAreaErrorIcon visible="false"/>                </element>                <element id="atom(CapsLockText)" layoutpos="top" class="DialogText" sheet="CredDialog" visible="false"/>            </element>
+            <element id="atom(ErrorArea)" layoutpos="top" layout="flowlayout(0,0,2,0)" sheet="CredDialog" class="Information" visible="false">                <element id="atom(ImageArea)" class="ImageAlignmentWrapper" layout="verticalflowlayout(0,2,1)" visible="false">                    <element id="atom(ErrorIcon)" class="SmallIcon" %errorAreaErrorIcon visible="false"/>                </element>                <element id="atom(ErrorText)" layoutpos="top" class="DialogText" sheet="CredDialog" accessible="true" visible="false"/>            </element>
+            <element layoutpos="top" layout="flowlayout(1,0,2,2)" background="argb(0,0,0,0)" margin="rect(0rp, 10rp, 0rp, 5rp)" >                <element id="atom(%3)" layout="borderlayout()" sheet="UsersStyle" >                    <edit id="atom(%2)" layoutpos="client" sheet="UsersStyle" />                </element>            </element>
+            <element layoutpos="top" layout="flowlayout(1,0,2,2)" background="argb(0,0,0,0)" margin="rect(0rp, 10rp, 0rp, 5rp)" >                <element id="atom(%3)" layout="borderlayout()" sheet="UsersStyle" >                    <edit id="atom(%2)" passwordcharacter="0x25cf" accessible="true" layoutpos="client" sheet="UsersStyle" />                </element>            </element>
+            <element layoutpos="top" layout="rowlayout(1)">                <element content="Unsupported type" />            </element>
+            <element layoutpos="top" layout="rowlayout(2)" width="300rp" padding="rect(10rp,0rp,10rp,0rp)" >                <element content="%1:" margin="rect(10rp,10rp,10rp,10rp)" />                <element layout="borderlayout()" content="%0:" accessible="true" accrole="statictext">                    <edit id="atom(%2)" passwordcharacter="0x25cf" layoutpos="top" margin="rect(10rp,10rp,10rp,10rp)" accessible="true" accrole="statictext"/>                </element>            </element>
+            <element layoutpos="top" layout="rowlayout(2)" width="300rp" padding="rect(10rp,0rp,10rp,0rp)">                <element content="%1:" margin="rect(10rp,10rp,10rp,10rp)"  />                <element content="%0:" accessible="true" accrole="statictext" layout="borderlayout()">                    <edit id="atom(%2)" layoutpos="top" margin="rect(10rp,10rp,10rp,10rp)" accessible="true" accrole="statictext"/>                </element>            </element>
+          <element layoutpos="ninebottom" layout="borderlayout()"  width="%topelementwidth" height="%topelementheight"  background="argb(0,0,0,0)" >%eapcredsCapsAreaSSOPlaceholder          </element>          </element>         </element>        </element>    </element>    <stylesheets>          <!-- Style Sheet for the User List and User Tiles -->        <style resid = "UsersStyle">          <if visible = "false">              <element                  width = "0rp"                  height = "0rp"                  layoutpos = "none"                  accessible              = "false"                  />              <edit                  width = "0rp"                  height = "0rp"                  layoutpos = "none"                  accessible              = "false"                  />          </if>          <!-- The border thickness intentionally does NOT use relative pixels or it breaks               the highlight graphic for the edit boxes in the providers on high contrast -->          <element                  width                   = "225rp"                  height                  = "25rp"                  font                    = "9;normal;shadow;Segoe UI"                  shadowintensity         = "%4"                  margin                  = "rect(0rp, 4rp, 0rp, 0rp)"                  borderthickness         = "rect(4, 4, 4, 4)"                  padding                 = "rect(0rp, 1rp, 0rp, 0rp)"                  accessible              = "true"                  accrole                 = "42"                              %editcontrolbackground                  />        </style>         <style resid="CredDialog">           <if visible = "false">               <element                   width = "0rp"                   height = "0rp"                   layoutpos = "none"                   accessible = "false"                   />           </if>           <if class="TitleString">               <element                    background="argb(0,0,0,0)"                     foreground = "white"                    font = "18;normal;shadow;Segoe UI"                    shadowintensity = "%4"                   contentalign="wrapleft"                    accessible="true"                   margin="rect(0rp, 10rp, 0rp, 5rp)"                />           </if>           <if class="DialogText">               <element                    background="argb(0,0,0,0)"                     foreground = "white"                    font = "12;normal;shadow;Segoe UI"                    shadowintensity = "%4"                   contentalign="wrapleft"                    margin="rect(0rp, 10rp, 0rp, 5rp)"                />           </if>           <if class="ImageAlignmentWrapper">               <element                    padding = "rect(0rp,5rp,0rp,0rp)"                   margin  = "themeable(gtmar(TaskDialog, 20, 0, 3602), rect(5rp,10rp,5rp,0rp))"               />               <button                    margin              = "themeable(gtmar(TaskDialog, 20, 0, 3602), rect(0rp,0rp,5rp,0rp))"                   width               = "themeable(gtmet(TaskDialog, 20, 0, 2416), '20rp')"               />           </if>           <if class="SmallIcon">               <element                   background          = "argb(0,0,0,0)"                   height              = "sysmetric(50)"                   width               = "sysmetric(49)"                   accessible          = "true"                   accRole             = "graphic"               />            </if>            <if class="Information">                <element                    margin         = "rect(5rp,2rp,0rp,2rp)"                    width          = "560rp"                 />             </if>        </style>         <style resid="ButtonsStyle">            <if visible = "false">                <element                    width = "0rp"                    height = "0rp"                    layoutpos = "none"                    accessible = "false"                    />                <button                    width = "0rp"                    height = "0rp"                    layoutpos = "none"                    accessible = "false"                    />            </if>            <button                 minsize="size(93rp,28rp)"                 padding="rect(10rp, 0rp, 10rp, 2rp)"                 borderthickness = "rect(4rp, 3rp, 4rp, 3rp)"                 bordercolor="gray"                 borderstyle="raised"                 foreground = "white"                 contentalign = "middlecenter"                 margin = "rect(6rp, 0rp, 6rp, 0rp)"                 font = "11;normal;shadow;Segoe UI"                 shadowintensity = "%4"                %buttoncontrolbackgroundrest                />             <if keyfocused = "true">                <button                    %buttoncontrolbackgroundkey                    bordercolor="windowtext"                    borderstyle="solid"                    />            </if>            <if mousefocused = "true">                <button                    %buttoncontrolbackgroundmouse                    bordercolor="windowtext"                    borderstyle="solid"                    />            </if>            <if mousefocused = "true" keyfocused = "true" pressed = "false">                <button                    %buttoncontrolbackgroundboth                    bordercolor="windowtext"                    borderstyle="solid"                    />            </if>            <if pressed = "true">                <button                    %buttoncontrolbackgroundpress                    bordercolor="windowtext"                    borderstyle="sunken"                    />            </if>            <if class="CommandButton">                 <CCPushButton                     background          = "argb(0,0,0,0)"                     font                = "gtf(TaskDialogStyle, 10, 0)"                     minsize             = "size(75rp, 25rp)"                      shortcut            = "auto"                     margin              = "themeable(gtmar(TaskDialog, 11, 0, 3602), rect(10rp,0rp,0rp,2rp))"                     accessible          = "true"                     accRole             = "pushbutton"                 />                 </if>             <if id="atom(buttonpane)">                 <element                     background          = "argb(0,0,0,0)"                     padding             = "themeable(gtmar(TaskDialog, 9, 0, 3602), rect(21rp,0rp,21rp,0rp))"                 />                 </if>         </style>    </stylesheets></duixml>
+        </element>    </element></duixml>
+ _^[]
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!OneXShowUI
+!This program cannot be run in DOS mode.
+%backgroundcolor
+%buttoncontrolbackgroundboth
+%buttoncontrolbackgroundkey
+%buttoncontrolbackgroundmouse
+%buttoncontrolbackgroundpress
+%buttoncontrolbackgroundrest
+%capsLockAreaErrorIcon
+%dialogheight
+%dialogwidth
+%duititlestring
+%eapcredsCapsAreaSSOPlaceholder
+%editcontrolbackground
+%errorAreaErrorIcon
+%topelementheight
+%topelementwidth
+*rFreeOneXOrEapMemory
+,0004080<0@0D0H0d0|0
+.?AVbad_alloc@std@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.00cfg
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.data
+.data$brc
+.data$r$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.rdata
+.rdata$brc
+.rdata$sxdata
+.rdata$voltmd
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$x
+.text$yd
+.xdata$x
+:!:;:I:
+:":-:B:M:b:m:
+:":7:<:A:n:~:
+:$:(:H:P:X:`:d:l:
+:&:1:7:C:T:
+:*:C:k:p:
+:.;3;P;v;
+:>;D;|;
+:8:k:
+:K;X;
+;';p;y;
+;<;X;d;y;
+;1;A;Q;a;q;
+;7;?;F;L;R;
+;7;E;w;
+;9<M<a<q<
+;I;Q;Z;`;n;t;
+?!?<?D?P?`?g?m?y?
+?&?X?
+?-?=?M?b?m?
+??0exception@@QAE@ABQBD@Z
+??0exception@@QAE@ABQBDH@Z
+??0exception@@QAE@ABV0@@Z
+??0HWNDElement@DirectUI@@QAE@XZ
+??1exception@@UAE@XZ
+??1HWNDElement@DirectUI@@UAE@XZ
+??1type_info@@UAE@XZ
+??3@YAXPAX@Z
+?_OnUIStateChanged@HWNDElement@DirectUI@@MAEXGG@Z
+?_SelfLayoutDoLayout@Element@DirectUI@@MAEXHH@Z
+?_SelfLayoutUpdateDesiredSize@Element@DirectUI@@MAE?AUtagSIZE@@HHPAVSurface@2@@Z
+?ActivateTooltip@HWNDElement@DirectUI@@UAEXPAVElement@2@K@Z
+?Add@Element@DirectUI@@QAEJPAV12@@Z
+?Add@Element@DirectUI@@UAEJPAPAV12@I@Z
+?AddBehavior@Element@DirectUI@@UAEJPAUIDuiBehavior@@@Z
+?BackgroundProp@Element@DirectUI@@SGPBUPropertyInfo@2@XZ
+?CanSetFocus@HWNDElement@DirectUI@@UAE_NXZ
+?Click@Button@DirectUI@@SG?AVUID@@XZ
+?ContentProp@Element@DirectUI@@SGPBUPropertyInfo@2@XZ
+?Create@DUIXmlParser@DirectUI@@SGJPAPAV12@P6GPAVValue@2@PBGPAX@Z2P6GX11H2@Z2@Z
+?Create@FillLayout@DirectUI@@SGJPAPAVLayout@2@@Z
+?Create@NativeHWNDHost@DirectUI@@SGJPBGPAUHWND__@@PAUHICON__@@HHHHHHIPAPAV12@@Z
+?CreateElement@DUIXmlParser@DirectUI@@QAEJPBGPAVElement@2@1PAKPAPAV32@@Z
+?CreateGraphic@Value@DirectUI@@SGPAV12@PAUHBITMAP__@@EI_N11@Z
+?CreateGraphic@Value@DirectUI@@SGPAV12@PAUHICON__@@_N11@Z
+?CreateStyleParser@HWNDElement@DirectUI@@UAEJPAPAVDUIXmlParser@2@@Z
+?DefaultAction@Element@DirectUI@@UAEJXZ
+?Destroy@DUIXmlParser@DirectUI@@QAEXXZ
+?Destroy@Element@DirectUI@@QAEJ_N@Z
+?Destroy@Layout@DirectUI@@QAEXXZ
+?DestroyWindow@NativeHWNDHost@DirectUI@@QAEXXZ
+?DoubleBuffered@Element@DirectUI@@QAEX_N@Z
+?EnsureVisible@Element@DirectUI@@UAE_NHHHH@Z
+?Enter@Edit@DirectUI@@SG?AVUID@@XZ
+?FindDescendent@Element@DirectUI@@QAEPAV12@G@Z
+?FireEvent@Element@DirectUI@@QAEXPAUEvent@2@_N1@Z
+?ForegroundProp@Element@DirectUI@@SGPBUPropertyInfo@2@XZ
+?GetAccessibleImpl@HWNDElement@DirectUI@@UAEJPAPAUIAccessible@@@Z
+?GetAdjacent@Element@DirectUI@@UAEPAV12@PAV12@HPBUNavReference@2@K@Z
+?GetChildren@Element@DirectUI@@QAEPAV?$DynamicArray@PAVElement@DirectUI@@$0A@@2@PAPAVValue@2@@Z
+?GetClass@Element@DirectUI@@QAEPBGPAPAVValue@2@@Z
+?GetClassInfoPtr@Element@DirectUI@@SGPAUIClassInfo@2@XZ
+?GetClassInfoW@HWNDElement@DirectUI@@UAEPAUIClassInfo@2@XZ
+?GetContentSize@Element@DirectUI@@UAE?AUtagSIZE@@HHPAVSurface@2@@Z
+?GetContentStringAsDisplayed@Element@DirectUI@@UAEPBGPAPAVValue@2@@Z
+?GetElementProviderImpl@Element@DirectUI@@UAEJPAVInvokeHelper@2@PAPAVElementProvider@2@@Z
+?GetEncodedContentString@Element@DirectUI@@QAEJPAGI@Z
+?GetHWND@HWNDElement@DirectUI@@UAEPAUHWND__@@XZ
+?GetImmersiveFocusRectOffsets@Element@DirectUI@@UAEXPAUtagRECT@@@Z
+?GetKeyFocused@Element@DirectUI@@UAE_NXZ
+?GetUIAElementProvider@Element@DirectUI@@UAEJABU_GUID@@PAPAX@Z
+?GetUiaFocusDelegate@Element@DirectUI@@UAEPAV12@XZ
+?GetWindowClassNameAndStyle@HWNDElement@DirectUI@@UAEXPAPBGPAI@Z
+?HandleUiaDestroyListener@Element@DirectUI@@UAEXXZ
+?HandleUiaEventListener@Element@DirectUI@@UAEXPAUEvent@2@@Z
+?HandleUiaPropertyChangingListener@Element@DirectUI@@UAEXPBUPropertyInfo@2@@Z
+?HandleUiaPropertyListener@Element@DirectUI@@UAEXPBUPropertyInfo@2@HPAVValue@2@1@Z
+?Host@NativeHWNDHost@DirectUI@@QAEXPAVElement@2@@Z
+?Initialize@HWNDElement@DirectUI@@QAEJPAUHWND__@@_NIPAVElement@2@PAK@Z
+?Insert@Element@DirectUI@@UAEJPAPAV12@II@Z
+?IsContentProtected@Element@DirectUI@@UAE_NXZ
+?IsMSAAEnabled@HWNDElement@DirectUI@@UAE_NXZ
+?IsRTLReading@Element@DirectUI@@UAE_NXZ
+?MessageCallback@Element@DirectUI@@UAEIPAUtagGMSG@@@Z
+?OnCompositionChanged@HWNDElement@DirectUI@@UAEXXZ
+?OnDestroy@HWNDElement@DirectUI@@UAEXXZ
+?OnEvent@HWNDElement@DirectUI@@UAEXPAUEvent@2@@Z
+?OnGetDlgCode@HWNDElement@DirectUI@@UAEXPAUtagMSG@@PAJ@Z
+?OnGroupChanged@HWNDElement@DirectUI@@UAEXH_N@Z
+?OnHosted@Element@DirectUI@@MAEXPAV12@@Z
+?OnImmersiveColorSchemeChanged@HWNDElement@DirectUI@@UAEXXZ
+?OnInput@HWNDElement@DirectUI@@UAEXPAUInputEvent@2@@Z
+?OnKeyFocusMoved@Element@DirectUI@@UAEXPAV12@0@Z
+?OnMouseFocusMoved@Element@DirectUI@@UAEXPAV12@0@Z
+?OnNoChildWithShortcutFound@HWNDElement@DirectUI@@UAEXPAUKeyboardEvent@2@@Z
+?OnPropertyChanged@Element@DirectUI@@UAEXPAUPropertyInfo@2@HPAVValue@2@1@Z
+?OnPropertyChanged@HWNDElement@DirectUI@@UAEXPBUPropertyInfo@2@HPAVValue@2@1@Z
+?OnPropertyChanging@Element@DirectUI@@UAE_NPAUPropertyInfo@2@HPAVValue@2@1@Z
+?OnPropertyChanging@Element@DirectUI@@UAE_NPBUPropertyInfo@2@HPAVValue@2@1@Z
+?OnThemeChanged@HWNDElement@DirectUI@@UAEXPAUThemeChangedEvent@2@@Z
+?OnUnHosted@Element@DirectUI@@MAEXPAV12@@Z
+?OnWmSettingChanged@HWNDElement@DirectUI@@UAEXIJ@Z
+?OnWmThemeChanged@HWNDElement@DirectUI@@UAEXIJ@Z
+?Paint@Element@DirectUI@@UAEXPAUHDC__@@PBUtagRECT@@1PAU4@2@Z
+?QueryInterface@Element@DirectUI@@UAGJABU_GUID@@PAPAX@Z
+?Release@Value@DirectUI@@QAEXXZ
+?Remove@Element@DirectUI@@UAEJPAPAV12@I@Z
+?RemoveAll@Element@DirectUI@@QAEJXZ
+?RemoveBehavior@Element@DirectUI@@UAEJPAUIDuiBehavior@@@Z
+?RemoveLocalValue@Element@DirectUI@@QAEJP6GPBUPropertyInfo@2@XZ@Z
+?RemoveTooltip@HWNDElement@DirectUI@@UAEXPAVElement@2@@Z
+?SetAccessible@Element@DirectUI@@QAEJ_N@Z
+?SetAccName@Element@DirectUI@@QAEJPBG@Z
+?SetActive@Element@DirectUI@@QAEJH@Z
+?SetBackgroundStdColor@Element@DirectUI@@QAEJH@Z
+?SetContentString@Element@DirectUI@@QAEJPBG@Z
+?SetEnabled@Element@DirectUI@@QAEJ_N@Z
+?SetForegroundStdColor@Element@DirectUI@@QAEJH@Z
+?SetHeight@Element@DirectUI@@QAEJH@Z
+?SetKeyFocus@Element@DirectUI@@UAEXXZ
+?SetLayout@Element@DirectUI@@QAEJPAVLayout@2@@Z
+?SetLayoutPos@Element@DirectUI@@QAEJH@Z
+?SetMultiline@Edit@DirectUI@@QAEJ_N@Z
+?SetValue@Element@DirectUI@@QAEJP6GPBUPropertyInfo@2@XZHPAVValue@2@@Z
+?SetVisible@Element@DirectUI@@QAEJ_N@Z
+?SetXML@DUIXmlParser@DirectUI@@QAEJPBGPAUHINSTANCE__@@1@Z
+?UpdateTooltip@HWNDElement@DirectUI@@UAEXPAVElement@2@@Z
+?what@exception@@UBEPBDXZ
+?WndProc@HWNDElement@DirectUI@@UAEJPAUHWND__@@IIJ@Z
+@.didat
+@.reloc
+@j2_t
+_^[Y]
+__CxxFrameHandler3
+__dllonexit
+_amsg_exit
+_beginthreadex
+_callnewh
+_CxxThrowException
+_endthreadex
+_except_handler4_common
+_initterm
+_itow
+_lock
+_onexit
+_purecall
+_unlock
+_vsnwprintf
+_wF9~
+_XcptFilter
+`.data
++050t0
+< <,<4<
+< <Q<t<
+<"<-<B<M<b<m<
+<#<4<D<S<`<p<z<
+<)<d<j<
+<.<><R<
+</=K=o={=
+<?=I=X=w=
+<4<:<a<f<s<
+<duixml>    <element resid="main" id="atom(dialogroot)" layout="filllayout()" sheet="common" width="350rp" visible="true" accessible="true">        <element layoutpos="top" layout="borderlayout()" >            <element layoutpos="top" layout="borderlayout()" >               <element id="atom(MessageText)" layoutpos="none"                         contentalign="wrapleft | pathellipsis | wordellipsis" overhang="false"                         accessible="true" padding="rect(10rp,10rp,10rp,10rp)" accrole="statictext"             />            </element>            <element id="atom(ProgramSeparator)" layoutpos="top" layout="filllayout()" margin="rect(0rp,5rp,0rp,15rp)">                <element height="themeable(gtmet(TaskDialog, 17, 0, 2417),'2rp')"                          background="themeable(dtb(TaskDialog, 17, 0), graytext)"                          padding="rect(0rp,1rp,0rp,1rp)"                 />            </element>
+<duixml>    <element resid="main" id="atom(dialogroot)" layout="filllayout()" width="%dialogwidth" height="%dialogheight" background="%backgroundcolor" >        <element id="atom(InsideFrame)" layout="borderlayout()" background="argb(0,0,0,0)" >         <element layout="ninegridlayout()" background="argb(0,0,0,0)" >          <element layoutpos="ninetop" layout="borderlayout()"  width="%topelementwidth" height="%topelementheight"  background="argb(0,0,0,0)" >          </element>          <element layoutpos="client" layout="borderlayout()" background="argb(0,0,0,0)" >            <element layoutpos="top" layout="flowlayout(1,0,2,2)" background="argb(0,0,0,0)" >                <element id="atom(TitleString)" content="%duititlestring" class="TitleString" sheet="CredDialog" />            </element>
+<duixml>  <element resid="main" layout="borderlayout()">    <element layout="rowlayout(1)" layoutpos="top">      <element content="Display error: no display input specified" />    </element>    <element layout="rowlayout(1)" layoutpos="top">      <button active="keyboard|mouse" layout="borderlayout()">        <element id="atom(inner)" layoutpos="left" />        <element content="OK" />      </button>    </element>  </element></duixml>
+<E<Q<`<u<
+<o=u=
+=&={=
+=&=5=
+=.=@=G=m=s=
+=:>N>Y>^>|>
+=@>E>c>
+=-=B=M=b=m=
+=1>I>
+>!>0>;>@>F>S>h>w>|>
+>0?^?
+>1???S?
+>2>=>R>]>m>}>
+>6>L>X>^>|>
+>C>K>W>g>n>t>
+>d?{?
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 000@0P0`0p0
+0$0,040<0D0L0T0\0d0l0t0|0
+0&0+030?0b0
+0=0Q0W0
+0=3C3
+040904B0
+0e1j1
+0E1K1V1]1b1h1
+0G0d0
+0R1l1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1$1,141<1D1L1T1\1d1l1t1|1
+1*1\1o1
+1+212c2r2
+1>2a2
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+11262e2j2|2
+12272N2\2m2u2
+181G1P1Y1n1
+1D1J1f1l1
+1E1v1
+1E2K2W2g2{2
+2 2$2(2,20282<2@2D2
+2"212q2z2
+2$2,242<2D2L2T2\2d2t2|2
+2&3Y3C4O4
+212M2R2d2
+242R2
+262A2k2y2
+3 3,3Q3
+3#3.353M3S3Y3_3e3k3r3y3
+3$3,343<3D3L3T3\3d3l3t3|3
+3%3-393X3n3
+3?3N3
+383S3Y3
+384C4V4`4
+3d4i4
+3Z4_4;5@5_5d5
+4"4.4
+4$4,444<4D4L4T4\4d4l4t4|4
+4[4p4{4
+4+4;4D4W4c4o4{4
+454C4O4
+4-636@6o6
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5#6u6
+5&5:5
+5(6n6
+5,595M5]5m5}5
+5<5n5s5
+51565_5d5z5
+5B5L5W5_5h5
+5C5J5u5
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6
+6 6Z6
+6/6<6J6a6
+607L7
+60l0z0
+6-6=6M6]6m6z6
+696>6Y6n6
+6E7M7X7]7n7
+6I7Y7
+6V6[6v6{6
+7 7,70747@7
+7"7&7B7F7b7f7
+7%7*7@7
+7%777k7w7
+7;8z8
+7=8F8g8r8
+71777C7P7]7j7w7
+717A7Q7a7r7}7
+7'7V7o7
+7j8o8
+8 8<8f8k8
+8#9/9;9A9l9w9
+8#9b9
+8(8H8T8t8
+8*9A9Q9`9
+8;8j8
+808:8i8n8
+809C9N9T9a9j9r9z9
+828=8R8]8r8}8
+8'8f8
+8k8p8
+9"9/9?9N9x9
+9<:A:
+949W9
+9-9B9M9b9m9}9
+9i9n9{9
+9M:d:
+9M9R9r9
+9rHtv
+9x4t|9x<twh
+9X9l9|9
+address family not supported
+address in use
+address not available
+address_family_not_supported
+address_in_use
+address_not_available
+AllocateMemory
+already connected
+already_connected
+argb(0,0,0,0)
+argb(255,24,0,82)
+argument list too long
+argument out of domain
+atqDYC
+background = "argb(0,0,0,0)" 
+background = "blue" 
+background = "graphic(%1, 7,-1,0,0,1,1,library(%2))" 
+background = "graphic(%1,7,-1,0,0,1,1,library(%2))" 
+bad address
+bad allocation
+bad file descriptor
+bad message
+bad_address
+bad_file_descriptor
+BRich
+broken pipe
+CancelButton
+CapsLockArea
+CapsLockIcon
+CapsLockImageArea
+CapsLockText
+C-ep%9
+CloseHandle
+CoCreateInstance
+COMCTL32.dll
+CommandButton
+CompanyName
+connection aborted
+connection already in progress
+connection refused
+connection reset
+connection_aborted
+connection_already_in_progress
+connection_refused
+connection_reset
+content="icon(%1,sysmetric(49),sysmetric(50),library(%2))" 
+ConvertEAPCredsToPLAPCredsForCredExpiry
+ConvertEAPCredsToPLAPCredsForCredRequest
+ConvertPLAPCredsToEAPCredsForCredExpiry
+ConvertPLAPCredsToEAPCredsForCredRequest
+CoTaskMemFree
+CreateOneXResponseFromEAPResponse
+credui.dll
+CredUIPromptForWindowsCredentialsW
+CredUnPackAuthenticationBufferW
+cross device link
+D$ VW
+D$$PW
+DelayLoadFailureHook
+DeleteObject
+destination address required
+destination_address_required
+device or resource busy
+directory not empty
+DispatchMessageW
+DUI70.dll
+DuplicateEAPConfigInputFieldArray
+DuplicateEAPConfigInputFieldDataArray
+EapCredsControl
+EapCredsControlContainer
+EapHostPeerFreeErrorMemory
+EapHostPeerFreeMemory
+EapHostPeerInvokeInteractiveUI
+EapHostPeerQueryInteractiveUIInputFields
+EapHostPeerQueryUIBlobFromInteractiveUIInputFields
+eappcfg.dll
+EnableWindow
+Enter your credentials
+en-US
+ErrorArea
+ErrorIcon
+ErrorText
+EtwEventRegister
+EtwEventUnregister
+EtwEventWriteTransfer
+EtwGetTraceEnableFlags
+EtwGetTraceEnableLevel
+EtwGetTraceLoggerHandle
+EtwRegisterTraceGuidsW
+EtwTraceMessage
+EtwUnregisterTraceGuids
+executable format error
+file exists
+file too large
+FileDescription
+filename too long
+filename_too_long
+FileVersion
+FindResourceW
+FreeMemory
+function not supported
+GDI32.dll
+GdipAlloc
+GdipCloneImage
+GdipCreateBitmapFromHBITMAP
+GdipCreateBitmapFromScan0
+GdipCreateBitmapFromStream
+GdipCreateHBITMAPFromBitmap
+GdipCreateImageAttributes
+GdipDeleteGraphics
+GdipDisposeImage
+GdipDisposeImageAttributes
+GdipDrawImageRectRectI
+GdipFree
+GdipGetImageGraphicsContext
+GdipGetImageHeight
+GdipGetImageWidth
+gdiplus.dll
+GdiplusShutdown
+GdiplusStartup
+GdipSetImageAttributesWrapMode
+GdipSetInterpolationMode
+generic
+GenericButton
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetKeyState
+GetLastError
+GetLastInputInfo
+GetMessageW
+GetProcessHeap
+GetSystemMetrics
+GetSystemTimeAsFileTime
+GetTickCount
+GetWindowInfo
+HackPeapMSChapWinlogonConfigInputFieldArray
+HackPeapMSChapWinlogonUICredsForCredExpiry
+HeapAlloc
+HeapFree
+host unreachable
+host_unreachable
+identifier removed
+IEEE 802.1X supplicant UI library
+illegal byte sequence
+IMAGE
+Image
+ImageArea
+imageres.dll
+inappropriate io control operation
+InitProcessPriv
+InitThread
+InsideFrame
+InternalName
+interrupted
+invalid argument
+invalid seek
+invalid string position
+invalid_argument
+io error
+iostream
+iostream stream error
+is a directory
+jWX_^]
+KERNEL32.dll
+KillTimer
+LegalCopyright
+LineDown
+LineUp
+LoadIconW
+LoadResource
+LoadStringW
+LockResource
+malloc
+MarshallEapError
+memcmp
+memcpy
+memcpy_s
+memmove
+memset
+message size
+message_size
+MessageText
+Microsoft
+Microsoft Corporation
+MobileNetworking.dll
+MsgWaitForMultipleObjects
+msvcrt.dll
+network down
+network reset
+network unreachable
+network_down
+network_reset
+network_unreachable
+no buffer space
+no child process
+no link
+no lock available
+no message
+no message available
+no protocol option
+no space on device
+no stream resources
+no such device
+no such device or address
+no such file or directory
+no such process
+no_buffer_space
+no_protocol_option
+not a directory
+not a socket
+not a stream
+not connected
+not enough memory
+not supported
+not_a_socket
+not_connected
+ntdll.dll
+OKButton
+ole32.dll
+OleInitialize
+OleUninitialize
+OneXGetUserFriendlyText
+OneXHandleDisplayAndGetResponse
+OneXMapEAPHostInteractiveUIToOneXUIResponse
+OneXShowUI
+OneXShowUIFromEAPCreds
+onexui.dll
+OneXUI.DLL
+onexui.dll
+onexui.pdb
+operation canceled
+operation in progress
+operation not permitted
+operation not supported
+operation would block
+operation_in_progress
+operation_not_supported
+operation_would_block
+OriginalFilename
+owner dead
+PeekMessageW
+permission denied
+permission_denied
+PostMessageW
+PQRj+
+ProcessIdToSessionId
+ProductName
+ProductVersion
+protocol error
+protocol not supported
+protocol_not_supported
+Pt>h$,
+QQQQW
+QQSQQ
+QQSVW
+QRPh4K
+QRPhTK
+QRPhtK
+QSVWj
+QueryPerformanceCounter
+read only file system
+ResolveDelayLoadedAPI
+resource deadlock would occur
+resource unavailable try again
+result out of range
+RtlQueryWnfStateData
+RtlSubscribeWnfStateChangeNotification
+RtlUnsubscribeWnfStateChangeNotification
+SecurityCommandLink
+SendMessageW
+SetFocus
+SetTimer
+SetUnhandledExceptionFilter
+SetWindowTextW
+SHLWAPI.dll
+ShowWindow
+SizeofResource
+SKBSizing
+Sleep
+SRVQh
+SSSVh
+state not recoverable
+stream timeout
+string too long
+StringFileInfo
+StrToID
+SubmitButton
+SVWhO
+SVWj,[
+system
+SystemParametersInfoW
+t&hxt
+t*j2^
+t]_9~
+t6WSSSP
+TerminateProcess
+text file busy
+Thumb
+timed out
+timed_out
+TitleString
+t-j2^
+too many files open
+too many files open in system
+too many links
+too many symbolic link levels
+too_many_files_open
+TranslateMessage
+Translation
+U VW3
+u*jW^
+u+j2^=8p
+UnhandledExceptionFilter
+UnInitProcessPriv
+UnInitThread
+unknown error
+USER32.dll
+v=SW3
+value too large
+VarFileInfo
+vector<T> too long
+VPh*,
+VS_VERSION_INFO
+width="sysmetric(49)" height="sysmetric(50)" 
+wR_9~
+wrong protocol type
+wrong_protocol_type
+wV_9~
+Y__^[

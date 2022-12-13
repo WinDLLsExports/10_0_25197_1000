@@ -1,0 +1,87 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\win32ksgd.sys
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    HAL.dll
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0005010 Import Address Table
+             1C00050E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         98B RtlQueryRegistryValues
+                         787 PsGetProcessSessionIdEx
+                         756 PsGetCurrentProcess
+                         492 KeBugCheckEx
+                          BD ExAllocatePool2
+                          EE ExFreePoolWithTag
+                          A7 ExAcquirePushLockExclusiveEx
+                         4AD KeEnterCriticalRegion
+                         4FA KeLeaveCriticalRegion
+                         140 ExReleasePushLockExclusiveEx
+
+    HAL.dll
+             1C0005000 Import Address Table
+             1C00050D8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          54 KeQueryPerformanceCounter
+
+  Section contains the following exports for WIN32KSGD.SYS
+
+    00000000 characteristics
+    950F0628 time date stamp
+        0.00 version
+           1 ordinal base
+          22 number of functions
+          22 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000012A0 ?AllowInteractiveServices@@YAHXZ
+          2    1 00001220 ?MilliSecsToQpcCount@Qpc@@YA_K_K@Z
+          3    2 00001200 ?QpcCountToMicroSecs@Qpc@@YA_K_K@Z
+          4    3 000011E0 ?QpcCountToMilliSecs@Qpc@@YA_K_K@Z
+          5    4 00001380 ?SecsToQpcCount@Qpc@@YA_K_K@Z
+          6    5 00003160 ?s_userCritLoggingEnabled@Perf@InputTraceLogging@@0_NA
+          7    6 00008080 DllInitialize
+          8    7 00006010 DllUnload
+          9    8 000010E0 SGDGetSessionState
+         10    9 000010C0 SGDGetUserGdiSessionState
+         11    A 000010A0 SGDGetUserInputMgrSessionState
+         12    B 00001010 SGDGetUserSessionState
+         13    C 00001600 SGDSessionInitialize
+         14    D 00001900 SGDSessionUninitialize
+         15    E 00003138 W32KEtwUserCritTelemetryThrottleQPC
+         16    F 00003140 W32kEtwEnabledKeyword
+         17   10 00003130 W32kEtwUserCritAcquireDelayTimeoutQPC
+         18   11 00003150 gUserProcessHandleQuota
+         19   12 00003000 gaClipILDef
+         20   13 00003158 gliQpcFreq
+         21   14 00003148 gqpcAgeLimit
+         22   15 00003180 gullTouchInjectionMaxTimeOffset
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        1000 .idata
+        1000 .pdata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        1000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 PAGE

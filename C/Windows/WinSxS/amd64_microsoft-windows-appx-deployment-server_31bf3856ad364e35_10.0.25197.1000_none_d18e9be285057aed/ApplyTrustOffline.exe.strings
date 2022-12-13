@@ -1,0 +1,2372 @@
+                                     Callstack: %p %p %p %p %p %p %p %p %p %p %p %p
+ @8}(t?L
+ }@=D39
+ A^_]
+ A^_^
+ A__]
+ A__^
+ A_A^]
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_]
+ A_A^A\_^
+ A_A^A]A\]
+ A_A^A]A\_
+ A_A^A]A\_^]
+ H3E H3E
+ Hcy@H
+ http://www.microsoft.com/windows0
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ U=MB
+ u-fF
+ UPDATE Package SET Flags=Flags|0x400 WHERE _PackageID IN (SELECT toSetFlags._PackageID FROM PACKAGE AS toSetFlags INNER JOIN (SELECT p._PackageID, p.SourceBundle, MAX(Version) AS MaxVersion FROM Package AS p WHERE p.PackageType&0x21!=0 AND (p._WorkId=0 OR p._WorkId=?1) AND EXISTS (SELECT 1 FROM PackageUser AS puser WHERE p._PackageID=puser.Package AND puser._WorkId=?1) AND NOT EXISTS (SELECT 1 FROM PackageUser AS pu WHERE p._PackageID=pu.Package AND (pu.DeploymentState=6 OR pu.DeploymentState=5) AND (pu._WorkId=0 OR pu._WorkId=?1) AND (p._WorkId=0  OR p._WorkId=?1) LIMIT 1) GROUP BY PackageFamily) highestVersion ON CASE WHEN toSetFlags.SourceBundle=0 THEN highestVersion._PackageID=toSetFlags._PackageID ELSE toSetFlags.SourceBundle=highestVersion.SourceBundle AND toSetFlags.PackageType=8 END)
+ UPDATE Package SET Flags=Flags|0x400 WHERE _PackageID IN (SELECT toSetFlags._PackageID FROM PACKAGE AS toSetFlags INNER JOIN (SELECT p._PackageID, p.SourceBundle, MAX(Version) AS MaxVersion FROM Package AS p WHERE p.PackageType&0x21!=0 AND p._WorkId=0 AND NOT EXISTS (SELECT 1 FROM PackageUser AS pu WHERE p._PackageID=pu.Package AND (pu.DeploymentState=6 OR pu.DeploymentState=5) AND pu._WorkId=0 AND p._WorkId=0 LIMIT 1) AND (p.PackageFamily NOT IN (SELECT PackageFamily FROM Package WHERE Flags&0x400!=0 GROUP BY PackageFamily)) GROUP BY PackageFamily) highestVersion ON CASE WHEN toSetFlags.SourceBundle=0 THEN highestVersion._PackageID=toSetFlags._PackageID ELSE toSetFlags.SourceBundle=highestVersion.SourceBundle AND toSetFlags.PackageType=8 END)
+ UPDATE Package SET Flags=Flags|0x400 WHERE _PackageID IN (SELECT toSetFlags._PackageID FROM PACKAGE AS toSetFlags INNER JOIN (SELECT p._PackageID, p.SourceBundle, MAX(Version) AS MaxVersion FROM Package AS p WHERE p.PackageType&0x21!=0 AND p.PackageFamily=? AND p._WorkId=0 AND NOT EXISTS (SELECT 1 FROM PackageUser AS pu WHERE p._PackageID=pu.Package AND (pu.DeploymentState=6 OR pu.DeploymentState=5) AND pu._WorkId=0 AND p._WorkId=0 LIMIT 1) GROUP BY PackageFamily) highestVersion ON CASE WHEN toSetFlags.SourceBundle=0 THEN highestVersion._PackageID=toSetFlags._PackageID ELSE toSetFlags.SourceBundle=highestVersion.SourceBundle AND toSetFlags.PackageType=8 END)
+ UPDATE Package SET Flags=Flags|0x400 WHERE _PackageID IN (SELECT toSetFlags._PackageID FROM PACKAGE AS toSetFlags INNER JOIN (SELECT p._PackageID, p.SourceBundle, MAX(Version) AS MaxVersion FROM Package AS p WHERE p.PackageType&0x21!=0 AND p.PackageFamily=?1 AND (p._WorkId=0 OR p._WorkId=?2) AND NOT EXISTS (SELECT 1 FROM PackageUser AS pu WHERE p._PackageID=pu.Package AND (pu.DeploymentState=6 OR pu.DeploymentState=5) AND (pu._WorkId=0 OR pu._WorkId=?2) AND (p._WorkId=0  OR p._WorkId=?2)  LIMIT 1) GROUP BY PackageFamily) highestVersion ON CASE WHEN toSetFlags.SourceBundle=0 THEN highestVersion._PackageID=toSetFlags._PackageID ELSE toSetFlags.SourceBundle=highestVersion.SourceBundle AND toSetFlags.PackageType=8 END)
+ Windows
+!`EhXF8
+!D^4(
+!This program cannot be run in DOS mode.
+!tpQcB
+"%Hly
+"@$8""
+"ApplyTrustOffline.PROGRAM"
+"Aw3,w
+"Microsoft Window
+#|mY]n:
+#~GOo
+#>Rel
+#7L/~
+#text
+$0< u
+$5jjo
+%"3Rt
+%:u)}
+%|egA
+%02u%02u%02u %02u%02u%02u.%03u [%s 0x%08X] P%x T%x: %s
+%02u%02u%02u %02u%02u%02u.%03u [Profile %ums] P%x T%x: %s
+%02u%02u%02u %02u%02u%02u.%03u [Trace] P%x T%x: %s
+%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X
+%0nw0/
+%4]ECc
+%aSXk
+%H!y H
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%u)\%hs!%p: 
+%L{LR5
+%s\%s
+%s\resources.pri
+%W$}5}
+&)}J$
+&=<,.
+&1C{3
+&F\6d
+&H|f@
+&Uj"j
+&W`{2r
+(_^][
+(caller: %p) 
+(database)
+(f1n|rS9
+(n*@,:*"
+)@;e,
+)@L/ 
+)M$t/uz
+)N|!M
+)O%Jw
+*,,0*j
+*[local-name()='%s']
+*[local-name()='HostRuntime']
+*[local-name()='PublisherCacheFolders']/*[local-name()='Folder']
+*{@#W
+*Wl3n
+, B!~
+, could not get user sid
+, user SID: 
+,('+ow
+,`Q26u
+,c{y>
+,wocO
+,YOwqzlEo3ZT0P8Jx6UhEjaa6N9VYo8mlW6bKz0WZLL4=0Z
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVexception@std@@
+.?AVResultException@wil@@
+.?AVtype_info@@
+.]/'t
+.00cfg
+.4d^d
+.4Y`}
+.bmnA
+.bmnH
+.bmnL
+.bO6'
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIAC
+.CRT$XIC
+.CRT$XIZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.data$rs$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.gehcont
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.m&XD
+.pdata
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.xdata
+.xdata$x
+.xn--
+/*[local-name()='Package']/*[local-name()='Extensions']/*[local-name()='Extension'] |/*[local-name()='Package']/*[local-name()='Extensions']/mx:PackageExtension
+//O3B
+/8#z3
+/8f<h
+/-eb^
+/OfflineSoftwareHive:
+/svgS;s
+: could not check access
+: could not get SDDL
+: could not get security descriptor
+: owner is 
+: SDDL is 
+: user has access 0x
+: user has no access
+:,[I2WKZts
+:{onecore\admin\appmodel\common\optionalpackagehelper.cpp
+:memory:
+;hj"UJC
+;PMN)r
+;T$@v,
+;u,XR
+?[7AV0S
+?_0x_
+?>3oqR&
+?k3%H[F
+-?nOs'
+?PKCXt
+?-u<H
+?xwN,
+@*[local-name()='CompatMode']
+@*[local-name()='CurrentDirectoryPath']
+@*[local-name()='HostId']
+@*[local-name()='Parameters']
+@*[local-name()='RuntimeBehavior']
+@*[local-name()='Scope']
+@*[local-name()='Subsystem']
+@*[local-name()='SupportsMultipleInstances']
+@*[local-name()='TrustLevel']
+@.data
+@.didat
+@.reloc
+@8|$Hu
+@8|$I
+@8}`H
+@8t$Pt<H
+@8u(t
+@8u@t
+@8u@u H
+@8uPu
+@A^_]
+@A^_^
+@A^_^[]
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_^
+@A_A^A]A\_^]
+@NULL
+@oEvK
+@onecore\base\appmodel\staterepository\dataaccesslayer\statementexecution.cpp
+@SUVWATAVAWH
+@SUVWAV
+@SUVWAVH
+@SUVWH
+@SVWH
+@UATAUAVAWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAVAWH
+@USVWAVH
+@USVWAWH
+@USVWH
+@USWH
+[%hs(%hs)]
+[%hs]
+[checkstatements] #%u Database %p: Statement %p: %s SQL %s
+[mr{Z8
+[Nk[J:
+[pre-sqlite3_exec] #%u Database %p {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X} TID:%u : SQL %s
+[pre-sqlite3_finalize] #%u Database %p: Statement %p: %s
+[pre-sqlite3_prepare] #%u Database %p : SQL %s
+[pre-sqlite3_reset] #%u Database %p: Statement %p: %s
+[pre-sqlite3_step] #%u Database %p: Statement %p %s
+[sqlite3_close] #%u Database %p: %s
+[sqlite3_exec] #%u Database %p: Try %u (%llums) {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}%s%s TID:%u %s : SQL %s
+[sqlite3_finalize] #%u Database %p: Statement %p: --: %s
+[sqlite3_open: lastErrNo:0x%X filecontrolrc:%d] #%u Database %p: %hs
+[sqlite3_open: lastErrNo:0x%X filecontrolrc:%d] #%u Database %p: %s
+[sqlite3_prepare] #%u Database %p: Try %u (%llums) %s : SQL %s
+[sqlite3_prepare] #%u Database %p: Try %u (%llums)%s%s %s : SQL %s
+[sqlite3_reset] #%u Database %p: Statement %p: %s: %s
+[sqlite3_step] #%u Database %p: Statement %p %s: Try %u (%llums)%s%s %s : SQL %s
+[XFb0
+\$ E3
+\$ UH
+\$ UVWATAUAVAWD
+\$ UVWATAUAVAWH
+\$ UVWATAVH
+\$ UVWAVAWH
+\$ VWAVH
+\$ WH
+\$`E3
+\$`L;
+\$`L;APs
+\$`L;GPs
+\$0E3
+\$8E3
+\$8Lc
+\$XD;
+\\?\UNC\
+\=#>#q
+\b,ho
+\GzS?9|
+\Microsoft\Windows\CurrentVersion\AppModel\StateChange\PackageList\
+\Ngg|D
+\resources.pri
+]@D!u8H
+]8!E0L
+]FXH*
+^0\0Z
+^Q'b8
+__C_specific_handler
+__current_exception
+__current_exception_context
+__CxxFrameHandler3
+__CxxFrameHandler4
+__std_terminate
+_1.0.0.0_neutral_neutral_nopublisherid
+_c_exit
+_CxxThrowException
+_initterm
+_initterm_e
+_o___acrt_iob_func
+_o___p___argc
+_o___p___wargv
+_o___p__commode
+_o___std_exception_copy
+_o___std_exception_destroy
+_o___stdio_common_vfwprintf
+_o___stdio_common_vsnprintf_s
+_o___stdio_common_vsnwprintf_s
+_o___stdio_common_vsprintf
+_o___stdio_common_vswprintf
+_o__callnewh
+_o__cexit
+_o__configthreadlocale
+_o__configure_wide_argv
+_o__crt_atexit
+_o__errno
+_o__exit
+_o__get_initial_wide_environment
+_o__initialize_onexit_table
+_o__initialize_wide_environment
+_o__invalid_parameter_noinfo
+_o__purecall
+_o__register_onexit_function
+_o__seh_filter_exe
+_o__set_app_type
+_o__set_fmode
+_o__set_new_mode
+_o__stricmp
+_o__wcslwr
+_o__wcsnicmp
+_o_exit
+_o_free
+_o_malloc
+_o_terminate
+_o_wcscpy_s
+_register_thread_local_exe_atexit_callback
+` UAVAWH
+`.rdata
+`+'E1
+`A^_^][
+`A_A^_^]
+`A_A^A]A\^[]
+`A_A^A]A\_^]
+`co1$
+`JbQqh
+{ AVH
+{,kvq.B
+{Iwek
+| bpb
+|$ D+
+|$ E3
+|$ UATAUAVAWH
+|$ UATAVH
+|$ UAVAWH
+|$ UH
+|$(A^
+|$(E3
+|$(H;
+|$@A_A^A]A\
+|$0E3
+|$0H;
+|$8E3
+|$8H;
+|$HD9d$0tQI
+|$hE3
+|$HH;
+|$pH;
+|$XE3
+|?PW!
+|_0_l'
+|He4o_
+|mAq$
+}`H;~Ps
+}`H;yPs
+}0H+}(H
+}aWy9
+}MhX/
+}MO,BP
+~@H9FXu
+~\My4-Y
+~]IcQ(A
+~|+kH
+~0uSH
+~1LcA(H
+~TIcQ(A
+~VHcS(A
+~WIcQ(A
+~XH9~Pt3A
+~XIcQ(A
+~ZIcQ(A
++1ncYE
++6[Kp
+'+F@j
++z*v?
+<#U}x
+<@/t5L
+<@\t=fB
+<A\t$H
+<A\t:
+<Error 0x%X converting the user's SID to a string>
+<Error 0x%X getting the user's SID from the process' token>
+<Error 0x%X in GetApplicationUserModelIdFromToken>
+<Error 0x%X in GetPackageFullName>
+<Error 0x%X in NtQueryInformationProcess>
+<Error 0x%X in OpenProcessToken>
+<Error 0x%X in QueryFullProcessImageNameW>
+<Error 0x%X moving command line>
+<Error allocating memory>
+<error>
+<g'{}
+<K5q=
+<MBt6
+<No commandline present>
+<no-error-message>
+<None>
+<null>
+<P/u(
+<tock
+<Unknown>
+<X3>0
+="S=O
+=/jmO{=Ne
+=;\$8t5
+=d2Xy
+=m/#M
+-=os0
+=Voh+
+>`onecore\admin\appmodel\common\mrthelper.cpp
+>`onecore\admin\appmodel\packagerepository\common\tools.cpp
+>nG*2]zs
+0'+"u9
+0123456789abcdefghjkmnpqrstvwxyz
+0123456789ABCDEFx
+040904B0
+08@HPX`hpx
+0A^_]
+0A^_^
+0A^_^[]
+0A_A^]
+0A_A^_
+0A_A^_^]
+0A_A^A\_]
+0A_A^A\_^[]
+0A_A^A]
+0A_A^A]A\_
+0A_A^A]A\_^]
+0eZ7'
+0x%08lx
+1.3.6.1.4.1.311.10.3.6
+1.3.6.1.4.1.311.76.3.1
+10.0.25197.1000
+10.0.25197.1000 (WinBuild.160101.0800)
+1234567890abcdefghjkmnpqrstvwxyzABCDEFGHJKMNPQRSTVWXYZ
+140528173333Z
+1ja,2
+1WyQ?
+2+X-9O
+220630180000Z
+230915180000Z0z1
+231229+4713260
+290528174333Z0}1
+2D$+#
+2mYrjzs
+2ORPc$J
+3;\$8t+
+3<e*2B
+3http://www.microsoft.com/pkiops/Docs/Repository.htm0
+'3l#4TO\
+3l<dl
+3YkG[
+4&hG7#
+4dQ#&
+4'FgP
+4QY\+
+58\4Z
+5h\2+P
+5Microsoft Development Root Certificate Authority 20140
+5mvheI|8W/
+6:`Y5,
+6j""z
+6WL7tr
+7 ('<I
+7D8mPuJ
+7'Ome
+7WI7`
+8\$ u
+8\$8t
+8^P\#
+8=,`U:
+88c?W
+8A^_^[
+8ducR
+8EXt&H
+8L$8t
+8m[!}
+8O&b;j
+8R kS*
+8R6+g[
+8Y/>l
+9 7uK
+9&>F9
+9*W+m
+9{H~R
+9+#qmI
+97tEA
+9cYjP
+9G0uPD
+9H9t$X
+9L$0t
+9oXv)@8
+9s@|+3
+9t$ t
+9t$ht
+9wm]#
+9y<tjH
+A)ye0<
+A^_^[]
+A^_^][
+A^A\]
+A^A\_^]
+A^A]A\_]
+A__^[]
+A_A\_^]
+A_A^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]_]
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_[]
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A8]8t
+AccessCheck
+AcgApi
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+Action
+ActivityError
+ActivityIntermediateStop
+ActivityStoppedAutomatically
+AdjustTokenPrivileges
+aF+;?*:
+AIs:=
+Aj}@.
+Analyze
+ANALYZE;
+Aonecore\admin\appmodel\trust\filevalidationhelper.cpp
+api-ms-win-appmodel-runtime-internal-l1-1-1.dll
+api-ms-win-appmodel-runtime-internal-l1-1-2.dll
+api-ms-win-appmodel-runtime-l1-1-0.dll
+api-ms-win-appmodel-runtime-l1-1-1.dll
+api-ms-win-appmodel-unlock-l1-1-0.dll
+api-ms-win-core-apiquery-l1-1-0.dll
+api-ms-win-core-biplmapi-l1-1-0.dll
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-com-l1-1-1.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-errorhandling-l1-1-2.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-file-l1-2-2.dll
+api-ms-win-core-file-l2-1-0.dll
+api-ms-win-core-file-l2-1-2.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-interlocked-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-localregistry-l1-1-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-path-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-processthreads-l1-1-3.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-psapi-l1-1-0.dll
+api-ms-win-core-realtime-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-core-timezone-l1-1-0.dll
+api-ms-win-core-windowserrorreporting-l1-1-1.dll
+api-ms-win-core-winrt-error-l1-1-0.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-eventing-tdh-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-l2-1-0.dll
+api-ms-win-security-provider-l1-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+ApiSetQueryApiSetPresence
+appContainer
+AppExecutionAlias
+AppExtension
+AppExtensionHost
+Application
+ApplicationBackgroundTask
+ApplicationContentUriRule
+ApplicationExtension
+ApplicationProperty
+ApplicationUser
+ApplyStrongProtection
+ApplyTrustOffline.pdb
+AppService
+appSilo
+AppUriHandler
+AppUriHandlerGroup
+AppXAllUserStore.dll
+AppxBlockMap.xml
+AppXDeploymentClient.dll
+AppXDeploymentServer
+AppxExtension
+AppxInvestigationFile
+AppxManifest
+AppxManifest.xml
+AppxMetadata\AppxBundleManifest.xml
+AppXMetadata\CodeIntegrity.Cat
+AppxPackageVolumes
+AppxPolicies
+AppxPurgeList
+AppXSetTrustLabelOnPackageForOfflineUpgrade(%s, TrustLabelFlags::SilentlySkipNonStorePackages, %s) = 0x%X
+AppxSignature.p7x
+AppxStateChange
+arm64
+ATAVAWH
+ATTACH DATABASE '%s' AS '%s';
+AUD#7
+aXgfK
+axlVoP
+b"Ehu
+b; vQ
+B]FHg
+-b]WW8
+B_1Z_
+b8n_~
+bad allocation
+bad array new length
+Bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+BEGIN -> COMMIT;
+BEGIN -> ROLLBACK;
+BEGIN EXCLUSIVE /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+BFlK)
+BgVgDnq
+BiChangeApplicationStateForPackageName
+Bj?fnjY
+BlockMap Validation Failed for FilePath: %ws IsEncrypted: %d EABIT: %d UncompressedSize: %I64u
+buffer error
+Bundle
+BundlePackage
+BundleResource
+BusyCount
+C !C0H
+C D8U@u
+c%Pp&
+c)QQL"
+C`#St
+C<0yL]
+c3|E<
+c'4.f
+C8!CHH
+c9>.e)
+C9fD9?u,
+cache_size
+CacheHit
+CacheMiss
+CacheSpill
+CacheUsed
+CacheWrite
+callContext
+CallContext:[%hs] 
+callOrigin
+cannot start a transaction within a transaction
+Category
+CertCloseStore
+CertCreateCertificateChainEngine
+CertFreeCertificateChain
+CertFreeCertificateChainEngine
+CertFreeCertificateContext
+CertGetCertificateChain
+CertGetEnhancedKeyUsage
+CertGetEnhancedKeyUsage failed when sizing EKU buffer
+CertGetSubjectCertificateFromStore
+CertOpenStore
+CertVerifyCertificateChainPolicy
+CertVerifyCertificateChainPolicy failed
+changeid_next_value
+Checkpoint
+CheckpointMode
+cJDPX
+cL[s#/
+classic
+CloseHandle
+CloseThreadpoolTimer
+cm5Vp
+CoCreateInstance
+CoCreateInstanceFromApp
+CoInitializeEx
+com1.
+com2.
+com3.
+com4.
+com5.
+com6.
+com7.
+com8.
+com9.
+commandLine
+COMMIT /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+CompanyName
+CompareStringOrdinal
+compress
+Compress(x[,level]) error: Invalid level (%d)
+Compress(x[,level]) error: Invalid type for level (%d)
+console
+ContentGroup
+ContentGroupFile
+ConvertSecurityDescriptorToStringSecurityDescriptorW
+ConvertSidToStringSidW
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+CopyFileW
+CopySid
+CoTaskMemFree
+CoUninitialize
+CP!C`f
+Cpu:%d%s Mem:%d%s Io:%d%s
+CpuPriority
+CreateDirectoryW
+createDist
+CreateFileMappingW
+CreateFileW
+CreateMutexExW
+createOptions
+CreateSemaphoreExW
+CreateSetting: Subkey=%ls
+CreateThreadpoolTimer
+Critical
+CRYPT32.dll
+CryptMsgClose
+CryptMsgGetParam
+CryptQueryObject
+CsXt3
+currentContextId
+currentContextMessage
+currentContextName
+currentStatus
+CustomInstallWork
+D#CtA
+D#CtD
+D#GtD
+D$ E3
+D$ H;
+D$ SRD1H
+D$(E3
+D$,D8-
+D$@!\$HI
+D$@E3
+D$@H!\$8H!\$@D
+D$@L+
+D$`D8\$ht
+D$`E3
+D$0E3
+D$0H;
+D$4E3
+D$8E3
+D$HD+D$xH
+D$hE3
+D$HE3
+D$p!wN
+D$P@@
+D$PA;
+D$PE3
+D$pE3
+D$pfA
+D$pHcy
+d$pL;OPs
+D$TE3
+D$xE3
+D$XH;
+D:AI(A;OICI;0x1200A9;;;%s)(A;OICI;0x1200A9;;;BU)
+D;|$H
+D;t$@
+D;t$p
+D;wht
+d]hSm8
+D+D$xH
+D3] D3
+D3] E3
+D3U D+
+D8{8uOH
+D8|$Pt
+D8}gu
+D8}XtQD8}
+D8a$t
+D8d$@tCH
+D8k@t
+D8mgu
+D8u L
+D8y8uzH
+D9|$@
+D9|$8t
+D9|$8t\H
+D9~hv@A
+D98tyH
+D9aLu
+D9d$(
+D9D$0
+D9d$0u1H
+D9d$8
+D9d$p
+d9F2f
+D9l$ t
+D9l$(|
+D9l$@upH
+D9m0u?H
+D9s u
+D9s8wrL
+D9t$H
+D9t$p
+D9u8t2H
+data error
+Database
+Database.Checkpoint
+DatabaseCache.Add
+DatabaseCache.Get
+DatabaseConnection
+DatabaseCorruption.Detected
+DatabaseCorruptionFirstDetectedUptime
+DatabaseCorruptionFirstDetectedWhen
+DatabaseCorruptionLastReported
+DatabasePtr
+dD/Om]
+DebugBreak
+DefaultTile
+DelayLoadFailureHook
+DELETE
+DELETE FROM %s WHERE _WorkId=? AND _WorkId<>0;
+DELETE FROM AppxExtension WHERE _AppxExtensionID=? AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM AppxExtension WHERE _AppxExtensionID=? AND _WorkId=0;
+DELETE FROM DependencyGraph WHERE _DependencyGraphID IN (SELECT _ShadowId FROM DependencyGraph WHERE _WorkId=? AND _WorkId<>0);
+DELETE FROM DependencyGraph WHERE _WorkId=? AND _WorkId<>0 AND _IsMarkedForDeletion<>0 AND _ShadowId<>0;
+DELETE FROM File WHERE _FileID IN (SELECT _FileID FROM File INNER JOIN (SELECT Package AS P, RelativeFilePath AS R FROM File WHERE _WorkId=? AND _WorkId<>0) WHERE _WorkId=0 AND Package=P AND RelativeFilePath=R);
+DELETE FROM MrtUserPri WHERE Package=? AND User=? AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM MrtUserPri WHERE Package=? AND User=? AND _WorkId=0;
+DELETE FROM Package WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM Package WHERE _PackageID=? AND _WorkId=0;
+DELETE FROM PackageExternalLocation WHERE User=? AND Package=? AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM PackageExternalLocation WHERE User=? AND Package=? AND _WorkId=0;
+DELETE FROM PackageLocation WHERE Package IN (SELECT Package FROM PackageLocation WHERE _WorkId=? AND _WorkId<>0) AND _WorkId=0;
+DELETE FROM PackageUser WHERE _PackageUserID IN (SELECT _PackageUserID FROM PackageUser INNER JOIN (SELECT User AS U, Package AS P FROM PackageUser WHERE _WorkId=? AND _WorkId<>0) WHERE _WorkId=0 AND User=U AND Package=P);
+DELETE FROM PackageUser WHERE _PackageUserID=? AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM PackageUser WHERE _PackageUserID=? AND _WorkId=0;
+DELETE FROM PackageUser WHERE User=? AND Package=? AND (_WorkId=0 OR _WorkId=?);
+DELETE FROM PackageUser WHERE User=? AND Package=? AND _WorkId=0;
+DELETE FROM PrimaryTileUser WHERE _PrimaryTileUserId IN (SELECT _PrimaryTileUserId FROM PrimaryTileUser INNER JOIN (SELECT ApplicationIdentity AS ai, User AS usr FROM PrimaryTileUser WHERE _WorkId=? AND _WorkId<>0 ) WHERE _WorkId=0 AND ApplicationIdentity=ai AND User=usr);
+DELETE FROM PrimaryTileUser WHERE TileUniqueId IN (SELECT TileUniqueId FROM PrimaryTileUser WHERE _WorkId=? AND _WorkId<>0) AND _WorkId=0;
+DELETE FROM SecondaryTile WHERE _SecondaryTileID IN (SELECT SecondaryTile FROM SecondaryTileUser WHERE _WorkId=0 AND TileUniqueId IN (SELECT TileUniqueId FROM SecondaryTileUser WHERE _WorkId=? AND _WorkId<>0)) AND _WorkId=0;
+DELETE FROM SecondaryTileUser WHERE TileUniqueId IN (SELECT TileUniqueId FROM SecondaryTileUser WHERE _WorkId=? AND _WorkId<>0) AND _WorkId=0;
+DELETE FROM WowDependencyGraph WHERE _WorkId=? AND _WorkId<>0 AND _IsMarkedForDeletion<>0 AND _ShadowId<>0;
+DELETE FROM WowDependencyGraph WHERE _WowDependencyGraphID IN (SELECT _ShadowId FROM WowDependencyGraph WHERE _WorkId=? AND _WorkId<>0);
+DELETE FROM XboxPackage WHERE EditionId IN (SELECT EditionId FROM XboxPackage WHERE _WorkId=? AND _WorkId<>0) AND _WorkId=0;
+DeleteCriticalSection
+DeleteFileW
+Dependency
+DependencyGraph
+Deployment
+DeploymentDatabaseStatisticsLastUpdated
+DeploymentHistory
+desiredStatus
+DETACH DATABASE '%s';
+Dg@14t
+DirtyPackages
+DownlevelMachineDatabaseStatisticsLastUpdated
+DW(jXg8
+E#7eA
+e#xN0H
+E$ES-0
+e(*}/
+E@!E8H!D$0
+e`A_A^A]A\]
+E=PfE
+E=PfH
+E0f;0
+E8<0u
+E8H!}8H
+eA}Nr
+EfsOpenFileRawFailed
+EfsOpenFileRawFailedAttemptingRetry
+E'H!E'
+E'H!E7!E?H
+Elapsed
+empty distance tree with lengths
+endswith
+EndsWith(*string*,suffix) error: Invalid type (%d)
+EndsWith(string,*suffix*) error: Invalid type (%d)
+EnsureRootFolderInheritAclsAreSet
+EnterCriticalSection
+EntryPoint
+EoI9E
+epA_A^A]A\]
+EqualSid
+Error
+ErrorCode
+eU7p$+
+EventActivityIdControl
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+EvtClose
+EvtGetChannelConfigProperty
+EvtOpenChannelConfig
+ex7>m
+Exception
+EXCLUSIVE
+Executable
+execution_flags
+ExpandedSQL
+ExpandedSQL=%hs
+ext-ms-win32-subsystem-query-l1-1-0
+ext-ms-win-appmodel-deployment-l1-1-0
+ext-ms-win-appmodel-deployment-l1-1-0.dll
+ext-ms-win-appmodel-deployment-l1-1-1
+ext-ms-win-appmodel-deployment-l1-1-1.dll
+ext-ms-win-desktopappx-l1-1-0
+ext-ms-win-desktopappx-l1-1-1
+ext-ms-win-desktopappx-l1-1-2
+ext-ms-win-desktopappx-l1-1-3
+ext-ms-win-desktopappx-l1-1-4
+ext-ms-win-desktopappx-l1-1-5
+ext-ms-win-desktopappx-l1-1-6
+ext-ms-win-desktopappx-l1-1-7
+ext-ms-win-desktopappx-l1-2-0
+ext-ms-win-desktopappx-l1-2-1
+ext-ms-win-resources-languageoverlay-l1-1-0
+ext-ms-win-resources-languageoverlay-l1-1-1
+ext-ms-win-resources-languageoverlay-l1-1-2
+ext-ms-win-resources-languageoverlay-l1-1-3
+ext-ms-win-resources-languageoverlay-l1-1-4
+ext-ms-win-resources-languageoverlay-l1-1-5
+ext-ms-win-resources-languageoverlay-l1-1-6
+ext-ms-win-resources-languageoverlay-l1-1-7
+ext-ms-win-session-usermgr-l1-1-0
+ext-ms-win-session-usermgr-l1-1-0.dll
+ext-ms-win-session-usermgr-l1-2-0
+ext-ms-win-session-usertoken-l1-1-0
+ext-ms-win-session-usertoken-l1-1-0.dll
+ext-ms-win-session-wtsapi32-l1-1-0
+ext-ms-win-session-wtsapi32-l1-1-0.dll
+ext-ms-win-session-wtsapi32-l1-1-1
+ext-ms-win-storage-sense-l1-1-0
+ext-ms-win-storage-sense-l1-2-0
+ext-ms-win-storage-sense-l1-2-1
+ext-ms-win-storage-sense-l1-2-2
+ext-ms-win-storage-sense-l1-2-3
+ext-ms-win-storage-sense-l1-2-4
+ext-ms-win-storage-sense-l1-2-5
+ext-ms-win-wevtapi-eventlog-l1-1-0
+ext-ms-win-wevtapi-eventlog-l1-1-0.dll
+ext-ms-win-wevtapi-eventlog-l1-1-1
+ext-ms-win-wevtapi-eventlog-l1-1-2
+ext-ms-win-wevtapi-eventlog-l1-1-3
+EXTRA
+F(D9h,u
+f]rFQ
+f9,^u
+f9,Au
+f9,Cu
+f9,Hu
+f9,Nu
+f9,Pu
+f9,Vu
+f9<Au
+f9<Bu
+f9<Ju
+f9<Pu
+f94Au
+f94Bu
+f94Cu
+f94Ju
+f94Qu
+f99te
+fA9,@u
+fA94@u
+fA94Fu
+Failed to update State Repository Cache
+FailFast
+FailFastBusySnapshot.StatementInProgress: #%u Index=%u Database=%p Statement=%p SQL=%s
+FailFastBusySnapshot: Statements Total=%u Busy=%u Database=%p FirstBusySQL=%hs
+failureCount
+failureId
+failureType
+FallbackError
+fcOkC]
+fD9 t
+fD9$Cu
+fD9$Fu
+fD9$Gu
+fD9$Ku
+fD9$Nu
+fD9$Ou
+fD9(t
+fD9,Au
+fD9,Fu
+fD9,Gu
+fD9.t
+fD9:t
+fD9?u
+fD9<Au
+fD9<Bu
+fD9<Fu
+fD9<Gu
+fD9<Hu
+fD9<Ou
+fD90t
+fD94Au
+fD94Cu
+fD94Gu
+fD94Ju
+fD94Nu
+fD94Zu
+fD96u)L
+fD98t
+fD98u
+fD9t}
+fE9$Gu
+fE9$Ju
+fE9$Ku
+fE9$Nu
+fE9,@u
+fE9,Fu
+fE9,Pu
+fE9<~u
+fE9<Au
+fE94Hu
+fE98u
+fE99t
+fF9,qu
+fF9<Nu
+fF9du
+fG94yu
+file error
+file://
+fileAccess
+FileCreationTime(UTC): %04hu-%02hu-%02hu %02hu:%02hu:%02hu, LastFileWriteTime(UTC): %04hu-%02hu-%02hu %02hu:%02hu:%02hu, FileSize: %I64u, Attributes: 0x%08lx
+FileDescription
+FileInUse
+FileInUse PFun: %ws, ImageName: %ws, Cmd: %ws, UserSid: %ws, SessionId: %d, PID: %d
+fileName
+Filename
+fileName
+Filename
+fileName
+filename
+Filename:%s, SQL:%s, TxCallerId:%hs %ls
+FilePath
+FilePath: %ws
+Files
+FileTimeToSystemTime
+FileTypeAssociation
+FileVersion
+FindClose
+FindFirstFileNameW
+FindFirstFileW
+FindNextFileNameW
+FindNextFileW
+FirstBusySQL
+FirstReportedUptime
+FirstReportedWhen
+FJ?*@[D
+Flags
+FNHcO(A
+FormatMessageW
+fQGBGy('
+FreeLibrary
+function
+fy?F:
+G"tl 
+G()p(H
+G,A_A^A]A\_^][
+G@A_s
+G@H9GP
+G@H9GPt
+G5N+>
+G9]@t
+GAe4e.
+gchangeid_next_value() failed
+GetAce
+GetApplicationUserModelIdFromToken
+GetAppXLogMessageFromDataFailure
+GetChanges() called but !db.IsOpen()
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDeploymentError
+GetEffectivePackageStatusForUser
+GetFileAttributesExW
+GetFileAttributesW
+GetFileInformationByHandleEx
+GetFileSecurityW
+GetFileSizeEx
+GetLastError
+GetLastInsertRowID() called but !db.IsOpen()
+GetLengthSid
+GetLocalTime
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExA
+GetModuleHandleExW
+GetModuleHandleW
+GetPackageFullName
+GetPackageFullNameFromToken
+GetPackageStatus
+GetPersistedRegistryLocationW
+GetProcAddress
+GetProcessHeap
+GetProcessMitigationPolicy
+GetSecurityDescriptorOwner
+GetSecurityInfo
+GetStagedPackageOrigin
+GetSystemInfo
+GetSystemTimeAsFileTime
+GetThreadInformation
+GetTokenInformation
+GetTotalChanges() called but !db.IsOpen()
+GetVersionExW
+GetVolumeInformationW
+GetVolumeMediaId
+GetVolumeNameForVolumeMountPointW
+GetVolumePathNameW
+GetWindowsDirectoryW
+gEVnl
+ghttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crl0
+gI*f&
+-Gk'^
+GlobalMemoryStatusEx
+GN"C&0`
+Go}(l
+GXL9GPt
+H ATAVAWH
+H SWH
+H UATAUAVAWH
+h UAVAWH
+H WATAUAVAWH
+H!\$0
+H!\$0H!\$(H!\$ 3
+H!\$83
+H!\$hH
+H!_(H!_0H!_8H!_@M
+H#;@l
+H%m5z
+h&&De
+h*bfU1
+H;_8r
+H;{0r
+H;{8r
+H;|$0r
+H;~Hu$H
+H+SXH
+H+t$h
+H09O0t
+h3?U`lI
+H6R||
+H8|CsE
+H9)t*H
+H9\$0
+H9\$0v
+H9_8vBH
+H9{0v#H
+H9{8v+H
+H9}wt)H
+H90t-L
+H97u%H
+HA_A^A]A\_^[]
+HardlinkData File: %ws Hardlink: %ws
+hash_base32
+hash_base32() doesn't support double (%d)
+HashDigestLength
+Hasher.GetDigestAsBase32(text) failed
+Hasher.Start() failed
+Hasher.Update(integer) failed
+Hasher.Update(text) failed
+Hc\$@
+Hc\$@E
+HcD$$HcL$ H
+HcD$@
+HcI(H
+HcK(H
+HcO(A
+HcQ(H
+HeapAlloc
+HeapFree
+HgIu/
+hgM&p
+HN28'
+HostRuntime
+hresult
+hTa$)D
+hV{?eGW
+hYt#g
+i(Lcy H
+I/lPJU
+i|VAh
+i41,U
+IcI(H
+IcK(f
+IcK(H
+IcQ(fA
+IcS(fA
+ihttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20Root%20Certificate%20Authority%202014.crt0
+ii#L,
+iI$X},X
+Ilo`N8 
+imageName
+ImpersonateLoggedOnUser
+ImpersonateSelf
+incompatible version
+incomplete distance tree
+incomplete dynamic bit lengths tree
+incomplete literal/length tree
+incorrect data check
+incorrect header check
+IncrementPackageStatusVersion
+Index
+ineID
+Information
+InitializeCriticalSectionEx
+InitializeSListHead
+InitOnceBeginInitialize
+InitOnceComplete
+INSERT INTO Activation (_Revision, ActivationKey, Flags, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, _Dictionary) VALUES(?,?,?,?,?,?,?,?,?,?);
+INSERT INTO ApplicationUser (_Revision, _WorkId, User, ApplicationIdentity, Application, Package, PackageUser)SELECT 1, ?2, pu.User, ai._ApplicationIdentityID, a._ApplicationID, pu.Package, pu._PackageUserID FROM PackageUser AS pu INNER JOIN Application AS a ON a.Package=pu.Package INNER JOIN ApplicationIdentity AS ai ON ai.ApplicationUserModelId=a.ApplicationUserModelId WHERE pu._PackageUserID=?1   AND (pu._WorkId=0 OR pu._WorkId=?2) AND (a._WorkId=0 OR a._WorkId=?2);
+INSERT INTO AppxExtension (_Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary) VALUES(?,?,?,?,?,?,?,?,?);
+INSERT INTO DependencyGraph (_Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary) SELECT _Revision, ?2, ?1, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE _DependencyGraphID=?1 AND _ShadowId=0 AND NOT EXISTS(SELECT 1 FROM DependencyGraph WHERE _ShadowId=?1 AND _WorkId<>0 LIMIT 1);
+INSERT INTO DependencyGraph (_Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary) VALUES(?1,?2,?3,?4,?5,?6,?7,?8,?9,?10);
+INSERT INTO HostRuntime (_Revision, _WorkId, HostId, PackageExtension, _Dictionary) VALUES(?,?,?,?,?);
+INSERT INTO MrtPackage (_Revision, _WorkId, Package, DisplayNameReference, PublisherDisplayNameReference, DescriptionReference, LogoReference, _Dictionary) VALUES(?,?,?,?,?,?,?,?);
+INSERT INTO Package (_Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+INSERT INTO PackageExtension (_Revision, _WorkId, Package, "Index", Category, Activation, HostId, Executable, Entrypoint, RuntimeType, StartPage, Flags, Parameters, CurrentDirectoryPath, Id, ResourceGroup, _Dictionary) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+INSERT INTO PackageFamily (_Revision, Name, Publisher, PublisherId, PackageFamilyName, PackageSID, _Dictionary) VALUES(?,?,?,?,?,?,?);
+INSERT INTO PackageIdentity (_Revision, PackageFamily, PackageFullName, _Dictionary) VALUES(?,?,?,?);
+INSERT INTO PackageLocation (_Revision, _WorkId, Package, Volume, InstalledLocation, MutableLink, MutableLocation, ProjectionId, _Dictionary) VALUES(?,?,?,?,?,?,?,?,?);
+INSERT INTO PackageUser (_Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary) VALUES(?,?,?,?,?,?,?,?,?,?,?);
+INSERT INTO PublisherCacheFolder (_Revision, _WorkId, PackageExtension, "Index", FolderName, _Dictionary) VALUES(?,?,?,?,?,?);
+INSERT INTO Sequence (Id, LastValue) VALUES(?,?);
+INSERT INTO User (_Revision, UserSid, _Dictionary) VALUES(?,?,?);
+INSERT INTO WowDependencyGraph (_Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary) SELECT _Revision, ?2, ?1, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE _WowDependencyGraphID=?1 AND _ShadowId=0 AND NOT EXISTS(SELECT 1 FROM WowDependencyGraph WHERE _ShadowId=?1 AND _WorkId<>0 LIMIT 1);
+INSERT INTO WowDependencyGraph (_Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary) VALUES(?1,?2,?3,?4,?5,?6,?7,?8,?9,?10);
+INSERT OR IGNORE INTO ApplicationUser (_Revision, _WorkId, User, ApplicationIdentity, Application, Package, PackageUser)SELECT 1, ?2, pu.User, ai._ApplicationIdentityID, a._ApplicationID, pu.Package, pu._PackageUserID FROM PackageUser AS pu INNER JOIN Application AS a ON a.Package=pu.Package INNER JOIN ApplicationIdentity AS ai ON ai.ApplicationUserModelId=a.ApplicationUserModelId WHERE pu._PackageUserID=?1   AND (pu._WorkId=0 OR pu._WorkId=?2) AND (a._WorkId=0 OR a._WorkId=?2);
+insufficient memory
+InternalName
+invalid bit length repeat
+invalid block type
+invalid distance code
+invalid literal/length code
+invalid stored block lengths
+invalid window size
+IoPriority
+is_srjournal_enabled
+is_triggers_enabled
+IsDebuggerPresent
+IsDeveloperModeEnabled
+IsInAutoCommitMode() called but !db.IsOpen()
+IsInboxPackage
+IsProcessorFeaturePresent
+IsSideloadingEnabled
+IsValidSid
+IsWPTestEkuSigningAllowed
+J:l1N+l&
+J@8}@tSH
+j[4eN
+J~{f|
+j=Q-|
+J6Nf~
+j6S<h
+jK=FXRNP
+jl|wz
+journal_mode
+journal_size_limit
+K$}Yx
+K&:u^
+k@'Q_jK
+k\o(L
+K`ZXZ
+k0}rF
+k1J3P
+K32EnumProcesses
+K7)4!_
+kdx,$
+kernelbase.dll
+KQb{!
+Kw:[)
+L!l$XH
+L!u@H
+l",$0"4
+L$ E3
+L$ SUVWH
+L$ SVWAVH
+L$ SVWH
+L$ UH
+L$ USVATAUAVAWH
+L$ USVWAUAVAWH
+L$ USVWAVH
+L$ UVWATAUAVAWH
+L$ UWAVH
+l$ VWATAUAVAW
+l$ VWATAVAWH
+L$ VWAVH
+l$ VWAVH
+L$ WH
+L$(E3
+l$(E3
+L$@H3
+L$@I+
+L$`E3
+L$`H3
+L$0E3
+L$0fD
+L$0H3
+L$1D+
+L$4E3
+L$8fD9!u
+L$8fD9)u
+L$8H3
+L$DH+
+L$hE3
+L$hf99u
+L$hH+
+L$HH3
+L$hH3
+L$HH3
+l$PA_A^A]A\_^
+L$PE3
+L$PH;
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$PI#
+L$TE3
+L$XE3
+L$xE3
+L$XE3
+L$XH3
+L(5j6a
+L)5CP
+l]WZ`
+L9%GA
+L9%HD
+L9,%0
+L95\P
+L9cHu
+L9e0t)I
+L9m`t)H
+L9mXt)H
+laH|o
+LcL$@L
+LdaNq
+LeaveCriticalSection
+LegalCopyright
+LG089
+lGi I
+Lhttp://www.microsoft.com/pkiops/crl/Microsoft%20Development%20PCA%202014.crl0j
+lineNumber
+lkg@64
+LoadLibraryExW
+Local\SM0:%lu:%lu:%hs
+LocalAlloc
+LocalFree
+locking_mode
+Log(*error*,message) error: Invalid type for error (%d)
+Log(error,*message*) error: Invalid type for message (%d)
+LogFileInUse Telemetry failed: No valid tag.
+Logging data because access was denied for file: 
+LogHr
+LogIfAccessDenied
+LogNt
+LookasideHitPeak
+LookasideMissFullPeak
+LookasideMissSizePeak
+LookasideUsed
+LookasideUsedPeak
+LookupAccountSidW
+lpt1.
+lpt2.
+lpt3.
+lpt4.
+lpt5.
+lpt6.
+lpt7.
+lpt8.
+lpt9.
+lQ"+N
+lT#GG
+lw.k~`j
+lz1"gB
+M H1E
+M)lbc|S
+M1QYrB
+M9,$u(H;
+machine
+Machine
+MachineDatabaseStatisticsLastUpdated
+MapViewOfFile
+MdKaq
+MediaId
+mediumIL
+memcmp
+memcpy
+memmove
+MEMORY
+MemoryPriority
+memset
+message
+MHH!}
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1$0"
+Microsoft Corporation1>0<
+Microsoft Corporation1'0%
+Microsoft Development PCA 2014
+Microsoft Development PCA 20140
+Microsoft Windows Publisher0
+microsoft.system.package.metadata
+Microsoft.Windows.ApplicationModel.DesktopAppx
+Microsoft.Windows.AppxDeploymentFallback
+Microsoft.Windows.AppXDeploymentServer
+Microsoft.Windows.StateRepository.Service
+MicrosoftTelemetryAssertTriggeredUM
+MigratorPatch
+modern
+modifiedReason
+module
+MountPoint
+MPH;~Hu!H
+mRrE 
+MrtApplication
+MrtDefaultTile
+MrtPackage
+MrtSharedPri
+MrtUserPri
+Msg:[%ws] 
+MultiByteToWideChar
+mwt3H
+n$Z2n@
+N@H9NPt
+NamedDependency
+need dictionary
+neutral
+Nhttp://www.microsoft.com/pkiops/certs/Microsoft%20Development%20PCA%202014.crt0
+NORMAL
+nRe];64
+nrG=_
+nt}2EC_
+NtCompareSigningLevels
+NtCreateFile
+ntdll.dll
+ntelA
+NtFsControlFile
+NtGetCachedSigningLevel
+NtQueryInformationFile
+NtQueryInformationProcess
+NtQueryInformationThread
+NtQuerySystemInformation
+NtQueryWnfStateData
+NtSetInformationThread
+NtSetInformationVirtualMemory
+NtSetSecurityObject
+NTStatus
+NtUpdateWnfStateData
+NumberOfPagesCheckpointed
+o\$PH
+-O]!C
+o]SO8 H(
+O5a8V2
+ObjectLength
+oD$ f
+offlineSoftwareHive
+Oj[WA
+oJIqT
+oL$0f
+OLEAUT32.dll
+omXN.
+onecore\admin\appmodel\appxsignatureorigin\appxsignatureorigin.cpp
+onecore\admin\appmodel\appxupgrademigrationplugin\applytrustoffline\applytrustoffline.cpp
+onecore\admin\appmodel\cleanupmanager\cleanupmanager.cpp
+onecore\admin\appmodel\common\accesshelpers.cpp
+onecore\admin\appmodel\common\bundleutilities.cpp
+onecore\admin\appmodel\common\configuration.cpp
+onecore\admin\appmodel\common\contentgrouphelpers.cpp
+onecore\admin\appmodel\common\directoryacls.cpp
+onecore\admin\appmodel\common\encryption.cpp
+onecore\admin\appmodel\common\FileInUseTelemetry.hpp
+onecore\admin\appmodel\common\HardlinkingACLs.hpp
+onecore\admin\appmodel\common\impersonateself.cpp
+onecore\admin\appmodel\common\logfileinformation.cpp
+onecore\admin\appmodel\common\mountedfolder.cpp
+onecore\admin\appmodel\common\packagefullnameutilities.cpp
+onecore\admin\appmodel\common\packageprocess.cpp
+onecore\admin\appmodel\common\packagestatus.cpp
+onecore\admin\appmodel\common\prefetchfile.cpp
+onecore\admin\appmodel\common\privilege.cpp
+onecore\admin\appmodel\common\securitydescriptorbuilder.cpp
+onecore\admin\appmodel\common\sessionutilities.cpp
+onecore\admin\appmodel\common\StateRepository.hpp
+onecore\admin\appmodel\common\utilities.cpp
+onecore\admin\appmodel\common\Utilities.hpp
+onecore\admin\appmodel\common\volume.cpp
+onecore\admin\appmodel\common\volumemanager.cpp
+onecore\admin\appmodel\common\xmltools.cpp
+onecore\admin\appmodel\packagemanager\logging\appxlog.cpp
+onecore\admin\appmodel\packagerepository\common\extensionrow.cpp
+onecore\admin\appmodel\packagerepository\common\extensions.cpp
+onecore\admin\appmodel\packagerepository\common\packageextras.cpp
+onecore\admin\appmodel\packagerepository\common\packagerow.cpp
+onecore\admin\appmodel\PackageRepository\Inc\External\DependencyGraphRow.hpp
+onecore\admin\appmodel\PackageRepository\Inc\External\ITable.hpp
+onecore\admin\appmodel\PackageRepository\Inc\External\PackageRow.hpp
+onecore\admin\appmodel\PackageRepository\Inc\External\VisibilityRow.hpp
+onecore\admin\appmodel\packagerepository\staterepository\dependencygraphtable.cpp
+onecore\admin\appmodel\packagerepository\staterepository\extensiontable.cpp
+onecore\admin\appmodel\packagerepository\staterepository\packagetable.cpp
+onecore\admin\appmodel\packagerepository\staterepository\repository.cpp
+onecore\admin\appmodel\packagerepository\staterepository\repositorysession.cpp
+onecore\admin\appmodel\packagerepository\staterepository\staterepositoryhelper.cpp
+onecore\admin\appmodel\packagerepository\staterepository\visibilitytable.cpp
+onecore\admin\appmodel\packagerepository\staterepository\wowdependencygraphtable.cpp
+onecore\admin\appmodel\trust\trusthelper.cpp
+onecore\base\appmodel\common\base32encoding.cpp
+onecore\base\appmodel\common\bytebuffer.cpp
+onecore\base\appmodel\common\cryptoprovider.cpp
+onecore\base\appmodel\common\impersonationcontext.cpp
+onecore\base\appmodel\common\pathhelpers.cpp
+onecore\base\appmodel\common\registrykey.cpp
+onecore\base\appmodel\common\sidhelper.cpp
+onecore\base\appmodel\common\stateseparation.cpp
+onecore\base\appmodel\common\stringbuilder.cpp
+onecore\base\appmodel\common\widestring.cpp
+onecore\base\appmodel\package\packagesid.cpp
+onecore\base\appmodel\runtime\src\monikerinternal.cpp
+onecore\base\appmodel\runtime\src\packagestatusinternal.cpp
+onecore\base\appmodel\StateRepository\Common\Inc\Security.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\blob.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\changetracking.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\database.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Database.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\databasecache.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\DatabaseCache.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\databasecachesingleton.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\datatype-hasher.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\dictionarywriter.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\dictionaryxmlwriter.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entities-partitions.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-activation.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-activation-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-applicationuser-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-appxextension.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-contentgroupfile.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-contentgroupfile-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-dependency.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-dependency-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-dependencygraph.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-dependencygraph-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-file.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-file-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-hostruntime.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-mrtpackage.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-mrtuserpri.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-package.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-package-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageextension.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageextension-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageexternallocation.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packagefamily.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packagefamily-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageidentity.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageidentity-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packagelocation.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packagelocation-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageuser.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageuser-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-primarytileuserchangelog-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-primarytileuser-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-publishercachefolder.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-secondarytileuserchangelog-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-secondarytileuser-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-sequence.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-sequence-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-targetdevicefamily.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-tilechangelogview-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-tileview-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-user.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-user-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-workinprogress-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-wowdependencygraph.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-wowdependencygraph-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-xboxpackage-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\globals.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\logging.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\longrunningtransaction.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\repository.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\resourcepriority.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\ResourcePriority.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statement.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Statement.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statementcache.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\StatementCache.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\text.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\texta.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Utf16String.hpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Utf8String.hpp
+onecore\base\appmodel\trust\trustlabelhelpersbase.cpp
+onecore\internal\sdk\inc\wil\opensource/wil/token_helpers.h
+onecore\internal\sdk\inc\wil\opensource\wil\resource.h
+onecore\internal\sdk\inc\wil\opensource\wil\result.h
+onecore\internal\sdk\inc\wil\Staging.h
+onecore\printscan\appxpackaging\lib\crypto\src\signaturecheckhelper.cpp
+onecore\private\base\inc\appmodel\common\fileinuse.hpp
+onecore\private\base\inc\appmodel\package\PackageMoniker.hpp
+onecore\private\base\inc\appmodel\staterepository\dal/Database.hpp
+onecore\private\base\inc\appmodel\staterepository\dal/ResourcePriority.hpp
+onecore\private\base\inc\appmodel\staterepository\dal/Statement.hpp
+onecore\private\base\inc\appmodel\staterepository\dal\ResourcePriority.hpp
+Only validated %d files, but was expecting %d from the blockmap.
+OpenProcess
+OpenProcess() failed on %u of %u for %hs
+OpenProcessToken
+OpenSemaphoreW
+OpenSetting: Subkey=%ls
+OpenThreadToken
+OptionalBundle
+OptionalBundlePackage
+OptionalBundleResource
+oqwFy
+OriginalFilename
+originatingContextId
+originatingContextMessage
+originatingContextName
+ORRpx
+oT$@f
+OutputDebugStringW
+oversubscribed distance tree
+oversubscribed dynamic bit lengths tree
+oversubscribed literal/length tree
+p AWH
+p WAVAWH
+p(sIw
+P:\WindowsApps
+p_dj|?
+P-3E '
+PA^_^][
+PA_A^_^]
+pA_A^_^]
+PA_A^_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+Package
+package
+PackageAppInstaller
+packagedClassicApp
+PackageExtension
+PackageExternalLocation
+PackageFamilyNameFromFullName
+PackageFamilyPolicy
+packageFullName
+PackageFullName: %ls
+PackageList
+PackageLocation
+PackageNameAndPublisherIdFromFamilyName
+PackagePolicy
+PackageProperty
+PackageRow not initialized with lazy database acccess
+PackageSidFromFamilyName
+PackageSourceUri
+PackageStatus
+PackageStatus_DependencyPackageIssue
+PackageStatusUpdateBad_ModifiedPackage
+PackageUser
+PartA_PrivTags
+Partition
+PathAllocCanonicalize
+PathCchCombine
+PathCchRemoveBackslash
+PathCchSkipRoot
+PERSIST
+PerSystemEntries
+pNs${
+PRAGMA %s;
+PRAGMA %s=%I64d;
+PRAGMA %s=%s;
+PRAGMA optimize;
+PrimaryTile
+PrimaryTileUser
+PrimaryTileUserChangelog
+processId
+ProcessIdToSessionId
+ProcessInformation
+ProcessingSQL
+ProductName
+ProductVersion
+Profile
+Protocol
+PublisherCacheFolder
+q#Qz&
+Q;uuG
+'Q;Ws
+q`W|1/
+Q=J#jR
+q0o0m
+q0P7)
+q0R^G'
+qbTT$
+qC _R:=IG
+qIRtK
+qiYVH
+qiZR46
+QRL?Z
+qrU8q
+qsQ~K6
+qSY:w
+QtD=V
+QueryActiveSession
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryUnbiasedInterruptTime
+QueryUserToken
+qvBzT(
+qwQEUm
+r#fD9
+r(A'^
+r}6Ic
+R6qN5
+RaAU2P
+RaiseException
+RaiseFailFastException
+readOnly
+ReadSetting: Name=%ls
+ReapplyAcls
+RedirectMrtResources
+Redmond1
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegEnumKeyExW
+RegGetValueW
+RegOpenKeyExW
+RegQueryValueExW
+RegSetValueExW
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+RemediationReason
+Repository initialize
+Repository.SetOptions.SetCacheSize
+ResolveDelayLoadedAPI
+Resource
+Resources
+resources.pri
+result
+ReturnHr
+ReturnNt
+RevertToSelf
+rHfD9?w
+Rich~
+rkfA9L@
+RLehz
+RMPNN
+rNn;,j
+RoActivateInstance
+RoGetActivationFactory
+ROLLBACK /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+RoOriginateErrorW
+RootFolder: %ws
+RPCRT4.dll
+RpcStringFreeW
+RpJn^{p
+rR[.l
+RSDSY
+RtlAcquireSRWLockExclusive
+RtlAcquireSRWLockShared
+RtlAddFunctionTable
+RtlAddGrowableFunctionTable
+RtlAddProcessTrustLabelAce
+RtlAllocateAndInitializeSid
+RtlAllocateHeap
+RtlCaptureContext
+RtlCaptureStackBackTrace
+RtlCompareUnicodeString
+RtlConvertSidToUnicodeString
+RtlCreateAcl
+RtlCreateSecurityDescriptor
+RtlDeleteFunctionTable
+RtlDeleteGrowableFunctionTable
+RtlDisownModuleHeapAllocation
+RtlDllShutdownInProgress
+RtlDosPathNameToNtPathName_U_WithStatus
+RtlDowncaseUnicodeString
+RtlEnterCriticalSection
+RtlEqualSid
+RtlFindAceByType
+RtlFreeHeap
+RtlFreeSid
+RtlFreeUnicodeString
+RtlGetDeviceFamilyInfoEnum
+RtlInitializeCriticalSection
+RtlInitializeGenericTableAvl
+RtlInitUnicodeString
+RtlInsertElementGenericTableAvl
+RtlIsMultiUsersInSessionSku
+RtlIsStateSeparationEnabled
+RtlLeaveCriticalSection
+RtlLengthSid
+RtlLookupElementGenericTableAvl
+RtlLookupFunctionEntry
+RtlNotifyFeatureUsage
+RtlNtStatusToDosErrorNoTeb
+RtlRegisterFeatureConfigurationChangeNotification
+RtlReleaseSRWLockExclusive
+RtlReleaseSRWLockShared
+RtlReportException
+RtlSetSaclSecurityDescriptor
+RtlUnregisterFeatureConfigurationChangeNotification
+RtlValidSid
+RtlVirtualUnwind
+RuntimeType
+rw:jL
+s WAVAWH
+s!eV6
+S&YM20
+s)hj=K
+s>^}r
+s8D8{@uLL9>u
+SchemaUsed
+SecondaryTile
+SecondaryTileUser
+SecondaryTileUserChangelog
+SELECT _ActivationID, _Revision, ActivationKey, Flags, HostId, Executable, Entrypoint, RuntimeType, StartPage, ResourceGroup, _Dictionary FROM Activation WHERE ActivationKey IS ?;
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE (_WorkId=0 OR _WorkId=?);
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE _WorkId=0;
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Category=? AND KeyString IS ? AND (_WorkId=0 OR _WorkId=?);
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Category=? AND KeyString IS ? AND _WorkId=0;
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND _WorkId=0;
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND Category=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND Category=? AND _WorkId=0;
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND Category=? AND KeyString IS ? AND (_WorkId=0 OR _WorkId=?);
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND Category=? AND KeyString IS ? AND _WorkId=0;
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND Category=? AND KeyString IS ? AND RegistrationInformation=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _AppxExtensionID, _Revision, _WorkId, User, Package, Category, KeyString, RegistrationInformation, ExtensionStatus, _Dictionary FROM AppxExtension WHERE User=? AND Package=? AND Category=? AND KeyString IS ? AND RegistrationInformation=? AND _WorkId=0;
+SELECT _ContentGroupFileID, _Revision, _WorkId, ContentGroup, File, _Dictionary FROM ContentGroupFile WHERE File=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _ContentGroupFileID, _Revision, _WorkId, ContentGroup, File, _Dictionary FROM ContentGroupFile WHERE File=? AND _WorkId=0;
+SELECT _DependencyGraphID FROM DependencyGraph WHERE _ShadowId=? AND _WorkId=? AND _WorkId<>0;
+SELECT _DependencyGraphID, _Revision, _ShadowId FROM DependencyGraph WHERE _ShadowId=? AND _WorkId=? AND _WorkId<>0;
+SELECT _DependencyGraphID, _Revision, _ShadowId, _IsMarkedForDeletion FROM DependencyGraph WHERE User=? AND DependentPackage=? AND SupplierPackage=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE _WorkId=?1) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE _WorkId=?1))) AND _IsMarkedForDeletion=0;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE SupplierPackage=?1 AND _WorkId=?2) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE SupplierPackage=?1 AND _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE SupplierPackage=?1 AND _WorkId=?2))) AND _IsMarkedForDeletion=0;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=?3) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=?3))) AND _IsMarkedForDeletion=0 ORDER BY "Index";
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=?4) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=?4))) AND _IsMarkedForDeletion=0;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=?3) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=?3))) AND _IsMarkedForDeletion=0;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE _WorkId=0;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE SupplierPackage=?1 AND _WorkId=0;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=0 ORDER BY "Index";
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=0;
+SELECT _DependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM DependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=0;
+SELECT _DependencyID, _Revision, _WorkId, DependentPackage, "Index", DependencyType, Name, Publisher, MinVersion, MaxVersion, Flags, _Dictionary FROM Dependency WHERE DependentPackage=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC, "Index";
+SELECT _DependencyID, _Revision, _WorkId, DependentPackage, "Index", DependencyType, Name, Publisher, MinVersion, MaxVersion, Flags, _Dictionary FROM Dependency WHERE DependentPackage=? AND _WorkId=0 ORDER BY "Index";
+SELECT _FileID, _Revision, _WorkId, Package, RelativeFilePath, Size, Digest, Flags, _Dictionary FROM File WHERE Package=? AND RelativeFilePath=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _FileID, _Revision, _WorkId, Package, RelativeFilePath, Size, Digest, Flags, _Dictionary FROM File WHERE Package=? AND RelativeFilePath=? AND _WorkId=0;
+SELECT _PackageExternalLocationID, _Revision, _WorkId, User, Package, Path, _Dictionary FROM PackageExternalLocation WHERE User=? AND Package=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _PackageExternalLocationID, _Revision, _WorkId, User, Package, Path, _Dictionary FROM PackageExternalLocation WHERE User=? AND Package=? AND _WorkId=0;
+SELECT _PackageFamilyID, _Revision, Name, Publisher, PublisherId, PackageFamilyName, PackageSID, _Dictionary FROM PackageFamily WHERE Name=? AND PublisherId=?;
+SELECT _PackageFamilyID, _Revision, Name, Publisher, PublisherId, PackageFamilyName, PackageSID, _Dictionary FROM PackageFamily WHERE PackageFamilyName=?;
+SELECT _PackageID FROM Package WHERE PackageFullName=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageID FROM Package WHERE PackageFullName=? AND _WorkId=0;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE (_WorkId=0 OR _WorkId=?);
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE _WorkId=0;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageFamily=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageFamily=? AND _WorkId=0;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageFamily=? AND ResourceId IS ? AND Architecture=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageFamily=? AND ResourceId IS ? AND Architecture=? AND _WorkId=0;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageFullName=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _PackageID, _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE PackageFullName=? AND _WorkId=0;
+SELECT _PackageIdentityID, _Revision, PackageFamily, PackageFullName, _Dictionary FROM PackageIdentity WHERE PackageFullName=?;
+SELECT _PackageLocationID, _Revision, _WorkId, Package, Volume, InstalledLocation, MutableLink, MutableLocation, ProjectionId, _Dictionary FROM PackageLocation WHERE Package=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _PackageLocationID, _Revision, _WorkId, Package, Volume, InstalledLocation, MutableLink, MutableLocation, ProjectionId, _Dictionary FROM PackageLocation WHERE Package=? AND _WorkId=0;
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE (_WorkId=0 OR _WorkId=?);
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE _WorkId=0;
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE AppDataVolume=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE AppDataVolume=? AND _WorkId=0;
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE Package=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE Package=? AND _WorkId=0;
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE User=? AND (_WorkId=0 OR _WorkId=?);
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE User=? AND _WorkId=0;
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE User=? AND Package=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _PackageUserID, _Revision, _WorkId, Package, User, InstallTime, OSVersionWhenInstalled, WhenRestored, IsExplicitlyInstalled, DeploymentState, AppDataVolume, _Dictionary FROM PackageUser WHERE User=? AND Package=? AND _WorkId=0;
+SELECT _Revision, _WorkId, Package, "Index", Name, MinVersion, MaxVersion, _Dictionary FROM TargetDeviceFamily WHERE _TargetDeviceFamilyID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, Package, "Index", Name, MinVersion, MaxVersion, _Dictionary FROM TargetDeviceFamily WHERE _TargetDeviceFamilyID=? AND _WorkId=0;
+SELECT _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, PackageFamily, ResourceId, Architecture, Version, PackageFullName, IsInbox, PackageType, Flags, Flags2, DisplayName, PublisherDisplayName, Description, Logo, OSMinVersion, OSMaxVersionTested, TargetDeviceFamily, Capabilities, SupportedUsers, SignatureOrigin, PackageOrigin, Enterprise, SourceBundle, EditionId, OSVersionWhenIndexed, InPlaceUpdateBaseline, _Dictionary FROM Package WHERE _PackageID=? AND _WorkId=0;
+SELECT _Revision, Name, Publisher, PublisherId, PackageFamilyName, PackageSID, _Dictionary FROM PackageFamily WHERE _PackageFamilyID=?;
+SELECT _Revision, UserSid, _Dictionary FROM User WHERE _UserID=?;
+SELECT _UserID FROM User WHERE UserSid=?;
+SELECT _UserID, _Revision, UserSid, _Dictionary FROM User WHERE UserSid=?;
+SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE _ShadowId=? AND _WorkId=? AND _WorkId<>0;
+SELECT _WowDependencyGraphID, _Revision, _ShadowId FROM WowDependencyGraph WHERE _ShadowId=? AND _WorkId=? AND _WorkId<>0;
+SELECT _WowDependencyGraphID, _Revision, _ShadowId, _IsMarkedForDeletion FROM WowDependencyGraph WHERE User=? AND DependentPackage=? AND SupplierPackage=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE (_WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE _WorkId=?1) OR _WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE _WorkId=0 AND _WowDependencyGraphID NOT IN (SELECT _ShadowId FROM WowDependencyGraph WHERE _WorkId=?1))) AND _IsMarkedForDeletion=0;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE (_WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=?3) OR _WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=0 AND _WowDependencyGraphID NOT IN (SELECT _ShadowId FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=?3))) AND _IsMarkedForDeletion=0;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE (_WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=?4) OR _WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=0 AND _WowDependencyGraphID NOT IN (SELECT _ShadowId FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=?4))) AND _IsMarkedForDeletion=0;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE (_WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=?3) OR _WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=0 AND _WowDependencyGraphID NOT IN (SELECT _ShadowId FROM WowDependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=?3))) AND _IsMarkedForDeletion=0;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE _WorkId=0;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND _WorkId=0;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE User=?1 AND DependentPackage=?2 AND DependencyType & ?3 !=0 AND _WorkId=0;
+SELECT _WowDependencyGraphID, _Revision, _WorkId, _ShadowId, _IsMarkedForDeletion, User, DependentPackage, "Index", SupplierPackage, DependencyType, _Dictionary FROM WowDependencyGraph WHERE User=?1 AND SupplierPackage=?2 AND _WorkId=0;
+SELECT COUNT(*) FROM AppxExtension WHERE (_WorkId=0 OR _WorkId=?);
+SELECT COUNT(*) FROM AppxExtension WHERE _WorkId=0;
+SELECT COUNT(*) FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE _WorkId=?1) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE _WorkId=?1))) AND _IsMarkedForDeletion=0;
+SELECT COUNT(*) FROM DependencyGraph WHERE _WorkId=0;
+SELECT COUNT(*) FROM Package WHERE (_WorkId=0 OR _WorkId=?);
+SELECT COUNT(*) FROM Package WHERE _WorkId=0;
+SELECT COUNT(*) FROM PackageUser WHERE (_WorkId=0 OR _WorkId=?);
+SELECT COUNT(*) FROM PackageUser WHERE _WorkId=0;
+SELECT COUNT(*) FROM WowDependencyGraph WHERE (_WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE _WorkId=?1) OR _WowDependencyGraphID IN (SELECT _WowDependencyGraphID FROM WowDependencyGraph WHERE _WorkId=0 AND _WowDependencyGraphID NOT IN (SELECT _ShadowId FROM WowDependencyGraph WHERE _WorkId=?1))) AND _IsMarkedForDeletion=0;
+SELECT COUNT(*) FROM WowDependencyGraph WHERE _WorkId=0;
+SELECT DISTINCT DependentPackage FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE SupplierPackage=?1 AND DependencyType=?2 AND _WorkId=?3) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE SupplierPackage=?1 AND DependencyType=?2 AND _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE SupplierPackage=?1 AND DependencyType=?2 AND _WorkId=?3))) AND _IsMarkedForDeletion=0;
+SELECT DISTINCT DependentPackage FROM DependencyGraph WHERE SupplierPackage=?1 AND DependencyType=?2 AND _WorkId=0;
+SELECT DISTINCT SupplierPackage FROM DependencyGraph WHERE (_DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE DependentPackage=?1 AND DependencyType=?2 AND _WorkId=?3) OR _DependencyGraphID IN (SELECT _DependencyGraphID FROM DependencyGraph WHERE DependentPackage=?1 AND DependencyType=?2 AND _WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE DependentPackage=?1 AND DependencyType=?2 AND _WorkId=?3))) AND _IsMarkedForDeletion=0;
+SELECT DISTINCT SupplierPackage FROM DependencyGraph WHERE DependentPackage=?1 AND DependencyType=?2 AND _WorkId=0;
+SELECT EXISTS(SELECT 1 FROM ContentGroup AS cg INNER JOIN ContentGroupFile AS cgf ON cgf.ContentGroup=cg._ContentGroupID WHERE cgf.File=?1 AND cg.Status=3 AND (cg._WorkId=0 OR cg._WorkId=?2) AND (cgf._WorkId=0 OR cgf._WorkId=?2) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM ContentGroup AS cg INNER JOIN ContentGroupFile AS cgf ON cgf.ContentGroup=cg._ContentGroupID WHERE cgf.File=?1 AND cg.Status=3 AND cg._WorkId=0 AND cgf._WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM DependencyGraph WHERE _DependencyGraphID=?1 AND (_WorkId=?2 OR (_WorkId=0 AND _DependencyGraphID NOT IN (SELECT _ShadowId FROM DependencyGraph WHERE _WorkId=?2))) AND _IsMarkedForDeletion=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM DependencyGraph WHERE _DependencyGraphID=?1 AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM PackageLocation WHERE _PackageLocationID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM PackageLocation WHERE _PackageLocationID=? AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM PackageUser WHERE _PackageUserID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM PackageUser WHERE _PackageUserID=? AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM PackageUser WHERE User=? AND Package=? AND _WorkId=? LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM WowDependencyGraph WHERE _WowDependencyGraphID=?1 AND (_WorkId=?2 OR (_WorkId=0 AND _WowDependencyGraphID NOT IN (SELECT _ShadowId FROM WowDependencyGraph WHERE _WorkId=?2))) AND _IsMarkedForDeletion=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM WowDependencyGraph WHERE _WowDependencyGraphID=?1 AND _WorkId=0 LIMIT 1);
+SELECT LastValue FROM Sequence WHERE Id=?;
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE p.PackageFamily=?1 AND p.PackageType & ?2 !=0 AND (p._WorkId=0 OR p._WorkId=?3)  ORDER BY pf.Name, pf.PublisherId, p.ResourceId, p.Version;
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE p.PackageFamily=?1 AND p.PackageType & ?2 !=0 AND p._WorkId=0  ORDER BY pf.Name, pf.PublisherId, p.ResourceId, p.Version;
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE pf.Name=?1 AND (p._WorkId=0 OR p._WorkId=?2);
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE pf.Name=?1 AND p._WorkId=0;
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE pf.PublisherId=?1 AND (p._WorkId=0 OR p._WorkId=?3);
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=p.PackageFamily WHERE pf.PublisherId=?1 AND p._WorkId=0;
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageLocation AS pl ON pl.Package=p._PackageID WHERE pl.Volume=?1 AND (p._WorkId=0 OR p._WorkId=?2) AND (pl._WorkId=0 OR pl._WorkId=?2);
+SELECT p._PackageID, p._Revision, p._WorkId, p.PackageFamily, p.ResourceId, p.Architecture, p.Version, p.PackageFullName, p.IsInbox, p.PackageType, p.Flags, p.Flags2, p.DisplayName, p.PublisherDisplayName, p.Description, p.Logo, p.OSMinVersion, p.OSMaxVersionTested, p.TargetDeviceFamily, p.Capabilities, p.SupportedUsers, p.SignatureOrigin, p.PackageOrigin, p.Enterprise, p.SourceBundle, p.EditionId, p.OSVersionWhenIndexed, p.InPlaceUpdateBaseline, p._Dictionary FROM Package AS p INNER JOIN PackageLocation AS pl ON pl.Package=p._PackageID WHERE pl.Volume=?1 AND p._WorkId=0 AND pl._WorkId=0;
+SELECT PackageOrigin FROM Package WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?);
+SELECT PackageOrigin FROM Package WHERE _PackageID=? AND _WorkId=0;
+SELECT UserSid FROM User AS u WHERE u._UserID IN (SELECT ptu.User FROM PrimaryTileUser AS ptu WHERE _WorkId=?1 UNION ALL SELECT stu.User FROM SecondaryTileUser AS stu WHERE _WorkId=?1 LIMIT 1) LIMIT 1;
+SELECT UserSid FROM User AS u WHERE u._UserID IN (SELECT ptuc.User FROM PrimaryTileUserChangelog AS ptuc WHERE _WorkId=?1 UNION ALL SELECT stuc.User FROM SecondaryTileUserChangelog AS stuc WHERE _WorkId=?1 LIMIT 1) LIMIT 1;
+sessionId
+SetDeploymentError
+SetFileAttributesW
+SetFileIntegrity failed for FilePath %ws with Origin %d
+SetLastError
+SetNamedSecurityInfoW
+SetPackageStatusModifiedReason
+SetSecurityAccessMask
+SetThreadInformation
+SetThreadpoolTimer
+SetThreadToken
+SetUnhandledExceptionFilter
+sG@84
+SHA256
+shareAccess
+SharedPackageContainer
+SharedPackageContainerPackageFamily
+Signing certificate does not chain up to Microsoft Flighting Root 2014
+Signing certificate does not chain up to the Microsoft Application Root Certificate Authority
+Signing certificate does not chain up to the Microsoft Root Certificate Authority
+Signing Certificate has no EKU fields (valid for all EKU)
+Signing Certificate specifies invalid combination of both Windows Store and Component EKUs
+SisPath
+SizeInPages
+SkR_S
+Sleep
+Software\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform
+Software\Microsoft\Windows\CurrentVersion\AppModel\StateChange
+Software\Microsoft\Windows\CurrentVersion\Appx\PackageVolumes
+Software\Microsoft\Windows\CurrentVersion\Appx\PurgeList
+Software\Policies\Microsoft\Windows\Appx
+sqlite3_bind_blob
+sqlite3_bind_int
+sqlite3_bind_int64
+sqlite3_bind_null
+sqlite3_bind_text16
+sqlite3_busy_timeout
+sqlite3_changes
+sqlite3_clear_bindings
+sqlite3_close
+sqlite3_column_blob
+sqlite3_column_bytes
+sqlite3_column_int
+sqlite3_column_int64
+sqlite3_column_text
+sqlite3_column_text16
+sqlite3_column_type
+sqlite3_create_function_v2
+sqlite3_db_config
+sqlite3_db_filename
+sqlite3_db_handle
+sqlite3_db_status
+sqlite3_errcode
+sqlite3_errmsg
+sqlite3_exec
+sqlite3_expanded_sql
+sqlite3_extended_errcode
+sqlite3_extended_result_codes
+sqlite3_file_control
+sqlite3_finalize
+sqlite3_free
+sqlite3_get_autocommit
+sqlite3_last_insert_rowid
+sqlite3_log
+sqlite3_malloc
+sqlite3_next_stmt
+sqlite3_open_v2
+sqlite3_prepare_v2
+sqlite3_profile
+sqlite3_reset
+sqlite3_result_blob
+sqlite3_result_error_code
+sqlite3_result_error_nomem
+sqlite3_result_error16
+sqlite3_result_int
+sqlite3_result_int64
+sqlite3_result_text16
+sqlite3_snprintf
+sqlite3_sql
+sqlite3_step
+sqlite3_stmt_busy
+sqlite3_total_changes
+sqlite3_trace
+sqlite3_user_data
+sqlite3_value_blob
+sqlite3_value_bytes
+sqlite3_value_int
+sqlite3_value_int64
+sqlite3_value_text
+sqlite3_value_text16
+sqlite3_value_type
+sqlite3_wal_autocheckpoint
+sqlite3_wal_checkpoint_v2
+sqlite3_wal_checkpoint_v2(): Mode:%d EffectiveMode:%d Size:%d Pages:%d
+SRJournal
+sroptions
+StartPage
+startswith
+StartsWith(*string*,prefix) error: Invalid type (%d)
+StartsWith(string,*prefix*) error: Invalid type (%d)
+StatementCache.Count
+StatementCache.Hits
+StatementCache.Lifespan
+StatementCache.Misses
+StatementCount
+StatementPtr
+StatementUsed
+StateRepository.Core.dll
+StateRepository.Database.Statistics
+StateRepository.FailFastBusySnapshot
+StateRepository.FailFastBusySnapshot.BusyCount
+StateRepository.FailFastBusySnapshot.DatabasePtr
+StateRepository.FailFastBusySnapshot.FirstBusySQL
+StateRepository.FailFastBusySnapshot.Statement#%u.ExpandedSQL
+StateRepository.FailFastBusySnapshot.Statement#%u.Ptr
+StateRepository.FailFastBusySnapshot.Statement#%u.SQL
+StateRepository.FailFastBusySnapshot.StatementCount
+StateRepository.FailFastBusySnapshot.StatementInProgress
+StateRepository.ResourcePriority.Inadequate
+statusToClear
+statusToSet
+strcmp
+stream end
+stream error
+StringFileInfo
+StringFromGUID2
+SUVWATAUAVAWH
+SUVWAVH
+Sv&ClM>!"Eu
+synchronous
+t#f90t
+t$ D+
+t$ E3
+t$ UWATAUAVH
+t$ UWATAVAWH
+t$ UWAVH
+t$ UWAWH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+t$(E3
+T$0D9E
+T$0E3
+T$0H+
+t$8E3
+T$8H!|$8
+t$fD9(t
+t$fD98t
+t$HD9d$0t`I
+t$HD9d$0tsI
+T$hE3
+t$p;D$@
+T$PE3
+T$PL;
+t$xE3
+t$XE3
+T$xHc
+t(efC
+t)@8=P
+t)D8%
+t)D8-3
+t,D8e
+T.H4+
+t:fA9(t4H
+t[f9+tV
+t<Lc@
+T->/0
+t08\$8t"H
+t0D8m
+t1D8e
+t2H;n
+t4E88t/H
+tAfD9/t.I;
+Tampering detected for package with PackageIntegrity Content Enforcement.
+TargetDeviceFamily
+t-D8%
+t-D8e
+tdh.dll
+TdhEnumerateProviderFieldInformation
+TdhFormatProperty
+TdhGetEventInformation
+TdhGetEventMapInformation
+TEMP.xml
+temp_store
+TerminateProcess
+text()
+The blockmap could not be found.
+The PFN from the AppxManifest did not match the registered PFN.
+The signature origin from the file does not match the registered package.
+This should never occur
+threadId
+tIf92tDH
+tKH;^
+TlsAlloc
+TlsGetValue
+TlsSetValue
+tm~)fz
+TnnR#
+too many length or distance symbols
+TqW7#H
+Trace
+TransactionCallerID
+Translation
+TRUNCATE
+TrustedAppRoot
+TrustHelper
+tzD9:v
+u)+,Y
+u/HcH<H
+u@uHM
+U<WW[
+u2H;u
+U8H!}
+UATAUAVAWH
+UATAVH
+UAVAWH
+UD:]z
+UMgrEnumerateSessionUsers
+UMgrFreeSessionUsers
+UMgrQueryUserToken
+uncompress
+Unexpected: optional package %ws has %llu main packages and is in a related set
+UnhandledExceptionFilter
+unknown
+unknown compression method
+Unknown exception
+Unknown RuntimeBehavior
+Unknown SQLite datatype %d
+Unknown TrustLevel
+UnmapViewOfFile
+Unsupported
+uo4SX
+UPDATE %s SET _Created=changeid_next_value() WHERE _Created=-2 AND _WorkId=?;
+UPDATE %s SET _Deleted=changeid_next_value() WHERE _WorkId=?;
+UPDATE %s SET _Modified=changeid_next_value() WHERE _Modified=-2 AND _WorkId=?;
+UPDATE %s SET _WorkId=0 WHERE _WorkId=? AND _WorkId<>0;
+UPDATE %s SET _WorkId=0, _ShadowId=0 WHERE _WorkId=? AND _WorkId<>0;
+UPDATE DependencyGraph SET _IsMarkedForDeletion=0 WHERE _DependencyGraphID=? AND _WorkId=? AND _WorkId<>0 AND _IsMarkedForDeletion<>0 AND _ShadowId<>0;
+UPDATE DependencyGraph SET _IsMarkedForDeletion=1 WHERE _DependencyGraphID=? AND _IsMarkedForDeletion=0 AND _WorkId=?;
+UPDATE DependencyGraph SET _Revision=?1, _WorkId=?2, _ShadowId=?3, _IsMarkedForDeletion=?4, User=?5, DependentPackage=?6, "Index"=?7, SupplierPackage=?8, DependencyType=?9, _Dictionary=?10 WHERE (_DependencyGraphID=?11 AND _Revision=?12) AND _IsMarkedForDeletion=0 AND _WorkId=?13;
+UPDATE Package SET Flags=Flags&~0x400 WHERE (PackageType & 0x29!=0) AND _PackageID IN (SELECT _PackageID FROM PACKAGE WHERE PackageFamily IN (SELECT PackageFamily FROM Package WHERE (PackageType & 0x29!=0) AND _PackageID IN (SELECT Package FROM PackageUser WHERE _WorkId=?1 AND DeploymentState!=6 AND DeploymentState!=5)) AND _WorkId=0);
+UPDATE Package SET Flags=Flags&~0x400 WHERE (PackageType&0x29!= 0) AND PackageFamily=? AND _WorkId=0;
+UPDATE Package SET Flags2=((Flags2 & ~?) | ?) WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE Package SET Flags2=((Flags2 & ~?) | ?) WHERE _PackageID=? AND _WorkId=0;
+UPDATE Package SET SourceBundle=? WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE Package SET TargetDeviceFamily=? WHERE _PackageID=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE PackageLocation SET _Revision=?, _WorkId=?, Package=?, Volume=?, InstalledLocation=?, MutableLink=?, MutableLocation=?, ProjectionId=?, _Dictionary=? WHERE _PackageLocationID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE PackageLocation SET _Revision=?, _WorkId=?, Package=?, Volume=?, InstalledLocation=?, MutableLink=?, MutableLocation=?, ProjectionId=?, _Dictionary=? WHERE _PackageLocationID=? AND _Revision=? AND _WorkId=0;
+UPDATE PackageUser SET _Revision=?, _WorkId=?, Package=?, User=?, InstallTime=?, OSVersionWhenInstalled=?, WhenRestored=?, IsExplicitlyInstalled=?, DeploymentState=?, AppDataVolume=?, _Dictionary=? WHERE _PackageUserID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE PackageUser SET _Revision=?, _WorkId=?, Package=?, User=?, InstallTime=?, OSVersionWhenInstalled=?, WhenRestored=?, IsExplicitlyInstalled=?, DeploymentState=?, AppDataVolume=?, _Dictionary=? WHERE _PackageUserID=? AND _Revision=? AND _WorkId=0;
+UPDATE Sequence SET LastValue=? WHERE Id=?;
+UPDATE WowDependencyGraph SET _IsMarkedForDeletion=0 WHERE _WowDependencyGraphID=? AND _WorkId=? AND _WorkId<>0 AND _IsMarkedForDeletion<>0 AND _ShadowId<>0;
+UPDATE WowDependencyGraph SET _IsMarkedForDeletion=1 WHERE _WowDependencyGraphID=? AND _IsMarkedForDeletion=0 AND _WorkId=?;
+UPDATE WowDependencyGraph SET _Revision=?1, _WorkId=?2, _ShadowId=?3, _IsMarkedForDeletion=?4, User=?5, DependentPackage=?6, "Index"=?7, SupplierPackage=?8, DependencyType=?9, _Dictionary=?10 WHERE (_WowDependencyGraphID=?11 AND _Revision=?12) AND _IsMarkedForDeletion=0 AND _WorkId=?13;
+UpdatePackageStatus
+UpdateStatistics
+UserDatabaseStatisticsLastUpdated
+userSid
+USVWATAUAVAWH
+USVWATAVAWH
+USVWAVH
+USWATAUAVAWH
+uTH9;u
+uTX;LU&u1R
+UuidCreate
+UuidToStringW
+UVWATAUAVAWH
+UVWATAWH
+UVWAVAWH
+UWATAVAWH
+UWATH
+UWAUAVAWH
+UWAVH
+UWAWH
+uZ{>*
+V.qNDR
+v:agt
+v;oWy
+V@F2'
+V0T0R
+ValidateFile
+VarFileInfo
+Verbose
+VirtualAlloc
+VirtualFree
+VirtualProtect
+Vr@A}r
+VS_VERSION_INFO
+VT_Qy
+VW'!e
+VWATAVAWH
+VWAVH
+VWAWH
+vwu-0N
+VXW|"
+w+7bU
+W<T}7
+wA{fy
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+Warning
+Washington1
+WATAUAVAWH
+WAVAWH
+waxm%:
+wbD8k@t8I
+wcschr
+wcsrchr
+wcsstr
+weQ/l
+WerRegisterCustomMetadata
+Wf@0V
+wHL9O@t
+WideCharToMultiByte
+wilActivity
+WilError_03
+WilFailureNotifyWatchers
+wilResult
+WilStaging_02
+win32App
+windows
+windows.activatableClass
+windows.comInterface
+windows.comServer
+Windows.FullTrustApplication
+windows.hostRuntime
+Windows.Internal.SecurityMitigationsBroker
+Windows.Internal.StateRepository.Management.RepositoryManager
+Windows.Internal.StateRepository.PrimaryTileUserNotificationChannel
+Windows.PartialTrustApplication
+windows.publisherCacheFolders
+windowsApp
+WindowsCreateString
+WindowsCreateStringReference
+WindowsDeleteString
+workid
+workId
+WorkId
+WowDependencyGraph
+wr^G@d
+WriteFile
+WriteSetting: Name=%ls
+WTSQueryUserToken
+WV"wS
+wVA97s
+WWb%#
+wwD8,%
+x ATAUAVAWD
+x ATAVAWH
+x AUAVAWH
+x AVH
+x AWH
+x UATAUAVAWH
+x UAVAWH
+X,hg0
+X/#6H
+X:>r+]
+x?8j+
+x_^][
+X}s!zB h`
+X>x@A
+x2D8}wu
+x-5fc
+x86a64
+xA_A^A]A\_^[]
+XboxPackage
+XD|#j<W
+xDD8}wu
+xm*8"Q
+xNlGs
+y!.6I
+y&A9h
+Y;\$8tQ
+y0w0u
+yBH!L$ D
+Yc_x$
+YOD1 
+ypZMqP
+yQMZK
+z!WI^
+Z(/j&/_
+z1I^]_
+Z2b/8
+zA&[v
+z'Hy5
+ZT7!V_<3
+zW3!@4j

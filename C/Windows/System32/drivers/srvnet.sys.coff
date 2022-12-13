@@ -1,0 +1,615 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\srvnet.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    TDI.SYS
+    cng.sys
+    NETIO.SYS
+    msrpc.sys
+    msquic.sys
+    ksecdd.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0036228 Import Address Table
+             1C0036CC8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         146 ExReleaseRundownProtection
+                         9E7 RtlUnicodeStringToOemString
+                         8BF RtlGUIDFromString
+                         41E IoSizeofWorkItem
+                         3A0 IoInitializeWorkItem
+                         3C4 IoQueueWorkItemEx
+                         42D IoUninitializeWorkItem
+                         3C2 IoQueueThreadIrp
+                         498 KeClearEvent
+                         6D8 ObfReferenceObject
+                         459 IofCallDriver
+                         627 MmUnlockPages
+                         610 MmProbeAndLockPages
+                         4C4 KeGetCurrentIrql
+                         492 KeBugCheckEx
+                         2FB IoAllocateMdl
+                         9F4 RtlUpcaseUnicodeString
+                         857 RtlCopyUnicodeString
+                         82B RtlCaptureStackBackTrace
+                         651 NtDeviceIoControlFile
+                         35E IoFreeMdl
+                         81A RtlAnsiStringToUnicodeString
+                         8BE RtlFreeUnicodeString
+                         363 IoGetActivityIdThread
+                         3F7 IoReuseIrp
+                          95 EtwWrite
+                          8E EtwProviderEnabled
+                         C5C _wcsicmp
+                         98B RtlQueryRegistryValues
+                         91E RtlIpv4AddressToStringA
+                         921 RtlIpv4AddressToStringW
+                         31B IoClearActivityIdThread
+                         929 RtlIpv6AddressToStringW
+                         3F9 IoSetActivityIdThread
+                         926 RtlIpv6AddressToStringA
+                         92D RtlIpv6StringToAddressW
+                         B4A ZwDeviceIoControlFile
+                         B62 ZwLoadDriver
+                         9A5 RtlRunOnceExecuteOnce
+                         925 RtlIpv4StringToAddressW
+                         B74 ZwOpenFile
+                         81D RtlAppendUnicodeStringToString
+                         920 RtlIpv4AddressToStringExW
+                         447 IoWMIOpenBlock
+                         9C6 RtlStringFromGUID
+                         44A IoWMIQuerySingleInstance
+                         44D IoWMISetNotificationCallback
+                         928 RtlIpv6AddressToStringExW
+                         83E RtlCompareMemory
+                         122 ExQueueWorkItem
+                         58B KeUnstackDetachProcess
+                          D4 ExDeleteLookasideListEx
+                         188 ExpInterlockedPopEntrySList
+                         5C7 MmBuildMdlForNonPagedPool
+                         11C ExQueryDepthSList
+                         60A MmMdlPageContentsState
+                         622 MmSizeOfMdl
+                          E8 ExFlushLookasideListEx
+                          EF ExFreeToLookasideListEx
+                         100 ExInitializeLookasideListEx
+                         62A MmUnmapLockedPages
+                         C59 _vsnwprintf
+                         BF8 ZwUnloadDriver
+                         8EB RtlHashUnicodeString
+                         9DF RtlUTF8ToUnicodeN
+                         9E5 RtlUnicodeStringToInteger
+                         9A3 RtlRunOnceBeginInitialize
+                         C73 iswdigit
+                         88E RtlEqualUnicodeString
+                         14E ExRundownCompleted
+                         739 ProbeForRead
+                          F8 ExGetPreviousMode
+                         38F IoGetRequestorProcess
+                         45A IofCompleteRequest
+                         5FC MmMapLockedPagesSpecifyCache
+                         7A9 PsIsHostSilo
+                         785 PsGetProcessServerSilo
+                          BD ExAllocatePool2
+                         564 KeSetEvent
+                         544 KeReleaseSpinLock
+                          9A EtwWriteTransfer
+                         B89 ZwPowerInformation
+                         981 RtlQueryFeatureConfigurationChangeStamp
+                         36E IoGetCurrentProcess
+                          AA ExAcquireResourceSharedLite
+                         4E2 KeInitializeTimer
+                         342 IoDeleteDevice
+                         4E0 KeInitializeSpinLock
+                         8FC RtlInitUnicodeString
+                         4A4 KeDelayExecutionThread
+                          A9 ExAcquireResourceExclusiveLite
+                         4AD KeEnterCriticalRegion
+                         51B KeQueryMaximumProcessorCountEx
+                          D7 ExDeleteResourceLite
+                         4D4 KeInitializeDpc
+                         C04 __C_specific_handler
+                         99A RtlRegisterFeatureConfigurationChangeNotification
+                         480 KeAcquireSpinLockRaiseToDpc
+                         2FE IoAllocateWorkItem
+                         562 KeSetCoalescableTimer
+                         B24 ZwClose
+                         64A NtCreateFile
+                         2F9 IoAllocateIrp
+                          AB ExAcquireRundownProtection
+                         6C6 ObReferenceObjectByHandle
+                         8BB RtlFreeOemString
+                         57B KeStackAttachProcess
+                         105 ExInitializeRundownProtection
+                         17B ExWaitForRundownProtectionRelease
+                         6D6 ObfDereferenceObject
+                         684 NtQuerySystemInformation
+                         38E IoGetRelatedDeviceObject
+                         35B IoFreeIrp
+                          B9 ExAllocateFromLookasideListEx
+                         173 ExUnblockOnAddressPushLockEx
+                         16A ExTryAcquirePushLockSharedEx
+                          A7 ExAcquirePushLockExclusiveEx
+                         140 ExReleasePushLockExclusiveEx
+                         141 ExReleasePushLockSharedEx
+                          C4 ExBlockOnAddressPushLock
+                         88D RtlEqualString
+                         9A6 RtlRunOnceInitialize
+                         8C8 RtlGetCompressionWorkSpaceSize
+                         843 RtlCompressBuffer
+                         86A RtlDecompressBufferEx2
+                         6EB PoDeletePowerRequest
+                         735 PoUnregisterPowerSettingCallback
+                          D6 ExDeletePagedLookasideList
+                          92 EtwSetInformation
+                         AB5 VerSetConditionMask
+                         A03 RtlVerifyVersionInfo
+                         102 ExInitializePagedLookasideList
+                         6E9 PoCreatePowerRequest
+                         721 PoRegisterPowerSettingCallback
+                         B2F ZwCreateEvent
+                         B59 ZwFsControlFile
+                         C01 ZwWaitForSingleObject
+                         729 PoSetPowerRequest
+                         6E7 PoClearPowerRequest
+                         888 RtlEnumerateGenericTableLikeADirectory
+                         C81 qsort
+                         C6B bsearch
+                         B76 ZwOpenKey
+                         BA8 ZwQueryKey
+                         B52 ZwEnumerateValueKey
+                          F1 ExFreeToPagedLookasideList
+                          BB ExAllocateFromPagedLookasideList
+                         841 RtlCompareUnicodeString
+                         904 RtlInitializeGenericTableAvl
+                         932 RtlIsGenericTableEmptyAvl
+                         887 RtlEnumerateGenericTableAvl
+                         872 RtlDeleteElementGenericTableAvl
+                         94F RtlLookupElementGenericTableAvl
+                         90A RtlInsertElementGenericTableAvl
+                         9FE RtlValidRelativeSecurityDescriptor
+                         947 RtlLengthSecurityDescriptor
+                         948 RtlLengthSid
+                         854 RtlCopySid
+                         73A ProbeForWrite
+                         B33 ZwCreateKey
+                         BEE ZwSetValueKey
+                         807 RtlAbsoluteToSelfRelativeSD
+                         9FF RtlValidSecurityDescriptor
+                         451 IoWMIWriteEvent
+                         9D4 RtlTimeToSecondsSince1980
+                         97B RtlPrefixUnicodeString
+                         92C RtlIpv6StringToAddressExW
+                         C64 _wcsupr
+                         CB7 wcsstr
+                         946 RtlLengthRequiredSid
+                         906 RtlInitializeSid
+                         9CA RtlSubAuthoritySid
+                         85A RtlCreateAcl
+                         808 RtlAddAccessAllowedAce
+                         861 RtlCreateSecurityDescriptor
+                         9B4 RtlSetDaclSecurityDescriptor
+                         6D2 ObSetSecurityObjectByPointer
+                         8CC RtlGetDaclSecurityDescriptor
+                         A2A SeCaptureSubjectContext
+                         A67 SeReleaseSubjectContext
+                         A45 SeFreePrivileges
+                         73F PsAssignImpersonationToken
+                         B85 ZwOpenThreadTokenEx
+                         B7D ZwOpenProcessTokenEx
+                         BA3 ZwQueryInformationToken
+                         A59 SeQueryAuthenticationIdToken
+                         A6C SeSetAuditParameter
+                         A69 SeReportSecurityEventWithSubCategory
+                         A12 SeAccessCheckEx
+                         A28 SeAuditingWithTokenForSubcategory
+                         8F3 RtlInitAnsiString
+                         5B0 LsaRegisterLogonProcess
+                         8F7 RtlInitString
+                         5AF LsaLookupAuthenticationPackage
+                         5AC LsaDeregisterLogonProcess
+                         63A NtAllocateLocallyUniqueId
+                         63C NtAllocateVirtualMemory
+                         5AE LsaLogonUser
+                         656 NtFreeVirtualMemory
+                         5AD LsaFreeReturnBuffer
+                         592 KfRaiseIrql
+                         4FE KeLowerIrql
+                         BB5 ZwQueryValueKey
+                         BA9 ZwQueryLicenseValue
+                         2F8 IoAllocateErrorLogEntry
+                         453 IoWriteErrorLogEntry
+                         189 ExpInterlockedPushEntrySList
+                         187 ExpInterlockedFlushSList
+                         101 ExInitializeNPagedLookasideList
+                          D5 ExDeleteNPagedLookasideList
+                         4DC KeInitializeMutex
+                         541 KeReleaseMutex
+                          A8 ExAcquirePushLockSharedEx
+                         555 KeResetEvent
+                         13F ExReleasePushLockEx
+                         4FA KeLeaveCriticalRegion
+                         104 ExInitializeResourceLite
+                          BE ExAllocatePool3
+                         50B KeQueryActiveProcessorCountEx
+                         590 KeWaitForSingleObject
+                         3C3 IoQueueWorkItem
+                         4D8 KeInitializeEvent
+                         44C IoWMIRegistrationControl
+                          EE ExFreePoolWithTag
+                         526 KeQueryTimeIncrement
+                          8F EtwRegister
+                         328 IoCreateDevice
+                         546 KeReleaseSpinLockFromDpcLevel
+                         361 IoFreeWorkItem
+                         5E6 MmGetSystemRoutineAddress
+                         530 KeReadStateQueue
+                         493 KeCancelTimer
+                          94 EtwUnregister
+                         9EF RtlUnregisterFeatureConfigurationChangeNotification
+                         145 ExReleaseResourceLite
+                         980 RtlQueryFeatureConfiguration
+                         47E KeAcquireSpinLockAtDpcLevel
+                         14A ExReleaseSpinLockExclusive
+                         14C ExReleaseSpinLockShared
+                          B3 ExAcquireSpinLockShared
+                          B1 ExAcquireSpinLockExclusive
+                         4E4 KeInitializeTimerEx
+                         4BD KeFlushQueuedDpcs
+                         9E4 RtlUnicodeStringToInt64
+
+    TDI.SYS
+             1C00360B8 Import Address Table
+             1C0036B58 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          14 TdiCopyBufferToMdl
+                          17 TdiCopyMdlToBuffer
+                          2E TdiOpenNetbiosAddress
+                          36 TdiRegisterPnPHandlers
+                          2B TdiIsIPTransportSupported
+                          26 TdiDeregisterPnPHandlers
+
+    cng.sys
+             1C00360F0 Import Address Table
+             1C0036B90 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          42 SystemPrng
+
+    NETIO.SYS
+             1C0036000 Import Address Table
+             1C0036AA0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 CancelMibChangeNotify2
+                         18D NotifyUnicastIpAddressChange
+                           9 ConvertInterfaceIndexToLuid
+                         196 NsiFreeTable
+                           C ConvertInterfaceLuidToIndex
+                         190 NsiDeregisterChangeNotification
+                          50 GetIpInterfaceTable
+                           B ConvertInterfaceLuidToGuid
+                          5C GetUnicastIpAddressTable
+                           8 ConvertInterfaceGuidToLuid
+                         19F NsiRegisterChangeNotification
+                          5B GetUnicastIpAddressEntry
+                         197 NsiGetAllParameters
+                          48 GetIfTable2
+                          31 FreeMibTable
+                         18E NsiAllocateAndGetTable
+                         188 NotifyIpInterfaceChange
+                          45 GetIfEntry2
+                         183 NmrRegisterClient
+                         185 NmrWaitForClientDeregisterComplete
+                         17E NmrClientAttachProvider
+                         180 NmrDeregisterClient
+
+    msrpc.sys
+             1C00361C8 Import Address Table
+             1C0036C68 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          3E RpcBindingSetOption
+                          42 RpcSsDestroyClientContext
+                          3F RpcBindingUnbind
+                          3A RpcBindingFree
+                          33 RpcAsyncCancelCall
+                          34 RpcAsyncCompleteCall
+                           4 I_RpcExceptionFilter
+                          37 RpcBindingBind
+                          36 RpcAsyncInitializeHandle
+                          39 RpcBindingCreateW
+                          16 Ndr64AsyncClientCall
+
+    msquic.sys
+             1C00361B0 Import Address Table
+             1C0036C50 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           1 MsQuicOpenVersion
+                           0 MsQuicClose
+
+    ksecdd.sys
+             1C0036100 Import Address Table
+             1C0036BA0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           A BCryptDestroyHash
+                           4 BCryptCloseAlgorithmProvider
+                          14 BCryptFinishHash
+                          16 BCryptGenRandom
+                          1F BCryptOpenAlgorithmProvider
+                          18 BCryptGenerateSymmetricKey
+                          23 BCryptSetProperty
+                          1A BCryptGetProperty
+                          1E BCryptKeyDerivation
+                           B BCryptDestroyKey
+                           F BCryptEncrypt
+                          3B QueryContextAttributesW
+                          39 MapSecurityError
+                          1B BCryptHashData
+                           E BCryptDuplicateKey
+                           5 BCryptCreateHash
+                          2F ImpersonateSecurityContext
+                          3F RevertSecurityContext
+                           1 AcquireCredentialsHandleW
+                           6 BCryptDecrypt
+                          2D FreeCredentialsHandle
+
+  Section contains the following exports for srvnet.sys
+
+    00000000 characteristics
+    D0992DC5 time date stamp
+        0.00 version
+           1 ordinal base
+         212 number of functions
+         212 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0001DE40 SmbCompressionChainedDecompress
+          2    1 0001E280 SmbCompressionDecompress
+          3    2 0001E600 SmbCompressionLegacyDecompress
+          4    3 0001E7F0 SmbCompressionReadCompressionAlgorithmSuiteOrderPolicySetting
+          5    4 0004AF80 SmbCryptoAllocateAndPopulateCipherSuiteOrder
+          6    5 0000ABF0 SmbCryptoCalculateAndSetIV
+          7    6 0001D6B0 SmbCryptoCalculateAndSetIVForRdmaBuffer
+          8    7 0000A610 SmbCryptoCreateApplicationKey
+          9    8 0000A520 SmbCryptoCreateServerCipherKeys
+         10    9 0000A990 SmbCryptoCreateSigningKey
+         11    A 0001D780 SmbCryptoDecrypt
+         12    B 0001D870 SmbCryptoDecryptRdmaPayload
+         13    C 0001DA80 SmbCryptoEncryptRdmaPayload
+         14    D 0004B0D0 SmbCryptoFreeCipherSuiteOrderBuffer
+         15    E 0001DBB0 SmbCryptoGetCryptoKeyAuthTagSize
+         16    F 0001DBC0 SmbCryptoGetCryptoKeyNonceSize
+         17   10 0003E010 SmbCryptoHashCreate
+         18   11 0003E250 SmbCryptoHashDestroy
+         19   12 0001DBD0 SmbCryptoHashFinish
+         20   13 0001DC00 SmbCryptoHashGetAlgorithmName
+         21   14 0000B540 SmbCryptoHashGetOutputLength
+         22   15 0000B710 SmbCryptoHashGetRecommendedSaltSize
+         23   16 0001DC10 SmbCryptoHashUpdate
+         24   17 0004B280 SmbCryptoIsCipherSuiteOrderPresentPolicySetting
+         25   18 0000C0C0 SmbCryptoIsHashAlgIdValid
+         26   19 0000B7A0 SmbCryptoKeyDereference
+         27   1A 0000B840 SmbCryptoKeyReference
+         28   1B 0004B350 SmbCryptoKeyTableCreate
+         29   1C 0004B3C0 SmbCryptoKeyTableDestroy
+         30   1D 0001DD60 SmbCryptoKeyTableFind
+         31   1E 00008C10 SmbCryptoKeyTableInsert
+         32   1F 000074B0 SmbCryptoKeyTableRemove
+         33   20 0000B490 SmbCryptoKeyedHashGetHashAlgorithmMetadata
+         34   21 0004B3E0 SmbCryptoKeyedHashInitialize
+         35   22 0004B500 SmbCryptoKeyedHashUninitialize
+         36   23 0004B550 SmbCryptoPopulateCipherSuiteOrder
+         37   24 0004B940 SmbCryptoReadCipherSuiteOrderPolicySetting
+         38   25 0004BB80 SmbCryptoReadSigningAlgorithmOrderPolicySetting
+         39   26 0000B170 SmbCryptoSigningAlgRequireIV
+         40   27 00009D50 SmbCryptoUpdatePreauthIntegrityHashValue
+         41   28 0000B000 SrvAdminAllowAnonymousAccess
+         42   29 0001EC70 SrvAdminAllowClusterPipeAccess
+         43   2A 0001F400 SrvAdminAllowIdlePowerDownForActivity
+         44   2B 0001F440 SrvAdminAllowIdlePowerDownForOpenFiles
+         45   2C 0004C580 SrvAdminDeleteFsctlPropertyList
+         46   2D 00006760 SrvAdminDeregisterFile
+         47   2E 0001F7D0 SrvAdminDeregisterProvider
+         48   2F 000030A0 SrvAdminDeregisterSession
+         49   30 00004C90 SrvAdminDeregisterTreeConnect
+         50   31 0001ED30 SrvAdminDoesPipeAllowAnonymous
+         51   32 0001EE00 SrvAdminDoesShareAllowAnonymous
+         52   33 000063B0 SrvAdminEvaluateServerAlias
+         53   34 0001F8D0 SrvAdminInhibitIdlePowerDownForActivity
+         54   35 0001F920 SrvAdminInhibitIdlePowerDownForOpenFiles
+         55   36 0004C5E0 SrvAdminInitializeFsctlPropertyList
+         56   37 0004C650 SrvAdminIsFsctlAllowedForSmb1
+         57   38 0003E1A0 SrvAdminIsFsctlAllowedForSmb2
+         58   39 00008450 SrvAdminIsScopedName
+         59   3A 000062D0 SrvAdminIsScopedNameEx
+         60   3B 0003DEE0 SrvAdminNodeGetNextId
+         61   3C 0000A0A0 SrvAdminNodeGetSignature
+         62   3D 0004CF60 SrvAdminNodeInitialize
+         63   3E 0004CFD0 SrvAdminNodeInvalidateFile
+         64   3F 0004D3E0 SrvAdminNodeInvalidateSession
+         65   40 0004DBB0 SrvAdminNodeUninitialize
+         66   41 0004DBE0 SrvAdminNodeVerifySignature
+         67   42 00020EF0 SrvAdminQueryResumeKeyTarget
+         68   43 00022170 SrvAdminRefreshAllowedServerNameList
+         69   44 0001EF90 SrvAdminRefreshAnonymousLists
+         70   45 0004C670 SrvAdminRefreshFsctlPropertyList
+         71   46 0001F090 SrvAdminRefreshPipeList
+         72   47 000090F0 SrvAdminRegisterFile
+         73   48 00020100 SrvAdminRegisterProvider
+         74   49 00004620 SrvAdminRegisterSession
+         75   4A 00004EF0 SrvAdminRegisterTreeConnect
+         76   4B 0001F180 SrvAdminRemapPipeName
+         77   4C 0004C7A0 SrvAdminSetSessionIsCsvUser
+         78   4D 0003B810 SrvAdminSetSessionName
+         79   4E 0000B450 SrvAdminTakeActionToAllowPowerDown
+         80   4F 00020F80 SrvAdminUpdateFileSessionID
+         81   50 0003BFE0 SrvAdminValidateSpn
+         82   51 00025330 SrvLibAllocateNameList
+         83   52 000050B0 SrvLibAllocatePipeEa
+         84   53 0004E550 SrvLibApplyDeviceAcl
+         85   54 0004EA30 SrvLibApplySrvDeviceAcl
+         86   55 00009E20 SrvLibAuditForceAccess
+         87   56 00025B80 SrvLibAuditShareAccess
+         88   57 00007C10 SrvLibAuditShareAddOrDelete
+         89   58 00007EB0 SrvLibAuditShareConnect
+         90   59 00026050 SrvLibAuditShareModification
+         91   5A 00026590 SrvLibAuditSpnCheck
+         92   5B 0000ABA0 SrvLibAuditSuccessEnabled
+         93   5C 00026830 SrvLibBufferToHex
+         94   5D 000073D0 SrvLibCheckAccess
+         95   5E 000268C0 SrvLibCleanupIdleLogic
+         96   5F 0004F1D0 SrvLibCloseCredentialHandle
+         97   60 0004F200 SrvLibCreateCredentialHandle
+         98   61 000045C0 SrvLibCreateSelfSD
+         99   62 00009C70 SrvLibFilePowerManagementClose
+        100   63 000268E0 SrvLibFilePowerManagementInitialize
+        101   64 00009CF0 SrvLibFilePowerManagementPreventIdle
+        102   65 00025570 SrvLibFreeNameList
+        103   66 00005090 SrvLibFreePipeEa
+        104   67 0004EF30 SrvLibFreeSrvServiceSD
+        105   68 0004EFA0 SrvLibGenerateSrvServiceSD
+        106   69 0003DE80 SrvLibGetBaseFileName
+        107   6A 0004F680 SrvLibGetBinary
+        108   6B 0004F6C0 SrvLibGetDWord
+        109   6C 0004F7F0 SrvLibGetMultiSZList
+        110   6D 0003B990 SrvLibGetSelfSid
+        111   6E 0004F190 SrvLibHasClaimsSentinel
+        112   6F 000268F0 SrvLibInitializeIdleLogic
+        113   70 0003CC80 SrvLibIsAdmin
+        114   71 0003CCC0 SrvLibIsAnonymous
+        115   72 0003DFA0 SrvLibIsDosDeviceName
+        116   73 00006510 SrvLibIsDottedDnsName
+        117   74 00006570 SrvLibIsDottedQuadAddress
+        118   75 0003CCA0 SrvLibIsInteractive
+        119   76 00026C50 SrvLibIsLoggableError
+        120   77 0004F1B0 SrvLibIsNetwork
+        121   78 000065C0 SrvLibIsNetworkAddress
+        122   79 0004FAE0 SrvLibKeyExists
+        123   7A 00026C80 SrvLibLogError
+        124   7B 00026E30 SrvLibLookasideAllocate
+        125   7C 00026EE0 SrvLibLookasideCreatePool
+        126   7D 00027000 SrvLibLookasideDestroyPool
+        127   7E 000168A0 SrvLibLookasideDirectFreeBuffer
+        128   7F 00027080 SrvLibLookasideDirectNonPagedAllocateBuffer
+        129   80 000270C0 SrvLibLookasideDirectPagedAllocateBuffer
+        130   81 00027100 SrvLibLookasideFlush
+        131   82 00027180 SrvLibLookasideFree
+        132   83 00026910 SrvLibMarkServerAsIdle
+        133   84 00026980 SrvLibMarkServerAsNotIdle
+        134   85 0004E3F0 SrvLibParseSpnName
+        135   86 0000B180 SrvLibQueryCredentialHandle
+        136   87 00026A20 SrvLibQueryLicensingDWord
+        137   88 0003CDC0 SrvLibRetrieveMaximalAccessRightsForUser
+        138   89 0004F2C0 SrvLibS4U2SelfAuth
+        139   8A 0004F4F0 SrvLibS4U2SelfCleanup
+        140   8B 0004F520 SrvLibS4U2SelfInitialize
+        141   8C 000076F0 SrvLibSeAccessCheck
+        142   8D 0003C3C0 SrvLibSearchNameFromList
+        143   8E 0004FB80 SrvLibSetDWord
+        144   8F 00026E10 SrvLibSetSrvErrorLogIgnore
+        145   90 000255C0 SrvLibStandardizeIpAddress
+        146   91 000064B0 SrvLibTruncateDnsName
+        147   92 0000B720 SrvLibUpdateIdleLogic
+        148   93 000408B0 SrvNetAddServedName
+        149   94 00001FD0 SrvNetAllocateBuffer
+        150   95 00001010 SrvNetAllocateBufferNoTransportHeader
+        151   96 00005FF0 SrvNetAllocatePoolWithTag
+        152   97 00012050 SrvNetAllocatePoolWithTagPriority
+        153   98 00012100 SrvNetAllocateStatisticsQueuesEx
+        154   99 0003BED0 SrvNetCheckEndpointState
+        155   9A 0000B4C0 SrvNetCheckIfPipeAccessAllowed
+        156   9B 000025D0 SrvNetCloseConnection
+        157   9C 000149A0 SrvNetConnectionWillSign
+        158   9D 0000B0B0 SrvNetDecrementConnectionActiveCount
+        159   9E 000416D0 SrvNetDeleteServedName
+        160   9F 000438C0 SrvNetDeregisterClient
+        161   A0 00012200 SrvNetDisableRdmaListenSockets
+        162   A1 00012220 SrvNetDisableStatisticsQueue
+        163   A2 00002520 SrvNetDisconnectConnection
+        164   A3 00012290 SrvNetEnableRdmaListenSockets
+        165   A4 00041900 SrvNetEnumerateServedName
+        166   A5 00002100 SrvNetFreeBuffer
+        167   A6 00005FB0 SrvNetFreePool
+        168   A7 0000B910 SrvNetGetActiveProcessorCountAtServerStart
+        169   A8 00002F80 SrvNetGetQueueStatistics
+        170   A9 00017650 SrvNetGetRdmaNicInfo
+        171   AA 00004E90 SrvNetGetServerNameFlags
+        172   AB 000122B0 SrvNetGetStatisticsAndLock
+        173   AC 00002BB0 SrvNetHostAddressAndPortToStringA
+        174   AD 000168C0 SrvNetHostAddressAndPortToStringW
+        175   AE 0000B190 SrvNetIncrementConnectionActiveCount
+        176   AF 000123D0 SrvNetInitializeStatisticsQueues
+        177   B0 00015A50 SrvNetIsConnectionTransportLevelEncrypted
+        178   B1 000124C0 SrvNetIsDriverLoaded
+        179   B2 000099C0 SrvNetIsRdmaConnection
+        180   B3 0000B6F0 SrvNetIsTdiConnection
+        181   B4 0000B0D0 SrvNetMarkConnectionAuthenticated
+        182   B5 00003DF0 SrvNetNotifyClientsUpdateNetname
+        183   B6 0003E3C0 SrvNetQueryConnectionInformation
+        184   B7 00015A70 SrvNetQueryConnectionRTT
+        185   B8 000124D0 SrvNetQueryRssScalability
+        186   B9 00017A60 SrvNetRdmaDeregisterLargeBuffer
+        187   BA 00017CA0 SrvNetRdmaGetMemoryDescriptorsForLargeBufferRegistration
+        188   BB 00017EF0 SrvNetRdmaRegisterLargeBuffer
+        189   BC 00043AB0 SrvNetReadDirectData
+        190   BD 00015AA0 SrvNetReceiveData
+        191   BE 000153B0 SrvNetRegisterClient
+        192   BF 00001DD0 SrvNetSendData
+        193   C0 0000B6D0 SrvNetSetConnectionActiveCount
+        194   C1 0003E3A0 SrvNetSetConnectionInboundMessageSizeLimit
+        195   C2 0003CEE0 SrvNetSetConnectionInformation
+        196   C3 0000B760 SrvNetSetConnectionInstanceId
+        197   C4 0000B590 SrvNetSetConnectionServerName
+        198   C5 00042020 SrvNetSetEndpointFlag
+        199   C6 000156E0 SrvNetStartClient
+        200   C7 00015730 SrvNetStopClient
+        201   C8 00006070 SrvNetUpdateMemStatistics
+        202   C9 00006FD0 SrvNetUpdateStatisticsFromQueues
+        203   CA 00046810 SrvNetValidateMemoryDescriptors
+        204   CB 00043AF0 SrvNetWriteDirectData
+        205   CC 00049650 SrvNotifyGroveler
+        206   CD 00044B60 SrvXsAddPrintJob
+        207   CE 00044EF0 SrvXsClosePrinter
+        208   CF 00043B30 SrvXsConnect
+        209   D0 00043ED0 SrvXsDisconnect
+        210   D1 00044070 SrvXsDownLevelAPI
+        211   D2 00045210 SrvXsOpenPrinter
+        212   D3 00045530 SrvXsSchedulePrintJob
+
+  Summary
+
+        2000 .data
+        2000 .edata
+        4000 .idata
+        4000 .pdata
+        7000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       28000 .text
+        1000 ALMOSTRO
+        1000 GFIDS
+        1000 INIT
+       17000 PAGE
+        1000 fothk

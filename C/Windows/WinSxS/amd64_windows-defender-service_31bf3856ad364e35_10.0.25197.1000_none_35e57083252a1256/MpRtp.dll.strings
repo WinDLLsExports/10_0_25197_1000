@@ -1,0 +1,4945 @@
+                          
+                <xs:element ref="AccessMask"/>
+                <xs:element ref="BusId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="CertificateThumbprintId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="ComputerSid" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="DescriptorIdList"/>
+                <xs:element ref="DeviceId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Entry" maxOccurs="unbounded"/>
+                <xs:element ref="ExcludedIdList" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="File" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="FriendlyNameId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Group" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="GroupId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="HardwareId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="IncludedIdList" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="InstancePathId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="MatchType" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Name" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Name"/>
+                <xs:element ref="NameId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Options"/>
+                <xs:element ref="Parameters" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="PathId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="PID" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="PolicyGroups" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="PolicyRule" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="PolicyRules" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="PrimaryId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Printer" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="PrinterConnectionId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="PrinterNameId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="PrintFileFormatId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Process" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="SerialNumberId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Sid" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="SignerId" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Type"/>
+                <xs:element ref="VID" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="VID_PID" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:all>
+            </xs:choice>
+            </xs:sequence>
+            <xs:all>
+            <xs:attribute name="Id" type="xs:string" use="required"/>
+            <xs:attribute name="MatchType" type="MatchTypeList"/>
+            <xs:attribute name="Type" type="GroupTypeList"/>
+            <xs:choice maxOccurs="unbounded">
+            <xs:choice>
+            <xs:enumeration value="1394" />
+            <xs:enumeration value="ACPI" />
+            <xs:enumeration value="ACPIHAL" />
+            <xs:enumeration value="Allow" />
+            <xs:enumeration value="AuditAllowed" />
+            <xs:enumeration value="AuditDenied" />
+            <xs:enumeration value="CdRomDevices" />
+            <xs:enumeration value="Corporate" />
+            <xs:enumeration value="Deny" />
+            <xs:enumeration value="Device" />
+            <xs:enumeration value="Display" />
+            <xs:enumeration value="File" />
+            <xs:enumeration value="HDAudio" />
+            <xs:enumeration value="HID" />
+            <xs:enumeration value="HTREE" />
+            <xs:enumeration value="MatchAll" />
+            <xs:enumeration value="MatchAny" />
+            <xs:enumeration value="Network" />
+            <xs:enumeration value="PCI" />
+            <xs:enumeration value="PCMIA" />
+            <xs:enumeration value="PDF" />
+            <xs:enumeration value="PrinterDevices" />
+            <xs:enumeration value="Process" />
+            <xs:enumeration value="RemovableMediaDevices" />
+            <xs:enumeration value="ROOT" />
+            <xs:enumeration value="SCSI" />
+            <xs:enumeration value="Storage" />
+            <xs:enumeration value="SW" />
+            <xs:enumeration value="SWD" />
+            <xs:enumeration value="UEFI" />
+            <xs:enumeration value="UMB" />
+            <xs:enumeration value="Universal" />
+            <xs:enumeration value="Unknown" />
+            <xs:enumeration value="USB" />
+            <xs:enumeration value="Usb" />
+            <xs:enumeration value="WpdDevices" />
+            <xs:enumeration value="XPS" />
+            <xs:sequence>
+         (((((                  H
+        </xs:complexType>
+        </xs:restriction>
+        <xs:complexType>
+        <xs:restriction base="xs:string">
+      (                          
+     Example: <HardwareId>USBSTOR\DISK&amp;VEN_GENERIC&amp;PROD_MASSSTORAGECLASS</HardwareId>
+     Example: <PrimaryId>RemovableMediaDevices</PrimaryId>
+     Example: <VID>0725</VID>
+    #define WDD_EXECUTE_ACCESS                      0x00000004
+    #define WDD_POLICY_RULE_ENTRY_OPTION_SEND_ETW       0x00000002
+    #define WDD_POLICY_RULE_ENTRY_OPTION_SHOW_TOAST     0x00000001
+    #define WDD_READ_ACCESS                         0x00000001
+    #define WDD_WRITE_ACCESS                        0x00000002
+    <!--
+    <!-- AccessMask is a mask wit the following values:
+    <!-- BUS Id 
+    <!-- CertificateThumbprintId -->
+    <!-- Definition of device descriptor ids -->
+    <!-- Definition of Group -->
+    <!-- Definition of Group related nodes -->
+    <!-- Definition of policy rule related nodes -->
+    <!-- DeviceId 
+    <!-- ExcludedIdList definition -->
+    <!-- FriendlyName -->
+    <!-- Group Type -->
+    <!-- GroupId 
+    <!-- HardwareId 
+    <!-- IncludedIdList definition -->
+    <!-- InstancePathId 
+    <!-- Match Type -->
+    <!-- Name node used for both policy rule names or policy groups names -->
+    <!-- NameId -->
+    <!-- Options is a mask wit the following values:
+    <!-- PathId -->
+    <!-- PolicyRule definition -->
+    <!-- Primary ID 
+    <!-- PrimaryId -->
+    <!-- PrinterConnectionId 
+    <!-- PrinterNameId -->
+    <!-- PrintFileFormatId 
+    <!-- Product ID 
+    <!-- Rule entry type definition -->
+    <!-- Rule entry type node and enumeration -->
+    <!-- SerialNumberId -->
+    <!-- SID is just the sid string. For example: <SID>S-1-1-0</SID> -->
+    <!-- SignerId -->
+    <!-- Similar to SID -->
+    <!-- Vendor ID 
+    <!-- VID_PID -->
+    </xs:element>
+    </xs:simpleType>
+    <xs:element name="AccessMask" type="xs:integer"/>
+    <xs:element name="BusId" type="BusIdType"/>
+    <xs:element name="CertificateThumbprintId" type="xs:string"/>
+    <xs:element name="ComputerSid" type="xs:string"/>
+    <xs:element name="DescriptorIdList">
+    <xs:element name="DeviceId" type="xs:string"/>
+    <xs:element name="Entry">
+    <xs:element name="ExcludedIdList">
+    <xs:element name="File">
+    <xs:element name="FriendlyNameId" type="xs:string"/>
+    <xs:element name="Group">
+    <xs:element name="GroupId" type="xs:string"/>
+    <xs:element name="HardwareId" type="xs:string"/>
+    <xs:element name="IncludedIdList">
+    <xs:element name="InstancePathId" type="xs:string"/>
+    <xs:element name="MatchType" type="MatchTypeList"/>
+    <xs:element name="Name" type="xs:string"/>
+    <xs:element name="NameId" type="xs:string"/>
+    <xs:element name="Options" type="xs:integer"/>
+    <xs:element name="Parameters">
+    <xs:element name="PathId" type="xs:string"/>
+    <xs:element name="PID" type="xs:string"/>
+    <xs:element name="PolicyGroups">
+    <xs:element name="PolicyPackage">
+    <xs:element name="PolicyRule">
+    <xs:element name="PolicyRules">
+    <xs:element name="PrimaryId" type="PrimaryIdType"/>
+    <xs:element name="Printer">
+    <xs:element name="PrinterConnectionId" type="PrinterConnectionIdType"/>
+    <xs:element name="PrinterNameId" type="xs:string"/>
+    <xs:element name="PrintFileFormatId" type="PrintFileFormatIdType"/>
+    <xs:element name="Process">
+    <xs:element name="SerialNumberId" type="xs:string"/>
+    <xs:element name="Sid" type="xs:string"/>
+    <xs:element name="SignerId" type="xs:string"/>
+    <xs:element name="Type" type="RuleEntryTypeList"/>
+    <xs:element name="VID" type="xs:string"/>
+    <xs:element name="VID_PID" type="xs:string"/>
+    <xs:simpleType name="BusIdType">
+    <xs:simpleType name="GroupTypeList">
+    <xs:simpleType name="MatchTypeList">
+    <xs:simpleType name="PrimaryIdType">
+    <xs:simpleType name="PrinterConnectionIdType">
+    <xs:simpleType name="PrintFileFormatIdType">
+    <xs:simpleType name="RuleEntryTypeList">
+    Example: <BusId>USB</BusId>
+    Example: <DeviceId>USBSTOR\DISK&amp;VEN_KINGSTON&amp;PROD_DTVAULTPRIVACY30&amp;REV_PMAP</DeviceId>
+    Example: <GroupId>{F62C34E0-B486-43EF-FFFF-B0CBA19CD139}</GroupId>
+    Example: <InstancePathId>SCSI\DISK&amp;VEN_NVME&amp;PROD_SAMSUNG_MZVKW512\5&amp;213C1CE0&amp;0&amp;000000</InstancePathId>
+    Example: <PID>7854</PID>
+    Example: <PrinterConnectionId>USB</PrinterConnectionId>
+    If the option for a policy rule entry is only show a toast if the 
+    If we want both toast and etw event: <Options>3</Options> 1 | 2 = 3
+    rule is matched then we would have this: <Options>1</Options>
+    the particular rule entry. As the name suggests, this is a mask.
+    This node will define what access you want to allow/deny for 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   Defender DLP
+   InstanceCacheDeletes:%ld
+   InstanceCacheHits:%ld
+   InstanceCacheInserts:%ld
+   InstanceCacheMisses:%ld
+   InstanceCacheOverflows:%ld
+   InstanceCacheUpdates:%ld
+   Success: %lu, failures: %lu (last code: 0x%lx), timeouts: %lu,  baddata: %lu
+   TotalHits:%ld
+   TotalMisses:%ld
+  %ws
+  1: %4I64ums - %ws
+  2: %4I64ums - %ws
+  3: %4I64ums - %ws
+  4: %4I64ums - %ws
+  5: %4I64ums - %ws
+  6: %4I64ums - %ws
+  7: %4I64ums - %ws
+  8: %4I64ums - %ws
+  9: %4I64ums - %ws
+  AM:%ld
+  Async:%ld
+  AsyncQCurrent:%d
+  AsyncQMissed:%ld
+  AsyncQNotif:%ld
+  AsyncQTotalSent:%d
+  BMFlags:%ld
+  Config:%ld,%ld,%ld
+  CSVFS Cache Statistics (Instance Cache Type:%s):
+  Error:%ld,%ld,%ld
+  File:%ld,%ld,%ld
+  FilterReload:%ld,%ld,%ld
+  FilterUnload:%ld,%ld,%ld
+  Hits:%ld
+  Misses:%ld
+  NTFS Cache Statistics (Instance Cache Type:%s):
+  NumInstance:%ld
+  Pending:%ld
+  Proc:%ld,%ld,%ld
+  ProcExcl:%ld,%ld,%ld
+  REFS Cache Statistics (Instance Cache Type:%s):
+  RegSize:%ld
+  RTP:%ld
+  Scans:%ld
+  ServiceMaj:%d
+  ServiceMin:%d
+  SetEngine:%ld,%ld,%ld
+  SetState:%ld,%ld,%ld
+  SetUser:%ld,%ld,%ld
+  Susp:%ld,%ld,%ld
+  SyncProcessCreateDuration:%ldms (%I64d/%ld)
+  Threat:%ld,%ld,%ld
+  TotalStreamCon:%I64u
+  Unknown:%ld,%ld,%ld
+ !"#$%&'()*
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+ !"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ %ws 
+ (60Q
+ @8~8t
+ @usL
+ 0a*w
+ 10: %4I64ums - %ws
+ 8_ t
+ A\_^
+ A]A\]
+ A^_]
+ A^_^
+ A^A\_
+ A_A^_
+ A_A^_^[
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A\_^][
+ A_A^A]
+ A_A^A]_^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ best
+ C>TQ
+ Cache Build Start Time : %ws
+ Cache Header Version   : %ld
+ Cache Version          : %I64u
+ Current Time           : %ws
+ File status            : %ld
+ Folder List Version    : %ld
+ H;t$Hu
+ H3E H3E
+ Header State Mask      : %ld
+ I;t$
+ ISA '
+ -k ClipboardSvcGroup -p
+ 'L>[
+ Last Build End Time    : %ws
+ Microsoft Corporation. All rights reserved.
+ Microsoft Operations Puerto Rico1
+ Miss Counter           : %ld
+ Number Of Elements     : %ld
+ Operating System
+ Size Of Cache          : %ld
+ System State Mask      : %ld
+ t38S<u
+ tDE3
+ Trigger Mask           : %ld
+ u5I;
+ USN Journal ID         : %I64u
+ v.H+
+ WHERE 
+ Windows
+ WITHIN 
+ WITHIN .001 
+!\$h8_ u
+!\$pH
+!] !]8
+!]_0t
+!_is_double
+!|$ 3
+!}(!}8
+!}@H!}
+!}0!}
+!>6'Y
+!D$@3
+!H+}0
+!L$0A
+!t$`!t$p
+!t$p!
+!This program cannot be run in DOS mode.
+!TkjE
+"%ls" %ls
+"e?<<<<<<l?
+#D$$A;D$
+#t$pH
+#t'fA
+$Ib?s
+$Kernel.Purge.ESBCache
+$Kernel.Purge.SEC.FileHash
+$vLfD
+%%DateTime%%
+%%FileName%%
+%%PolicyName%%
+%%QuarantinePath%%
+%%UserName%%
+%%windir%%\%ls
+%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X
+%D9x(t
+%GoU?*
+%homedrive%%homepath%\Microsoft DLP\Quarantine
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%u)\%hs!%p: 
+%ld / %ld%c
+%ld newly mounted volumes accumulated, forcing a config update ...
+%ld%c
+%ls -GetLoadLibraryWAddress32 -OutputFileMappingHandle %lu
+%ls has changed from %ld to %ld
+%ls has changed from %ls to %ls
+%ls%08lX-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X%ls
+%ls\%ls
+%ls\Software\Microsoft\Office
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%ProgramData%\Microsoft\Windows Defender\Definition Updates
+%ProgramData%\Microsoft\Windows Defender\Definition Updates\Updates
+%ProgramData%\Microsoft\Windows Defender\LocalCopy
+%ProgramData%\Microsoft\Windows Defender\Platform
+%ProgramData%\Microsoft\Windows Defender\Snapshots
+%ProgramFiles%\Windows Defender
+%ProgramFiles(x86)%\Windows Defender
+%s %s
+%s (%s)
+%s%s%s
+%s\%s
+%s\*%s
+%s\EndpointDlp.DLL
+%s\Mpoav.DLL
+%s\x86\%s
+%SystemDrive%
+%SystemRoot%
+%u.%u.%u.%u
+%windir%\System32\Drivers\Wd
+%windir%\System32\Drivers\WdDevFlt.sys
+%windir%\System32\Drivers\WdFilter.sys
+%ws / %ws
+%ws%ws
+%Y%m%d-%H%M%S
+&?PPPPPPP?
+&S|9a
+()$^.*+?[]|\-{},:=!
+(@8{Jt
+(A_A^A]A\_^][
+(caller: %p) 
+(D$ f
+(D$`f
+(D$0f
+(D$pA
+(D$Pf
+(N/A)
+(no scan recorded)
+(NONE)
+(null)
+(t$ H
+(t$`H
+(t$PH
+(t$PI
+(T?j?Y
+(unknown)
+)|B?d!
+)>6{1n
+)D$@L
+)D$PH
+)Microsoft Root Certificate Authority 20100
+*(infinite)
+***********************                 *****************************
+***********************                ******************************
+***********************  SFC Log END   ******************************
+***********************  SFC Log START  *****************************
+*********************************************************************
+****************************RTP Perf Log***************************
+**************************END RTP Perf Log*************************
+*H+K8H
+*StO9>T
+, Execute
+, FsExecute
+, FsRead
+, FsWrite
+, Write
+,$L9n uXA
+,/<-w
+,HR>O
+,I<%w
+,X< w
+..om?
+.?AU_Crt_new_delete@std@@
+.?AUCCMEngineMonitoringDataCallbackContext@RealtimeProtection@@
+.?AUCCMEngineNotificationCallbackContext@RealtimeProtection@@
+.?AUctype_base@std@@
+.?AUIAsyncFileNotificationHandler@RealtimeProtection@@
+.?AUIAsynchronousRequestHandler@RealtimeProtection@@
+.?AUIEngineEventCallback@RealtimeProtection@@
+.?AUIFileSystemRequestHandler@RealtimeProtection@@
+.?AUIFilterReply@RealtimeProtection@@
+.?AUIFilterRequest@RealtimeProtection@@
+.?AUIFilterRequestHandler@RealtimeProtection@@
+.?AUIMpThreadPoolIoHandle@CommonUtil@@
+.?AUIMpThreadPoolOverlapped@CommonUtil@@
+.?AUINriRealtimeProvider@@
+.?AUIProtectionAgentBase@RealtimeProtection@@
+.?AUIRefObject@CommonUtil@@
+.?AUIRegistryRequestHandler@RealtimeProtection@@
+.?AUIRtpAgent@RealtimeProtection@@
+.?AUIUnknown@@
+.?AUIUtilRegEnumSubKeys@CommonUtil@@
+.?AUIWatcherController@RealtimeProtection@@
+.?AUIWbemObjectSink@@
+.?AV?$_Iosb@H@std@@
+.?AV?$_Node_class@_WV?$regex_traits@_W@std@@@std@@
+.?AV?$_Node_str@_W@std@@
+.?AV?$_Ref_count_obj2@UDocumentDesciptor@DlpProcessStateCache@RealtimeProtection@@@std@@
+.?AV?$_Ref_count_obj2@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@std@@
+.?AV?$_Ref_count_obj2@VCRegEntry@@@std@@
+.?AV?$_Tree@V?$_Tmap_traits@U_GUID@@PEAXVCGuidComp@RealtimeProtection@@V?$allocator@U?$pair@$$CBU_GUID@@PEAX@std@@@std@@$0A@@std@@@std@@
+.?AV?$basic_ios@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_ios@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_iostream@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_iostream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_istream@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_istream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_ostream@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_ostream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_streambuf@_WU?$char_traits@_W@std@@@std@@
+.?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@
+.?AV?$basic_stringbuf@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@
+.?AV?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@
+.?AV?$basic_stringstream@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@
+.?AV?$basic_stringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@
+.?AV?$CFilterReplyBase@U_FILTER_REPLY_HEADER@@@RealtimeProtection@@
+.?AV?$CFilterReplyBase@UFILTER_FILE_REPLY_MESSAGE@RealtimeProtection@@@RealtimeProtection@@
+.?AV?$CFilterRequestBase@UFILTER_ASYNCHRONOUS_REQUEST_MESSAGE@RealtimeProtection@@$0EAA@@RealtimeProtection@@
+.?AV?$CFilterRequestBase@UFILTER_FILE_REQUEST_MESSAGE@RealtimeProtection@@$0EAA@@RealtimeProtection@@
+.?AV?$collate@_W@std@@
+.?AV?$CRefClass@V?$CStdRefList@VCRegistryNodeValuePair@RealtimeProtection@@@CommonUtil@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIFilterReply@RealtimeProtection@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIFilterRequest@RealtimeProtection@@@CommonUtil@@
+.?AV?$CRefObjectFor@UIMpThreadPoolIoHandle@CommonUtil@@@CommonUtil@@
+.?AV?$CRefObjectFor@UINriRealtimeProvider@@@CommonUtil@@
+.?AV?$CStdList@V?$AutoRefWrapper@VCRegistryClient@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryClient@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtil@@
+.?AV?$CStdList@V?$AutoRefWrapper@VCRegistryClientContext@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryClientContext@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtil@@
+.?AV?$CStdList@V?$AutoRefWrapper@VCRegistryNodeValuePair@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryNodeValuePair@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtil@@
+.?AV?$CStdList@V?$AutoRefWrapper@VCRegistryPath@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryPath@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtil@@
+.?AV?$CStdListImpl@V?$AutoRefWrapper@VCRegistryClient@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryClient@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtilImpl@@
+.?AV?$CStdListImpl@V?$AutoRefWrapper@VCRegistryClientContext@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryClientContext@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtilImpl@@
+.?AV?$CStdListImpl@V?$AutoRefWrapper@VCRegistryNodeValuePair@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryNodeValuePair@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtilImpl@@
+.?AV?$CStdListImpl@V?$AutoRefWrapper@VCRegistryPath@RealtimeProtection@@@CommonUtil@@V?$allocator@V?$AutoRefWrapper@VCRegistryPath@RealtimeProtection@@@CommonUtil@@@std@@@CommonUtilImpl@@
+.?AV?$CStdMap@U_GUID@@PEAXVCGuidComp@RealtimeProtection@@V?$allocator@U?$pair@$$CBU_GUID@@PEAX@std@@@std@@@CommonUtil@@
+.?AV?$CStdRefList@VCRegistryClient@RealtimeProtection@@@CommonUtil@@
+.?AV?$CStdRefList@VCRegistryClientContext@RealtimeProtection@@@CommonUtil@@
+.?AV?$CStdRefList@VCRegistryNodeValuePair@RealtimeProtection@@@CommonUtil@@
+.?AV?$CStdRefList@VCRegistryPath@RealtimeProtection@@@CommonUtil@@
+.?AV?$ctype@_W@std@@
+.?AV?$ctype@D@std@@
+.?AV?$map@U_GUID@@PEAXVCGuidComp@RealtimeProtection@@V?$allocator@U?$pair@$$CBU_GUID@@PEAX@std@@@std@@@std@@
+.?AV__non_rtti_object@std@@
+.?AV_com_error@@
+.?AV_Facet_base@std@@
+.?AV_Generic_error_category@std@@
+.?AV_Iostream_error_category2@std@@
+.?AV_Locimp@locale@std@@
+.?AV_Node_assert@std@@
+.?AV_Node_back@std@@
+.?AV_Node_base@std@@
+.?AV_Node_capture@std@@
+.?AV_Node_end_group@std@@
+.?AV_Node_end_rep@std@@
+.?AV_Node_endif@std@@
+.?AV_Node_if@std@@
+.?AV_Node_rep@std@@
+.?AV_Ref_count_base@std@@
+.?AV_Root_node@std@@
+.?AV_System_error@std@@
+.?AV_System_error_category@std@@
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVbad_cast@std@@
+.?AVbad_exception@std@@
+.?AVbad_typeid@std@@
+.?AVCAgentsManager@RealtimeProtection@@
+.?AVCAsynchronousFilterReply@RealtimeProtection@@
+.?AVCAsynchronousFilterRequest@RealtimeProtection@@
+.?AVCAsynchronousWatcherBase@RealtimeProtection@@
+.?AVCAsyncNotificationWorkItem@RealtimeProtection@@
+.?AVCAtlException@ATL@@
+.?AVCCMEngine@RealtimeProtection@@
+.?AVCCMPluginConfiguration@RealtimeProtection@@
+.?AVCCMReadOnlyConfiguration@RealtimeProtection@@
+.?AVCCMScanContext@RealtimeProtection@@
+.?AVCCommunicatorThreadContext@CFilterCommunicatorBase@RealtimeProtection@@
+.?AVCCommunicatorThreadObject@RealtimeProtection@@
+.?AVCConfigChangeWorkItem@RealtimeProtection@@
+.?AVCConfigurationManager@RealtimeProtection@@
+.?AVCDataDuplicationMetadataObject@RealtimeProtection@@
+.?AVCDataDuplicationObject@RealtimeProtection@@
+.?AVCDataDuplicationPrintObject@RealtimeProtection@@
+.?AVCDebugFileMessage@RealtimeProtection@@
+.?AVCDebugMessageBase@MpService@@
+.?AVCDebugPassthroughMessage@RealtimeProtection@@
+.?AVCDebugProcessMessage@RealtimeProtection@@
+.?AVCDebugRegistryMessage@RealtimeProtection@@
+.?AVCDebugRTPBinaryMessageBase@RealtimeProtection@@
+.?AVCDebugRTPMessageBase@RealtimeProtection@@
+.?AVCDebugRtpNotificationMessage@RealtimeProtection@@
+.?AVCDebugRtpVfzMessage@RealtimeProtection@@
+.?AVCDebugSuspiciousNotificationMessage@RealtimeProtection@@
+.?AVCDebugSyncMonitorNotificationMessage@RealtimeProtection@@
+.?AVCDebugThreatMessage@RealtimeProtection@@
+.?AVCDebugTpmEventCallbackMessage@RealtimeProtection@@
+.?AVCDebugUserInfoMessage@RealtimeProtection@@
+.?AVCDeviceControlAccessCheckParameters@DeviceControlUtil@@
+.?AVCDeviceControlPrintAccessCheckParameters@DeviceControlUtil@@
+.?AVCDeviceControlSecurityObject@DeviceControlUtil@@
+.?AVCDlpInjectEnforcementDllWorkItem@RealtimeProtection@@
+.?AVCDlpUserEventWorkItem@RealtimeProtection@@
+.?AVCError@@
+.?AVCFileBootModificationWorkItem@RealtimeProtection@@
+.?AVCFileFilterReply@RealtimeProtection@@
+.?AVCFileFilterRequest@RealtimeProtection@@
+.?AVCFileModificationWorkItem@RealtimeProtection@@
+.?AVCFileSystemAgent@RealtimeProtection@@
+.?AVCFileSystemNotification@RealtimeProtection@@
+.?AVCFileSystemWatcher@RealtimeProtection@@
+.?AVCFilterCommunicatorBase@RealtimeProtection@@
+.?AVCFilterReloadHelper@RealtimeProtection@@
+.?AVCFilterReloadItemExecutor@RealtimeProtection@@
+.?AVCFilterReloadWorkItem@RealtimeProtection@@
+.?AVCFilterUnloadItemExecutor@RealtimeProtection@@
+.?AVCFilterUnloadWorkItem@RealtimeProtection@@
+.?AVCFolderGuardDataWorkItem@RealtimeProtection@@
+.?AVCFolderGuardNotificationWorkItem@RealtimeProtection@@
+.?AVCHResultException@CommonUtil@@
+.?AVCHResultExceptionImpl@CommonUtil@@
+.?AVCInjectDetoursDllWorkItem@RealtimeProtection@@
+.?AVCModuleMonitorDataWorkItem@RealtimeProtection@@
+.?AVCMpOverlappedCommonBase@CommonUtil@@
+.?AVCMpPluginWorkItemBase@RealtimeProtection@@
+.?AVCMpSafeWorkItemBase@RealtimeProtection@@
+.?AVCMpSetEngineWorkItem@RealtimeProtection@@
+.?AVCMpSetStateWorkItem@RealtimeProtection@@
+.?AVCMpSetUserInformationWorkItem@RealtimeProtection@@
+.?AVCMpThreadPoolItemBase@CommonUtil@@
+.?AVCMpThreadPoolOverlappedBase@CommonUtil@@
+.?AVCNriRealtimeAgent@RealtimeProtection@@
+.?AVCPassThroughWorkItem@RealtimeProtection@@
+.?AVCProcessAgent@RealtimeProtection@@
+.?AVCProcessExclusionWorkItem@RealtimeProtection@@
+.?AVCProcessNotification@RealtimeProtection@@
+.?AVCProcessNotificationWorkItem@RealtimeProtection@@
+.?AVCProcessWatcher@RealtimeProtection@@
+.?AVCRefCountedBase@@
+.?AVCRefCountedBaseX@@
+.?AVCRefObject@CommonUtil@@
+.?AVCRefVirtualObject@CommonUtil@@
+.?AVCRegistrationDataItem@RealtimeProtection@@
+.?AVCRegistryAgent@RealtimeProtection@@
+.?AVCRegistryClient@RealtimeProtection@@
+.?AVCRegistryClientContext@RealtimeProtection@@
+.?AVCRegistryClientContextList@RealtimeProtection@@
+.?AVCRegistryClientList@RealtimeProtection@@
+.?AVCRegistryNode@RealtimeProtection@@
+.?AVCRegistryNodeValuePair@RealtimeProtection@@
+.?AVCRegistryPath@RealtimeProtection@@
+.?AVCRegistryPathList@RealtimeProtection@@
+.?AVCRegistryRegContextMap@RealtimeProtection@@
+.?AVCRegistryRegistration@RealtimeProtection@@
+.?AVCRegistryTree@RealtimeProtection@@
+.?AVCRegistryValue@RealtimeProtection@@
+.?AVCRegistryWatcher@RealtimeProtection@@
+.?AVCRegNotificationManager@RealtimeProtection@@
+.?AVCRtpDescriptorId@DeviceControlUtil@@
+.?AVCRtpDeviceControlEngine@RealtimeProtection@@
+.?AVCRtpDlpEngine@RealtimeProtection@@
+.?AVCRtpFilterManager@RealtimeProtection@@
+.?AVCRtpPolicyGroup@DeviceControlUtil@@
+.?AVCRtpPolicyPackage@DeviceControlUtil@@
+.?AVCRtpPolicyRule@DeviceControlUtil@@
+.?AVCRtpPolicyRuleEntry@DeviceControlUtil@@
+.?AVCRtpPolicyRuleEntryParameter@DeviceControlUtil@@
+.?AVCRtpPolicyRuleEntryParameterDescriptorId@DeviceControlUtil@@
+.?AVCRtpThreatDetectionNotification@RealtimeProtection@@
+.?AVCScanLoadedDriversWorkItem@RealtimeProtection@@
+.?AVCThreadImpersonation@RealtimeProtection@@
+.?AVCThreadManager@@
+.?AVCThreadPoolIoFilterPort@RealtimeProtection@@
+.?AVCThreadPoolIoFilterRequest@RealtimeProtection@@
+.?AVCThreadPoolIoPortHandler@RealtimeProtection@@
+.?AVCThreadPoolIoPortHandlerBase@RealtimeProtection@@
+.?AVCUtilRegEnumSubKeys@CommonUtil@@
+.?AVCWmiAgent@RealtimeProtection@@
+.?AVCWmiEventAsyncWatcher@RealtimeProtection@@
+.?AVCWmiEventSink@RealtimeProtection@@
+.?AVCWmiEventSyncWatcher@RealtimeProtection@@
+.?AVCWmiSensor@RealtimeProtection@@
+.?AVCWmiWatcher@RealtimeProtection@@
+.?AVCWmiWatcherNode@RealtimeProtection@@
+.?AVCWmiWatcherQuery@RealtimeProtection@@
+.?AVCWorkItemSuspiciousDetectionNotification@RealtimeProtection@@
+.?AVCWorkItemThreatDetection@RealtimeProtection@@
+.?AVCWString@@
+.?AVDCAccessEventDataForThrottler@RealtimeProtection@@
+.?AVDCPrinterToastDataForThrottler@RealtimeProtection@@
+.?AVerror_category@std@@
+.?AVexception@std@@
+.?AVfacet@locale@std@@
+.?AVfailure@ios_base@std@@
+.?AVILockable@@
+.?AVinvalid_argument@std@@
+.?AVios_base@std@@
+.?AVIProcessRequestHandler@RealtimeProtection@@
+.?AVIRefCounted@@
+.?AVIToastNotificationDataForThrottler@RealtimeProtection@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVregex_error@std@@
+.?AVResultException@wil@@
+.?AVruntime_error@std@@
+.?AVsystem_error@std@@
+.?AVtype_info@@
+.>PJ;I:qE>
+.00cfg
+.CRT$XCA
+.CRT$XCC
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIC
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.CRT$XPA
+.CRT$XPX
+.CRT$XPXA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.data$rs$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gehcont
+.gfids
+.giats
+.i?0@I
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$T$brc
+.rdata$voltmd
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.u H;3tpH
+.u+fA
+.xdata
+.xdata$x
+.xJ>Hf
+/>58d%
+/2GG>!B
+/t"fA
+/t8fB
+/t-I;
+/u#fD9j
+/u&M+
+/w4t-A
+:/u1f
+:>t6k'
+:DefenderDataDuplicationMetadata
+:HcL$PH
+;.u1L
+;\$0|
+;\$p|
+;CTu$
+;H9>&X
+;I9}(tiH
+;s s@L
+;t$`sC
+?!5WOo
+?(uxA
+?:kP<
+????_
+????_????
+?@En[vP
+?{Q}<
+?+>^m
+?49HoKC
+?7{KV
+?7zQ6$
+?8bunz8
+?Access violation - no RTTI data!
+?E=$% B
+?f`Y4
+?kxG2)
+?QY^&
+?R0I?
+?TY,>5
+?UUUUUU
+@ H+C
+@(H9B
+@.data
+@.didat
+@.reloc
+@@H90t
+@_^[H
+@>%>b
+@08N0Q
+@8{(u
+@8{<t
+@8|$(t:H
+@8|$@t:H
+@8|$`tSH
+@8|$HuaH
+@8|$pt;H
+@8|$Pu
+@8|$xt
+@8|$Xt:H
+@8|$xt:H
+@8|$xtGH
+@8}Ou
+@8~0t
+@8~0tM
+@8~4u~I
+@8=-<
+@8=k2
+@8=uu
+@84)u
+@85~G
+@8j(t
+@8k(t
+@8q<uuH
+@8t$(u
+@8t$@
+@8t$0
+@8t$0t
+@8t$8
+@8y<t
+@A^_]
+@A^_^
+@A^_^[]
+@A^A]]
+@A^A]_
+@A^A]_^]
+@A^A]_H
+@A^A]A\_^
+@A^A]A\_^[]
+@A__]
+@A_A^^
+@A_A^_
+@A_A^_^[
+@A_A^_^]
+@A_A^A\
+@A_A^A\^]
+@A_A^A\_]H
+@A_A^A\_^
+@A_A^A\_^[]
+@A_A^A\_^][
+@A_A^A]
+@A_A^A]A\^
+@A_A^A]A\_
+@A_A^A]A\_^[
+@A_A^A]A\_^]
+@b;zO]
+@HcC(H
+@hHcH
+@L;J(tGH
+@PHcH
+@SUVWATAUAVAW
+@SUVWATAUAVAWH
+@SUVWATAUAVH
+@SUVWATAVAWH
+@SUVWAVAWH
+@SUVWAVH
+@SVATAUAVAWH
+@SVWATAUAVAWH
+@SVWATAUAVH
+@SVWATAUAWH
+@SVWATAVAWH
+@SVWAVAWH
+@SVWAVH
+@SVWH
+@SWATAUAVH
+@SWATAUAWH
+@UATAUAVAWH
+@UAVAWH
+@USVWATAUAVAWH
+@USVWATAUAVH
+@USVWATAUAWH
+@USVWATAUH
+@USVWATAVAWH
+@USVWATH
+@USVWAUAVAWH
+@USVWAVH
+@USVWAWH
+@USVWH
+@USWATAUAVAWH
+@USWATAVAWH
+@USWATAVH
+@USWH
+@UVWATAUAVAWH
+@uW!\$pH
+@VWATAUAVAWH
+@VWAVH
+@WATAUAVAWH
+@X90~
+@xL;B t H
+[%hs(%hs)]
+[%hs]
+[*ncd>0
+[aOni*{
+[DC] %ls=%ld
+[DC] ConfigCallback device control not initialized or enabled, leaving...
+[DC] ConfigCallback(RefreshConfiguration) failed (%#lx).
+[DC] Connect() failed with hr=%#lx
+[DC] CRtpDeviceControlComm::NotificationsWorker. Connect failed(%#lx) after m_hServiceConnectEvent signaled.
+[DC] CRtpDeviceControlComm::NotificationsWorker. Connected to filter. Forcing filter to load latest package
+[DC] CRtpDeviceControlComm::NotificationsWorker. DisconnectEvent received from driver(WdDevFlt). Closing CDO handle.
+[DC] CRtpDeviceControlComm::NotificationsWorker. m_hServiceConnectEvent signaled, but m_ShutdownInProgress==true. Existing.
+[DC] CRtpDeviceControlComm::NotificationsWorker. m_hServiceConnectEvent signaled. Trying to connect to filter.
+[DC] CRtpDeviceControlComm::NotificationsWorker. Not connected to driver(maybe no devices attached). Waiting on m_hServiceConnectEvent
+[DC] CRtpDeviceControlComm::NotificationsWorker. Shutdown in progress detected. Exiting worker.
+[DC] CRtpDeviceControlComm::Shutdown. Worker thread terminated
+[DC] CRtpDeviceControlDataDuplicationManager::DataDuplicationWorker. m_hRefreshDataDuplicationFolderEvent signaled, but m_ShutdownInProgress == true. Existing.
+[DC] CRtpDeviceControlDataDuplicationManager::DataDuplicationWorker. Shutdown in progress detected. Exiting worker.
+[DC] CRtpDeviceControlDataDuplicationManager::DoProcessing failed(Type: %d).
+[DC] CRtpDeviceControlDataDuplicationManager::RefreshDataDuplicationDirectory failed. hr=%#lx
+[DC] CRtpDeviceControlDataDuplicationManager::UpdatePolicyPackage m_PolicyPackage.Swap(aPolicyPackage) failed. hr=%#lx
+[DC] CRtpDeviceControlDataDuplicationManager::UtilDeleteFile failed for %ls.
+[DC] CRtpDeviceControlEngine::ConfigCallback. pThis == nullptr. Returning...
+[DC] CRtpDeviceControlEngine::ConfigCallback. pUserContext == nullptr. Returning...
+[DC] CRtpDeviceControlEngine::EnableDeviceControl(WSZ_MpConfig_ZwConfigMisc_DC_SimulateEnableDeviceControlFailure = 1). EnableDeviceControl will exit with failure
+[DC] CRtpDeviceControlEngine::OnNotifyRpcServerStateChange. DeviceControl state: %d. IsAvailable: %d
+[DC] CRtpDeviceControlEngine::OnNotifySessionStateChange called. SessionId: (%lu) NewState: %lu
+[DC] CRtpDeviceControlEngine::Shutdown m_PolicyPackage.Swap(aPolicyPackage) failed. hr=%#lx
+[DC] CRtpDeviceControlEngine::WriteConfigDword(WSZ_MpConfig_DeviceControl_PurgeFilterConfiguration = %ld).
+[DC] CRtpDeviceControlLogonSessionListener::NotifySessionStateChange called. SessionId: %lu NewState: %lu.
+[DC] DeviceIoControl(IOCTL_CONNECT) failed with hr=%#lx. Most likely version mismatch.
+[DC] DeviceIoControl(IOCTL_SET_DATA_DUPLICATION_DIRECTORY) failed with hr=%#lx
+[DC] DeviceIoControl(IOCTL_SET_DEFAULT_ENFORCEMENT_POLICY) failed with hr=%#lx
+[DC] DeviceIoControl(IOCTL_SET_STATE) failed with hr=%#lx
+[DC] DeviceIoControl(IOCTL_UPDATE_LOGON_SESSION) failed with hr=%#lx
+[DC] DeviceIoControl(IOCTL_UPDATE_POLICY_PACKAGE) failed with hr=%#lx
+[DC] DisableDeviceControl(SetFilterState) failed %#lx.
+[DC] Entering CRtpDeviceControlComm::Initialize.
+[DC] Entering CRtpDeviceControlComm::NotificationsWorker.
+[DC] Entering CRtpDeviceControlComm::Shutdown. Queueing APC so worker thread gracefuly terminates. Waiting ...
+[DC] Entering CRtpDeviceControlDataDuplicationManager::DataDuplicationWorker.
+[DC] Entering CRtpDeviceControlDataDuplicationManager::Initialize.
+[DC] Entering CRtpDeviceControlDataDuplicationManager::Shutdown. Queueing APC so worker thread gracefuly terminates. Waiting ...
+[DC] Entering CRtpDeviceControlEngine::ConfigCallback.
+[DC] Entering CRtpDeviceControlEngine::DisableDeviceControl.
+[DC] Entering CRtpDeviceControlEngine::EnableDeviceControl.
+[DC] Entering CRtpDeviceControlEngine::GetConfigPolicies.
+[DC] Entering CRtpDeviceControlEngine::Initialize.
+[DC] Entering CRtpDeviceControlEngine::Shutdown.
+[DC] Entering CRtpDeviceControlLogonSessionListener::Initialize.
+[DC] Entering/Leaving CRtpDeviceControlLogonSessionListener::Shutdown.
+[DC] GetBusNameFromType(%d) failed with hr=%#lx
+[DC] GetDefaultEnforcementNameFromValue(%d) failed with hr=%#lx
+[DC] GetDeviceClassNameFromGuid(%ls) failed with hr=%#lx
+[DC] GetDuplicatedOperationName failed with hr=%#lx
+[DC] GetDuplicatedOperationName(%d) failed with hr=%#lx
+[DC] GetPolicyRuleEntryTypeFromId failed with hr=%#lx
+[DC] GetPolicyRuleNameFromId failed with hr=%#lx
+[DC] GetPrinterConnectionName(%d) failed with hr=%#lx
+[DC] GetPrinterConnectionName(awszVid/awszPid) failed with hr=%#lx
+[DC] GetRuleEntryTypeNameFromType(%d) failed with hr=%#lx
+[DC] GetSerialNumberFromInstancePath failed with hr=%#lx
+[DC] HandleDataRemoteTransfer failed with hr=%#lx
+[DC] HandleFileRemoteTransfer failed with hr=%#lx
+[DC] Initialize failed initializing m_Communication. Critical! hr=%#lx.
+[DC] Initialize failed initializing m_DataDuplicationManager. Critical! hr=%#lx.
+[DC] Initialize failed initializing m_LogonSessionListener. Critical! hr=%#lx.
+[DC] Initialize failed initializing m_NotificationsThrottler. Critical! hr=%#lx.
+[DC] Initialize failed initializing m_pDCPrinterComp. Critical! hr=%#lx.
+[DC] Initialize InitializeDataDuplicationDirectory(%ls) failed hr=%#lx. Reseting back to default...
+[DC] Initialize InitializeDataDuplicationRemoteLocation(%ls) failed hr=%#lx. Continuing...
+[DC] Initialize: invalid data duplication directory(%ls) driveType(%d) failed. hr=%#lx
+[DC] Initialize: invalid data duplication directory(%ls) volume hotplug info failed. hr=%#lx
+[DC] Leaving CRtpDeviceControlComm::Initialize with hr=%#lx
+[DC] Leaving CRtpDeviceControlComm::NotificationsWorker.
+[DC] Leaving CRtpDeviceControlComm::Shutdown.
+[DC] Leaving CRtpDeviceControlDataDuplicationManager::DataDuplicationWorker.
+[DC] Leaving CRtpDeviceControlDataDuplicationManager::Initialize with hr=%#lx
+[DC] Leaving CRtpDeviceControlEngine::DisableDeviceControl(%#lx).
+[DC] Leaving CRtpDeviceControlEngine::EnableDeviceControl(%#lx).
+[DC] Leaving CRtpDeviceControlEngine::GetConfigPolicies(%#lx).
+[DC] Leaving CRtpDeviceControlEngine::Initialize(%#lx).
+[DC] Leaving CRtpDeviceControlEngine::Shutdown(%#lx).
+[DC] Leaving CRtpDeviceControlLogonSessionListener initialized. Trying to send filter last logged on user.
+[DC] Leaving CRtpDeviceControlLogonSessionListener::Initialize.
+[DC] m_Communication.SetDefaultEnforcement failed (%#lx).
+[DC] m_pThreadManager exception thrown hr=%#lx. CRtpDeviceControlComm cannot initialize
+[DC] m_pThreadManager exception thrown hr=%#lx. CRtpDeviceControlDataDuplicationManager cannot initialize
+[DC] m_pThreadManager->CreateThread failed with hr=%#lx. CRtpDeviceControlComm cannot initialize
+[DC] m_pThreadManager->CreateThread failed with hr=%#lx. CRtpDeviceControlDataDuplicationManager cannot initialize
+[DC] MpAddMinifilterValuesWdDevFlt: hr=%#lx
+[DC] MpConfigGetValueString(WSZ_MpConfig_DeviceControl_PolicyGroups_PolicyGroups) failed with hr=%#lx
+[DC] MpConfigGetValueString(WSZ_MpConfig_DeviceControl_PolicyRules_PolicyRules) failed with hr=%#lx
+[DC] MpInstallWdDevFlt: hr=%#lx
+[DC] MpIsDeviceControlAvailable failed with hr=%#lx
+[DC] MpRegisterWdDevFlt: hr=%#lx
+[DC] MpUninstallWdDevFlt: hr=%#lx
+[DC] MpUnregisterWdDevFlt: hr=%#lx
+[DC] NotificationsDriverCallback invalid NotificationType(%d). Leaving...
+[DC] NotificationsWorker(ReadFile) unexpected return value or non pending
+[DC] NotifySessionStateChange getting latest active logon session and updating filter.
+[DC] NotifySessionStateChange updating filter with session change
+[DC] NotifySessionStateChange(GetLatestActiveLogonSession) failed with hr=%#lx
+[DC] NotifySessionStateChange(GetLatestActiveLogonSession) found latest active SessionId: %lu
+[DC] NotifySessionStateChange(GetLatestActiveLogonSession) last active session different from last active stored session. Updating filter.
+[DC] NotifySessionStateChange(UpdateLogonSessionData) failed with hr=%#lx
+[DC] OnAccessEventNotificationDriverCallback invalid options(%lu) detected. Leaving...
+[DC] OnConnectDriverCallback(RefreshFilterConfiguration) failed %#lx.
+[DC] OnDisconnectDriverCallback called.
+[DC] OnDisconnectDriverCallback(SetFilterPolicyPackageConfig) failed %#lx.
+[DC] ParseGPOConfig failed with hr=%#lx
+[DC] PrintParameters.GetPrimaryUser failed with hr=%#lx
+[DC] RefreshConfiguration failed parsing xml policy package. Continuing with no policy. hr=%#lx.
+[DC] RefreshConfiguration failed to read configvalue for DataDuplicationDirectory. hr=%#lx. Continuing...
+[DC] RefreshConfiguration failed to read configvalue for DataDuplicationRemoteLocation. hr=%#lx. Continuing...
+[DC] RefreshConfiguration failed to read configvalue for DefaultEnforcement. hr=%#lx. Continuing...
+[DC] RefreshConfiguration failed to read configvalue for NotificationThrottleMax. hr=%#lx. Continuing...
+[DC] RefreshConfiguration failed to read configvalue for NotificationThrottleMin. hr=%#lx. Continuing...
+[DC] RefreshConfiguration MpConfigOpen failed. hr=%#lx.
+[DC] RefreshConfiguration: hr=%#lx
+[DC] RefreshConfiguration::GetConfigPolicies failed. hr=%#lx. Continuing...
+[DC] RefreshConfiguration::ResetFilterDataDuplicationDirectory failed. hr=%#lx. Continuing...
+[DC] RefreshConfiguration::SetDataDuplicationDirectory failed. hr=%#lx. Continuing...
+[DC] RefreshConfiguration::SetDataDuplicationRemoteLocation failed. hr=%#lx. Continuing...
+[DC] RefreshConfiguration::SetFilterDataDuplicationDirectory failed. hr=%#lx. Continuing...
+[DC] RefreshConfiguration::SetFilterDefaultEnforcement failed. hr=%#lx. Continuing...
+[DC] RefreshConfiguration::SetFilterPolicyPackage. hr=%#lx. Continuing...
+[DC] RefreshConfiguration::SetTimeouts failed. hr=%#lx. Continuing...
+[DC] RefreshFilterConfiguration::m_LogonSessionListener.RefreshLastLogon failed. hr=%#lx. Continuing...
+[DC] RefreshFilterConfiguration::ResetFilterDataDuplicationDirectory failed. hr=%#lx. Continuing...
+[DC] RefreshFilterConfiguration::SetFilterDataDuplicationDirectory failed. hr=%#lx. Continuing...
+[DC] RefreshFilterConfiguration::SetFilterDefaultEnforcement failed. hr=%#lx. Continuing...
+[DC] RefreshLastLogon failed with hr=%#lx
+[DC] RefreshLastLogon(GetLatestActiveLogonSession) failed with hr=%#lx
+[DC] RefreshLastLogon(GetLatestActiveLogonSession) sending last active session(%lu) to filter.
+[DC] RefreshLastLogon(UpdateLogonSessionData) failed with hr=%#lx
+[DC] SendDataDuplicationEtwEvent failed with hr=%#lx
+[DC] SendMpUxToast2 failed with hr=%#lx
+[DC] SetFilterComputerNameDataConfig(%ls) failed with hr=%#lx
+[DC] SetFilterComputerNameDataConfig: hr=%#lx
+[DC] SetFilterDataDuplicationDirectoryConfig failed with hr=%#lx
+[DC] SetFilterDefaultEnforcement succesfully send default enforcement to filter (%#lx).
+[DC] SetFilterDefaultEnforcement(SetFilterDefaultEnforcementConfig) failed (%#lx).
+[DC] SetFilterDefaultEnforcementConfig(%d) failed with hr=%#lx
+[DC] SetFilterPolicyPackage filter not connected (maybe no securable devices attached ?). Writing package in registry for filter if driver still installed.
+[DC] SetFilterPolicyPackage latest policy package was succesfully sent to filter
+[DC] SetFilterPolicyPackage(SetFilterPolicyPackageConfig) failed %#lx.
+[DC] SetFilterState(WddStateEnabled): hr=%#lx
+[DC] SetFilterStateConfig(%d) failed with hr=%#lx
+[DC] std::to_wstring failed(%#lx) for TranslatedAccess: %#lx
+[DC] TranslateFilterAccessToString(%#lx) failed with hr=%#lx
+[DC] UtilCreateEvent(m_hServiceConnectEvent) failed with hr=%#lx
+[DC] UtilFindFirstFile failed. hr=%#lx
+[DC] UtilFindNextFile failed. hr=%#lx
+[DC] UtilFormatStringFromUuid failed with hr=%#lx
+[DC] UtilGetComputerName failed hr=%#lx. Continuing...
+[DC] UtilGetComputerSid failed hr=%#lx. Continuing...
+[DC] UtilGetProcAddress(GetOverlappedResultEx) failed with hr=%#lx
+[DC] UtilLookupAccountSid failed with hr=%#lx
+[DC] UtilStringFromUuid failed with hr=%#lx
+[DC] WTSEnumerateSessions failed with hr=%#lx
+[DC] WTSEnumerateSessions. Session: %lu. SessionState: %d
+[DC]OnAccessEventNotificationDriverCallback device control not enabled, leaving...
+[DlpEngine] Adding executable due to process hierarchy policy: application name: %ls pid %lu hierarchyPolicy %d isRootProcess %d for session %lu: %ls
+[DlpEngine] Fail to cache the clipboard owner information pid=%lu session=%lu sequenceNumber=%lu
+[DlpEngine] tracking autoinjection executable: application name: %ls pid %lu for session %lu: %ls
+[DlpEngine] tracking cbdhsvc pid %lu for session %lu: %ls
+[DlpEngine] tracking splwow64.exe pid %lu
+[Exclusion] %ls is discarded due to error %#lx
+[Exclusion] Inclusion feature killbit detected. Ignoring any inclusion config.
+[Mini-filter] Denied access to create registry key: %s, pid: %lu
+[Mini-filter] Denied access to registry: %s, value: %s, pid: %lu
+[Mini-filter] Denied access to rename registry key: %s, to: %s, pid: %lu
+[Mini-filter] Denied access to replace registry hive: %s, hive: %s, new hive: %s, pid: %lu
+[Mini-filter] Denied access to restore registry key: %s, hive: %s, flags: %lu, pid: %lu
+[MpRtp] Engine VFZ block: %ls. status=0x%lx, statusex=0x%I64x, threatid=0x%lx, sigseq=0x%I64x
+[MpRtp] Engine VFZ HIPS block: %ls. status=0x%lx, statusex=0x%I64x, threatid=0x%lx, sigseq=0x%I64x
+[MpRtp] Engine VFZ lofi/sample/expensive: %ls. status=0x%lx, statusex=0x%I64x, threatid=0x%lx, sigseq=0x%I64x
+[ProcessExclusion] %ls discarded, hr = %#lx
+[ProcessExclusion] %ls discarded. Path too short.
+[RTP] FilterCommunicator object 0x%p initialized (%ls, %ls), threads: %lu normal, %lu very low, %lu alt, thread pool threads: %zu normal, %zu very low, %zu alt
+[RTP] FilterCommunicator object 0x%p shutdown (%ls, %ls), threads: %lu normal, %lu very low, %lu alt, thread pool threads: %zu normal, %zu very low, %zu alt
+[RTP] FilterCommunicator object 0x%p stopcommunication (%ls, %ls), threads: %lu normal, %lu very low, %lu alt, thread pool threads: %zu normal, %zu very low, %zu alt
+[RTP] Killbits updated: 0x%I64x -> 0x%I64x
+[RTP] LastAccessTimeSuppression is %ls by configuration.
+[RTP] LastAccessTimeSuppression is disabled due to killbit.
+[RTP] LastAccessTimeSuppression is enabled (default behavior).
+[RTP] RTP worker threads ready [%lu threads]
+[RTP] RtpManager SetStackOptMode as %d
+[RTP] SetHybridModeState(%#lx) failed, hr=%lx
+[RTP] Stack based optimization config updated to %d
+[RTP] StartCommunication 0x%p (%ls, %ls), threads: %lu normal, %lu very low, %lu alt, thread pool threads: %zu normal, %zu very low, %zu alt
+[RtpConfig] Config change detected, type: %lu
+[RtpConfig] Config change notification received (at startup or from camp). Calling refresh.
+[RtpCopyAccelerator] Copy acceleration is disabled
+[RtpCopyAccelerator] Copy acceleration is enabled but not running yet
+[RtpCopyAccelerator] Copy accelerator process launch failed with HRESULT %#lx.
+[RtpCopyAccelerator] Failed to check if copy acceleration is enabled or disabled, default to disabled
+[RtpCopyAccelerator] Failed to evalute if Copy acceleration is enabled. Default to disabled.
+[RtpCopyAccelerator] Initialized copy acceleration
+[RtpCopyAccelerator] Injection of copy acceleration detours dll is disabled, while trying to inject into process=%#lx
+[RtpCopyAccelerator] Overriding dev mode behavior of copy acceleration
+[RtpCopyAccelerator] RtpDisabled %d, CfaEnabled %d, IsManagedDefender %d, IsSenseEnabled %d, IsDlpEnabled %d, DisableCopyAccelerationPerConfig %d, ConfigExplicitlySet %d, DisableCopyAccelerationPerEngine %d => CopyAcceleratorEnabled %d
+[RtpCopyAccelerator] Windows19H1 %d, WindowsCobalt %d, IsServerSKU %d, IsPassiveOrSideBySidePassiveMode %d, IsDevMode %d, fIsWindowsInhouseBuild %d, BuildLabEx %ls
+\$ E3
+\$ f97v%
+\$ fD
+\$ M9l$
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWATAVH
+\$ UVWAVAWH
+\$ UVWH
+\$ VATAUAVAWH
+\$ VWATAUAVH
+\$ VWAVH
+\$ WH
+\$@@8k
+\$@@8s
+\$@D8vHt
+\$@E3
+\$@H;
+\$@H+
+\$`D;
+\$`I+
+\$0E3
+\$0eH
+\$0H!\$8A
+\$0H;
+\$0H;_
+\$0HcH
+\$0I;
+\$8H;
+\$8I;
+\$gm?
+\$H!\$PH
+\$hE3
+\$HI;_
+\$p;\$x
+\$P8Y
+\$pH;
+\$PI;
+\$XD;
+\$xI;
+\$XI;\$
+\??\UNC\
+\??\Volume
+\??\WdDevFlt
+\\.\GlobalRoot\SystemRoot\Defender Duplication Data
+\\?\%s
+\\?\UNC
+\\?\UNC\
+\\?\UNC\%s
+\DEVICE
+\Device\
+\Device\CdRom
+\Device\Floppy
+\Device\Harddisk
+\Device\LanmanRedirector
+\Device\LanmanRedirector\
+\Device\MountPointManager
+\Device\Mup
+\Device\Mup\
+\Device\Mup\tsclient\
+\Device\RdpDr\
+\Device\SftVol\
+\Device\WebDavRedirector\
+\Device\WinDfs\
+\MicrosoftMalwareProtectionAsyncPort
+\MicrosoftMalwareProtectionAsyncPortWD
+\MicrosoftMalwareProtectionControlPort
+\MicrosoftMalwareProtectionControlPortWD
+\MicrosoftMalwareProtectionPort
+\MicrosoftMalwareProtectionPortWD
+\MicrosoftMalwareProtectionRemoteIoPort
+\MicrosoftMalwareProtectionRemoteIoPortWD
+\MicrosoftMalwareProtectionVeryLowIoPort
+\MicrosoftMalwareProtectionVeryLowIoPortWD
+\REGISTRY\MACHINE
+\REGISTRY\USER\
+\REGISTRY\USER\.DEFAULT\
+\Software\
+\StringFileInfo\%04x%04x\%s
+\SystemRoot
+\SystemRoot\
+\SystemRoot\%ls
+\t0fB
+\VarFileInfo\Translation
+])6M>&
+]`tbA
+]>)2X
+]HH!]P
+^\d+\.\d+$
+^<V7w
+^RfN>
+_%Y%m%d_%H%M%S
+_????
+__crt_strtox::floating_point_value::as_double
+__crt_strtox::floating_point_value::as_float
+__EventConsumer
+__EventConsumerProviderRegistration
+__EventFilter
+__FilterToConsumerBinding
+__InstanceCreationEvent
+__Namespace
+__Path
+_Classes
+_CLASSES
+_is_double
+_oD>Kg
+_RDATA
+` AUAVAWH
+` UAVAWH
+`.rdata
+`+!]?
+`0^0\
+`A^_^
+`A^_^[]
+`A_A]A\_^[]
+`A_A^_^[
+`A_A^A\^[
+`A_A^A]A\_][
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+`h~0Q
+{ AUAVAWH
+{ AVH
+{&7)5m
+{(8uaH
+{|]u&H
+{|-ugH
+{4d36e979-e325-11ce-bfc1-08002be10318}
+{5737d832-9e2c-4922-9623-48a220290dcb}
+{8c416c79-d49b-4f01-a467-e56d3aa8234c}
+{a=lB
+{BA1355FC-19B4-4FE3-82E7-2C8D4A3E0769}
+{HD;H
+{LD9ktt
+|$ ATAVAWH
+|$ ATH
+|$ AVH
+|$ D!
+|$ D;
+|$ E3
+|$ H;
+|$ UATAUAVAWH
+|$ UATAUH
+|$ UAVAWH
+|$ UH
+|$(-A
+|$(A^
+|$(E3
+|$(H;
+|$(H;{
+|$(H9\$@v
+|$@@:
+|$@-D
+|$@D8o
+|$@E3
+|$@H;
+|$\.u 
+|$`CI
+|$`fD
+|$0A_A^
+|$0H;
+|$0H+\$ H
+|$0I;
+|$4I;
+|$8;|$0
+|$8;3
+|$8A9~0L
+|$8D;|$<
+|$8E3
+|$8H;
+|$DE3
+|$HE3
+|$HH;
+|$hI;
+|$HI;
+|$hI;t$
+|$P4s
+|$pE3
+|$pH;
+|$PH9QxI
+|$pH9sxt!I
+|$PI;
+|$pI;}
+|$xH;
+|$XH;
+|$XHcU
+|$xI;
+|$XI+
+|$xL;
+|$xM;
+|$xt<
+|?:l5G`
+|8fD9Q
+|b=})>
+|FfD9I
+|T4fD;
+}HfD9#A
+~ $s%r
+~XI9?t
++,-./0123456789:;<=>?@ABCD
++f)>0'
++h->|
++L$DA
++M<7>
+< t=<
+< u\A
+</xs:schema>
+<?xml version="1.0" encoding="UTF-8" ?>
+<>#n2
+<Ct-<D
+<htl<jt\<lt4<tt$<wt
+<I.u#
+<NULL>
+<St[@:
+<unknown>
+<utK@:
+<xs:element name="GroupType" type="GroupTypeList"/>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+=I9?t
+=imb;D
+=t2M;
+>dDV_
+>H!|$@H
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>jtm}S
+>NGdx
+0><[cZUg^>
+0123456789abcdef
+040904B0
+0A\_^[]
+0A^_]
+0A^_^
+0A^_^[]
+0A^A\_
+0A^A\_[]
+0A^A\_^]
+0A^A]A\_^][
+0A__^
+0A_A^^
+0A_A^_
+0A_A^_^[
+0A_A^_^]
+0A_A^A\
+0A_A^A\^]
+0A_A^A\_^
+0A_A^A\_^[]
+0A_A^A]
+0A_A^A]_]
+0A_A^A]_^
+0A_A^A]_^[]
+0A_A^A]A\]
+0A_A^A]A\_
+0A_A^A]A\_^[
+0A_A^A]A\_^]
+0iN>/
+0X8b?~
+1#IND
+1#INF
+1#QNAN
+1#SNAN
+1(0&0
+1,0*0
+1+:IN
+109K!
+111019184142Z
+20220208212843.387Z0
+20220209035029Z
+20220210035029Z0t0:
+210902182341Z
+210930182225Z
+211202190513Z
+220901182341Z0p1
+229879+4675790
+230228190513Z0
+261019185142Z0
+2H9}0t,H
+3>fvw
+3>N;kU
+300930183225Z0|1
+3333333
+3http://www.microsoft.com/pkiops/Docs/Repository.htm0
+4 L9>u
+4$@8w
+4$I;t$
+4.18.2103.2
+4.18.2103.3
+4.18.2201.11
+4.18.2201.11 (WinBuild.160101.0800)
+409990
+4F 8C
+4HcC8A
+6H!>H
+8@N0Q
+8@u1A
+8[tWfA
+8\$#u
+8\$$u
+8\$(t,I
+8\$(u
+8\$`t:H
+8\$`t;H
+8\$0t
+8\$0tOH
+8\$0u
+8\$Pt@
+8\$Pt>
+8\$xtRH
+8\$xtSH
+8\$xu
+8_^[]
+8_^][
+80tWD
+8A^_^[
+8A_A^A\_^[
+8A_A^A]A\_^[]
+8A_A^A]A\_^][
+8Ct_fA
+8D$@t
+8D$Xt
+8Ht;I
+8jthfA
+8ke?;
+8lt2fA
+8nt~fA
+8otnfA
+8pt^fA
+8Q<u}H
+8st$fA
+8T$`t)I
+8T$XtUH
+9 t)H
+9)~P3
+9.uIH
+9\$@|
+9\$`A
+9\$0u
+9\$hu
+9^ t"H
+9^XtKH
+9|$\A
+9|$Hv
+9|$xv
+9>powf
+97t8H
+98t H
+99~CE
+9b4Pp,
+9Cu,fD9y
+9D$<twH9
+9D$4t+D
+9D$pt
+9D$Pu
+9Ocr4
+9OPv`
+9ovj!
+9p@u+
+9sTvIH
+9t$Pu
+9T$xA
+9V4vMI
+9ZPvx
+A(H9B
+A;7s#I
+A;H r
+A\fC9D}
+A]A\_^]
+A^_^[]
+A^_^][
+A^A\]
+A^A\_
+A^A\_^]
+A^A]_^]
+A^A]A\
+A^A]A\_[
+A^A]A\_]
+A^A]A\_^[
+A^A]A\_^[]
+A_A\]
+A_A\_
+A_A\_^]
+A_A]_^]
+A_A]A\
+A_A]A\_[
+A_A]A\_]
+A_A]A\_^
+A_A]A\_^[
+A_A]A\_^[]
+A_A^]
+A_A^^[
+A_A^_
+A_A^_^[
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\^[
+A_A^A\_[
+A_A^A\_[]
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\^
+A_A^A]A\^[
+A_A^A]A\^[]
+A_A^A]A\_
+A_A^A]A\_[]
+A_A^A]A\_^
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A+P@H
+A>l$/
+A>pP&
+A03>A|
+a2a39bf0-e3ea-4ec7-bd93-85a26bdb383f
+A8^]t
+A8^^u
+A8^8}SD
+A8H98t
+A8HcH
+A8HcP
+A8m(u
+A9,A$
+A9^`u"I
+A9^hvVI
+A9^xvSI
+A9<Fu
+A9u ~9H
+A9v\v%I9v`t
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+AcbControl
+Access
+AccessByBluetoothApp
+AccessByRDPApp
+AccessByUnallowedApp
+AccessCheck
+AccessMask
+ACPIHAL
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+Action
+ActionType
+ActionTypeCloudAppEgress
+address family not supported
+address in use
+address not available
+AddRunningProcesses failed with HRESULT %#lx.
+AdjustedPriorityError
+AdjustedPriorityOK
+advapi32
+ADVAPI32.dll
+advapi32.dll
+AfD9!u
+AfD99u
+af-ZA
+af-za
+AHH!APH
+AK>(v
+ALERT
+AllocateAndInitializeSid
+Allow
+ALLOW
+AllSinkRleasedEvent
+alnum
+alpha
+already connected
+Altitude
+america
+american
+american english
+american-english
+AntiMalware Realtime Monitor
+AP98~
+APHcH
+api-ms-
+api-ms-win-appmodel-runtime-l1-1-2
+api-ms-win-core-datetime-l1-1-1
+api-ms-win-core-file-l1-2-2
+api-ms-win-core-localization-l1-2-1
+api-ms-win-core-localization-obsolete-l1-2-0
+api-ms-win-core-processthreads-l1-1-2
+api-ms-win-core-string-l1-1-0
+api-ms-win-core-synch-l1-2-0
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-2-1
+api-ms-win-core-winrt-l1-1-0
+api-ms-win-core-xstate-l2-1-0
+api-ms-win-rtcore-ntuser-window-l1-1-0
+api-ms-win-security-systemfunctions-l1-1-0
+App blanket enforcement for image=%ls, pid=%lu is: %ls.
+AppBinary
+Apply
+AppName
+AppPolicyGetProcessTerminationMethod
+AppPolicyGetThreadInitializationType
+AppVersion
+April
+AR_DOMAIN
+ar-AE
+ar-ae
+ar-BH
+ar-bh
+arch://
+ar-dz
+ar-DZ
+AreFileApisANSI
+ar-EG
+ar-eg
+argument list too long
+argument out of domain
+ar-iq
+ar-IQ
+ar-JO
+ar-jo
+ar-kw
+ar-KW
+ar-LB
+ar-lb
+ar-LY
+ar-ly
+ar-MA
+ar-ma
+ar-om
+ar-OM
+ar-qa
+ar-QA
+ar-SA
+ar-sa
+ar-SY
+ar-sy
+ar-tn
+ar-TN
+ar-ye
+ar-YE
+as.,k{n?,
+Async
+Asynchronous Watcher
+AsyncStartOK
+AsyncWorkerUpdate
+ATAUAVH
+ATAUAWH
+ATAVAWH
+ATHcCDA
+AUAVAWH
+AUDIT
+Audit
+Audit Events
+Audit mode is on. Allowing infected file with sigid %#lx, threatid %#lx and sigseq 0x%I64x
+AuditAllowed
+AuditDenied
+AuditReason
+August
+australian
+AuthenticatedNetwork
+AutoInjectEnforcementDll failed with HRESULT %#lx.
+AVOnAccessScanErrorRetryCount
+AXHcCDH
+AXHcH
+az-az-cyrl
+az-AZ-Cyrl
+az-AZ-Latn
+az-az-latn
+B 9D$0r$I;
+B D9u
+B(I9A(u
+b?^Cy
+B8H9r0};A
+BackupLocation
+bad address
+bad allocation
+bad array new length
+bad cast
+Bad dynamic_cast!
+bad exception
+bad file descriptor
+bad locale name
+bad message
+BadDataCount
+BC?>6t9^
+bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+be-by
+be-BY
+belgian
+BetaPlatform
+BF>^G
+bg-BG
+bg-bg
+-BH>t
+blank
+BLOCK
+Block
+Blocked Events
+BM Queue:%ld,%ld,%ld
+bn-in
+bn-IN
+bp(=>?g
+BrHook.dll
+BrHook32.dll
+britain
+broken pipe
+browser_broker.exe
+BrowserCacheHelped
+bs-BA-Latn
+bs-ba-latn
+BuildLabEx
+BusId
+BusinessJustification
+BusinessReason
+BusType
+c [1>H'
+c AUAVAWH
+C H9{
+C L9c
+C$9C w H
+c(>\,
+c(H9s0t
+c?FA@s}
+C@H!CH
+c0&>`
+C09E t
+C0A9D$ u
+C0A9D$ u+M
+C0HcH
+Cache Flushes:
+CacheAccessEvent failed with hr %#lx. Owner pid %lu sessionId %lu seqId %lu.
+ca-ES
+ca-es
+CallContext:[%hs] 
+Calling GenerateEngineConfigStruct (%#lx) ...
+CampRing
+canadian
+Candidate
+cbdhsvc
+CCMPluginConfiguration::Duplicate() - calling GenerateEngineConfigStruct ...
+CCMPluginConfiguration::Duplicate() - no GenerateEngineEngineConfigStruct ...
+CD$`I
+CD$0H
+CDROM
+CdRomDevices
+CertificateThumbprintId
+CertVerifyCertificateChainPolicy
+CharUpperW
+CheckAsyncGetClipboardDataOperation: CheckAccessForOperation returned with decision = %d, reason=%d, owner PID = %lu, reader PID = %lu, reader image name = %ls, Seq num %lu.
+CheckTokenMembership
+china
+chinese
+chinese-hongkong
+chinese-simplified
+chinese-singapore
+chinese-traditional
+chrome.exe
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+CL$`H
+CL$`L
+CL$8L
+CL$pH
+CL:>8
+CL|$z
+Class
+ClassGuid
+ClassName
+ClearClipboard
+CloseHandle
+CloseServiceHandle
+CloseTrace
+Cloud audit mode is on. Allowing infected file with sigid %#lx, threatid %#lx and sigseq 0x%I64x
+CloudAppEgress
+CloudEgress
+CloudSync
+CLSID\{BA1355FC-19B4-4FE3-82E7-2C8D4A3E0769}
+CLSID\{BA1355FC-19B4-4FE3-82E7-2C8D4A3E0769}\InprocServer32
+CLSIDFromString
+CMP@8}
+cntrl
+CoCreateGuid
+CoCreateInstance
+CoInitializeEx
+Common\General
+CompanyName
+CompareFileTime
+CompareStringEx
+CompareStringOrdinal
+CompareStringW
+ComputerName
+ComputerSid
+connection aborted
+connection already in progress
+connection refused
+connection reset
+CONOUT$
+ControlService
+ControlTraceW
+ConvertSecurityDescriptorToStringSecurityDescriptorW
+ConvertSidToStringSidW
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+ConvertStringSidToSidW
+Copy Accelerator (%ls) already running having pid %#lx
+Copy Accelerator (%ls) having pid %#lx exited with error code %#lx
+Copy Accelerator (%ls) having pid %#lx is still running
+Copy Accelerator (%ls) launched as PPL process having pid %#lx
+CopyFileExW
+CopyFileW
+CopySid
+CopyToClipboard
+CopyToNetworkShare
+CopyToRemovableMedia
+CorExitProcess
+Corporate
+CoSetProxyBlanket
+CoUninitialize
+covrun64.dll
+CPH!CXH!C`H
+CPH!p
+CpHcH
+CPHcH
+CpHcH
+CreateDirectoryW
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateIoCompletionPort
+CreateMutexExW
+CreateProcessAsUserW
+CreateRemoteThread
+CreateSemaphoreExW
+CreateSemaphoreW
+CreateServiceW
+CreateThread
+CreateToolhelp32Snapshot
+cross device link
+CRYPT32.dll
+CryptCATAdminAcquireContext
+CryptCATAdminCalcHashFromFileHandle
+CryptCATAdminEnumCatalogFromHash
+CryptCATAdminReleaseCatalogContext
+CryptCATAdminReleaseContext
+CryptCATCatalogInfoFromContext
+cscript.exe
+cs-cz
+cs-CZ
+CT$@M
+CT$`M
+CT$HA
+CT$xM
+CtfD;
+Custom
+CWD>~3
+CxH9D$0A
+cy-gb
+cy-GB
+czech
+D W?{W
+D!d$pD!
+D!l$x
+D!l$xA
+D!m@H
+D!uHL!u
+D#|$XD
+d$ D!
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ fA
+D$ H!\$(
+D$ H;
+D$ H9
+D$ I;
+D$ Li
+D$(D;
+D$(E3
+D$(H;
+D$(L!L$ E3
+D$(L9A
+D$,D8%
+D$@A;
+D$@E3
+D$@f;
+D$@fD
+D$@H;
+D$@H;F
+D$@H;G
+D$@H+
+D$@H=@W
+D$@M;
+d$`D8
+D$`D8t$`
+D$`f;
+D$`H!t$`H
+D$`H;
+d$`H;
+D$`H;
+D$`H;C
+D$`H;F
+D$`L;
+D$0!\$(H!\$ A
+D$0@8{
+D$09A s
+D$09H
+D$0A9H r
+D$0E3
+D$0f;
+D$0H#
+D$0H;
+D$0H+
+D$0H9D$8
+D$0HcH
+D$0I;F
+D$0L9C
+D$0M+
+D$18F(u
+D$49C
+D$88P
+D$8E3
+D$8f;
+D$8H;
+D$8H;D$Pt
+D$8H;F
+D$8H+
+D$8HcJ
+D$8I+
+D$8L;
+D$8L9
+D$8L9t$PH
+D$D;E
+d$dD;d$lt^
+D$DDtRH
+D$DE3
+D$H;p
+D$H;t$4sbH
+D$H+E
+D$h9t$P
+D$H9uH
+d$hD!d$DD!d$PH
+D$hE3
+D$HE3
+D$hf;
+D$Hf;
+D$hf;
+D$Hf;
+D$HH;
+D$hH;
+D$HH;
+D$hH9
+D$hI;
+D$HI;F
+D$hL;
+D$HL;
+D$HL9gXt
+d$IfD
+D$P;D$HtL
+D$P@2
+D$P9P s
+D$pA+
+D$pD;o
+D$PE3
+d$pE3
+D$PE3
+D$Pf;
+D$pf;
+D$Pf;
+D$pf;
+D$pfA;
+D$PH;
+D$pH;
+D$PH;
+D$pH;
+D$pH;F
+D$PH;F
+d$pH+
+D$PH+
+D$pHc
+D$PI;
+D$pI;F
+D$PI;F
+D$PI;G
+D$PI+
+d$PL;
+D$PL;
+D$X;E
+D$xE3
+D$xf;
+D$Xf;
+D$xf;
+D$Xf;
+D$xf;
+d$xH;
+D$XH90t
+D$XI;
+D$XI;G
+D$xL;
+D$XL9p
+D/(H+
+D;{ }
+D;l$p
+D;L$xr
+D;qTr
+D;sHu
+D;x s
+D;y L
+d?000000`?
+D+A@H
+D8,:u
+D8[(u
+D8|$ 
+D8|$`t
+D8|>0H
+D8|>0t
+D8|>1H
+D8}/t
+D81uUL9r
+D8d$`
+D8d$0uVH
+D8d$h
+D8e@utD
+D8i(u
+D8L$0uP
+D8m/t
+D8t$@
+D8t$0
+D8t$8
+D8t$ht
+D8uXt!A
+D8YIt
+D8YIt*L
+D9%2T
+D9` s
+D9|$(
+D9|$D
+D9|$L
+D9|$P
+D9} t;H
+D95+)
+D9bXt
+D9d$(|
+D9d$4
+D9d$X
+D9eHu
+D9H s
+D9H(|BH
+D9l$`
+D9l$0
+D9L$Pu1H
+D9mXt
+D9n(u
+D9opt
+D9pTvk
+D9q$u
+D9qTv?H
+D9s<tWD9s8tQ
+D9sDtq
+D9t$@
+D9t$0
+D9t$H
+D9t$pv=A
+D9'u6H
+D9y s
+da-dk
+da-DK
+DataDuplicationDirectory
+DataDuplicationRemoteLocation
+DCEvent
+DCPrinterEventTraceSession
+DD$xH
+dddd, MMMM dd, yyyy
+Deactivating DlpClipboard_EnforceOnPaste in global clipboard settings. old settings = %lu, hr=%#lx, isEventPublished=%d.
+de-at
+de-AT
+DebugBreak
+December
+de-CH
+de-ch
+DecodePointer
+de-DE
+de-de
+Default clipboard settings final are %lu
+DefaultAllow
+DefaultDeny
+DefaultEnforcement
+DefaultInstance
+DeleteCriticalSection
+DeleteFileW
+DeleteProcThreadAttributeList
+DeleteService
+de-LI
+de-li
+de-LU
+de-lu
+Description
+DescriptorIdList
+destination address required
+Detected %ls opening sensitive file. Failed to find session %lu cbdhsvc pid for sensitive file, clipboard enforcement might not work: %ls
+Detected %ls opening sensitive. Associating session %lu cbdhsvc pid %lu with sensitive file (hr=%#lx): %ls
+Determined files are empty
+Determined files more than one
+Device
+Device Control
+Device Control\Policy Groups
+Device Control\Policy Rules
+device or resource busy
+DeviceFilePath
+DeviceId
+DeviceIoControl
+DeviceRead
+DeviceWrite
+DHcCDA
+digit
+directory not empty
+DirectoryMonitoringKillbit
+Disable
+DisableAsyncScanOnClose
+DisableCopyAcceleration
+DisableCopyAccelerationForSessionZero
+Disabled
+disabled
+DisableDriverUnload
+DisableDynamicRegHardening
+DisableHeuristics
+DisableInjection
+DisableLastAccessTimeSuppression
+DisableRawWriteNotification
+DisableRealtimeMonitoring
+DisableScanningMappedNetworkDrivesForFullScan
+DisableScanningNetworkFiles
+DisableStackBasedCopyOptimization
+Display
+div-mv
+div-MV
+DLP disabled
+DLP enabled
+DlpAcbControlBackup
+DlpAccessCheckType
+DlpAppEnlightenmentSettings
+DlpAtomicCheckAccessForFileAndOperation
+DlpBrowserCacheCleanUpInterval
+DlpBrowserCloudEgressBypassDuration
+DlpBrowserStaleCacheCleanUpInterval
+DlpCheckAccessForFile
+DlpCheckAccessForOperation
+DlpCheckIsCloudSyncApp
+DlpClipboardSettings
+DlpDisableBrowserCache
+DlpDisablePrintFileHeuristic
+DlpEngineDisable
+DlpEngineEnable
+DlpEngineInitialize
+DlpFreeArchiveFileTraceInfo
+DlpGetArchiveFileTraceInfo
+DlpGetFileApplicationAccessEx3
+DlpGetFileCloudApplicationPolicy
+DlpGetNotificationSettings
+DlpGetPolicyInfoFromRuleId
+DlpGetPolicySettings
+DlpGetQuarantineConfiguration
+DlpInitialize
+DlpInitializeEnforcementMode office version %ls
+DlpInitializeEnforcementMode returns %#lx for pid=%lu
+DlpInitializeFromCustomPolicy
+DlpNotifyOnCloseProcess
+DlpOperationType
+DlpPerfOperation
+DlpPolicy
+DlpShowDialog: %lu, MpCapability: 0x%I64x.
+DlpShowDialog: overridden by miscconfig, old value: %lu, new value: %lu.
+DlpShowDialogs
+DlpShowIconOverlay
+DlpSubOperationType
+dlptest.com
+do NOT apply
+DocumentName
+DuplicatedOperation
+DuplicateTokenEx
+Duplicating the current plugin configuration object...
+DuplicationDirectory
+DurationMsCount
+DurationMsSum
+dutch-belgian
+DynamicInjectionThresholdForCopyAcceleration
+DynamicInjectionTimeWindowForCopyAcceleration
+E !]0H
+E;H I
+E;Q r
+e@L!uHH
+e+000
+E+A@H
+E>nEA
+E0!u0D
+E09E8t
+e0A_A^A]A\]
+e0A_A^A]A\_^]
+E0C1)0'
+E0HcH
+E0Lc`
+E0t H
+E8.t A
+E8<0u
+E8a(u
+E8g(u
+E8i(u
+E8u4u
+E8y(u
+E9/uwE9.urD9.umH
+E9}4u
+E9}8u
+E9g(us3
+E9H s
+E9Q r-w
+EFGHI
+EH*?H
+EHt*H
+EHt2H
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+EiPH9QHL
+El$8I
+el-gr
+el-GR
+eLK(w
+Enable
+EnableAuditMode
+EnableCloudAuditMode
+EnableControlledFolderAccess
+enabled
+Enabled
+EnableHardlinkMonitoring
+EnableStaticInjectForCopyAcceleration
+EnableTraceEx2
+en-au
+en-AU
+en-BZ
+en-bz
+en-ca
+en-CA
+en-cb
+en-CB
+EncodePointer
+en-GB
+en-gb
+ENGINE_INTERNAL_DOMAIN
+EngineParanoidMode
+EngineRing
+EngineVersion
+england
+english-american
+english-aus
+english-belize
+english-can
+english-caribbean
+english-ire
+english-jamaica
+english-nz
+english-south africa
+english-trinidad y tobago
+english-uk
+english-us
+english-usa
+en-ie
+en-IE
+en-jm
+en-JM
+en-nz
+en-NZ
+en-ph
+en-PH
+EnterCriticalSection
+Entry
+en-tt
+en-TT
+EnumSystemLocalesEx
+EnumSystemLocalesW
+en-US
+en-us
+en-ZA
+en-za
+en-zw
+en-ZW
+EoH!X
+EPt2H
+EqHH9Q@L
+Error: %ls
+Error: Configuration missing. Data duplication remote location not set.
+Error: PolicyGroupXml doesn't match known type
+Error: PolicyRuleXml doesn't match known type
+es-AR
+es-ar
+es-bo
+es-BO
+es-CL
+es-cl
+es-co
+es-CO
+es-CR
+es-cr
+es-DO
+es-do
+es-ec
+es-EC
+es-ES
+es-es
+es-GT
+es-gt
+es-HN
+es-hn
+es-mx
+es-MX
+es-NI
+es-ni
+es-PA
+es-pa
+es-pe
+es-PE
+es-PR
+es-pr
+es-PY
+es-py
+es-SV
+es-sv
+es-uy
+es-UY
+es-ve
+es-VE
+ET$0H
+ET$hH
+et-ee
+et-EE
+ETW_DOMAIN
+eu-ES
+eu-es
+EventAccessControl
+EventAccessRemove
+EventData
+EventModes::Block is not supported currently
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+EvidenceFileLocation
+EvidenceFileSize
+excel.exe
+Exception
+ExcludedIdList
+ExcludeDynamicInjectForCopyAcceleration
+Exclusions\Extensions
+Exclusions\Paths
+Exclusions\Processes
+Exclusions\TemporaryPaths
+executable format error
+Execute
+ExitProcess
+ExitThread
+ExpandEnvironmentStringsForUserW
+ExpandEnvironmentStringsW
+explorer.exe
+Ext Exclusions:
+ext-ms-
+ext-ms-win-ntuser-dialogbox-l1-1-0
+ext-ms-win-ntuser-windowstation-l1-1-0
+Ey@H9Q`H
+F H9^
+F I;F
+f!YCH
+f#L$@f
+F(fA;
+F(I+F H
+F/fA;
+f;/uq
+f;\$$s
+f;\$(s
+f;\$@s
+f;\$\
+f;\$<
+f;\$<r
+f;\$4
+f;\$4r
+f;\$8s
+f;\$D
+f;\$d
+f;\$D
+f;\$Dr
+f;\$L
+f;\$Lr
+f;\$T
+f;|$ t
+f;D$ w
+f;D$ w"
+f;EPw
+f;EPw!
+f;S8tDH;C
+F@fD9|$@u
+F>qUxv
+F0H+F(H
+F8H+F0H
+f9)sB
+f9)u:H
+f9)u4H9j
+f9,^u
+f9,~u
+f9,Au
+f9,Fu
+f9,Hu
+f9,Ju
+f9,Nu
+f9,Ot
+f9,Pu
+f9,pu
+f9,Yu
+f9,yu
+f9,Zu
+f9<Au
+f9<Cu
+f9<Fu
+f9<Ju
+f9<pu
+f9<qu
+f9<su
+f9<Xu
+f91tYH
+f94Au
+f94Cu
+f94Gu
+f9LB t=H
+f9LB$t=H
+f9N r
+f9t$bu
+f9wxu
+fA;(t(fA98t
+fA;,Pt;H
+fA;8unI
+fA9,@u
+fA9,Au
+fA9,Bu
+fA9,Cu
+fA9,Pu
+fA9,Qu
+fA9,Su
+fA9,vu
+fA9.ulM
+fA9<@u
+fA9<Au
+fA9<Du
+fA9<Fu
+fA9<Pu
+fA9<Tu
+fA9<Wu
+fA9<wu
+fA9<Xu
+fA94Au
+fA94Cu
+fA94Hu
+fA94Qu
+fA94Su
+fA94Vu
+fA98t
+fA99}
+fA9Z*v$A
+Failed Events
+Failed to load DOM data.
+Failed to load schema DOM.
+FailFast
+FailureCount
+fa-ir
+fa-IR
+False
+false
+False
+fB9,Hu
+fB9,Nu
+fB9<@u
+fB9<{u
+fB9<Bu
+fB9<Hu
+fB94@u
+fB94ht
+fB94hu
+fB94Ou
+fB94zu
+fC9,Qu
+fC9,Su
+fC94Au
+fC94Bu
+fC94wu
+fC9LE
+fD;0t0H
+fD;tH
+fD9 t
+fD9!H
+fD9!t
+fD9!u
+fD9"tJf
+fD9"u
+fD9$_u
+fD9$Au
+fD9$Bu
+fD9$Hu
+fD9$Ju
+fD9$Ou
+fD9$pu
+fD9$wu
+fD9$zu
+fD9(t
+fD9(u
+fD9)t
+fD9,Au
+fD9,Bt
+fD9,Cu
+fD9,Fu
+fD9,Gu
+fD9,pu
+fD9;t
+fD9;u
+fD9\H
+fD9|$@
+fD9|$`
+fD9|]
+fD9|B
+fD9|M
+fD9<Au
+fD9<Bu
+fD9<Cu
+fD9<Ft
+fD9<Fu
+fD9<Gu
+fD9<Hu
+fD9<Ju
+fD9<Ou
+fD9<Vu
+fD90t
+fD91u
+fD91uTL9r
+fD92t
+fD94Au
+fD94Cu
+fD94Gu
+fD94iu
+fD94Ou
+fD94Qu
+fD94Zu
+fD97t
+fD98t
+fD9d$pt+fD
+fD9dE
+fD9't
+fD9t$b
+fD9'u
+fE9!fA
+fE9$@u
+fE9$Bu
+fE9$Cu
+fE9$Hu
+fE9$Iu
+fE9$vu
+fE9,Bu
+fE9,Fu
+fE9,Gu
+fE9,Ou
+fE9<@u
+fE9<Au
+fE9<Bu
+fE9<Hu
+fE9<Iu
+fE9<Ju
+fE9<Pu
+fE94Bu
+fE94Cu
+fE94xu
+fE98t'
+Features
+February
+fF9$@u
+fF9$Hu
+fF9$vu
+fF9,pu
+fF9<Bu
+fF94Cu
+fF9l]
+fffff
+ffffff
+fffffff
+fg:SM
+fG9$Ou
+fG9$Qu
+fG9$Yu
+fG9,|u
+fi-FI
+fi-fi
+File also being scanned when passthrough entered: %ws
+file exists
+File ID
+File ID 0x%016I64x
+file too large
+File Watcher
+file:///
+filebin.net
+FileDescription
+filename too long
+FilePath
+FILESYSTEM_DOMAIN
+FileSystemAgent
+FilesystemRead
+FilesystemWrite
+filetest.exe
+FileVersion
+FilterConnectCommunicationPort
+FilterGetMessage
+FilterLoad
+FilterManager
+FilterReplyMessage
+FilterSendMessage
+FindClose
+FindFirstFileExW
+FindFirstFileW
+FindNextFileW
+FindResourceW
+findstr.exe
+FindStringOrdinal
+FIREWALL_DOMAIN
+First RTP Scan:%ws%ws%ws%ws%ws%ws%ws%ws%ws%ws%ws%ws%ws
+fixed
+fJBGo
+Flags
+FlsAlloc
+FlsFree
+FlsGetValue
+FlsSetValue
+FlushFileBuffers
+fo-fo
+fo-FO
+FolderGuardId
+FolderGuardTargetDisk
+FolderGuardTargetPath
+Font Driver Host
+ForcePassiveMode
+FormatMessageA
+FormatMessageW
+forwarders\%ls
+FPI+FHH
+fr-be
+fr-BE
+fr-CA
+fr-ca
+fr-ch
+fr-CH
+FreeEnvironmentStringsW
+FreeLibrary
+FreeLibraryAndExitThread
+french-belgian
+french-canadian
+french-luxembourg
+french-swiss
+fr-FR
+fr-fr
+Friday
+FriendlyNameId
+fr-lu
+fr-LU
+fr-mc
+fr-MC
+FsExecute
+FsRead
+FsWrite
+FUmb[
+function not supported
+FXH9FP
+G H+G
+G H9w
+G I+G
+G L9c0
+G L9g
+G?k[!
+G`@8t$9
+G0HcH
+Ge]L*
+Generating the base plugin configuration ...
+generic
+GenericTable
+GenuD
+german-austrian
+german-lichtenstein
+german-luxembourg
+german-swiss
+GetACP
+GetCommandLineA
+GetCommandLineW
+GetComputerNameExW
+GetConsoleMode
+GetConsoleOutputCP
+GetCPInfo
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDateFormatEx
+GetDateFormatW
+GetDriveTypeW
+GetEnvironmentStringsW
+GetExitCodeProcess
+GetExitCodeThread
+GetFileAttributesExW
+GetFileAttributesW
+GetFileInformationByHandleEx
+GetFileSize
+GetFileSizeEx
+GetFileTime
+GetFileType
+GetFileVersionInfoExW
+GetFileVersionInfoSizeW
+GetFileVersionInfoW
+GetFinalPathNameByHandleW
+GetLastError
+GetLengthSid
+GetLocaleInfoEx
+GetLocaleInfoW
+GetLocalTime
+GetLogicalDriveStringsW
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetOEMCP
+GetOverlappedResultEx
+GetProcAddress
+GetProcessHeap
+GetProcessId
+GetProcessMitigationPolicy
+GetProcessTimes
+GetQueuedCompletionStatus
+GetSecurityDescriptorSacl
+GetStartupInfoW
+GetStdHandle
+GetStringTypeW
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemMetrics
+GetSystemTime
+GetSystemTimeAsFileTime
+GetSystemTimePreciseAsFileTime
+GetSystemWow64DirectoryW
+GetTempPath2W
+GetTempPathW
+GetThreadInformation
+GetThreadPriority
+GetTickCount
+GetTickCount64
+GetTimeFormatEx
+GetTimeFormatW
+GetTimeZoneInformation
+GetTokenInformation
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetUserDefaultLCID
+GetUserDefaultLocaleName
+GetVersionExW
+GetVolumePathNamesForVolumeNameW
+GetVolumePathNameW
+gfffA
+gfffffff
+gfffffffH
+gfffffffH+
+gfffffffI
+gfffffffI+HhH
+gfffffffL
+gfffL
+gl-ES
+gl-es
+Global clipboard settings after evaluation is %lu
+Global\WddServiceConnectEvent
+GlobalMemoryStatusEx
+googledrivesync
+GPH+GHH
+graph
+great britain
+GroupId
+GroupName
+gu-IN
+gu-in
+H SVWH
+h UAVAWH
+h VWATAVAWH
+h VWAVH
+H VWH
+H WATAUAVAWH
+H WAVAWH
+H!.9kPu
+H!\$@L
+H!\$`I
+H!\$8H
+H!\$HL
+H!\$pM
+H!]@E3
+H!{HA
+H!{PH
+H!{PL
+H!|$ L
+H!|$(3
+H!|$(H
+H!|$(L
+H!|$`H
+H!|$`H!|$h
+H!|$0H
+H!CPI
+H!D$ I
+H!t$(H
+H!t$`
+H!T$0D
+H!t$xL
+H!u0H
+H#]0H
+H#^0H
+H#}0H
+H#M0H
+H#N0H
+H;\$0t
+H;\$H
+H;^Pu
+H;{ H
+H;|$Pt
+H;~ H
+H;A(w
+H;B(rWI;
+H;D$`
+H;D$PL
+H;D$Pu
+H;D$X
+H;G H
+H;L$(t
+H;sHtbH
+H;T$HH
+H;W t
+H;XXs
+H;xXu5
+H@HcA8H
+H@HcH
+H[><y5
+H_^[]
+H`IcU0
+H+A0H
+H+EHfD
+H+EHH
+H+KhL
+H+L$PfA;
+H+OP3
+H+QPI
+H+QPL
+h>1my
+H0HcH
+H9\$ r
+H9\$X
+H9{Hu7H
+H9|$(u
+H9}0t
+H97u+A
+H9A u
+H9A(r
+H9D$ t3A
+H9D$@u
+H9D$H
+H9D$PuCH
+H9H(w
+H9H@w
+H9L$`t
+H9L$Ht?H
+H9l$xu
+H9oHsm
+H9Q(I
+H9q0t9H
+H9QPL
+H9QXM
+H9s(t
+H9t$0H
+H9t$H
+H9wXt
+H9yP~
+H9yP~FH
+H9yPt
+HA]A\_^[]
+HA^_^[
+HA^_^]
+HA__[]
+HA_A^_^][
+hA_A^A]_^[
+hA_A^A]A\^[
+hA_A^A]A\_^
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+hA_A^A]A\_^[]
+HA_A^A]A\_^][
+HardwareId
+HashDigestLength
+Hc;9E0t
+HcADH
+HcC H
+HcC0H
+HcC8H
+HcCDH
+HcD$$H
+HcD$0H
+HcD$P
+HcE H+
+HcE_H
+HcE_L
+HcE8H
+HcEgH
+HcG H
+HcK H
+Hc-kq
+HcL$ H
+HcL$0L
+HcO H
+Hcu`M
+HDAudio
+HeapAlloc
+HeapFree
+HeapReAlloc
+HeapSize
+he-il
+he-IL
+HfA;(
+HFfA9
+HFfD;
+HH:mm:ss
+HH':'mm':'ss
+hi-in
+hi-IN
+HKCU@
+HKCU@S-1-5-18\
+HKCU\Software\Classes
+HKCU\Software\Classes\CLSID
+HKCU\Software\Classes\DirectShow
+HKCU\Software\Classes\Interface
+HKCU\Software\Classes\Media Type
+HKCU\Software\Classes\MediaFoundation
+HKCU\Software\Classes\VirtualStore\Machine\Software
+HKCU\SOFTWARE\Classes\Wow6432Node
+HKCU\Software\Classes\Wow6432Node\CLSID
+HKCU\Software\Classes\Wow6432Node\DirectShow
+HKCU\Software\Classes\Wow6432Node\Interface
+HKCU\Software\Classes\Wow6432Node\Media Type
+HKCU\Software\Classes\Wow6432Node\MediaFoundation
+HKLM\Software
+HKLM\Software\Classes
+HKLM\SOFTWARE\Classes\AppID
+HKLM\Software\Classes\CLSID
+HKLM\Software\Classes\DirectShow
+HKLM\SOFTWARE\Classes\HCP
+HKLM\Software\Classes\Interface
+HKLM\Software\Classes\Media Type
+HKLM\Software\Classes\MediaFoundation
+HKLM\SOFTWARE\Classes\Wow6432Node
+HKLM\Software\Classes\Wow6432Node\CLSID
+HKLM\Software\Classes\Wow6432Node\DirectShow
+HKLM\Software\Classes\Wow6432Node\Interface
+HKLM\Software\Classes\Wow6432Node\Media Type
+HKLM\Software\Classes\Wow6432Node\MediaFoundation
+HKLM\SOFTWARE\Clients
+HKLM\SOFTWARE\Microsoft\COM3
+HKLM\SOFTWARE\Microsoft\Cryptography\Calais\Current
+HKLM\SOFTWARE\Microsoft\Cryptography\Calais\Readers
+HKLM\SOFTWARE\Microsoft\Cryptography\Services
+HKLM\SOFTWARE\Microsoft\CTF\SystemShared
+HKLM\SOFTWARE\Microsoft\CTF\TIP
+HKLM\SOFTWARE\Microsoft\DFS
+HKLM\SOFTWARE\Microsoft\Driver Signing
+HKLM\SOFTWARE\Microsoft\EnterpriseCertificates
+HKLM\SOFTWARE\Microsoft\EventSystem
+HKLM\SOFTWARE\Microsoft\MSMQ
+HKLM\SOFTWARE\Microsoft\Non-Driver Signing
+HKLM\SOFTWARE\Microsoft\Notepad\DefaultFonts
+HKLM\SOFTWARE\Microsoft\OLE
+HKLM\SOFTWARE\Microsoft\RAS
+HKLM\SOFTWARE\Microsoft\RPC
+HKLM\SOFTWARE\Microsoft\Software\Microsoft\Shared Tools\MSInfo
+HKLM\SOFTWARE\Microsoft\SystemCertificates
+HKLM\SOFTWARE\Microsoft\TermServLicensing
+HKLM\SOFTWARE\Microsoft\Transaction Server
+HKLM\Software\Microsoft\Windows Defender
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontDpi
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontMapper
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Gre_Initialize
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\LanguagePack
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkCards
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Ports
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Cursors\Schemes
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\KindMap
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\PreviewHandlers
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\OC Manager
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Telephony\Locations
+HKLM\SOFTWARE\Policies
+HKLM\SOFTWARE\POLICIES\MICROSOFT\WINDOWS DEFENDER
+HKLM\SOFTWARE\POLICIES\MICROSOFT\WINDOWS DEFENDER\POLICY MANAGER
+HKLM\SOFTWARE\RegisteredApplications
+HKLM\Software\Wow6432Node
+HKLM\SOFTWARE\Wow6432Node
+HKU\.DEFAULT\Software\Classes
+holland
+hong-kong
+host unreachable
+HostShellExtension.dll
+HostShellExtension32.dll
+Hr[i3c
+hr-BA
+hr-ba
+HResult
+hr-HR
+hr-hr
+HTREE
+http://www.microsoft.com0
+hu-hu
+hu-HU
+HvfA9
+HvfD;
+hy-am
+hy-AM
+HybridModeEnabled
+I!{ H
+I;\$Hu
+I;W t/H
+I+4$H
+I+F H
+I9@(r
+I9|$puB
+I9A(r!D8~
+I9Jhs
+I9Khs
+IconOverlay
+ID8t$8t<H
+identifier removed
+id-id
+id-ID
+IGetFileVersionInfoSizeExW
+IIDFromString
+Il?333333c?
+illegal byte sequence
+inappropriate io control operation
+IncludedIdList
+IncludedLocalDriveLetters
+IND)ind)
+IND)ind)am/pm
+Information
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionEx
+InitializeProcThreadAttributeList
+InitializeSListHead
+InitializeSRWLock
+INITY
+inity
+Injected copy acceleration detours dll to process %ls (%lu). hr: %#lx
+Injected MpDetours.dll to process %ls (%lu). hr: %#lx
+InjectionCount
+InjectionResult
+InstallLocation
+InstanceId
+InstancePathId
+Instances
+Instances\WdDevFlt Instance
+IntendedValueOrHResult
+InterlockedFlushSList
+InternalName
+interrupted
+invalid argument
+invalid hash bucket count
+Invalid node-name is provided
+invalid seek
+invalid stod argument
+invalid stol argument
+invalid stoul argument
+invalid string position
+io error
+ios_base::badbit set
+ios_base::eofbit set
+ios_base::failbit set
+iostream
+iostream stream error
+IpHcP
+irish-english
+is a directory
+IsAppBlanketEnforced
+IsBeta
+IsDebuggerPresent
+is-is
+is-IS
+IsManaged
+IsPassiveMode
+IsPrintFileHeuristicEnforced
+IsProcessorFeaturePresent
+IsSxsPassiveMode
+IsValidCodePage
+IsValidLocale
+IsValidLocaleName
+IsValidSid
+IsWellKnownSid
+IsWow64Process
+IsWow64Process2
+It$xH
+italian-swiss
+it-ch
+it-CH
+it-it
+it-IT
+iu+-,
+iygE3
+j?{$*
+j?V()
+j@M9Vh
+j>>A?1
+J>f;O
+ja-jp
+ja-JP
+January
+J'fA9
+JfD9x
+jFLTLIB.DLL
+jFtg)]
+JH9y(t+H
+jxu~H
+K UATAUAVAWH
+k WAVAWH
+K!]0H
+k$S)?R
+K&>.yC
+K.$( 
+K^f;T$@
+K~Je#>!
+K0D;I@
+K0HcQ
+K32EnumProcessModules
+K32GetMappedFileNameW
+K32GetModuleFileNameExW
+K32GetModuleInformation
+K32GetProcessImageFileNameW
+ka-ge
+ka-GE
+kE>fvw
+kernel32
+Kernel32.dll
+KERNEL32.dll
+kernel32.dll
+kernelbase.dll
+kk-KZ
+kk-kz
+kL@8o(u
+kn-in
+kn-IN
+kok-IN
+kok-in
+ko-kr
+ko-KR
+KpL+KhI
+ky-KG
+ky-kg
+L!|$(L!
+L!d$(H
+L!d$(L!d$@D
+L!l$`E3
+L!l$`H
+L!l$0D!l$(L
+L!r H
+L!t$(H
+L!t$`
+L!t$`A
+L!uPH
+L!w Hk
+L#r0L
+L#r0M
+L#v0M
+L$ |+L;
+L$ A+
+L$ ATAVAWH
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+L$ fff
+L$ I;
+L$ L;
+L$ SH
+L$ SUVWAVAWH
+L$ SUVWH
+L$ SVWATAUAVAWH
+L$ SVWH
+L$ UH
+L$ UVWATAUAVAWH
+L$ UVWATAVAWH
+L$ UVWAVAWH
+L$ VWATAVAWH
+l$ VWATAVAWH
+L$ VWATAVAWH
+l$ VWATAVAWH
+l$ VWAVH
+L$ VWAVH
+l$ VWAVH
+L$ VWAVH
+l$ VWAVH
+l$ VWAWH
+L$ WATAUAVAWH
+L$ WH
+L$&8\$&t,8Y
+L$(E3
+l$(E3
+L$(E3
+L$(H;
+L$(H+
+L$(H3
+L$(L+
+L$@;|
+L$@f;
+L$@H+
+L$@H3
+L$@uU
+L$`;M
+L$`8P
+L$`E3
+L$`f;
+L$`fD
+L$`H;
+L$`H3
+L$`Mc
+L$<;L$P
+L$0@8
+l$0D+ D9
+L$0E;
+l$0E3
+L$0E3
+L$0f;
+L$0fD
+L$0fH
+L$0fI
+L$0H;
+L$0H;K
+L$0H3
+L$0H9\$@v
+L$4+L$8
+L$4+L$H
+L$49M
+L$88Q
+L$8E3
+L$8f;
+l$8H+
+L$8H3
+L$8L9t$PH
+L$h;M
+l$HA_A^A]A\_^
+L$hE3
+L$HE3
+L$Hf;
+L$hf;
+L$Hf;
+L$hf;
+L$Hf;
+l$hH;
+l$HH;~xtjD
+L$hH+
+L$hH3
+L$HH3
+L$hH3
+L$HI;
+L$HI+L$8H
+l$HL9p
+L$PE3
+L$pE9eP
+L$pE9ePuVH
+L$pf;
+L$Pf;
+L$pf;
+L$Pf;
+L$PH;O
+l$pH+
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+l$pM;
+L$xD;
+L$xE3
+L$XE3
+L$xE3
+L$XE3
+L$xE3
+L$xf;
+L$Xf;
+L$xf;
+L$XH+
+L$XH3
+L$xH3
+L$XH3
+L$xI;
+L$xLi
+L)p(t
+L/@H+
+L;|$xt0H
+L;A(rAI;
+L;A(s.
+L;c(u
+L;H(s
+L;k8u
+L;l$xt
+L;t$`tK
+L;t$0s
+L;T$HtBI
+L;t$X
+L?UUUUUUU?
+L+SHL;SPs,H
+L9@(r
+L9{(u"E
+L9{Hu
+L9{HutH
+L9|$Ht
+L9|$xt*L
+L9|$XuL
+L9b8H
+L9c8tMM
+L9d$x
+L9d$xt
+L9ewt
+L9eXt
+L9I(r
+L9J@t9H
+L9k@t
+L9KhH
+L9KxH
+L9l$@u
+L9m@t;H
+L9mHt
+L9mot
+L9n0t
+L9O@t
+L9oXD
+L9oxt
+L9t$@veH
+L9t$p
+L9t$x
+L9t$Xv
+L9u(t(H
+L9w0s{H
+L9w0u&A
+Last Perf:%ws
+LastFailureCode
+LatestValue
+LC_ALL
+LC_COLLATE
+LC_CTYPE
+LC_MONETARY
+LC_NUMERIC
+LC_TIME
+LcA<E3
+LcD$0H
+LcD$0I
+LcD$pI
+LCIDToLocaleName
+LCMapStringEx
+LCMapStringW
+LeaveCriticalSection
+LegalCopyright
+LEVL@
+list too long
+Lj[;>
+LoadBlock
+LoadLibraryExA
+LoadLibraryExW
+LoadLibraryW
+LoadResource
+Local\SM0:%lu:%lu:%hs
+LocaleNameToLCID
+LocalFree
+LockResource
+log10
+LogHr
+LogNt
+LookupAccountNameW
+LookupAccountSidW
+lower
+LowPriStartError
+LowPriStartOK
+LsaClose
+LsaEnumerateLogonSessions
+LsaFreeMemory
+LsaFreeReturnBuffer
+LsaGetLogonSessionData
+LsaNtStatusToWinError
+LsaOpenPolicy
+LsaQueryInformationPolicy
+lt-LT
+lt-lt
+lv-LV
+lv-lv
+M H1E
+M L9vp
+M#t$0M
+M#u0H
+M#w0M
+M(!] L
+M(!M H!M0
+m/D8m'tOH
+M;e`u`H
+M;ext
+M`L;|$@t
+M0K0I
+M9\$8M
+MachineName
+ManagedDefenderProductType
+map/set too long
+MAPSd
+MapViewOfFile
+March
+MatchAll
+MatchAny
+MatchType
+Md$@A
+MediaName
+message size
+MGD;}
+Microsof
+Microsoft
+Microsoft America Operations1&0$
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1%0#
+Microsoft Corporation1&0$
+Microsoft Corporation1.0,
+Microsoft Corporation1200
+Microsoft Defender DLP Icon Overlay Identifier
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft Windows0
+Microsoft.Windows.Defender
+Microsoft-Antimalware-RTP
+minkernel\crts\ucrt\inc\corecrt_internal_strtox.h
+mi-NZ
+mi-nz
+Miscellaneous Configuration
+mk-mk
+mk-MK
+mL+7H
+ml-in
+ml-IN
+MM/dd/yy
+MM'-'dd'-'yyyy
+mn-MN
+mn-mn
+Module32FirstW
+Module32NextW
+ModuleName
+Monday
+MpAllocMemory
+MpAsDesc.dll
+MpBootData.bin
+MpCampRing
+MpCapability
+mpclient.dll
+MpClientUtilExportFunctions
+mpcmdrun.exe
+MpCmdRun.exe
+MpConfigClose
+MpConfigDelValue
+MpConfigGetValue
+MpConfigGetValueAlloc
+MpConfigOpen
+MpConfigRegisterForNotifications
+MpConfigSetValue
+MpConfigUnregisterNotifications
+MpCopyAccelerationDynInjectionThreshold
+MpCopyAccelerationDynInjectionTimeWindow
+MpCopyAccelerator.exe
+MpDc_Debug
+MpDc_SimulateEnableDeviceControlFailure
+MpDetours.dll
+MpDetoursCopyAccelerator.dll
+MpDisableCopyAcceleration
+MpDisableRtpTaintNotification
+MpDlp_EnableDlpPolicyTestPath
+MpDlp_EnableTestPolicy
+MpDlp_ForceBlockOnPaste
+MpDlp_MiscImageLevelEnforcementMode
+MpDlp_TestProcessNoBlanketPolicy
+MpDlpAppEnlightenmentSettings
+MpDlpClipboardPasteEventThrottleIntervalInMillisec
+MpDlpClipboardSettings
+MpDlpDefaultClipboardSettings
+MpDlpDetoursDllInjectionWaitIntervalInMillisec
+MpDlpShowDialogs
+MpDlpShowIconOverlay
+MpEngineRing
+MpFeatures_SenseDlpUserBypassDuration
+MpFilter
+MpFilter:
+MpFolderGuardDispatchConfiguration
+MpFreeMemory
+MpGetCopyAcceleratorProcessStatus
+MpHandleClose
+MpIsDeviceControlAvailable
+MpManagerOpen
+MpManagerVersionQuery
+MpPlatformKillbitsFromEngine
+MpPluginBypassDlpWarning
+MpPluginCheckAccessForClipboardOperation
+MpPluginCheckAccessForDragDropOperation
+MpPluginCheckAccessForDragDropOperation2
+MpPluginCheckAccessForPrintOperation
+MpPluginCheckExclusion
+MpPluginConfigChange
+MpPluginConfigDirectoryMonitoring
+MpPluginConfigSyncMonitoring
+MpPluginCopyAcceleratorSoftShutdown
+MpPluginDeviceControlAccessCheck
+MpPluginDeviceControlProvidePrintJobData
+MpPluginDismissDlpWarning
+MpPluginDlpDelegateEnforcement
+MpPluginDlpGetOfficeEnlightenmentMode
+MpPluginDlpGetOperationEnforcmentMode
+MpPluginDlpInitializeEnforcementMode
+MpPluginDlpNotifyCloseDocumentFile
+MpPluginDlpNotifyPostOpenDocumentFile
+MpPluginDlpNotifyPostSaveAsDocument
+MpPluginDlpNotifyPostStartPrint
+MpPluginDlpNotifyPreOpenDocumentFile
+MpPluginDlpNotifyPrePrint
+MpPluginDlpNotifyPreSaveAsDocument
+MpPluginEnableDeviceControl
+MpPluginEnableDlp
+MpPluginEnforceDlpClipboard
+MpPluginEnforceDlpReadClipboard
+MpPluginFilterManagerNotifyUpdatePlatformInProgress
+MpPluginFlushLogData
+MpPluginFreeTPRegs
+MpPluginGetConfigOperations
+MpPluginGetCopyAcceleratorState
+MpPluginGetDeviceControlSecurityPolicies
+MpPluginGetDeviceControlStatus
+MpPluginGetDlpNotificationSettings
+MpPluginGetHeartBeatData
+MpPluginGetState
+MpPluginGetThreatCategory
+MpPluginGetThreatExecInfo
+MpPluginGetThreatInfo
+MpPluginGetTPRegs
+MpPluginInitialize
+MpPluginIsSuspended
+MpPluginNotifyRpcServerStateChange
+MpPluginNotifySessionStateChange
+MpPluginNotifySetupProgress
+MpPluginQueryDlpState
+MpPluginQueryRtpMonitoringInfoEx
+MpPluginRefreshConfigsinRTP
+MpPluginRefreshDlpPolicySettings
+MpPluginRefreshPlatformKillbits
+MpPluginRegisterFriendlyProcess
+MpPluginReportClipboardOwner
+MpPluginReportThreadStatus
+MpPluginSendBrowserHeartbeat
+MpPluginSendUserModeRegistryData
+MpPluginSetDefaultConfigs
+MpPluginSetDriverUnloadInProgress
+MpPluginSetEngine
+MpPluginSetHybridModeState
+MpPluginSetState
+MpPluginSetUserInformation
+MpPluginShutdown
+MpPluginSignatureChange
+MpPluginStop
+MpPluginUpdateBrowserActiveTab
+MpPluginUpdateFolderGuardData
+MpPluginUpdateModuleMonitorData
+MpPluginUpdateMonitoringInfo
+MpPluginUpdateMonitoringInfoEx
+MpPluginUpdateProcessTaintInfo
+MpPluginUpdateTPExclusionsState
+MpPluginUpdateTPState
+mprtp
+MpRTP.dll
+mprtp.dll
+MpRTP.pdb
+MpRtp_AsyncScanOnClose
+MpRTP_AsyncWatcherNormalPriorityThreadCount
+MpRTP_AsyncWatcherVeryLowPriorityThreadCount
+MpRtp_Available_Dss_Threads
+MpRtp_BlockExecOnlyAllowBypass
+MpRtp_BlockExecOnlyThreatId
+MpRtp_BlockExecOnlyThreatSubcategory
+MpRtp_BlockFileExec
+MpRtp_BlockProcessCreateName
+MpRtp_Delay_Normalized_Path_Query
+MpRtp_DelayAfterDataScanSectionCreation
+MpRtp_DisableObjectHardening
+MpRtp_DisableRegistryAgent
+MpRtp_DontUseWin32ThreadPool
+MpRTP_FileWatcherNormalPriorityThreadCount
+MpRTP_FileWatcherVeryLowPriorityThreadCount
+MpRtp_FilterRecoveryFastReload
+MpRtp_ForceUseWin32ThreadPool
+MpRtp_FriendlyFileName
+MpRtp_HighlyTrustedInstaller
+MpRtp_HipsAuditInjectionProcessName
+MpRtp_HipsBlockFileAccess
+MpRtp_HipsBlockFileExec
+MpRtp_HipsBlockFileOpen
+MpRtp_HipsBlockInjectionProcessName
+MpRtp_HookWowTestMode
+MpRTP_ImageLoadInclusionListOverride
+MpRtp_InjectionBlockProcessName
+MpRtp_InjectionExemptProcessName
+MpRtp_ProcessFilter_TestProcessFilterFlags
+MpRtp_ProcessFilter_TestProcessName
+MpRtp_ProcessSkipCacheCheck
+MpRtp_RegisterWithEngineHr
+MpRtp_ResetFileAllMoac
+MpRtp_ResetFileInMoac
+MpRTP_ScanDelay
+MpRTP_ScanDelayUnit
+MpRTP_SendDebugNotification
+MpRtp_SkipThreadPriorityRestore
+MpRtp_SyncMonitor_ForcedProcessingDuration
+MpRtp_SyncMonitor_ModuleName
+MpRtp_SyncMonitorInjection_ProcessName
+MpRtp_SyncMonitorPsCmdLineChangedName
+MpRtp_SyncMonitorPsCreateThreadName
+MpRtp_SyncMonitorPsModuleName
+MpRtp_SyncMonitorPsObName
+MpRtp_SyncMonitorRegistry_ProcessName
+MpRtp_TPTrustedProcess
+MpRtp_TrustLabelProtectionStatus
+MpRtp_TVMBlockAllowProcess
+MpRtp_TVMBlockProcess
+MpService_AllowTestCert
+MpService_CopyAccelerationDevModeOverride
+MpService_NoCertCheck
+MpService_ResourcePropBag
+MpService_SimulateRtpScanCrash
+MpShutdownCopyAcceleratorProcess
+MpSignatureRing
+mpTempCalibrationDst.bin
+mpTempCalibrationSrc.bin
+MpUtilsExportFunctions
+mRemoteNG.exe
+mr-in
+mr-IN
+ms-bn
+ms-BN
+mscoree.dll
+msedge.exe
+Msg:[%ws] 
+msmpeng.exe
+MsMpLics.dll
+ms-MY
+ms-my
+msrdc.exe
+mstsc.exe
+mt-mt
+mt-MT
+MultiByteToWideChar
+mwtMH
+MX!M@H!M
+N(D!d$pD!
+N(I+N H
+N@H9X
+N@I+N8H
+n]?iJ
+N>O=I9
+n03>Pu
+N0L0J
+N3`d?
+NameId
+nan(ind)
+NAN(IND)
+NAN(SNAN)
+nan(snan)
+nb-no
+nb-NO
+Network
+network down
+network reset
+network unreachable
+NETWORK_DOMAIN
+new-zealand
+NfD9d$pu
+Nhttp://www.microsoft.com/pkiops/crl/Microsoft%20Time-Stamp%20PCA%202010(1).crl0l
+NisSrv.exe
+nl-BE
+nl-be
+NLL9|$Ht
+nl-nl
+nl-NL
+nn-NO
+nn-no
+no buffer space
+no child process
+No config change detected. Not updating plugin configuration.
+No config changes found. No configuration switch.
+No engine to query the settings. Could be by design if early in the service startup.
+no link
+no lock available
+no message
+no message available
+no protocol option
+no space on device
+no stream resources
+no such device
+no such device or address
+no such file or directory
+no such process
+NoChange
+norwegian
+norwegian-bokmal
+norwegian-nynorsk
+not a directory
+not a socket
+not a stream
+not boot
+not connected
+not enough memory
+not supported
+NotificationThrottleMax
+NotificationThrottleMin
+November
+NRI_DOMAIN
+ns-za
+ns-ZA
+NtClose
+NtCreateFile
+NtDeviceIoControlFile
+ntdll
+ntdll.dll
+ntelA
+NtMapViewOfSection
+NtOpenFile
+NtWaitForSingleObject
+o\$PH
+o|$0f
+O0M0K
+ObjectLength
+obwQ4
+October
+oD$ f
+OF>;^
+oI>O7
+oL$0f
+ole32.dll
+OLEAUT32.dll
+onecore\internal\sdk\inc\wil\opensource/wil/resource.h
+OP+O`H
+OPCOx
+OpenProcess
+OpenProcessToken
+OpenSCManagerW
+OpenSemaphoreW
+OpenServiceW
+OpenThread
+OpenThreadToken
+OpenTraceW
+Operation
+operation canceled
+operation in progress
+operation not permitted
+operation not supported
+operation would block
+OpH+OhH
+Options
+OriginalFilename
+ot$ H
+oT$@f
+OutputDebugStringW
+OVO]t
+owner dead
+P ;B u
+p AWH
+p M;7uJH
+P M9t$p
+p WATAUAVAWH
+p WAVAWH
+P(;B(u
+P(D8s5H
+p*W4H
+p:_0#
+p;Y>u
+p[WPN
+P>q_Y~
+P08~0Q
+p08F0Q
+P08N0Q
+p0R^G'
+PA^_^
+PA^_^[]
+PA^A\_
+pA__^[]
+PA_A]_^]
+PA_A]A\^[
+PA_A]A\_[
+PA_A^^
+pA_A^_^]
+PA_A^_^]
+PA_A^A\_]
+PA_A^A\_^
+pA_A^A\_^[]
+PA_A^A\_^][
+PA_A^A]_^
+PA_A^A]_^[]
+pA_A^A]A\_[]
+PA_A^A]A\_^[
+pA_A^A]A\_^[
+PA_A^A]A\_^[
+pA_A^A]A\_^[
+PA_A^A]A\_^[
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pa-in
+pa-IN
+Parameters
+ParentProcessCreationTime
+ParentProcessId
+PartA_PrivTags
+PartnerGUID
+Passive/Shadow mode is on. Allowing infected file with sigid %#lx, threatid %#lx and sigseq 0x%I64x
+PassiveMode
+Passthrough
+Path exclusion changed, new size in bytes: %lu
+Path Exclusions:
+PathFileExistsW
+PathId
+PathMatchSpecW
+PCMIA
+PDHcC8A
+permission denied
+Phttp://www.microsoft.com/pkiops/certs/Microsoft%20Time-Stamp%20PCA%202010(1).crt0
+Platform.CFA.EventsStats
+Platform.CFA.PathResolution
+Platform.CFA.UpdateStatus
+Platform.DLP.AppBlanket
+Platform.DLP.CodeInjectionService
+Platform.DLP.Disabled
+Platform.DLP.Enabled
+Platform.DLP.OfficeHintsStats
+Platform.DLP.PrintFileHeuristic
+Platform.MODMON.UpdateStatus
+Platform.Rtp.CopyAccelerationEnabled
+Platform.Rtp.CopyAccelerationInjection
+Platform.Rtp.CopyHint
+Platform.Rtp.LegacyProcessBlock
+Platform.Rtp.LegacyProcessBlockNotifySense
+Platform.Rtp.LegacyProcessCreate
+Platform.Rtp.LegacyProcessNotifySense
+Platform.RTP.ModuleMonitorNotification
+Platform.RTP.OpenWithoutRead
+Platform.RTP.SyncMonitorStats
+Platform.RTP.SyncProcessCreateStats
+Platform.Rtp.TaintExclusion
+Platform.RtpAudit
+Platform.RtpBlock
+Platform.RtpShadow
+pl-pl
+pl-PL
+Plugin Queue:%ld,%ld,%ld
+Plugin States:  AV:%d  AS:%d  RTP:%d  OA:%d  BM:%d
+Policy
+PolicyGroups
+PolicyGroupXmlSubNodeTypeDecriptorIdList
+PolicyGroupXmlSubNodeTypeMatchType
+PolicyGroupXmlSubNodeTypeMax
+PolicyGroupXmlSubNodeTypeNone
+PolicyPackage
+PolicyPackageHash
+PolicyRuleId
+PolicyRules
+PolicyRuleXmlSubNodeTypeExcludedList
+PolicyRuleXmlSubNodeTypeIncludedList
+PolicyRuleXmlSubNodeTypeMax
+PolicyRuleXmlSubNodeTypeNone
+PolicyRuleXmlSubNodeTypePolicyRuleName
+PolicyRuleXmlSubNodeTypeRuleEntry
+PolicyVersion
+portuguese-brazilian
+PostQueuedCompletionStatus
+powerpnt.exe
+PPTP00
+pr china
+pr-china
+PrefetchVirtualMemory
+PreviousValue
+PrimaryId
+Print
+print
+Print
+print
+Print file heuristic enforcement for image=%ls, pid=%lu is: %ls.
+Print file heuristic returned hr=%#lx for app=%ls, docname=%ls, EnforcePrintFileHeuristic = %d.
+Printer
+PrinterConnectionId
+PrinterDevices
+PrinterJobName
+PrinterName
+PrinterNameId
+PrinterOutFile
+PrintFileFormatId
+PrintFileHeuristicPolicy
+PrintToFile
+PriorityNotRestoredProperly
+Process
+Process %ls [%ls] not blocked due to audit mode.
+Process Agent
+Process Exclusions:
+Process Watcher
+PROCESS_DOMAIN
+Process32FirstW
+Process32NextW
+ProcessCreationTime
+ProcessId
+ProcessID
+ProcessId
+ProcessID
+ProcessIdToSessionId
+ProcessImageName
+ProcessName
+ProcessTrace
+ProductGuid
+ProductGUID
+ProductGuid
+ProductId
+ProductLocalizedName
+ProductName
+ProductVersion
+Protect
+Protection
+protocol error
+protocol not supported
+PRVAH
+pt-BR
+pt-br
+pt-PT
+pt-pt
+PUAProtection
+puerto-rico
+punct
+PurgeFilterConfiguration
+Q(@8s5H
+q\Q17
+Q5rHg,>
+QfD9f
+QHtqM
+QPH;QXt
+qS>g?h3
+Quarantine
+QuarantineLocation
+QuarantineToastType
+QueryDosDeviceW
+queryfilertsig
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryPerformanceFrequency
+QueryServiceConfigW
+QueryServiceStatus
+QueueUserAPC
+quz-BO
+quz-bo
+quz-ec
+quz-EC
+quz-PE
+quz-pe
+R!s4Z
+R$fA;Z*
+r:f;\$|
+r_f;\$l
+r|f;\$l
+r1fD99u+fD9y
+r7f;\$|
+raH;H
+RaiseException
+RaiseFailFastException
+rbf;\$l
+RdClient.Windows.exe
+rdpclip.exe
+read only file system
+ReadAppEnlightenmentConfig failed with HRESULT %#lx.
+ReadClipboard
+ReadConsoleW
+ReadFile
+Real-Time Protection
+RealtimeProtection::CCMEngine::DlpQueryEngineCloudSyncExclusionPath
+RealtimeProtection::CRtpDlpEngine::DlpInitializeEnforcementMode
+RealtimeProtection::CRtpDlpEngine::DlpNotifyPostSaveAsDocument
+RealtimeProtection::CRtpDlpEngine::DlpNotifyPostStartPrint
+RealtimeProtection::CRtpDlpEngine::DlpNotifyPreOpenDocumentFile
+RealtimeProtection::CRtpDlpEngine::DlpNotifyPrePrint
+RealtimeProtection::CRtpDlpEngine::DlpNotifyPreSaveAsDocument
+RealtimeProtection::DlpProcessStateCache::UpdateFileInternal
+RealTimeScanDirection
+Reason
+Redmond1
+ref;\$t
+RefreshPluginConfiguration completed succesfully. Requested: %#lx, Changed: %#lx
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyValueW
+RegDeleteKeyW
+RegDeleteTreeW
+RegDeleteValueW
+RegEnumKeyExW
+regex_error
+regex_error(error_backref): The expression contained an invalid back reference.
+regex_error(error_badbrace): The expression contained an invalid range in a { expression }.
+regex_error(error_badrepeat): One of *?+{ was not preceded by a valid regular expression.
+regex_error(error_brace): The expression contained mismatched { and }.
+regex_error(error_brack): The expression contained mismatched [ and ].
+regex_error(error_collate): The expression contained an invalid collating element name.
+regex_error(error_complexity): The complexity of an attempted match against a regular expression exceeded a pre-set level.
+regex_error(error_ctype): The expression contained an invalid character class name.
+regex_error(error_escape): The expression contained an invalid escaped character, or a trailing escape.
+regex_error(error_paren): The expression contained mismatched ( and ).
+regex_error(error_parse)
+regex_error(error_range): The expression contained an invalid character range, such as [b-a] in most encodings.
+regex_error(error_space): There was insufficient memory to convert the expression into a finite state machine.
+regex_error(error_stack): There was insufficient memory to determine whether the regular expression could match the specified character sequence.
+regex_error(error_syntax)
+RegisterDlpIconOverlay()
+RegisterTraceGuidsW
+Registry
+Registry Watcher
+Registry\Machine
+Registry\User
+REGISTRY_DOMAIN
+RegistryAgent
+RegOpenKeyExW
+RegQueryValueExW
+RegSetKeyValueW
+RegSetValueExW
+release
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+remote
+RemoteDesktopAccess
+removable
+RemovableMediaDevices
+RemoveDirectoryW
+Request Queue:%ld,%ld,%ld
+ResetEvent
+resource deadlock would occur
+resource unavailable try again
+result out of range
+ReturnHr
+ReturnNt
+RevertPriorityError
+RevertPriorityOK
+RevertPrioritySkippedDueToMiscConfig
+RevertToSelf
+rhf;\$t
+rKf;\$t
+rNf;\$t
+RoInitialize
+root\cimv2
+root\default
+root\subscription
+ro-ro
+ro-RO
+RoUninitialize
+RPCRT4.dll
+rQf;\$|
+rsf;\$d
+rTf;\$|
+RtlCaptureContext
+RtlCompareMemory
+RtlCompareUnicodeString
+RtlGetVersion
+RtlInitUnicodeString
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlPcToFileHeader
+RtlPrefixUnicodeString
+RtlUnwindEx
+RtlVirtualUnwind
+RTP Entering Pass-through on file: %ws
+RTP Start:%ws
+RTP Time out on file: %ws
+RTPBMDetection
+RTPConfigUpdate
+RtpCopyAccelerator::AddRunningProcesses took %llu microseconds
+RTPDisabled
+RTPEnabled
+RTPExpensiveDetection
+RTPFilterLoad
+RTPFilterUnload
+RTPFlushCache
+RTPLofiDetection
+RTPPassthrough
+RTPPlugin
+RTPPriority
+RTPResume
+RTPSampleDetection
+RTPScanTimeout
+RTPSeqRead
+RTPSetEngine
+RTPSetRegistryMonitoring
+RTPSuspend
+RTPThreatDetection
+RuleId
+RuntimeBroker.exe
+ru-RU
+ru-ru
+rvf;\$d
+ryf;\$l
+s AWH
+s WATAUAVAWH
+s WATAVH
+s WAVAWH
+S:P(TL;CIOI;0x%lx;;;%s)
+s`HcH
+S>$hkDh$h>[2
+S-1-1-0
+S-1-19-512-1536
+S-1-5-18
+S-1-5-19
+S-1-5-20
+S-1-5-80-1523878533-411328482-2798077809-3098663872-2604013308
+S-1-5-80-1913148863-3492339771-4165695881-2087618961-4109116736
+S-1-5-80-242729624-280608522-2219052887-3187409060-2225943459
+S-1-5-80-259296475-4084429506-1152984619-38739575-565535606
+S-1-5-80-3232712927-1625117661-2590453128-1738570065-3637376297
+S2hr=0x%08X
+s5fE9!
+sa-in
+sa-IN
+samplefileexpensive
+samplefilerequested
+Saturday
+sbf9)s
+ScreenClip
+SectionCreateSensitive
+Secur32.dll
+se-FI
+se-fi
+SELECT * FROM 
+SELECT * FROM __NamespaceCreationEvent WITHIN .001
+SELECT * FROM __NamespaceDeletionEvent WITHIN .001
+SendSynchronousProcessCreateNotification
+se-NO
+se-no
+SenseDlpEnabled
+SenseDlpShowBypassReasonUx
+SenseDlpUserBypassDuration
+SenseEnabled
+September
+SerialNumber
+SerialNumberId
+se-SE
+se-se
+SessionID
+SessionId
+SetEndOfFile
+SetEnvironmentVariableW
+SetEvent
+SetFileAttributesW
+SetFilePointerEx
+SetFileTime
+SetLastError
+SetNamedSecurityInfoW
+SetStdHandle
+SetThreadInformation
+SetThreadPriority
+SetThreadToken
+Setting DisableAsyncScanOnClose to %lu (hr=%#lx).
+Setting DisableDriverUnload to %lu (hr=%#lx).
+Setting DisabledTrustLabelProtection to %lu (hr=%#lx).
+SetUnhandledExceptionFilter
+SETUPAPI.dll
+SetupDiGetClassRegistryPropertyW
+SetupDiSetClassRegistryPropertyW
+SHA256
+SHLWAPI.dll
+ShouldHashIds
+SignatureRing
+SignerId
+SigVersion
+SizeofResource
+sJD9n(tD
+sk-SK
+sk-sk
+Sleep
+SleepConditionVariableCS
+SleepEx
+slovak
+sl-SI
+sl-si
+sma-no
+sma-NO
+sma-se
+sma-SE
+smj-NO
+smj-no
+smj-SE
+smj-se
+smn-fi
+smn-FI
+sms-FI
+sms-fi
+SNAN)
+snan)
+SOFTWARE\Microsoft\DLPTest
+SOFTWARE\Microsoft\DLPTest\Exceptions
+SOFTWARE\Microsoft\DLPTest\Policies
+SOFTWARE\Microsoft\DLPTest\RestrictedBrowsers
+Software\Microsoft\Microsoft Antimalware\MpEngine
+SOFTWARE\Microsoft\Office\ClickToRun\Configuration
+Software\Microsoft\Windows Defender\Features
+Software\Microsoft\Windows Defender\MpEngine
+SOFTWARE\Microsoft\Windows NT\CurrentVersion
+Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\   Defender DLP
+Source
+south africa
+south korea
+south-africa
+south-korea
+space
+spanish-argentina
+spanish-bolivia
+spanish-chile
+spanish-colombia
+spanish-costa rica
+spanish-dominican republic
+spanish-ecuador
+spanish-el salvador
+spanish-guatemala
+spanish-honduras
+spanish-mexican
+spanish-modern
+spanish-nicaragua
+spanish-panama
+spanish-paraguay
+spanish-peru
+spanish-puerto rico
+spanish-uruguay
+spanish-venezuela
+splwow64.exe
+sq-AL
+sq-al
+sr-BA-Cyrl
+sr-ba-cyrl
+sr-BA-Latn
+sr-ba-latn
+sr-SP-Cyrl
+sr-sp-cyrl
+sr-SP-Latn
+sr-sp-latn
+Start
+StartTraceW
+State
+state not recoverable
+StaticInjection
+stod argument out of range
+stol argument out of range
+Storage
+stoul argument out of range
+stream timeout
+STREAM_ATTRIBUTE_ACTION_IE_BLOCK_CONTROL
+STREAM_ATTRIBUTE_ACTION_IE_BLOCK_PAGE
+STREAM_ATTRIBUTE_AMSI_ALL
+STREAM_ATTRIBUTE_AMSI_APP_ID
+STREAM_ATTRIBUTE_AMSI_CONTENT_NAME
+STREAM_ATTRIBUTE_AMSI_IS_EXCLUDED_PROCESS
+STREAM_ATTRIBUTE_AMSI_OPERATION_PPID
+STREAM_ATTRIBUTE_AMSI_REDIRECT_CHAIN
+STREAM_ATTRIBUTE_AMSI_SESSION_ID
+STREAM_ATTRIBUTE_AMSI_UAC_REQUEST_CONTEXT
+STREAM_ATTRIBUTE_AVAILABLE_DSS_THREADS
+STREAM_ATTRIBUTE_BMDATA
+STREAM_ATTRIBUTE_CI_EA
+STREAM_ATTRIBUTE_CONTAINER_BACKING_FILE_ID
+STREAM_ATTRIBUTE_CONTAINER_BACKING_FILE_ID_EXTENDED
+STREAM_ATTRIBUTE_CONTROL_GUID
+STREAM_ATTRIBUTE_CONTROL_HTML
+STREAM_ATTRIBUTE_CONTROL_PATH
+STREAM_ATTRIBUTE_CONTROL_VERSION
+STREAM_ATTRIBUTE_CURRENT_FILEUSN
+STREAM_ATTRIBUTE_DESIRED_ACCESS
+STREAM_ATTRIBUTE_DETAILED_SCAN_NEEDED
+STREAM_ATTRIBUTE_DEVICE_CHARACTERISTICS
+STREAM_ATTRIBUTE_DONOTCACHESCANRESULT
+STREAM_ATTRIBUTE_EXPENSIVE
+STREAM_ATTRIBUTE_EXPENSIVE_RESOURCES
+STREAM_ATTRIBUTE_FILE_ATTRIBUTES
+STREAM_ATTRIBUTE_FILE_BASIC_INFORMATION
+STREAM_ATTRIBUTE_FILE_OPERATION_PPID
+STREAM_ATTRIBUTE_FILE_STAT_INFORMATION
+STREAM_ATTRIBUTE_FILEBACKUPWRITEPERFHINT
+STREAM_ATTRIBUTE_FILECHANGEPERFHINT
+STREAM_ATTRIBUTE_FILECOPY_STACKBASED_PERFHINT
+STREAM_ATTRIBUTE_FILECOPYPERFHINT
+STREAM_ATTRIBUTE_FILECOPYSOURCEPATH
+STREAM_ATTRIBUTE_FILEID
+STREAM_ATTRIBUTE_FILEOPPROCESSID
+STREAM_ATTRIBUTE_FILEOPPROCESSNAME
+STREAM_ATTRIBUTE_FILEUSN
+STREAM_ATTRIBUTE_FILEVOLUMESERIALNUMBER
+STREAM_ATTRIBUTE_FILTER_CACHE_STATE
+STREAM_ATTRIBUTE_FQ_ENGINE_REPORT_GUID
+STREAM_ATTRIBUTE_FQ_HTTP_STATUS
+STREAM_ATTRIBUTE_FQ_RESPONSE_HR_CODE
+STREAM_ATTRIBUTE_FRAME_HTML
+STREAM_ATTRIBUTE_FRAME_URL
+STREAM_ATTRIBUTE_GENSTREAM_APP_NAME
+STREAM_ATTRIBUTE_GENSTREAM_CONTENT_NAME
+STREAM_ATTRIBUTE_GENSTREAM_EXTERN_GUID
+STREAM_ATTRIBUTE_GENSTREAM_SESSION_ID
+STREAM_ATTRIBUTE_HAS_MOTW_ADS
+STREAM_ATTRIBUTE_HOSTAPPVERSION
+STREAM_ATTRIBUTE_INVALID
+STREAM_ATTRIBUTE_IO_STATUS_BLOCK_FOR_NEW_FILE
+STREAM_ATTRIBUTE_IS_CONTAINER_FILE
+STREAM_ATTRIBUTE_IS_TRANSACTION
+STREAM_ATTRIBUTE_LOCAL_BACKUP
+STREAM_ATTRIBUTE_LOFI
+STREAM_ATTRIBUTE_LOFI_RESOURCES
+STREAM_ATTRIBUTE_OPEN_ACCESS_STATE_FLAGS
+STREAM_ATTRIBUTE_OPEN_CREATEPROCESS_HINT
+STREAM_ATTRIBUTE_OPEN_OPTIONS
+STREAM_ATTRIBUTE_PAGE_CONTEXT
+STREAM_ATTRIBUTE_PRIVATE
+STREAM_ATTRIBUTE_PROCESS_IS_PROTECTED
+STREAM_ATTRIBUTE_REFERRALURL
+STREAM_ATTRIBUTE_REFERRERURL
+STREAM_ATTRIBUTE_REQUESTORMODE
+STREAM_ATTRIBUTE_RESOURCE_CONTEXT
+STREAM_ATTRIBUTE_SAMPLEONLY
+STREAM_ATTRIBUTE_SAMPLEONLY_RESOURCES
+STREAM_ATTRIBUTE_SB_SCANSOURCE
+STREAM_ATTRIBUTE_SCAN_RESULT_NOT_CACHED
+STREAM_ATTRIBUTE_SCANREASON
+STREAM_ATTRIBUTE_SCRIPTID
+STREAM_ATTRIBUTE_SCRIPTTYPE
+STREAM_ATTRIBUTE_SE_SIGNING_LEVEL
+STREAM_ATTRIBUTE_SECTOR_NUMBER
+STREAM_ATTRIBUTE_SECURITY_DESCRIPTOR
+STREAM_ATTRIBUTE_SENSE_EA
+STREAM_ATTRIBUTE_SESSION_ID
+STREAM_ATTRIBUTE_SHARE_ACCESS
+STREAM_ATTRIBUTE_SITE_HAS_GOOD_REPUTATION
+STREAM_ATTRIBUTE_SKIPBMNOTIFICATION
+STREAM_ATTRIBUTE_SYNC_MODULE_LOAD
+STREAM_ATTRIBUTE_THREAT_ID
+STREAM_ATTRIBUTE_THREAT_RESOURCES
+STREAM_ATTRIBUTE_THREAT_STATUS
+STREAM_ATTRIBUTE_TRUST_LEVEL
+STREAM_ATTRIBUTE_TRUST_LEVEL_TTL
+STREAM_ATTRIBUTE_URL
+STREAM_ATTRIBUTE_URL_HAS_GOOD_REPUTATION
+STREAM_ATTRIBUTE_URL_ZONE
+STREAM_ATTRIBUTE_VOLATILE
+STREAM_ATTRIBUTE_XPLAT_PROCESS_DEVICE_PATH
+string too long
+StringFileInfo
+StringFromGUID2
+StrStrIW
+Stuf;
+SubOperation
+SuccessCount
+Sunday
+SupportedFeatures
+SUVWATAUAVAWH
+SUVWATAUAVAWL
+SUVWATAVAWH
+SUWATAUAVAWH
+sv(E3
+sv2E3
+SVATAUAVAWH
+SVATAUAWH
+SVATAVAWH
+SVAVAWH
+svDE3
+sv-FI
+sv-fi
+sv-se
+sv-SE
+SVWATAUAVAWH
+SVWATAUAWH
+SVWATAVAWH
+SVWAUAVAWH
+SVWAVAWH
+SVWAVH
+SWATAUAWH
+SWATAVAWH
+swedish-finland
+swiss
+SwitchToThread
+sw-ke
+sw-KE
+SyncDssAvailableThreads cap limit initialized by MiscConfig to: %ld
+SyncDssAvailableThreads cap limit initialized to: %ld
+SyncMonitoringType
+SyncMonitorRequestDuration
+SyncMonitorState
+SyncStartError
+SyncStartOK
+syr-sy
+syr-SY
+system
+System
+System File Cache:
+System Uptime (secs): %ld
+SYSTEM\CurrentControlSet\Control\Class\
+SYSTEM\CurrentControlSet\Services\WdDevFlt
+System\CurrentControlSet\Services\WdDevFlt\Parameters
+System\CurrentControlSet\Services\WdDevFlt\Parameters\DataDuplication
+System\CurrentControlSet\Services\WdDevFlt\Parameters\EnforcementData
+System\CurrentControlSet\Services\WdDevFlt\Parameters\SystemInfo
+SYSTEM_DOMAIN
+system32\drivers\wd\WdDevFlt.sys
+system32\drivers\WdDevFlt.sys
+System32\WerFault.exe
+System32\WerFaultSecure.exe
+SystemTimeToFileTime
+t I;V
+t!L9c
+t"8\$H
+t"D8=
+t"fD;
+t#fD9I
+t$ ATAVAWH
+t$ AVH
+t$ D;
+t$ E3
+T$ H;S
+t$ HcMHH
+T$ I+
+t$ UH
+t$ UWATAUAVH
+t$ UWATAVAWH
+t$ UWAUAVAWH
+t$ UWAVH
+t$ UWAWH
+t$ WATAUAVAWH
+t$ WATAVH
+t$ WATAWH
+t$ WAVAWH
+t$ WAVE3
+t$ WH
+t$(fA
+t$(I;
+T$(I;T$0t
+T$@8A
+t$@A_A^A]A\_
+t$@D8n
+t$@D9vh
+T$@E3
+t$@fD
+t$@H;
+T$@H;T$@
+t$@M;
+T$`!T$XH
+T$`A9r
+T$`fA;
+t$`fD9+t$I
+T$`H;
+T$`H+
+t$`L#
+t$`L;
+t$0A^_
+T$0A8~
+t$0E3
+T$0fD;b
+T$0fE
+T$0H;|$@u
+t$0I;
+T$0I;T$8t
+t$0L#
+t$0M#
+t$0M;
+T$0M+
+T$0u&9P r
+t$0uJI
+t$8;t$0
+t$8E3
+t$8H+
+t$8L;
+t$HA_A^A]A\_
+T$hE3
+t$HfD
+T$HH;T$Pt
+T$hH+
+T$HH+
+T$HI;
+T$hI;
+t$HL;
+T$p;~4r
+t$p9l$huCD
+T$PA8z(u
+T$PA9^X
+T$PD+
+T$PE3
+t$pE3
+T$pE3
+T$PE3
+t$PfD
+t$pH;
+t$PH;s
+T$PH+
+T$PH3
+T$PI;
+t$pI;
+t$PI;
+T$PI;
+t$pI;
+T$pI;
+T$PI;
+T$pI;
+T$PI;
+t$PM;
+T$pM+
+T$X9U
+T$xD;D$x
+t$XD9rTuAD9r@
+t$XE3
+T$xE3
+t$XE3
+T$xE3
+t$xL#v0M
+t$XL;
+t$XL+
+t$xt*3
+t%fE9
+t(fA;
+t)IcV
+t,8YBt
+t.HcC<
+t:fA9(t4H
+t;8_<t
+t;9)u
+t;LcF
+t?fA;
+t@D9i$t*
+t@HcS
+t\H9w
+t^@8=
+t^H;X0u
+t'<Zt
+t1fD9Q
+t2I;O
+t3H;K
+t4A9~
+t4E88t/H
+t4L9%0
+t5fA9M
+t7fD9B
+t8fD9I
+t98_<t
+t9H;O
+t9L9g
+t9L9p
+tAHcP
+ta-in
+ta-IN
+Target
+TargetInstance
+TargetNamespace
+TASKh
+tCH9T$pt<A
+tdh.dll
+tdH9p
+TdhGetEventInformation
+TdhGetProperty
+TdhGetPropertySize
+tEHcR
+tEI9<$t
+te-IN
+te-in
+TEMPd
+TEMPL
+TerminateProcess
+TestPolicyVersion
+TestRuleId
+text file busy
+tfI;_
+TGr!v
+TH!\$(H
+Thales TSS ESN:AE2C-E32B-1AFC1%0#
+t'HcW
+thH9s
+ThreadingModel
+Threats\ThreatIDDefaultAction
+Threats\ThreatSeverityDefaultAction
+th-TH
+th-th
+Thursday
+tif99tdH
+tIH9s
+tiK94
+timed out
+TimeOut
+TimeoutCount
+Timestamp
+tkH9p
+t-Lck
+TlP0X
+tn-ZA
+tn-za
+too many files open
+too many files open in system
+too many links
+too many symbolic link levels
+Top 10 Scans (unit in milliseconds):
+TotalOnOpenScans
+TotalOnOpenScansWithoutRead
+TP_RegSigs
+TPConfigSnapshot.snp
+tQfD9 tK
+TraceMessage
+transactionfile
+Translation
+trinidad & tobago
+tRLcY
+tr-TR
+tr-tr
+TrustLabelProtectionStatus
+tSf91tNH
+ttH9k
+tt-ru
+tt-RU
+tU;\$0tH
+tuD8%
+tuD8=f
+Tuesday
+TUUUU
+tVJ9t
+twIcF
+tyD9#tt
+tyfD9 tsH
+tZK94
+u HcA<H
+U I;U(t3H
+u#fA;
+u$D8r(t
+u%@8j(t
+u%A8p
+u%D9A r
+u%H!\$8H
+u&D9y s
+u&L;o
+u(!D$(H
+u)A8p
+u*fD9Q
+u,!T$(H!T$ 
+u,9\$0~LL
+u;!T$@
+u@fD9A
+u@L9u(t
+u[J9|
+u_H;{ uY
+u`H!D$@L
+u~9t$Xt
+u<g~l<it[<ntP<ot,<pt
+u>H!D$03
+U0S0Q
+u3A8_|t-H;
+u3HcH<H
+u4D9v
+u4I9}(
+u5@8j
+u5L;t$`t
+u6;z r1H;
+U8I;U@t#H
+u9!\$0
+UA>N0Wl
+UATAUAVAWH
+UATAVH
+UAUAVH
+UAVAWH
+ueD;B r_w
+uED8r(t
+uGfD9B
+u-H9}
+uHD8m
+uID8e
+ujH9|
+uK@8z
+ukfD9A
+ukH9|
+Uknown
+uk-ua
+uk-UA
+uMI9_
+uN;Q rIw
+UnallowedApp_AppGroup
+UnallowedApp_CloudSync
+UnallowedApp_None
+UnallowedApp_Only
+UnallowedAppType
+UnallowedBluetoothTransferApps
+uNfD9B
+UnhandledExceptionFilter
+united-kingdom
+united-states
+Universal
+Unknown
+unknown error
+Unknown EventProcessingMode
+Unknown exception
+UnmapViewOfFile
+UnmapViewOfFileEx
+unordered_map/set too long
+UnregisterDlpIconOverlay()
+UnregisterTraceGuids
+uO9C8t
+UpdateProcThreadAttribute
+Updating plugin configuration due to recent config changes (%#lx) ...
+upper
+urfD9A
+ur-pk
+ur-PK
+USER_LOGOFF_NOTIFY
+USER_LOGON_NOTIFY
+user32
+USER32.dll
+USERENV.dll
+UserName
+USVATAUAVAWH
+USVWATAUAVAWH
+USVWATAUAVH
+USVWATAUAWH
+USVWATAVAWH
+USVWAUAVAWH
+USVWAVH
+USVWH
+USWAWH
+UTF-16LEUNICODE
+utf-8
+UTF-8
+utKf;
+uufD;
+uUfD9B
+UuidFromStringW
+UUUUUU
+UUUUUUU
+UVATAVAWH
+uvD;x rpH;
+UVWATAUAVAWH
+UVWATAUH
+UVWATAVH
+UVWATAWH
+UVWAUAVH
+UVWAUAWH
+UVWAVAWH
+UVWAVH
+UWATAUAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+UWAWH
+uXL9}Hu
+uyfD9A
+uzKs@>
+uz-uz-cyrl
+uz-UZ-Cyrl
+uz-uz-latn
+uz-UZ-Latn
+V H+V
+v:fD;
+v@D8s(t
+v}`[>
+V0H;V8t0L
+v2!L.2
+V6E>`"(5
+vAD8s(t
+value too large
+VarFileInfo
+VATAUAVAWH
+VAVAWH
+VD$Pf
+vector too long
+vector<bool> too long
+VendorId
+VerQueryValueW
+VersionToReport
+vfzselfcheckmagicfile
+vHI9>t
+VID_PID
+VirtualAllocEx
+VirtualFreeEx
+VirtualProtect
+VirtualQuery
+VirtualQueryEx
+vi-vn
+vi-VN
+VMAP<
+VMAPD
+VMAPL
+vmconnect.exe
+VOLUME
+Vr.>T
+VS_VERSION_INFO
+VT$PD
+VWATAUAVAWH
+VWATAUAVAWL
+VWATAUAWH
+VWATAVAW
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAUH
+VWAVH
+VWAWH
+VXH;V`t-L
+w&fA+
+w`HcE H
+W0H;W8t
+W0I;W8t/H
+WaitForSingleObject
+WaitForSingleObjectEx
+WakeAllConditionVariable
+WaNd?
+Washington1
+WATAUAVAWH
+WATAVH
+WAUAVH
+WAVAWH
+WdDevFlt
+wddevflt
+WdDevFlt Instance
+WdFilter
+Wednesday
+WEVT_TEMPLATE
+wGHcN
+WHH9\
+WideCharToMultiByte
+WilError_03
+win:Info
+win:Informational
+win:Start
+win:Stop
+Window Manager
+Windows Defender Exploit Guard\Controlled Folder Access
+winsta0\default
+WINTRUST.dll
+WinVerifyTrust
+winword.exe
+WMI Agent
+WmiBMConsumerFilterBindingProviderCreate
+WmiInstanceCreate
+WmiInstancePath
+Worker Threads:
+WpdDevices
+wRH9Q
+Write
+WriteConsoleW
+WriteFile
+WriteProcessMemory
+wrong protocol type
+wscript.exe
+WTHelperGetProvSignerFromChain
+WTHelperProvDataFromStateData
+WTSAPI32.dll
+WTSEnumerateSessionsW
+WTSFreeMemory
+WTSQuerySessionInformationW
+WTSQueryUserToken
+wWH;K
+x 9|$\v
+x ATAVAWH
+x AUAVAWH
+x AVAW
+x AVH
+x AVHcA
+x AVL
+x AWH
+X D8e
+X D8u
+x UATAUAVAWH
+x UATAWH
+x UAVAWH
+X UWAVH
+X VATAUAVAWH
+x%D9e@w
+X0V0T
+XA^_^[
+XA_A^A\_^]
+XA_A^A]A\^[
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xB9\$pt<H
+xdigit
+xh-ZA
+xh-za
+xSu$W
+xXI96tSI
+y\PD>!
+y|?u4
+Y>kX>M
+Y8L9;uXM
+YD$@f
+YfE;yXu5H
+yxcuW
+yxuu"
+yxxu&
+Z\>z8
+zh-chs
+zh-CHS
+zh-cht
+zh-CHT
+zh-cn
+zh-CN
+zh-HK
+zh-hk
+zh-mo
+zh-MO
+zh-SG
+zh-sg
+zh-tw
+zh-TW
+Zod(^?
+zu-za
+zu-ZA
+zY;>u:m

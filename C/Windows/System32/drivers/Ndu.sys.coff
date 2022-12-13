@@ -1,0 +1,161 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\Ndu.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    fwpkclnt.sys
+    NETIO.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C001F120 Import Address Table
+             1C001F528 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         4C6 KeGetCurrentProcessorNumberEx
+                         564 KeSetEvent
+                          B9 ExAllocateFromLookasideListEx
+                          EF ExFreeToLookasideListEx
+                          BE ExAllocatePool3
+                         4E0 KeInitializeSpinLock
+                         100 ExInitializeLookasideListEx
+                         480 KeAcquireSpinLockRaiseToDpc
+                         544 KeReleaseSpinLock
+                          D4 ExDeleteLookasideListEx
+                         4CC KeGetRecommendedSharedDataAlignment
+                         83E RtlCompareMemory
+                         361 IoFreeWorkItem
+                         2FE IoAllocateWorkItem
+                         3C3 IoQueueWorkItem
+                         592 KfRaiseIrql
+                         4FE KeLowerIrql
+                         6D6 ObfDereferenceObject
+                         6C6 ObReferenceObjectByHandle
+                         342 IoDeleteDevice
+                         BFF ZwUpdateWnfStateData
+                         58E KeWaitForMultipleObjects
+                         187 ExpInterlockedFlushSList
+                         189 ExpInterlockedPushEntrySList
+                         2EB InitializeSListHead
+                         749 PsCreateSystemThread
+                         757 PsGetCurrentProcessId
+                         47E KeAcquireSpinLockAtDpcLevel
+                         546 KeReleaseSpinLockFromDpcLevel
+                         756 PsGetCurrentProcess
+                         802 PsUpdateComponentPower
+                         7BB PsLookupProcessByProcessId
+                         526 KeQueryTimeIncrement
+                         4E2 KeInitializeTimer
+                         493 KeCancelTimer
+                         4BD KeFlushQueuedDpcs
+                         576 KeSetTimerEx
+                         3C4 IoQueueWorkItemEx
+                         C57 _vsnprintf
+                         344 IoDeleteSymbolicLink
+                         335 IoCreateSymbolicLink
+                         328 IoCreateDevice
+                         6D2 ObSetSecurityObjectByPointer
+                         9B4 RtlSetDaclSecurityDescriptor
+                         861 RtlCreateSecurityDescriptor
+                         808 RtlAddAccessAllowedAce
+                         85A RtlCreateAcl
+                         9CA RtlSubAuthoritySid
+                         906 RtlInitializeSid
+                         946 RtlLengthRequiredSid
+                         B24 ZwClose
+                         9FF RtlValidSecurityDescriptor
+                         BB5 ZwQueryValueKey
+                         8FC RtlInitUnicodeString
+                         3B4 IoOpenDriverRegistryKey
+                         A43 SeExports
+                         590 KeWaitForSingleObject
+                         4EB KeInsertQueueDpc
+                         573 KeSetTargetProcessorDpcEx
+                         4CB KeGetProcessorNumberFromIndex
+                         4D4 KeInitializeDpc
+                         4D8 KeInitializeEvent
+                          BD ExAllocatePool2
+                          EE ExFreePoolWithTag
+                         948 RtlLengthSid
+                         A00 RtlValidSid
+                         4C4 KeGetCurrentIrql
+                         45A IofCompleteRequest
+                          94 EtwUnregister
+                         555 KeResetEvent
+                          8F EtwRegister
+                         6F1 PoEnergyEstimationEnabled
+                         51B KeQueryMaximumProcessorCountEx
+                          E5 ExEventObjectType
+                          9A EtwWriteTransfer
+                          78 DbgkWerCaptureLiveKernelDump
+
+    fwpkclnt.sys
+             1C001F028 Import Address Table
+             1C001F430 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           2 DPGetProcessIdFromProfileName0
+                          63 FwpmProviderDeleteByKey0
+                          2B FwpmEngineClose0
+                          76 FwpmTransactionAbort0
+                          78 FwpmTransactionCommit0
+                          77 FwpmTransactionBegin0
+                          4B FwpmProviderAdd0
+                          2E FwpmEngineOpen0
+                          16 FwpmBfeStateGet0
+                          1D FwpmCalloutDeleteByKey0
+                          33 FwpmFilterDeleteById0
+                          31 FwpmFilterAdd0
+                          1A FwpmCalloutAdd0
+                          13 FwpiReleaseFlowLocation
+                          19 FwpmBfeStateUnsubscribeChanges0
+                          17 FwpmBfeStateSubscribeChanges0
+                          14 FwpiReserveFlowLocation
+                          A9 FwpsCalloutUnregisterByKey0
+                           8 FwpiCalloutRegisterWithoutDeviceFast0
+                          A6 FwpsCalloutRegister3
+                           E FwpiGetValueFromClassifyContext
+                          CB FwpsNetBufferListAssociateContext1
+                          CE FwpsNetBufferListRetrieveContext0
+                          CD FwpsNetBufferListRemoveContext0
+                           B FwpiFlowRemoveContextFast
+                          D4 FwpsProxiedEndpointReferenceEndpoint
+                           A FwpiFlowAssociateContextFast
+                          D2 FwpsProxiedEndpointDereferenceEndpoint
+                          D1 FwpsProxiedEndpointClassifiableFieldGet
+                          D3 FwpsProxiedEndpointMetadataValueGet
+
+    NETIO.SYS
+             1C001F000 Import Address Table
+             1C001F408 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         181 NmrDeregisterProvider
+                         184 NmrRegisterProvider
+                           A ConvertInterfaceLuidToAlias
+                         186 NmrWaitForProviderDeregisterComplete
+
+  Summary
+
+        1000 .data
+        2000 .idata
+        1000 .pdata
+        B000 .rdata
+        1000 .reloc
+        5000 .rsrc
+       11000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 NONPAGE
+        1000 PAGE
+        1000 fothk

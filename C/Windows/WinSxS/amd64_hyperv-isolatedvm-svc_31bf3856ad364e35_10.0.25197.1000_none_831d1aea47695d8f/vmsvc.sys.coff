@@ -1,0 +1,124 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\WinSxS\amd64_hyperv-isolatedvm-svc_31bf3856ad364e35_10.0.25197.1000_none_831d1aea47695d8f\vmsvc.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Section contains the following exports for vmsvc.sys
+
+    00000000 characteristics
+    B5E1E5F1 time date stamp
+        0.00 version
+           1 ordinal base
+           3 number of functions
+           3 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00009FFC SvcCall
+          2    1 0003907C SvcInitSystem
+          3    2 0000A364 SvcSysCall
+
+  Image has the following dependencies:
+
+    securekernel.exe
+    cng.sys
+
+  Section contains the following imports:
+
+    securekernel.exe
+             1C0028028 Import Address Table
+             1C00393F8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          7C RtlInitializeBitMap
+                          CB SkmmUnmapMdl
+                          70 RtlFindClearBitsAndSet
+                          9E ShvlCompleteIsolatedImport
+                          66 RtlClearAllBits
+                          AD SkFreePool
+                          AE SkGetIdkSignatureForData
+                          A4 ShvlModifySparseSpaPageHostAccess
+                          CA SkmmRestrictPageRange
+                          C3 SkmmInflateIoSpaceMemory
+                          C7 SkmmReleasePageRestriction
+                          86 RtlRbRemoveNode
+                          A3 ShvlLockSparseGpaPageMapping
+                          A7 ShvlUnlockSparseGpaPageMapping
+                          BA SkeCacheInvalidatePage
+                          A6 ShvlSetVpRegisters
+                          BD SkeZeroPages
+                          9F ShvlEnableVpVtlForPartition
+                          C5 SkmmMapMdlWithReservedMapping
+                          A0 ShvlGetInterceptData
+                          9D ShvlCompleteIntercept
+                          A2 ShvlGetVpRegisters
+                          6A RtlCompareMemory
+                          F1 memcpy
+                          67 RtlClearBit
+                          C1 SkmmFreeReservedMapping
+                          C8 SkmmReserveMappingAddress
+                          A5 ShvlSetPartitionProperty
+                          AF SkInitializePushLock
+                          B1 SkQuerySecureKernelInformation
+                          85 RtlRbInsertNodeEx
+                          A1 ShvlGetPartitionProperty
+                          AB SkAllocatePool
+                          C4 SkmmMapMdl
+                           1 EtwRegister
+                           2 EtwSetInformation
+                           5 EtwWriteTransfer
+                          C0 SkmmDeflateIoSpaceMemory
+                          3E KeGetCurrentIrql
+                          3A KeBugCheckEx
+                          E1 __C_specific_handler
+                          8C RtlTimeFieldsToTime
+                          B2 SkQuerySystemTime
+                          E5 _invalid_parameter
+                          BB SkeEnterCriticalRegion
+                          B3 SkReleasePushLockExclusive
+                          A9 SkAcquirePushLockShared
+                          B4 SkReleasePushLockShared
+                          A8 SkAcquirePushLockExclusive
+                          BC SkeLeaveCriticalRegion
+                          E2 __GSHandlerCheck
+                          E4 __chkstk
+                          F0 memcmp
+                          F3 memset
+
+    cng.sys
+             1C0027FC0 Import Address Table
+             1C0039390 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           2 BCryptCreateHash
+                          1A BCryptHashData
+                           8 BCryptDestroyHash
+                          12 BCryptFinishHash
+                          18 BCryptGetProperty
+                          19 BCryptHash
+                          16 BCryptGenerateSymmetricKey
+                          24 BCryptSetProperty
+                           1 BCryptCloseAlgorithmProvider
+                          14 BCryptGenRandom
+                          1E BCryptOpenAlgorithmProvider
+                           9 BCryptDestroyKey
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        2000 .pdata
+        6000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        1000 .skrld
+       26000 .text
+        1000 INIT
+        2000 PAGE
+        4000 PAGECONS
+        1000 PAGEDATA
